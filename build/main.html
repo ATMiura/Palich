@@ -1,0 +1,467 @@
+
+<!--if isAuth == true-->
+<!--+icon('user')-->
+<!--else--><!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Главная</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicon/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png">
+		<link rel="icon" type="image/png" href="images/favicon/favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="images/favicon/favicon-128.png" sizes="128x128">
+		<meta name="application-name" content="&amp;nbsp;">
+		<meta name="msapplication-TileColor" content="#FFFFFF">
+		<meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+		<meta name="msapplication-square70x70logo" content="images/favicon/mstile-70x70.png">
+		<meta name="msapplication-square150x150logo" content="images/favicon/mstile-150x150.png">
+		<meta name="msapplication-wide310x150logo" content="images/favicon/mstile-310x150.png">
+		<meta name="msapplication-square310x310logo" content="images/favicon/mstile-310x310.png">
+		<link rel="stylesheet" href="css/grid.css" type="text/css">
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+	</head>
+	<body>
+		<header class="header">
+			<div class="header-top">
+				<div class="container">
+					<div class="grid-row no-gutters">
+						<div class="grid-col-md-3 grid-col-12">
+							<div class="js-tooltip link-icon" data-tooltip="city">
+								<div class="link-icon__icon">
+									<svg class="icon icon-geotag ">
+										<use xlink:href="images/sprites.svg#geotag"></use>
+									</svg>
+								</div><a class="link-icon__text" href="">Москва и МО</a>
+							</div>
+						</div>
+						<div class="grid-col-md-5 grid-col-12">
+							<div class="header-nav">
+								<div class="header-nav__item"><a class="header-nav__link" href="#">Магазины</a></div>
+								<div class="header-nav__item js-tooltip"><a class="header-nav__link" href="#">О компании</a></div>
+								<div class="header-nav__item"><a class="header-nav__link" href="#">Контакты</a></div>
+							</div>
+						</div>
+						<div class="grid-col-md-4 grid-col-12 d-flex align-items-center justify-content-end">
+							<div class="header-phone"><a class="header-phone__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a></div>
+							<div class="js-popup link-icon" data-popup-id="callback">
+								<div class="link-icon__icon">
+									<svg class="icon icon-phone ">
+										<use xlink:href="images/sprites.svg#phone"></use>
+									</svg>
+								</div><a class="link-icon__text" href="">Обратый звонок</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-middle">
+				<div class="container">
+					<div class="grid-row no-gutters">
+						<div class="grid-col-md-3 grid-col-12 header-logo"><img class="header-logo__img" src="images/logo.svg"></div>
+						<div class="grid-col-md-9 grid-col-12 d-flex align-items-center">
+							<div class="header-nav">
+																<div class="header-nav__item"><a class="header-nav__link" href="#">Замороженные полуфабрикаты</a></div>
+																<div class="header-nav__item"><a class="header-nav__link" href="#">Торты</a></div>
+																<div class="header-nav__item"><a class="header-nav__link" href="#">Торты на заказ</a></div>
+																<div class="header-nav__item"><a class="header-nav__link" href="#">Кондитерские изделия</a></div>
+																<div class="header-nav__item"><a class="header-nav__link" href="#">Пироги и выпечка</a></div>
+																<div class="header-nav__item"><a class="header-nav__link" href="#">Готовые блюда</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-main">
+				<div class="header-nav">
+					<div class="header-nav__item js-tooltip" data-tooltip="catalog"><a class="header-nav__link" href="">Весь каталог
+							<svg class="icon icon-menu ">
+								<use xlink:href="images/sprites.svg#menu"></use>
+							</svg></a></div>
+					<div class="header-nav__item"><a class="header-nav__link" href="">Акции %</a></div>
+				</div>
+				<div class="header-search">
+					<form class="header-search__form form" action="#">
+						<div class="form_group">
+							<label class="form_label d-flex align-items-center">
+								<input class="header-search__input form_input" type="text" placeholder="Введите название товара, например, &quot;пельмени&quot;">
+								<div class="header-search__icon">
+									<button class="header-search__button" type="submit">
+										<svg class="icon icon-search ">
+											<use xlink:href="images/sprites.svg#search"></use>
+										</svg>
+									</button>
+								</div>
+							</label>
+						</div>
+					</form>
+				</div>
+				<div class="header-delivery">
+					<div class="header-delivery__item">
+						<div class="header_delivery__item__icon">
+							<svg class="icon icon-delivery-company ">
+								<use xlink:href="images/sprites.svg#delivery-company"></use>
+							</svg>
+						</div>
+						<div class="header-delivery__item__text">Доставка до 90 мин.</div>
+					</div>
+					<div class="header-delivery__item">
+						<div class="header-delivery__item__icon">
+							<svg class="icon icon-delivery-self ">
+								<use xlink:href="images/sprites.svg#delivery-self"></use>
+							</svg>
+						</div>
+						<div class="header-delivery__item__text">Самовывоз %</div>
+					</div>
+				</div>
+				<div class="header-cart">
+					<div class="header-cart__counter">
+						<div class="header-cart__icon">
+							<svg class="icon icon-cart ">
+								<use xlink:href="images/sprites.svg#cart"></use>
+							</svg>
+						</div>
+						<div class="header-cart__number">10</div>
+					</div>
+					<div class="header-cart__price">12 450 ₽</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="section-slider">
+				<div class="main-slider">
+					<div class="main-slider__container">
+						<div class="main-slider__wrapper swiper-container" data-slider-name="main-slider">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide main-slider__slide">
+									<div class="main-slider__slide__content">
+										<div class="main-slider__slide__title">Пирог Осетинский с курицей и грибами</div>
+										<div class="main-slider__slide__text">Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.</div>
+										<div class="main-slider__slide__btn"><a class="button" href="">Подробнее
+												<svg class="icon icon-button-arrow ">
+													<use xlink:href="images/sprites.svg#button-arrow"></use>
+												</svg></a></div>
+									</div>
+									<div class="main-slider__slide__img"><img class="main-slider__slide__img__elem" src="images/main-slider-img.png"></div>
+								</div>
+								<div class="swiper-slide main-slider__slide">
+									<div class="main-slider__slide__content">
+										<div class="main-slider__slide__title">Пирог Осетинский с курицей и грибами</div>
+										<div class="main-slider__slide__text">Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.</div>
+										<div class="main-slider__slide__btn"><a class="button" href="">Подробнее
+												<svg class="icon icon-button-arrow ">
+													<use xlink:href="images/sprites.svg#button-arrow"></use>
+												</svg></a></div>
+									</div>
+									<div class="main-slider__slide__img"><img class="main-slider__slide__img__elem" src="images/main-slider-img.png"></div>
+								</div>
+								<div class="swiper-slide main-slider__slide">
+									<div class="main-slider__slide__content">
+										<div class="main-slider__slide__title">Пирог Осетинский с курицей и грибами</div>
+										<div class="main-slider__slide__text">Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.</div>
+										<div class="main-slider__slide__btn"><a class="button" href="">Подробнее
+												<svg class="icon icon-button-arrow ">
+													<use xlink:href="images/sprites.svg#button-arrow"></use>
+												</svg></a></div>
+									</div>
+									<div class="main-slider__slide__img"><img class="main-slider__slide__img__elem" src="images/main-slider-img.png"></div>
+								</div>
+								<div class="swiper-slide main-slider__slide">
+									<div class="main-slider__slide__content">
+										<div class="main-slider__slide__title">Пирог Осетинский с курицей и грибами</div>
+										<div class="main-slider__slide__text">Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.</div>
+										<div class="main-slider__slide__btn"><a class="button" href="">Подробнее
+												<svg class="icon icon-button-arrow ">
+													<use xlink:href="images/sprites.svg#button-arrow"></use>
+												</svg></a></div>
+									</div>
+									<div class="main-slider__slide__img"><img class="main-slider__slide__img__elem" src="images/main-slider-img.png"></div>
+								</div>
+								<div class="swiper-slide main-slider__slide">
+									<div class="main-slider__slide__content">
+										<div class="main-slider__slide__title">Пирог Осетинский с курицей и грибами</div>
+										<div class="main-slider__slide__text">Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.</div>
+										<div class="main-slider__slide__btn"><a class="button" href="">Подробнее
+												<svg class="icon icon-button-arrow ">
+													<use xlink:href="images/sprites.svg#button-arrow"></use>
+												</svg></a></div>
+									</div>
+									<div class="main-slider__slide__img"><img class="main-slider__slide__img__elem" src="images/main-slider-img.png"></div>
+								</div>
+							</div>
+							<div class="options">
+								<div class="progress-paging">
+									<div class="progress"><span class="index">01</span>
+										<div class="progress-bar">
+											<div class="back"></div>
+										</div><span class="slides">05</span>
+									</div>
+									<!--.paging
+									button.paging-arrow.prev(type='button')
+										svg
+											use(xlink:href='#angle-left')
+									button.paging-arrow.next(type='button')
+										svg
+											use(xlink:href='#angle-right')
+									
+									-->
+								</div>
+							</div>
+							<div class="swiper-button__wrapper">
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="products">
+				<div class="section-container">
+					<div class="section-title-more">
+						<div class="section-title">
+							<h2>Хиты продаж</h2>
+						</div>
+						<div class="section-more"></div>
+					</div>
+					<div class="products__list">
+						<div class="products__item products__item__size__big">
+							<div class="products__item__slider swiper">
+								<div class="swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide products__item__slide"><a href=""><img class="products__item__slide__img" src="images/products__item__slide__img.jpg"></a></div>
+										<div class="swiper-slide products__item__slide"><a href=""><img class="products__item__slide__img" src="images/products__item__slide__img.jpg"></a></div>
+									</div>
+									<div class="swiper-button__wrapper">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+							</div>
+							<div class="products__item__label__wrap">
+								<div class="products__item__label hit">
+									<svg class="icon icon-star ">
+										<use xlink:href="images/sprites.svg#star"></use>
+									</svg>Хит
+								</div>
+								<div class="products__item__label new">Новинка</div>
+								<div class="products__item__label vegan">Vegan</div>
+								<div class="products__item__label timer">
+									<svg class="icon icon-timer ">
+										<use xlink:href="images/sprites.svg#timer"></use>
+									</svg>90 минут
+								</div>
+								<div class="products__item__label no-gmo">Без ГМО</div>
+								<div class="products__item__label no-gluten">Без глютена</div>
+								<div class="products__item__label sale">- 25%</div>
+							</div>
+							<div class="products__item__info">
+								<div class="products__item__name">Торт Антреме Шоколадная симфония</div>
+								<div class="products__item__price__cart">
+									<div class="products__item__price">
+										<div class="products__item__price__normal">376 ₽</div>
+										<div class="products__item__price__sale">523 ₽</div>
+									</div>
+									<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+											<div class="products__item__cart__link__text">В корзину</div>
+											<div class="products__item__cart__link__icon">
+												<svg class="icon icon-product_add_to_cart ">
+													<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+												</svg>
+												<svg class="icon icon-product_in_cart ">
+													<use xlink:href="images/sprites.svg#product_in_cart"></use>
+												</svg>
+											</div></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="products__item">
+							<div class="products__item__img"><a href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"></a></div>
+							<div class="products__item__label__wrap">
+								<div class="products__item__label no-gmo">Без ГМО</div>
+							</div>
+							<div class="products__item__info">
+								<div class="products__item__name">Пельмени с индейкой</div>
+								<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+								<div class="products__item__price__cart">
+									<div class="products__item__price">
+										<div class="products__item__price__normal">376 ₽</div>
+										<div class="products__item__price__sale">523 ₽</div>
+									</div>
+									<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+											<div class="products__item__cart__link__text">В корзину</div>
+											<div class="products__item__cart__link__icon">
+												<svg class="icon icon-product_add_to_cart ">
+													<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+												</svg>
+												<svg class="icon icon-product_in_cart ">
+													<use xlink:href="images/sprites.svg#product_in_cart"></use>
+												</svg>
+											</div></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="products__item">
+							<div class="products__item__img"><a href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"></a></div>
+							<div class="products__item__label__wrap">
+								<div class="products__item__label hit">
+									<svg class="icon icon-star ">
+										<use xlink:href="images/sprites.svg#star"></use>
+									</svg>Хит
+								</div>
+								<div class="products__item__label vegan">Vegan</div>
+							</div>
+							<div class="products__item__info">
+								<div class="products__item__name">Торт Прага</div>
+								<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+								<div class="products__item__price__cart">
+									<div class="products__item__price">
+										<div class="products__item__price__normal">376 ₽</div>
+										<div class="products__item__price__sale">523 ₽</div>
+									</div>
+									<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+											<div class="products__item__cart__link__text">В корзину</div>
+											<div class="products__item__cart__link__icon">
+												<svg class="icon icon-product_add_to_cart ">
+													<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+												</svg>
+												<svg class="icon icon-product_in_cart ">
+													<use xlink:href="images/sprites.svg#product_in_cart"></use>
+												</svg>
+											</div></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="products__item">
+							<div class="products__item__img"><a href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"></a></div>
+							<div class="products__item__label__wrap">
+								<div class="products__item__label no-gmo">Без ГМО</div>
+							</div>
+							<div class="products__item__info">
+								<div class="products__item__name">Пельмени с индейкой</div>
+								<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+								<div class="products__item__price__cart">
+									<div class="products__item__price">
+										<div class="products__item__price__normal">376 ₽</div>
+										<div class="products__item__price__sale">523 ₽</div>
+									</div>
+									<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+											<div class="products__item__cart__link__text">В корзину</div>
+											<div class="products__item__cart__link__icon">
+												<svg class="icon icon-product_add_to_cart ">
+													<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+												</svg>
+												<svg class="icon icon-product_in_cart ">
+													<use xlink:href="images/sprites.svg#product_in_cart"></use>
+												</svg>
+											</div></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="products__item">
+							<div class="products__item__img"><a href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"></a></div>
+							<div class="products__item__label__wrap">
+								<div class="products__item__label hit">
+									<svg class="icon icon-star ">
+										<use xlink:href="images/sprites.svg#star"></use>
+									</svg>Хит
+								</div>
+								<div class="products__item__label vegan">Vegan</div>
+							</div>
+							<div class="products__item__info">
+								<div class="products__item__name">Торт Прага</div>
+								<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+								<div class="products__item__price__cart">
+									<div class="products__item__price">
+										<div class="products__item__price__normal">376 ₽</div>
+										<div class="products__item__price__sale">523 ₽</div>
+									</div>
+									<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+											<div class="products__item__cart__link__text">В корзину</div>
+											<div class="products__item__cart__link__icon">
+												<svg class="icon icon-product_add_to_cart ">
+													<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+												</svg>
+												<svg class="icon icon-product_in_cart ">
+													<use xlink:href="images/sprites.svg#product_in_cart"></use>
+												</svg>
+											</div></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="products__item">
+							<div class="products__item__img"><a href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"></a></div>
+							<div class="products__item__label__wrap">
+								<div class="products__item__label no-gmo">Без ГМО</div>
+							</div>
+							<div class="products__item__info">
+								<div class="products__item__name">Пельмени с индейкой</div>
+								<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+								<div class="products__item__price__cart">
+									<div class="products__item__price">
+										<div class="products__item__price__normal">376 ₽</div>
+										<div class="products__item__price__sale">523 ₽</div>
+									</div>
+									<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+											<div class="products__item__cart__link__text">В корзину</div>
+											<div class="products__item__cart__link__icon">
+												<svg class="icon icon-product_add_to_cart ">
+													<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+												</svg>
+												<svg class="icon icon-product_in_cart ">
+													<use xlink:href="images/sprites.svg#product_in_cart"></use>
+												</svg>
+											</div></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="products__item">
+							<div class="products__item__img"><a href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"></a></div>
+							<div class="products__item__label__wrap">
+								<div class="products__item__label hit">
+									<svg class="icon icon-star ">
+										<use xlink:href="images/sprites.svg#star"></use>
+									</svg>Хит
+								</div>
+								<div class="products__item__label vegan">Vegan</div>
+							</div>
+							<div class="products__item__info">
+								<div class="products__item__name">Торт Прага</div>
+								<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+								<div class="products__item__price__cart">
+									<div class="products__item__price">
+										<div class="products__item__price__normal">376 ₽</div>
+										<div class="products__item__price__sale">523 ₽</div>
+									</div>
+									<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+											<div class="products__item__cart__link__text">В корзину</div>
+											<div class="products__item__cart__link__icon">
+												<svg class="icon icon-product_add_to_cart ">
+													<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+												</svg>
+												<svg class="icon icon-product_in_cart ">
+													<use xlink:href="images/sprites.svg#product_in_cart"></use>
+												</svg>
+											</div></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer"></footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
+		<script src="js/vendor.js?v=1595521504789"></script>
+		<script src="js/main.js?v=1595521504789"></script>
+	</body>
+</html>

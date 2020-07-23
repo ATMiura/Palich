@@ -1,0 +1,254 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Главная'
+
+block content
+
+	section.section-slider
+		.main-slider
+			.main-slider__container
+				.main-slider__wrapper.swiper-container(data-slider-name="main-slider")
+					.swiper-wrapper
+						.swiper-slide.main-slider__slide
+							.main-slider__slide__content
+								.main-slider__slide__title Пирог Осетинский с курицей и грибами
+								.main-slider__slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+								.main-slider__slide__btn
+									a.button(href="") Подробнее
+										+icon('button-arrow')
+
+							.main-slider__slide__img
+								img(src="images/main-slider-img.png").main-slider__slide__img__elem
+
+						.swiper-slide.main-slider__slide
+							.main-slider__slide__content
+								.main-slider__slide__title Пирог Осетинский с курицей и грибами
+								.main-slider__slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+								.main-slider__slide__btn
+									a.button(href="") Подробнее
+										+icon('button-arrow')
+
+							.main-slider__slide__img
+								img(src="images/main-slider-img.png").main-slider__slide__img__elem
+						.swiper-slide.main-slider__slide
+							.main-slider__slide__content
+								.main-slider__slide__title Пирог Осетинский с курицей и грибами
+								.main-slider__slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+								.main-slider__slide__btn
+									a.button(href="") Подробнее
+										+icon('button-arrow')
+
+							.main-slider__slide__img
+								img(src="images/main-slider-img.png").main-slider__slide__img__elem
+						.swiper-slide.main-slider__slide
+							.main-slider__slide__content
+								.main-slider__slide__title Пирог Осетинский с курицей и грибами
+								.main-slider__slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+								.main-slider__slide__btn
+									a.button(href="") Подробнее
+										+icon('button-arrow')
+
+							.main-slider__slide__img
+								img(src="images/main-slider-img.png").main-slider__slide__img__elem
+						.swiper-slide.main-slider__slide
+							.main-slider__slide__content
+								.main-slider__slide__title Пирог Осетинский с курицей и грибами
+								.main-slider__slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+								.main-slider__slide__btn
+									a.button(href="") Подробнее
+										+icon('button-arrow')
+
+							.main-slider__slide__img
+								img(src="images/main-slider-img.png").main-slider__slide__img__elem
+					.options
+						.progress-paging
+							.progress
+								span.index 01
+								.progress-bar
+									.back
+								span.slides 05
+							//.paging
+								button.paging-arrow.prev(type='button')
+									svg
+										use(xlink:href='#angle-left')
+								button.paging-arrow.next(type='button')
+									svg
+										use(xlink:href='#angle-right')
+
+					.swiper-button__wrapper
+						.swiper-button-prev
+						.swiper-button-next
+
+
+	section.products
+		.section-container
+			.section-title-more
+				.section-title
+					h2 Хиты продаж
+				.section-more
+			.products__list
+				.products__item.products__item__size__big
+					.products__item__slider.swiper
+						.swiper-container
+							.swiper-wrapper
+								.swiper-slide.products__item__slide
+									a(href="")
+										img(src="images/products__item__slide__img.jpg").products__item__slide__img
+								.swiper-slide.products__item__slide
+									a(href="")
+										img(src="images/products__item__slide__img.jpg").products__item__slide__img
+							.swiper-button__wrapper
+								.swiper-button-prev
+								.swiper-button-next
+					.products__item__label__wrap
+						.products__item__label.hit
+							+icon('star')
+							| Хит
+						.products__item__label.new Новинка
+						.products__item__label.vegan Vegan
+						.products__item__label.timer
+							+icon('timer')
+							| 90 минут
+						.products__item__label.no-gmo Без ГМО
+						.products__item__label.no-gluten Без глютена
+						.products__item__label.sale - 25%
+					.products__item__info
+						.products__item__name Торт Антреме Шоколадная симфония
+						.products__item__price__cart
+							.products__item__price
+								.products__item__price__normal 376 ₽
+								.products__item__price__sale 523 ₽
+							.products__item__cart
+								a(href="").products__item__cart__link.button.border_radius
+									.products__item__cart__link__text В корзину
+									.products__item__cart__link__icon
+										+icon('product_add_to_cart')
+										+icon('product_in_cart')
+
+				.products__item
+					.products__item__img
+						a(href="")
+							img(src="images/products__item__slide__img_1.jpg").products__item__slide__img
+					.products__item__label__wrap
+						.products__item__label.no-gmo Без ГМО
+					.products__item__info
+						.products__item__name Пельмени с индейкой
+						.products__item__excerpt Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо
+						.products__item__price__cart
+							.products__item__price
+								.products__item__price__normal 376 ₽
+								.products__item__price__sale 523 ₽
+							.products__item__cart
+								a(href="").products__item__cart__link.button.border_radius
+									.products__item__cart__link__text В корзину
+									.products__item__cart__link__icon
+										+icon('product_add_to_cart')
+										+icon('product_in_cart')
+				.products__item
+					.products__item__img
+						a(href="")
+							img(src="images/products__item__slide__img_2.jpg").products__item__slide__img
+					.products__item__label__wrap
+						.products__item__label.hit
+							+icon('star')
+							| Хит
+						.products__item__label.vegan Vegan
+					.products__item__info
+						.products__item__name Торт Прага
+						.products__item__excerpt Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины
+						.products__item__price__cart
+							.products__item__price
+								.products__item__price__normal 376 ₽
+								.products__item__price__sale 523 ₽
+							.products__item__cart
+								a(href="").products__item__cart__link.button.border_radius
+									.products__item__cart__link__text В корзину
+									.products__item__cart__link__icon
+										+icon('product_add_to_cart')
+										+icon('product_in_cart')
+
+				.products__item
+					.products__item__img
+						a(href="")
+							img(src="images/products__item__slide__img_1.jpg").products__item__slide__img
+					.products__item__label__wrap
+						.products__item__label.no-gmo Без ГМО
+					.products__item__info
+						.products__item__name Пельмени с индейкой
+						.products__item__excerpt Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо
+						.products__item__price__cart
+							.products__item__price
+								.products__item__price__normal 376 ₽
+								.products__item__price__sale 523 ₽
+							.products__item__cart
+								a(href="").products__item__cart__link.button.border_radius
+									.products__item__cart__link__text В корзину
+									.products__item__cart__link__icon
+										+icon('product_add_to_cart')
+										+icon('product_in_cart')
+				.products__item
+					.products__item__img
+						a(href="")
+							img(src="images/products__item__slide__img_2.jpg").products__item__slide__img
+					.products__item__label__wrap
+						.products__item__label.hit
+							+icon('star')
+							| Хит
+						.products__item__label.vegan Vegan
+					.products__item__info
+						.products__item__name Торт Прага
+						.products__item__excerpt Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины
+						.products__item__price__cart
+							.products__item__price
+								.products__item__price__normal 376 ₽
+								.products__item__price__sale 523 ₽
+							.products__item__cart
+								a(href="").products__item__cart__link.button.border_radius
+									.products__item__cart__link__text В корзину
+									.products__item__cart__link__icon
+										+icon('product_add_to_cart')
+										+icon('product_in_cart')
+
+				.products__item
+					.products__item__img
+						a(href="")
+							img(src="images/products__item__slide__img_1.jpg").products__item__slide__img
+					.products__item__label__wrap
+						.products__item__label.no-gmo Без ГМО
+					.products__item__info
+						.products__item__name Пельмени с индейкой
+						.products__item__excerpt Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо
+						.products__item__price__cart
+							.products__item__price
+								.products__item__price__normal 376 ₽
+								.products__item__price__sale 523 ₽
+							.products__item__cart
+								a(href="").products__item__cart__link.button.border_radius
+									.products__item__cart__link__text В корзину
+									.products__item__cart__link__icon
+										+icon('product_add_to_cart')
+										+icon('product_in_cart')
+				.products__item
+					.products__item__img
+						a(href="")
+							img(src="images/products__item__slide__img_2.jpg").products__item__slide__img
+					.products__item__label__wrap
+						.products__item__label.hit
+							+icon('star')
+							| Хит
+						.products__item__label.vegan Vegan
+					.products__item__info
+						.products__item__name Торт Прага
+						.products__item__excerpt Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины
+						.products__item__price__cart
+							.products__item__price
+								.products__item__price__normal 376 ₽
+								.products__item__price__sale 523 ₽
+							.products__item__cart
+								a(href="").products__item__cart__link.button.border_radius
+									.products__item__cart__link__text В корзину
+									.products__item__cart__link__icon
+										+icon('product_add_to_cart')
+										+icon('product_in_cart')

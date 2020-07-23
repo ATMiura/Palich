@@ -1,0 +1,76 @@
+header.header
+	.header-top
+		.container
+			.grid-row.no-gutters
+				.grid-col-md-3.grid-col-12
+					.js-tooltip.link-icon(data-tooltip="city")
+						.link-icon__icon
+							+icon('geotag')
+						a(href="").link-icon__text Москва и МО
+				.grid-col-md-5.grid-col-12
+					.header-nav
+						.header-nav__item
+							a(href="#").header-nav__link Магазины
+						.header-nav__item.js-tooltip
+							a(href="#").header-nav__link О компании
+						.header-nav__item
+							a(href="#").header-nav__link Контакты
+				.grid-col-md-4.grid-col-12.d-flex.align-items-center.justify-content-end
+					.header-phone
+						a(href="tel:+7 999 999-99-99").header-phone__link +7 999 999-99-99
+					.js-popup(data-popup-id="callback").link-icon
+						.link-icon__icon
+							+icon('phone')
+						a(href="").link-icon__text Обратый звонок
+
+	.header-middle
+		.container
+			.grid-row.no-gutters
+				.grid-col-md-3.grid-col-12.header-logo
+					img.header-logo__img(src="images/logo.svg")
+				.grid-col-md-9.grid-col-12.d-flex.align-items-center
+					.header-nav
+						mixin header-nav__item(name)
+							.header-nav__item
+								a(href="#").header-nav__link=name
+						+header-nav__item('Замороженные полуфабрикаты')
+						+header-nav__item('Торты')
+						+header-nav__item('Торты на заказ')
+						+header-nav__item('Кондитерские изделия')
+						+header-nav__item('Пироги и выпечка')
+						+header-nav__item('Готовые блюда')
+
+	.header-main
+		.header-nav
+			.header-nav__item.js-tooltip(data-tooltip="catalog")
+				a.header-nav__link(href="") Весь каталог
+					+icon('menu')
+			.header-nav__item
+				a.header-nav__link(href="") Акции %
+
+		.header-search
+			form(action="#").header-search__form.form
+				.form_group
+					label.form_label.d-flex.align-items-center
+						input(type="text" placeholder="Введите название товара, например, \"пельмени\"").header-search__input.form_input
+						.header-search__icon
+							button(type="submit").header-search__button
+								+icon('search')
+		.header-delivery
+			.header-delivery__item
+				.header_delivery__item__icon
+					+icon('delivery-company')
+				.header-delivery__item__text Доставка до 90 мин.
+			.header-delivery__item
+				.header-delivery__item__icon
+					+icon('delivery-self')
+				.header-delivery__item__text Самовывоз %
+		.header-cart
+			.header-cart__counter
+				.header-cart__icon
+					+icon('cart')
+				.header-cart__number 10
+			.header-cart__price 12 450 ₽
+
+
+

@@ -1,0 +1,313 @@
+@media(min-width: 1440px)
+	.container, .container-sm, .container-md, .container-lg, .container-xl
+		max-width: 1200px
+
+
+
+.link-icon
+	display: flex
+	align-items: center
+
+	&__icon
+		margin-right: 6px
+
+	&__text
+		font-size: .875rem
+		line-height: 1
+		color: var(--vinishkotyan)
+		border-bottom: 1px dotted
+
+
+.button
+	border: none
+	outline: none
+	text-decoration: none
+	user-select: none
+	height: 50px
+	font-size: 1rem
+	line-height: 1.313rem
+	font-weight: bold
+	text-align: center
+	cursor: pointer
+	color: #ffffff
+
+	background-color: var(--vinishkotyan)
+	padding: 15px 35px
+
+	&:hover
+		background-color: var(--yellow)
+
+	svg:last-child
+		margin-left: 8px
+	//svg:first-child
+		margin-left: 0
+
+	@media #{$mobile}
+		font-size: 14px
+		height: 50px
+		padding-left: 20px
+		padding-right: 20px
+
+	//&.style_yellow
+		background-color: var(--yellow)
+
+		@media #{$tablet-above}
+			&:hover
+				background-color: var(--badge-yellow)
+
+
+	&.border_radius
+		border-radius: 25px
+
+	//&.size_small
+		height: 40px
+
+	&:disabled
+
+
+//a.button
+	display: inline-block
+
+input::-webkit-contacts-auto-fill-button
+	visibility: hidden
+	pointer-events: none
+	position: absolute
+	right: 0
+
+input::-ms-clear
+	width: 0
+	height: 0
+
+/* секции */
+.section
+	&-container
+		max-width: 1200px
+		margin: 0 auto
+	&-title-more
+		display: flex
+		align-items: center
+		justify-content: space-between
+		//margin-bottom: 25px
+	&-title
+	&-more
+
+
+.field
+	position: relative
+
+	&:not(:last-child)
+		margin-bottom: 10px
+
+.input
+	width: 100%
+	height: 44px
+	color: #1b1e32
+	font-size: 17px
+	background: transparent
+	border: none
+	border-bottom: 1px solid #e7e8e9
+
+.range-control
+	display: flex
+	align-items: center
+	cursor: pointer
+
+	&:not(.is_checked)
+		.range-control__title
+			&:first-child
+				opacity: 1
+
+	&.is_checked
+		.range-control__icon
+			&:before
+				transform: translate3d(30px, 0, 0)
+
+				@media #{$mobile}
+					transform: translate3d(74px, 0, 0)
+
+		.range-control__title
+			&:last-child
+				opacity: 1
+
+	&__icon
+		width: 55px
+		height: 24px
+		border-radius: 12px
+		background-color: #edeef1
+		margin: 0 10px
+		position: relative
+
+		@media #{$mobile}
+			width: 100px
+
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 7px
+			margin: auto
+			width: 12px
+			height: 12px
+			background-color: #33394a
+			border-radius: 50%
+			transition: 300ms ease-out
+
+	&__title
+		color: #3a4051
+		font-size: 16px
+		font-weight: 500
+		opacity: 0.6
+		text-transform: uppercase
+		letter-spacing: 1.6px
+		transition: 300ms ease-out
+
+		@media #{$mobile}
+			font-size: 14px
+			position: relative
+			top: 1px
+
+
+.radio-button
+	position: relative
+	display: inline-block
+
+	&.style_light
+		@media #{$mobile-above}
+			.radio-button__title
+				color: #3a4051
+				font-weight: 500
+				font-size: 16px
+				text-transform: uppercase
+				border-color: #dddfe2
+				letter-spacing: 1px
+
+			input
+				&:checked + .radio-button__title
+					color: #3a4051
+					border-color: #3a4051
+					background: transparent
+
+		@media #{$mobile}
+			margin: 0 10px 10px 0
+
+			.radio-button__title
+				color: #c4c6cb
+				padding: 0
+				min-height: 15px
+				height: auto
+				text-transform: uppercase
+				font-weight: 500
+				border: none
+
+			input
+				&:checked + .radio-button__title
+					color: #3a4051
+					background: transparent
+
+	&__title
+		cursor: pointer
+		height: 40px
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #1b1e32
+		font-size: 15px
+		font-weight: 700
+		padding-left: 25px
+		padding-right: 25px
+		border: 2px solid #3e2068
+		border-radius: 20px
+		transition: 300ms ease-out
+
+	input
+		position: absolute
+		top: 0
+		left: 0
+		width: 0
+		height: 0
+		opacity: 0
+
+		&:checked ~ .radio-button__title
+			color: #fff
+			background: #351a5a
+			border-color: #351a5a
+
+
+.checkbox
+	cursor: pointer
+	color: #1b1e32
+	font-size: 17px
+	font-weight: 400
+	line-height: 18px
+	letter-spacing: 0.5x
+	min-height: 25px
+	display: inline-block
+	padding-left: 40px
+	position: relative
+	user-select: none
+
+	&.style_white
+		.checkbox__title
+			&:before
+				background-color: #fff
+
+	@media #{$mobile-above}
+		transition: 300ms ease-out
+
+	@media #{$mobile}
+		min-height: 21px
+		font-size: 14px
+		padding-left: 30px
+
+	&__title
+		padding-top: 3px
+		display: inline-block
+		transition: 300ms ease-out
+
+		@media #{$mobile}
+			padding-top: 2px
+
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			top: 0
+			width: 25px
+			height: 25px
+			border: 1px solid #ebebec
+			transition: 300ms ease-out
+			border-radius: 2px
+
+			@media #{$mobile}
+				width: 21px
+				height: 21px
+
+		&:after
+			content: ""
+			position: absolute
+			left: 5px
+			top: 7px
+			width: 15px
+			height: 11px
+			background: url('../images/tick.svg') no-repeat
+			background-size: 100%
+			opacity: 0
+			transition: 300ms
+
+			@media #{$mobile}
+				width: 10px
+				height: 7px
+				left: 6px
+
+	input
+		position: absolute
+		top: 0
+		left: 0
+		width: 0
+		height: 0
+		opacity: 0
+
+		&:checked + .checkbox__title
+			&:after
+				opacity: 1

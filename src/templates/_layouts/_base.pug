@@ -1,0 +1,52 @@
+include ../_mixins/_import
+
+block vars
+	-
+		var title = typeof title !== 'undefined' ? title : null
+	-
+		var html = {
+			attrs: {
+				lang: 'ru'
+			},
+			classList: []
+		}
+	-
+		var body = {
+			attrs: {},
+			classList: []
+		}
+	-
+		var cartEmpty = true
+	-
+		var isAuth = false
+
+//if isAuth == true
+//+icon('user')
+//else
+
+doctype html
+html(class=html.classList)&attributes(html.attrs)
+	head
+		meta(charset="utf-8")
+
+		if title !== null
+			title= title
+
+		include ../_parts/_head
+
+	body
+
+		include ../_parts/_header
+
+		main
+			block content
+
+		include ../_parts/_footer
+
+
+
+		block scripts
+			script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+			script(src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript")
+			script(src=`js/vendor.js?v=${Date.now()}`)
+			script(src=`js/main.js?v=${Date.now()}`)
