@@ -1,4 +1,22 @@
 .products
+	&.best-price
+		position: relative
+		padding-top: 2rem
+		&:before
+			content: ""
+			display: block
+			max-width: 1830px
+			width: 100%
+			min-height: 305px
+			margin: 0 auto
+
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			z-index: -1
+
+			background-color: var(--vinishkotyan)
 	&__list
 		display: flex
 		flex-wrap: wrap
@@ -10,7 +28,7 @@
 		width: 100%
 		padding: 0 15px
 		position: relative
-		margin-bottom: 50px
+		padding-bottom: 50px
 		&__size
 			&__big
 				flex-basis: 50%
@@ -56,11 +74,20 @@
 						background-image: url("data:image/svg+xml,%3Csvg width='48' height='16' viewBox='0 0 48 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M47.0508 8.03125C47.0508 8.58353 46.6031 9.03125 46.0508 9.03125H1.05078C0.498497 9.03125 0.0507812 8.58353 0.0507812 8.03125C0.0507812 7.47897 0.498497 7.03125 1.05078 7.03125H46.0508C46.6031 7.03125 47.0508 7.47897 47.0508 8.03125Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.75789 15.7071C8.36736 16.0976 7.7342 16.0976 7.34367 15.7071L0.343675 8.70711C-0.0468486 8.31658 -0.0468485 7.68342 0.343675 7.29289L7.34368 0.292893C7.7342 -0.0976297 8.36737 -0.0976296 8.75789 0.292893C9.14841 0.683417 9.14841 1.31658 8.75789 1.70711L2.465 8L8.75789 14.2929C9.14841 14.6834 9.14841 15.3166 8.75789 15.7071Z' fill='white'/%3E%3C/svg%3E%0A")
 						margin-right: auto
 
+		&__slide
+			&__link,
+			&__img
+				display: block
+				font-size: 0
+				line-height: 0
+
+
 		&__label__wrap
 			position: absolute
 			top: -5px
 			left: 7px
 			z-index: 1
+			display: flex
 		&__label
 			background: #fff
 			padding: 5px 8px
@@ -73,7 +100,7 @@
 				margin-right: 3px
 			&.hit
 				color: #DF4C4C
-			&.new
+			&.novelty
 				color: var(--badge-yellow)
 			&.vegan
 				color: var(--badge-green)
@@ -93,7 +120,7 @@
 			justify-content: space-between
 			flex-direction: column
 		&__name
-			max-width: 180px
+			//max-width: 180px
 			overflow: hidden
 			display: -webkit-box
 			-webkit-line-clamp: 2
@@ -112,6 +139,9 @@
 			opacity: 0.8
 			margin-bottom: 15px
 
+			min-height: 55px
+			max-height: 55px
+
 			overflow: hidden
 			display: -webkit-box
 			-webkit-line-clamp: 3
@@ -129,10 +159,16 @@
 				font-size: 1.25rem
 				line-height: 1.5rem
 				color: var(--vinishkotyan)
+				&:last-child
+					color: var(--black)
 			&__sale
 				font-size: 0.875rem
 				line-height: 1.063rem
+				color: var(--black)
 				margin-left: 8px
+				text-decoration: line-through
+				&:first-child
+					margin-left: 0
 		&__cart
 			&__link
 				padding: 0 8.5px 2px 8.5px
@@ -162,5 +198,6 @@
 					.icon-product_add_to_cart
 						fill: var(--yellow)
 				&.in-cart
+
 
 

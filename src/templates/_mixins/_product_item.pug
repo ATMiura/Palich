@@ -1,0 +1,54 @@
+mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', price_sale='523 ₽')
+	- var label = ['hit','novetly','vegan','timer','no_gmo','no_glutten','sale']
+	.products__item
+		.products__item__img
+			a(href="").products__item__slide__link
+				img(src="images/" + img + ".jpg").products__item__slide__img
+		.products__item__label__wrap
+			.products__item__label.hit
+				+icon('star')
+				| Хит
+		//if label
+			.products__item__label__wrap
+				//if label[]=='hit'
+					.products__item__label.hit
+						+icon('star')
+						| Хит
+				//if label[]=='novelty
+					.products__item__label.novelty Новинка
+				//if label['vegan']
+					.products__item__label.vegan Vegan
+				//if label['timer']
+					.products__item__label.timer
+						+icon('timer')
+						| 90 минут
+				//if label==no_gmo
+					.products__item__label.no-gmo Без ГМО
+				//if label==no_gluten
+					.products__item__label.no-gluten Без глютена
+				//if label==sale
+					.products__item__label.sale - 25%
+		//else
+		.products__item__info
+			.products__item__name=name
+			.products__item__excerpt=excerpt
+			.products__item__price__cart
+				.products__item__price
+					if sale == true
+						.products__item__price__normal=price_normal
+						.products__item__price__sale=price_sale
+					else
+						.products__item__price__normal=price_normal
+				.products__item__cart
+					if in_cart == true
+						a(href="").products__item__cart__link.button.border_radius.in-cart
+							.products__item__cart__link__text В корзину
+							.products__item__cart__link__icon
+								+icon('product_add_to_cart')
+								+icon('product_in_cart')
+					else
+						a(href="").products__item__cart__link.button.border_radius
+							.products__item__cart__link__text В корзину
+							.products__item__cart__link__icon
+								+icon('product_add_to_cart')
+								+icon('product_in_cart')
