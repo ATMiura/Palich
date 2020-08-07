@@ -6,12 +6,16 @@
 .header-nav
 	display: flex
 	align-items: center
+	margin-right: 5.7%
+	margin-left: 20.6%
 	&__item
-		font-size: .875rem
-		line-height: 1.063rem
-		margin-right: 45px
+		margin-right: 37px
 		&:last-child
 			margin-right: 0
+		&__link
+			font-size: .875rem
+			font-weight: bold
+			line-height: 1.063rem
 
 
 .header-logo
@@ -19,27 +23,39 @@
 		max-width: 100%
 		height: auto
 
-.header-phone
-	margin-right: 30px
-
-	font-size: 1rem
-	line-height: 120%
-	font-weight: bold
-	color: var(--black)
-
-.header-delivery
-	display: flex
+.header-link
+	&__list
+		display: flex
+		margin-right: 2.5%
 	&__item
-		display: inline-flex
+		&:not(:last-child)
+			margin-right: 25px
+
+.header-phone
+	&__list
+		display: flex
 		align-items: center
-		margin-right: 20px
-		&__icon
-			margin-right: 6px
-		&__text
+
+	&__item
+		&:not(:last-child)
+			margin-right: 18px
+		&__label
+			font-size: 0.625rem
+			line-height: 0.813rem
+			display: flex
+			align-items: center
+			color: var(--grey-text)
+		&__link
 			font-size: 0.813rem
+			line-height: 1rem
 			font-weight: bold
-			line-height: 1.063rem
-			color: var(--white)
+			color: var(--black)
+
+.header-burger
+	margin-right: 20px
+
+.header-logo
+	margin-right: 40px
 
 .header-search
 	max-width: 355px
@@ -47,12 +63,28 @@
 	margin-right: 45px
 	&__input
 		padding-right: 35px
+		border-radius: 25px
+		height: 35px !important
 	&__button
 		background-color: var(--white)
 		box-shadow: none
 		cursor: pointer
 	&__icon
 		margin-left: -25px
+
+.header-bar
+	display: flex
+	&__item
+		display: inline-flex
+		align-items: center
+		margin-right: 20px
+		&__icon
+			margin-right: 6px
+		&__link
+			font-size: 1rem
+			font-weight: bold
+			line-height: 1.188rem
+			color: var(--white)
 
 .header-cart
 	display: flex
@@ -90,15 +122,19 @@
 
 .header-top
 	background-color: #FAFBFD
-	height: 50px
+	position: relative
+	max-width: 1200px
+	margin: 0 auto
 	display: flex
-	align-items: center
+	align-items: flex-end
+	padding-top: 15px
+	padding-bottom: 12px
 
 	.header-nav
 		&__item
 			color: var(--black)
 
-.header-middle
+//.header-middle
 	padding-top: 17px
 	padding-bottom: 21px
 	.header-nav

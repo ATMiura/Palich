@@ -1,0 +1,81 @@
+/* секции */
+.section
+	&-container
+		max-width: 1200px
+		margin: 0 auto
+	&-header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-bottom: 35px
+		//margin-bottom: 25px
+	&-title
+		h2
+			margin-bottom: 0 !important
+
+	&-more
+		&__link
+			font-weight: bold
+			font-size: .875rem
+			line-height: 1.063rem
+			color: var(--vinishkotyan)
+			svg
+				margin-left: 8px
+	&-content
+		width: 100%
+	&-slider
+	&.best-price
+		.section-title h2,
+		.section-more__link
+			color: var(--white)
+		.section-more__link .icon-arrow-more
+			fill: var(--white)
+
+	&-subscribe
+		margin-bottom: 110px
+		.section-content
+			background-color: var(--vinishkotyan)
+			padding: 50px 90px 50px 100px
+			color: var(--white)
+
+			display: flex
+			justify-content: space-between
+
+
+		.section__col
+			max-width: 400px
+			width: 100%
+			@media #{$mobile-above}
+				padding-right: 15px
+			.h1
+				color: var(--white)
+				line-height: 1
+				margin-bottom: 18px
+
+		.section__form
+			max-width: 550px
+			width: 100%
+			.subscribe_label
+				display: flex
+			.subscribe_inp
+				@media #{$mobile-above}
+					margin-right: 20px
+
+			.subscribe_btn
+				max-width: 185px
+				min-width: 175px
+
+	&-advant
+		margin-bottom: 110px
+
+	&-shops
+		margin-bottom: 110px
+		.section-title
+			.link-icon__text
+				font-size: inherit
+				line-height: inherit
+				color: var(--vinishkotyan)
+				border-bottom: 2px dotted
+
+	&-news
+		margin-bottom: 110px

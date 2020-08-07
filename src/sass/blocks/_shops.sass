@@ -1,0 +1,59 @@
+.shops
+	&-search
+		margin-right: 30px
+		max-width: 360px
+		width: 100%
+	&-nav
+		padding: 15px 30px
+		background-color: var(--vinishkotyan)
+		display: flex
+		align-items: center
+		&__item
+			display: flex
+			align-items: flex-end
+			&:not(:last-child)
+				margin-right: 20px
+		&__icon
+			margin-right: 5px
+			svg
+				fill: white
+		&__text
+			font-size: 1rem
+			line-height: 1.313rem
+			color: #fff
+	&-content
+	&-list
+		max-height: 650px
+		overflow-y: auto
+		&-item
+			display: flex
+			align-items: center
+			padding: 33px 0
+			&:not(:last-child)
+				border-bottom: 1px solid var(--light-grey)
+			&__el
+				display: inline-flex
+				align-items: center
+				font-size: 1.125rem
+				color: var(--black)
+				@media #{$mobile-above}
+					padding-right: 15px
+			&__address
+				flex-direction: column
+				align-items: flex-start
+				&__text
+					line-height: 1.438rem
+					letter-spacing: 0.01em
+					margin-bottom: 3px
+				&__type
+					font-size: 1rem
+					line-height: 1
+					color: var(--color-grey)
+			&__time
+				&__icon
+					margin-right: 6px
+			&__tel
+				&__icon
+					margin-right: 3px
+				&__text
+

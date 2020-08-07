@@ -12,13 +12,25 @@ $(document).ready(function () {
 		//console.log(data_slider_name);
 		var $slides = $(this).find('[data-slider-name="'+data_slider_name+'"] .swiper-slide');
 
-		if (data_slider_name=="stock-slider"){
+		var $slides_no_dublicate = $slides.not('.swiper-slide-duplicate').length;
+		//console.log($slides_no_dublicate);
+
+		var $loop;
+
+		if($slides_no_dublicate > 1){
+			$loop = true;
+		} else {
+			$loop = false;
+		}
+
+		if (data_slider_name=="slider-stock"){
 			var heroSwiper = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
 				effect: "slide",
 				speed: 250,
-				slidesPerView:'auto',
-				spaceBetween: 0,
-				loop: true,
+				slidesPerView: 'auto',
+				spaceBetween: 70,
+				loop: $loop,
+				//loopedSlides: $slides_no_dublicate,
 				autoplay: {
 					delay: 5000,
 				},
@@ -26,6 +38,17 @@ $(document).ready(function () {
 				navigation: {
 					nextEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-next',
 					prevEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-prev'
+				},
+				breakpoints: {
+
+				},
+				on: {
+					init: function() {
+						checkArrow();
+					},
+					resize: function () {
+						checkArrow();
+					}
 				}
 			});
 		} else {
@@ -33,8 +56,9 @@ $(document).ready(function () {
 			var heroSwiper = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
 				effect: "slide",
 				speed: 250,
-				spaceBetween: 0,
+				spaceBetween: 70,
 				loop: true,
+				//loopedSlides: $slides_no_dublicate,
 				autoplay: {
 					delay: 5000,
 				},
@@ -42,11 +66,12 @@ $(document).ready(function () {
 				navigation: {
 					nextEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-next',
 					prevEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-prev'
-				}
+				},
+
 			});
 		}
 
-		var $progress = $('[data-slider-name="'+data_slider_name+'"] .progress'),
+		var $progress = $('[data-slider-name="'+data_slider_name+'"] + .options .progress'),
 			$progressIndex = $progress.find("span.index"),
 			$progressSlides = $progress.find("span.slides"),
 			$progressBar = $progress.find(".progress-bar .back");
@@ -71,9 +96,21 @@ $(document).ready(function () {
 			$progressIndex.text(progressIndex);
 			$progressBar.css("width", progress + "%");
 		});
+
+		function checkArrow() {
+			var swiperPrev = $('[data-slider-name="'+data_slider_name+'"] .swiper-button-prev');
+			var swiperNext = $('[data-slider-name="'+data_slider_name+'"] .swiper-button-next');
+			if($slides_no_dublicate > 1){
+				swiperPrev.show();
+				swiperNext.show();
+				$('options').show();
+			} else {
+				swiperPrev.hide();
+				swiperNext.hide();
+				$('[data-slider-name="'+data_slider_name+'"] .options').hide();
+			}
+		}
 	});
-
-
 
 
 	/* в списке товаров */
@@ -86,6 +123,21 @@ $(document).ready(function () {
 		navigation: {
 			nextEl: '.products__list .swiper-button-next',
 			prevEl: '.products__list .swiper-button-prev',
+		},
+	});
+
+	/* где еще купить продукци "У Палыча" */
+	var slider_web = new Swiper('.slider-web .swiper-container', {
+		observer: true,
+		observeParents: true,
+		speed: 400,
+		slidesPerView: 5,
+		spaceBetween: 80,
+		//spaceBetween: 10,
+		loop: true,
+		navigation: {
+			nextEl: '.slider-web .swiper-button-next',
+			prevEl: '.slider-web .swiper-button-prev',
 		},
 	});
 

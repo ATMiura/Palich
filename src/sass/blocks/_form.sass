@@ -1,12 +1,55 @@
 .form
+	&_row
+		display: flex
+		&:not(:last-child)
+			margin-bottom: 15px
 	&_group
+		width: 100%
 	&_label
+		display: inline-flex
+		align-items: center
+		position: relative
+		width: 100%
+
 	&_input
 		background-color: var(--white)
-		height: 35px
+		height: 50px
 		width: 100%
 		padding: 6px 15px 8px
 		&::placeholder
 			font-size: 0.813rem
 			line-height: 170%
 			color: var(--gryaz-grey)
+
+.checkbox,
+.radio
+	&__label
+	&__input
+		display: none
+	&__emulator
+		cursor: pointer
+		&:before
+			content: ""
+			display: block
+			width: 19px
+			height: 19px
+			background-color: var(--white)
+			background-repeat: no-repeat
+			background-position: center center
+	&__text
+
+.checkbox
+	&__text
+		font-size: 0.875rem
+		line-height: 1.5rem
+		margin-left: 10px
+		a
+			color: var(--yellow)
+			text-decoration: underline
+
+
+
+.checkbox__input:checked+.checkbox__emulator:before
+	background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.349609 3.75325L1.75103 2.32635L3.95941 4.4953L8.34961 0.183492L9.75103 1.61039L3.95941 7.29858L0.349609 3.75325Z' fill='black'/%3E%3C/svg%3E%0A")
+
+.radio__input:checked+.checkbox__emulator

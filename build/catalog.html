@@ -27,73 +27,64 @@
 		<meta name="msapplication-square150x150logo" content="images/favicon/mstile-150x150.png">
 		<meta name="msapplication-wide310x150logo" content="images/favicon/mstile-310x150.png">
 		<meta name="msapplication-square310x310logo" content="images/favicon/mstile-310x310.png">
-		<link rel="stylesheet" href="css/grid.css" type="text/css">
+		<!--link(rel="stylesheet" href="css/grid.css" type='text/css')-->
 		<link rel="stylesheet" href="css/main.css" type="text/css">
 	</head>
 	<body>
 		<header class="header">
 			<div class="header-top">
-				<div class="container">
-					<div class="grid-row no-gutters">
-						<div class="grid-col-md-3 grid-col-12">
-							<div class="js-tooltip link-icon" data-tooltip="city">
-								<div class="link-icon__icon">
-									<svg class="icon icon-geotag ">
-										<use xlink:href="images/sprites.svg#geotag"></use>
-									</svg>
-								</div><a class="link-icon__text" href="">Москва и МО</a>
-							</div>
+				<div class="link-icon" data-tooltip="city">
+					<div class="link-icon__icon">
+						<svg class="icon icon-geotag ">
+							<use xlink:href="images/sprites.svg#geotag"></use>
+						</svg>
+					</div><a class="link-icon__text" href="">Москва и МО</a>
+				</div>
+				<div class="header-nav">
+					<div class="header-nav__item js-tooltip"><a class="header-nav__item__link" href="#">О компании</a></div>
+					<div class="header-nav__item"><a class="header-nav__item__link" href="#">Магазины</a></div>
+					<div class="header-nav__item"><a class="header-nav__item__link" href="#">Контакты</a></div>
+				</div>
+				<div class="header-link__list">
+					<div class="header-link__item">
+						<div class="js-popup link-icon" data-popup-id="callback">
+							<div class="link-icon__icon">
+								<svg class="icon icon-mail ">
+									<use xlink:href="images/sprites.svg#mail"></use>
+								</svg>
+							</div><a class="link-icon__text" href="">Письмо Палычу</a>
 						</div>
-						<div class="grid-col-md-5 grid-col-12">
-							<div class="header-nav">
-								<div class="header-nav__item"><a class="header-nav__link" href="#">Магазины</a></div>
-								<div class="header-nav__item js-tooltip"><a class="header-nav__link" href="#">О компании</a></div>
-								<div class="header-nav__item"><a class="header-nav__link" href="#">Контакты</a></div>
-							</div>
-						</div>
-						<div class="grid-col-md-4 grid-col-12 d-flex align-items-center justify-content-end">
-							<div class="header-phone"><a class="header-phone__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a></div>
-							<div class="js-popup link-icon" data-popup-id="callback">
-								<div class="link-icon__icon">
-									<svg class="icon icon-phone ">
-										<use xlink:href="images/sprites.svg#phone"></use>
-									</svg>
-								</div><a class="link-icon__text" href="">Обратый звонок</a>
-							</div>
+					</div>
+					<div class="header-link__item">
+						<div class="js-popup link-icon" data-popup-id="callback">
+							<div class="link-icon__icon">
+								<svg class="icon icon-phone ">
+									<use xlink:href="images/sprites.svg#phone"></use>
+								</svg>
+							</div><a class="link-icon__text" href="">Обратый звонок</a>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="header-middle">
-				<div class="container">
-					<div class="grid-row no-gutters">
-						<div class="grid-col-md-3 grid-col-12 header-logo"><img class="header-logo__img" src="images/logo.svg"></div>
-						<div class="grid-col-md-9 grid-col-12 d-flex align-items-center">
-							<div class="header-nav">
-																<div class="header-nav__item"><a class="header-nav__link" href="#">Замороженные полуфабрикаты</a></div>
-																<div class="header-nav__item"><a class="header-nav__link" href="#">Торты</a></div>
-																<div class="header-nav__item"><a class="header-nav__link" href="#">Торты на заказ</a></div>
-																<div class="header-nav__item"><a class="header-nav__link" href="#">Кондитерские изделия</a></div>
-																<div class="header-nav__item"><a class="header-nav__link" href="#">Пироги и выпечка</a></div>
-																<div class="header-nav__item"><a class="header-nav__link" href="#">Готовые блюда</a></div>
-							</div>
-						</div>
+				<div class="header-phone__list">
+					<div class="header-phone__item">
+						<div class="header-phone__item__label">Горячая линия</div><a class="header-phone__item__link" href="tel:8 (800) 555-81-63">8 (800) 555-81-63</a>
+					</div>
+					<div class="header-phone__item">
+						<div class="header-phone__item__label">Интернет-магазин</div><a class="header-phone__item__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a>
 					</div>
 				</div>
 			</div>
 			<div class="header-main">
-				<div class="header-nav">
-					<div class="header-nav__item js-tooltip" data-tooltip="catalog"><a class="header-nav__link" href="">Весь каталог
-							<svg class="icon icon-menu ">
-								<use xlink:href="images/sprites.svg#menu"></use>
-							</svg></a></div>
-					<div class="header-nav__item"><a class="header-nav__link" href="">Акции %</a></div>
-				</div>
+				<div class="header-burger js-tooltip" data-tooltip="catalog"><a class="header-nav__link" href="">
+						<svg class="icon icon-menu ">
+							<use xlink:href="images/sprites.svg#menu"></use>
+						</svg></a></div>
+				<div class="header-logo"><img class="header-logo__img" src="images/logo-with-text.svg"></div>
 				<div class="header-search">
-					<form class="header-search__form form" action="#">
+					<form class="header-search__form form" action="">
 						<div class="form_group">
-							<label class="form_label d-flex align-items-center">
-								<input class="header-search__input form_input" type="text" placeholder="Введите название товара, например, &quot;пельмени&quot;">
+							<label class="form_label">
+								<input class="header-search__input form_input" type="text" placeholder="Введите название товара">
 								<div class="header-search__icon">
 									<button class="header-search__button" type="submit">
 										<svg class="icon icon-search ">
@@ -105,22 +96,20 @@
 						</div>
 					</form>
 				</div>
-				<div class="header-delivery">
-					<div class="header-delivery__item">
-						<div class="header_delivery__item__icon">
+				<div class="header-bar">
+					<div class="header-bar__item">
+						<div class="header-bar__item__icon">
+							<svg class="icon icon-percentage ">
+								<use xlink:href="images/sprites.svg#percentage"></use>
+							</svg>
+						</div><a class="header-bar__item__link" href="">Акции</a>
+					</div>
+					<div class="header-bar__item">
+						<div class="header-bar__item__icon">
 							<svg class="icon icon-delivery-company ">
 								<use xlink:href="images/sprites.svg#delivery-company"></use>
 							</svg>
-						</div>
-						<div class="header-delivery__item__text">Доставка до 90 мин.</div>
-					</div>
-					<div class="header-delivery__item">
-						<div class="header-delivery__item__icon">
-							<svg class="icon icon-delivery-self ">
-								<use xlink:href="images/sprites.svg#delivery-self"></use>
-							</svg>
-						</div>
-						<div class="header-delivery__item__text">Самовывоз %</div>
+						</div><a class="header-bar__item__link" href="">Доставка до 90 мин.</a>
 					</div>
 				</div>
 				<div class="header-cart">
@@ -141,7 +130,7 @@
 		<footer class="footer"></footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1595854802408"></script>
-		<script src="js/main.js?v=1595854802408"></script>
+		<script src="js/vendor.js?v=1596811552914"></script>
+		<script src="js/main.js?v=1596811552914"></script>
 	</body>
 </html>
