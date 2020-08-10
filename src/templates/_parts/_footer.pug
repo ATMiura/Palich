@@ -1,2 +1,83 @@
 footer.footer
+	.footer-top
+		.footer-left
+			.footer-nav(data-footer-menu="main")
+				.footer-heading У Палыча
+				.footer-nav__list
+					mixin footer-nav__item(item_text)
+						.footer-nav__item
+							a.footer-nav__link(href="")=item_text
+					+footer-nav__item('О компании')
+					+footer-nav__item('История успеха')
+					+footer-nav__item('Обучение')
+					+footer-nav__item('Наши магазины')
+					+footer-nav__item('Акции')
+					+footer-nav__item('Новости')
+					+footer-nav__item('Статьи')
+					+footer-nav__item('Контакты')
+			.footer-nav(data-footer-menu="catalog")
+				.footer-heading Каталог
+				.footer-nav__list
+					+footer-nav__item('Торты')
+					+footer-nav__item('Кондитерские изделия')
+					+footer-nav__item('Пироги и выпечка')
+					+footer-nav__item('Готовые блюда')
+					+footer-nav__item('Блинчики')
+					+footer-nav__item('Сыры')
+					+footer-nav__item('Замороженные полуфабрикаты')
+					+footer-nav__item('Шоколадные изделия')
+					+footer-nav__item('Салаты. Заливные')
+					+footer-nav__item('Мясная гастрономия')
+					+footer-nav__item('Мороженое')
+					+footer-nav__item('Напитки')
+					+footer-nav__item('Японская кухня')
+					+footer-nav__item('Буррито')
+					+footer-nav__item('Каши и мюсли')
+					+footer-nav__item('Кофе')
+					+footer-nav__item('Масло сливочное')
+					+footer-nav__item('Пицца')
+		.footer-right
+			.footer-contact
+				form.form.form-subscribe
+					.footer-heading Подписаться на рассылку
+					.form_row
+						.form_group
+							label.form_label.subscribe_label
+								input.form_input.subscribe_inp(type="email", name="subscribe_input_email", id="subscribe_input_email", placeholder="E-mail")
+								input.form_input.button.button__arrow.subscribe_btn(type="submit", value="")
+
+					.form_row
+						.form_group
+							label.form_label.checkbox__label
+								input.checkbox__input(type="checkbox", name="subscribe_checkbox", id="subscribe_checkbox", checked="checked")
+								.checkbox__emulator
+								.checkbox__text
+									span Даю согласие на обработку
+									|
+									a(href="", target="_blank") персональных данных
+
+				a.footer-contact__tel(href="tel:+7 999 999 99 99 ") +7 999 999 99 99
+				a(href="").link-icon.footer-contact__link
+					.link-icon__icon
+						+icon('phone')
+					.link-icon__text Позвоните нам
+				a(href="").link-icon.footer-contact__link
+					.link-icon__icon
+						+icon('mail')
+					.link-icon__text Письмо Палычу
+
+
+	.footer-bottom
+		.footer-copy © У Палыча, 2020 год, все права защищены
+		.footer-policy
+			a.footer-policy__link(href="") Политика конфиденциальности
+			a.footer-policy__link(href="") Пользовательское соглашение
+		.footer-social
+			.footer-social__text Социальные сети
+			.footer-social__elem
+				a(href="").footer-social__link
+					+icon('social-inst')
+			.footer-social__elem
+				a(href="").footer-social__link
+					+icon('social-vk')
 

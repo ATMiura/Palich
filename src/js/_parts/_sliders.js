@@ -9,6 +9,7 @@ $(document).ready(function () {
 	$('.section-slider').each(function () {
 		//var $hero = $(this),
 		var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+		console.log(data_slider_name);
 		//console.log(data_slider_name);
 		var $slides = $(this).find('[data-slider-name="'+data_slider_name+'"] .swiper-slide');
 
@@ -114,7 +115,7 @@ $(document).ready(function () {
 
 
 	/* в списке товаров */
-	var products_list_big = new Swiper('.products__list .swiper-container', {
+	var products_list_big = new Swiper('.products__item__slider .swiper-container', {
 		observer: true,
 		observeParents: true,
 		speed: 400,
@@ -128,12 +129,13 @@ $(document).ready(function () {
 
 	/* где еще купить продукци "У Палыча" */
 	var slider_web = new Swiper('.slider-web .swiper-container', {
-		observer: true,
-		observeParents: true,
+		effect: "slide",
+		observer: false,
+		observeParents: false,
 		speed: 400,
-		slidesPerView: 5,
-		spaceBetween: 80,
-		//spaceBetween: 10,
+		slidesPerView: 'auto',
+		loopedSlides: 5,
+		spaceBetween: 70,
 		loop: true,
 		navigation: {
 			nextEl: '.slider-web .swiper-button-next',

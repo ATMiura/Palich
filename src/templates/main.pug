@@ -218,14 +218,15 @@ block content
 									input.form_input.subscribe_inp(type="email", name="subscribe_input_email", id="subscribe_input_email", placeholder="E-mail")
 									input.form_input.button.button__arrow.button__color__yellow.subscribe_btn(type="submit", value="Подписаться")
 
-						.form_group
-							label.form_label.checkbox__label
-								input.checkbox__input(type="checkbox", name="subscribe_checkbox", id="subscribe_checkbox", checked="checked")
-								.checkbox__emulator
-								.checkbox__text
-									span Даю согласие на обработку
-									|
-									a(href="", target="_blank") персональных данных
+						.form_row
+							.form_group
+								label.form_label.checkbox__label
+									input.checkbox__input(type="checkbox", name="subscribe_checkbox", id="subscribe_checkbox", checked="checked")
+									.checkbox__emulator
+									.checkbox__text
+										span Даю согласие на обработку
+										|
+										a(href="", target="_blank") персональных данных
 
 
 	section.section.section-advant
@@ -335,7 +336,7 @@ block content
 					.swiper-button-prev
 			.section-content
 				.slider
-					.swiper-container(data-slider-name="slider-web")
+					.swiper-container
 						.swiper-wrapper
 							.swiper-slide
 								img(src="images/image25.png")
@@ -378,6 +379,21 @@ block content
 							h3.news-item__name Праздник светлой пасхи
 							.news-item__excerpt Великий пост подходит к концу, и близится светлый праздник Пасхи! Наша компания «У Пылача» предлагает вниманию...
 							.news-item__date 14 апреля
+
+	section.section.section-descr
+		.section-container
+			.section-content
+				.descr
+					.descr__img
+						img(src="images/descr-img-main.jpg")
+					.descr__text
+						h2 Торговая марка «У Палыча»
+						p Наше видение торговой марки заключается в завоевании лидерской позиции в производстве высоко- качественных продуктов питания, поддержании имиджа надежной, честной компании, которая во главу всех своих приоритетов ставит удовлетворение потребностей покупателя во вкусной и здоровой пище и дает гарантию качества на каждое изделие под ТМ «У Палыча».
+						P &nbsp;
+						p
+							b Мы будем прикладывать к этому все силы и ресурсы!
+					.descr__bg
+
 
 
 

@@ -1,0 +1,36 @@
+/* описание */
+.descr
+	display: flex
+	align-items: center
+	position: relative
+	min-height: 458px
+	&__img
+		margin-right: 100px
+		position: relative
+		z-index: 2
+		img
+			font-size: 0
+			line-height: 0
+			display: block
+	&__text
+		position: relative
+		padding-right: 110px
+		position: relative
+		z-index: 2
+		//&:after
+			content: ""
+			position: absolute
+			max-height: 458px
+			height: 100%
+			right: 0
+			top: 50%
+			transform: translate(50%,50%)
+	&__bg
+		position: absolute
+		height: 100%
+		max-width: 893px
+		width: 100%
+		right: 0
+		//top: 0
+		background-color: var(--light-pink)
+		z-index: -1

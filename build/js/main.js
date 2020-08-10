@@ -189,7 +189,8 @@ $(document).ready(function () {
   //}
   $('.section-slider').each(function () {
     //var $hero = $(this),
-    var data_slider_name = $(this).find('.swiper-container').data('slider-name'); //console.log(data_slider_name);
+    var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+    console.log(data_slider_name); //console.log(data_slider_name);
 
     var $slides = $(this).find('[data-slider-name="' + data_slider_name + '"] .swiper-slide');
     var $slides_no_dublicate = $slides.not('.swiper-slide-duplicate').length; //console.log($slides_no_dublicate);
@@ -287,7 +288,7 @@ $(document).ready(function () {
   });
   /* в списке товаров */
 
-  var products_list_big = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.products__list .swiper-container', {
+  var products_list_big = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.products__item__slider .swiper-container', {
     observer: true,
     observeParents: true,
     speed: 400,
@@ -301,12 +302,13 @@ $(document).ready(function () {
   /* где еще купить продукци "У Палыча" */
 
   var slider_web = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-web .swiper-container', {
-    observer: true,
-    observeParents: true,
+    effect: "slide",
+    observer: false,
+    observeParents: false,
     speed: 400,
-    slidesPerView: 5,
-    spaceBetween: 80,
-    //spaceBetween: 10,
+    slidesPerView: 'auto',
+    loopedSlides: 5,
+    spaceBetween: 70,
     loop: true,
     navigation: {
       nextEl: '.slider-web .swiper-button-next',

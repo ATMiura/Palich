@@ -75,7 +75,8 @@
 .icon-mail{
 	width: 16px;
 	height: 14px;
-	stroke: var(--vinishkotyan);
+	//stroke: var(--vinishkotyan);
+	fill: var(--vinishkotyan);
 }
 .icon-advant-icon-1{
 	width: 63px;
@@ -104,4 +105,14 @@
 .icon-tel{
 	width: 15px;
 	height: 14px;
+}
+.icon-social-inst{
+	width: 33px;
+	height: 33px;
+	fill: #fff;
+}
+.icon-social-vk{
+	width: 33px;
+	height: 33px;
+	fill: #fff;
 }
