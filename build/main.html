@@ -33,95 +33,986 @@
 	<body>
 		<header class="header">
 			<div class="header-top">
-				<div class="link-icon" data-tooltip="city">
-					<div class="link-icon__icon">
-						<svg class="icon icon-geotag ">
-							<use xlink:href="images/sprites.svg#geotag"></use>
-						</svg>
-					</div><a class="link-icon__text" href="">Москва и МО</a>
-				</div>
-				<div class="header-nav">
-					<div class="header-nav__item js-tooltip"><a class="header-nav__item__link" href="#">О компании</a></div>
-					<div class="header-nav__item"><a class="header-nav__item__link" href="#">Магазины</a></div>
-					<div class="header-nav__item"><a class="header-nav__item__link" href="#">Контакты</a></div>
-				</div>
-				<div class="header-link__list">
-					<div class="header-link__item">
-						<div class="link-icon">
-							<div class="link-icon__icon">
-								<svg class="icon icon-mail ">
-									<use xlink:href="images/sprites.svg#mail"></use>
-								</svg>
-							</div><a class="link-icon__text" href="">Письмо Палычу</a>
+				<div class="grid-container">
+					<div class="link-icon dropdown">
+						<div class="link-icon__icon">
+							<svg class="icon icon-geotag ">
+								<use xlink:href="images/sprites.svg#geotag"></use>
+							</svg>
+						</div><a class="link-icon__text" href="">Москва и МО</a>
+						<div class="dropdown-block">
+							<div class="dropdown-block__inner">
+								<div class="dropdown-city">
+									<div class="dropdown__heading">Ваш город</div>
+									<form class="dropdown-form">
+										<div class="form_row">
+											<div class="form_group">
+												<label class="form_label">
+													<input class="form_input dropdown-form-search__input" type="text" placeholder="Начните писать город">
+													<div class="dropdown-form-search__icon">
+														<button class="dropdown-form-search__submit" type="submit">
+															<svg class="icon icon-dropdown-input-search ">
+																<use xlink:href="images/sprites.svg#dropdown-input-search"></use>
+															</svg>
+														</button>
+													</div>
+												</label>
+											</div>
+										</div>
+										<div class="form_row dropdown-form-result">
+											<div class="dropdown-form-result__item"><a class="dropdown-form-result__item" href="#"> Москва и область</a></div>
+											<div class="dropdown-form-result__item">Курск</div>
+											<div class="dropdown-form-result__item">Санкт-Петербург и область</div>
+											<div class="dropdown-form-result__item">Липецк</div>
+											<div class="dropdown-form-result__item">Белгород</div>
+											<div class="dropdown-form-result__item">Нижний Новгород</div>
+											<div class="dropdown-form-result__item">Великий Новгород</div>
+											<div class="dropdown-form-result__item">Рязань</div>
+											<div class="dropdown-form-result__item">Владимир</div>
+											<div class="dropdown-form-result__item">Тверь</div>
+											<div class="dropdown-form-result__item">Воронеж</div>
+											<div class="dropdown-form-result__item">Тула</div>
+											<div class="dropdown-form-result__item">Иваново</div>
+											<div class="dropdown-form-result__item">Ярославль</div>
+											<div class="dropdown-form-result__item">Калуга</div>
+										</div>
+									</form>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="header-link__item">
-						<div class="js-popup link-icon" data-popup-id="callback">
-							<div class="link-icon__icon">
-								<svg class="icon icon-phone ">
-									<use xlink:href="images/sprites.svg#phone"></use>
-								</svg>
-							</div><a class="link-icon__text" href="">Обратый звонок</a>
+					<div class="header-nav">
+						<div class="header-nav__item dropdown"><a class="header-nav__item__link" href="#">О компании</a></div>
+						<div class="header-nav__item"><a class="header-nav__item__link" href="#">Магазины</a></div>
+						<div class="header-nav__item"><a class="header-nav__item__link" href="#">Контакты</a></div>
+					</div>
+					<div class="header-link__list">
+						<div class="header-link__item">
+							<div class="link-icon">
+								<div class="link-icon__icon">
+									<svg class="icon icon-mail ">
+										<use xlink:href="images/sprites.svg#mail"></use>
+									</svg>
+								</div><a class="link-icon__text" href="">Письмо Палычу</a>
+							</div>
+						</div>
+						<div class="header-link__item">
+							<div class="js-popup link-icon" data-popup-id="callback">
+								<div class="link-icon__icon">
+									<svg class="icon icon-phone ">
+										<use xlink:href="images/sprites.svg#phone"></use>
+									</svg>
+								</div><a class="link-icon__text" href="">Обратый звонок</a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="header-phone__list">
-					<div class="header-phone__item">
-						<div class="header-phone__item__label">Горячая линия</div><a class="header-phone__item__link" href="tel:8 (800) 555-81-63">8 (800) 555-81-63</a>
-					</div>
-					<div class="header-phone__item">
-						<div class="header-phone__item__label">Интернет-магазин</div><a class="header-phone__item__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a>
+					<div class="header-phone__list">
+						<div class="header-phone__item">
+							<div class="header-phone__item__label">Горячая линия</div><a class="header-phone__item__link" href="tel:8 (800) 555-81-63">8 (800) 555-81-63</a>
+						</div>
+						<div class="header-phone__item">
+							<div class="header-phone__item__label">Интернет-магазин</div><a class="header-phone__item__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="header-main">
-				<div class="header-burger js-tooltip" data-tooltip="catalog"><a class="header-nav__link" href="">
-						<svg class="icon icon-menu ">
-							<use xlink:href="images/sprites.svg#menu"></use>
-						</svg></a></div>
-				<div class="header-logo"><img class="header-logo__img" src="images/logo-with-text.svg"></div>
-				<div class="header-search">
-					<form class="header-search__form form" action="">
-						<div class="form_group">
-							<label class="form_label">
-								<input class="header-search__input form_input" type="text" placeholder="Введите название товара">
-								<div class="header-search__icon">
-									<button class="header-search__button" type="submit">
-										<svg class="icon icon-search ">
-											<use xlink:href="images/sprites.svg#search"></use>
-										</svg>
-									</button>
+				<div class="grid-container">
+					<div class="header-burger dropdown"><a class="header-nav__link" href="">
+							<svg class="icon icon-menu ">
+								<use xlink:href="images/sprites.svg#menu"></use>
+							</svg></a>
+						<div class="dropdown-block">
+							<div class="dropdown-block__inner">
+								<div class="dropdown-menu">
+									<ul class="nav-list">
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-stock ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-stock"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Акции</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-cakes ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-cakes"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Торты</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-cakes-on-order ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-cakes-on-order"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Торты на заказ</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-confectionary ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-confectionary"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Кондитерские изделия</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-pies ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-pies"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Пироги и выпечка</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-cooked-foods ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-cooked-foods"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Готовые блюда</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-pancakes ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-pancakes"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Блинчики</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-cheese ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-cheese"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Сыры</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-freeze ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-freeze"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Замороженные полуфабрикаты</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-chocolat ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-chocolat"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Шоколадные изделия</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-salad ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-salad"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Салаты и заливные</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-meat ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-meat"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Мясная гастрономия</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-icecream ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-icecream"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Мороженое</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-jp ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-jp"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Японская кухня</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-burito ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-burito"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Буритто</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-musli ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-musli"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Каши и мюсли</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-coffee ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-coffee"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Кофе</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-butter ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-butter"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Масло сливочное</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+																				<li class="nav-item"><a class="nav-item__link">
+																						<div class="nav-item__icon">
+																							<svg class="icon icon-submenu-icon-pizza ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-pizza"></use>
+																							</svg>
+																						</div>
+																						<div class="nav-item__label">Пицца</div></a>
+																					<ul class="nav-item__submenu">
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Бисквитные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Блинные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Муссовые</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Песочные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Слоеные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Безе</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С орехами и сухофруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">С ягодами и фруктами</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Шоколадные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Наборы</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Детские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Особая серия,Постные / Веганские</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Птичье молоко</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Сметанные и творожные</div></a></li>
+																						<li class="nav-item"><a class="nav-item__link">
+																								<div class="nav-item__label">Торт-рулет</div></a></li>
+																					</ul>
+																				</li>
+									</ul>
 								</div>
-							</label>
+							</div>
 						</div>
-					</form>
-				</div>
-				<div class="header-bar">
-					<div class="header-bar__item">
-						<div class="header-bar__item__icon">
-							<svg class="icon icon-percentage ">
-								<use xlink:href="images/sprites.svg#percentage"></use>
-							</svg>
-						</div><a class="header-bar__item__link" href="">Акции</a>
 					</div>
-					<div class="header-bar__item">
-						<div class="header-bar__item__icon">
-							<svg class="icon icon-delivery-company ">
-								<use xlink:href="images/sprites.svg#delivery-company"></use>
-							</svg>
-						</div><a class="header-bar__item__link" href="">Доставка до 90 мин.</a>
+					<div class="header-logo"><img class="header-logo__img" src="images/logo-with-text.svg"></div>
+					<div class="header-search">
+						<form class="header-search__form form" action="">
+							<div class="form_row">
+								<div class="form_group">
+									<label class="form_label">
+										<input class="header-search__input form_input" type="text" placeholder="Введите название товара">
+										<div class="header-search__icon">
+											<button class="header-search__button" type="submit">
+												<svg class="icon icon-search ">
+													<use xlink:href="images/sprites.svg#search"></use>
+												</svg>
+											</button>
+										</div>
+									</label>
+								</div>
+							</div>
+						</form>
 					</div>
-				</div>
-				<div class="header-cart">
-					<div class="header-cart__counter">
-						<div class="header-cart__icon">
-							<svg class="icon icon-cart ">
-								<use xlink:href="images/sprites.svg#cart"></use>
-							</svg>
+					<div class="header-bar">
+						<div class="header-bar__item">
+							<div class="header-bar__item__icon">
+								<svg class="icon icon-percentage ">
+									<use xlink:href="images/sprites.svg#percentage"></use>
+								</svg>
+							</div><a class="header-bar__item__link" href="">Акции</a>
 						</div>
-						<div class="header-cart__number">10</div>
+						<div class="header-bar__item">
+							<div class="header-bar__item__icon">
+								<svg class="icon icon-delivery-company ">
+									<use xlink:href="images/sprites.svg#delivery-company"></use>
+								</svg>
+							</div><a class="header-bar__item__link" href="">Доставка до 90 мин.</a>
+						</div>
 					</div>
-					<div class="header-cart__price">12 450 ₽</div>
+					<div class="header-cart">
+						<div class="header-cart__counter">
+							<div class="header-cart__icon">
+								<svg class="icon icon-cart ">
+									<use xlink:href="images/sprites.svg#cart"></use>
+								</svg>
+							</div>
+							<div class="header-cart__number">10</div>
+						</div>
+						<div class="header-cart__price">12 450 ₽</div>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -1791,7 +2682,7 @@
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1597068942184"></script>
-		<script src="js/main.js?v=1597068942184"></script>
+		<script src="js/vendor.js?v=1597154780838"></script>
+		<script src="js/main.js?v=1597154780838"></script>
 	</body>
 </html>

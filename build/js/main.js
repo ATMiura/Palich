@@ -189,8 +189,8 @@ $(document).ready(function () {
   //}
   $('.section-slider').each(function () {
     //var $hero = $(this),
-    var data_slider_name = $(this).find('.swiper-container').data('slider-name');
-    console.log(data_slider_name); //console.log(data_slider_name);
+    var data_slider_name = $(this).find('.swiper-container').data('slider-name'); //console.log(data_slider_name);
+    //console.log(data_slider_name);
 
     var $slides = $(this).find('[data-slider-name="' + data_slider_name + '"] .swiper-slide');
     var $slides_no_dublicate = $slides.not('.swiper-slide-duplicate').length; //console.log($slides_no_dublicate);

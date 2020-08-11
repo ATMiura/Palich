@@ -52,6 +52,8 @@
 			color: var(--black)
 
 .header-burger
+	display: flex
+	align-items: center
 	margin-right: 20px
 
 .header-logo
@@ -127,39 +129,24 @@
 .header-top
 	background-color: #FAFBFD
 	position: relative
-	max-width: 1200px
-	margin: 0 auto
-	display: flex
-	align-items: flex-end
-	padding-top: 15px
-	padding-bottom: 12px
+	.grid-container
+		display: flex
+		align-items: flex-end
+		padding-top: 15px
+		padding-bottom: 12px
 
 	.header-nav
 		&__item
 			color: var(--black)
 
-//.header-middle
-	padding-top: 17px
-	padding-bottom: 21px
-	.header-nav
-		justify-content: space-between
-		width: 100%
-		&__item
-			margin-right: 10px
-			font-weight: bold
-			color: var(--vinishkotyan)
-			&:last-child
-				margin-right: 0
-
 .header-main
 	position: relative
-	background: var(--vinishkotyan)
-	max-width: 1200px
-	margin: 0 auto
-	padding: 10px 30px
+	.grid-container
+		display: flex
+		align-items: center
+		background-color: var(--vinishkotyan)
+		padding: 10px 30px
 
-	display: flex
-	align-items: center
 	.header-nav
 		margin-right: 50px
 		&__item
@@ -186,6 +173,41 @@
 		z-index: -1
 
 
+.nav
+	&-list
+		background-color: var(--white)
+		display: flex
+		flex-direction: column
+	&-item
+		display: flex
+		&__icon
+			width: 32px
+			margin-right: 3px
+
+			display: flex
+			align-items: flex-start
+		&__link
+			display: flex
+			align-items: center
+
+			font-size: 1rem
+			line-height: 1.313rem
+			color: var(--black)
+			&:not(:last-child)
+				margin-bottom: 10px
+		&__label
+		&__submenu
+			background-color: var(--light-pink)
+			display: none
+			flex-direction: column
+			min-width: 310px
+			position: absolute
+			top: 0
+			height: 100%
+			margin-left: calc(100% - 20px)
+		&:hover
+			.nav-item__submenu
+				display: flex
 
 
 

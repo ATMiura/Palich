@@ -1,69 +1,141 @@
 header.header
 	.header-top
-		.link-icon(data-tooltip="city")
-			.link-icon__icon
-				+icon('geotag')
-			a(href="").link-icon__text Москва и МО
+		.grid-container
+			.link-icon.dropdown
+				.link-icon__icon
+					+icon('geotag')
+				a(href="").link-icon__text Москва и МО
+				.dropdown-block
+					.dropdown-block__inner
+						.dropdown-city
+							.dropdown__heading Ваш город
+							form.dropdown-form
+								.form_row
+									.form_group
+										label.form_label
+											input(type="text" placeholder="Начните писать город").form_input.dropdown-form-search__input
+											.dropdown-form-search__icon
+												button(type="submit").dropdown-form-search__submit
+													+icon('dropdown-input-search')
+								.form_row.dropdown-form-result
+									.dropdown-form-result__item
+										a(href="#").dropdown-form-result__item  Москва и область
+									.dropdown-form-result__item Курск
+									.dropdown-form-result__item Санкт-Петербург и область
+									.dropdown-form-result__item Липецк
+									.dropdown-form-result__item Белгород
+									.dropdown-form-result__item Нижний Новгород
+									.dropdown-form-result__item Великий Новгород
+									.dropdown-form-result__item Рязань
+									.dropdown-form-result__item Владимир
+									.dropdown-form-result__item Тверь
+									.dropdown-form-result__item Воронеж
+									.dropdown-form-result__item Тула
+									.dropdown-form-result__item Иваново
+									.dropdown-form-result__item Ярославль
+									.dropdown-form-result__item Калуга
+			.header-nav
+				.header-nav__item.dropdown
+					a(href="#").header-nav__item__link О компании
 
-		.header-nav
-			.header-nav__item.js-tooltip
-				a(href="#").header-nav__item__link О компании
-			.header-nav__item
-				a(href="#").header-nav__item__link Магазины
-			.header-nav__item
-				a(href="#").header-nav__item__link Контакты
 
-		.header-link__list
-			.header-link__item
-				.link-icon
-					.link-icon__icon
-						+icon('mail')
-					a(href="").link-icon__text Письмо Палычу
-			.header-link__item
-				.js-popup(data-popup-id="callback").link-icon
-					.link-icon__icon
-						+icon('phone')
-					a(href="").link-icon__text Обратый звонок
+				.header-nav__item
+					a(href="#").header-nav__item__link Магазины
+				.header-nav__item
+					a(href="#").header-nav__item__link Контакты
 
-		.header-phone__list
-			.header-phone__item
-				.header-phone__item__label Горячая линия
-				a(href="tel:8 (800) 555-81-63").header-phone__item__link 8 (800) 555-81-63
-			.header-phone__item
-				.header-phone__item__label Интернет-магазин
-				a(href="tel:+7 999 999-99-99").header-phone__item__link +7 999 999-99-99
+			.header-link__list
+				.header-link__item
+					.link-icon
+						.link-icon__icon
+							+icon('mail')
+						a(href="").link-icon__text Письмо Палычу
+				.header-link__item
+					.js-popup(data-popup-id="callback").link-icon
+						.link-icon__icon
+							+icon('phone')
+						a(href="").link-icon__text Обратый звонок
+
+			.header-phone__list
+				.header-phone__item
+					.header-phone__item__label Горячая линия
+					a(href="tel:8 (800) 555-81-63").header-phone__item__link 8 (800) 555-81-63
+				.header-phone__item
+					.header-phone__item__label Интернет-магазин
+					a(href="tel:+7 999 999-99-99").header-phone__item__link +7 999 999-99-99
 
 	.header-main
-		.header-burger.js-tooltip(data-tooltip="catalog")
-			a.header-nav__link(href="")
-				+icon('menu')
-		.header-logo
-			img.header-logo__img(src="images/logo-with-text.svg")
+		.grid-container
+			.header-burger.dropdown
+				a.header-nav__link(href="")
+					+icon('menu')
+				.dropdown-block
+					.dropdown-block__inner
+						.dropdown-menu
+							ul.nav-list
+								- var submenuList = ['Бисквитные','Блинные','Бисквитные','Блинные','Муссовые','Песочные','Слоеные','Безе','С орехами и сухофруктами','С ягодами и фруктами','Шоколадные','Наборы','Детские','Особая серия,Постные / Веганские','Птичье молоко','Сметанные и творожные','Торт-рулет']
+								mixin nav-item(icon,label)
+									li.nav-item
+										a.nav-item__link
+											.nav-item__icon
+												+icon(icon)
+											.nav-item__label=label
 
-		.header-search
-			form(action="").header-search__form.form
-				.form_group
-					label.form_label
-						input(type="text" placeholder="Введите название товара").header-search__input.form_input
-						.header-search__icon
-							button(type="submit").header-search__button
-								+icon('search')
-		.header-bar
-			.header-bar__item
-				.header-bar__item__icon
-					+icon('percentage')
-				a.header-bar__item__link(href="") Акции
-			.header-bar__item
-				.header-bar__item__icon
-					+icon('delivery-company')
-				a.header-bar__item__link(href="") Доставка до 90 мин.
+										ul.nav-item__submenu
 
-		.header-cart
-			.header-cart__counter
-				.header-cart__icon
-					+icon('cart')
-				.header-cart__number 10
-			.header-cart__price 12 450 ₽
+											each submenuItem in submenuList
+												li.nav-item
+													a.nav-item__link
+														.nav-item__label=  submenuItem
+								+nav-item('submenu-icon-stock'			,'Акции')
+								+nav-item('submenu-icon-cakes'			,'Торты')
+								+nav-item('submenu-icon-cakes-on-order'	,'Торты на заказ')
+								+nav-item('submenu-icon-confectionary'	,'Кондитерские изделия')
+								+nav-item('submenu-icon-pies'			,'Пироги и выпечка')
+								+nav-item('submenu-icon-cooked-foods'	,'Готовые блюда')
+								+nav-item('submenu-icon-pancakes'		,'Блинчики')
+								+nav-item('submenu-icon-cheese'			,'Сыры')
+								+nav-item('submenu-icon-freeze'			,'Замороженные полуфабрикаты')
+								+nav-item('submenu-icon-chocolat'		,'Шоколадные изделия')
+								+nav-item('submenu-icon-salad'			,'Салаты и заливные')
+								+nav-item('submenu-icon-meat'			,'Мясная гастрономия')
+								+nav-item('submenu-icon-icecream'		,'Мороженое')
+								+nav-item('submenu-icon-jp'				,'Японская кухня')
+								+nav-item('submenu-icon-burito'			,'Буритто')
+								+nav-item('submenu-icon-musli'			,'Каши и мюсли')
+								+nav-item('submenu-icon-coffee'			,'Кофе')
+								+nav-item('submenu-icon-butter'			,'Масло сливочное')
+								+nav-item('submenu-icon-pizza'			,'Пицца')
+
+
+			.header-logo
+				img.header-logo__img(src="images/logo-with-text.svg")
+
+			.header-search
+				form(action="").header-search__form.form
+					.form_row
+						.form_group
+							label.form_label
+								input(type="text" placeholder="Введите название товара").header-search__input.form_input
+								.header-search__icon
+									button(type="submit").header-search__button
+										+icon('search')
+			.header-bar
+				.header-bar__item
+					.header-bar__item__icon
+						+icon('percentage')
+					a.header-bar__item__link(href="") Акции
+				.header-bar__item
+					.header-bar__item__icon
+						+icon('delivery-company')
+					a.header-bar__item__link(href="") Доставка до 90 мин.
+
+			.header-cart
+				.header-cart__counter
+					.header-cart__icon
+						+icon('cart')
+					.header-cart__number 10
+				.header-cart__price 12 450 ₽
 
 
 
