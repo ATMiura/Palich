@@ -4,10 +4,11 @@
 		padding: 0
 
 .header-nav
-	display: flex
-	align-items: center
 	margin-right: 5.7%
 	margin-left: 20.6%
+	&__list
+		display: flex
+		align-items: center
 	&__item
 		margin-right: 37px
 		&:last-child
@@ -16,6 +17,8 @@
 			font-size: .875rem
 			font-weight: bold
 			line-height: 1.063rem
+		.dropdown-menu
+			min-width: auto
 
 
 .header-logo
@@ -54,15 +57,18 @@
 .header-burger
 	display: flex
 	align-items: center
-	margin-right: 20px
+	padding-right: 20px
+	&__link
 
 .header-logo
 	margin-right: 40px
 
 .header-search
-	max-width: 355px
-	width: 100%
+	min-width: 355px
 	margin-right: 45px
+	&__form
+		width: 100%
+		max-width: 355px
 	&__input
 		padding-right: 35px
 		border-radius: 25px
@@ -90,6 +96,7 @@
 
 			&:hover
 				color: var(--yellow)
+
 
 .header-cart
 	display: flex
@@ -179,6 +186,21 @@
 		display: flex
 		flex-direction: column
 	&-item
+		min-width: max-content
+		&:not(:last-child)
+			margin-bottom: 10px
+		&.has-submenu
+			& > .nav-item__link:after
+				content: ""
+				display: inline-block
+				width: 3px
+				height: 6px
+				margin-left: 5px
+				background-image: url("data:image/svg+xml,%3Csvg width='4' height='6' viewBox='0 0 4 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.197228 5.48148C0.00196579 5.28622 0.00196582 4.96964 0.197228 4.77438L1.84367 3.12793L0.197228 1.48148C0.00196614 1.28622 0.00196617 0.969638 0.197228 0.774376C0.392491 0.579114 0.709073 0.579114 0.904335 0.774376L2.90433 2.77438C3.0996 2.96964 3.0996 3.28622 2.90433 3.48148L0.904335 5.48148C0.709073 5.67675 0.39249 5.67674 0.197228 5.48148Z' fill='%23000'/%3E%3C/svg%3E%0A")
+			& > .nav-item__link:hover
+				&:after
+					background-image: url("data:image/svg+xml,%3Csvg width='4' height='6' viewBox='0 0 4 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.197228 5.48148C0.00196579 5.28622 0.00196582 4.96964 0.197228 4.77438L1.84367 3.12793L0.197228 1.48148C0.00196614 1.28622 0.00196617 0.969638 0.197228 0.774376C0.392491 0.579114 0.709073 0.579114 0.904335 0.774376L2.90433 2.77438C3.0996 2.96964 3.0996 3.28622 2.90433 3.48148L0.904335 5.48148C0.709073 5.67675 0.39249 5.67674 0.197228 5.48148Z' fill='%23A70230'/%3E%3C/svg%3E%0A")
+
 		display: flex
 		&__icon
 			width: 32px
@@ -193,21 +215,31 @@
 			font-size: 1rem
 			line-height: 1.313rem
 			color: var(--black)
-			&:not(:last-child)
+			width: 100%
+			//&:not(:last-child)
 				margin-bottom: 10px
 		&__label
+			&:hover
+				color: var(--vinishkotyan)
 		&__submenu
 			background-color: var(--light-pink)
-			display: none
+			//display: none
 			flex-direction: column
 			min-width: 310px
 			position: absolute
 			top: 0
 			height: 100%
-			margin-left: calc(100% - 20px)
+			margin-left: calc(100% - 41px)
+			padding: 20px
+			opacity: 0
+			visibility: hidden
+			transition: visibility 0s ease .2s, opacity .2s ease, transform .2s ease, width .2s ease
 		&:hover
 			.nav-item__submenu
 				display: flex
+				visibility: visible
+				opacity: 1
+				transition: visibility 0s ease, opacity .2s ease, transform .2s ease, width .2s ease
 
 
 

@@ -175,7 +175,7 @@
 	<circle cx="15" cy="17" r="1" fill="#A70230"/>
 	<circle cx="11" cy="18" r="1" fill="#A70230"/>
 </symbol>
-<symbol id="submenu-icon-cooked-food" viewBox="0 0 21 20">
+<symbol id="submenu-icon-cooked-foods" viewBox="0 0 21 20">
 	<path stroke="#A70230" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19h13"/>
 	<path stroke="#A70230" stroke-width="2" d="M19.942 10c-.524 4.465-4.512 8-9.442 8-4.93 0-8.918-3.535-9.442-8h18.884z"/>
 	<path stroke="#A70230" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 14h15M2 9a5 5 0 0110 0M12 9c0-2.21 1.567-4 3.5-4S19 6.79 19 9M15 4c0-1.657-1.373-3-3.066-3C10.552 1 9.381 1.897 9 3.13"/>
@@ -228,7 +228,7 @@
 	<circle cx="11" cy="10" r="1" fill="#A70230"/>
 	<circle cx="5" cy="7" r="1" fill="#A70230"/>
 </symbol>
-<symbol id="submenu-icon-iceream" viewBox="0 0 20 22">
+<symbol id="submenu-icon-icecream" viewBox="0 0 20 22">
 	<path stroke="#A70230" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.151 21L1.11 11h17.78L17.85 21H2.15zM6 17v-2m4 2v-2m4 2v-2M1 10a5 5 0 0110 0M11 10a4 4 0 018 0"/>
 	<path stroke="#A70230" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 6c0-2.761-2.287-5-5.11-5C8.586 1 6.636 2.495 6 4.55"/>
 </symbol>
@@ -271,5 +271,8 @@
 	<circle cx="14.021" cy="14.939" r="1" fill="#A70230" transform="rotate(45 14.021 14.94)"/>
 	<circle cx="19.678" cy="16.354" r="1" fill="#A70230" transform="rotate(45 19.678 16.354)"/>
 	<path stroke="#A70230" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.97 12.818l-1.767.354m-1.06 6.01v-1.414"/>
+</symbol>
+<symbol id="has-submenu" viewBox="0 0 4 6">
+	<path fill="#A70230" fill-rule="evenodd" d="M.197 5.481a.5.5 0 010-.707l1.647-1.646L.197 1.48A.5.5 0 11.904.774l2 2a.5.5 0 010 .707l-2 2a.5.5 0 01-.707 0z" clip-rule="evenodd"/>
 </symbol>
 </svg>

@@ -89,7 +89,7 @@ block content
 				.section-title
 					h2.h1 Хиты продаж
 				.section-more
-					a(href="").section-more__link Посмотреть все товары
+					a(href="").more-link Посмотреть все товары
 						+icon('arrow-more')
 			.section-content
 				.products__list
@@ -146,7 +146,7 @@ block content
 				.section-title
 					h2.h1 Лучшие цены
 				.section-more
-					a(href="").section-more__link Посмотреть все товары
+					a(href="").more-link Посмотреть все товары
 						+icon('arrow-more')
 			.section-content
 				.products__list
@@ -166,7 +166,7 @@ block content
 				.section-title
 					h2.h1 Акции
 				.section-more
-					a(href="").section-more__link Посмотреть все акции
+					a(href="").more-link Посмотреть все акции
 						+icon('arrow-more')
 			.section-content
 				.slider
@@ -260,10 +260,10 @@ block content
 				.section-title
 					h2.h1
 						| Фирменные магазины в
-						|
+						=" "
 						a(href="").link-icon__text Москва и МО
 				.section-more
-					a(href="").section-more__link Посмотреть все товары
+					a(href="").more-link Посмотреть все товары
 						+icon('arrow-more')
 
 			.section-content
@@ -356,29 +356,38 @@ block content
 				.section-title
 					h2.h1 Новости
 				.section-more
-					a(href="").section-more__link Посмотреть все новости
+					a(href="").more-link Посмотреть все новости
 						+icon('arrow-more')
 			.section-content
 				.news
 					.news-list
 						.news-item
-							.news-item__img
-								img(src="images/news-item__img_1.jpg")
-							h3.news-item__name В ассортименте нашей торговой сети появились новые блюда
-							.news-item__excerpt У нас хорошие новости для любителей позднего завтрака!
-							.news-item__date 5 мая
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_1.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name В ассортименте нашей торговой сети появились новые блюда
+								.news-item__excerpt У нас хорошие новости для любителей позднего завтрака!
+							.news-item__footer
+								.news-item__date 5 мая
 						.news-item
-							.news-item__img
-								img(src="images/news-item__img_2.jpg")
-							h3.news-item__name В день рождения нашей сети мы проводим специальную акцию
-							.news-item__excerpt Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили акцию «Игристые среды»
-							.news-item__date 27 апреля
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_2.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name В день рождения нашей сети мы проводим специальную акцию
+								.news-item__excerpt Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили акцию «Игристые среды»
+							.news-item__footer
+								.news-item__date 27 апреля
 						.news-item
-							.news-item__img
-								img(src="images/news-item__img_3.jpg")
-							h3.news-item__name Праздник светлой пасхи
-							.news-item__excerpt Великий пост подходит к концу, и близится светлый праздник Пасхи! Наша компания «У Пылача» предлагает вниманию...
-							.news-item__date 14 апреля
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_3.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name Праздник светлой пасхи
+								.news-item__excerpt Великий пост подходит к концу, и близится светлый праздник Пасхи! Наша компания «У Пылача» предлагает вниманию...
+							.news-item__footer
+								.news-item__date 14 апреля
 
 	section.section.section-descr
 		.section-container
