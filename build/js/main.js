@@ -180,6 +180,10 @@ $(document).on('click touch', '.header-burger__link', function (event) {
     console.log('true');
     return true;
   }
+}).on('click touch', '.dropdown-delivery__item.express', function () {
+  $(this).siblings('.express-block').addClass('active');
+}).on('click touch', '.express__close', function () {
+  $(this).parents('.express-block').removeClass('active');
 });
 
 /***/ }),
@@ -213,6 +217,28 @@ __webpack_require__.r(__webpack_exports__);
 //var objectFitImages = require('object-fit-images');
 
 object_fit_images__WEBPACK_IMPORTED_MODULE_0___default()();
+
+/***/ }),
+
+/***/ "./src/js/_parts/_shops-tabs.js":
+/*!**************************************!*\
+  !*** ./src/js/_parts/_shops-tabs.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* Вкладки - фирменные магазины */
+$(document).ready(function () {
+  $('.shops-nav__item:first-child, .shops-content-tab:first-child').addClass('active');
+});
+$(document).on('click touch', '[data-shops-nav]', function () {
+  $('[data-shops-nav]').removeClass('active');
+  $(this).addClass('active');
+  var shops_view_type = $(this).data('shops-nav');
+  $('.shops-content-tab').removeClass('active');
+  $('[data-shops-content="' + shops_view_type + '"]').addClass('active');
+  console.log(shops_view_type);
+});
 
 /***/ }),
 
@@ -1420,6 +1446,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_parts_dropdown__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _parts_header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_parts/_header */ "./src/js/_parts/_header.js");
 /* harmony import */ var _parts_header__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_parts_header__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_parts/_shops-tabs */ "./src/js/_parts/_shops-tabs.js");
+/* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_parts_shops_tabs__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 

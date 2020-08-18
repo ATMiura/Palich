@@ -17,4 +17,8 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 		console.log('true');
 		return true;
 	}
+}).on('click touch', '.dropdown-delivery__item.express', function () {
+	$(this).siblings('.express-block').addClass('active');
+}).on('click touch', '.express__close', function () {
+	$(this).parents('.express-block').removeClass('active');
 });

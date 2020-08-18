@@ -175,15 +175,19 @@ block content
 							.swiper-wrapper
 								.swiper-slide.slider-slide
 									.slider-slide__content
+										.slider-slide__date 5-12 марта
 										.slider-slide__title Только в марте пирожное Малина и Базилик по суперцене!
 										.slider-slide__text Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили новую акцию
-
+										.slider-slide__price
+											.slider-slide__price__normal 376 ₽
+											.slider-slide__price__sale 523 ₽
 									.slider-slide__img
 										img(src="images/stock-slider-img__1.png").slider-slide__img__elem
 									.slider-slide__bg(style="background-color: #FFD0BE;")
 
 								.swiper-slide.slider-slide
 									.slider-slide__content
+										.slider-slide__date 13-27 марта
 										.slider-slide__title Розыгрыш сертификатов на сумму 2 000 любые покупки
 										.slider-slide__text Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили новую акцию
 									.slider-slide__img
@@ -225,7 +229,7 @@ block content
 									.checkbox__emulator
 									.checkbox__text
 										span Даю согласие на обработку
-										|
+										=" "
 										a(href="", target="_blank") персональных данных
 
 
@@ -261,7 +265,37 @@ block content
 					h2.h1
 						| Фирменные магазины в
 						=" "
-						a(href="").link-icon__text Москва и МО
+						.link-icon.dropdown
+							a(href="").link-icon__text Москва и МО
+							.dropdown-block
+								.dropdown-block__inner
+									.dropdown-city
+										.dropdown__heading Ваш город
+										form.dropdown-form
+											.form_row
+												.form_group
+													label.form_label
+														input(type="text" placeholder="Начните писать город").form_input.dropdown-form-search__input
+														.dropdown-form-search__icon
+															button(type="submit").dropdown-form-search__submit
+																+icon('dropdown-input-search')
+											.form_row.dropdown-form-result
+												.dropdown-form-result__item
+													a(href="#").dropdown-form-result__item  Москва и область
+												.dropdown-form-result__item Курск
+												.dropdown-form-result__item Санкт-Петербург и область
+												.dropdown-form-result__item Липецк
+												.dropdown-form-result__item Белгород
+												.dropdown-form-result__item Нижний Новгород
+												.dropdown-form-result__item Великий Новгород
+												.dropdown-form-result__item Рязань
+												.dropdown-form-result__item Владимир
+												.dropdown-form-result__item Тверь
+												.dropdown-form-result__item Воронеж
+												.dropdown-form-result__item Тула
+												.dropdown-form-result__item Иваново
+												.dropdown-form-result__item Ярославль
+												.dropdown-form-result__item Калуга
 				.section-more
 					a(href="").more-link Посмотреть все товары
 						+icon('arrow-more')
@@ -274,25 +308,26 @@ block content
 								.form_group
 									label.form_label
 										input(type="text" placeholder="Выберите станцию метро").shops-search__input.form_input
-						.shops-nav__item(data-shops-view-type="search")
-							.shops-nav__icon
-								+icon('menu')
-							.shops-nav__text Список
-						.shops-nav__item(data-shops-view-type="list")
-							.shops-nav__icon
-								+icon('geotag')
-							.shops-nav__text Карта
-						.shops-nav__item(data-shops-view-type="map")
-							.shops-nav__icon
-								+icon('metro')
-							.shops-nav__text Метро
-						.shops-nav__item(data-shops-view-type="beside")
-							.shops-nav__icon
-								+icon('map')
-							.shops-nav__text Магазины рядом
+						.shops-nav__list
+							.shops-nav__item(data-shops-nav="list")
+								.shops-nav__icon
+									+icon('menu')
+								.shops-nav__text Список
+							.shops-nav__item(data-shops-nav="map")
+								.shops-nav__icon
+									+icon('geotag')
+								.shops-nav__text Карта
+							.shops-nav__item(data-shops-nav="metro")
+								.shops-nav__icon
+									+icon('metro')
+								.shops-nav__text Метро
+							.shops-nav__item(data-shops-nav="beside")
+								.shops-nav__icon
+									+icon('map')
+								.shops-nav__text Магазины рядом
 
 					.shops-content
-						.shops-list.scroll
+						.shops-content-tab.shops-list.scroll(data-shops-content="list")
 							mixin shops-list-item
 								.shops-list-item
 									.shops-list-item__el.shops-list-item__address
@@ -325,6 +360,9 @@ block content
 							+shops-list-item
 							+shops-list-item
 							+shops-list-item
+						.shops-content-tab.shops-map(data-shops-content="map") 2
+						.shops-content-tab.shops-metro(data-shops-content="metro") 3
+						.shops-content-tab.shops-beside(data-shops-content="beside") 4
 
 	section.section.section-slider.slider-web
 		.section-container
@@ -398,6 +436,7 @@ block content
 					.descr__text
 						h2 Торговая марка «У Палыча»
 						p Наше видение торговой марки заключается в завоевании лидерской позиции в производстве высоко- качественных продуктов питания, поддержании имиджа надежной, честной компании, которая во главу всех своих приоритетов ставит удовлетворение потребностей покупателя во вкусной и здоровой пище и дает гарантию качества на каждое изделие под ТМ «У Палыча».
+
 						P &nbsp;
 						p
 							b Мы будем прикладывать к этому все силы и ресурсы!

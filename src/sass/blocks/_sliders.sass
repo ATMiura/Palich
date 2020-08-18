@@ -11,7 +11,8 @@
 		position: relative
 		height: 0
 		//padding-left: 100px
-		padding-bottom: 43.761%
+		//padding-bottom: 43.761%
+		padding-bottom: 46.561%
 		&__bg
 			position: absolute
 			top: 0
@@ -36,6 +37,7 @@
 			line-height: 1.5rem
 			color: var(--black)
 			margin-bottom: 40px
+			max-width: 400px
 		&__btn
 		&__img
 			&__elem
@@ -146,6 +148,8 @@
 
 //[data-slider-name="slider-stock"]
 .slider-stock
+	margin-top: -45px
+	margin-bottom: 125px
 	.section
 		&-container
 			max-width: 100%
@@ -163,11 +167,37 @@
 			width: 100%
 			padding-bottom: 24.381%
 			&__content
-				max-width: 330px
+				max-width: 360px
+			&__date
+				font-weight: bold
+				font-size: 1.125rem
+				line-height: 1.5rem
+				margin-bottom: 25px
 			&__title
 				font-size: 1.5rem
 				line-height: 1.813rem
 				font-weight: bold
+			&__text
+				margin-bottom: 55px
+			&__price
+
+				display: flex
+				align-items: baseline
+				&__normal
+					font-weight: bold
+					font-size: 1.25rem
+					line-height: 1.5rem
+					color: var(--vinishkotyan)
+					&:last-child
+						color: var(--black)
+				&__sale
+					font-size: 0.875rem
+					line-height: 1.063rem
+					color: var(--black)
+					margin-left: 10px
+					text-decoration: line-through
+					&:first-child
+						margin-left: 0
 			&__img
 				&__elem
 					top: auto
@@ -187,13 +217,15 @@
 		justify-content: flex-end
 		align-items: flex-end
 		right: auto
-		left: 0
+		left: -40px
+		top: 25px
 	.swiper-button-next,
 	.swiper-button-prev
 		margin: 0
 	.swiper-button-prev
 		margin-right: 40px
 .slider-web
+	margin-bottom: 105px
 	.swiper
 		&-slide
 			width: auto

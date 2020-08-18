@@ -192,10 +192,43 @@ header.header
 					.header-bar__item__icon
 						+icon('percentage')
 					a.header-bar__item__link(href="") Акции
-				.header-bar__item
+				.header-bar__item.dropdown
 					.header-bar__item__icon
 						+icon('delivery-company')
-					a.header-bar__item__link(href="") Доставка до 90 мин.
+					a.header-bar__item__link(href="") Выберите доставку
+					.dropdown-block
+						.dropdown-block__inner
+							.dropdown-delivery
+								.dropdown-delivery__list
+									.dropdown-delivery__item.express
+										.dropdown-delivery__item__icon
+											img(src="images/dropdown-delivery-express.svg").dropdown-delivery__item__img
+										.dropdown-delivery__item__text Доставка за 90 минут
+
+									.dropdown-delivery__item.mag
+										.dropdown-delivery__item__icon
+											img(src="images/dropdown-delivery-mag.svg").dropdown-delivery__item__img
+										.dropdown-delivery__item__text Самовывоз со скидкой
+
+									.dropdown-delivery__item.free
+										.dropdown-delivery__item__icon
+											img(src="images/dropdown-delivery-free.svg").dropdown-delivery__item__img
+										.dropdown-delivery__item__text Бесплатная доставка на следующий день
+
+									.express-block
+										.express__close
+										.express__title Экспресс-доставка за 90 минут!
+										.express__subtitle Введите адрес - мы покажем, что у нас есть для Вас
+										.form
+											.form_row
+												.form_group
+													label.form_label.express__label
+														input.form_input.express__inp(type="text", placeholder="Введите адрес")
+														input.form_input.button.button__arrow.inline.express__btn(type="submit", value="")
+											.form_row
+												.form_group
+													.link-icon
+														a(href="").link-icon__text Определить адрес
 
 			.header-cart
 				.header-cart__counter

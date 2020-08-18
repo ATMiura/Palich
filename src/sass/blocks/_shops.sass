@@ -8,11 +8,22 @@
 		background-color: var(--vinishkotyan)
 		display: flex
 		align-items: center
+		color: #fff
+		&__list
+			display: flex
+			align-items: center
 		&__item
 			display: flex
 			align-items: flex-end
+			cursor: pointer
 			&:not(:last-child)
 				margin-right: 20px
+			&:hover,
+			&.active
+				color: var(--yellow)
+				svg
+					fill: var(--yellow)
+
 		&__icon
 			margin-right: 5px
 			svg
@@ -20,14 +31,23 @@
 		&__text
 			font-size: 1rem
 			line-height: 1.313rem
-			color: #fff
 	&-content
+		&-tab
+			opacity: 0
+			visibility: hidden
+			height: 0
+			padding-top: 10px
+			&.active
+				opacity: 1
+				visibility: visible
+				height: auto
 	&-list
 		max-height: 650px
 		&-item
 			display: flex
 			align-items: center
 			padding: 33px 0
+			cursor: pointer
 			&:not(:last-child)
 				border-bottom: 1px solid var(--light-grey)
 			&__el
@@ -37,6 +57,7 @@
 				color: var(--black)
 				@media #{$mobile-above}
 					padding-right: 15px
+					margin-right: 8px
 			&__address
 				flex-direction: column
 				align-items: flex-start

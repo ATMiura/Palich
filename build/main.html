@@ -1130,12 +1130,52 @@
 								</svg>
 							</div><a class="header-bar__item__link" href="">Акции</a>
 						</div>
-						<div class="header-bar__item">
+						<div class="header-bar__item dropdown">
 							<div class="header-bar__item__icon">
 								<svg class="icon icon-delivery-company ">
 									<use xlink:href="images/sprites.svg#delivery-company"></use>
 								</svg>
-							</div><a class="header-bar__item__link" href="">Доставка до 90 мин.</a>
+							</div><a class="header-bar__item__link" href="">Выберите доставку</a>
+							<div class="dropdown-block">
+								<div class="dropdown-block__inner">
+									<div class="dropdown-delivery">
+										<div class="dropdown-delivery__list">
+											<div class="dropdown-delivery__item express">
+												<div class="dropdown-delivery__item__icon"><img class="dropdown-delivery__item__img" src="images/dropdown-delivery-express.svg"></div>
+												<div class="dropdown-delivery__item__text">Доставка за 90 минут</div>
+											</div>
+											<div class="dropdown-delivery__item mag">
+												<div class="dropdown-delivery__item__icon"><img class="dropdown-delivery__item__img" src="images/dropdown-delivery-mag.svg"></div>
+												<div class="dropdown-delivery__item__text">Самовывоз со скидкой</div>
+											</div>
+											<div class="dropdown-delivery__item free">
+												<div class="dropdown-delivery__item__icon"><img class="dropdown-delivery__item__img" src="images/dropdown-delivery-free.svg"></div>
+												<div class="dropdown-delivery__item__text">Бесплатная доставка на следующий день</div>
+											</div>
+											<div class="express-block">
+												<div class="express__close"></div>
+												<div class="express__title">Экспресс-доставка за 90 минут!</div>
+												<div class="express__subtitle">Введите адрес - мы покажем, что у нас есть для Вас</div>
+												<div class="form">
+													<div class="form_row">
+														<div class="form_group">
+															<label class="form_label express__label">
+																<input class="form_input express__inp" type="text" placeholder="Введите адрес">
+																<input class="form_input button button__arrow inline express__btn" type="submit" value="">
+															</label>
+														</div>
+													</div>
+													<div class="form_row">
+														<div class="form_group">
+															<div class="link-icon"><a class="link-icon__text" href="">Определить адрес</a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="header-cart">
@@ -2072,14 +2112,20 @@
 									<div class="swiper-wrapper">
 										<div class="swiper-slide slider-slide">
 											<div class="slider-slide__content">
+												<div class="slider-slide__date">5-12 марта</div>
 												<div class="slider-slide__title">Только в марте пирожное Малина и Базилик по суперцене!</div>
 												<div class="slider-slide__text">Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили новую акцию</div>
+												<div class="slider-slide__price">
+													<div class="slider-slide__price__normal">376 ₽</div>
+													<div class="slider-slide__price__sale">523 ₽</div>
+												</div>
 											</div>
 											<div class="slider-slide__img"><img class="slider-slide__img__elem" src="images/stock-slider-img__1.png"></div>
 											<div class="slider-slide__bg" style="background-color: #FFD0BE;"></div>
 										</div>
 										<div class="swiper-slide slider-slide">
 											<div class="slider-slide__content">
+												<div class="slider-slide__date">13-27 марта</div>
 												<div class="slider-slide__title">Розыгрыш сертификатов на сумму 2 000 любые покупки</div>
 												<div class="slider-slide__text">Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили новую акцию</div>
 											</div>
@@ -2130,7 +2176,8 @@
 										<label class="form_label checkbox__label">
 											<input class="checkbox__input" type="checkbox" name="subscribe_checkbox" id="subscribe_checkbox" checked="checked">
 											<div class="checkbox__emulator"></div>
-											<div class="checkbox__text"><span>Даю согласие на обработку</span><a href="" target="_blank">персональных данных</a></div>
+											<div class="checkbox__text"><span>Даю согласие на обработку</span> <a href="" target="_blank">персональных данных</a>
+											</div>
 										</label>
 									</div>
 								</div>
@@ -2184,7 +2231,49 @@
 				<div class="section-container">
 					<div class="section-header">
 						<div class="section-title">
-							<h2 class="h1">Фирменные магазины в <a class="link-icon__text" href="">Москва и МО</a>
+							<h2 class="h1">Фирменные магазины в 
+								<div class="link-icon dropdown"><a class="link-icon__text" href="">Москва и МО</a>
+									<div class="dropdown-block">
+										<div class="dropdown-block__inner">
+											<div class="dropdown-city">
+												<div class="dropdown__heading">Ваш город</div>
+												<form class="dropdown-form">
+													<div class="form_row">
+														<div class="form_group">
+															<label class="form_label">
+																<input class="form_input dropdown-form-search__input" type="text" placeholder="Начните писать город">
+																<div class="dropdown-form-search__icon">
+																	<button class="dropdown-form-search__submit" type="submit">
+																		<svg class="icon icon-dropdown-input-search ">
+																			<use xlink:href="images/sprites.svg#dropdown-input-search"></use>
+																		</svg>
+																	</button>
+																</div>
+															</label>
+														</div>
+													</div>
+													<div class="form_row dropdown-form-result">
+														<div class="dropdown-form-result__item"><a class="dropdown-form-result__item" href="#"> Москва и область</a></div>
+														<div class="dropdown-form-result__item">Курск</div>
+														<div class="dropdown-form-result__item">Санкт-Петербург и область</div>
+														<div class="dropdown-form-result__item">Липецк</div>
+														<div class="dropdown-form-result__item">Белгород</div>
+														<div class="dropdown-form-result__item">Нижний Новгород</div>
+														<div class="dropdown-form-result__item">Великий Новгород</div>
+														<div class="dropdown-form-result__item">Рязань</div>
+														<div class="dropdown-form-result__item">Владимир</div>
+														<div class="dropdown-form-result__item">Тверь</div>
+														<div class="dropdown-form-result__item">Воронеж</div>
+														<div class="dropdown-form-result__item">Тула</div>
+														<div class="dropdown-form-result__item">Иваново</div>
+														<div class="dropdown-form-result__item">Ярославль</div>
+														<div class="dropdown-form-result__item">Калуга</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
 							</h2>
 						</div>
 						<div class="section-more"><a class="more-link" href="">Посмотреть все товары
@@ -2204,41 +2293,43 @@
 										</div>
 									</form>
 								</div>
-								<div class="shops-nav__item" data-shops-view-type="search">
-									<div class="shops-nav__icon">
-										<svg class="icon icon-menu ">
-											<use xlink:href="images/sprites.svg#menu"></use>
-										</svg>
+								<div class="shops-nav__list">
+									<div class="shops-nav__item" data-shops-nav="list">
+										<div class="shops-nav__icon">
+											<svg class="icon icon-menu ">
+												<use xlink:href="images/sprites.svg#menu"></use>
+											</svg>
+										</div>
+										<div class="shops-nav__text">Список</div>
 									</div>
-									<div class="shops-nav__text">Список</div>
-								</div>
-								<div class="shops-nav__item" data-shops-view-type="list">
-									<div class="shops-nav__icon">
-										<svg class="icon icon-geotag ">
-											<use xlink:href="images/sprites.svg#geotag"></use>
-										</svg>
+									<div class="shops-nav__item" data-shops-nav="map">
+										<div class="shops-nav__icon">
+											<svg class="icon icon-geotag ">
+												<use xlink:href="images/sprites.svg#geotag"></use>
+											</svg>
+										</div>
+										<div class="shops-nav__text">Карта</div>
 									</div>
-									<div class="shops-nav__text">Карта</div>
-								</div>
-								<div class="shops-nav__item" data-shops-view-type="map">
-									<div class="shops-nav__icon">
-										<svg class="icon icon-metro ">
-											<use xlink:href="images/sprites.svg#metro"></use>
-										</svg>
+									<div class="shops-nav__item" data-shops-nav="metro">
+										<div class="shops-nav__icon">
+											<svg class="icon icon-metro ">
+												<use xlink:href="images/sprites.svg#metro"></use>
+											</svg>
+										</div>
+										<div class="shops-nav__text">Метро</div>
 									</div>
-									<div class="shops-nav__text">Метро</div>
-								</div>
-								<div class="shops-nav__item" data-shops-view-type="beside">
-									<div class="shops-nav__icon">
-										<svg class="icon icon-map ">
-											<use xlink:href="images/sprites.svg#map"></use>
-										</svg>
+									<div class="shops-nav__item" data-shops-nav="beside">
+										<div class="shops-nav__icon">
+											<svg class="icon icon-map ">
+												<use xlink:href="images/sprites.svg#map"></use>
+											</svg>
+										</div>
+										<div class="shops-nav__text">Магазины рядом</div>
 									</div>
-									<div class="shops-nav__text">Магазины рядом</div>
 								</div>
 							</div>
 							<div class="shops-content">
-								<div class="shops-list scroll">
+								<div class="shops-content-tab shops-list scroll" data-shops-content="list">
 																		<div class="shops-list-item">
 																			<div class="shops-list-item__el shops-list-item__address">
 																				<div class="shops-list-item__address__text">м. Автозаводская, ул. Автозаводская, д. 8, пом. 5</div>
@@ -2636,6 +2727,9 @@
 																			</div>
 																		</div>
 								</div>
+								<div class="shops-content-tab shops-map" data-shops-content="map">2</div>
+								<div class="shops-content-tab shops-metro" data-shops-content="metro">3</div>
+								<div class="shops-content-tab shops-beside" data-shops-content="beside">4</div>
 							</div>
 						</div>
 					</div>
@@ -2781,7 +2875,7 @@
 								<div class="form_group">
 									<label class="form_label subscribe_label">
 										<input class="form_input subscribe_inp" type="email" name="subscribe_input_email" id="subscribe_input_email" placeholder="E-mail">
-										<input class="form_input button button__arrow subscribe_btn" type="submit" value="">
+										<input class="form_input button button__arrow button__arrow__red inline subscribe_btn" type="submit" value="">
 									</label>
 								</div>
 							</div>
@@ -2829,7 +2923,7 @@
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1597671499564"></script>
-		<script src="js/main.js?v=1597671499564"></script>
+		<script src="js/vendor.js?v=1597761607402"></script>
+		<script src="js/main.js?v=1597761607402"></script>
 	</body>
 </html>
