@@ -81,3 +81,115 @@ footer.footer
 				a(href="").footer-social__link
 					+icon('social-vk')
 
+
+
+.modal#callback.scroll
+	.modal__inner
+		.modal__head
+			.modal__title
+				| Закажите
+				br
+				=" "
+				| обратный звонок
+		.modal__body
+			form.form.modal__form
+				input(type="hidden", value="Закажите обратный звонок")
+				.form_row
+					.form_group
+						label.form_label
+							input.form_input(type="tel", name="modal-callback-tel", placeholder="+7 (ххх) ххх - хххх ")
+
+				.form_row
+					.form_group
+						label.form_label.checkbox__label
+							input.checkbox__input(type="checkbox", name="modal-callback-personal", id="modal-callback-personal", checked="checked")
+							.checkbox__emulator
+							.checkbox__text
+								span Даю согласие на обработку
+								=" "
+								a(href="", target="_blank") персональных данных
+
+				.form_row.form_submit
+					.form_group
+						input.button.button__arrow(type="submit", value="Перезвоните мне")
+
+.modal#palich-email.scroll
+	.modal__inner
+		.modal__head
+			.modal__title
+				| Напишите
+				br
+				=" "
+				| письмо Палычу
+			.modal__text Есть вопрос или предложение? Напишите нам, мы обязательно ответим
+		.modal__body
+			form.form.modal__form
+				input(type="hidden", value="Закажите обратный звонок")
+				.form_row
+					.form_group
+						label.form_label
+							input.form_input(type="text", name="modal-palich-email-name", placeholder="Ваше имя")
+				.form_row
+					.form_group
+						label.form_label
+							input.form_input(type="tel", name="modal-palich-email-tel", placeholder="+7 (ххх) ххх - хххх")
+
+				.form_row
+					.form_group
+						label.form_label
+							input.form_input(type="text", name="modal-palich-email-email", placeholder="Email")
+
+				.form_row
+					.form_group
+						label.form_label
+							textarea.form_input.form_textarea(name="modal-palich-email-comment", placeholder="Комментарий")
+
+				.form_row
+					.form_group
+						label.form_label.checkbox__label
+							input.checkbox__input(type="checkbox", name="modal-palich-email-personal", id="modal-palich-email-personal", checked="checked")
+							.checkbox__emulator
+							.checkbox__text
+								span Даю согласие на обработку
+								=" "
+								a(href="", target="_blank") персональных данных
+
+				.form_row.form_submit
+					.form_group
+						input.button.button__arrow(type="submit", value="Отправить")
+
+.modal#thx-callback.scroll
+	.modal__inner
+		.modal__body
+			.modal__thx
+				.modal__thx__icon
+					img(src="images/thx-callback.svg").modal__thx__img
+				.modal__title
+					| Спасибо
+					br
+					=" "
+					| за обращение!
+
+				.modal__text
+					| Менеджер свяжется с вами
+					br
+					=" "
+					| в ближайшее время
+
+.modal#thx-palich-email.scroll
+	.modal__inner
+		.modal__body
+			.modal__thx
+				.modal__thx__icon
+					img(src="images/thx-palich-email.svg")
+				.modal__title
+					| Спасибо
+					br
+					=" "
+					| за обращение!
+
+				.modal__text
+					| Сообщение успешно
+					br
+					=" "
+					| отправлено

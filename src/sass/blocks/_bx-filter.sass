@@ -1,0 +1,49 @@
+.bx-filter
+	&-wrapper
+	&-section
+	&-parameters
+		&-box
+			margin-bottom: 40px
+			&-row
+			&-title
+				font-weight: bold
+				font-size: 1rem
+				line-height: 1.313rem
+				margin-bottom: 25px
+			&-container
+				&:not(:last-child)
+					margin-bottom: 20px
+	&-container
+		&-modef
+	&-block
+		&__row
+		&-toggle
+			margin-top: 16px
+			&__link
+				text-transform: uppercase
+				letter-spacing: .2em
+				font-size: 10px
+				font-weight: 600
+				color: var(--vinishkotyan)
+				cursor: pointer
+
+	.checkbox
+		&__label
+			position: relative
+			display: flex
+			align-items: center
+			cursor: pointer
+		&__emulator
+			&:before
+				content: ""
+				display: inline-block
+				width: 16px
+				height: 16px
+				background-color: var(--light-pink)
+		&__text
+			font-size: 1rem
+			line-height: 1
+
+		.checkbox__input:checked+.checkbox__emulator:before
+			background-color: var(--vinishkotyan)
+			background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.349609 3.75325L1.75103 2.32635L3.95941 4.4953L8.34961 0.183492L9.75103 1.61039L3.95941 7.29858L0.349609 3.75325Z' fill='white'/%3E%3C/svg%3E%0A")

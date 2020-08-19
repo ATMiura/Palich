@@ -112,7 +112,7 @@
 									<svg class="icon icon-mail ">
 										<use xlink:href="images/sprites.svg#mail"></use>
 									</svg>
-								</div><a class="link-icon__text" href="">Письмо Палычу</a>
+								</div><a class="link-icon__text" href="#palich-email" data-modal-open>Письмо Палычу</a>
 							</div>
 						</div>
 						<div class="header-link__item">
@@ -121,7 +121,7 @@
 									<svg class="icon icon-phone ">
 										<use xlink:href="images/sprites.svg#phone"></use>
 									</svg>
-								</div><a class="link-icon__text" href="">Обратый звонок</a>
+								</div><a class="link-icon__text" href="#callback" data-modal-open>Обратый звонок</a>
 							</div>
 						</div>
 					</div>
@@ -2921,9 +2921,127 @@
 				</div>
 			</div>
 		</footer>
+		<div class="modal scroll" id="callback">
+			<div class="modal__inner">
+				<div class="modal__head">
+					<div class="modal__title">Закажите<br> обратный звонок
+					</div>
+				</div>
+				<div class="modal__body">
+					<form class="form modal__form">
+						<input type="hidden" value="Закажите обратный звонок">
+						<div class="form_row">
+							<div class="form_group">
+								<label class="form_label">
+									<input class="form_input" type="tel" name="modal-callback-tel" placeholder="+7 (ххх) ххх - хххх ">
+								</label>
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_group">
+								<label class="form_label checkbox__label">
+									<input class="checkbox__input" type="checkbox" name="modal-callback-personal" id="modal-callback-personal" checked="checked">
+									<div class="checkbox__emulator"></div>
+									<div class="checkbox__text"><span>Даю согласие на обработку</span> <a href="" target="_blank">персональных данных</a>
+									</div>
+								</label>
+							</div>
+						</div>
+						<div class="form_row form_submit">
+							<div class="form_group">
+								<input class="button button__arrow" type="submit" value="Перезвоните мне">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal scroll" id="palich-email">
+			<div class="modal__inner">
+				<div class="modal__head">
+					<div class="modal__title">Напишите<br> письмо Палычу
+					</div>
+					<div class="modal__text">Есть вопрос или предложение? Напишите нам, мы обязательно ответим</div>
+				</div>
+				<div class="modal__body">
+					<form class="form modal__form">
+						<input type="hidden" value="Закажите обратный звонок">
+						<div class="form_row">
+							<div class="form_group">
+								<label class="form_label">
+									<input class="form_input" type="text" name="modal-palich-email-name" placeholder="Ваше имя">
+								</label>
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_group">
+								<label class="form_label">
+									<input class="form_input" type="tel" name="modal-palich-email-tel" placeholder="+7 (ххх) ххх - хххх">
+								</label>
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_group">
+								<label class="form_label">
+									<input class="form_input" type="text" name="modal-palich-email-email" placeholder="Email">
+								</label>
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_group">
+								<label class="form_label">
+									<textarea class="form_input form_textarea" name="modal-palich-email-comment" placeholder="Комментарий"></textarea>
+								</label>
+							</div>
+						</div>
+						<div class="form_row">
+							<div class="form_group">
+								<label class="form_label checkbox__label">
+									<input class="checkbox__input" type="checkbox" name="modal-palich-email-personal" id="modal-palich-email-personal" checked="checked">
+									<div class="checkbox__emulator"></div>
+									<div class="checkbox__text"><span>Даю согласие на обработку</span> <a href="" target="_blank">персональных данных</a>
+									</div>
+								</label>
+							</div>
+						</div>
+						<div class="form_row form_submit">
+							<div class="form_group">
+								<input class="button button__arrow" type="submit" value="Отправить">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal scroll" id="thx-callback">
+			<div class="modal__inner">
+				<div class="modal__body">
+					<div class="modal__thx">
+						<div class="modal__thx__icon"><img class="modal__thx__img" src="images/thx-callback.svg"></div>
+						<div class="modal__title">Спасибо<br> за обращение!
+						</div>
+						<div class="modal__text">Менеджер свяжется с вами<br> в ближайшее время
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal scroll" id="thx-palich-email">
+			<div class="modal__inner">
+				<div class="modal__body">
+					<div class="modal__thx">
+						<div class="modal__thx__icon"><img src="images/thx-palich-email.svg"></div>
+						<div class="modal__title">Спасибо<br> за обращение!
+						</div>
+						<div class="modal__text">Сообщение успешно<br> отправлено
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1597761607402"></script>
-		<script src="js/main.js?v=1597761607402"></script>
+		<script src="js/vendor.js?v=1597848458201"></script>
+		<script src="js/main.js?v=1597848458201"></script>
 	</body>
 </html>

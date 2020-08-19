@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 
+/* слайдеры */
 $(document).ready(function () {
 	//if($('.js-productSlider .swiper-slide').length <= 1){
 	//	$('.js-productSlider .swiper-pagination').hide();

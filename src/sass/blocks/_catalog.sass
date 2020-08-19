@@ -1,0 +1,55 @@
+.catalog
+	display: flex
+	flex-wrap: wrap
+	margin: 0 -15px
+	&__list
+		display: flex
+		flex-wrap: wrap
+		//margin: 0 -15px
+	&__item
+		padding: 0 15px
+		position: relative
+		margin-bottom: 30px
+		&__inner
+			//padding: 20px 25px
+			padding-top: 40px
+			position: relative
+			height: 100%
+			display: flex
+			flex-direction: column
+			align-items: flex-end
+			justify-content: space-between
+		&__name
+			font-size: 1.5rem
+			line-height: 1.938rem
+			color: var(--black)
+			padding-left: 20px
+			width: 100%
+		&__img
+			display: block
+			font-size: 0
+			max-width: 100%
+			height: auto
+		&__size-1
+			flex-basis: 25%
+			max-width: 25%
+		&__size-2
+			flex-basis: 50%
+			max-width: 50%
+		&__color-1
+			background-color: var(--light-pink)
+		&__color-2
+			background-color: var(--sochperc)
+
+	.filter-wrapper
+		padding: 0 15px
+		flex-basis: 25%
+		max-width: 25%
+	.products
+		&__list
+			padding: 0 15px
+			flex-basis: 75%
+			max-width: 75%
+		&__item
+			flex-basis: 33.3%
+			max-width: 33.3%

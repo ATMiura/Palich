@@ -42,6 +42,7 @@
 	},
 	"dependencies": {
 		"@babel/polyfill": "7.0.0",
+		"@fancyapps/fancybox": "3.5.7",
 		"bootstrap-4-grid": "3.4.0",
 		"ion-rangeslider": "^2.3.0",
 		"jquery": "3.3.1",
