@@ -25,6 +25,31 @@
 		flex-wrap: wrap
 		margin: 0 -15px
 		//margin-bottom: 30px
+
+		.express
+			flex-basis: 100%
+			margin-bottom: 45px
+			&-block
+				flex-direction: row
+				align-items: center
+				padding: 25px 65px
+			&__icon
+				margin-right: 20px
+			&__title
+				margin-bottom: 10px
+			&__subtitle
+				margin: 0
+			&__form
+				margin-left: auto
+				max-width: 354px
+				width: 100%
+
+	&__more
+		display: flex
+		flex-basis: 100%
+		align-items: center
+		justify-content: center
+
 	&__item
 		flex-basis: 25%
 		max-width: 25%
@@ -203,7 +228,47 @@
 						color: var(--yellow)
 					.icon-product_add_to_cart
 						fill: var(--yellow)
+					.products-pickup
+						display: flex
 				&.in-cart
+
+
+	&-pickup
+		padding: 40px 50px
+		min-width: 315px
+		display: none
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		text-align: center
+		position: absolute
+		right: 0
+		bottom: 70px
+		z-index: 2
+		background: #FFFFFF
+		box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)
+		&:after
+			content: ""
+			background-image: url("data:image/svg+xml,%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.16731 0.37207L16.2838 9.99989H0.0507812L8.16731 0.37207Z' fill='white'/%3E%3C/svg%3E%0A")
+			background-repeat: no-repeat
+			background-position: top center
+			display: block
+			width: 17px
+			height: 10px
+			filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.09))
+			position: absolute
+		&__icon
+			margin-bottom: 20px
+		&__title
+			font-size: 1.125rem
+			font-weight: bold
+			line-height: 1
+			color: var(--black)
+			margin-bottom: 15px
+		&__text
+			font-size: 0.875rem
+			font-weight: normal
+			color: #1A1A1A
 
 
 

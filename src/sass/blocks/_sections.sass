@@ -6,15 +6,28 @@
 	&-header
 		display: flex
 		align-items: baseline
-		justify-content: space-between
+		//justify-content: space-between
 		//margin-bottom: 35px
 		margin-bottom: 25px !important
 	&-title
 		h2
 			margin-bottom: 0 !important
+	&-more
+		margin-left: auto
+
+	&-products-quantity
+		font-size: 1.125rem
+		line-height: 1.563rem
+		color: var(--gryaz-grey)
+
+	&-title + &-products-quantity
+		margin-left: 20px
+
 	&-content
 		width: 100%
+
 	&-slider
+
 	&.best-price
 		.section-title h2,
 		.more-link
@@ -76,3 +89,87 @@
 
 	&-catalog
 		margin-bottom: 80px
+
+	&-404
+		text-align: center
+		margin-top: 65px
+		margin-bottom: 110px
+		.section-icon
+			margin-bottom: 60px
+		.section-text
+			font-size: 1.875rem
+			line-height: 2.813rem
+			color: var(--black)
+			a
+				font-weight: bold
+				color: var(--vinishkotyan)
+
+	&-search
+		margin-bottom: 110px
+		&-result
+			display: flex
+			flex-wrap: wrap
+			margin: 0 -15px
+
+			.form-search
+				flex-basis: 100%
+				max-width: 995px
+				margin-bottom: 40px
+				padding: 0 15px
+				&__input
+					border: 1px solid var(--light-grey)
+					font-size: 0.875rem
+					line-height: 1.375rem
+				&__icon
+					margin-left: -33px
+					.icon-search-new
+						width: 18px
+						height: 18px
+				&__button
+					background-color: transparent
+					cursor: pointer
+			.section-icon
+				text-align: center
+				flex-basis: 100%
+				margin-top: 60px
+				margin-bottom: 30px
+			.section-text
+				text-align: center
+				flex-basis: 100%
+				font-size: 1rem
+				line-height: 1.688rem
+				.button
+					margin-top: 15px
+
+			.products
+				&__list
+					padding: 0 15px
+					flex-basis: 75%
+					max-width: 75%
+				&__item
+					flex-basis: 33.3%
+					max-width: 33.3%
+			.search-categories
+				padding: 0 15px
+				flex-basis: 25%
+				max-width: 25%
+				&__inner
+					background-color: var(--light-pink)
+					padding: 28px 36px
+					font-weight: bold
+				&__title
+					font-size: 1.5rem
+					line-height: 2.125rem
+					color: var(--black)
+					margin-bottom: 15px
+				&__list
+				&__item
+					&:not(:last-child)
+						margin-bottom: 15px
+				&__link
+					font-size: 1rem
+					line-height: 1.313rem
+					color: var(--vinishkotyan)
+
+
+

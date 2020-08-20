@@ -41,6 +41,69 @@
 		&__color-2
 			background-color: var(--sochperc)
 
+	// теги
+	&-tags
+		padding: 0 15px
+		margin-bottom: 30px
+		flex-basis: 100%
+		&__list
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+		&__item
+			&:not(:last-child)
+				margin-right: 13px
+		&__link
+			font-size: 0.875rem
+			line-height: 1rem
+
+			display: inline-block
+			border-radius: 30px
+			background-color: var(--light-pink)
+			color: var(--vinishkotyan)
+			padding: 7px 14px
+			width: auto
+			&.active,
+			&:hover
+				background-color: var(--vinishkotyan)
+				color: var(--light-pink)
+
+			&.active
+				&:after
+					content: ""
+					display: inline-block
+					background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.08417 7.29289C0.693644 7.68342 0.693644 8.31658 1.08417 8.70711C1.47469 9.09763 2.10786 9.09763 2.49838 8.70711L5.29128 5.91421L8.08417 8.70711C8.47469 9.09763 9.10786 9.09763 9.49838 8.70711C9.88891 8.31658 9.88891 7.68342 9.49838 7.29289L6.70549 4.5L9.49838 1.70711C9.88891 1.31658 9.88891 0.683416 9.49838 0.292892C9.10786 -0.0976323 8.47469 -0.0976323 8.08417 0.292892L5.29127 3.08579L2.49838 0.292893C2.10786 -0.0976311 1.47469 -0.0976311 1.08417 0.292893C0.693644 0.683417 0.693644 1.31658 1.08417 1.70711L3.87706 4.5L1.08417 7.29289Z' fill='%23FDF0E2'/%3E%3C/svg%3E%0A")
+					background-repeat: no-repeat
+					background-position: center center
+					width: 9px
+					height: 9px
+					margin-left: 10px
+
+	// сортировка
+	&-sort
+		padding: 0 15px
+		margin-bottom: 80px
+		font-size: 1rem
+		line-height: 1.375rem
+		color: var(--black)
+
+		display: flex
+		align-items: center
+		flex-basis: 100%
+
+		&__label
+			font-weight: bold
+			margin-right: 25px
+		&__list
+			display: flex
+			align-items: center
+		&__item
+			margin-right: 25px
+		&__link
+			border-bottom: 1px dashed #000000
+			&.active
+				border-bottom: transparent
+
 	.filter-wrapper
 		padding: 0 15px
 		flex-basis: 25%

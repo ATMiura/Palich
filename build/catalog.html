@@ -44,15 +44,15 @@
 							<div class="dropdown-block__inner">
 								<div class="dropdown-city">
 									<div class="dropdown__heading">Ваш город</div>
-									<form class="dropdown-form">
+									<form class="form-search dropdown-form">
 										<div class="form_row">
 											<div class="form_group">
 												<label class="form_label">
-													<input class="form_input dropdown-form-search__input" type="text" placeholder="Начните писать город">
-													<div class="dropdown-form-search__icon">
-														<button class="dropdown-form-search__submit" type="submit">
-															<svg class="icon icon-dropdown-input-search ">
-																<use xlink:href="images/sprites.svg#dropdown-input-search"></use>
+													<input class="form_input form-search__input" type="text" placeholder="Начните писать город">
+													<div class="form-search__icon">
+														<button class="form-search__button" type="submit">
+															<svg class="icon icon-search-new ">
+																<use xlink:href="images/sprites.svg#search-new"></use>
 															</svg>
 														</button>
 													</div>
@@ -988,15 +988,24 @@
 					</div>
 					<div class="header-logo"><img class="header-logo__img" src="images/logo-with-text.svg"></div>
 					<div class="header-search dropdown">
-						<form class="header-search__form form" action="">
+						<!--form(action="").header-search__form.form
+						.form_row
+							.form_group
+								label.form_label
+									input(type="text" placeholder="Введите название товара").header-search__input.form_input
+									.header-search__icon
+										button(type="submit").header-search__button
+											+icon('search')
+						-->
+						<form class="form form-search">
 							<div class="form_row">
 								<div class="form_group">
 									<label class="form_label">
-										<input class="header-search__input form_input" type="text" placeholder="Введите название товара">
-										<div class="header-search__icon">
-											<button class="header-search__button" type="submit">
-												<svg class="icon icon-search ">
-													<use xlink:href="images/sprites.svg#search"></use>
+										<input class="form_input form-search__input" type="text" placeholder="Введите название товара">
+										<div class="form-search__icon">
+											<button class="form-search__button" type="submit">
+												<svg class="icon icon-search-new ">
+													<use xlink:href="images/sprites.svg#search-new"></use>
 												</svg>
 											</button>
 										</div>
@@ -1154,9 +1163,11 @@
 											</div>
 											<div class="express-block">
 												<div class="express__close"></div>
-												<div class="express__title">Экспресс-доставка за 90 минут!</div>
-												<div class="express__subtitle">Введите адрес - мы покажем, что у нас есть для Вас</div>
-												<div class="form">
+												<div class="express__text">
+													<div class="express__title">Экспресс-доставка за 90 минут!</div>
+													<div class="express__subtitle">Введите адрес - мы покажем, что у нас есть для Вас</div>
+												</div>
+												<div class="form express__form">
 													<div class="form_row">
 														<div class="form_group">
 															<label class="form_label express__label">
@@ -1509,7 +1520,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1597848458716"></script>
-		<script src="js/main.js?v=1597848458716"></script>
+		<script src="js/vendor.js?v=1597928158809"></script>
+		<script src="js/main.js?v=1597928158809"></script>
 	</body>
 </html>

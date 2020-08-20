@@ -13,6 +13,35 @@
 			&-container
 				&:not(:last-child)
 					margin-bottom: 20px
+				&--flex
+					display: flex
+					flex-wrap: wrap
+				&-block
+					display: inline-flex
+					align-items: center
+					flex-basis: 50%
+					margin-bottom: 10px
+					&.bx-left
+					&.bx-right
+						justify-content: flex-end
+
+	&-input
+		&-container
+			margin-left: 10px
+			width: 100%
+			max-width: 95px
+			.min-price,
+			.max-price
+				&.input
+					background: #FFFFFF
+					border: 1px solid #E6E9EF
+					//transform: matrix(-1, 0, 0, 1, 0, 0)
+					padding: 7px 10px
+					font-size: 1rem
+					line-height: 1.688rem
+					color: var(--black)
+					opacity: 0.3
+
 	&-container
 		&-modef
 	&-block
@@ -47,3 +76,64 @@
 		.checkbox__input:checked+.checkbox__emulator:before
 			background-color: var(--vinishkotyan)
 			background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.349609 3.75325L1.75103 2.32635L3.95941 4.4953L8.34961 0.183492L9.75103 1.61039L3.95941 7.29858L0.349609 3.75325Z' fill='white'/%3E%3C/svg%3E%0A")
+
+	&-reset
+		background: none
+		font-size: 1rem
+		font-weight: bold
+		line-height: 1.313rem
+		color: var(--vinishkotyan)
+		cursor: pointer
+		display: flex
+		align-items: center
+		&:before
+			content: ""
+			display: inline-block
+			width: 17px
+			height: 16px
+			background-image: url("data:image/svg+xml,%3Csvg width='18' height='16' viewBox='0 0 18 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.00061 4.4623C5.12156 2.97247 6.93361 2 8.98647 2C12.4185 2 15.1589 4.70909 15.1589 8C15.1589 11.2909 12.4185 14 8.98647 14C6.91113 14 5.08189 13.0061 3.96402 11.4885C3.63647 11.0439 3.01046 10.9489 2.56579 11.2765C2.12113 11.604 2.02619 12.2301 2.35374 12.6747C3.83966 14.6919 6.26067 16 8.98647 16C13.4769 16 17.1589 12.4411 17.1589 8C17.1589 3.55892 13.4769 0 8.98647 0C6.34834 0 3.99571 1.2253 2.5 3.13286V1.659C2.5 1.10671 2.05228 0.658995 1.5 0.658995C0.947715 0.658995 0.5 1.10671 0.5 1.659V5.4623C0.5 6.01459 0.947715 6.4623 1.5 6.4623H5.30331C5.85559 6.4623 6.30331 6.01459 6.30331 5.4623C6.30331 4.91002 5.85559 4.4623 5.30331 4.4623H4.00061Z' fill='%23A70230'/%3E%3C/svg%3E%0A")
+			margin-right: 10px
+		.clear
+			background: none
+			font-size: inherit
+			font-weight: inherit
+			line-height: inherit
+			color: inherit
+			cursor: pointer
+
+
+
+
+
+.bx-ui-slider
+	&-track
+		&-container
+			flex-basis: 100%
+	&-part
+		display: none
+	&-pricebar
+		background: none
+		&-vd
+		&-vn
+			background-color: var(--light-pink)
+		&-v
+			background-color: var(--vinishkotyan)
+	&-range
+	&-handle
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		width: 16px
+		height: 16px
+		background: #FFFFFF
+		box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802)
+		border-radius: 100%
+		&:after
+			content: ""
+			width: 6px
+			height: 6px
+			border-radius: 100%
+			background-color: var(--vinishkotyan)
+
+		&.left,
+		&.right

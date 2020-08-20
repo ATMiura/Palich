@@ -1,0 +1,18 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Торт «Вишнёвый» со сливочным кремом'
+
+block content
+	section.section.section-catalog
+		.section-container
+			.breadcrumbs
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Главная
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Каталог
+					li.breadcrumbs__item
+						span Торты
+			.section-content

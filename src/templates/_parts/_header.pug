@@ -9,14 +9,14 @@ header.header
 					.dropdown-block__inner
 						.dropdown-city
 							.dropdown__heading Ваш город
-							form.dropdown-form
+							form.form-search.dropdown-form
 								.form_row
 									.form_group
 										label.form_label
-											input(type="text" placeholder="Начните писать город").form_input.dropdown-form-search__input
-											.dropdown-form-search__icon
-												button(type="submit").dropdown-form-search__submit
-													+icon('dropdown-input-search')
+											input(type="text", placeholder='Начните писать город').form_input.form-search__input
+											.form-search__icon
+												button(type="submit").form-search__button
+													+icon('search-new')
 								.form_row.dropdown-form-result
 									.dropdown-form-result__item
 										a(href="#").dropdown-form-result__item  Москва и область
@@ -126,7 +126,7 @@ header.header
 				img.header-logo__img(src="images/logo-with-text.svg")
 
 			.header-search.dropdown
-				form(action="").header-search__form.form
+				//form(action="").header-search__form.form
 					.form_row
 						.form_group
 							label.form_label
@@ -134,6 +134,14 @@ header.header
 								.header-search__icon
 									button(type="submit").header-search__button
 										+icon('search')
+				form.form.form-search
+					.form_row
+						.form_group
+							label.form_label
+								input(type="text", placeholder="Введите название товара").form_input.form-search__input
+								.form-search__icon
+									button(type="submit").form-search__button
+										+icon('search-new')
 				.dropdown-block
 					.dropdown-block__inner
 						.dropdown-search
@@ -217,9 +225,10 @@ header.header
 
 									.express-block
 										.express__close
-										.express__title Экспресс-доставка за 90 минут!
-										.express__subtitle Введите адрес - мы покажем, что у нас есть для Вас
-										.form
+										.express__text
+											.express__title Экспресс-доставка за 90 минут!
+											.express__subtitle Введите адрес - мы покажем, что у нас есть для Вас
+										.form.express__form
 											.form_row
 												.form_group
 													label.form_label.express__label
