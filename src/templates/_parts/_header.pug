@@ -1,41 +1,42 @@
 header.header
 	.header-top
 		.grid-container
-			.link-icon.dropdown
-				.link-icon__icon
-					+icon('geotag')
-				a(href="").link-icon__text Москва и МО
-				.dropdown-block
-					.dropdown-block__inner
-						.dropdown-city
-							.dropdown__heading Ваш город
-							form.form-search.dropdown-form
-								.form_row
-									.form_group
-										label.form_label
-											input(type="text", placeholder='Начните писать город').form_input.form-search__input
-											.form-search__icon
-												button(type="submit").form-search__button
-													+icon('search-new')
-								.form_row.dropdown-form-result
-									.dropdown-form-result__item
-										a(href="#").dropdown-form-result__item  Москва и область
-									.dropdown-form-result__item Курск
-									.dropdown-form-result__item Санкт-Петербург и область
-									.dropdown-form-result__item Липецк
-									.dropdown-form-result__item Белгород
-									.dropdown-form-result__item Нижний Новгород
-									.dropdown-form-result__item Великий Новгород
-									.dropdown-form-result__item Рязань
-									.dropdown-form-result__item Владимир
-									.dropdown-form-result__item Тверь
-									.dropdown-form-result__item Воронеж
-									.dropdown-form-result__item Тула
-									.dropdown-form-result__item Иваново
-									.dropdown-form-result__item Ярославль
-									.dropdown-form-result__item Калуга
-			.header-nav
-				ul.header-nav__list
+			.header-city(data-desktop="city")
+				.link-icon.dropdown(data-move="city")
+					.link-icon__icon
+						+icon('geotag')
+					a(href="").link-icon__text Москва и МО
+					.dropdown-block
+						.dropdown-block__inner
+							.dropdown-city
+								.dropdown__heading Ваш город
+								form.form-search.dropdown-form
+									.form_row
+										.form_group
+											label.form_label
+												input(type="text", placeholder='Начните писать город').form_input.form-search__input
+												.form-search__icon
+													button(type="submit").form-search__button
+														+icon('search-new')
+									.form_row.dropdown-form-result
+										.dropdown-form-result__item
+											a(href="#").dropdown-form-result__item  Москва и область
+										.dropdown-form-result__item Курск
+										.dropdown-form-result__item Санкт-Петербург и область
+										.dropdown-form-result__item Липецк
+										.dropdown-form-result__item Белгород
+										.dropdown-form-result__item Нижний Новгород
+										.dropdown-form-result__item Великий Новгород
+										.dropdown-form-result__item Рязань
+										.dropdown-form-result__item Владимир
+										.dropdown-form-result__item Тверь
+										.dropdown-form-result__item Воронеж
+										.dropdown-form-result__item Тула
+										.dropdown-form-result__item Иваново
+										.dropdown-form-result__item Ярославль
+										.dropdown-form-result__item Калуга
+			.header-nav(data-desktop="top-nav")
+				ul.header-nav__list(data-move="top-nav")
 					li.header-nav__item.dropdown
 						a(href="#").header-nav__item__link О компании
 						.dropdown-block
@@ -58,35 +59,47 @@ header.header
 					li.header-nav__item
 						a(href="#").header-nav__item__link Контакты
 
-			.header-link__list
-				.header-link__item
-					.link-icon
-						.link-icon__icon
-							+icon('mail')
-						a(href="#palich-email", data-modal-open).link-icon__text Письмо Палычу
-				.header-link__item
-					.js-popup(data-popup-id="callback").link-icon
-						.link-icon__icon
-							+icon('phone')
-						a(href="#callback", data-modal-open).link-icon__text Обратый звонок
+			.header-call(data-desktop="call")
+				.header-link__list(data-move="call-links")
+					.header-link__item
+						.link-icon
+							.link-icon__icon
+								+icon('mail')
+							a(href="#palich-email", data-modal-open).link-icon__text Письмо Палычу
+					.header-link__item
+						.js-popup(data-popup-id="callback").link-icon
+							.link-icon__icon
+								+icon('phone')
+							a(href="#callback", data-modal-open).link-icon__text Обратый звонок
 
-			.header-phone__list
-				.header-phone__item
-					.header-phone__item__label Горячая линия
-					a(href="tel:8 (800) 555-81-63").header-phone__item__link 8 (800) 555-81-63
-				.header-phone__item
-					.header-phone__item__label Интернет-магазин
-					a(href="tel:+7 999 999-99-99").header-phone__item__link +7 999 999-99-99
+				.header-phone__list(data-move="call-tels")
+					.header-phone__item
+						.header-phone__item__label Горячая линия
+						a(href="tel:8 (800) 555-81-63").header-phone__item__link 8 (800) 555-81-63
+					.header-phone__item
+						.header-phone__item__label Интернет-магазин
+						a(href="tel:+7 999 999-99-99").header-phone__item__link +7 999 999-99-99
+
+			.header-mobile
+				.header-mobile__block
+					.header-mobile__burger(data-mobile-menu="burger")
+					.header-mobile__logo
+						+icon('logo-mobile')
+				.header-mobile__block
+					.header-mobile__search
+						+icon('search-new')
+					.header-mobile__cart(data-mobile-menu="cart")
+
 
 	.header-main
 		.grid-container
-			.header-burger.dropdown
-				a.header-burger__link(href="")
+			.header-burger.dropdown(data-desktop="catalog")
+				a.header-burger__link(href="",data-move="burger")
 					+icon('menu')
 				.dropdown-block
 					.dropdown-block__inner
 						.dropdown-menu
-							ul.nav-list
+							ul.nav-list(data-move="catalog")
 								- var submenuList = ['Бисквитные','Блинные','Бисквитные','Блинные','Муссовые','Песочные','Слоеные','Безе','С орехами и сухофруктами','С ягодами и фруктами','Шоколадные','Наборы','Детские','Особая серия,Постные / Веганские','Птичье молоко','Сметанные и творожные','Торт-рулет']
 								mixin nav-item(icon,label)
 									li.nav-item.has-submenu
@@ -123,9 +136,10 @@ header.header
 
 
 			.header-logo
-				img.header-logo__img(src="images/logo-with-text.svg")
+				.header-logo__img
+					+icon('logo-with-text')
 
-			.header-search.dropdown
+			.header-search.dropdown(data-dropdown="search", data-desktop="search")
 				//form(action="").header-search__form.form
 					.form_row
 						.form_group
@@ -134,7 +148,7 @@ header.header
 								.header-search__icon
 									button(type="submit").header-search__button
 										+icon('search')
-				form.form.form-search
+				form.form.form-search(data-move="search")
 					.form_row
 						.form_group
 							label.form_label
@@ -200,7 +214,7 @@ header.header
 					.header-bar__item__icon
 						+icon('percentage')
 					a.header-bar__item__link(href="") Акции
-				.header-bar__item.dropdown
+				.header-bar__item.dropdown(data-dropdown="delivery")
 					.header-bar__item__icon
 						+icon('delivery-company')
 					a.header-bar__item__link(href="") Выберите доставку
@@ -239,8 +253,8 @@ header.header
 													.link-icon
 														a(href="").link-icon__text Определить адрес
 
-			.header-cart
-				.header-cart__counter
+			.header-cart(data-desktop="cart")
+				.header-cart__counter(data-move="cart")
 					.header-cart__icon
 						+icon('cart')
 					.header-cart__number 10

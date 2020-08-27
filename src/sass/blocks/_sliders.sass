@@ -3,6 +3,8 @@
 	//margin: 0 auto
 	position: relative
 	margin-bottom: 70px
+	@media #{$laptop}
+		margin-bottom: 0
 	&-wrapper
 		margin-left: 100px
 
@@ -51,6 +53,15 @@
 				-o-object-fit: contain
 				object-fit: contain
 				font-family: contain,"object-fit: contain;"
+			@media #{$laptop}
+				&__elem
+					//max-width: 450px
+					max-width: 60%
+		@media #{$laptop}
+			&__bg
+				max-width: 655px
+
+
 	.swiper
 		&-button
 			&__wrapper
@@ -139,6 +150,7 @@
 			align-items: center
 			justify-content: center
 			flex-direction: row-reverse
+			margin-left: auto
 			.swiper-button-prev
 				margin-right: 40px
 				margin-bottom: 0 !important
@@ -150,22 +162,43 @@
 .slider-stock
 	margin-top: -45px
 	margin-bottom: 125px
+	position: relative
+	overflow: hidden
+	&:before
+		content: ""
+		display: block
+		height: 100%
+		width: calc((100% - 1200px)/2 + 15px)
+		position: absolute
+		top: 0
+		left: 0
+		background: #fff
+		z-index: 2
 	.section
-		&-container
-			max-width: 100%
+		//&-container
+			@media #{$laptop-above}
+				max-width: 100%
 		&-header
 			max-width: 1200px
 			margin: 0 auto
 		&-content
-			margin-left: 18.445%
-			width: auto
+			//@media #{$laptop-above}
+				margin-left: 18.445%
+				width: auto
 
 	.slider
-
+		&-wrapper
+			margin-left: 70px
+			overflow: visible
 		&-slide
 			max-width: 850px
 			width: 100%
-			padding-bottom: 24.381%
+			padding-bottom: 25.381%
+			@media #{$laptop}
+				padding-bottom: 35%
+				//padding-bottom: 48.762%
+			//@media #{$laptop}
+				padding-bottom: 35%
 			&__content
 				max-width: 360px
 			&__date

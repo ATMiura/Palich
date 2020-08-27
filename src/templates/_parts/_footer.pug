@@ -81,7 +81,21 @@ footer.footer
 				a(href="").footer-social__link
 					+icon('social-vk')
 
-
+.mobile
+	.mobile-menu(data-mobile-menu)
+		.mobile-menu__head
+			.mobile-menu__logo(data-mobile-menu-logo="logo")
+				+icon('search-new')
+			.mobile-menu__close(data-mobile-menu-close)
+				+icon('close')
+		.mobile-menu__body
+			.mobile-menu__section(data-mobile-menu="city")
+			.mobile-menu__section.dropdown(data-mobile-menu="search")
+			.mobile-menu__section(data-mobile-menu="catalog")
+			.mobile-menu__section(data-mobile-menu="top-nav")
+			.mobile-menu__section(data-mobile-menu="call")
+				.mobile-menu__section__inner(data-mobile-menu="call-links")
+				.mobile-menu__section__inner(data-mobile-menu="call-tels")
 
 .modal#callback.scroll
 	.modal__inner

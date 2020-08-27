@@ -59,6 +59,12 @@
 		//padding-bottom: 50px
 		padding-bottom: 20px
 		margin-bottom: 70px
+		@media #{$laptop}
+			flex-basis: 33.3%
+			max-width: 33.3%
+			margin-bottom: 30px
+		&__inner
+			background-color: var(--white)
 		&__size
 			&__big
 				flex-basis: 50%
@@ -69,6 +75,8 @@
 					padding: 12px 45px 15px 45px
 					flex-direction: row
 					align-items: center
+					@media #{$laptop}
+						padding: 12px 10px 15px 10px
 				.products__item__name
 					max-width: 200px
 					margin-bottom: 0
@@ -85,6 +93,7 @@
 					color: var(--yellow)
 				.icon-product_add_to_cart
 					fill: var(--yellow)
+
 		&__slider
 			.swiper
 				&-container
@@ -111,6 +120,12 @@
 				display: block
 				font-size: 0
 				line-height: 0
+				max-width: 100%
+				height: auto
+			&__img
+				margin: 0 auto
+				@media #{$laptop}
+					padding-top: 9px
 
 
 		&__label__wrap

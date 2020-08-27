@@ -1,8 +1,12 @@
 /* секции */
 .section
+
 	&-container
 		max-width: 1200px
 		margin: 0 auto
+		padding: 0 15px
+		@media #{$desktop}
+			max-width: 1170px
 	&-header
 		display: flex
 		align-items: baseline
@@ -45,6 +49,9 @@
 			display: flex
 			justify-content: space-between
 
+			@media #{$laptop}
+				padding: 50px
+
 
 		.section__col
 			max-width: 400px
@@ -69,6 +76,7 @@
 			.subscribe_btn
 				max-width: 185px
 				min-width: 175px
+
 
 	&-advant
 		margin-bottom: 120px
@@ -171,5 +179,7 @@
 					line-height: 1.313rem
 					color: var(--vinishkotyan)
 
-
+	@media #{$laptop}
+		margin-bottom: 50px
+		margin-top: 0 !important
 

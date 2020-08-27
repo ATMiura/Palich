@@ -20,12 +20,19 @@
 .footer-top
 	max-width: 1200px
 	margin: 0 auto
+	padding: 0 15px
 	padding-bottom: 75px
 	margin-bottom: 45px
 	border-bottom: 1px solid var(--light-grey)
 
 	display: flex
 	flex-wrap: wrap
+
+	@media #{$desktop}
+		max-width: 1170px
+
+	@media #{$laptop}
+		padding-bottom: 30px
 
 
 .footer-left,
@@ -48,6 +55,15 @@
 	.footer-heading
 		margin-bottom: 23px
 
+@media #{$laptop}
+	.footer-left
+		max-width: 60%
+	.footer-right
+		max-width: 40%
+		padding-right: 0
+
+
+
 .footer-heading
 	font-size: 1.5rem
 	line-height: 2rem
@@ -62,6 +78,8 @@
 	flex-direction: column
 	&:not(:last-child)
 		margin-right: 105px
+		@media #{$laptop}
+			margin-right: 50px
 
 	&__list
 		display: flex
@@ -105,6 +123,9 @@
 	display: flex
 	align-items: center
 	justify-content: space-between
+	padding: 0 15px
+	@media #{$desktop}
+		max-width: 1170px
 
 .footer-policy
 	max-width: 470px
@@ -112,6 +133,7 @@
 	display: flex
 	align-items: center
 	justify-content: space-between
+	padding: 0 15px
 	&__link
 		font-size: .875rem
 		line-height: 1.313rem

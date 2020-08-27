@@ -203,6 +203,23 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 
 /***/ }),
 
+/***/ "./src/js/_parts/_mobile-el-replace.js":
+/*!*********************************************!*\
+  !*** ./src/js/_parts/_mobile-el-replace.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).on('load resize', function () {
+  $('[data-move]').each(function (element) {
+    var dataMoveAttr = $(this).data('move');
+    $(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
+    $(this).appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_modal.js":
 /*!*********************************!*\
   !*** ./src/js/_parts/_modal.js ***!
@@ -6130,6 +6147,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_parts_dropdown__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_parts/_shops-tabs */ "./src/js/_parts/_shops-tabs.js");
 /* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_parts/_mobile-el-replace */ "./src/js/_parts/_mobile-el-replace.js");
+/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 

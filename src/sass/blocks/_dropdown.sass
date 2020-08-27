@@ -62,6 +62,7 @@
 				transform: translateY(6px)
 
 	&-block
+		//display: none
 		opacity: 0
 		visibility: hidden
 		//filter: drop-shadow(0px 65px 270px rgba(0, 0, 0, 0.09)) drop-shadow(0px 27.1554px 112.8px rgba(0, 0, 0, 0.0646969)) drop-shadow(0px 14.5186px 60.308px rgba(0, 0, 0, 0.0536497)) drop-shadow(0px 8.13901px 33.8082px rgba(0, 0, 0, 0.045)) drop-shadow(0px 4.32257px 17.9553px rgba(0, 0, 0, 0.0363503)) drop-shadow(0px 1.79872px 7.47159px rgba(0, 0, 0, 0.0253031))
@@ -83,6 +84,10 @@
 			margin-top: -10px
 		&__inner
 			padding: 20px
+
+		//@media #{$laptop}
+			opacity: 1
+			visibility: visible
 
 	&.is-open,
 	&:hover
@@ -241,4 +246,11 @@
 .section-title .dropdown:hover:after
 	transform: translateY(32px)
 
-
+.dropdown[data-dropdown="delivery"] .dropdown-block
+	left: -60px
+	@media #{$laptop}
+		left: initial
+		right: 0
+.dropdown[data-dropdown="search"] .dropdown-block
+	@media #{$laptop}
+		left: -50%

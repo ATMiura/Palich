@@ -34,55 +34,57 @@
 		<header class="header">
 			<div class="header-top">
 				<div class="grid-container">
-					<div class="link-icon dropdown">
-						<div class="link-icon__icon">
-							<svg class="icon icon-geotag ">
-								<use xlink:href="images/sprites.svg#geotag"></use>
-							</svg>
-						</div><a class="link-icon__text" href="">Москва и МО</a>
-						<div class="dropdown-block">
-							<div class="dropdown-block__inner">
-								<div class="dropdown-city">
-									<div class="dropdown__heading">Ваш город</div>
-									<form class="form-search dropdown-form">
-										<div class="form_row">
-											<div class="form_group">
-												<label class="form_label">
-													<input class="form_input form-search__input" type="text" placeholder="Начните писать город">
-													<div class="form-search__icon">
-														<button class="form-search__button" type="submit">
-															<svg class="icon icon-search-new ">
-																<use xlink:href="images/sprites.svg#search-new"></use>
-															</svg>
-														</button>
-													</div>
-												</label>
+					<div class="header-city" data-desktop="city">
+						<div class="link-icon dropdown" data-move="city">
+							<div class="link-icon__icon">
+								<svg class="icon icon-geotag ">
+									<use xlink:href="images/sprites.svg#geotag"></use>
+								</svg>
+							</div><a class="link-icon__text" href="">Москва и МО</a>
+							<div class="dropdown-block">
+								<div class="dropdown-block__inner">
+									<div class="dropdown-city">
+										<div class="dropdown__heading">Ваш город</div>
+										<form class="form-search dropdown-form">
+											<div class="form_row">
+												<div class="form_group">
+													<label class="form_label">
+														<input class="form_input form-search__input" type="text" placeholder="Начните писать город">
+														<div class="form-search__icon">
+															<button class="form-search__button" type="submit">
+																<svg class="icon icon-search-new ">
+																	<use xlink:href="images/sprites.svg#search-new"></use>
+																</svg>
+															</button>
+														</div>
+													</label>
+												</div>
 											</div>
-										</div>
-										<div class="form_row dropdown-form-result">
-											<div class="dropdown-form-result__item"><a class="dropdown-form-result__item" href="#"> Москва и область</a></div>
-											<div class="dropdown-form-result__item">Курск</div>
-											<div class="dropdown-form-result__item">Санкт-Петербург и область</div>
-											<div class="dropdown-form-result__item">Липецк</div>
-											<div class="dropdown-form-result__item">Белгород</div>
-											<div class="dropdown-form-result__item">Нижний Новгород</div>
-											<div class="dropdown-form-result__item">Великий Новгород</div>
-											<div class="dropdown-form-result__item">Рязань</div>
-											<div class="dropdown-form-result__item">Владимир</div>
-											<div class="dropdown-form-result__item">Тверь</div>
-											<div class="dropdown-form-result__item">Воронеж</div>
-											<div class="dropdown-form-result__item">Тула</div>
-											<div class="dropdown-form-result__item">Иваново</div>
-											<div class="dropdown-form-result__item">Ярославль</div>
-											<div class="dropdown-form-result__item">Калуга</div>
-										</div>
-									</form>
+											<div class="form_row dropdown-form-result">
+												<div class="dropdown-form-result__item"><a class="dropdown-form-result__item" href="#"> Москва и область</a></div>
+												<div class="dropdown-form-result__item">Курск</div>
+												<div class="dropdown-form-result__item">Санкт-Петербург и область</div>
+												<div class="dropdown-form-result__item">Липецк</div>
+												<div class="dropdown-form-result__item">Белгород</div>
+												<div class="dropdown-form-result__item">Нижний Новгород</div>
+												<div class="dropdown-form-result__item">Великий Новгород</div>
+												<div class="dropdown-form-result__item">Рязань</div>
+												<div class="dropdown-form-result__item">Владимир</div>
+												<div class="dropdown-form-result__item">Тверь</div>
+												<div class="dropdown-form-result__item">Воронеж</div>
+												<div class="dropdown-form-result__item">Тула</div>
+												<div class="dropdown-form-result__item">Иваново</div>
+												<div class="dropdown-form-result__item">Ярославль</div>
+												<div class="dropdown-form-result__item">Калуга</div>
+											</div>
+										</form>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="header-nav">
-						<ul class="header-nav__list">
+					<div class="header-nav" data-desktop="top-nav">
+						<ul class="header-nav__list" data-move="top-nav">
 							<li class="header-nav__item dropdown"><a class="header-nav__item__link" href="#">О компании</a>
 								<div class="dropdown-block">
 									<div class="dropdown-block__inner">
@@ -105,46 +107,66 @@
 							<li class="header-nav__item"><a class="header-nav__item__link" href="#">Контакты</a></li>
 						</ul>
 					</div>
-					<div class="header-link__list">
-						<div class="header-link__item">
-							<div class="link-icon">
-								<div class="link-icon__icon">
-									<svg class="icon icon-mail ">
-										<use xlink:href="images/sprites.svg#mail"></use>
-									</svg>
-								</div><a class="link-icon__text" href="#palich-email" data-modal-open>Письмо Палычу</a>
+					<div class="header-call" data-desktop="call">
+						<div class="header-link__list" data-move="call-links">
+							<div class="header-link__item">
+								<div class="link-icon">
+									<div class="link-icon__icon">
+										<svg class="icon icon-mail ">
+											<use xlink:href="images/sprites.svg#mail"></use>
+										</svg>
+									</div><a class="link-icon__text" href="#palich-email" data-modal-open>Письмо Палычу</a>
+								</div>
+							</div>
+							<div class="header-link__item">
+								<div class="js-popup link-icon" data-popup-id="callback">
+									<div class="link-icon__icon">
+										<svg class="icon icon-phone ">
+											<use xlink:href="images/sprites.svg#phone"></use>
+										</svg>
+									</div><a class="link-icon__text" href="#callback" data-modal-open>Обратый звонок</a>
+								</div>
 							</div>
 						</div>
-						<div class="header-link__item">
-							<div class="js-popup link-icon" data-popup-id="callback">
-								<div class="link-icon__icon">
-									<svg class="icon icon-phone ">
-										<use xlink:href="images/sprites.svg#phone"></use>
-									</svg>
-								</div><a class="link-icon__text" href="#callback" data-modal-open>Обратый звонок</a>
+						<div class="header-phone__list" data-move="call-tels">
+							<div class="header-phone__item">
+								<div class="header-phone__item__label">Горячая линия</div><a class="header-phone__item__link" href="tel:8 (800) 555-81-63">8 (800) 555-81-63</a>
+							</div>
+							<div class="header-phone__item">
+								<div class="header-phone__item__label">Интернет-магазин</div><a class="header-phone__item__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a>
 							</div>
 						</div>
 					</div>
-					<div class="header-phone__list">
-						<div class="header-phone__item">
-							<div class="header-phone__item__label">Горячая линия</div><a class="header-phone__item__link" href="tel:8 (800) 555-81-63">8 (800) 555-81-63</a>
+					<div class="header-mobile">
+						<div class="header-mobile__block">
+							<div class="header-mobile__burger" data-mobile-menu="burger"></div>
+							<div class="header-mobile__logo">
+								<svg class="icon icon-logo-mobile ">
+									<use xlink:href="images/sprites.svg#logo-mobile"></use>
+								</svg>
+							</div>
 						</div>
-						<div class="header-phone__item">
-							<div class="header-phone__item__label">Интернет-магазин</div><a class="header-phone__item__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a>
+						<div class="header-mobile__block">
+							<div class="header-mobile__search">
+								<svg class="icon icon-search-new ">
+									<use xlink:href="images/sprites.svg#search-new"></use>
+								</svg>
+							</div>
+							<div class="header-mobile__cart" data-mobile-menu="cart"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="header-main">
 				<div class="grid-container">
-					<div class="header-burger dropdown"><a class="header-burger__link" href="">
+					<div class="header-burger dropdown" data-desktop="catalog"><a class="header-burger__link" href="" data-move="burger">
 							<svg class="icon icon-menu ">
 								<use xlink:href="images/sprites.svg#menu"></use>
 							</svg></a>
 						<div class="dropdown-block">
 							<div class="dropdown-block__inner">
 								<div class="dropdown-menu">
-									<ul class="nav-list">
+									<ul class="nav-list" data-move="catalog">
 																				<li class="nav-item has-submenu"><a class="nav-item__link" href="#">
 																						<div class="nav-item__icon">
 																							<svg class="icon icon-submenu-icon-stock ">
@@ -986,8 +1008,14 @@
 							</div>
 						</div>
 					</div>
-					<div class="header-logo"><img class="header-logo__img" src="images/logo-with-text.svg"></div>
-					<div class="header-search dropdown">
+					<div class="header-logo">
+						<div class="header-logo__img">
+							<svg class="icon icon-logo-with-text ">
+								<use xlink:href="images/sprites.svg#logo-with-text"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="header-search dropdown" data-dropdown="search" data-desktop="search">
 						<!--form(action="").header-search__form.form
 						.form_row
 							.form_group
@@ -997,7 +1025,7 @@
 										button(type="submit").header-search__button
 											+icon('search')
 						-->
-						<form class="form form-search">
+						<form class="form form-search" data-move="search">
 							<div class="form_row">
 								<div class="form_group">
 									<label class="form_label">
@@ -1139,7 +1167,7 @@
 								</svg>
 							</div><a class="header-bar__item__link" href="">Акции</a>
 						</div>
-						<div class="header-bar__item dropdown">
+						<div class="header-bar__item dropdown" data-dropdown="delivery">
 							<div class="header-bar__item__icon">
 								<svg class="icon icon-delivery-company ">
 									<use xlink:href="images/sprites.svg#delivery-company"></use>
@@ -1189,8 +1217,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="header-cart">
-						<div class="header-cart__counter">
+					<div class="header-cart" data-desktop="cart">
+						<div class="header-cart__counter" data-move="cart">
 							<div class="header-cart__icon">
 								<svg class="icon icon-cart ">
 									<use xlink:href="images/sprites.svg#cart"></use>
@@ -1203,7 +1231,7 @@
 				</div>
 			</div>
 		</header>
-		<main>
+		<main class="main">
 			<section class="section section-search">
 				<div class="section-container">
 					<div class="breadcrumbs">
@@ -1237,376 +1265,535 @@
 							</form>
 							<div class="products__list">
 								<div class="products__item">
-									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_7.jpg"/></a></div>
-									<div class="products__item__label__wrap">
-										<div class="products__item__label hit">
-											<svg class="icon icon-star ">
-												<use xlink:href="images/sprites.svg#star"></use>
-											</svg>Хит
-										</div>
-									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
-									<div class="products__item__info">
-										<div class="products__item__name">Сардельки из индейки</div>
-										<div class="products__item__excerpt">Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика</div>
-										<div class="products__item__price__cart">
-											<div class="products__item__price">
-												<div class="products__item__price__normal">376 ₽</div>
+									<div class="products__item__inner">
+										<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_7.jpg"/></a></div>
+										<div class="products__item__label__wrap">
+											<div class="products__item__label hit">
+												<svg class="icon icon-star ">
+													<use xlink:href="images/sprites.svg#star"></use>
+												</svg>Хит
 											</div>
-											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-													<div class="products__item__cart__link__text">В корзину</div>
-													<div class="products__item__cart__link__icon">
-														<svg class="icon icon-product_add_to_cart ">
-															<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-														</svg>
-														<svg class="icon icon-product_in_cart ">
-															<use xlink:href="images/sprites.svg#product_in_cart"></use>
-														</svg>
-													</div>
-													<div class="products-pickup">
-														<div class="products-pickup__icon">
-															<svg class="icon icon-products-pickup-icon ">
-																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+										</div>
+										<!--if label
+										.products__item__label__wrap
+											//if label[]=='hit'
+												.products__item__label.hit
+													+icon('star')
+													| Хит
+											//if label[]=='novelty
+												.products__item__label.novelty Новинка
+											//if label['vegan']
+												.products__item__label.vegan Vegan
+											//if label['timer']
+												.products__item__label.timer
+													+icon('timer')
+													| 90 минут
+											//if label==no_gmo
+												.products__item__label.no-gmo Без ГМО
+											//if label==no_gluten
+												.products__item__label.no-gluten Без глютена
+											//if label==sale
+												.products__item__label.sale - 25%
+										-->
+										<!--else-->
+										<div class="products__item__info">
+											<div class="products__item__name">Сардельки из индейки</div>
+											<div class="products__item__excerpt">Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика</div>
+											<div class="products__item__price__cart">
+												<div class="products__item__price">
+													<div class="products__item__price__normal">376 ₽</div>
+												</div>
+												<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+														<div class="products__item__cart__link__text">В корзину</div>
+														<div class="products__item__cart__link__icon">
+															<svg class="icon icon-product_add_to_cart ">
+																<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+															</svg>
+															<svg class="icon icon-product_in_cart ">
+																<use xlink:href="images/sprites.svg#product_in_cart"></use>
 															</svg>
 														</div>
-														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-													</div></a>
+														<div class="products-pickup">
+															<div class="products-pickup__icon">
+																<svg class="icon icon-products-pickup-icon ">
+																	<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																</svg>
+															</div>
+															<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+															<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+														</div></a>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="products__item">
-									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_8.jpg"/></a></div>
-									<div class="products__item__label__wrap">
-										<div class="products__item__label hit">
-											<svg class="icon icon-star ">
-												<use xlink:href="images/sprites.svg#star"></use>
-											</svg>Хит
-										</div>
-									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
-									<div class="products__item__info">
-										<div class="products__item__name">Сардельки из индейки</div>
-										<div class="products__item__excerpt">Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика</div>
-										<div class="products__item__price__cart">
-											<div class="products__item__price">
-												<div class="products__item__price__normal">376 ₽</div>
-												<div class="products__item__price__sale">523 ₽</div>
+									<div class="products__item__inner">
+										<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_8.jpg"/></a></div>
+										<div class="products__item__label__wrap">
+											<div class="products__item__label hit">
+												<svg class="icon icon-star ">
+													<use xlink:href="images/sprites.svg#star"></use>
+												</svg>Хит
 											</div>
-											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-													<div class="products__item__cart__link__text">В корзину</div>
-													<div class="products__item__cart__link__icon">
-														<svg class="icon icon-product_add_to_cart ">
-															<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-														</svg>
-														<svg class="icon icon-product_in_cart ">
-															<use xlink:href="images/sprites.svg#product_in_cart"></use>
-														</svg>
-													</div>
-													<div class="products-pickup">
-														<div class="products-pickup__icon">
-															<svg class="icon icon-products-pickup-icon ">
-																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+										</div>
+										<!--if label
+										.products__item__label__wrap
+											//if label[]=='hit'
+												.products__item__label.hit
+													+icon('star')
+													| Хит
+											//if label[]=='novelty
+												.products__item__label.novelty Новинка
+											//if label['vegan']
+												.products__item__label.vegan Vegan
+											//if label['timer']
+												.products__item__label.timer
+													+icon('timer')
+													| 90 минут
+											//if label==no_gmo
+												.products__item__label.no-gmo Без ГМО
+											//if label==no_gluten
+												.products__item__label.no-gluten Без глютена
+											//if label==sale
+												.products__item__label.sale - 25%
+										-->
+										<!--else-->
+										<div class="products__item__info">
+											<div class="products__item__name">Сардельки из индейки</div>
+											<div class="products__item__excerpt">Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика</div>
+											<div class="products__item__price__cart">
+												<div class="products__item__price">
+													<div class="products__item__price__normal">376 ₽</div>
+													<div class="products__item__price__sale">523 ₽</div>
+												</div>
+												<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+														<div class="products__item__cart__link__text">В корзину</div>
+														<div class="products__item__cart__link__icon">
+															<svg class="icon icon-product_add_to_cart ">
+																<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+															</svg>
+															<svg class="icon icon-product_in_cart ">
+																<use xlink:href="images/sprites.svg#product_in_cart"></use>
 															</svg>
 														</div>
-														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-													</div></a>
+														<div class="products-pickup">
+															<div class="products-pickup__icon">
+																<svg class="icon icon-products-pickup-icon ">
+																	<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																</svg>
+															</div>
+															<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+															<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+														</div></a>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="products__item">
-									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_9.jpg"/></a></div>
-									<div class="products__item__label__wrap">
-										<div class="products__item__label hit">
-											<svg class="icon icon-star ">
-												<use xlink:href="images/sprites.svg#star"></use>
-											</svg>Хит
-										</div>
-									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
-									<div class="products__item__info">
-										<div class="products__item__name">Манты с бараниной</div>
-										<div class="products__item__excerpt">В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку</div>
-										<div class="products__item__price__cart">
-											<div class="products__item__price">
-												<div class="products__item__price__normal">376 ₽</div>
-												<div class="products__item__price__sale">523 ₽</div>
+									<div class="products__item__inner">
+										<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_9.jpg"/></a></div>
+										<div class="products__item__label__wrap">
+											<div class="products__item__label hit">
+												<svg class="icon icon-star ">
+													<use xlink:href="images/sprites.svg#star"></use>
+												</svg>Хит
 											</div>
-											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-													<div class="products__item__cart__link__text">В корзину</div>
-													<div class="products__item__cart__link__icon">
-														<svg class="icon icon-product_add_to_cart ">
-															<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-														</svg>
-														<svg class="icon icon-product_in_cart ">
-															<use xlink:href="images/sprites.svg#product_in_cart"></use>
-														</svg>
-													</div>
-													<div class="products-pickup">
-														<div class="products-pickup__icon">
-															<svg class="icon icon-products-pickup-icon ">
-																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+										</div>
+										<!--if label
+										.products__item__label__wrap
+											//if label[]=='hit'
+												.products__item__label.hit
+													+icon('star')
+													| Хит
+											//if label[]=='novelty
+												.products__item__label.novelty Новинка
+											//if label['vegan']
+												.products__item__label.vegan Vegan
+											//if label['timer']
+												.products__item__label.timer
+													+icon('timer')
+													| 90 минут
+											//if label==no_gmo
+												.products__item__label.no-gmo Без ГМО
+											//if label==no_gluten
+												.products__item__label.no-gluten Без глютена
+											//if label==sale
+												.products__item__label.sale - 25%
+										-->
+										<!--else-->
+										<div class="products__item__info">
+											<div class="products__item__name">Манты с бараниной</div>
+											<div class="products__item__excerpt">В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку</div>
+											<div class="products__item__price__cart">
+												<div class="products__item__price">
+													<div class="products__item__price__normal">376 ₽</div>
+													<div class="products__item__price__sale">523 ₽</div>
+												</div>
+												<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+														<div class="products__item__cart__link__text">В корзину</div>
+														<div class="products__item__cart__link__icon">
+															<svg class="icon icon-product_add_to_cart ">
+																<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+															</svg>
+															<svg class="icon icon-product_in_cart ">
+																<use xlink:href="images/sprites.svg#product_in_cart"></use>
 															</svg>
 														</div>
-														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-													</div></a>
+														<div class="products-pickup">
+															<div class="products-pickup__icon">
+																<svg class="icon icon-products-pickup-icon ">
+																	<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																</svg>
+															</div>
+															<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+															<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+														</div></a>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="products__item">
-									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_10.jpg"/></a></div>
-									<div class="products__item__label__wrap">
-										<div class="products__item__label hit">
-											<svg class="icon icon-star ">
-												<use xlink:href="images/sprites.svg#star"></use>
-											</svg>Хит
-										</div>
-									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
-									<div class="products__item__info">
-										<div class="products__item__name">Торт облепиха</div>
-										<div class="products__item__excerpt">С приятным солодовым ароматом, с  семенами подсолнечника и льна</div>
-										<div class="products__item__price__cart">
-											<div class="products__item__price">
-												<div class="products__item__price__normal">376 ₽</div>
+									<div class="products__item__inner">
+										<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_10.jpg"/></a></div>
+										<div class="products__item__label__wrap">
+											<div class="products__item__label hit">
+												<svg class="icon icon-star ">
+													<use xlink:href="images/sprites.svg#star"></use>
+												</svg>Хит
 											</div>
-											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-													<div class="products__item__cart__link__text">В корзину</div>
-													<div class="products__item__cart__link__icon">
-														<svg class="icon icon-product_add_to_cart ">
-															<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-														</svg>
-														<svg class="icon icon-product_in_cart ">
-															<use xlink:href="images/sprites.svg#product_in_cart"></use>
-														</svg>
-													</div>
-													<div class="products-pickup">
-														<div class="products-pickup__icon">
-															<svg class="icon icon-products-pickup-icon ">
-																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+										</div>
+										<!--if label
+										.products__item__label__wrap
+											//if label[]=='hit'
+												.products__item__label.hit
+													+icon('star')
+													| Хит
+											//if label[]=='novelty
+												.products__item__label.novelty Новинка
+											//if label['vegan']
+												.products__item__label.vegan Vegan
+											//if label['timer']
+												.products__item__label.timer
+													+icon('timer')
+													| 90 минут
+											//if label==no_gmo
+												.products__item__label.no-gmo Без ГМО
+											//if label==no_gluten
+												.products__item__label.no-gluten Без глютена
+											//if label==sale
+												.products__item__label.sale - 25%
+										-->
+										<!--else-->
+										<div class="products__item__info">
+											<div class="products__item__name">Торт облепиха</div>
+											<div class="products__item__excerpt">С приятным солодовым ароматом, с  семенами подсолнечника и льна</div>
+											<div class="products__item__price__cart">
+												<div class="products__item__price">
+													<div class="products__item__price__normal">376 ₽</div>
+												</div>
+												<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+														<div class="products__item__cart__link__text">В корзину</div>
+														<div class="products__item__cart__link__icon">
+															<svg class="icon icon-product_add_to_cart ">
+																<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+															</svg>
+															<svg class="icon icon-product_in_cart ">
+																<use xlink:href="images/sprites.svg#product_in_cart"></use>
 															</svg>
 														</div>
-														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-													</div></a>
+														<div class="products-pickup">
+															<div class="products-pickup__icon">
+																<svg class="icon icon-products-pickup-icon ">
+																	<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																</svg>
+															</div>
+															<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+															<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+														</div></a>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="products__item">
-									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_11.jpg"/></a></div>
-									<div class="products__item__label__wrap">
-										<div class="products__item__label hit">
-											<svg class="icon icon-star ">
-												<use xlink:href="images/sprites.svg#star"></use>
-											</svg>Хит
-										</div>
-									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
-									<div class="products__item__info">
-										<div class="products__item__name">Торт Молочная девочка</div>
-										<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
-										<div class="products__item__price__cart">
-											<div class="products__item__price">
-												<div class="products__item__price__normal">376 ₽</div>
+									<div class="products__item__inner">
+										<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_11.jpg"/></a></div>
+										<div class="products__item__label__wrap">
+											<div class="products__item__label hit">
+												<svg class="icon icon-star ">
+													<use xlink:href="images/sprites.svg#star"></use>
+												</svg>Хит
 											</div>
-											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-													<div class="products__item__cart__link__text">В корзину</div>
-													<div class="products__item__cart__link__icon">
-														<svg class="icon icon-product_add_to_cart ">
-															<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-														</svg>
-														<svg class="icon icon-product_in_cart ">
-															<use xlink:href="images/sprites.svg#product_in_cart"></use>
-														</svg>
-													</div>
-													<div class="products-pickup">
-														<div class="products-pickup__icon">
-															<svg class="icon icon-products-pickup-icon ">
-																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+										</div>
+										<!--if label
+										.products__item__label__wrap
+											//if label[]=='hit'
+												.products__item__label.hit
+													+icon('star')
+													| Хит
+											//if label[]=='novelty
+												.products__item__label.novelty Новинка
+											//if label['vegan']
+												.products__item__label.vegan Vegan
+											//if label['timer']
+												.products__item__label.timer
+													+icon('timer')
+													| 90 минут
+											//if label==no_gmo
+												.products__item__label.no-gmo Без ГМО
+											//if label==no_gluten
+												.products__item__label.no-gluten Без глютена
+											//if label==sale
+												.products__item__label.sale - 25%
+										-->
+										<!--else-->
+										<div class="products__item__info">
+											<div class="products__item__name">Торт Молочная девочка</div>
+											<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
+											<div class="products__item__price__cart">
+												<div class="products__item__price">
+													<div class="products__item__price__normal">376 ₽</div>
+												</div>
+												<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+														<div class="products__item__cart__link__text">В корзину</div>
+														<div class="products__item__cart__link__icon">
+															<svg class="icon icon-product_add_to_cart ">
+																<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+															</svg>
+															<svg class="icon icon-product_in_cart ">
+																<use xlink:href="images/sprites.svg#product_in_cart"></use>
 															</svg>
 														</div>
-														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-													</div></a>
+														<div class="products-pickup">
+															<div class="products-pickup__icon">
+																<svg class="icon icon-products-pickup-icon ">
+																	<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																</svg>
+															</div>
+															<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+															<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+														</div></a>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="products__item">
-									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_12.jpg"/></a></div>
-									<div class="products__item__label__wrap">
-										<div class="products__item__label hit">
-											<svg class="icon icon-star ">
-												<use xlink:href="images/sprites.svg#star"></use>
-											</svg>Хит
-										</div>
-									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
-									<div class="products__item__info">
-										<div class="products__item__name">Чизкейк с вишней</div>
-										<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
-										<div class="products__item__price__cart">
-											<div class="products__item__price">
-												<div class="products__item__price__normal">376 ₽</div>
-												<div class="products__item__price__sale">523 ₽</div>
+									<div class="products__item__inner">
+										<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_12.jpg"/></a></div>
+										<div class="products__item__label__wrap">
+											<div class="products__item__label hit">
+												<svg class="icon icon-star ">
+													<use xlink:href="images/sprites.svg#star"></use>
+												</svg>Хит
 											</div>
-											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-													<div class="products__item__cart__link__text">В корзину</div>
-													<div class="products__item__cart__link__icon">
-														<svg class="icon icon-product_add_to_cart ">
-															<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-														</svg>
-														<svg class="icon icon-product_in_cart ">
-															<use xlink:href="images/sprites.svg#product_in_cart"></use>
-														</svg>
-													</div>
-													<div class="products-pickup">
-														<div class="products-pickup__icon">
-															<svg class="icon icon-products-pickup-icon ">
-																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+										</div>
+										<!--if label
+										.products__item__label__wrap
+											//if label[]=='hit'
+												.products__item__label.hit
+													+icon('star')
+													| Хит
+											//if label[]=='novelty
+												.products__item__label.novelty Новинка
+											//if label['vegan']
+												.products__item__label.vegan Vegan
+											//if label['timer']
+												.products__item__label.timer
+													+icon('timer')
+													| 90 минут
+											//if label==no_gmo
+												.products__item__label.no-gmo Без ГМО
+											//if label==no_gluten
+												.products__item__label.no-gluten Без глютена
+											//if label==sale
+												.products__item__label.sale - 25%
+										-->
+										<!--else-->
+										<div class="products__item__info">
+											<div class="products__item__name">Чизкейк с вишней</div>
+											<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+											<div class="products__item__price__cart">
+												<div class="products__item__price">
+													<div class="products__item__price__normal">376 ₽</div>
+													<div class="products__item__price__sale">523 ₽</div>
+												</div>
+												<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+														<div class="products__item__cart__link__text">В корзину</div>
+														<div class="products__item__cart__link__icon">
+															<svg class="icon icon-product_add_to_cart ">
+																<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+															</svg>
+															<svg class="icon icon-product_in_cart ">
+																<use xlink:href="images/sprites.svg#product_in_cart"></use>
 															</svg>
 														</div>
-														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-													</div></a>
+														<div class="products-pickup">
+															<div class="products-pickup__icon">
+																<svg class="icon icon-products-pickup-icon ">
+																	<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																</svg>
+															</div>
+															<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+															<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+														</div></a>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="products__item">
-									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_13.jpg"/></a></div>
+									<div class="products__item__inner">
+										<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_13.jpg"/></a></div>
+										<div class="products__item__label__wrap">
+											<div class="products__item__label hit">
+												<svg class="icon icon-star ">
+													<use xlink:href="images/sprites.svg#star"></use>
+												</svg>Хит
+											</div>
+										</div>
+										<!--if label
+										.products__item__label__wrap
+											//if label[]=='hit'
+												.products__item__label.hit
+													+icon('star')
+													| Хит
+											//if label[]=='novelty
+												.products__item__label.novelty Новинка
+											//if label['vegan']
+												.products__item__label.vegan Vegan
+											//if label['timer']
+												.products__item__label.timer
+													+icon('timer')
+													| 90 минут
+											//if label==no_gmo
+												.products__item__label.no-gmo Без ГМО
+											//if label==no_gluten
+												.products__item__label.no-gluten Без глютена
+											//if label==sale
+												.products__item__label.sale - 25%
+										-->
+										<!--else-->
+										<div class="products__item__info">
+											<div class="products__item__name">Пельмени с индейкой</div>
+											<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+											<div class="products__item__price__cart">
+												<div class="products__item__price">
+													<div class="products__item__price__normal">376 ₽</div>
+													<div class="products__item__price__sale">523 ₽</div>
+												</div>
+												<div class="products__item__cart"><a class="products__item__cart__link button border_radius in-cart" href="">
+														<div class="products__item__cart__link__text">В корзину</div>
+														<div class="products__item__cart__link__icon">
+															<svg class="icon icon-product_add_to_cart ">
+																<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+															</svg>
+															<svg class="icon icon-product_in_cart ">
+																<use xlink:href="images/sprites.svg#product_in_cart"></use>
+															</svg>
+														</div></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="products__item">
+									<div class="products__item__inner">
+										<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_14.jpg"/></a></div>
+										<div class="products__item__label__wrap">
+											<div class="products__item__label hit">
+												<svg class="icon icon-star ">
+													<use xlink:href="images/sprites.svg#star"></use>
+												</svg>Хит
+											</div>
+										</div>
+										<!--if label
+										.products__item__label__wrap
+											//if label[]=='hit'
+												.products__item__label.hit
+													+icon('star')
+													| Хит
+											//if label[]=='novelty
+												.products__item__label.novelty Новинка
+											//if label['vegan']
+												.products__item__label.vegan Vegan
+											//if label['timer']
+												.products__item__label.timer
+													+icon('timer')
+													| 90 минут
+											//if label==no_gmo
+												.products__item__label.no-gmo Без ГМО
+											//if label==no_gluten
+												.products__item__label.no-gluten Без глютена
+											//if label==sale
+												.products__item__label.sale - 25%
+										-->
+										<!--else-->
+										<div class="products__item__info">
+											<div class="products__item__name">Пирог с вишней</div>
+											<div class="products__item__excerpt">Пирог из песочного теста, начинка из свежей вишни</div>
+											<div class="products__item__price__cart">
+												<div class="products__item__price">
+													<div class="products__item__price__normal">376 ₽</div>
+												</div>
+												<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+														<div class="products__item__cart__link__text">В корзину</div>
+														<div class="products__item__cart__link__icon">
+															<svg class="icon icon-product_add_to_cart ">
+																<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+															</svg>
+															<svg class="icon icon-product_in_cart ">
+																<use xlink:href="images/sprites.svg#product_in_cart"></use>
+															</svg>
+														</div>
+														<div class="products-pickup">
+															<div class="products-pickup__icon">
+																<svg class="icon icon-products-pickup-icon ">
+																	<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																</svg>
+															</div>
+															<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+															<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+														</div></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="search-categories">
+								<div class="search-categories__inner">
+									<div class="search-categories__title">Разделы</div>
+									<ul class="search-categories__list">
+										<li class="search-categories__item"><a class="search-categories__link" href="#">Торт</a></li>
+										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты бисквитные</a></li>
+										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты блинные</a></li>
+										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты муссовые</a></li>
+										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты песочные</a></li>
+										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты слоенные</a></li>
+										<li class="search-categories__item"><a class="search-categories__link" href="#">Торт с орехами и сухофруктами</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section products">
+				<div class="section-container">
+					<div class="section-header">
+						<div class="section-title">
+							<h2 class="h1">Популярные товары</h2>
+						</div>
+					</div>
+					<div class="section-content">
+						<div class="products__list">
+							<div class="products__item">
+								<div class="products__item__inner">
+									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"/></a></div>
 									<div class="products__item__label__wrap">
 										<div class="products__item__label hit">
 											<svg class="icon icon-star ">
@@ -1644,7 +1831,7 @@
 												<div class="products__item__price__normal">376 ₽</div>
 												<div class="products__item__price__sale">523 ₽</div>
 											</div>
-											<div class="products__item__cart"><a class="products__item__cart__link button border_radius in-cart" href="">
+											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
 													<div class="products__item__cart__link__text">В корзину</div>
 													<div class="products__item__cart__link__icon">
 														<svg class="icon icon-product_add_to_cart ">
@@ -1653,13 +1840,24 @@
 														<svg class="icon icon-product_in_cart ">
 															<use xlink:href="images/sprites.svg#product_in_cart"></use>
 														</svg>
+													</div>
+													<div class="products-pickup">
+														<div class="products-pickup__icon">
+															<svg class="icon icon-products-pickup-icon ">
+																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+															</svg>
+														</div>
+														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
 													</div></a>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="products__item">
-									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_14.jpg"/></a></div>
+							</div>
+							<div class="products__item">
+								<div class="products__item__inner">
+									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"/></a></div>
 									<div class="products__item__label__wrap">
 										<div class="products__item__label hit">
 											<svg class="icon icon-star ">
@@ -1690,8 +1888,8 @@
 									-->
 									<!--else-->
 									<div class="products__item__info">
-										<div class="products__item__name">Пирог с вишней</div>
-										<div class="products__item__excerpt">Пирог из песочного теста, начинка из свежей вишни</div>
+										<div class="products__item__name">Торт Прага</div>
+										<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
 										<div class="products__item__price__cart">
 											<div class="products__item__price">
 												<div class="products__item__price__normal">376 ₽</div>
@@ -1720,275 +1918,129 @@
 									</div>
 								</div>
 							</div>
-							<div class="search-categories">
-								<div class="search-categories__inner">
-									<div class="search-categories__title">Разделы</div>
-									<ul class="search-categories__list">
-										<li class="search-categories__item"><a class="search-categories__link" href="#">Торт</a></li>
-										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты бисквитные</a></li>
-										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты блинные</a></li>
-										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты муссовые</a></li>
-										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты песочные</a></li>
-										<li class="search-categories__item"><a class="search-categories__link" href="#">Торты слоенные</a></li>
-										<li class="search-categories__item"><a class="search-categories__link" href="#">Торт с орехами и сухофруктами</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="section products">
-				<div class="section-container">
-					<div class="section-header">
-						<div class="section-title">
-							<h2 class="h1">Популярные товары</h2>
-						</div>
-					</div>
-					<div class="section-content">
-						<div class="products__list">
 							<div class="products__item">
-								<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"/></a></div>
-								<div class="products__item__label__wrap">
-									<div class="products__item__label hit">
-										<svg class="icon icon-star ">
-											<use xlink:href="images/sprites.svg#star"></use>
-										</svg>Хит
-									</div>
-								</div>
-								<!--if label
-								.products__item__label__wrap
-									//if label[]=='hit'
-										.products__item__label.hit
-											+icon('star')
-											| Хит
-									//if label[]=='novelty
-										.products__item__label.novelty Новинка
-									//if label['vegan']
-										.products__item__label.vegan Vegan
-									//if label['timer']
-										.products__item__label.timer
-											+icon('timer')
-											| 90 минут
-									//if label==no_gmo
-										.products__item__label.no-gmo Без ГМО
-									//if label==no_gluten
-										.products__item__label.no-gluten Без глютена
-									//if label==sale
-										.products__item__label.sale - 25%
-								-->
-								<!--else-->
-								<div class="products__item__info">
-									<div class="products__item__name">Пельмени с индейкой</div>
-									<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
-									<div class="products__item__price__cart">
-										<div class="products__item__price">
-											<div class="products__item__price__normal">376 ₽</div>
-											<div class="products__item__price__sale">523 ₽</div>
+								<div class="products__item__inner">
+									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_3.jpg"/></a></div>
+									<div class="products__item__label__wrap">
+										<div class="products__item__label hit">
+											<svg class="icon icon-star ">
+												<use xlink:href="images/sprites.svg#star"></use>
+											</svg>Хит
 										</div>
-										<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-												<div class="products__item__cart__link__text">В корзину</div>
-												<div class="products__item__cart__link__icon">
-													<svg class="icon icon-product_add_to_cart ">
-														<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-													</svg>
-													<svg class="icon icon-product_in_cart ">
-														<use xlink:href="images/sprites.svg#product_in_cart"></use>
-													</svg>
-												</div>
-												<div class="products-pickup">
-													<div class="products-pickup__icon">
-														<svg class="icon icon-products-pickup-icon ">
-															<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+									</div>
+									<!--if label
+									.products__item__label__wrap
+										//if label[]=='hit'
+											.products__item__label.hit
+												+icon('star')
+												| Хит
+										//if label[]=='novelty
+											.products__item__label.novelty Новинка
+										//if label['vegan']
+											.products__item__label.vegan Vegan
+										//if label['timer']
+											.products__item__label.timer
+												+icon('timer')
+												| 90 минут
+										//if label==no_gmo
+											.products__item__label.no-gmo Без ГМО
+										//if label==no_gluten
+											.products__item__label.no-gluten Без глютена
+										//if label==sale
+											.products__item__label.sale - 25%
+									-->
+									<!--else-->
+									<div class="products__item__info">
+										<div class="products__item__name">Торт Ореховый по-королевски</div>
+										<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
+										<div class="products__item__price__cart">
+											<div class="products__item__price">
+												<div class="products__item__price__normal">376 ₽</div>
+											</div>
+											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+													<div class="products__item__cart__link__text">В корзину</div>
+													<div class="products__item__cart__link__icon">
+														<svg class="icon icon-product_add_to_cart ">
+															<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+														</svg>
+														<svg class="icon icon-product_in_cart ">
+															<use xlink:href="images/sprites.svg#product_in_cart"></use>
 														</svg>
 													</div>
-													<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-													<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-												</div></a>
+													<div class="products-pickup">
+														<div class="products-pickup__icon">
+															<svg class="icon icon-products-pickup-icon ">
+																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+															</svg>
+														</div>
+														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+													</div></a>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="products__item">
-								<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"/></a></div>
-								<div class="products__item__label__wrap">
-									<div class="products__item__label hit">
-										<svg class="icon icon-star ">
-											<use xlink:href="images/sprites.svg#star"></use>
-										</svg>Хит
-									</div>
-								</div>
-								<!--if label
-								.products__item__label__wrap
-									//if label[]=='hit'
-										.products__item__label.hit
-											+icon('star')
-											| Хит
-									//if label[]=='novelty
-										.products__item__label.novelty Новинка
-									//if label['vegan']
-										.products__item__label.vegan Vegan
-									//if label['timer']
-										.products__item__label.timer
-											+icon('timer')
-											| 90 минут
-									//if label==no_gmo
-										.products__item__label.no-gmo Без ГМО
-									//if label==no_gluten
-										.products__item__label.no-gluten Без глютена
-									//if label==sale
-										.products__item__label.sale - 25%
-								-->
-								<!--else-->
-								<div class="products__item__info">
-									<div class="products__item__name">Торт Прага</div>
-									<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
-									<div class="products__item__price__cart">
-										<div class="products__item__price">
-											<div class="products__item__price__normal">376 ₽</div>
+								<div class="products__item__inner">
+									<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_4.jpg"/></a></div>
+									<div class="products__item__label__wrap">
+										<div class="products__item__label hit">
+											<svg class="icon icon-star ">
+												<use xlink:href="images/sprites.svg#star"></use>
+											</svg>Хит
 										</div>
-										<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-												<div class="products__item__cart__link__text">В корзину</div>
-												<div class="products__item__cart__link__icon">
-													<svg class="icon icon-product_add_to_cart ">
-														<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-													</svg>
-													<svg class="icon icon-product_in_cart ">
-														<use xlink:href="images/sprites.svg#product_in_cart"></use>
-													</svg>
-												</div>
-												<div class="products-pickup">
-													<div class="products-pickup__icon">
-														<svg class="icon icon-products-pickup-icon ">
-															<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+									</div>
+									<!--if label
+									.products__item__label__wrap
+										//if label[]=='hit'
+											.products__item__label.hit
+												+icon('star')
+												| Хит
+										//if label[]=='novelty
+											.products__item__label.novelty Новинка
+										//if label['vegan']
+											.products__item__label.vegan Vegan
+										//if label['timer']
+											.products__item__label.timer
+												+icon('timer')
+												| 90 минут
+										//if label==no_gmo
+											.products__item__label.no-gmo Без ГМО
+										//if label==no_gluten
+											.products__item__label.no-gluten Без глютена
+										//if label==sale
+											.products__item__label.sale - 25%
+									-->
+									<!--else-->
+									<div class="products__item__info">
+										<div class="products__item__name">Торт малиновый</div>
+										<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+										<div class="products__item__price__cart">
+											<div class="products__item__price">
+												<div class="products__item__price__normal">376 ₽</div>
+												<div class="products__item__price__sale">523 ₽</div>
+											</div>
+											<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+													<div class="products__item__cart__link__text">В корзину</div>
+													<div class="products__item__cart__link__icon">
+														<svg class="icon icon-product_add_to_cart ">
+															<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+														</svg>
+														<svg class="icon icon-product_in_cart ">
+															<use xlink:href="images/sprites.svg#product_in_cart"></use>
 														</svg>
 													</div>
-													<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-													<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-												</div></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="products__item">
-								<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_3.jpg"/></a></div>
-								<div class="products__item__label__wrap">
-									<div class="products__item__label hit">
-										<svg class="icon icon-star ">
-											<use xlink:href="images/sprites.svg#star"></use>
-										</svg>Хит
-									</div>
-								</div>
-								<!--if label
-								.products__item__label__wrap
-									//if label[]=='hit'
-										.products__item__label.hit
-											+icon('star')
-											| Хит
-									//if label[]=='novelty
-										.products__item__label.novelty Новинка
-									//if label['vegan']
-										.products__item__label.vegan Vegan
-									//if label['timer']
-										.products__item__label.timer
-											+icon('timer')
-											| 90 минут
-									//if label==no_gmo
-										.products__item__label.no-gmo Без ГМО
-									//if label==no_gluten
-										.products__item__label.no-gluten Без глютена
-									//if label==sale
-										.products__item__label.sale - 25%
-								-->
-								<!--else-->
-								<div class="products__item__info">
-									<div class="products__item__name">Торт Ореховый по-королевски</div>
-									<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
-									<div class="products__item__price__cart">
-										<div class="products__item__price">
-											<div class="products__item__price__normal">376 ₽</div>
-										</div>
-										<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-												<div class="products__item__cart__link__text">В корзину</div>
-												<div class="products__item__cart__link__icon">
-													<svg class="icon icon-product_add_to_cart ">
-														<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-													</svg>
-													<svg class="icon icon-product_in_cart ">
-														<use xlink:href="images/sprites.svg#product_in_cart"></use>
-													</svg>
-												</div>
-												<div class="products-pickup">
-													<div class="products-pickup__icon">
-														<svg class="icon icon-products-pickup-icon ">
-															<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
-														</svg>
-													</div>
-													<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-													<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-												</div></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="products__item">
-								<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_4.jpg"/></a></div>
-								<div class="products__item__label__wrap">
-									<div class="products__item__label hit">
-										<svg class="icon icon-star ">
-											<use xlink:href="images/sprites.svg#star"></use>
-										</svg>Хит
-									</div>
-								</div>
-								<!--if label
-								.products__item__label__wrap
-									//if label[]=='hit'
-										.products__item__label.hit
-											+icon('star')
-											| Хит
-									//if label[]=='novelty
-										.products__item__label.novelty Новинка
-									//if label['vegan']
-										.products__item__label.vegan Vegan
-									//if label['timer']
-										.products__item__label.timer
-											+icon('timer')
-											| 90 минут
-									//if label==no_gmo
-										.products__item__label.no-gmo Без ГМО
-									//if label==no_gluten
-										.products__item__label.no-gluten Без глютена
-									//if label==sale
-										.products__item__label.sale - 25%
-								-->
-								<!--else-->
-								<div class="products__item__info">
-									<div class="products__item__name">Торт малиновый</div>
-									<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
-									<div class="products__item__price__cart">
-										<div class="products__item__price">
-											<div class="products__item__price__normal">376 ₽</div>
-											<div class="products__item__price__sale">523 ₽</div>
-										</div>
-										<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
-												<div class="products__item__cart__link__text">В корзину</div>
-												<div class="products__item__cart__link__icon">
-													<svg class="icon icon-product_add_to_cart ">
-														<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
-													</svg>
-													<svg class="icon icon-product_in_cart ">
-														<use xlink:href="images/sprites.svg#product_in_cart"></use>
-													</svg>
-												</div>
-												<div class="products-pickup">
-													<div class="products-pickup__icon">
-														<svg class="icon icon-products-pickup-icon ">
-															<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
-														</svg>
-													</div>
-													<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
-													<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
-												</div></a>
+													<div class="products-pickup">
+														<div class="products-pickup__icon">
+															<svg class="icon icon-products-pickup-icon ">
+																<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+															</svg>
+														</div>
+														<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+														<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+													</div></a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -2092,6 +2144,32 @@
 				</div>
 			</div>
 		</footer>
+		<div class="mobile">
+			<div class="mobile-menu" data-mobile-menu>
+				<div class="mobile-menu__head">
+					<div class="mobile-menu__logo" data-mobile-menu-logo="logo">
+						<svg class="icon icon-search-new ">
+							<use xlink:href="images/sprites.svg#search-new"></use>
+						</svg>
+					</div>
+					<div class="mobile-menu__close" data-mobile-menu-close>
+						<svg class="icon icon-close ">
+							<use xlink:href="images/sprites.svg#close"></use>
+						</svg>
+					</div>
+				</div>
+				<div class="mobile-menu__body">
+					<div class="mobile-menu__section" data-mobile-menu="city"></div>
+					<div class="mobile-menu__section dropdown" data-mobile-menu="search"></div>
+					<div class="mobile-menu__section" data-mobile-menu="catalog"></div>
+					<div class="mobile-menu__section" data-mobile-menu="top-nav"></div>
+					<div class="mobile-menu__section" data-mobile-menu="call">
+						<div class="mobile-menu__section__inner" data-mobile-menu="call-links"></div>
+						<div class="mobile-menu__section__inner" data-mobile-menu="call-tels"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="modal scroll" id="callback">
 			<div class="modal__inner">
 				<div class="modal__head">
@@ -2212,7 +2290,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1597928159770"></script>
-		<script src="js/main.js?v=1597928159770"></script>
+		<script src="js/vendor.js?v=1598539071874"></script>
+		<script src="js/main.js?v=1598539071874"></script>
 	</body>
 </html>

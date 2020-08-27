@@ -3,9 +3,17 @@
 	.container
 		padding: 0
 
+	@media #{$tablet}
+		[data-move]
+			display: none
+	&-mobile
+		[data-move]
+			display: block
+
 .header-nav
 	margin-right: 5.7%
-	margin-left: 20.6%
+	margin-left: auto
+	//margin-left: 20.6%
 	&__list
 		display: flex
 		align-items: center
@@ -20,11 +28,6 @@
 		.dropdown-menu
 			min-width: auto
 
-
-.header-logo
-	&__img
-		max-width: 100%
-		height: auto
 
 .header-link
 	&__list
@@ -62,6 +65,14 @@
 
 .header-logo
 	margin-right: 40px
+	&__img
+		max-width: 100%
+		height: auto
+	@media #{$desktop}
+		margin-right: 25px
+
+	@media #{$laptop}
+		margin-right: 20px
 
 .header-search
 	min-width: 355px
@@ -83,6 +94,12 @@
 			.icon-search-new
 				width: 13px
 				height: 13px
+	@media #{$desktop}
+		margin-right: 25px
+
+	@media #{$laptop}
+		min-width: 200px
+		margin-right: 20px
 
 .header-bar
 	display: flex
@@ -100,6 +117,10 @@
 
 			&:hover
 				color: var(--yellow)
+	@media #{$laptop}
+		&__item
+			&__link
+				font-size: .875rem
 
 
 .header-cart
@@ -135,16 +156,28 @@
 		line-height: 120%
 		color: var(--white)
 
+	@media #{$laptop}
+		&__counter
+			margin-right: 10px
+		&__price
+			font-size: 14px
+
 
 
 .header-top
 	background-color: #FAFBFD
 	position: relative
+	max-width: 1200px
+	padding: 0 15px
+	margin: 0 auto
+	@media #{$desktop}
+		max-width: 1170px
 	.grid-container
 		display: flex
 		align-items: flex-end
 		padding-top: 15px
 		padding-bottom: 12px
+
 
 	.header-nav
 		&__item
@@ -152,11 +185,18 @@
 
 .header-main
 	position: relative
+	max-width: 1200px
+	padding: 0 15px
+	margin: 0 auto
+	@media #{$desktop}
+		max-width: 1170px
 	.grid-container
 		display: flex
 		align-items: center
 		background-color: var(--vinishkotyan)
 		padding: 10px 30px
+		@media #{$desktop}
+			padding: 10px 20px
 
 	.header-nav
 		margin-right: 50px
@@ -245,5 +285,40 @@
 				opacity: 1
 				transition: visibility 0s ease, opacity .2s ease, transform .2s ease, width .2s ease
 
+.header-mobile
+	display: flex
+	align-items: center
+	justify-content: space-between
+	width: 100%
+	@media #{$laptop-above}
+		display: none
+	&__block
+		display: flex
+		align-items: center
+	&__burger
+		margin-right: 20px
+		.icon-menu
+			fill: var(--vinishkotyan)
+	&__logo
+		padding-right: 15px
 
+	&__search
+		margin-right: 15px
+		.icon-search-new
+			width: 17px
+			height: 17px
+			stroke: var(--yellow)
+		//.form-search
+			display: none
+	&__cart
 
+@media #{$tablet}
+	.header
+		&-city,
+		&-nav,
+		&-call,
+
+		&-logo,
+		&-search,
+		&-cart
+			display: none
