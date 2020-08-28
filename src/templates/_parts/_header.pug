@@ -211,13 +211,16 @@ header.header
 										+dropdown-search-product-item('5','Торт Сказка от Палыча, 1000 г','678 ₽','')
 			.header-bar
 				.header-bar__item
-					.header-bar__item__icon
-						+icon('percentage')
-					a.header-bar__item__link(href="") Акции
+					a.header-bar__item__link(href="")
+						.header-bar__item__icon
+							+icon('percentage')
+						span.header-bar__item__label Акции
+
 				.header-bar__item.dropdown(data-dropdown="delivery")
-					.header-bar__item__icon
-						+icon('delivery-company')
-					a.header-bar__item__link(href="") Выберите доставку
+					a.header-bar__item__link(href="")
+						.header-bar__item__icon
+							+icon('delivery-company')
+						span.header-bar__item__label Выберите доставку
 					.dropdown-block
 						.dropdown-block__inner
 							.dropdown-delivery

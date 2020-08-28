@@ -3,12 +3,15 @@
 	.container
 		padding: 0
 
-	@media #{$tablet}
+	//@media #{$tablet}
 		[data-move]
 			display: none
-	&-mobile
+	//&-mobile
 		[data-move]
 			display: block
+
+	@media #{$laptop}
+		margin-bottom: 30px
 
 .header-nav
 	margin-right: 5.7%
@@ -28,20 +31,45 @@
 		.dropdown-menu
 			min-width: auto
 
+	@media #{$laptop}
+		&
+			margin-right: 10px
+		&__item
+			margin-right: 10px
+			&__link
+				font-size: 0.813rem
+
+.header-call
+	display: flex
+	align-items: flex-end
+	@media #{$laptop}
+		align-items: center
 
 .header-link
 	&__list
 		display: flex
-		margin-right: 2.5%
+		//margin-right: 2.5%
+		margin-right: 25px
 	&__item
 		&:not(:last-child)
 			margin-right: 25px
+		.link-icon__text
+			white-space: nowrap
+	@media #{$laptop}
+		&__list
+			margin-right: 10px
+		&__item
+			&:not(:last-child)
+				margin-right: 10px
+			.link-icon__icon
+				display: none
+			.link-icon__text
+				font-size: 0.75rem
 
 .header-phone
 	&__list
 		display: flex
 		align-items: center
-
 	&__item
 		&:not(:last-child)
 			margin-right: 18px
@@ -56,6 +84,15 @@
 			line-height: 1rem
 			font-weight: bold
 			color: var(--black)
+			white-space: nowrap
+	@media #{$laptop}
+		&__item
+			&:not(:last-child)
+				margin-right: 10px
+			&__label
+				display: none
+			&__link
+				font-size: 0.75rem
 
 .header-burger
 	display: flex
@@ -72,7 +109,10 @@
 		margin-right: 25px
 
 	@media #{$laptop}
-		margin-right: 20px
+		margin-right: 15px
+		.icon-logo-with-text
+			width: 190px
+			height: 35px
 
 .header-search
 	min-width: 355px
@@ -99,29 +139,34 @@
 
 	@media #{$laptop}
 		min-width: 200px
-		margin-right: 20px
+		margin-right: 15px
 
 .header-bar
 	display: flex
 	&__item
-		display: inline-flex
+		display: flex
 		align-items: center
 		margin-right: 20px
 		&__icon
 			margin-right: 6px
 		&__link
+			display: flex
+			align-items: center
+
 			font-size: 1rem
 			font-weight: bold
 			line-height: 1.188rem
 			color: var(--white)
-
 			&:hover
 				color: var(--yellow)
+		&__label
+
 	@media #{$laptop}
 		&__item
 			&__link
 				font-size: .875rem
-
+			&__label
+				display: none
 
 .header-cart
 	display: flex
@@ -209,6 +254,7 @@
 			font-weight: bold
 			line-height: 120%
 			color: var(--white)
+
 	//:after
 		content: ""
 		display: block
@@ -290,7 +336,7 @@
 	align-items: center
 	justify-content: space-between
 	width: 100%
-	@media #{$laptop-above}
+	@media #{$tablet-above}
 		display: none
 	&__block
 		display: flex
@@ -313,7 +359,7 @@
 	&__cart
 
 @media #{$tablet}
-	.header
+	//.header
 		&-city,
 		&-nav,
 		&-call,

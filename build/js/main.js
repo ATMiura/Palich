@@ -212,9 +212,8 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 
 $(window).on('load resize', function () {
   $('[data-move]').each(function (element) {
-    var dataMoveAttr = $(this).data('move');
-    $(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
-    $(this).appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
+    var dataMoveAttr = $(this).data('move'); //$(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="'+dataMoveAttr+'"]');
+    //$(this).appendTo('[data-mobile-menu="'+dataMoveAttr+'"]');
   });
 });
 
