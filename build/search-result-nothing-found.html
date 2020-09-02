@@ -1009,11 +1009,10 @@
 						</div>
 					</div>
 					<div class="header-logo">
-						<div class="header-logo__img">
-							<svg class="icon icon-logo-with-text ">
-								<use xlink:href="images/sprites.svg#logo-with-text"></use>
-							</svg>
-						</div>
+						<div class="header-logo__img"><a class="header-logo__link" href="#">
+								<svg class="icon icon-logo-with-text ">
+									<use xlink:href="images/sprites.svg#logo-with-text"></use>
+								</svg></a></div>
 					</div>
 					<div class="header-search dropdown" data-dropdown="search" data-desktop="search">
 						<!--form(action="").header-search__form.form
@@ -1166,12 +1165,14 @@
 										<use xlink:href="images/sprites.svg#percentage"></use>
 									</svg>
 								</div><span class="header-bar__item__label">Акции</span></a></div>
-						<div class="header-bar__item dropdown" data-dropdown="delivery"><a class="header-bar__item__link" href="">
+						<div class="header-bar__item dropdown" data-dropdown="delivery">
+							<div class="header-bar__item__link">
 								<div class="header-bar__item__icon">
 									<svg class="icon icon-delivery-company ">
 										<use xlink:href="images/sprites.svg#delivery-company"></use>
 									</svg>
-								</div><span class="header-bar__item__label">Выберите доставку</span></a>
+								</div><span class="header-bar__item__label">Выберите доставку</span>
+							</div>
 							<div class="dropdown-block">
 								<div class="dropdown-block__inner">
 									<div class="dropdown-delivery">
@@ -1295,28 +1296,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Пельмени с индейкой</div>
 										<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
@@ -1359,28 +1338,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт Прага</div>
 										<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
@@ -1422,28 +1379,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт Ореховый по-королевски</div>
 										<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
@@ -1485,28 +1420,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт малиновый</div>
 										<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
@@ -1627,23 +1540,25 @@
 				<div class="footer-policy"><a class="footer-policy__link" href="">Политика конфиденциальности</a><a class="footer-policy__link" href="">Пользовательское соглашение</a></div>
 				<div class="footer-social">
 					<div class="footer-social__text">Социальные сети</div>
-					<div class="footer-social__elem"><a class="footer-social__link" href="">
-							<svg class="icon icon-social-inst ">
-								<use xlink:href="images/sprites.svg#social-inst"></use>
-							</svg></a></div>
-					<div class="footer-social__elem"><a class="footer-social__link" href="">
-							<svg class="icon icon-social-vk ">
-								<use xlink:href="images/sprites.svg#social-vk"></use>
-							</svg></a></div>
+					<div class="footer-social__links">
+						<div class="footer-social__elem"><a class="footer-social__link" href="">
+								<svg class="icon icon-social-inst ">
+									<use xlink:href="images/sprites.svg#social-inst"></use>
+								</svg></a></div>
+						<div class="footer-social__elem"><a class="footer-social__link" href="">
+								<svg class="icon icon-social-vk ">
+									<use xlink:href="images/sprites.svg#social-vk"></use>
+								</svg></a></div>
+					</div>
 				</div>
 			</div>
 		</footer>
-		<div class="mobile">
+		<div class="mobile scroll">
 			<div class="mobile-menu" data-mobile-menu>
-				<div class="mobile-menu__head">
+				<div class="mobile-menu-head">
 					<div class="mobile-menu__logo" data-mobile-menu-logo="logo">
-						<svg class="icon icon-search-new ">
-							<use xlink:href="images/sprites.svg#search-new"></use>
+						<svg class="icon icon-logo ">
+							<use xlink:href="images/sprites.svg#logo"></use>
 						</svg>
 					</div>
 					<div class="mobile-menu__close" data-mobile-menu-close>
@@ -1652,14 +1567,14 @@
 						</svg>
 					</div>
 				</div>
-				<div class="mobile-menu__body">
-					<div class="mobile-menu__section" data-mobile-menu="city"></div>
-					<div class="mobile-menu__section dropdown" data-mobile-menu="search"></div>
-					<div class="mobile-menu__section" data-mobile-menu="catalog"></div>
-					<div class="mobile-menu__section" data-mobile-menu="top-nav"></div>
-					<div class="mobile-menu__section" data-mobile-menu="call">
-						<div class="mobile-menu__section__inner" data-mobile-menu="call-links"></div>
-						<div class="mobile-menu__section__inner" data-mobile-menu="call-tels"></div>
+				<div class="mobile-menu-body">
+					<div class="mobile-menu-section mobile-menu-section-city" data-mobile-menu="city"></div>
+					<div class="mobile-menu-section mobile-menu-section-search dropdown" data-mobile-menu="search"></div>
+					<div class="mobile-menu-section mobile-menu-section-catalog" data-mobile-menu="catalog"></div>
+					<div class="mobile-menu-section mobile-menu-section-top-nav" data-mobile-menu="top-nav"></div>
+					<div class="mobile-menu-section mobile-menu-section-call" data-mobile-menu="call">
+						<div class="mobile-menu-section__inner" data-mobile-menu="call-links"></div>
+						<div class="mobile-menu-section__inner" data-mobile-menu="call-tels"></div>
 					</div>
 				</div>
 			</div>
@@ -1784,7 +1699,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1598607025724"></script>
-		<script src="js/main.js?v=1598607025724"></script>
+		<script src="js/vendor.js?v=1599049023381"></script>
+		<script src="js/main.js?v=1599049023381"></script>
 	</body>
 </html>

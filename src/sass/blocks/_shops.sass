@@ -31,6 +31,20 @@
 		&__text
 			font-size: 1rem
 			line-height: 1.313rem
+
+	@media #{$mobile}
+		&-search
+			max-width: 100%
+			margin-right: 0
+			margin-bottom: 20px
+		&-nav
+			flex-wrap: wrap
+			padding: 25px
+			overflow-x: auto
+			&__item
+				white-space: nowrap
+
+
 	&-content
 		&-tab
 			opacity: 0
@@ -83,4 +97,26 @@
 			@media #{$laptop}
 				&__time
 					min-width: 225px
+
+			@media #{$tablet}
+				padding: 20px 0
+				&__el
+					font-size: 1rem
+
+			@media #{$mobile}
+				flex-wrap: wrap
+				&__address
+					margin-bottom: 10px
+					max-width: 100%
+					flex-grow: initial
+		@media #{$mobile-xs}
+			&-item
+				//white-space: nowrap
+				flex-direction: column
+				align-items: flex-start
+				&__address
+					margin-bottom: 10px
+				&__time
+					margin-bottom: 15px
+
 

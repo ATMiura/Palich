@@ -41,8 +41,7 @@ block content
 										.slider-slide__title Пирог Осетинский с курицей и грибами
 										.slider-slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
 										.slider-slide__btn
-											a.button(href="") Подробнее
-												+icon('button-arrow')
+											a.button.button__arrow(href="") Подробнее
 
 									.slider-slide__img
 										img(src="images/main-slider-img.png").slider-slide__img__elem
@@ -52,8 +51,7 @@ block content
 										.slider-slide__title Пирог Осетинский с курицей и грибами
 										.slider-slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
 										.slider-slide__btn
-											a.button(href="") Подробнее
-												+icon('button-arrow')
+											a.button.button__arrow(href="") Подробнее
 
 									.slider-slide__img
 										img(src="images/main-slider-img.png").slider-slide__img__elem
@@ -63,8 +61,7 @@ block content
 										.slider-slide__title Пирог Осетинский с курицей и грибами
 										.slider-slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
 										.slider-slide__btn
-											a.button(href="") Подробнее
-												+icon('button-arrow')
+											a.button.button__arrow(href="") Подробнее
 
 									.slider-slide__img
 										img(src="images/main-slider-img.png").slider-slide__img__elem
@@ -81,6 +78,15 @@ block content
 									.progress-bar
 										.back
 									span.slides
+
+	section.section.catalog-links
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Каталог
+			.section-content
+				.catalog-links__list.scroll.scroll-x(data-mobile-menu="catalog-links")
+
 
 
 	section.section.products
@@ -271,14 +277,14 @@ block content
 								.dropdown-block__inner
 									.dropdown-city
 										.dropdown__heading Ваш город
-										form.dropdown-form
+										form.form-search.dropdown-form
 											.form_row
 												.form_group
 													label.form_label
-														input(type="text" placeholder="Начните писать город").form_input.dropdown-form-search__input
-														.dropdown-form-search__icon
-															button(type="submit").dropdown-form-search__submit
-																+icon('dropdown-input-search')
+														input(type="text", placeholder='Начните писать город').form_input.form-search__input
+														.form-search__icon
+															button(type="submit").form-search__button
+																+icon('search-new')
 											.form_row.dropdown-form-result
 												.dropdown-form-result__item
 													a(href="#").dropdown-form-result__item  Москва и область
@@ -370,8 +376,8 @@ block content
 				.section-title
 					h2.h1 Где еще купить продукцию «У Палыча»
 				.swiper-button.inline
-					.swiper-button-next
 					.swiper-button-prev
+					.swiper-button-next
 			.section-content
 				.slider
 					.swiper-container
@@ -398,7 +404,7 @@ block content
 						+icon('arrow-more')
 			.section-content
 				.news
-					.news-list
+					.news-list.scroll.scroll-x
 						.news-item
 							.news-item__header
 								a(href="#").news-item__link

@@ -16,9 +16,11 @@
 		right: 0
 		z-index: -1
 		background-color: var(--vinishkotyan)
+	@media #{$mobile}
+		padding: 50px 0
 
 .footer-top
-	max-width: 1200px
+	max-width: 1230px
 	margin: 0 auto
 	padding: 0 15px
 	padding-bottom: 75px
@@ -62,7 +64,26 @@
 		max-width: 40%
 		padding-right: 0
 
+@media #{$tablet}
+	.footer-left,
+	.footer-right
+		max-width: 50%
+	.footer-left
+		flex-wrap: wrap
 
+@media #{$mobile}
+	.footer-left,
+	.footer-right
+		max-width: 100%
+	.footer-right
+		justify-content: flex-start
+		margin-top: 30px
+
+@media #{$mobile-xs}
+	.footer-left
+		display: none
+	.footer-right
+		margin-top: 0
 
 .footer-heading
 	font-size: 1.5rem
@@ -80,19 +101,32 @@
 		margin-right: 105px
 		@media #{$laptop}
 			margin-right: 50px
+		@media #{$tablet}
+			margin-right: 20px
+		@media #{$mobile}
+			margin-right: 0
+			margin-bottom: 30px
 
 	&__list
 		display: flex
 		flex-direction: column
 		flex-wrap: wrap
 		height: 320px
+		@media #{$tablet}
+			height: auto
+			flex-direction: row
 	&__item
 		&:not(:last-child)
 			margin-bottom: 15px
+			@media #{$tablet}
+				margin-bottom: 10px
+				margin-right: 15px
 
 	&[data-footer-menu="catalog"]
 		.footer-nav__item
 			margin-right: 45px
+			@media #{$tablet}
+				margin-right: 15px
 	&__link
 		font-size: .875rem
 		line-height: 1.125rem
@@ -117,6 +151,21 @@
 		&:not(:last-child)
 			margin-bottom: 20px
 
+	@media #{$tablet}
+		.form-subscribe
+			margin-bottom: 30px
+
+	@media #{$mobile-xs}
+		.checkbox__label
+			align-items: flex-start
+		.checkbox__emulator
+			padding-top: 5px
+		.checkbox__text
+			line-height: 1rem
+			a
+				display: inline-block
+
+
 .footer-bottom
 	max-width: 1200px
 	margin: 0 auto
@@ -124,8 +173,13 @@
 	align-items: center
 	justify-content: space-between
 	padding: 0 15px
+
 	@media #{$desktop}
 		max-width: 1170px
+
+	@media #{$mobile}
+		flex-direction: column
+		align-items: flex-start
 
 .footer-policy
 	max-width: 470px
@@ -139,6 +193,16 @@
 		line-height: 1.313rem
 		color: var(--yellow)
 
+	@media #{$tablet}
+		flex-direction: column
+		max-width: 230px
+
+	@media #{$mobile}
+		order: 2
+		padding: 0
+		align-items: flex-start
+		margin-bottom: 30px
+
 .footer-social
 	display: flex
 	align-items: center
@@ -151,15 +215,29 @@
 	&__link
 		display: inline-block
 
+	&__links
+		display: flex
+
 	&__elem
 		&:not(:last-child)
 			margin-right: 10px
 
-
+	@media #{$mobile}
+		order: 1
+		margin-bottom: 20px
+		&__text
+			margin-right: 30px
+			white-space: nowrap
+		&__elem
+		&:not(:last-child)
+			margin-bottom: 15px
 
 .footer-copy
 	font-size: .875rem
 	line-height: 1.313rem
 	color: rgba(255,255,255,.5)
+
+	@media #{$mobile}
+		order: 3
 
 

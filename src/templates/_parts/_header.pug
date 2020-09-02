@@ -137,7 +137,8 @@ header.header
 
 			.header-logo
 				.header-logo__img
-					+icon('logo-with-text')
+					a.header-logo__link(href="#")
+						+icon('logo-with-text')
 
 			.header-search.dropdown(data-dropdown="search", data-desktop="search")
 				//form(action="").header-search__form.form
@@ -217,7 +218,7 @@ header.header
 						span.header-bar__item__label Акции
 
 				.header-bar__item.dropdown(data-dropdown="delivery")
-					a.header-bar__item__link(href="")
+					.header-bar__item__link
 						.header-bar__item__icon
 							+icon('delivery-company')
 						span.header-bar__item__label Выберите доставку

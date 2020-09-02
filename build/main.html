@@ -1009,11 +1009,10 @@
 						</div>
 					</div>
 					<div class="header-logo">
-						<div class="header-logo__img">
-							<svg class="icon icon-logo-with-text ">
-								<use xlink:href="images/sprites.svg#logo-with-text"></use>
-							</svg>
-						</div>
+						<div class="header-logo__img"><a class="header-logo__link" href="#">
+								<svg class="icon icon-logo-with-text ">
+									<use xlink:href="images/sprites.svg#logo-with-text"></use>
+								</svg></a></div>
 					</div>
 					<div class="header-search dropdown" data-dropdown="search" data-desktop="search">
 						<!--form(action="").header-search__form.form
@@ -1166,12 +1165,14 @@
 										<use xlink:href="images/sprites.svg#percentage"></use>
 									</svg>
 								</div><span class="header-bar__item__label">Акции</span></a></div>
-						<div class="header-bar__item dropdown" data-dropdown="delivery"><a class="header-bar__item__link" href="">
+						<div class="header-bar__item dropdown" data-dropdown="delivery">
+							<div class="header-bar__item__link">
 								<div class="header-bar__item__icon">
 									<svg class="icon icon-delivery-company ">
 										<use xlink:href="images/sprites.svg#delivery-company"></use>
 									</svg>
-								</div><span class="header-bar__item__label">Выберите доставку</span></a>
+								</div><span class="header-bar__item__label">Выберите доставку</span>
+							</div>
 							<div class="dropdown-block">
 								<div class="dropdown-block__inner">
 									<div class="dropdown-delivery">
@@ -1260,10 +1261,7 @@
 											<div class="slider-slide__content">
 												<div class="slider-slide__title">Пирог Осетинский с курицей и грибами</div>
 												<div class="slider-slide__text">Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.</div>
-												<div class="slider-slide__btn"><a class="button" href="">Подробнее
-														<svg class="icon icon-button-arrow ">
-															<use xlink:href="images/sprites.svg#button-arrow"></use>
-														</svg></a></div>
+												<div class="slider-slide__btn"><a class="button button__arrow" href="">Подробнее</a></div>
 											</div>
 											<div class="slider-slide__img"><img class="slider-slide__img__elem" src="images/main-slider-img.png"></div>
 											<div class="slider-slide__bg" style="background-color: #FDF0E2;"></div>
@@ -1272,10 +1270,7 @@
 											<div class="slider-slide__content">
 												<div class="slider-slide__title">Пирог Осетинский с курицей и грибами</div>
 												<div class="slider-slide__text">Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.</div>
-												<div class="slider-slide__btn"><a class="button" href="">Подробнее
-														<svg class="icon icon-button-arrow ">
-															<use xlink:href="images/sprites.svg#button-arrow"></use>
-														</svg></a></div>
+												<div class="slider-slide__btn"><a class="button button__arrow" href="">Подробнее</a></div>
 											</div>
 											<div class="slider-slide__img"><img class="slider-slide__img__elem" src="images/main-slider-img.png"></div>
 											<div class="slider-slide__bg" style="background-color: #FDF0E2;"></div>
@@ -1284,10 +1279,7 @@
 											<div class="slider-slide__content">
 												<div class="slider-slide__title">Пирог Осетинский с курицей и грибами</div>
 												<div class="slider-slide__text">Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.</div>
-												<div class="slider-slide__btn"><a class="button" href="">Подробнее
-														<svg class="icon icon-button-arrow ">
-															<use xlink:href="images/sprites.svg#button-arrow"></use>
-														</svg></a></div>
+												<div class="slider-slide__btn"><a class="button button__arrow" href="">Подробнее</a></div>
 											</div>
 											<div class="slider-slide__img"><img class="slider-slide__img__elem" src="images/main-slider-img.png"></div>
 											<div class="slider-slide__bg" style="background-color: #FDF0E2;"></div>
@@ -1309,6 +1301,18 @@
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section catalog-links">
+				<div class="section-container">
+					<div class="section-header">
+						<div class="section-title">
+							<h2 class="h1">Каталог</h2>
+						</div>
+					</div>
+					<div class="section-content">
+						<div class="catalog-links__list scroll scroll-x" data-mobile-menu="catalog-links"></div>
 					</div>
 				</div>
 			</section>
@@ -1385,28 +1389,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Пельмени с индейкой</div>
 										<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
@@ -1449,28 +1431,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт Прага</div>
 										<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
@@ -1512,28 +1472,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт Ореховый по-королевски</div>
 										<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
@@ -1575,28 +1513,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт малиновый</div>
 										<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
@@ -1639,28 +1555,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Фрикадельки</div>
 										<div class="products__item__excerpt">Нежирная свинина, говядина и куриное филе с добавлением лука, зелени и специй. Вкусно и сытно</div>
@@ -1703,28 +1597,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт киевский</div>
 										<div class="products__item__excerpt">С приятным солодовым ароматом, с  семенами подсолнечника и льна</div>
@@ -1784,28 +1656,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Сардельки из индейки</div>
 										<div class="products__item__excerpt">Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика</div>
@@ -1847,28 +1697,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Сардельки из индейки</div>
 										<div class="products__item__excerpt">Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика</div>
@@ -1911,28 +1739,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Манты с бараниной</div>
 										<div class="products__item__excerpt">В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку</div>
@@ -1975,28 +1781,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт облепиха</div>
 										<div class="products__item__excerpt">С приятным солодовым ароматом, с  семенами подсолнечника и льна</div>
@@ -2038,28 +1822,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Торт Молочная девочка</div>
 										<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
@@ -2101,28 +1863,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Чизкейк с вишней</div>
 										<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
@@ -2165,28 +1905,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Пельмени с индейкой</div>
 										<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
@@ -2220,28 +1938,6 @@
 											</svg>Хит
 										</div>
 									</div>
-									<!--if label
-									.products__item__label__wrap
-										//if label[]=='hit'
-											.products__item__label.hit
-												+icon('star')
-												| Хит
-										//if label[]=='novelty
-											.products__item__label.novelty Новинка
-										//if label['vegan']
-											.products__item__label.vegan Vegan
-										//if label['timer']
-											.products__item__label.timer
-												+icon('timer')
-												| 90 минут
-										//if label==no_gmo
-											.products__item__label.no-gmo Без ГМО
-										//if label==no_gluten
-											.products__item__label.no-gluten Без глютена
-										//if label==sale
-											.products__item__label.sale - 25%
-									-->
-									<!--else-->
 									<div class="products__item__info">
 										<div class="products__item__name">Пирог с вишней</div>
 										<div class="products__item__excerpt">Пирог из песочного теста, начинка из свежей вишни</div>
@@ -2420,15 +2116,15 @@
 										<div class="dropdown-block__inner">
 											<div class="dropdown-city">
 												<div class="dropdown__heading">Ваш город</div>
-												<form class="dropdown-form">
+												<form class="form-search dropdown-form">
 													<div class="form_row">
 														<div class="form_group">
 															<label class="form_label">
-																<input class="form_input dropdown-form-search__input" type="text" placeholder="Начните писать город">
-																<div class="dropdown-form-search__icon">
-																	<button class="dropdown-form-search__submit" type="submit">
-																		<svg class="icon icon-dropdown-input-search ">
-																			<use xlink:href="images/sprites.svg#dropdown-input-search"></use>
+																<input class="form_input form-search__input" type="text" placeholder="Начните писать город">
+																<div class="form-search__icon">
+																	<button class="form-search__button" type="submit">
+																		<svg class="icon icon-search-new ">
+																			<use xlink:href="images/sprites.svg#search-new"></use>
 																		</svg>
 																	</button>
 																</div>
@@ -2925,8 +2621,8 @@
 							<h2 class="h1">Где еще купить продукцию «У Палыча»</h2>
 						</div>
 						<div class="swiper-button inline">
-							<div class="swiper-button-next"></div>
 							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
 						</div>
 					</div>
 					<div class="section-content">
@@ -2957,7 +2653,7 @@
 					</div>
 					<div class="section-content">
 						<div class="news">
-							<div class="news-list">
+							<div class="news-list scroll scroll-x">
 								<div class="news-item">
 									<div class="news-item__header"><a class="news-item__link" href="#"><img class="news-item__img" src="images/news-item__img_1.jpg"></a></div>
 									<div class="news-item__body">
@@ -3093,23 +2789,25 @@
 				<div class="footer-policy"><a class="footer-policy__link" href="">Политика конфиденциальности</a><a class="footer-policy__link" href="">Пользовательское соглашение</a></div>
 				<div class="footer-social">
 					<div class="footer-social__text">Социальные сети</div>
-					<div class="footer-social__elem"><a class="footer-social__link" href="">
-							<svg class="icon icon-social-inst ">
-								<use xlink:href="images/sprites.svg#social-inst"></use>
-							</svg></a></div>
-					<div class="footer-social__elem"><a class="footer-social__link" href="">
-							<svg class="icon icon-social-vk ">
-								<use xlink:href="images/sprites.svg#social-vk"></use>
-							</svg></a></div>
+					<div class="footer-social__links">
+						<div class="footer-social__elem"><a class="footer-social__link" href="">
+								<svg class="icon icon-social-inst ">
+									<use xlink:href="images/sprites.svg#social-inst"></use>
+								</svg></a></div>
+						<div class="footer-social__elem"><a class="footer-social__link" href="">
+								<svg class="icon icon-social-vk ">
+									<use xlink:href="images/sprites.svg#social-vk"></use>
+								</svg></a></div>
+					</div>
 				</div>
 			</div>
 		</footer>
-		<div class="mobile">
+		<div class="mobile scroll">
 			<div class="mobile-menu" data-mobile-menu>
-				<div class="mobile-menu__head">
+				<div class="mobile-menu-head">
 					<div class="mobile-menu__logo" data-mobile-menu-logo="logo">
-						<svg class="icon icon-search-new ">
-							<use xlink:href="images/sprites.svg#search-new"></use>
+						<svg class="icon icon-logo ">
+							<use xlink:href="images/sprites.svg#logo"></use>
 						</svg>
 					</div>
 					<div class="mobile-menu__close" data-mobile-menu-close>
@@ -3118,14 +2816,14 @@
 						</svg>
 					</div>
 				</div>
-				<div class="mobile-menu__body">
-					<div class="mobile-menu__section" data-mobile-menu="city"></div>
-					<div class="mobile-menu__section dropdown" data-mobile-menu="search"></div>
-					<div class="mobile-menu__section" data-mobile-menu="catalog"></div>
-					<div class="mobile-menu__section" data-mobile-menu="top-nav"></div>
-					<div class="mobile-menu__section" data-mobile-menu="call">
-						<div class="mobile-menu__section__inner" data-mobile-menu="call-links"></div>
-						<div class="mobile-menu__section__inner" data-mobile-menu="call-tels"></div>
+				<div class="mobile-menu-body">
+					<div class="mobile-menu-section mobile-menu-section-city" data-mobile-menu="city"></div>
+					<div class="mobile-menu-section mobile-menu-section-search dropdown" data-mobile-menu="search"></div>
+					<div class="mobile-menu-section mobile-menu-section-catalog" data-mobile-menu="catalog"></div>
+					<div class="mobile-menu-section mobile-menu-section-top-nav" data-mobile-menu="top-nav"></div>
+					<div class="mobile-menu-section mobile-menu-section-call" data-mobile-menu="call">
+						<div class="mobile-menu-section__inner" data-mobile-menu="call-links"></div>
+						<div class="mobile-menu-section__inner" data-mobile-menu="call-tels"></div>
 					</div>
 				</div>
 			</div>
@@ -3250,7 +2948,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1598607021528"></script>
-		<script src="js/main.js?v=1598607021528"></script>
+		<script src="js/vendor.js?v=1599049023073"></script>
+		<script src="js/main.js?v=1599049023073"></script>
 	</body>
 </html>

@@ -116,3 +116,51 @@
 		&__item
 			flex-basis: 33.3%
 			max-width: 33.3%
+
+	&-links
+		//&__list
+			display: flex
+			flex-wrap: nowrap
+		&__list
+			padding-bottom: 15px
+		.nav
+			&-list
+				display: flex
+				flex-direction: row
+				flex-wrap: nowrap
+				padding: 0 10px
+			&-item
+				margin-bottom: 0
+				min-width: auto
+				align-items: flex-start
+				&:not(:last-child)
+					margin-right: 25px
+				&__link
+					text-align: center
+					display: inline-flex
+					flex-direction: column
+					align-items: center
+					justify-content: center
+					width: auto
+					&:after
+						display: none !important
+				&__icon
+					width: 54px
+					height: 54px
+					background: #FFFFFF
+					box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04)
+					margin-bottom: 10px
+					border-radius: 100%
+					display: flex
+					align-items: center
+					justify-content: center
+					margin-right: 0
+				&__label
+					font-size: 0.875rem
+					line-height: 1rem
+					color: var(--black)
+					max-width: 99%
+					min-width: 60px
+					@media #{$mobile-xs}
+						font-size: 0.75rem
+

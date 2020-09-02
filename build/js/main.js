@@ -211,10 +211,19 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 /***/ (function(module, exports) {
 
 $(window).on('load resize', function () {
-  $('[data-move]').each(function (element) {
-    var dataMoveAttr = $(this).data('move'); //$(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="'+dataMoveAttr+'"]');
-    //$(this).appendTo('[data-mobile-menu="'+dataMoveAttr+'"]');
-  });
+  if ($(window).width() < 767) {
+    $('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
+    $('[data-mobile-menu="catalog-links"] .nav-list').removeAttr('data-move');
+    $('[data-mobile-menu="catalog-links"] .nav-list .nav-item__submenu').remove();
+    $('[data-mobile-menu="catalog-links"] .nav-list .nav-item').removeClass('.nav-item');
+    setTimeout(function () {
+      $('[data-move]').each(function (element) {
+        var dataMoveAttr = $(this).data('move');
+        $(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
+        $(this).appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
+      });
+    }, 100);
+  } else {}
 });
 
 /***/ }),
@@ -307,6 +316,23 @@ object_fit_images__WEBPACK_IMPORTED_MODULE_0___default()();
 
 /***/ }),
 
+/***/ "./src/js/_parts/_products.js":
+/*!************************************!*\
+  !*** ./src/js/_parts/_products.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).on('load resize', function () {
+  if ($(window).width() < 768) {
+    $('.section.products .products__list').addClass('scroll scroll-x');
+  } else if ($(window).width() > 767) {
+    $('.section.products .products__list').removeClass('scroll scroll-x');
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_shops-tabs.js":
 /*!**************************************!*\
   !*** ./src/js/_parts/_shops-tabs.js ***!
@@ -379,10 +405,15 @@ $(document).ready(function () {
           nextEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-next',
           prevEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-prev'
         },
-        breakpoints: {},
+        breakpoints: {
+          992: {
+            spaceBetween: 15
+          }
+        },
         on: {
           init: function init() {
             checkArrow();
+            sliderCheckBreakpoints();
           },
           resize: function resize() {
             checkArrow();
@@ -403,11 +434,22 @@ $(document).ready(function () {
         navigation: {
           nextEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-next',
           prevEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-prev'
+        },
+        breakpoints: {
+          992: {
+            spaceBetween: 15
+          }
+        },
+        on: {
+          init: function init() {
+            sliderCheckBreakpoints();
+          },
+          resize: function resize() {}
         }
       });
     }
 
-    var $progress = $('[data-slider-name="' + data_slider_name + '"] + .options .progress'),
+    var $progress = $('[data-slider-name="' + data_slider_name + '"]').parents('.slider').find('.options .progress'),
         $progressIndex = $progress.find("span.index"),
         $progressSlides = $progress.find("span.slides"),
         $progressBar = $progress.find(".progress-bar .back");
@@ -442,8 +484,15 @@ $(document).ready(function () {
       } else {
         swiperPrev.hide();
         swiperNext.hide();
-        $('[data-slider-name="' + data_slider_name + '"] .options').hide();
+        $('[data-slider-name="' + data_slider_name + '"] + .options').hide();
       }
+    }
+
+    function sliderCheckBreakpoints() {
+      if ($(window).width() < 992) {
+        //console.log($('[data-slider-name="'+data_slider_name+'"]'));
+        $('[data-slider-name="' + data_slider_name + '"] + .options').appendTo($('[data-slider-name="' + data_slider_name + '"] .swiper-button__wrapper'));
+      } else {}
     }
   });
   /* в списке товаров */
@@ -473,6 +522,49 @@ $(document).ready(function () {
     navigation: {
       nextEl: '.slider-web .swiper-button-next',
       prevEl: '.slider-web .swiper-button-prev'
+    },
+    breakpoints: {
+      992: {
+        spaceBetween: 15
+      }
+    },
+    on: {
+      init: function init() {
+        sliderWebArrowsReplace();
+      }
+    }
+  });
+
+  function sliderWebArrowsReplace() {
+    if ($(window).width() < 992) {
+      //console.log($('[data-slider-name="'+data_slider_name+'"]'));
+      $('.slider-web .swiper-button.inline').appendTo($('.slider-web .slider'));
+    } else {}
+  }
+  /* галерея в деталке */
+
+
+  var galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    //loop: true,
+    freeMode: true,
+    loopedSlides: 5,
+    //looped slides should be the same
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true
+  });
+  var galleryTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-top', {
+    spaceBetween: 10,
+    loop: true,
+    loopedSlides: 5,
+    //looped slides should be the same
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    thumbs: {
+      swiper: galleryThumbs
     }
   });
 });
@@ -6146,8 +6238,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_parts_dropdown__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_parts/_shops-tabs */ "./src/js/_parts/_shops-tabs.js");
 /* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_parts/_mobile-el-replace */ "./src/js/_parts/_mobile-el-replace.js");
-/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_parts/_products */ "./src/js/_parts/_products.js");
+/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_parts_products__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./_parts/_mobile-el-replace */ "./src/js/_parts/_mobile-el-replace.js");
+/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 

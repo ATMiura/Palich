@@ -12,6 +12,8 @@
 			font-size: 0
 			line-height: 0
 			display: block
+			max-width: 100%
+			height: auto
 		@media #{$laptop}
 			margin-right: 50px
 	&__text
@@ -44,3 +46,26 @@
 		//top: 0
 		background-color: var(--light-pink)
 		z-index: -1
+
+	@media #{$tablet}
+		flex-direction: column-reverse
+		padding-top: 40px
+		&__img
+			margin-right: 0
+		&__text
+			margin-bottom: 40px
+		&__bg
+			top: 0
+			height: 80%
+
+	@media #{$mobile}
+		padding: 35px 25px
+
+	@media #{$mobile-xs}
+		&__text
+			h2
+				font-size: 1.875rem
+				line-height: 2.25rem
+			p
+				font-size: 0.875rem
+				line-height: 1.313rem

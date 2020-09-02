@@ -1,4 +1,14 @@
 .mobile
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 999
+	background: #FFFFFF
+	box-shadow: 0px -151px 256px rgba(0, 0, 0, 0.06), 0px -63.0842px 106.951px rgba(0, 0, 0, 0.0431313), 0px -33.7278px 57.181px rgba(0, 0, 0, 0.0357664), 0px -18.9075px 32.0552px rgba(0, 0, 0, 0.03), 0px -10.0417px 17.0243px rgba(0, 0, 0, 0.0242336), 0px -4.17856px 7.08418px rgba(0, 0, 0, 0.0168687)
+	height: 100%
+	padding: 25px 20px 35px
+	min-width: 320px
 	.dropdown-block
 		opacity: 1
 		visibility: visible
@@ -8,15 +18,73 @@
 		left: 0
 		display: none
 	&-menu
-	&-head
-		&__burger
+		&-head
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding-bottom: 15px
+			margin-bottom: 12px
+			border-bottom: 1px solid #E6E9EF
 		&__logo
-		&__search
-		&-cart
+			svg
+				width: 139px
+				height: 28px
+		&__close
+
+		//&-cart
 			&__counter
 			&__icon
 			&__number
 			&__close
-	&__body
-	&__section
-		&__inner
+		&-body
+		&-section
+			&-city
+				margin-bottom: 15px
+				.link-icon__text
+					color: var(--vinishkotyan)
+			&-search
+				margin-bottom: 20px
+				.form-search
+					&__input
+						border: 1px solid var(--light-grey)
+						border-radius: 0
+			&-catalog
+				padding-bottom: 20px
+				margin-bottom: 25px
+				border-bottom: 1px solid #E6E9EF
+			&-top-nav
+				padding-bottom: 30px
+				margin-bottom: 25px
+				border-bottom: 1px solid #E6E9EF
+				.header-nav
+					&__list
+						flex-direction: column
+						align-items: flex-start
+					&__item
+						&__link
+							font-size: 1rem
+							line-height: 1.375rem
+							font-weight: normal
+			&-call
+				display: flex
+				flex-direction: column-reverse
+				.header-link
+					&__lsit
+					&__item
+						.link-icon
+							&__icon
+								display: inline-block
+							&__text
+								font-size: .875rem
+				.header-phone
+					&__list
+						flex-direction: column
+						align-items: flex-start
+					&__item
+						&:not(:last-child)
+							margin-bottom: 5px
+						&__link
+							font-size: 1rem
+			&__inner
+				&:not(:first-child)
+					margin-bottom: 15px

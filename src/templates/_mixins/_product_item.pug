@@ -1,5 +1,5 @@
 mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', price_sale='523 ₽')
-	- var label = ['hit','novetly','vegan','timer','no_gmo','no_glutten','sale']
+	//- var label = ['hit','novetly','vegan','timer','no_gmo','no_glutten','sale']
 	.products__item
 		.products__item__inner
 			.products__item__img
@@ -9,27 +9,6 @@ mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', 
 				.products__item__label.hit
 					+icon('star')
 					| Хит
-			//if label
-				.products__item__label__wrap
-					//if label[]=='hit'
-						.products__item__label.hit
-							+icon('star')
-							| Хит
-					//if label[]=='novelty
-						.products__item__label.novelty Новинка
-					//if label['vegan']
-						.products__item__label.vegan Vegan
-					//if label['timer']
-						.products__item__label.timer
-							+icon('timer')
-							| 90 минут
-					//if label==no_gmo
-						.products__item__label.no-gmo Без ГМО
-					//if label==no_gluten
-						.products__item__label.no-gluten Без глютена
-					//if label==sale
-						.products__item__label.sale - 25%
-			//else
 			.products__item__info
 				.products__item__name=name
 				.products__item__excerpt=excerpt

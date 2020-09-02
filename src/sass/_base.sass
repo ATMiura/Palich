@@ -52,7 +52,7 @@ h2,.h2
 
 h3,.h3
 	font-size: 1.5rem
-	line-height:
+	line-height: 2rem
 	color: #1A1A1A
 
 h4,.h4
@@ -81,6 +81,7 @@ li
 	font-size: .875rem
 	line-height: 1.063rem
 	color: var(--vinishkotyan)
+	white-space: nowrap
 	svg
 		margin-left: 8px
 	&:hover
@@ -108,6 +109,9 @@ li
 		background: transparent
 	&::-webkit-scrollbar-track-piece
 	&::-webkit-resizer
+	&-x
+		overflow-y: hidden
+		overflow-x: visible
 
 .grid-container
 	//max-width: 1200px

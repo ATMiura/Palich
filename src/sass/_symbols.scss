@@ -124,7 +124,7 @@
 /* подменю */
 [class*="icon-submenu-icon"]{
 	fill: var(--white);
-	stroke: var(--vinishkotyan);
+	//stroke: var(--vinishkotyan);
 }
 .icon-submenu-icon-stock{
 	width:  18px;
@@ -201,6 +201,33 @@
 .icon-submenu-icon-pizza{
 	width: 29px;
 	height: 29px;
+}
+
+
+/* product-share */
+.icon-share{
+	width: 16px;
+	height: 18px;
+}
+.icon-prodcuct-share-fb{
+	width: 22px;
+	height: 22px;
+}
+.icon-prodcuct-share-vk{
+	width: 31px;
+	height: 18px;
+}
+.icon-prodcuct-share-tg{
+	width: 26px;
+	height: 22px;
+}
+.icon-prodcuct-share-wa{
+	width: 21px;
+	height: 21px;
+}
+.icon-prodcuct-share-ok{
+	width: 18px;
+	height: 28px;
 }
 
 

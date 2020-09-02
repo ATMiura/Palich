@@ -2,7 +2,7 @@
 .section
 
 	&-container
-		max-width: 1200px
+		max-width: 1230px
 		margin: 0 auto
 		padding: 0 15px
 		@media #{$desktop}
@@ -16,6 +16,14 @@
 	&-title
 		h2
 			margin-bottom: 0 !important
+		@media #{$mobile}
+			h2
+				font-size: 1.875rem
+		@media #{$mobile-xs}
+			h2
+				font-size: 1.625rem
+				line-height: 2.25rem
+
 	&-more
 		margin-left: auto
 
@@ -27,17 +35,31 @@
 	&-title + &-products-quantity
 		margin-left: 20px
 
+	@media #{$mobile}
+		&-header
+			flex-direction: column
+			align-items: flex-start
+		&-more
+			margin-left: 0
+			margin-top: 5px
+
 	&-content
 		width: 100%
 
 	&-slider
 
 	&.best-price
-		.section-title h2,
+		.section-title h2
+			color: var(--white)
 		.more-link
 			color: var(--white)
-		.more-link .icon-arrow-more
-			fill: var(--white)
+			& .icon-arrow-more
+				fill: var(--white)
+			&:hover
+				color: var(--yellow)
+				& .icon-arrow-more
+					fill: var(--yellow)
+
 
 	&-subscribe
 		margin-bottom: 110px
@@ -49,9 +71,16 @@
 			display: flex
 			justify-content: space-between
 
-			@media #{$laptop}
+		@media #{$laptop}
+			.section-content
 				padding: 50px
-
+		@media #{$tablet}
+			.section-content
+				padding: 30px
+		@media #{$mobile-xs}
+			.section-content
+				flex-direction: column
+				padding: 30px 25px
 
 		.section__col
 			max-width: 400px
@@ -63,6 +92,16 @@
 				line-height: 1
 				margin-bottom: 18px !important
 
+			@media #{$tablet}
+				max-width: 320px
+				.h1
+					font-size: 2rem
+
+			@media #{$mobile-xs}
+				margin-bottom: 40px
+				.h1
+					margin-bottom: 15px
+
 		.section__form
 			max-width: 550px
 			width: 100%
@@ -70,12 +109,40 @@
 			.subscribe_label
 				display: flex
 			.subscribe_inp
-				@media #{$mobile-above}
+				@media #{$laptop-above}
 					margin-right: 20px
 
 			.subscribe_btn
 				max-width: 185px
 				min-width: 175px
+
+		@media #{$tablet}
+			.section__form
+				margin-top: 0
+			.subscribe_label
+				flex-direction: column
+				align-items: flex-start
+			.subscribe_inp
+				margin-bottom: 10px
+			.checkbox__text
+				line-height: 1rem
+
+		@media #{$mobile-xs}
+			margin-bottom: 65px !important
+			.section__form
+				.subscribe_btn
+					max-width: 100%
+					padding-right: 15px !important
+					background-position: center right 55px
+				.checkbox__label
+					align-items: flex-start
+				.checkbox__emulator
+					padding-top: 5px
+				.checkbox__text
+					line-height: 1rem
+					a
+						display: inline-block
+
 
 
 	&-advant
@@ -92,8 +159,13 @@
 
 	&-news
 		margin-bottom: 110px
+		@media #{$mobile-xs}
+			margin-bottom: 75px !important
 	&-descr
 		margin-bottom: 110px
+
+	&-product-detail
+		margin-bottom: 70px
 
 	&-catalog
 		margin-bottom: 80px
@@ -179,7 +251,11 @@
 					line-height: 1.313rem
 					color: var(--vinishkotyan)
 
+
+
 	@media #{$laptop}
 		margin-bottom: 50px
 		margin-top: 0 !important
+	@media #{$mobile-xs}
+		margin-bottom: 20px
 

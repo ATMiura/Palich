@@ -5,7 +5,8 @@ import './_parts/_sliders';
 import './_parts/_modal';
 import './_parts/_object-fit-images';
 import './_parts/_dropdown';
-import './_parts/_shops-tabs'
+import './_parts/_shops-tabs';
+import './_parts/_products';
 import './_parts/_mobile-el-replace';
 
 //import './_parts/_page';

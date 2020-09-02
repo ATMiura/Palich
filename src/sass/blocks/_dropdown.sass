@@ -1,5 +1,6 @@
 .dropdown
 	position: relative
+	cursor: pointer
 	&:after
 		content: ""
 		background-image: url("data:image/svg+xml,%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.16731 0.37207L16.2838 9.99989H0.0507812L8.16731 0.37207Z' fill='white'/%3E%3C/svg%3E%0A")
@@ -121,6 +122,7 @@
 				border: 1px solid var(--light-grey)
 				font-size: 0.875rem
 				line-height: 1.375rem
+				border-radius: 0
 			&__icon
 				margin-left: -33px
 				.icon-search-new
@@ -238,6 +240,9 @@
 			display: none
 			&.active
 				display: flex
+
+	&-share
+
 
 .header-bar__item .dropdown-block__inner
 	padding: 0

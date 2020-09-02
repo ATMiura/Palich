@@ -74,28 +74,29 @@ footer.footer
 			a.footer-policy__link(href="") Пользовательское соглашение
 		.footer-social
 			.footer-social__text Социальные сети
-			.footer-social__elem
-				a(href="").footer-social__link
-					+icon('social-inst')
-			.footer-social__elem
-				a(href="").footer-social__link
-					+icon('social-vk')
+			.footer-social__links
+				.footer-social__elem
+					a(href="").footer-social__link
+						+icon('social-inst')
+				.footer-social__elem
+					a(href="").footer-social__link
+						+icon('social-vk')
 
-.mobile
+.mobile.scroll
 	.mobile-menu(data-mobile-menu)
-		.mobile-menu__head
+		.mobile-menu-head
 			.mobile-menu__logo(data-mobile-menu-logo="logo")
-				+icon('search-new')
+				+icon('logo')
 			.mobile-menu__close(data-mobile-menu-close)
 				+icon('close')
-		.mobile-menu__body
-			.mobile-menu__section(data-mobile-menu="city")
-			.mobile-menu__section.dropdown(data-mobile-menu="search")
-			.mobile-menu__section(data-mobile-menu="catalog")
-			.mobile-menu__section(data-mobile-menu="top-nav")
-			.mobile-menu__section(data-mobile-menu="call")
-				.mobile-menu__section__inner(data-mobile-menu="call-links")
-				.mobile-menu__section__inner(data-mobile-menu="call-tels")
+		.mobile-menu-body
+			.mobile-menu-section.mobile-menu-section-city(data-mobile-menu="city")
+			.mobile-menu-section.mobile-menu-section-search.dropdown(data-mobile-menu="search")
+			.mobile-menu-section.mobile-menu-section-catalog(data-mobile-menu="catalog")
+			.mobile-menu-section.mobile-menu-section-top-nav(data-mobile-menu="top-nav")
+			.mobile-menu-section.mobile-menu-section-call(data-mobile-menu="call")
+				.mobile-menu-section__inner(data-mobile-menu="call-links")
+				.mobile-menu-section__inner(data-mobile-menu="call-tels")
 
 .modal#callback.scroll
 	.modal__inner

@@ -42,17 +42,21 @@ $(document).ready(function () {
 					prevEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-prev'
 				},
 				breakpoints: {
-
+					992: {
+						spaceBetween: 15,
+					}
 				},
 				on: {
 					init: function() {
 						checkArrow();
+						sliderCheckBreakpoints();
 					},
 					resize: function () {
 						checkArrow();
 					}
 				}
 			});
+
 		} else {
 
 			var heroSwiper = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
@@ -69,11 +73,24 @@ $(document).ready(function () {
 					nextEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-next',
 					prevEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-prev'
 				},
+				breakpoints: {
+					992: {
+						spaceBetween: 15,
+					}
+				},
+				on: {
+					init: function() {
+						sliderCheckBreakpoints();
+					},
+					resize: function () {
+
+					}
+				}
 
 			});
 		}
 
-		var $progress = $('[data-slider-name="'+data_slider_name+'"] + .options .progress'),
+		var $progress = $('[data-slider-name="'+data_slider_name+'"]').parents('.slider').find('.options .progress'),
 			$progressIndex = $progress.find("span.index"),
 			$progressSlides = $progress.find("span.slides"),
 			$progressBar = $progress.find(".progress-bar .back");
@@ -109,7 +126,16 @@ $(document).ready(function () {
 			} else {
 				swiperPrev.hide();
 				swiperNext.hide();
-				$('[data-slider-name="'+data_slider_name+'"] .options').hide();
+				$('[data-slider-name="'+data_slider_name+'"] + .options').hide();
+			}
+		}
+
+		function sliderCheckBreakpoints() {
+			if($(window).width() < 992 ){
+				//console.log($('[data-slider-name="'+data_slider_name+'"]'));
+				$('[data-slider-name="'+data_slider_name+'"] + .options').appendTo($('[data-slider-name="'+data_slider_name+'"] .swiper-button__wrapper'));
+			} else {
+
 			}
 		}
 	});
@@ -141,6 +167,49 @@ $(document).ready(function () {
 		navigation: {
 			nextEl: '.slider-web .swiper-button-next',
 			prevEl: '.slider-web .swiper-button-prev',
+		},
+		breakpoints: {
+			992: {
+				spaceBetween: 15,
+			}
+		},
+		on: {
+			init: function() {
+				sliderWebArrowsReplace();
+			},
+		}
+	});
+
+	function sliderWebArrowsReplace() {
+		if($(window).width() < 992 ){
+			//console.log($('[data-slider-name="'+data_slider_name+'"]'));
+			$('.slider-web .swiper-button.inline').appendTo($('.slider-web .slider'));
+		} else {
+
+		}
+	}
+
+	/* галерея в деталке */
+	var galleryThumbs = new Swiper('.product-gallery-thumbs', {
+		spaceBetween: 10,
+		slidesPerView: 4,
+		//loop: true,
+		freeMode: true,
+		loopedSlides: 5, //looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
+
+	var galleryTop = new Swiper('.product-gallery-top', {
+		spaceBetween: 10,
+		loop: true,
+		loopedSlides: 5, //looped slides should be the same
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		thumbs: {
+			swiper: galleryThumbs,
 		},
 	});
 

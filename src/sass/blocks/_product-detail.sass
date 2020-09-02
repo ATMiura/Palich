@@ -1,0 +1,254 @@
+.product
+	&-container
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -15px
+		position: relative
+		&:before
+			content: ""
+			display: block
+			width: 100%
+			max-width: 680px
+			height: calc(100% + 60px)
+			background-color: #FAFBFD
+			position: absolute
+			top: -60px
+			right: 0
+			z-index: -1
+	&-col
+		&__left,
+		&__right
+			flex-basis: 50%
+			max-width: 50%
+			padding: 0 15px
+		&__right
+
+	&-slider
+		margin-bottom: 50px
+	.swiper
+		&-slide
+			&__img
+				max-width: 100%
+	&-gallery
+		&-top
+		&-thumbs
+
+	&-descr-second
+		font-size: 1rem
+		line-height: 1.688rem
+		color: var(--grey-text)
+		margin-right: 100px
+		margin-bottom: 70px
+	&-shops
+		margin-right: 100px
+		&-head
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-bottom: 25px
+			&__title
+				font-size: 1.25rem
+				line-height: 1.75rem
+				font-weight: bold
+				color: var(--black)
+				margin-right: 10px
+		&-beside
+			display: flex
+			align-items: center
+			&__icon
+				margin-right: 5px
+				svg
+					fill: var(--vinishkotyan)
+			&__text
+				font-size: 1rem
+				font-weight: bold
+				line-height: 1.313rem
+				color: var(--vinishkotyan)
+		&-body
+		&-list
+			max-height: 400px
+		&-item
+			padding-top: 15px
+			padding-bottom: 30px
+			border-bottom: 1px solid #E6E9EF
+			&__text
+				font-size: 1.125rem
+				line-height: 1.5rem
+				letter-spacing: 0.01em
+				color: var(--black)
+				margin-bottom: 5px
+			&__type
+				font-size: 16px
+				line-height: 100%
+				color: var( --color-grey)
+	&-title
+		margin-bottom: 10px
+		h1
+			margin-top: 0
+			margin-bottom: 0
+	&-sku
+		font-size: .75rem
+		line-height: 1rem
+		color: var(--grey-text)
+		margin-bottom: 40px
+		display: flex
+		align-items: center
+		&__text
+			margin-right: 3px
+		&__value
+
+	&-advant
+		&__list
+			column-count: 2
+		&__item
+			font-size: 0.875rem
+			line-height: 1.313rem
+			color: var(--black)
+			margin-bottom: 21px
+			padding-left: 1em
+			&:before
+				content: "\2022"
+				color: var(--vinishkotyan)
+				font-weight: bold
+				display: inline-block
+				width: 1em
+				margin-left: -1em
+
+	&-form
+		margin-bottom: 30px
+	&-quantity
+		display: flex
+		align-items: center
+		margin-bottom: 15px
+		&__text
+			font-size: 1rem
+			line-height: 1.313rem
+			font-weight: bold
+			color: var(--black)
+			margin-right: 15px
+		&__input
+			.basket-item
+				&-block
+					&-amount
+						background-color: var(--white)
+						padding: 10px 20px
+						max-width: 180px
+						display: flex
+						align-items: center
+						justify-content: center
+				&-amount
+					&-btn
+						&-minus,
+						&-plus
+							display: block
+							min-width: 25px
+							max-width: 25px
+							height: 25px
+							background-repeat: no-repeat
+							background-position: center
+							cursor: pointer
+						&-minus
+							background-image: url("data:image/svg+xml,%3Csvg width='19' height='3' viewBox='0 0 19 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 1.5C0.5 0.947715 0.947715 0.5 1.5 0.5L17.5 0.5C18.0523 0.5 18.5 0.947715 18.5 1.5C18.5 2.05228 18.0523 2.5 17.5 2.5L1.5 2.5C0.947715 2.5 0.5 2.05228 0.5 1.5Z' fill='black'/%3E%3C/svg%3E%0A")
+						&-plus
+							background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.5 1.5C10.5 0.947715 10.0523 0.5 9.5 0.5C8.94771 0.5 8.5 0.947715 8.5 1.5V8.5H1.5C0.947715 8.5 0.5 8.94771 0.5 9.5C0.5 10.0523 0.947715 10.5 1.5 10.5H8.5V17.5C8.5 18.0523 8.94771 18.5 9.5 18.5C10.0523 18.5 10.5 18.0523 10.5 17.5V10.5H17.5C18.0523 10.5 18.5 10.0523 18.5 9.5C18.5 8.94771 18.0523 8.5 17.5 8.5H10.5V1.5Z' fill='black'/%3E%3C/svg%3E%0A")
+					&-filed
+						width: 100%
+						&-block
+							display: inline-flex
+							justify-content: center
+							margin: 0 30px
+							width: calc(100% - 2*30px - 2*25px)
+	&-buy
+		display: flex
+		align-items: center
+		&-price
+			display: flex
+			align-items: center
+			margin-right: 40px
+			&__normal
+				font-weight: bold
+				font-size: 1.25rem
+				line-height: 1.5rem
+				color: var(--vinishkotyan)
+				&:last-child
+					color: var(--black)
+			&__sale
+				font-size: 0.875rem
+				line-height: 1.063rem
+				color: var(--black)
+				margin-left: 8px
+				text-decoration: line-through
+		&-cart
+			margin-right: 20px
+			&__link
+				padding: 0 8.5px 2px 8.5px
+				height: 36px
+				//width: 36px
+				display: flex
+				align-items: center
+				justify-content: center
+				&:hover
+					background-color: var(--vinishkotyan)
+					width: auto
+					//transition: .5s
+					.product-buy-cart__link__text
+						display: inline-block
+						color: var(--yellow)
+					.icon-product_add_to_cart
+						fill: var(--yellow)
+				&__text
+					display: none
+					margin-right: 8px
+					font-size: 0.875rem
+					line-height: 1.125rem
+				&__icon
+					height: 18px
+					.icon-product_add_to_cart
+					.icon-product_in_cart
+						display: none
+			&.in-cart
+				.product-buy-cart__link__text
+					display: inline-block
+					color: var(--yellow)
+				.icon-product_add_to_cart
+					fill: var(--yellow)
+
+	&-share
+		&__icon
+		&__list
+			display: flex
+			align-items: center
+		&-item
+			margin: 0 10px
+			&__link
+	&-descr
+		border-top: 1px solid #E6E9EF
+		padding-top: 30px
+		&__title
+		&__list
+		&__item
+			padding-bottom: 35px
+			&:not(:last-child)
+				border-bottom: 1px solid #E6E9EF
+			&:not(:first-child)
+				padding-top: 30px
+			h3
+				margin-bottom: 5px
+			p
+				font-size: 1rem
+				line-height: 1.688rem
+	&-characters
+		&__list
+		&__item
+			padding: 15px 0
+			display: flex
+			align-items: center
+			&:not(:last-child)
+				border-bottom: 1px solid #E6E9EF
+		&__type
+			padding-right: 10px
+			flex-grow: 1
+			max-width: 200px
+		&__value
+			flex-grow: 1
+

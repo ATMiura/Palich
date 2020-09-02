@@ -44,6 +44,10 @@
 				max-width: 354px
 				width: 100%
 
+		&.scroll-x
+			flex-wrap: nowrap
+			margin: 0
+
 	&__more
 		display: flex
 		flex-basis: 100%
@@ -63,8 +67,26 @@
 			flex-basis: 33.3%
 			max-width: 33.3%
 			margin-bottom: 30px
+		@media #{$mobile}
+			flex-basis: 100%
+			max-width: 100%
+			min-width: 300px
+			margin-top: 5px
+			margin-bottom: 0
+			&__price
+				margin-right: 15px
+			//&:first-child
+				margin-left: -15px
+			//&:last-child
+				margin-right: -15px
+		@media #{$mobile-xs}
+			min-width: 260px
+
+
 		&__inner
 			background-color: var(--white)
+			@media #{$mobile}
+				background: none
 		&__size
 			&__big
 				flex-basis: 50%
@@ -93,6 +115,17 @@
 					color: var(--yellow)
 				.icon-product_add_to_cart
 					fill: var(--yellow)
+
+			@media #{$tablet}
+				&__big
+					flex-basis: 66.6%
+					max-width: 66.6%
+			@media #{$mobile}
+				&__big
+					display: none
+					//flex-basis: 100%
+					//max-width: 100%
+
 
 		&__slider
 			.swiper
@@ -126,6 +159,8 @@
 				margin: 0 auto
 				@media #{$laptop}
 					padding-top: 9px
+				@media #{$mobile}
+					padding-top: 0
 
 
 		&__label__wrap
