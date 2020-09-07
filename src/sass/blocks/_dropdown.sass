@@ -139,17 +139,20 @@
 
 			display: flex
 			flex-wrap: wrap
-			justify-content: space-between
+			justify-content: flex-start
+			//justify-content: space-between
 
-			flex-direction: column
+			//flex-direction: column
 			max-height: 350px
-			margin-bottom: -20px
+			//margin-bottom: -20px
 
 			&__item
 				//width: 100%
-				margin-bottom: 22px
+				flex-basis: 100%
+				&:not(:last-child)
+					margin-bottom: 20px
 				&:not(:nth-child(n+9))
-					margin-right: 70px
+					//margin-right: 70px
 				&__link
 				//@media #{$mobile}
 					max-width: 50%

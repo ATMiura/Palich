@@ -154,6 +154,21 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/_parts/_catalog-list-mobile.js":
+/*!***********************************************!*\
+  !*** ./src/js/_parts/_catalog-list-mobile.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).on('load resize', function () {
+  if ($(window).width < 768) {
+    $();
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_dropdown.js":
 /*!************************************!*\
   !*** ./src/js/_parts/_dropdown.js ***!
@@ -173,13 +188,13 @@ $(document).on('click touch', '.header-burger__link', function (event) {
     $('.dropdown').removeClass('is-open');
   }
 }).on('click touch', '.nav-item__link', function () {
-  if ($(this).parents('.nav-item').hasClass('has-submenu')) {
-    console.log('false');
-    return false;
+  /*if($(this).parents('.nav-item').hasClass('has-submenu')){
+  	console.log('false');
+  	return false;
   } else {
-    console.log('true');
-    return true;
-  }
+  	console.log('true');
+  	return true;
+  }*/
 }).on('click touch', '.dropdown-delivery__item.express', function () {
   $(this).siblings('.express-block').addClass('active');
 }).on('click touch', '.express__close', function () {
@@ -210,8 +225,8 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(window).on('load resize', function () {
-  if ($(window).width() < 767) {
+$(window).on('load', function () {
+  if ($(window).width() < 768) {
     $('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
     $('[data-mobile-menu="catalog-links"] .nav-list').removeAttr('data-move');
     $('[data-mobile-menu="catalog-links"] .nav-list .nav-item__submenu').remove();
@@ -224,6 +239,35 @@ $(window).on('load resize', function () {
       });
     }, 100);
   } else {}
+  /* перестановка блоков в деталке */
+
+
+  $('[data-move-left-right]').each(function () {
+    if ($(window).width() < 992) {
+      $(this).appendTo('.product-col__left');
+    } else if ($(window).width() > 991) {
+      $(this).appendTo('.product-col__right');
+    }
+  });
+});
+$(document).ready(function () {
+  /* закрытие мобильного меню */
+  $('[data-mobile-menu-close]').on('click touch', function () {
+    $('.mobile').removeClass('is-open');
+    $('body').removeClass('mobile-open');
+    $('[data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"])').hide();
+  });
+  /* открытие мобильного меню на странице списка товаров */
+
+  $('[data-catalog-mobile-menu]').on('click touch', function () {
+    $('body').addClass('mobile-open');
+    $('[data-mobile-menu="catalog-list"]').parent().addClass('is-open');
+    var dataMoveAttrName = $(this).data('catalog-mobile-menu');
+    var dataCatalogType = $(this).data('catalog-type');
+    console.log(dataCatalogType);
+    $('[data-mobile-menu="catalog-list"] .mobile-menu__title').text(dataMoveAttrName);
+    $('[data-mobile-menu="catalog-list"] [data-mobile-menu="catalog-' + dataCatalogType + '"]').show();
+  });
 });
 
 /***/ }),
@@ -546,26 +590,61 @@ $(document).ready(function () {
 
   var galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-thumbs', {
     spaceBetween: 10,
-    slidesPerView: 4,
+    slidesPerView: 5,
     //loop: true,
-    freeMode: true,
-    loopedSlides: 5,
-    //looped slides should be the same
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true
+    //freeMode: true,
+    loopedSlides: 5 //looped slides should be the same
+    //watchSlidesVisibility: true,
+    //watchSlidesProgress: true,
+
   });
   var galleryTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-top', {
-    spaceBetween: 10,
+    slidesPerView: 1,
+    spaceBetween: 15,
     loop: true,
-    loopedSlides: 5,
+    loopedSlides: 1,
     //looped slides should be the same
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      nextEl: '.product-gallery-top .swiper-button-next',
+      prevEl: '.product-gallery-top .swiper-button-prev'
     },
     thumbs: {
       swiper: galleryThumbs
+    },
+    breakpoints: {
+      992: {//centeredSlides: true,
+      }
     }
+  });
+  /* слайдер товаров */
+
+  $('.section.products-slider').each(function (index, element) {
+    $(this).addClass('products-slider-' + index);
+    var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+    var productsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+      slidesPerView: 4,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: '.products-slider-' + index + ' .swiper-button-next',
+        prevEl: '.products-slider-' + index + ' .swiper-button-prev'
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3
+        },
+        768: {
+          slidesPerView: 2
+        },
+        576: {
+          slidesPerView: 1,
+          scrollbar: {
+            el: '.swiper-scrollbar',
+            hide: false
+          },
+          freeMode: true
+        }
+      }
+    });
   });
 });
 
@@ -6242,6 +6321,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_parts_products__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./_parts/_mobile-el-replace */ "./src/js/_parts/_mobile-el-replace.js");
 /* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
+/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_9__);
+
 
 
 

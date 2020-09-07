@@ -8,7 +8,15 @@
 	box-shadow: 0px -151px 256px rgba(0, 0, 0, 0.06), 0px -63.0842px 106.951px rgba(0, 0, 0, 0.0431313), 0px -33.7278px 57.181px rgba(0, 0, 0, 0.0357664), 0px -18.9075px 32.0552px rgba(0, 0, 0, 0.03), 0px -10.0417px 17.0243px rgba(0, 0, 0, 0.0242336), 0px -4.17856px 7.08418px rgba(0, 0, 0, 0.0168687)
 	height: 100%
 	padding: 25px 20px 35px
-	min-width: 320px
+	max-width: 85%
+	width: 100%
+
+	&-open
+		overflow: hidden
+
+	&.is-open
+		display: block
+
 	.dropdown-block
 		opacity: 1
 		visibility: visible
@@ -29,6 +37,10 @@
 			svg
 				width: 139px
 				height: 28px
+		&__title
+			font-size: 1.25rem
+			line-height: 1
+			font-weight: bold
 		&__close
 
 		//&-cart
@@ -88,3 +100,51 @@
 			&__inner
 				&:not(:first-child)
 					margin-bottom: 15px
+
+	.catalog
+		&-tags
+			&__list
+				flex-direction: column
+				justify-content: flex-start
+				align-items: flex-start
+		&-sort
+			&__label
+				display: none
+			&__list
+				flex-direction: column
+				align-items: flex-start
+				justify-content: flex-start
+			&__item
+				width: 100%
+				margin-right: 0
+				&:not(:last-child)
+					margin-bottom: 10px
+			&__link
+				text-decoration: none
+				border-bottom: 0
+				font-size: .875rem
+				line-height: 1.5rem
+				display: inline-block
+				width: 100%
+				&:before
+					content: "По "
+					display: inline-block
+					margin-right: 3px
+				&:after
+					content: ""
+					display: inline-block
+					width: 16px
+					height: 16px
+					background-color: var(--light-pink)
+					border: 5px solid var(--light-pink)
+					border-radius: 100%
+					float: right
+				&.active
+					&:after
+						background: var(--vinishkotyan)
+						border: 5px solid var(--light-pink)
+
+
+
+[data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"])
+	display: none

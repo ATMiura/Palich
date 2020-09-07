@@ -192,26 +192,66 @@ $(document).ready(function () {
 	/* галерея в деталке */
 	var galleryThumbs = new Swiper('.product-gallery-thumbs', {
 		spaceBetween: 10,
-		slidesPerView: 4,
+		slidesPerView: 5,
 		//loop: true,
-		freeMode: true,
+		//freeMode: true,
 		loopedSlides: 5, //looped slides should be the same
-		watchSlidesVisibility: true,
-		watchSlidesProgress: true,
+		//watchSlidesVisibility: true,
+		//watchSlidesProgress: true,
 	});
 
 	var galleryTop = new Swiper('.product-gallery-top', {
-		spaceBetween: 10,
+		slidesPerView: 1,
+		spaceBetween: 15,
 		loop: true,
-		loopedSlides: 5, //looped slides should be the same
+		loopedSlides: 1, //looped slides should be the same
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.product-gallery-top .swiper-button-next',
+			prevEl: '.product-gallery-top .swiper-button-prev',
 		},
 		thumbs: {
 			swiper: galleryThumbs,
 		},
+		breakpoints: {
+			992: {
+				//centeredSlides: true,
+			},
+		},
 	});
+
+	/* слайдер товаров */
+	$('.section.products-slider').each(function (index,element) {
+
+		$(this).addClass('products-slider-'+index);
+
+		var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+
+		var productsSlider = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
+			slidesPerView: 4,
+			spaceBetween: 0,
+			navigation: {
+				nextEl: '.products-slider-'+index+' .swiper-button-next',
+				prevEl: '.products-slider-'+index+' .swiper-button-prev',
+			},
+			breakpoints: {
+				992: {
+					slidesPerView: 3,
+				},
+				768: {
+					slidesPerView: 2,
+				},
+				576: {
+					slidesPerView: 1,
+					scrollbar: {
+						el: '.swiper-scrollbar',
+						hide: false,
+					},
+					freeMode: true,
+				}
+			},
+		});
+	});
+
 
 
 });

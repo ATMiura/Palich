@@ -8,6 +8,7 @@ import './_parts/_dropdown';
 import './_parts/_shops-tabs';
 import './_parts/_products';
 import './_parts/_mobile-el-replace';
+import './_parts/_catalog-list-mobile';
 
 //import './_parts/_page';
 //import './_parts/_aside';

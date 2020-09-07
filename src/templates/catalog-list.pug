@@ -15,12 +15,27 @@ block content
 						span Каталог
 			.section-header
 				.section-title
-					h2.h1 Торты
+					h1 Торты
 				.section-products-quantity 84 товара
 			.section-content
 				.catalog
-					.catalog-tags
-						ul.catalog-tags__list
+					.catalog-mobile-menu
+						.catalog-mobile-menu__list
+							.catalog-mobile-menu__item(data-catalog-mobile-menu="Фильтры", data-catalog-type="filter")
+								.catalog-mobile-menu-item__icon
+									+icon('catalog-filter')
+								.catalog-mobile-menu-item__text Фильтры
+							.catalog-mobile-menu__item(data-catalog-mobile-menu="Теги", data-catalog-type="tags")
+								.catalog-mobile-menu-item__icon
+									+icon('catalog-tags')
+								.catalog-mobile-menu-item__text Теги
+							.catalog-mobile-menu__item(data-catalog-mobile-menu="Сортировка", data-catalog-type="sort")
+								.catalog-mobile-menu-item__icon
+									+icon('catalog-sort')
+								.catalog-mobile-menu-item__text Сортировка
+
+					.catalog-tags(data-desktop="catalog-tags")
+						ul.catalog-tags__list(data-move='catalog-tags')
 							li.catalog-tags__item
 								a(href="#").catalog-tags__link Ограниченная коллекция
 							li.catalog-tags__item
@@ -42,22 +57,23 @@ block content
 							li.catalog-tags__item
 								a(href="#").catalog-tags__link Без глютена
 
-					.catalog-sort
-						.catalog-sort__label Сортировать по:
-						ul.catalog-sort__list
-							li.catalog-sort__item
-								a(href="#").catalog-sort__link.active популярности
-							li.catalog-sort__item
-								a(href="#").catalog-sort__link возрастанию цены
-							li.catalog-sort__item
-								a(href="#").catalog-sort__link убыванию цены
+					.catalog-sort(data-desktop="catalog-sort")
+						.catalog-sort-inner(data-move='catalog-sort')
+							.catalog-sort__label Сортировать по:
+							ul.catalog-sort__list
+								li.catalog-sort__item
+									a(href="#").catalog-sort__link.active популярности
+								li.catalog-sort__item
+									a(href="#").catalog-sort__link возрастанию цены
+								li.catalog-sort__item
+									a(href="#").catalog-sort__link убыванию цены
 
-					.filter-wrapper(data-desktop="bx-filter")
-						.bx-filter(data-move='bx-filter')
+					.catalog-filter(data-desktop="catalog-filter")
+						.bx-filter(data-move="catalog-filter")
 							.bx-filter-wrapper
 								.bx-filter(data-bx-filter='')
 									.bx-filter-section.container-fluid
-										form.smartfilter(name='_form', action='/catalog/myagkie_igrushki_/', method='get')
+										form.smartfilter(name='_form', action='', method='get')
 											.bx-filter-parameters-box-row
 												.bx-filter-parameters-box(data-bx-filter-box='')
 													span.bx-filter-container-modef
@@ -266,7 +282,7 @@ block content
 															input#del_filter.clear(type='button', name='del_filter', value='Сбросить')
 														button#del_filter.bx-filter-reset(type='button', name='del_filter') Сбросить
 
-					.products__list
+					.products-catalog
 						.express
 							.express-block
 								.express__icon
@@ -274,6 +290,7 @@ block content
 								.express__text
 									.express__title Экспресс-доставка за 90 минут!
 									.express__subtitle Введите адрес - мы покажем, что у нас есть для Вас
+									.express__address
 								.form.express__form
 									.form_row
 										.form_group
@@ -285,16 +302,27 @@ block content
 											.link-icon
 												a(href="").link-icon__text Определить адрес
 
+						.products-catalog__list
+							+products__item('products__item__slide__img_7','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',false,false)
+							+products__item('products__item__slide__img_8','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',true,false)
+							+products__item('products__item__slide__img_9','Манты с бараниной','В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку', true, false)
+							+products__item('products__item__slide__img_10','Торт облепиха','С приятным солодовым ароматом, с  семенами подсолнечника и льна',false,false)
+							+products__item('products__item__slide__img_11','Торт Молочная девочка','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+							+products__item('products__item__slide__img_12','Чизкейк с вишней','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+							+products__item('products__item__slide__img_13','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,true)
+							+products__item('products__item__slide__img_14','Пирог с вишней','Пирог из песочного теста, начинка из свежей вишни',false,false)
 
-						+products__item('products__item__slide__img_7','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',false,false)
-						+products__item('products__item__slide__img_8','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',true,false)
-						+products__item('products__item__slide__img_9','Манты с бараниной','В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку', true, false)
-						+products__item('products__item__slide__img_10','Торт облепиха','С приятным солодовым ароматом, с  семенами подсолнечника и льна',false,false)
-						+products__item('products__item__slide__img_11','Торт Молочная девочка','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
-						+products__item('products__item__slide__img_12','Чизкейк с вишней','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
-						+products__item('products__item__slide__img_13','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,true)
-						+products__item('products__item__slide__img_14','Пирог с вишней','Пирог из песочного теста, начинка из свежей вишни',false,false)
 
+							.products__more
+								a.button.button__plus Показать больше
 
-						.products__more
-							a.button.button__plus Показать больше
+					.mobile.scroll
+						.mobile-menu(data-mobile-menu="catalog-list")
+							.mobile-menu-head
+								.mobile-menu__title(data-mobile-catalog-title)
+								.mobile-menu__close(data-mobile-menu-close)
+									+icon('close')
+							.mobile-menu-body
+								.mobile-menu-section(data-mobile-menu="catalog-filter")
+								.mobile-menu-section(data-mobile-menu="catalog-tags")
+								.mobile-menu-section(data-mobile-menu="catalog-sort")

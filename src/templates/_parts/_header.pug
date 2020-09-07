@@ -18,9 +18,9 @@ header.header
 												.form-search__icon
 													button(type="submit").form-search__button
 														+icon('search-new')
-									.form_row.dropdown-form-result
+									.form_row.dropdown-form-result.scroll
 										.dropdown-form-result__item
-											a(href="#").dropdown-form-result__item  Москва и область
+											a(href="#").dropdown-form-result__item__link  Москва и область
 										.dropdown-form-result__item Курск
 										.dropdown-form-result__item Санкт-Петербург и область
 										.dropdown-form-result__item Липецк
@@ -43,16 +43,15 @@ header.header
 							.dropdown-block__inner
 								.dropdown-menu
 									ul.nav-list
-										ul.nav-list
-											li.nav-item
-												a(href="#").nav-item__link
-													.nav-item__label Новости
-											li.nav-item
-												a(href="#").nav-item__link
-													.nav-item__label Обучение
-											li.nav-item
-												a(href="#").nav-item__link
-													.nav-item__label История успеха
+										li.nav-item
+											a(href="#").nav-item__link
+												.nav-item__label Новости
+										li.nav-item
+											a(href="#").nav-item__link
+												.nav-item__label Обучение
+										li.nav-item
+											a(href="#").nav-item__link
+												.nav-item__label История успеха
 
 					li.header-nav__item
 						a(href="#").header-nav__item__link Магазины
@@ -162,25 +161,24 @@ header.header
 						.dropdown-search
 							.dropdown-search__col.dropdown-search__col__left
 								ul.nav-list
-									ul.nav-list
-										li.nav-item
-											a(href="#").nav-item__link
-												.nav-item__label Торт
-										li.nav-item
-											a(href="#").nav-item__link
-												.nav-item__label Торты бисквитные
-										li.nav-item
-											a(href="#").nav-item__link
-												.nav-item__label Торты муссовые
-										li.nav-item
-											a(href="#").nav-item__link
-												.nav-item__label Торты песочные
-										li.nav-item
-											a(href="#").nav-item__link
-												.nav-item__label Торты слоенные
-										li.nav-item
-											a(href="#").nav-item__link
-												.nav-item__label Торты с орехами и сухофруктами
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торт
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты бисквитные
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты муссовые
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты песочные
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты слоенные
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты с орехами и сухофруктами
 								a(href="").more-link Посмотреть все товары
 									+icon('arrow-more')
 

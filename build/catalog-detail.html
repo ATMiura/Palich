@@ -60,8 +60,8 @@
 													</label>
 												</div>
 											</div>
-											<div class="form_row dropdown-form-result">
-												<div class="dropdown-form-result__item"><a class="dropdown-form-result__item" href="#"> Москва и область</a></div>
+											<div class="form_row dropdown-form-result scroll">
+												<div class="dropdown-form-result__item"><a class="dropdown-form-result__item__link" href="#"> Москва и область</a></div>
 												<div class="dropdown-form-result__item">Курск</div>
 												<div class="dropdown-form-result__item">Санкт-Петербург и область</div>
 												<div class="dropdown-form-result__item">Липецк</div>
@@ -90,14 +90,12 @@
 									<div class="dropdown-block__inner">
 										<div class="dropdown-menu">
 											<ul class="nav-list">
-												<ul class="nav-list">
-													<li class="nav-item"><a class="nav-item__link" href="#">
-															<div class="nav-item__label">Новости</div></a></li>
-													<li class="nav-item"><a class="nav-item__link" href="#">
-															<div class="nav-item__label">Обучение</div></a></li>
-													<li class="nav-item"><a class="nav-item__link" href="#">
-															<div class="nav-item__label">История успеха</div></a></li>
-												</ul>
+												<li class="nav-item"><a class="nav-item__link" href="#">
+														<div class="nav-item__label">Новости</div></a></li>
+												<li class="nav-item"><a class="nav-item__link" href="#">
+														<div class="nav-item__label">Обучение</div></a></li>
+												<li class="nav-item"><a class="nav-item__link" href="#">
+														<div class="nav-item__label">История успеха</div></a></li>
 											</ul>
 										</div>
 									</div>
@@ -1045,20 +1043,18 @@
 								<div class="dropdown-search">
 									<div class="dropdown-search__col dropdown-search__col__left">
 										<ul class="nav-list">
-											<ul class="nav-list">
-												<li class="nav-item"><a class="nav-item__link" href="#">
-														<div class="nav-item__label">Торт</div></a></li>
-												<li class="nav-item"><a class="nav-item__link" href="#">
-														<div class="nav-item__label">Торты бисквитные</div></a></li>
-												<li class="nav-item"><a class="nav-item__link" href="#">
-														<div class="nav-item__label">Торты муссовые</div></a></li>
-												<li class="nav-item"><a class="nav-item__link" href="#">
-														<div class="nav-item__label">Торты песочные</div></a></li>
-												<li class="nav-item"><a class="nav-item__link" href="#">
-														<div class="nav-item__label">Торты слоенные</div></a></li>
-												<li class="nav-item"><a class="nav-item__link" href="#">
-														<div class="nav-item__label">Торты с орехами и сухофруктами</div></a></li>
-											</ul>
+											<li class="nav-item"><a class="nav-item__link" href="#">
+													<div class="nav-item__label">Торт</div></a></li>
+											<li class="nav-item"><a class="nav-item__link" href="#">
+													<div class="nav-item__label">Торты бисквитные</div></a></li>
+											<li class="nav-item"><a class="nav-item__link" href="#">
+													<div class="nav-item__label">Торты муссовые</div></a></li>
+											<li class="nav-item"><a class="nav-item__link" href="#">
+													<div class="nav-item__label">Торты песочные</div></a></li>
+											<li class="nav-item"><a class="nav-item__link" href="#">
+													<div class="nav-item__label">Торты слоенные</div></a></li>
+											<li class="nav-item"><a class="nav-item__link" href="#">
+													<div class="nav-item__label">Торты с орехами и сухофруктами</div></a></li>
 										</ul><a class="more-link" href="">Посмотреть все товары
 											<svg class="icon icon-arrow-more ">
 												<use xlink:href="images/sprites.svg#arrow-more"></use>
@@ -1245,7 +1241,34 @@
 						<div class="product">
 							<div class="product-container">
 								<div class="product-col product-col__left">
+									<div class="product-links">
+										<ul class="product-links__list">
+											<li class="product-links__item"><a class="product-links-item__link active" href="#product-descr">Описание</a></li>
+											<li class="product-links__item"><a class="product-links-item__link" href="#product-bzu">Пищевая ценность</a></li>
+											<li class="product-links__item"><a class="product-links-item__link" href="#product-store">Условия хранения</a></li>
+											<li class="product-links__item"><a class="product-links-item__link" href="#product-standarts">Стандарты</a></li>
+										</ul>
+									</div>
 									<div class="product-slider swiper">
+										<div class="product-labels">
+											<div class="product-labels__list">
+												<div class="product-labels__item hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="product-labels__item new">Новинка</div>
+												<div class="product-labels__item vegan">Vegan</div>
+												<div class="product-labels__item timer">
+													<svg class="icon icon-timer ">
+														<use xlink:href="images/sprites.svg#timer"></use>
+													</svg>90 минут
+												</div>
+												<div class="product-labels__item no-gmo">Без ГМО</div>
+												<div class="product-labels__item no-gluten">Без глютена</div>
+												<div class="product-labels__item sale">- 25%</div>
+											</div>
+										</div>
 										<div class="swiper-container product-gallery-top">
 											<div class="swiper-wrapper">
 												<div class="swiper-slide"><img class="swiper-slide__img" src="images/product-gallery-top-img.jpg"></div>
@@ -1253,8 +1276,10 @@
 												<div class="swiper-slide"><img class="swiper-slide__img" src="images/product-gallery-top-img-3.jpg"></div>
 											</div>
 											<!-- Add Arrows-->
-											<div class="swiper-button-next swiper-button-white"></div>
-											<div class="swiper-button-prev swiper-button-white"></div>
+											<div class="swiper-button-box">
+												<div class="swiper-button-prev"></div>
+												<div class="swiper-button-next"></div>
+											</div>
 										</div>
 										<div class="swiper-container product-gallery-thumbs">
 											<div class="swiper-wrapper">
@@ -1326,14 +1351,14 @@
 									</div>
 								</div>
 								<div class="product-col product-col__right">
-									<div class="product-title">
-										<h1 class="h2">Торт «Вишнёвый» со сливочным кремом</h1>
+									<div class="product-title" data-move-left-right>
+										<h1>Торт «Вишнёвый» со сливочным кремом</h1>
 									</div>
-									<div class="product-sku">
+									<div class="product-sku" data-move-left-right>
 										<div class="product-sku__text">Артикул:</div>
 										<div class="product-sku__value">DFG154698</div>
 									</div>
-									<div class="product-advant">
+									<div class="product-advant" data-move-left-right>
 										<ul class="product-advant__list">
 											<li class="product-advant__item">Пышные шоколадные коржи</li>
 											<li class="product-advant__item">Нежный крем на основе натурального сливочного масла</li>
@@ -1341,7 +1366,7 @@
 											<li class="product-advant__item">Густой шоколадно-сливочный аромат</li>
 										</ul>
 									</div>
-									<div class="product-form">
+									<div class="product-form" data-move-left-right>
 										<div class="product-quantity">
 											<div class="product-quantity__text">Количество</div>
 											<div class="product-quantity__input">
@@ -1405,7 +1430,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="product-descr">
+									<div class="product-descr" id="product-descr" data-move-left-right>
 										<div class="product-descr__title">
 											<h2>Описание товара</h2>
 										</div>
@@ -1414,15 +1439,15 @@
 												<h3>Состав</h3>
 												<p>Молоко питьевое пастеризованное, смесь сухая для кексов (мука пшеничная, сахар, сыворотка сухая молочная, разрыхлитель гидрокарбонат натрия, масло растительное, соль, загуститель гуаровая камедь, ферменты), сметана (сливки нормализованные, закваска), яйцо куриное пищевое, крем на растительных маслах (вода, жир растительный, сахар, белок молочный, эмульгаторы (сорбитовый сироп, лецитин)</p>
 											</div>
-											<div class="product-descr__item">
+											<div class="product-descr__item" id="product-bzu">
 												<h3>Пищевая ценность</h3>
 												<p>В 100 г продукта: белки — 5.3 г.; жиры — 19.2 г.; углеводы — 41.2 г</p>
 											</div>
-											<div class="product-descr__item">
+											<div class="product-descr__item" id="product-store">
 												<h3>Условия хранения</h3>
 												<p>120 часов при температуре от +2°C до +6°C.</p>
 											</div>
-											<div class="product-descr__item">
+											<div class="product-descr__item" id="product-standarts">
 												<h3>Стандарты</h3>
 												<p>ТУ10.72.12-003-21262497-2017</p>
 											</div>
@@ -1449,6 +1474,742 @@
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section products-slider">
+				<div class="section-container">
+					<div class="section-header">
+						<div class="section-title">
+							<h2 class="h1">С этим товаром покупают</h2>
+						</div>
+						<div class="swiper-button inline">
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
+					<div class="section-content">
+						<div class="products__list swiper-container" data-slider-name="slider-recommended">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Пельмени с индейкой</div>
+												<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Прага</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_3.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Ореховый по-королевски</div>
+												<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_4.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт малиновый</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Пельмени с индейкой</div>
+												<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Прага</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_3.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Ореховый по-королевски</div>
+												<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_4.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт малиновый</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-scrollbar"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section products-slider">
+				<div class="section-container">
+					<div class="section-header">
+						<div class="section-title">
+							<h2 class="h1">Вам понравится</h2>
+						</div>
+						<div class="swiper-button inline">
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
+					<div class="section-content">
+						<div class="products__list swiper-container" data-slider-name="slider-like">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Пельмени с индейкой</div>
+												<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Прага</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_3.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Ореховый по-королевски</div>
+												<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_4.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт малиновый</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Пельмени с индейкой</div>
+												<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Прага</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_3.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Ореховый по-королевски</div>
+												<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_4.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт малиновый</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div>
+															<div class="products-pickup">
+																<div class="products-pickup__icon">
+																	<svg class="icon icon-products-pickup-icon ">
+																		<use xlink:href="images/sprites.svg#products-pickup-icon"></use>
+																	</svg>
+																</div>
+																<div class="products-pickup__title">Вы добавляете товар для самовывоза</div>
+																<div class="products-pickup__text">Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес</div>
+															</div></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-scrollbar"></div>
 						</div>
 					</div>
 				</div>
@@ -1696,7 +2457,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1599049022201"></script>
-		<script src="js/main.js?v=1599049022201"></script>
+		<script src="js/vendor.js?v=1599493981903"></script>
+		<script src="js/main.js?v=1599493981903"></script>
 	</body>
 </html>

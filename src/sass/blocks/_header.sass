@@ -34,7 +34,7 @@
 		.dropdown-menu
 			min-width: auto
 
-	@media #{$laptop}
+	@media #{$tablet}
 		&
 			margin-right: 10px
 		&__item
@@ -122,14 +122,16 @@
 		display: none
 
 .header-search
-	min-width: 355px
+	max-width: 33%
+	width: 100%
 	//margin-right: 45px
 	margin-right: auto
 	@media #{$desktop}
 		margin-right: 25px
+		//min-width: 335px
 
 	@media #{$laptop}
-		min-width: 200px
+		//min-width: 270px
 		margin-right: 15px
 
 	@media #{$mobile}
@@ -189,6 +191,7 @@
 
 .header-cart
 	display: flex
+	min-width: max-content
 	&__counter
 		display: flex
 		position: relative

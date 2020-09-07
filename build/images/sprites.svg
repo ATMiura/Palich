@@ -49,11 +49,25 @@
 <symbol id="cart" viewBox="0 0 21 22">
 	<path fill-rule="evenodd" d="M6.216 1.64A1.4 1.4 0 004.862.613h-3.46C.628.612 0 1.234 0 2.002 0 2.767.628 3.39 1.402 3.39h2.385l2.548 9.392c.46 1.693 1.957 2.83 3.728 2.83h5.445c1.756 0 3.24-1.091 3.694-2.716l1.692-6.068c.227-.813.086-1.621-.398-2.277a2.614 2.614 0 00-2.124-1.068H6.716l-.5-1.842zm11.927 4.621L16.5 12.157c-.115.411-.504.678-.991.678h-5.445a1.03 1.03 0 01-1.02-.774l-1.573-5.8h10.673zM9 17.612c-1.102 0-2 .899-2 2 0 1.102.898 2 2 2 1.102 0 2-.898 2-2 0-1.101-.898-2-2-2zM16 17.612c-1.102 0-2 .899-2 2 0 1.102.898 2 2 2 1.102 0 2-.898 2-2 0-1.101-.898-2-2-2z" clip-rule="evenodd"/>
 </symbol>
+<symbol id="catalog-filter" viewBox="0 0 17 17">
+	<path fill="#A70230" fill-rule="evenodd" d="M.086 1.084A1 1 0 011 .49h14.57a1 1 0 01.739 1.672l-5.136 5.65v5.549a1 1 0 01-.504.868l-3.777 2.159a1 1 0 01-1.496-.869V7.811L.26 2.16a1 1 0 01-.174-1.077zM3.26 2.49l3.875 4.263a1 1 0 01.26.672v6.371l1.777-1.015V7.424a1 1 0 01.26-.672l3.876-4.263H3.26z" clip-rule="evenodd"/>
+</symbol>
+<symbol id="catalog-sort" viewBox="0 0 16 17">
+	<path fill="#A70230" fill-rule="evenodd" d="M14.62.55a1 1 0 01.642.933v14.04a1 1 0 01-1 1H1.614a1 1 0 01-.743-1.668L13.52.815A1 1 0 0114.62.55zM3.86 14.524h9.402V4.088L3.86 14.524z" clip-rule="evenodd"/>
+</symbol>
 <symbol id="catalog-tags-deactive" viewBox="0 0 10 9">
 	<path fill="#FDF0E2" fill-rule="evenodd" d="M1.084 7.293a1 1 0 001.414 1.414l2.793-2.793 2.793 2.793a1 1 0 001.414-1.414L6.705 4.5l2.793-2.793A1 1 0 108.084.293L5.291 3.086 2.498.293a1 1 0 10-1.414 1.414L3.877 4.5 1.084 7.293z" clip-rule="evenodd"/>
 </symbol>
+<symbol id="catalog-tags" viewBox="0 0 17 17">
+	<path fill="#A70230" fill-rule="evenodd" d="M9.155.505a1 1 0 01.714.293l6.452 6.453a1 1 0 01-.014 1.428l-7.849 7.544a1 1 0 01-.693.279H1.57a1 1 0 01-1-1V9.304a1 1 0 01.284-.698L8.445.808a1 1 0 01.71-.303zm.016 2.424L2.57 9.71v4.792h4.794l6.823-6.558L9.17 2.929z" clip-rule="evenodd"/>
+	<path fill="#A70230" d="M5.784 12.31a1 1 0 11-2 0 1 1 0 012 0z"/>
+</symbol>
 <symbol id="checkbox_ok" viewBox="0 0 10 8">
 	<path fill="#000" fill-rule="evenodd" d="M.35 3.753L1.75 2.326l2.208 2.17L8.35.182 9.752 1.61 3.959 7.3.35 3.753z" clip-rule="evenodd"/>
+</symbol>
+<symbol id="clock-empty" viewBox="0 0 18 19">
+	<circle cx="9" cy="9.5" r="8" stroke="#A70230" stroke-width="2"/>
+	<path stroke="#A70230" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.4 6.5v3.6h2.4"/>
 </symbol>
 <symbol id="clock" viewBox="0 0 16 16">
 	<path fill="#A70230" d="M8 16A8 8 0 108 0a8 8 0 000 16z"/>
