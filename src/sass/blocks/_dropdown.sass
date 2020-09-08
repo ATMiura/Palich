@@ -170,6 +170,8 @@
 		min-width: 780px
 		display: flex
 		//flex-wrap: wrap
+		@media #{$tablet}
+			min-width: 89vw
 		&__col
 			&__left
 				flex-basis: 215px
@@ -262,3 +264,10 @@
 .dropdown[data-dropdown="search"] .dropdown-block
 	@media #{$laptop}
 		left: -50%
+	@media #{$tablet}
+		left: -34vw
+
+.dropdown[data-dropdown="share"] .dropdown-block
+	@media #{$mobile}
+		left: initial
+		right: 0

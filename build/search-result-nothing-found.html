@@ -145,7 +145,7 @@
 							</div>
 						</div>
 						<div class="header-mobile__block">
-							<div class="header-mobile__search">
+							<div class="header-mobile__search" data-mobile-menu-title>
 								<svg class="icon icon-search-new ">
 									<use xlink:href="images/sprites.svg#search-new"></use>
 								</svg>
@@ -1550,13 +1550,14 @@
 			</div>
 		</footer>
 		<div class="mobile scroll">
-			<div class="mobile-menu" data-mobile-menu>
+			<div class="mobile-menu" data-mobile-menu-type>
 				<div class="mobile-menu-head">
 					<div class="mobile-menu__logo" data-mobile-menu-logo="logo">
 						<svg class="icon icon-logo ">
 							<use xlink:href="images/sprites.svg#logo"></use>
 						</svg>
 					</div>
+					<div class="mobile-menu__title" data-mobile-catalog-title></div>
 					<div class="mobile-menu__close" data-mobile-menu-close>
 						<svg class="icon icon-close ">
 							<use xlink:href="images/sprites.svg#close"></use>
@@ -1572,9 +1573,24 @@
 						<div class="mobile-menu-section__inner" data-mobile-menu="call-links"></div>
 						<div class="mobile-menu-section__inner" data-mobile-menu="call-tels"></div>
 					</div>
+					<div class="mobile-menu-section" data-mobile-menu="catalog-filter"></div>
+					<div class="mobile-menu-section" data-mobile-menu="catalog-tags"></div>
+					<div class="mobile-menu-section" data-mobile-menu="catalog-sort"></div>
 				</div>
 			</div>
 		</div>
+		<!--.mobile.scroll
+		.mobile-menu(data-mobile-menu="catalog-list")
+			.mobile-menu-head
+				.mobile-menu__title(data-mobile-catalog-title)
+				.mobile-menu__close(data-mobile-menu-close)
+					+icon('close')
+			.mobile-menu-body
+				.mobile-menu-section(data-mobile-menu="catalog-filter")
+				.mobile-menu-section(data-mobile-menu="catalog-tags")
+				.mobile-menu-section(data-mobile-menu="catalog-sort")
+		
+		-->
 		<div class="modal scroll" id="callback">
 			<div class="modal__inner">
 				<div class="modal__head">
@@ -1695,7 +1711,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1599493983288"></script>
-		<script src="js/main.js?v=1599493983288"></script>
+		<script src="js/vendor.js?v=1599561120533"></script>
+		<script src="js/main.js?v=1599561120533"></script>
 	</body>
 </html>

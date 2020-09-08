@@ -110,8 +110,10 @@ block content
 							.product-title(data-move-left-right)
 								h1 Торт «Вишнёвый» со сливочным кремом
 							.product-sku(data-move-left-right)
-								.product-sku__text Артикул:
-								.product-sku__value DFG154698
+								.product-sku__inner
+									.product-sku__text Артикул:
+									.product-sku__value DFG154698
+								.product-share(data-share-mobile)
 							.product-advant(data-move-left-right)
 								ul.product-advant__list
 									li.product-advant__item Пышные шоколадные коржи
@@ -139,8 +141,8 @@ block content
 											.product-buy-cart__link__icon
 												+icon('product_add_to_cart')
 												+icon('product_in_cart')
-									.product-share
-										.product-share__icon.dropdown(data-dropdown="share")
+									.product-share(data-share-desktop)
+										.product-share__icon.dropdown(data-dropdown="share", data-share-move)
 											+icon('share')
 											.dropdown-block
 												.dropdown-block__inner

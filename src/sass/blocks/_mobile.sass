@@ -8,7 +8,7 @@
 	box-shadow: 0px -151px 256px rgba(0, 0, 0, 0.06), 0px -63.0842px 106.951px rgba(0, 0, 0, 0.0431313), 0px -33.7278px 57.181px rgba(0, 0, 0, 0.0357664), 0px -18.9075px 32.0552px rgba(0, 0, 0, 0.03), 0px -10.0417px 17.0243px rgba(0, 0, 0, 0.0242336), 0px -4.17856px 7.08418px rgba(0, 0, 0, 0.0168687)
 	height: 100%
 	padding: 25px 20px 35px
-	max-width: 85%
+	max-width: 90%
 	width: 100%
 
 	&-open
@@ -17,14 +17,34 @@
 	&.is-open
 		display: block
 
-	.dropdown-block
-		opacity: 1
-		visibility: visible
-		transform: translateY(0)
-		position: relative
-		top: 0
-		left: 0
-		display: none
+	.dropdown
+		&-block
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+			position: relative
+			top: 0
+			left: 0
+			box-shadow: none
+			//display: none
+			&__inner
+				padding: 0
+				margin-top: 10px
+		&.link-icon
+			flex-wrap: wrap
+		&-city
+			min-width: auto
+		&-search
+			padding: 0
+			min-width: auto
+			flex-direction: column
+			&__col
+				flex-basis: 100%
+				&__left
+					padding: 0
+					padding-bottom: 30px
+					margin-bottom: 20px
+					border-bottom: 1px solid #E6E9EF
 	&-menu
 		&-head
 			display: flex
@@ -144,7 +164,45 @@
 						background: var(--vinishkotyan)
 						border: 5px solid var(--light-pink)
 
+	.nav
+		&-list
+			&.is-open >
+				.nav-item:not(.active)
+					display: none
+		&-item
+			flex-direction: column
+			&__submenu
+				opacity: 1
+				padding: 0
+				display: none
+				margin-left: 0
+				min-width: auto
+				margin-top: 20px
+				position: relative
+				visibility: visible
+				background-color: var(--white)
+			&.active >
+				.nav-item__link
+					font-weight: bold
+					color: var(--vinishkotyan)
+					justify-content: flex-end
+					flex-direction: row-reverse
+					&:after
+						margin-right: 4px
+						background-image: url("data:image/svg+xml,%3Csvg width='4' height='6' viewBox='0 0 4 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.197228 5.48148C0.00196579 5.28622 0.00196582 4.96964 0.197228 4.77438L1.84367 3.12793L0.197228 1.48148C0.00196614 1.28622 0.00196617 0.969638 0.197228 0.774376C0.392491 0.579114 0.709073 0.579114 0.904335 0.774376L2.90433 2.77438C3.0996 2.96964 3.0996 3.28622 2.90433 3.48148L0.904335 5.48148C0.709073 5.67675 0.39249 5.67674 0.197228 5.48148Z' fill='%23A70230'/%3E%3C/svg%3E%0A")
+						transform: rotate(180deg)
+					.nav-item__icon
+						display: none
+				.nav-item__submenu
+					display: flex !important
+
+			&:hover
+				.nav-item__submenu
+					display: none
 
 
-[data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"])
+
+[data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"]),
+[data-mobile-menu-type="main-mobile"] .mobile-menu__title,
+[data-mobile-menu-type="catalog-list"] .mobile-menu__logo
 	display: none

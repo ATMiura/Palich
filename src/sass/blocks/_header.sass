@@ -3,12 +3,12 @@
 	.container
 		padding: 0
 
-	//@media #{$tablet}
+	@media #{$tablet}
 		[data-move]
 			display: none
-	//&-mobile
-		[data-move]
-			display: block
+		&-mobile
+			[data-move]
+				display: flex
 
 	@media #{$laptop}
 		margin-bottom: 30px
@@ -234,6 +234,10 @@
 		&__number
 			background-color: var(--vinishkotyan)
 			color: var(--white)
+		&__counter
+			margin-right: 0
+		&__number
+			margin-top: 0
 
 
 

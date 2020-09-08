@@ -83,10 +83,11 @@ footer.footer
 						+icon('social-vk')
 
 .mobile.scroll
-	.mobile-menu(data-mobile-menu)
+	.mobile-menu(data-mobile-menu-type)
 		.mobile-menu-head
 			.mobile-menu__logo(data-mobile-menu-logo="logo")
 				+icon('logo')
+			.mobile-menu__title(data-mobile-catalog-title)
 			.mobile-menu__close(data-mobile-menu-close)
 				+icon('close')
 		.mobile-menu-body
@@ -97,6 +98,21 @@ footer.footer
 			.mobile-menu-section.mobile-menu-section-call(data-mobile-menu="call")
 				.mobile-menu-section__inner(data-mobile-menu="call-links")
 				.mobile-menu-section__inner(data-mobile-menu="call-tels")
+			.mobile-menu-section(data-mobile-menu="catalog-filter")
+			.mobile-menu-section(data-mobile-menu="catalog-tags")
+			.mobile-menu-section(data-mobile-menu="catalog-sort")
+
+
+//.mobile.scroll
+	.mobile-menu(data-mobile-menu="catalog-list")
+		.mobile-menu-head
+			.mobile-menu__title(data-mobile-catalog-title)
+			.mobile-menu__close(data-mobile-menu-close)
+				+icon('close')
+		.mobile-menu-body
+			.mobile-menu-section(data-mobile-menu="catalog-filter")
+			.mobile-menu-section(data-mobile-menu="catalog-tags")
+			.mobile-menu-section(data-mobile-menu="catalog-sort")
 
 .modal#callback.scroll
 	.modal__inner

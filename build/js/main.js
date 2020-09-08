@@ -187,14 +187,18 @@ $(document).on('click touch', '.header-burger__link', function (event) {
     //$(".dropdown-block").slideUp("fast");
     $('.dropdown').removeClass('is-open');
   }
-}).on('click touch', '.nav-item__link', function () {
+}).on('click touch', '.mobile .nav-item__link', function () {
   /*if($(this).parents('.nav-item').hasClass('has-submenu')){
-  	console.log('false');
-  	return false;
+  	//console.log('false');
+  	//return false;
   } else {
-  	console.log('true');
-  	return true;
+  	//console.log('true');
+  	//return true;
   }*/
+  if ($(this).parents('.nav-item').hasClass('has-submenu')) {
+    $(this).parents('.nav-list').toggleClass('is-open');
+    $(this).parents('.nav-item').toggleClass('active');
+  } else {}
 }).on('click touch', '.dropdown-delivery__item.express', function () {
   $(this).siblings('.express-block').addClass('active');
 }).on('click touch', '.express__close', function () {
@@ -225,7 +229,7 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(window).on('load', function () {
+$(window).on('load resize', function () {
   if ($(window).width() < 768) {
     $('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
     $('[data-mobile-menu="catalog-links"] .nav-list').removeAttr('data-move');
@@ -235,7 +239,7 @@ $(window).on('load', function () {
       $('[data-move]').each(function (element) {
         var dataMoveAttr = $(this).data('move');
         $(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
-        $(this).appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
+        $(this).prependTo('[data-mobile-menu="' + dataMoveAttr + '"]');
       });
     }, 100);
   } else {}
@@ -245,8 +249,10 @@ $(window).on('load', function () {
   $('[data-move-left-right]').each(function () {
     if ($(window).width() < 992) {
       $(this).appendTo('.product-col__left');
+      $('[data-share-move]').appendTo('[data-share-mobile]');
     } else if ($(window).width() > 991) {
       $(this).appendTo('.product-col__right');
+      $('[data-share-move]').appendTo('[data-share-desktop]');
     }
   });
 });
@@ -256,17 +262,33 @@ $(document).ready(function () {
     $('.mobile').removeClass('is-open');
     $('body').removeClass('mobile-open');
     $('[data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"])').hide();
+    $('[data-mobile-menu-type]').attr('data-mobile-menu-type', '');
+  });
+  /* открытие мобильного меню */
+
+  $('[data-mobile-menu="burger"]').on('click touch', function () {
+    $('body').addClass('mobile-open'); //$('[data-mobile-menu-type]').addClass('main-mobile');
+    //$('[data-mobile-menu-type="main-mobile"]').parent().addClass('is-open');
+
+    $('[data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"])').hide();
+    $('.mobile-menu-section:not([data-mobile-menu*="catalog-"])').show();
+    $('[data-mobile-menu-type]').attr('data-mobile-menu-type', 'main-mobile');
+    $('.mobile').addClass('is-open');
   });
   /* открытие мобильного меню на странице списка товаров */
 
   $('[data-catalog-mobile-menu]').on('click touch', function () {
-    $('body').addClass('mobile-open');
-    $('[data-mobile-menu="catalog-list"]').parent().addClass('is-open');
+    $('body').addClass('mobile-open'); //$('[data-mobile-menu-type]').addClass('catalog-list-mobile');
+    //$('[data-mobile-menu-type="catalog-list"]').parent().addClass('is-open');
+
+    $('[data-mobile-menu-type]').attr('data-mobile-menu-type', 'catalog-list');
+    $('.mobile-menu-section').hide();
+    $('.mobile').addClass('is-open');
     var dataMoveAttrName = $(this).data('catalog-mobile-menu');
-    var dataCatalogType = $(this).data('catalog-type');
-    console.log(dataCatalogType);
-    $('[data-mobile-menu="catalog-list"] .mobile-menu__title').text(dataMoveAttrName);
-    $('[data-mobile-menu="catalog-list"] [data-mobile-menu="catalog-' + dataCatalogType + '"]').show();
+    var dataCatalogType = $(this).data('catalog-type'); //console.log(dataCatalogType);
+
+    $('.mobile-menu__title').text(dataMoveAttrName);
+    $('[data-mobile-menu="catalog-' + dataCatalogType + '"]').show();
   });
 });
 
