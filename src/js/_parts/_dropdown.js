@@ -29,3 +29,16 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 }).on('click touch', '.express__close', function () {
 	$(this).parents('.express-block').removeClass('active');
 });
+
+
+/* выпадаюищй список в корзине */
+$(document).on('click', '.dropdown-select__label', function () {
+	$(this).parents('.dropdown-select').toggleClass('is-open');
+}).on('click', '.dropdown-select__item', function () {
+	$(this).siblings().removeClass('active');
+	$(this).addClass('active');
+	$(this).parents('.dropdown-select').find('.dropdown-select__label__text').text($(this).text());
+	$(this).parents('.dropdown-select').toggleClass('is-open');
+	$(this).parents('.dropdown-select').find('.dropdown-select__value').val($(this).data('value'));
+	$(this).parents('.dropdown-select').addClass('is-valid');
+});

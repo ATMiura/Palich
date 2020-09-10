@@ -68,11 +68,24 @@ $(document).ready(function () {
 		$('.mobile-menu-section').hide();
 		$('.mobile').addClass('is-open');
 
-		let dataMoveAttrName = $(this).data('catalog-mobile-menu');
+		let dataMoveAttrName = $(this).data('mobile-menu-title');
 		let dataCatalogType = $(this).data('catalog-type');
 		//console.log(dataCatalogType);
 		$('.mobile-menu__title').text(dataMoveAttrName);
 		$('[data-mobile-menu="catalog-'+dataCatalogType+'"]').show();
+	});
+
+	/* при клике на иконку поиска в шапке меню */
+	$('.header-mobile__search').on('click touch', function () {
+		$('body').addClass('mobile-open');
+
+		$('[data-mobile-menu-type]').attr('data-mobile-menu-type','main-mobile');
+		$('.mobile-menu-section').hide();
+		$('[data-mobile-menu="search"]').show();
+		$('.mobile').addClass('is-open');
+
+		let dataMoveAttrName = $(this).data('mobile-menu-title');
+		$('.mobile-menu__title').text(dataMoveAttrName);
 	});
 });
 

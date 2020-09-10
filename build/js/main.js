@@ -204,6 +204,18 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 }).on('click touch', '.express__close', function () {
   $(this).parents('.express-block').removeClass('active');
 });
+/* выпадаюищй список в корзине */
+
+$(document).on('click', '.dropdown-select__label', function () {
+  $(this).parents('.dropdown-select').toggleClass('is-open');
+}).on('click', '.dropdown-select__item', function () {
+  $(this).siblings().removeClass('active');
+  $(this).addClass('active');
+  $(this).parents('.dropdown-select').find('.dropdown-select__label__text').text($(this).text());
+  $(this).parents('.dropdown-select').toggleClass('is-open');
+  $(this).parents('.dropdown-select').find('.dropdown-select__value').val($(this).data('value'));
+  $(this).parents('.dropdown-select').addClass('is-valid');
+});
 
 /***/ }),
 
@@ -284,11 +296,22 @@ $(document).ready(function () {
     $('[data-mobile-menu-type]').attr('data-mobile-menu-type', 'catalog-list');
     $('.mobile-menu-section').hide();
     $('.mobile').addClass('is-open');
-    var dataMoveAttrName = $(this).data('catalog-mobile-menu');
+    var dataMoveAttrName = $(this).data('mobile-menu-title');
     var dataCatalogType = $(this).data('catalog-type'); //console.log(dataCatalogType);
 
     $('.mobile-menu__title').text(dataMoveAttrName);
     $('[data-mobile-menu="catalog-' + dataCatalogType + '"]').show();
+  });
+  /* при клике на иконку поиска в шапке меню */
+
+  $('.header-mobile__search').on('click touch', function () {
+    $('body').addClass('mobile-open');
+    $('[data-mobile-menu-type]').attr('data-mobile-menu-type', 'main-mobile');
+    $('.mobile-menu-section').hide();
+    $('[data-mobile-menu="search"]').show();
+    $('.mobile').addClass('is-open');
+    var dataMoveAttrName = $(this).data('mobile-menu-title');
+    $('.mobile-menu__title').text(dataMoveAttrName);
   });
 });
 
