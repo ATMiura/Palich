@@ -21,20 +21,14 @@ block content
 
 				.cart
 					.cart-by-time__container
-						.cart-adress.submited
-							.cart-adress__title Заказ будет доставлен по адресу:
-							.cart-adress__adress ул. Хорошёвского Серебряного Бора 2-я линия, 51 ст1
-							.cart-adress__change
+						.cart-address.submited
+							.cart-address__title Заказ будет доставлен по адресу:
+							.cart-address__address ул. Хорошёвского Серебряного Бора 2-я линия, 51 ст1
+							.cart-address__change
 								.link-icon
 									a.link-icon__text(href="#") Изменить адрес
 
-							.by-time-header
-								.by-time-header-title
-									.by-time-header-title__icon
-										+icon('clock-empty')
-									.by-time-header-title__text Доставка до 90 минут из ближайшего фирменного магазина
-
-							.cart-adress__form.form
+							.cart-address__form.form
 								.form_row
 									.form_group.cart-field__city
 										label.form_label
@@ -54,6 +48,22 @@ block content
 											input.form_input(type="text", placeholder="Этаж")
 									.form_group.cart-field__submit
 										input.form_input.button.button__color__red.button__arrow.inline(type='submit', value='')
+
+						.cart-message
+							| 2 товара на сумму 1100 Р можно получить уже в течение 90 минут, на 2 товара на сумму 1100 Р оформите самовывоз со скидкой на 10.05
+
+						.by-time-header
+							.by-time-header-title
+								.by-time-header-title__icon
+									+icon('clock-empty')
+								.by-time-header-title__text Доставим за 90 минут
+								.by-time-remove-order
+									a.link-icon(href="")
+										.link-icon__icon
+											+icon('trash-red')
+										.link-icon__text Удалить заказ
+								.by-time-btn
+									a.button(href="") Доставить завтра
 
 						.cart-product-list
 							+cart_product('1', 'Торт Блинный со сгущенным молоком ', 'Кофе «Арабика», вареная сгущенка и вкуснейшие домашние блины ','750 ₽','1000 ₽')

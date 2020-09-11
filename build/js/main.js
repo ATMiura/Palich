@@ -219,6 +219,25 @@ $(document).on('click', '.dropdown-select__label', function () {
 
 /***/ }),
 
+/***/ "./src/js/_parts/_express.js":
+/*!***********************************!*\
+  !*** ./src/js/_parts/_express.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).on('ready ajaxComplete', function () {
+  $('.express__change').on('click touch', function () {
+    var parentBlock = $(this).parents('.express');
+    $(this).hide();
+    parentBlock.removeClass('submited');
+    parentBlock.find('.express__title').text('Экспресс доставка до 90 минут!');
+    parentBlock.find('.express__address').text('').hide();
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_header.js":
 /*!**********************************!*\
   !*** ./src/js/_parts/_header.js ***!
@@ -695,147 +714,122 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ "./src/js/_vendor/disableBodyScroll.js":
-/*!*********************************************!*\
-  !*** ./src/js/_vendor/disableBodyScroll.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/js/_parts/_validation.js":
+/*!**************************************!*\
+  !*** ./src/js/_parts/_validation.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/**
- * Prevent body scroll and overscroll.
- * Tested on mac, iOS chrome / Safari, Android Chrome.
- *
- * Based on: https://benfrain.com/preventing-body-scroll-for-modals-in-ios/
- *           https://stackoverflow.com/a/41601290
- *
- * Use in combination with:
- * html, body {overflow: hidden;}
- *
- * and: -webkit-overflow-scrolling: touch; for the element that should scroll.
- *
- * disableBodyScroll(true, '.i-can-scroll');
- */
-var disableBodyScroll = function () {
-  /**
-   * Private variables
-   */
-  var _selector = false,
-      _element = false,
-      _clientY;
-  /**
-   * Polyfills for Element.matches and Element.closest
-   */
+// $(document).on('click', '.popup input[type="submit"]',function () {
+//     submitFormValidate('Y','true');
+//     form_class = $(this).parents('form').attr('class');
+//     return false;
+// });
+//обратная связь
 
+/*
+$(document).on('submit', ".js-request-call-callback", function () {
+	submitFormValidate('Y','true',"js-request-call-callback");
+	return false;
+});
+//заказать звонок
+$(document).on('submit', ".js-callback-form-call", function () {
+	submitFormValidate('Y','true',"js-callback-form-call");
+	return false;
+});
+//добавить адрес
+$(document).on('submit', ".js-callback-form-city", function () {
+	submitFormValidate('Y','true',"js-callback-form-city");
+	return false;
+});
+//авторизация
+$(document).on('submit', ".js-callback-form-auth", function () {
+	submitFormValidate('Y','true',"js-callback-form-auth");
+	return false;
+});
+*/
+$(document).on('submit', "[data-form-no-ajax]", function () {
+  var form = $(this);
+  var formData = new FormData(form[0]);
+  var formName = form.data('form');
+  submitFormValidate('Y', 'true', form, formData, formName);
+  return false;
+});
 
-  if (!Element.prototype.matches) Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
-  if (!Element.prototype.closest) Element.prototype.closest = function (s) {
-    var ancestor = this;
-    if (!document.documentElement.contains(el)) return null;
+function submitFormValidate(val, valid, form, formData, formName) {
+  form.find('.form_error').remove();
+  form.addClass('submitting');
 
-    do {
-      if (ancestor.matches(s)) return ancestor;
-      ancestor = ancestor.parentElement;
-    } while (ancestor !== null);
+  if (valid === undefined) {
+    valid = false;
+  }
 
-    return el;
-  };
-  /**
-   * Prevent default unless within _selector
-   *
-   * @param  event object event
-   * @return void
-   */
+  if (valid) {
+    var onAjaxSuccess = function onAjaxSuccess() {
+      $.ajax({
+        type: "POST",
+        data: formData,
+        dataType: 'json',
+        url: form.attr('action'),
+        processData: false,
+        contentType: false,
+        beforeSend: function beforeSend() {// Удаляем блок с ошибками перед отправкой
+          //form.find('.form-row--errors').remove();
+        },
+        success: function success(data) {
+          if (data.status == 0) {
+            // Успешный успех
+            form.parents('.' + formName).attr('class');
+            form.parents('.' + formName).addClass('submited');
+            form.parents('.' + formName).find('.express__title').remove();
+            form.parents('.' + formName).find('.express__text').html(data.message);
+            form.removeClass('submitting'); //console.log("Когда успех " + data.message);
+          } else if (data.status == 1) {
+            // Не можем доставить за 90 минут
+            form.removeClass('submitting');
+            form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
+            form.find('.form_error').text(data.message); //console.log("Когда не можем " + data.message);
+          } else if (data.status == 2) {
+            // Неверно заполнены данные
+            form.removeClass('submitting');
+            form.find('.form_error').text(data.message); //console.log("Когда вы троите " + data.message);
+          }
+        }
+      });
+    };
 
-  var preventBodyScroll = function preventBodyScroll(event) {
-    if (false === _element || !event.target.closest(_selector)) {
-      event.preventDefault();
-    }
-  };
-  /**
-   * Cache the clientY co-ordinates for
-   * comparison
-   *
-   * @param  event object event
-   * @return void
-   */
+    var t = true;
+    $('[data-form="' + formName + '"] .input--required').each(function () {
+      var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
 
-
-  var captureClientY = function captureClientY(event) {
-    // only respond to a single touch
-    if (event.targetTouches.length === 1) {
-      _clientY = event.targetTouches[0].clientY;
-    }
-  };
-  /**
-   * Detect whether the element is at the top
-   * or the bottom of their scroll and prevent
-   * the user from scrolling beyond
-   *
-   * @param  event object event
-   * @return void
-   */
-
-
-  var preventOverscroll = function preventOverscroll(event) {
-    // only respond to a single touch
-    if (event.targetTouches.length !== 1) {
-      return;
-    }
-
-    var clientY = event.targetTouches[0].clientY - _clientY; // The element at the top of its scroll,
-    // and the user scrolls down
-
-    if (_element.scrollTop === 0 && clientY > 0) {
-      event.preventDefault();
-    } // The element at the bottom of its scroll,
-    // and the user scrolls up
-    // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#Problems_and_solutions
-
-
-    if (_element.scrollHeight - _element.scrollTop <= _element.clientHeight && clientY < 0) {
-      event.preventDefault();
-    }
-  };
-  /**
-   * Disable body scroll. Scrolling with the selector is
-   * allowed if a selector is porvided.
-   *
-   * @param  boolean allow
-   * @param  string selector Selector to element to change scroll permission
-   * @return void
-   */
-
-
-  return function (allow, selector) {
-    if (typeof selector !== "undefined") {
-      _selector = selector;
-      _element = document.querySelector(selector);
-    }
-
-    if (true === allow) {
-      if (false !== _element) {
-        _element.addEventListener('touchstart', captureClientY, false);
-
-        _element.addEventListener('touchmove', preventOverscroll, false);
+      if ($this.val() == "") {
+        $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
+        t = false;
+      } else if ($.trim($(this).val()).indexOf(",") == -1) {
+        console.log('запятая с*ка');
+        $this.addClass('invalid').parents('.form_group').append("<span class='form_error'></span>");
+        t = false;
+      } else {
+        $this.removeClass('invalid').siblings('.form_error').remove();
       }
+    });
+    console.log(t);
 
-      document.body.addEventListener("touchmove", preventBodyScroll, false);
+    if (t) {
+      $.post("/local/inc/ajax/" + formName + ".php", $('[data-form="' + formName + '"]').serialize(), onAjaxSuccess());
+      return true;
     } else {
-      if (false !== _element) {
-        _element.removeEventListener('touchstart', captureClientY, false);
-
-        _element.removeEventListener('touchmove', preventOverscroll, false);
-      }
-
-      document.body.removeEventListener("touchmove", preventBodyScroll, false);
+      $('html, body').animate({
+        scrollTop: $('form .invalid').offset().top - 100
+      }, 500);
+      onAjaxSuccess();
     }
-  };
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (disableBodyScroll);
+  } else {
+    console.log('Делаем отправку форму сразу');
+    return true;
+  }
+}
 
 /***/ }),
 
@@ -6355,19 +6349,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_parts/_header */ "./src/js/_parts/_header.js");
 /* harmony import */ var _parts_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_parts_header__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _parts_sliders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_parts/_sliders */ "./src/js/_parts/_sliders.js");
-/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_parts/_modal */ "./src/js/_parts/_modal.js");
-/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_parts_modal__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _parts_object_fit_images__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_parts/_object-fit-images */ "./src/js/_parts/_object-fit-images.js");
-/* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_parts/_dropdown */ "./src/js/_parts/_dropdown.js");
-/* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_parts_dropdown__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _parts_object_fit_images__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_parts/_object-fit-images */ "./src/js/_parts/_object-fit-images.js");
+/* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_parts/_dropdown */ "./src/js/_parts/_dropdown.js");
+/* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_parts_dropdown__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_parts/_modal */ "./src/js/_parts/_modal.js");
+/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_parts_modal__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_parts/_shops-tabs */ "./src/js/_parts/_shops-tabs.js");
 /* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_parts_shops_tabs__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_parts/_products */ "./src/js/_parts/_products.js");
 /* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_parts_products__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./_parts/_mobile-el-replace */ "./src/js/_parts/_mobile-el-replace.js");
-/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
-/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _parts_express__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./_parts/_express */ "./src/js/_parts/_express.js");
+/* harmony import */ var _parts_express__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_parts_express__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./_parts/_mobile-el-replace */ "./src/js/_parts/_mobile-el-replace.js");
+/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
+/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -6376,6 +6374,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+ //import './_parts/_formSend';
 
  //import './_parts/_page';
 //import './_parts/_aside';
@@ -6417,18 +6418,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svg4everybody */ "./node_modules/svg4everybody/dist/svg4everybody.js");
 /* harmony import */ var svg4everybody__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(svg4everybody__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _vendor_disableBodyScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_vendor/disableBodyScroll */ "./src/js/_vendor/disableBodyScroll.js");
-/* harmony import */ var _vendor_jquery_fancybox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_vendor/jquery.fancybox */ "./src/js/_vendor/jquery.fancybox.js");
-/* harmony import */ var _vendor_jquery_fancybox__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_vendor_jquery_fancybox__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _vendor_masked_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_vendor/masked-input */ "./src/js/_vendor/masked-input.js");
-/* harmony import */ var _vendor_jquery_formstyler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_vendor/jquery-formstyler */ "./src/js/_vendor/jquery-formstyler.js");
+/* harmony import */ var _vendor_jquery_fancybox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_vendor/jquery.fancybox */ "./src/js/_vendor/jquery.fancybox.js");
+/* harmony import */ var _vendor_jquery_fancybox__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_vendor_jquery_fancybox__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _vendor_masked_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_vendor/masked-input */ "./src/js/_vendor/masked-input.js");
+/* harmony import */ var _vendor_jquery_formstyler__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_vendor/jquery-formstyler */ "./src/js/_vendor/jquery-formstyler.js");
+ //import disableBodyScroll from './_vendor/disableBodyScroll';
 
 
 
 
-
-svg4everybody__WEBPACK_IMPORTED_MODULE_0___default()();
-window.disableBodyScroll = _vendor_disableBodyScroll__WEBPACK_IMPORTED_MODULE_1__["default"];
+svg4everybody__WEBPACK_IMPORTED_MODULE_0___default()(); //window.disableBodyScroll = disableBodyScroll;
 
 /***/ }),
 

@@ -2,13 +2,17 @@ import './vendor';
 
 import './_parts/_header';
 import './_parts/_sliders';
-import './_parts/_modal';
 import './_parts/_object-fit-images';
 import './_parts/_dropdown';
+import './_parts/_modal';
 import './_parts/_shops-tabs';
 import './_parts/_products';
+import './_parts/_express';
 import './_parts/_mobile-el-replace';
 import './_parts/_catalog-list-mobile';
+
+//import './_parts/_formSend';
+import './_parts/_validation';
 
 //import './_parts/_page';
 //import './_parts/_aside';

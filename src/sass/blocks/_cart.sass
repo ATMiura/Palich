@@ -1,5 +1,5 @@
 .cart
-	&-adress
+	&-address
 		background-color: var(--light-pink)
 		padding: 30px 35px
 		margin-bottom: 70px
@@ -21,7 +21,7 @@
 		&.submited
 			display: flex
 			align-items: center
-			.cart-adress
+			.cart-address
 				&__title
 					font-size: 1rem
 					margin-bottom: 0
@@ -231,6 +231,20 @@
 						color: var(--vinishkotyan)
 					&.promocode
 						max-width: 350px
+
+	&-message
+		font-size: 1rem
+		line-height: 1rem
+		color: var(--black)
+
+		padding: 17px 30px
+
+		margin-bottom: 80px
+
+		background-color: var(--sochperc)
+
+	&-address + &-message
+		margin-top: -40px
 
 	&-by-time
 		&__container
