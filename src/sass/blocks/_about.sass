@@ -1,0 +1,119 @@
+.about
+	//display: flex
+	//flex-wrap: wrap
+	position: relative
+	&-header,
+	&-footer
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+	&__text
+		max-width: 41.66667%
+		flex-basis: 41.66667%
+		&--title
+			margin-bottom: 20px
+		&--excerpt
+			font-size: 1.125rem
+			line-height: 2rem
+			color: var(--black)
+			margin-bottom: 40px
+		&--btn
+	&__img
+		max-width: 58.33333%
+		flex-basis: 58.33333%
+		position: relative
+		img
+			position: relative
+			display: block
+			font-size: 0
+			max-width: 100%
+			height: auto
+			z-index: 1
+			padding: 65px 0
+		&:after
+			content: ""
+			display: block
+			background-color: var(--sochperc)
+			max-width: 650px
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			right: 0
+			z-index: 0
+	&-header
+		margin-top: -75px
+		margin-bottom: 75px
+		.about__text
+			font-size: 1.5rem
+			line-height: 2.5rem
+			color: var(--black)
+			padding-right: 55px
+		.about__img
+	&-footer
+		margin-bottom: 100px
+		.about__text
+			padding-right: 15px
+			padding-left: 55px
+		.about__img
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			&:after
+				right: initial
+				left: 0
+
+	&-main
+		padding-bottom: 100px
+		margin-bottom: 100px
+		&__img
+			margin-bottom: 120px
+			img
+				display: block
+				font-size: 0
+				max-width: 100%
+				height: auto
+		&-info
+			display: flex
+			flex-wrap: wrap
+			&__col
+				flex-basis: 50%
+				max-width: 50%
+			&__text
+				font-size: 1.125rem
+				line-height: 2rem
+				max-width: 500px
+		&-number
+			&__list
+				display: flex
+				flex-wrap: wrap
+				max-width: 450px
+				margin: 0 auto
+			&__item
+				flex-basis: 50%
+				max-width: 50%
+				&:not(:nth-last-child(-n+2))
+					margin-bottom: 50px
+			&__value
+				font-size: 4.5rem
+				line-height: 1
+				color: var(--vinishkotyan)
+			&__text
+				font-size: 1.125rem
+				line-height: 2rem
+				color: var(--black)
+		&:after
+			content: ""
+			background-color: var(--light-pink)
+			display: block
+			max-width: 1830px
+			max-height: 725px
+			width: 100%
+			height: 100%
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			margin: 0 auto
+			z-index: -1
+

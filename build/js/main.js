@@ -438,6 +438,23 @@ $(window).on('load resize', function () {
     $('.section.products .products__list').removeClass('scroll scroll-x');
   }
 });
+/*$('.js-countMinus').on('click', (event) => {
+	const _this = $(event.currentTarget);
+	const count = _this.parents('.js-count');
+	const input = count.find('.js-countInput');
+
+	if(input.val() <= 1) return false;
+
+	input.val(parseFloat(input.val()) - 1);
+});
+
+$('.js-countPlus').on('click', (event) => {
+	const _this = $(event.currentTarget);
+	const count = _this.parents('.js-count');
+	const input = count.find('.js-countInput');
+
+	input.val(parseFloat(input.val()) + 1);
+});*/
 
 /***/ }),
 
@@ -753,15 +770,16 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
   var form = $(this);
   var formData = new FormData(form[0]);
   var formName = form.data('form');
-  submitFormValidate('Y', 'true', form, formData, formName);
+  var formCurUrl = form.data('url');
+  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl);
   return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName) {
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl) {
   form.find('.form_error').remove();
   form.addClass('submitting');
 
-  if (valid === undefined) {
+  if (valid == undefined) {
     valid = false;
   }
 
@@ -778,43 +796,79 @@ function submitFormValidate(val, valid, form, formData, formName) {
           //form.find('.form-row--errors').remove();
         },
         success: function success(data) {
-          if (data.status == 0) {
-            // Успешный успех
-            form.parents('.' + formName).attr('class');
-            form.parents('.' + formName).addClass('submited');
-            form.parents('.' + formName).find('.express__title').remove();
-            form.parents('.' + formName).find('.express__text').html(data.message);
-            form.removeClass('submitting'); //console.log("Когда успех " + data.message);
-          } else if (data.status == 1) {
-            // Не можем доставить за 90 минут
+          if (formName == 'express') {
+            if (data.status == 0) {
+              // Успешный успех
+              form.parents('.' + formName).attr('class');
+              form.parents('.' + formName).addClass('submited');
+              form.parents('.' + formName).find('.express__title').remove();
+              form.parents('.' + formName).find('.express__text').html(data.message);
+              form.removeClass('submitting'); //console.log(formCurUrl);
+
+              if (formCurUrl !== 'catalog') {
+                var baseUrl = window.location.origin;
+                $(location).prop('href', baseUrl + "/catalog");
+              } else {
+                location.reload();
+              } //console.log("Когда успех " + data.message);
+
+            } else if (data.status == 1) {
+              // Не можем доставить за 90 минут
+              form.removeClass('submitting');
+              form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
+              form.find('.form_error').text(data.message); //console.log("Когда не можем " + data.message);
+            } else if (data.status == 2) {
+              // Неверно заполнены данные
+              form.removeClass('submitting');
+              form.find('.form_error').text(data.message); //console.log("Когда вы троите " + data.message);
+            }
+          } else if (formName == 'feedback' || formName == 'call') {
             form.removeClass('submitting');
-            form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
-            form.find('.form_error').text(data.message); //console.log("Когда не можем " + data.message);
-          } else if (data.status == 2) {
-            // Неверно заполнены данные
-            form.removeClass('submitting');
-            form.find('.form_error').text(data.message); //console.log("Когда вы троите " + data.message);
+            form.parents('.modal__inner').find('.modal__head').hide();
+            form.parent().html(data); //console.log(data);
+            //console.log("Форма: " + formName);
+          } else {
+            console.log(data); //console.log("Форма: " + formName);
           }
         }
       });
     };
 
     var t = true;
-    $('[data-form="' + formName + '"] .input--required').each(function () {
-      var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
+    console.log("Valid:" + valid);
 
-      if ($this.val() == "") {
-        $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
-        t = false;
-      } else if ($.trim($(this).val()).indexOf(",") == -1) {
-        console.log('запятая с*ка');
-        $this.addClass('invalid').parents('.form_group').append("<span class='form_error'></span>");
-        t = false;
-      } else {
-        $this.removeClass('invalid').siblings('.form_error').remove();
-      }
-    });
-    console.log(t);
+    if (formName == 'express') {
+      $('[data-form="' + formName + '"] .input--required').each(function () {
+        var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
+
+        if ($this.val() == "") {
+          form.removeClass('submitting');
+          $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
+          t = false;
+        } else if ($.trim($(this).val()).indexOf(",") == -1) {
+          //console.log('запятая');
+          form.removeClass('submitting');
+          $this.addClass('invalid').parents('.form_group').append("<span class='form_error'></span>");
+          t = false;
+        } else {
+          $this.removeClass('invalid').siblings('.form_error').remove();
+        }
+      });
+    } else {
+      $('[data-form="' + formName + '"] .input--required').each(function () {
+        var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
+
+        if ($this.val() == "") {
+          form.removeClass('submitting');
+          $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
+          t = false;
+        } else {
+          $this.removeClass('invalid').siblings('.form_error').remove();
+        }
+      });
+    }
+
+    console.log("Обязательные поля:" + t);
 
     if (t) {
       $.post("/local/inc/ajax/" + formName + ".php", $('[data-form="' + formName + '"]').serialize(), onAjaxSuccess());
@@ -823,10 +877,13 @@ function submitFormValidate(val, valid, form, formData, formName) {
       $('html, body').animate({
         scrollTop: $('form .invalid').offset().top - 100
       }, 500);
-      onAjaxSuccess();
+
+      if (formName == 'express') {
+        onAjaxSuccess();
+      }
     }
   } else {
-    console.log('Делаем отправку форму сразу');
+    console.log('Идеальная форма');
     return true;
   }
 }

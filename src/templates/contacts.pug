@@ -1,0 +1,61 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Контакты'
+
+block content
+	section.section.section-contacts
+		.section-container
+			.breadcrumbs
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Главная
+					li.breadcrumbs__item
+						span Контакты
+			.section-header
+				.section-title
+					h1 Контакты
+
+			.section-content
+				.contacts
+					.contacts-row
+						.contacts-col
+							form.form
+								.form_row
+									.form_col
+										.form_col__inner
+											.form_title Для жалоб и предложений
+											.form_group
+												label.form_label
+													input.form_input(type="text", placeholder="Имя")
+											.form_group
+												label.form_label
+													input.form_input(type="text", placeholder="+7 (xxx) xxx-xx-xx")
+											.form_group
+												label.form_label
+													textarea.form_textarea(placeholder="Ваш комментарий")
+											.form_group
+												label.form_label.checkbox__label
+													input.checkbox__input(type="checkbox", checked="checked")
+													.checkbox__emulator
+													.checkbox__text
+														span Согласен(на)
+														=" "
+														a(href="", target="_blank") персональных данных
+											.form_group.form_submit
+												.form_group
+													input.button.button__arrow(type="submit", value="Отправить")
+
+						.contacts-col
+							.contacts__tel
+								a.contacts__link(href="tel:+7 (929) 64 08 605") +7 (929) 64 08 605
+								a.link-icon(href="")
+									.link-icon__icon
+										+icon('tel')
+									.link-icon__text Горячая линия
+
+							.contacts__email
+								.contacts__text Или напишите нам на почту
+								a.contacts__link(href="mailto:otzyv@palichmos.ru ") otzyv@palichmos.ru
+

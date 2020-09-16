@@ -26,6 +26,7 @@
 	&_input,
 	&_textarea
 		padding: 6px 15px 8px
+		border-bottom: 1px solid transparent
 		&::placeholder
 			font-size: 0.813rem
 			line-height: 170%
@@ -36,7 +37,6 @@
 		font-size: .875rem
 		line-height: 1.5rem
 		color: var(--vinishkotyan)
-
 
 	//&-search
 		&__input
@@ -52,6 +52,9 @@
 		&__button
 			background-color: transparent
 			cursor: pointer
+
+.invalid
+	border-bottom: 1px solid var(--vinishkotyan)
 
 .checkbox,
 .radio
