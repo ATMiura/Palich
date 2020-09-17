@@ -84,7 +84,7 @@
 				line-height: 1.313rem
 				font-weight: bold
 				color: var(--vinishkotyan)
-		@media #{$mobile-above}
+		@media #{$tablet-above}
 			display: none
 
 	// теги
@@ -140,7 +140,7 @@
 		align-items: center
 		flex-basis: 100%
 
-		&__inner
+		&-inner
 			display: flex
 			align-items: center
 
@@ -199,6 +199,7 @@
 			display: flex
 			flex-wrap: nowrap
 		&__list
+			display: block !important
 			padding-bottom: 15px
 		.nav
 			&-list

@@ -1,29 +1,30 @@
 .dropdown
 	position: relative
 	cursor: pointer
-	&:after
-		content: ""
-		background-image: url("data:image/svg+xml,%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.16731 0.37207L16.2838 9.99989H0.0507812L8.16731 0.37207Z' fill='white'/%3E%3C/svg%3E%0A")
-		background-repeat: no-repeat
-		background-position: top center
-		display: block
-		width: 17px
-		height: 10px
-		filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.09))
-		position: absolute
-		z-index: 11
-		left: 0
-		right: 0
-		margin: 0 auto
-		opacity: 0
-		transform: translateY(40px)
-		transition: visibility 0s ease .2s, opacity .2s ease, transform .2s ease, width .2s ease
-	&:hover
+	@media #{$laptop-above}
 		&:after
-			opacity: 1
-			visibility: visible
-			transform: translateY(17px)
-			transition: visibility 0s ease, opacity .2s ease, transform .2s ease, width .2s ease
+			content: ""
+			background-image: url("data:image/svg+xml,%3Csvg width='17' height='10' viewBox='0 0 17 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.16731 0.37207L16.2838 9.99989H0.0507812L8.16731 0.37207Z' fill='white'/%3E%3C/svg%3E%0A")
+			background-repeat: no-repeat
+			background-position: top center
+			display: block
+			width: 17px
+			height: 10px
+			filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.09))
+			position: absolute
+			z-index: 11
+			left: 0
+			right: 0
+			margin: 0 auto
+			opacity: 0
+			transform: translateY(40px)
+			transition: visibility 0s ease .2s, opacity .2s ease, transform .2s ease, width .2s ease
+		&:hover
+			&:after
+				opacity: 1
+				visibility: visible
+				transform: translateY(17px)
+				transition: visibility 0s ease, opacity .2s ease, transform .2s ease, width .2s ease
 	&:not(.header-burger)
 		//display: inline-flex
 		//align-items: center
@@ -90,27 +91,36 @@
 			opacity: 1
 			visibility: visible
 
-	&.is-open,
-	&:hover
+	&.is-open
 		.dropdown-block
-			opacity: 1
-			visibility: visible
-			transform: translateY(0)
-			transition: visibility 0s ease, opacity .2s ease, transform .2s ease, width .2s ease
-		.link-icon__text,
-		.header-burger__link
-			&:after
+			display: block
+	@media #{$laptop-above}
+		&:not(.header-search):hover,
+		&.header-search.is-open
+			.dropdown-block
 				opacity: 1
 				visibility: visible
 				transform: translateY(0)
-		&.header-search
-			.dropdown-block
-				transform: translateY(6px)
+				transition: visibility 0s ease, opacity .2s ease, transform .2s ease, width .2s ease
+			.link-icon__text,
+			.header-burger__link
+				&:after
+					opacity: 1
+					visibility: visible
+					transform: translateY(0)
+			&.header-search
+				.dropdown-block
+					transform: translateY(6px)
 
 	&-city
 		min-width: 390px
 		max-width: 390px
-
+		@media(max-width: 840px)
+			min-width: 350px
+			max-width: 350px
+		@media(max-width: 575px)
+			min-width: 100%
+			max-width: 100%
 
 	// поиск с городами
 	&-form

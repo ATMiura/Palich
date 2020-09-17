@@ -9,11 +9,13 @@
 			max-width: 1170px
 	&-header
 		display: flex
+		flex-wrap: wrap
 		align-items: baseline
 		//justify-content: space-between
 		//margin-bottom: 35px
 		margin-bottom: 25px !important
 	&-title
+		width: 100%
 		h1
 			margin: 0
 		h2
@@ -28,6 +30,11 @@
 
 	&-more
 		margin-left: auto
+		@media #{$tablet}
+			margin-left: initial
+			margin-top: 20px
+			flex-basis: 100%
+
 
 	&-products-quantity
 		font-size: 1.125rem
@@ -159,6 +166,14 @@
 				line-height: inherit
 				color: var(--vinishkotyan)
 				border-bottom: 2px dotted
+		@media #{$tablet}
+			.dropdown
+				display: block
+				&-block
+					left: 0
+					top: 100%
+				&:after
+					display: none
 
 	&-news
 		margin-bottom: 60px
@@ -172,6 +187,8 @@
 
 	&-catalog
 		margin-bottom: 80px
+		.section-title
+			width: auto
 
 	&-404
 		text-align: center
@@ -188,29 +205,32 @@
 				color: var(--vinishkotyan)
 
 	&-search
-		margin-bottom: 110px
+		//margin-bottom: 110px
+		margin-bottom: 40px
+		.form-search
+			flex-basis: 100%
+			max-width: 995px
+			margin-bottom: 40px
+			padding: 0 15px
+			margin: 0 -15px
+			&__input
+				border: 1px solid var(--light-grey)
+				font-size: 0.875rem
+				line-height: 1.375rem
+				border-radius: 0
+			&__icon
+				margin-left: -33px
+				.icon-search-new
+					width: 18px
+					height: 18px
+			&__button
+				background-color: transparent
+				cursor: pointer
 		&-result
 			display: flex
 			flex-wrap: wrap
-			margin: 0 -15px
-
-			.form-search
-				flex-basis: 100%
-				max-width: 995px
-				margin-bottom: 40px
-				padding: 0 15px
-				&__input
-					border: 1px solid var(--light-grey)
-					font-size: 0.875rem
-					line-height: 1.375rem
-				&__icon
-					margin-left: -33px
-					.icon-search-new
-						width: 18px
-						height: 18px
-				&__button
-					background-color: transparent
-					cursor: pointer
+			margin-bottom: 110px
+			//margin: 0 -15px
 			.section-icon
 				text-align: center
 				flex-basis: 100%
@@ -224,36 +244,47 @@
 				.button
 					margin-top: 15px
 
+			.section-container
+				display: flex
+				flex-wrap: wrap
+				padding: 0
+
+			.search
+				&-result
+
+					&__list
+						padding: 0 15px
+						flex-basis: 75%
+						max-width: 75%
+					&__item
+				&-categories
+					margin-top: 60px
+					padding: 0 15px
+					flex-basis: 25%
+					max-width: 25%
+					&__inner
+						background-color: var(--light-pink)
+						padding: 28px 36px
+						font-weight: bold
+					&__title
+						font-size: 1.5rem
+						line-height: 2.125rem
+						color: var(--black)
+						margin-bottom: 15px
+					&__list
+					&__item
+						&:not(:last-child)
+							margin-bottom: 15px
+					&__link
+						font-size: 1rem
+						line-height: 1.313rem
+						color: var(--vinishkotyan)
 			.products
 				&__list
-					padding: 0 15px
-					flex-basis: 75%
-					max-width: 75%
+
 				&__item
 					flex-basis: 33.3%
 					max-width: 33.3%
-			.search-categories
-				padding: 0 15px
-				flex-basis: 25%
-				max-width: 25%
-				&__inner
-					background-color: var(--light-pink)
-					padding: 28px 36px
-					font-weight: bold
-				&__title
-					font-size: 1.5rem
-					line-height: 2.125rem
-					color: var(--black)
-					margin-bottom: 15px
-				&__list
-				&__item
-					&:not(:last-child)
-						margin-bottom: 15px
-				&__link
-					font-size: 1rem
-					line-height: 1.313rem
-					color: var(--vinishkotyan)
-
 	&-contacts
 
 	&-about

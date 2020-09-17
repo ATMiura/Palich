@@ -1,5 +1,13 @@
 /* выпадающий список */
 
+/* убираем действие по умолчанию для ссылке, если она с иконкой */
+$(document).on('click touch', '.dropdown:not(.header-search)', function () {
+	$(this).toggleClass('is-open');
+});
+$(document).on('click touch', '.dropdown a.link-icon__text', function (event) {
+	event.preventDefault();
+});
+
 $(document).on('click touch', '.header-burger__link', function (event) {
 	event.preventDefault();
 	$(this).parents('.dropdown').toggleClass('is-open');
@@ -41,4 +49,10 @@ $(document).on('click', '.dropdown-select__label', function () {
 	$(this).parents('.dropdown-select').toggleClass('is-open');
 	$(this).parents('.dropdown-select').find('.dropdown-select__value').val($(this).data('value'));
 	$(this).parents('.dropdown-select').addClass('is-valid');
+});
+
+
+/* выпадашка для поиска */
+$(document).on('keyup', '.header-search .form-search__input', function () {
+	$(this).parents('.header-search').addClass('is-open');
 });

@@ -177,6 +177,14 @@ $(window).on('load resize', function () {
 /***/ (function(module, exports) {
 
 /* выпадающий список */
+
+/* убираем действие по умолчанию для ссылке, если она с иконкой */
+$(document).on('click touch', '.dropdown:not(.header-search)', function () {
+  $(this).toggleClass('is-open');
+});
+$(document).on('click touch', '.dropdown a.link-icon__text', function (event) {
+  event.preventDefault();
+});
 $(document).on('click touch', '.header-burger__link', function (event) {
   event.preventDefault();
   $(this).parents('.dropdown').toggleClass('is-open');
@@ -215,6 +223,11 @@ $(document).on('click', '.dropdown-select__label', function () {
   $(this).parents('.dropdown-select').toggleClass('is-open');
   $(this).parents('.dropdown-select').find('.dropdown-select__value').val($(this).data('value'));
   $(this).parents('.dropdown-select').addClass('is-valid');
+});
+/* выпадашка для поиска */
+
+$(document).on('keyup', '.header-search .form-search__input', function () {
+  $(this).parents('.header-search').addClass('is-open');
 });
 
 /***/ }),
@@ -261,8 +274,14 @@ $(document).on('ready ajaxComplete', function () {
 /***/ (function(module, exports) {
 
 $(window).on('load resize', function () {
+  /* проверяет все блоки с data-move и перемещает в блоки в мобилке/десктопе на основе их атрибутов */
   if ($(window).width() < 768) {
-    $('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
+    if ($('[data-mobile-menu="catalog-links"] > *').length > 1) {
+      $('[data-mobile-menu="catalog-links"] .nav-list').remove();
+    } else {
+      $('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
+    }
+
     $('[data-mobile-menu="catalog-links"] .nav-list').removeAttr('data-move');
     $('[data-mobile-menu="catalog-links"] .nav-list .nav-item__submenu').remove();
     $('[data-mobile-menu="catalog-links"] .nav-list .nav-item').removeClass('.nav-item');
@@ -273,7 +292,15 @@ $(window).on('load resize', function () {
         $(this).prependTo('[data-mobile-menu="' + dataMoveAttr + '"]');
       });
     }, 100);
-  } else {}
+    console.log('переставил на мобилку');
+  } else if ($(window).width() > 767) {
+    $('[data-move]').each(function (element) {
+      var dataMoveAttr = $(this).data('move');
+      $(this).siblings('.dropdown-block').appendTo('[data-desktop="' + dataMoveAttr + '"]');
+      $(this).prependTo('[data-desktop="' + dataMoveAttr + '"]');
+    });
+    console.log('переставил на пк');
+  }
   /* перестановка блоков в деталке */
 
 
@@ -325,7 +352,7 @@ $(document).ready(function () {
 
   $('.header-mobile__search').on('click touch', function () {
     $('body').addClass('mobile-open');
-    $('[data-mobile-menu-type]').attr('data-mobile-menu-type', 'main-mobile');
+    $('[data-mobile-menu-type]').attr('data-mobile-menu-type', 'catalog-list');
     $('.mobile-menu-section').hide();
     $('[data-mobile-menu="search"]').show();
     $('.mobile').addClass('is-open');

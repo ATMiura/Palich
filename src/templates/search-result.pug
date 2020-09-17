@@ -17,56 +17,69 @@ block content
 				.section-title
 					h1 Результаты поиска
 			.section-content
-				.section-search-result
-					form.form-search
-						.form_row
-							.form_group
-								label.form_label
-									input(type="text", placeholder='Введите название товара, например, "торт"').form_input.form-search__input
-									.form-search__icon
-										button(type="submit").form-search__button
-											+icon('search-new')
-					.products__list
-						+products__item('products__item__slide__img_7','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',false,false)
-						+products__item('products__item__slide__img_8','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',true,false)
-						+products__item('products__item__slide__img_9','Манты с бараниной','В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку', true, false)
-						+products__item('products__item__slide__img_10','Торт облепиха','С приятным солодовым ароматом, с  семенами подсолнечника и льна',false,false)
-						+products__item('products__item__slide__img_11','Торт Молочная девочка','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
-						+products__item('products__item__slide__img_12','Чизкейк с вишней','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
-						+products__item('products__item__slide__img_13','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,true)
-						+products__item('products__item__slide__img_14','Пирог с вишней','Пирог из песочного теста, начинка из свежей вишни',false,false)
-					.search-categories
-						.search-categories__inner
-							.search-categories__title Разделы
-							ul.search-categories__list
-								li.search-categories__item
-									a(href="#").search-categories__link Торт
-								li.search-categories__item
-									a(href="#").search-categories__link Торты бисквитные
-								li.search-categories__item
-									a(href="#").search-categories__link Торты блинные
-								li.search-categories__item
-									a(href="#").search-categories__link Торты муссовые
-								li.search-categories__item
-									a(href="#").search-categories__link Торты песочные
-								li.search-categories__item
-									a(href="#").search-categories__link Торты слоенные
-								li.search-categories__item
-									a(href="#").search-categories__link Торт с орехами и сухофруктами
+				form.form-search
+					.form_row
+						.form_group
+							label.form_label
+								input(type="text", placeholder='Введите название товара, например, "торт"').form_input.form-search__input
+								.form-search__icon
+									button(type="submit").form-search__button
+										+icon('search-new')
 
-
-
-	section.section.products
+	section.section.section-search-result
 		.section-container
-			.section-header
-				.section-title
-					h2.h1 Популярные товары
-			.section-content
-				.products__list
-					+products__item('products__item__slide__img_1','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,false)
-					+products__item('products__item__slide__img_2','Торт Прага','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',false, false)
-					+products__item('products__item__slide__img_3','Торт Ореховый по-королевски','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
-					+products__item('products__item__slide__img_4','Торт малиновый','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+			.search-result__list
+				.search-result__item
+					.section-header
+						.section-title
+							h2 Торты
+					.section-content
+						.products__list
+							+products__item('products__item__slide__img_7','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',false,false)
+							+products__item('products__item__slide__img_8','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',true,false)
+							+products__item('products__item__slide__img_9','Манты с бараниной','В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку', true, false)
+							+products__item('products__item__slide__img_10','Торт облепиха','С приятным солодовым ароматом, с  семенами подсолнечника и льна',false,false)
+							+products__item('products__item__slide__img_11','Торт Молочная девочка','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+							+products__item('products__item__slide__img_12','Чизкейк с вишней','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+							+products__item('products__item__slide__img_13','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,true)
+							+products__item('products__item__slide__img_14','Пирог с вишней','Пирог из песочного теста, начинка из свежей вишни',false,false)
+
+				.search-result__item
+					.section-header
+						.section-title
+							h2 Торты
+					.section-content
+						.products__list
+							+products__item('products__item__slide__img_7','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',false,false)
+							+products__item('products__item__slide__img_8','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',true,false)
+							+products__item('products__item__slide__img_9','Манты с бараниной','В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку', true, false)
+							+products__item('products__item__slide__img_10','Торт облепиха','С приятным солодовым ароматом, с  семенами подсолнечника и льна',false,false)
+							+products__item('products__item__slide__img_11','Торт Молочная девочка','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+							+products__item('products__item__slide__img_12','Чизкейк с вишней','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+
+							.products__more
+								a.button.button__plus Показать больше
+
+			.search-categories
+				.search-categories__inner
+					.search-categories__title Разделы
+					ul.search-categories__list
+						li.search-categories__item
+							a(href="#").search-categories__link Торт
+						li.search-categories__item
+							a(href="#").search-categories__link Торты бисквитные
+						li.search-categories__item
+							a(href="#").search-categories__link Торты блинные
+						li.search-categories__item
+							a(href="#").search-categories__link Торты муссовые
+						li.search-categories__item
+							a(href="#").search-categories__link Торты песочные
+						li.search-categories__item
+							a(href="#").search-categories__link Торты слоенные
+						li.search-categories__item
+							a(href="#").search-categories__link Торт с орехами и сухофруктами
+
+
 
 
 

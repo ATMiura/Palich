@@ -50,6 +50,13 @@
 			&-product
 				&__list
 					max-height: initial
+
+			.more-link
+				margin-top: 20px
+		//&:hover
+			.dropdown-block
+				display: block
+
 	&-menu
 		&-head
 			display: flex
@@ -209,5 +216,6 @@
 
 [data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"]),
 [data-mobile-menu-type="main-mobile"] .mobile-menu__title,
+[data-mobile-menu-type="main-mobile"] .mobile-menu-section-search,
 [data-mobile-menu-type="catalog-list"] .mobile-menu__logo
 	display: none

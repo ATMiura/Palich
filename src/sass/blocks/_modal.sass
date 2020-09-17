@@ -35,9 +35,18 @@
 		&__img
 			max-width: 100%
 			height: auto
+	.button
+		margin-top: 40px
 	.form_submit
 		margin-top: 25px
 	&.fancybox-content
-		display: inline-flex !important
-		align-items: center
-		justify-content: center
+		@media #{$mobile-above}
+			display: inline-flex !important
+			align-items: center
+			justify-content: center
+	@media #{$mobile}
+		&__custom
+			.fancybox-slide
+				padding: 10px
+			.fancybox-content
+				padding: 15px

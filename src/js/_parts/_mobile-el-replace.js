@@ -1,7 +1,15 @@
 $(window).on('load resize', function () {
+
+	/* проверяет все блоки с data-move и перемещает в блоки в мобилке/десктопе на основе их атрибутов */
 	if($(window).width() < 768){
 
-		$('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
+		if($('[data-mobile-menu="catalog-links"] > *').length > 1){
+			$('[data-mobile-menu="catalog-links"] .nav-list').remove();
+		}
+		else {
+			$('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
+		}
+
 		$('[data-mobile-menu="catalog-links"] .nav-list').removeAttr('data-move');
 		$('[data-mobile-menu="catalog-links"] .nav-list .nav-item__submenu').remove();
 		$('[data-mobile-menu="catalog-links"] .nav-list .nav-item').removeClass('.nav-item');
@@ -13,8 +21,17 @@ $(window).on('load resize', function () {
 				$(this).prependTo('[data-mobile-menu="'+dataMoveAttr+'"]');
 			});
 		},100);
-	} else {
 
+		console.log('переставил на мобилку');
+
+	} else if($(window).width() > 767){
+		$('[data-move]').each(function (element) {
+			let dataMoveAttr = $(this).data('move');
+			$(this).siblings('.dropdown-block').appendTo('[data-desktop="'+dataMoveAttr+'"]');
+			$(this).prependTo('[data-desktop="'+dataMoveAttr+'"]');
+		});
+
+		console.log('переставил на пк');
 	}
 
 	/* перестановка блоков в деталке */
@@ -79,7 +96,7 @@ $(document).ready(function () {
 	$('.header-mobile__search').on('click touch', function () {
 		$('body').addClass('mobile-open');
 
-		$('[data-mobile-menu-type]').attr('data-mobile-menu-type','main-mobile');
+		$('[data-mobile-menu-type]').attr('data-mobile-menu-type','catalog-list');
 		$('.mobile-menu-section').hide();
 		$('[data-mobile-menu="search"]').show();
 		$('.mobile').addClass('is-open');

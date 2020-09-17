@@ -103,17 +103,6 @@ footer.footer
 			.mobile-menu-section(data-mobile-menu="catalog-sort")
 
 
-//.mobile.scroll
-	.mobile-menu(data-mobile-menu="catalog-list")
-		.mobile-menu-head
-			.mobile-menu__title(data-mobile-catalog-title)
-			.mobile-menu__close(data-mobile-menu-close)
-				+icon('close')
-		.mobile-menu-body
-			.mobile-menu-section(data-mobile-menu="catalog-filter")
-			.mobile-menu-section(data-mobile-menu="catalog-tags")
-			.mobile-menu-section(data-mobile-menu="catalog-sort")
-
 .modal#callback.scroll
 	.modal__inner
 		.modal__head
@@ -224,3 +213,26 @@ footer.footer
 					br
 					=" "
 					| отправлено
+
+.modal#thx-order.scroll
+	.modal__inner
+		.modal__body
+			.modal__thx
+				.modal__thx__icon
+					img(src="images/thx-order.svg")
+				.modal__title
+					| Спасибо за заказ!
+
+				.modal__text
+					| Вы оформили заказ
+					=" "
+					span(data-order-id, data-order-id-by-time) 01255
+					=" "
+					| и
+					=" "
+					span(data-order-id, data-order-id-by-time) 01253
+					|.
+					br
+					=" "
+					| Следите за исполнением заказа на почте
+					a(href="#").button.button__arrow Перейти в каталог

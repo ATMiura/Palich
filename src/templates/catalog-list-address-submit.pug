@@ -21,15 +21,15 @@ block content
 				.catalog
 					.catalog-mobile-menu
 						.catalog-mobile-menu__list
-							.catalog-mobile-menu__item(data-catalog-mobile-menu="Фильтры", data-catalog-type="filter")
+							.catalog-mobile-menu__item(data-mobile-menu-title="Фильтры", data-catalog-type="filter", data-catalog-mobile-menu)
 								.catalog-mobile-menu-item__icon
 									+icon('catalog-filter')
 								.catalog-mobile-menu-item__text Фильтры
-							.catalog-mobile-menu__item(data-catalog-mobile-menu="Теги", data-catalog-type="tags")
+							.catalog-mobile-menu__item(data-mobile-menu-title="Теги", data-catalog-type="tags", data-catalog-mobile-menu)
 								.catalog-mobile-menu-item__icon
 									+icon('catalog-tags')
 								.catalog-mobile-menu-item__text Теги
-							.catalog-mobile-menu__item(data-catalog-mobile-menu="Сортировка", data-catalog-type="sort")
+							.catalog-mobile-menu__item(data-mobile-menu-title="Сортировка", data-catalog-type="sort", data-catalog-mobile-menu)
 								.catalog-mobile-menu-item__icon
 									+icon('catalog-sort')
 								.catalog-mobile-menu-item__text Сортировка
@@ -339,11 +339,11 @@ block content
 															+icon('product_in_cart')
 
 							.products-catalog-by-time(data-product-time)
-								.products-catalog-header
-									.products-catalog-header-title
-										.products-catalog-header-title__icon
+								.by-time-header
+									.by-time-header-title
+										.by-time-header-title__icon
 											+icon('clock-empty')
-										.products-catalog-header-title__text Доставка с 10 мая
+										.by-time-header-title__text Доставка с 10 мая
 
 								+products__item('products__item__slide__img_7','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',false,false)
 								+products__item('products__item__slide__img_8','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',true,false)
@@ -357,14 +357,3 @@ block content
 
 							.products__more
 								a.button.button__plus Показать больше
-
-					.mobile.scroll
-						.mobile-menu(data-mobile-menu="catalog-list")
-							.mobile-menu-head
-								.mobile-menu__title(data-mobile-catalog-title)
-								.mobile-menu__close(data-mobile-menu-close)
-									+icon('close')
-							.mobile-menu-body
-								.mobile-menu-section(data-mobile-menu="catalog-filter")
-								.mobile-menu-section(data-mobile-menu="catalog-tags")
-								.mobile-menu-section(data-mobile-menu="catalog-sort")

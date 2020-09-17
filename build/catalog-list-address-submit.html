@@ -1,7 +1,4 @@
-
-<!--if isAuth == true-->
-<!--+icon('user')-->
-<!--else--><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
@@ -106,32 +103,36 @@
 						</ul>
 					</div>
 					<div class="header-call" data-desktop="call">
-						<div class="header-link__list" data-move="call-links">
-							<div class="header-link__item">
-								<div class="link-icon">
-									<div class="link-icon__icon">
-										<svg class="icon icon-mail ">
-											<use xlink:href="images/sprites.svg#mail"></use>
-										</svg>
-									</div><a class="link-icon__text" href="#palich-email" data-modal-open>Письмо Палычу</a>
+						<div class="header-call__inner" data-desktop="call-links">
+							<div class="header-link__list" data-move="call-links">
+								<div class="header-link__item">
+									<div class="link-icon">
+										<div class="link-icon__icon">
+											<svg class="icon icon-mail ">
+												<use xlink:href="images/sprites.svg#mail"></use>
+											</svg>
+										</div><a class="link-icon__text" href="#palich-email" data-modal-open>Письмо Палычу</a>
+									</div>
 								</div>
-							</div>
-							<div class="header-link__item">
-								<div class="js-popup link-icon" data-popup-id="callback">
-									<div class="link-icon__icon">
-										<svg class="icon icon-phone ">
-											<use xlink:href="images/sprites.svg#phone"></use>
-										</svg>
-									</div><a class="link-icon__text" href="#callback" data-modal-open>Обратый звонок</a>
+								<div class="header-link__item">
+									<div class="js-popup link-icon" data-popup-id="callback">
+										<div class="link-icon__icon">
+											<svg class="icon icon-phone ">
+												<use xlink:href="images/sprites.svg#phone"></use>
+											</svg>
+										</div><a class="link-icon__text" href="#callback" data-modal-open>Обратый звонок</a>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="header-phone__list" data-move="call-tels">
-							<div class="header-phone__item">
-								<div class="header-phone__item__label">Горячая линия</div><a class="header-phone__item__link" href="tel:8 (800) 555-81-63">8 (800) 555-81-63</a>
-							</div>
-							<div class="header-phone__item">
-								<div class="header-phone__item__label">Интернет-магазин</div><a class="header-phone__item__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a>
+						<div class="header-call__inner" data-desktop="call-tels">
+							<div class="header-phone__list" data-move="call-tels">
+								<div class="header-phone__item">
+									<div class="header-phone__item__label">Горячая линия</div><a class="header-phone__item__link" href="tel:8 (800) 555-81-63">8 (800) 555-81-63</a>
+								</div>
+								<div class="header-phone__item">
+									<div class="header-phone__item__label">Интернет-магазин</div><a class="header-phone__item__link" href="tel:+7 999 999-99-99">+7 999 999-99-99</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -157,13 +158,13 @@
 			</div>
 			<div class="header-main">
 				<div class="grid-container">
-					<div class="header-burger dropdown" data-desktop="catalog"><a class="header-burger__link" href="" data-move="burger">
+					<div class="header-burger dropdown" data-desktop="burger"><a class="header-burger__link" href="" data-move="burger">
 							<svg class="icon icon-menu ">
 								<use xlink:href="images/sprites.svg#menu"></use>
 							</svg></a>
 						<div class="dropdown-block">
 							<div class="dropdown-block__inner">
-								<div class="dropdown-menu">
+								<div class="dropdown-menu" data-desktop="catalog">
 									<ul class="nav-list" data-move="catalog">
 																				<li class="nav-item has-submenu"><a class="nav-item__link" href="#">
 																						<div class="nav-item__icon">
@@ -1013,15 +1014,6 @@
 								</svg></a></div>
 					</div>
 					<div class="header-search dropdown" data-dropdown="search" data-desktop="search">
-						<!--form(action="").header-search__form.form
-						.form_row
-							.form_group
-								label.form_label
-									input(type="text" placeholder="Введите название товара").header-search__input.form_input
-									.header-search__icon
-										button(type="submit").header-search__button
-											+icon('search')
-						-->
 						<form class="form form-search" data-move="search">
 							<div class="form_row">
 								<div class="form_group">
@@ -1246,7 +1238,7 @@
 						<div class="catalog">
 							<div class="catalog-mobile-menu">
 								<div class="catalog-mobile-menu__list">
-									<div class="catalog-mobile-menu__item" data-catalog-mobile-menu="Фильтры" data-catalog-type="filter">
+									<div class="catalog-mobile-menu__item" data-mobile-menu-title="Фильтры" data-catalog-type="filter" data-catalog-mobile-menu>
 										<div class="catalog-mobile-menu-item__icon">
 											<svg class="icon icon-catalog-filter ">
 												<use xlink:href="images/sprites.svg#catalog-filter"></use>
@@ -1254,7 +1246,7 @@
 										</div>
 										<div class="catalog-mobile-menu-item__text">Фильтры</div>
 									</div>
-									<div class="catalog-mobile-menu__item" data-catalog-mobile-menu="Теги" data-catalog-type="tags">
+									<div class="catalog-mobile-menu__item" data-mobile-menu-title="Теги" data-catalog-type="tags" data-catalog-mobile-menu>
 										<div class="catalog-mobile-menu-item__icon">
 											<svg class="icon icon-catalog-tags ">
 												<use xlink:href="images/sprites.svg#catalog-tags"></use>
@@ -1262,7 +1254,7 @@
 										</div>
 										<div class="catalog-mobile-menu-item__text">Теги</div>
 									</div>
-									<div class="catalog-mobile-menu__item" data-catalog-mobile-menu="Сортировка" data-catalog-type="sort">
+									<div class="catalog-mobile-menu__item" data-mobile-menu-title="Сортировка" data-catalog-type="sort" data-catalog-mobile-menu>
 										<div class="catalog-mobile-menu-item__icon">
 											<svg class="icon icon-catalog-sort ">
 												<use xlink:href="images/sprites.svg#catalog-sort"></use>
@@ -1645,14 +1637,14 @@
 										</div>
 									</div>
 									<div class="products-catalog-by-time" data-product-time>
-										<div class="products-catalog-header">
-											<div class="products-catalog-header-title">
-												<div class="products-catalog-header-title__icon">
+										<div class="by-time-header">
+											<div class="by-time-header-title">
+												<div class="by-time-header-title__icon">
 													<svg class="icon icon-clock-empty ">
 														<use xlink:href="images/sprites.svg#clock-empty"></use>
 													</svg>
 												</div>
-												<div class="products-catalog-header-title__text">Доставка с 10 мая</div>
+												<div class="by-time-header-title__text">Доставка с 10 мая</div>
 											</div>
 										</div>
 										<div class="products__item">
@@ -1982,23 +1974,6 @@
 									<div class="products__more"><a class="button button__plus">Показать больше</a></div>
 								</div>
 							</div>
-							<div class="mobile scroll">
-								<div class="mobile-menu" data-mobile-menu="catalog-list">
-									<div class="mobile-menu-head">
-										<div class="mobile-menu__title" data-mobile-catalog-title></div>
-										<div class="mobile-menu__close" data-mobile-menu-close>
-											<svg class="icon icon-close ">
-												<use xlink:href="images/sprites.svg#close"></use>
-											</svg>
-										</div>
-									</div>
-									<div class="mobile-menu-body">
-										<div class="mobile-menu-section" data-mobile-menu="catalog-filter"></div>
-										<div class="mobile-menu-section" data-mobile-menu="catalog-tags"></div>
-										<div class="mobile-menu-section" data-mobile-menu="catalog-sort"></div>
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -2130,18 +2105,6 @@
 				</div>
 			</div>
 		</div>
-		<!--.mobile.scroll
-		.mobile-menu(data-mobile-menu="catalog-list")
-			.mobile-menu-head
-				.mobile-menu__title(data-mobile-catalog-title)
-				.mobile-menu__close(data-mobile-menu-close)
-					+icon('close')
-			.mobile-menu-body
-				.mobile-menu-section(data-mobile-menu="catalog-filter")
-				.mobile-menu-section(data-mobile-menu="catalog-tags")
-				.mobile-menu-section(data-mobile-menu="catalog-sort")
-		
-		-->
 		<div class="modal scroll" id="callback">
 			<div class="modal__inner">
 				<div class="modal__head">
@@ -2260,9 +2223,21 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal scroll" id="thx-order">
+			<div class="modal__inner">
+				<div class="modal__body">
+					<div class="modal__thx">
+						<div class="modal__thx__icon"><img src="images/thx-order.svg"></div>
+						<div class="modal__title">Спасибо за заказ!</div>
+						<div class="modal__text">Вы оформили заказ <span data-order-id data-order-id-by-time>01255</span> и <span data-order-id data-order-id-by-time>01253</span>.<br> Следите за исполнением заказа на почте<a class="button button__arrow" href="#">Перейти в каталог</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1600258598214"></script>
-		<script src="js/main.js?v=1600258598214"></script>
+		<script src="js/vendor.js?v=1600352503672"></script>
+		<script src="js/main.js?v=1600352503672"></script>
 	</body>
 </html>

@@ -59,25 +59,27 @@ header.header
 						a(href="#").header-nav__item__link Контакты
 
 			.header-call(data-desktop="call")
-				.header-link__list(data-move="call-links")
-					.header-link__item
-						.link-icon
-							.link-icon__icon
-								+icon('mail')
-							a(href="#palich-email", data-modal-open).link-icon__text Письмо Палычу
-					.header-link__item
-						.js-popup(data-popup-id="callback").link-icon
-							.link-icon__icon
-								+icon('phone')
-							a(href="#callback", data-modal-open).link-icon__text Обратый звонок
+				.header-call__inner(data-desktop="call-links")
+					.header-link__list(data-move="call-links")
+						.header-link__item
+							.link-icon
+								.link-icon__icon
+									+icon('mail')
+								a(href="#palich-email", data-modal-open).link-icon__text Письмо Палычу
+						.header-link__item
+							.js-popup(data-popup-id="callback").link-icon
+								.link-icon__icon
+									+icon('phone')
+								a(href="#callback", data-modal-open).link-icon__text Обратый звонок
 
-				.header-phone__list(data-move="call-tels")
-					.header-phone__item
-						.header-phone__item__label Горячая линия
-						a(href="tel:8 (800) 555-81-63").header-phone__item__link 8 (800) 555-81-63
-					.header-phone__item
-						.header-phone__item__label Интернет-магазин
-						a(href="tel:+7 999 999-99-99").header-phone__item__link +7 999 999-99-99
+				.header-call__inner(data-desktop="call-tels")
+					.header-phone__list(data-move="call-tels")
+						.header-phone__item
+							.header-phone__item__label Горячая линия
+							a(href="tel:8 (800) 555-81-63").header-phone__item__link 8 (800) 555-81-63
+						.header-phone__item
+							.header-phone__item__label Интернет-магазин
+							a(href="tel:+7 999 999-99-99").header-phone__item__link +7 999 999-99-99
 
 			.header-mobile
 				.header-mobile__block
@@ -92,12 +94,12 @@ header.header
 
 	.header-main
 		.grid-container
-			.header-burger.dropdown(data-desktop="catalog")
+			.header-burger.dropdown(data-desktop="burger")
 				a.header-burger__link(href="",data-move="burger")
 					+icon('menu')
 				.dropdown-block
 					.dropdown-block__inner
-						.dropdown-menu
+						.dropdown-menu(data-desktop="catalog")
 							ul.nav-list(data-move="catalog")
 								- var submenuList = ['Бисквитные','Блинные','Бисквитные','Блинные','Муссовые','Песочные','Слоеные','Безе','С орехами и сухофруктами','С ягодами и фруктами','Шоколадные','Наборы','Детские','Особая серия,Постные / Веганские','Птичье молоко','Сметанные и творожные','Торт-рулет']
 								mixin nav-item(icon,label)
@@ -140,14 +142,6 @@ header.header
 						+icon('logo-with-text')
 
 			.header-search.dropdown(data-dropdown="search", data-desktop="search")
-				//form(action="").header-search__form.form
-					.form_row
-						.form_group
-							label.form_label
-								input(type="text" placeholder="Введите название товара").header-search__input.form_input
-								.header-search__icon
-									button(type="submit").header-search__button
-										+icon('search')
 				form.form.form-search(data-move="search")
 					.form_row
 						.form_group
