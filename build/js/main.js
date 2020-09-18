@@ -180,7 +180,7 @@ $(window).on('load resize', function () {
 
 /* убираем действие по умолчанию для ссылке, если она с иконкой */
 $(document).on('click touch', '.dropdown:not(.header-search)', function () {
-  $(this).toggleClass('is-open');
+  $(this).addClass('is-open');
 });
 $(document).on('click touch', '.dropdown a.link-icon__text', function (event) {
   event.preventDefault();
@@ -188,7 +188,7 @@ $(document).on('click touch', '.dropdown a.link-icon__text', function (event) {
 $(document).on('click touch', '.header-burger__link', function (event) {
   event.preventDefault();
   $(this).parents('.dropdown').toggleClass('is-open');
-}).on('click', function (event) {
+}).on('click touch', function (event) {
   var $trigger = $(".dropdown");
 
   if ($trigger !== event.target && !$trigger.has(event.target).length) {
@@ -208,9 +208,9 @@ $(document).on('click touch', '.header-burger__link', function (event) {
     $(this).parents('.nav-item').toggleClass('active');
   } else {}
 }).on('click touch', '.dropdown-delivery__item.express', function () {
-  $(this).siblings('.express-block').addClass('active');
+  $(this).siblings('.express-type').addClass('active');
 }).on('click touch', '.express__close', function () {
-  $(this).parents('.express-block').removeClass('active');
+  $(this).parents('.express-type').removeClass('active');
 });
 /* выпадаюищй список в корзине */
 
@@ -239,8 +239,9 @@ $(document).on('keyup', '.header-search .form-search__input', function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).on('ready ajaxComplete', function () {
-  $('.express__change').on('click touch', function () {
+$(document).ready(function () {
+  $('.express__change').on('click touch', function (event) {
+    event.preventDefault();
     var parentBlock = $(this).parents('.express');
     $(this).hide();
     parentBlock.removeClass('submited');
@@ -291,15 +292,13 @@ $(window).on('load resize', function () {
         $(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
         $(this).prependTo('[data-mobile-menu="' + dataMoveAttr + '"]');
       });
-    }, 100);
-    console.log('переставил на мобилку');
+    }, 100); //console.log('переставил на мобилку');
   } else if ($(window).width() > 767) {
     $('[data-move]').each(function (element) {
       var dataMoveAttr = $(this).data('move');
       $(this).siblings('.dropdown-block').appendTo('[data-desktop="' + dataMoveAttr + '"]');
       $(this).prependTo('[data-desktop="' + dataMoveAttr + '"]');
-    });
-    console.log('переставил на пк');
+    }); //console.log('переставил на пк');
   }
   /* перестановка блоков в деталке */
 
@@ -798,13 +797,15 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
   var formData = new FormData(form[0]);
   var formName = form.data('form');
   var formCurUrl = form.data('url');
-  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl);
+  var formRedirect = form.data('redirect');
+  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect);
   return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName, formCurUrl) {
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect) {
   form.find('.form_error').remove();
   form.addClass('submitting');
+  form.find('.button').wrap('<div class="submitting__loader"></div>');
 
   if (valid == undefined) {
     valid = false;
@@ -830,30 +831,38 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl) {
               form.parents('.' + formName).addClass('submited');
               form.parents('.' + formName).find('.express__title').remove();
               form.parents('.' + formName).find('.express__text').html(data.message);
-              form.removeClass('submitting'); //console.log(formCurUrl);
+              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+              //console.log(formCurUrl);
 
               if (formCurUrl !== 'catalog') {
                 var baseUrl = window.location.origin;
-                $(location).prop('href', baseUrl + "/catalog");
+                $(location).prop('href', formRedirect);
               } else {
                 location.reload();
               } //console.log("Когда успех " + data.message);
 
             } else if (data.status == 1) {
               // Не можем доставить за 90 минут
-              form.removeClass('submitting');
+              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
               form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
               form.find('.form_error').text(data.message); //console.log("Когда не можем " + data.message);
             } else if (data.status == 2) {
               // Неверно заполнены данные
-              form.removeClass('submitting');
+              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
               form.find('.form_error').text(data.message); //console.log("Когда вы троите " + data.message);
             }
           } else if (formName == 'feedback' || formName == 'call') {
-            form.removeClass('submitting');
+            form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
             form.parents('.modal__inner').find('.modal__head').hide();
             form.parent().html(data); //console.log(data);
             //console.log("Форма: " + formName);
+          } else if (formName == 'subscription') {
+            form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
+            form.parent().append(data);
           } else {
             console.log(data); //console.log("Форма: " + formName);
           }
@@ -869,12 +878,14 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl) {
         var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
 
         if ($this.val() == "") {
-          form.removeClass('submitting');
+          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
           t = false;
         } else if ($.trim($(this).val()).indexOf(",") == -1) {
           //console.log('запятая');
-          form.removeClass('submitting');
+          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'></span>");
           t = false;
         } else {
@@ -886,11 +897,12 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl) {
         var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
 
         if ($this.val() == "") {
-          form.removeClass('submitting');
+          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
           t = false;
         } else {
-          $this.removeClass('invalid').siblings('.form_error').remove();
+          $this.removeClass('invalid').siblings('.form_error').removeClass().addClass('form_success');
         }
       });
     }

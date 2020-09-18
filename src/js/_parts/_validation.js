@@ -36,14 +36,17 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
 	let formData = new FormData(form[0]);
 	let formName = form.data('form');
 	let formCurUrl = form.data('url');
+	let formRedirect = form.data('redirect');
 
-	submitFormValidate('Y','true', form, formData, formName, formCurUrl);
+	submitFormValidate('Y','true', form, formData, formName, formCurUrl, formRedirect);
 	return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName, formCurUrl){
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect){
 	form.find('.form_error').remove();
+
 	form.addClass('submitting');
+	form.find('.button').wrap('<div class="submitting__loader"></div>');
 
 	if(valid == undefined) {
 		valid = false;
@@ -59,6 +62,8 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl){
 				//var type = $this.attr('data-input-required') || 'text';
 				if ($this.val() == "") {
 					form.removeClass('submitting');
+					//form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
 					$this
 						.addClass('invalid')
 						.parents('.form_group')
@@ -67,6 +72,8 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl){
 				} else if($.trim($(this).val()).indexOf(",") == -1){
 					//console.log('запятая');
 					form.removeClass('submitting');
+					//form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
 					$this
 						.addClass('invalid')
 						.parents('.form_group')
@@ -82,13 +89,15 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl){
 				//var type = $this.attr('data-input-required') || 'text';
 				if ($this.val() == "") {
 					form.removeClass('submitting');
+					//form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
 					$this
 						.addClass('invalid')
 						.parents('.form_group')
 						.append("<span class='form_error'>Обязательное поле</span>");
 					t = false;
 				} else {
-					$this.removeClass('invalid').siblings('.form_error').remove();
+					$this.removeClass('invalid').siblings('.form_error').removeClass().addClass('form_success');
 				}
 			});
 		}
@@ -117,12 +126,13 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl){
 							form.parents('.' + formName).find('.express__text').html(data.message);
 
 							form.removeClass('submitting');
+							//form.find('.button').unwrap('<div class="submitting__loader"></div>');
 
 							//console.log(formCurUrl);
 
 							if (formCurUrl !== 'catalog') {
 								var baseUrl = window.location.origin;
-								$(location).prop('href', baseUrl + "/catalog");
+								$(location).prop('href', formRedirect);
 							} else {
 								location.reload();
 							}
@@ -130,6 +140,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl){
 						} else if (data.status == 1) {
 							// Не можем доставить за 90 минут
 							form.removeClass('submitting');
+							//form.find('.button').unwrap('<div class="submitting__loader"></div>');
 
 							form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
 							form.find('.form_error').text(data.message);
@@ -137,17 +148,26 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl){
 						} else if (data.status == 2) {
 							// Неверно заполнены данные
 							form.removeClass('submitting');
+							//form.find('.button').unwrap('<div class="submitting__loader"></div>');
 
 							form.find('.form_error').text(data.message);
 							//console.log("Когда вы троите " + data.message);
 						}
 					} else if(formName == 'feedback' || formName == 'call') {
 						form.removeClass('submitting');
+						//form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
 						form.parents('.modal__inner').find('.modal__head').hide();
 						form.parent().html(data);
 
 						//console.log(data);
 						//console.log("Форма: " + formName);
+					} else if(formName == 'subscription') {
+						form.removeClass('submitting');
+						//form.find('.button').unwrap('<div class="submitting__loader"></div>');
+
+						form.parent().append(data);
+
 					} else {
 						console.log(data);
 						//console.log("Форма: " + formName);

@@ -22,7 +22,7 @@ $(window).on('load resize', function () {
 			});
 		},100);
 
-		console.log('переставил на мобилку');
+		//console.log('переставил на мобилку');
 
 	} else if($(window).width() > 767){
 		$('[data-move]').each(function (element) {
@@ -31,7 +31,7 @@ $(window).on('load resize', function () {
 			$(this).prependTo('[data-desktop="'+dataMoveAttr+'"]');
 		});
 
-		console.log('переставил на пк');
+		//console.log('переставил на пк');
 	}
 
 	/* перестановка блоков в деталке */

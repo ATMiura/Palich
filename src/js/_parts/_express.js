@@ -1,5 +1,6 @@
-$(document).on('ready ajaxComplete', function () {
-	$('.express__change').on('click touch', function () {
+$(document).ready(function () {
+	$('.express__change').on('click touch', function (event) {
+		event.preventDefault();
 
 		var parentBlock = $(this).parents('.express');
 

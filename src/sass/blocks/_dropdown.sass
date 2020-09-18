@@ -95,8 +95,9 @@
 		.dropdown-block
 			display: block
 	@media #{$laptop-above}
-		&:not(.header-search):hover,
-		&.header-search.is-open
+		&:not(.header-search):not(.header-bar__item):hover,
+		&.header-search.is-open,
+		&.header-bar__item.is-open
 			.dropdown-block
 				opacity: 1
 				visibility: visible
@@ -139,9 +140,11 @@
 					width: 16px
 					height: 16px
 					stroke: var(--vinishkotyan)
+					line-height: 1
 			&__button
 				background-color: transparent
 				cursor: pointer
+				line-height: 1
 		&-result
 			font-size: 1rem
 			line-height: 1.313rem
@@ -244,7 +247,7 @@
 				line-height: 1.375rem
 			&:not(:last-child)
 				border-bottom: 0.8px solid #E6E9EF
-		.express-block
+		.express-type
 			position: absolute
 			width: 100%
 			height: 100%
@@ -255,6 +258,8 @@
 			display: none
 			&.active
 				display: flex
+			.express-block
+				width: 100%
 
 	&-share
 

@@ -2,7 +2,7 @@
 
 /* убираем действие по умолчанию для ссылке, если она с иконкой */
 $(document).on('click touch', '.dropdown:not(.header-search)', function () {
-	$(this).toggleClass('is-open');
+	$(this).addClass('is-open');
 });
 $(document).on('click touch', '.dropdown a.link-icon__text', function (event) {
 	event.preventDefault();
@@ -11,7 +11,7 @@ $(document).on('click touch', '.dropdown a.link-icon__text', function (event) {
 $(document).on('click touch', '.header-burger__link', function (event) {
 	event.preventDefault();
 	$(this).parents('.dropdown').toggleClass('is-open');
-}).on('click', function(event){
+}).on('click touch', function(event){
 	var $trigger = $(".dropdown");
 	if($trigger !== event.target && !$trigger.has(event.target).length){
 		//$(".dropdown-block").slideUp("fast");
@@ -33,9 +33,9 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 	}
 
 }).on('click touch', '.dropdown-delivery__item.express', function () {
-	$(this).siblings('.express-block').addClass('active');
+	$(this).siblings('.express-type').addClass('active');
 }).on('click touch', '.express__close', function () {
-	$(this).parents('.express-block').removeClass('active');
+	$(this).parents('.express-type').removeClass('active');
 });
 
 

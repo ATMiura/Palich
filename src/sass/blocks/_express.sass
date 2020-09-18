@@ -46,26 +46,50 @@
 		cursor: pointer
 
 	&.submited
-		.express__change
+		.express__icon,
+		.express__subtitle,
+		.express__form
+			display: none
+		.express__change,
+		.express__address
 			display: block
+
+.dropdown-delivery
+	.express-block .link-icon
+		justify-content: flex-start
+		margin-top: 10px
 
 .submitting
 	position: relative
-	&:after
-		content: ""
-		display: inline-block
-		width: 20px
-		height: 20px
-		margin-left: 20px
-		animation: spinner 2.5s infinite linear
-		border-radius: 50%
-		transform: rotate(360deg)
-		background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1V5' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11 17V21' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.93018 3.93018L6.76018 6.76018' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.2402 15.24L18.0702 18.07' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 11H5' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M17 11H21' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.93018 18.07L6.76018 15.24' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.2402 6.76018L18.0702 3.93018' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
-		background-position: center
-		background-repeat: no-repeat
-		position: absolute
-		right: -30px
-		top: 15px
+	&__loader
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: #fff
+		height: 100%
+		position: relative
+		&:after
+			content: ""
+			display: inline-block
+			width: 20px
+			height: 20px
+			margin-left: 0
+			animation: spinner 2.5s infinite linear
+			border-radius: 50%
+			transform: rotate(360deg)
+			background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1V5' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11 17V21' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.93018 3.93018L6.76018 6.76018' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.2402 15.24L18.0702 18.07' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1 11H5' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M17 11H21' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.93018 18.07L6.76018 15.24' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.2402 6.76018L18.0702 3.93018' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+			background-position: center
+			background-repeat: no-repeat
+			position: absolute
+			left: 0
+			right: 0
+			margin: 0 auto
+
+			font-size: 0
+		.button
+			background-position: center
+			background: none !important
+			background-color: #fff !important
 
 .submited .submitting
 	display: none
