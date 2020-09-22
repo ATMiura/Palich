@@ -11,6 +11,7 @@ import './_parts/_products';
 import './_parts/_express';
 import './_parts/_mobile-el-replace';
 import './_parts/_catalog-list-mobile';
+import './_parts/_mask';
 
 //import './_parts/_formSend';
 import './_parts/_validation';

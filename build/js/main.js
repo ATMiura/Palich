@@ -293,6 +293,19 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./src/js/_parts/_mask.js":
+/*!********************************!*\
+  !*** ./src/js/_parts/_mask.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$('[data-inputmask]').each(function () {
+  $(this).mask("+7 (999) 999-9999");
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_mobile-el-replace.js":
 /*!*********************************************!*\
   !*** ./src/js/_parts/_mobile-el-replace.js ***!
@@ -6488,8 +6501,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
 /* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
+/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_13__);
+
 
 
 
