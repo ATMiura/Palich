@@ -1,7 +1,7 @@
 /* выпадающий список */
 
 /* убираем действие по умолчанию для ссылке, если она с иконкой */
-$(document).on('click touch', '.dropdown:not(.header-search)', function () {
+$(document).on('click touch', '.dropdown:not(.header-search):not(.cart-field__city)', function () {
 	$(this).addClass('is-open');
 });
 $(document).on('click touch', '.dropdown a.link-icon__text', function (event) {
@@ -54,5 +54,10 @@ $(document).on('click', '.dropdown-select__label', function () {
 
 /* выпадашка для поиска */
 $(document).on('keyup', '.header-search .form-search__input', function () {
-	$(this).parents('.header-search').addClass('is-open');
+	$(this).parents('.dropdown').addClass('is-open');
+});
+
+/* выпадашка для изменения города в корзине */
+$(document).on('click', '.cart-field-city__change', function () {
+	$(this).parents('.dropdown').toggleClass('is-open');
 });

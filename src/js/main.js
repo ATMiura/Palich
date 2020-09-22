@@ -1,6 +1,7 @@
 import './vendor';
 
 import './_parts/_header';
+import './_parts/_equalHeight';
 import './_parts/_sliders';
 import './_parts/_object-fit-images';
 import './_parts/_dropdown';

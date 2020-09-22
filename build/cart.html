@@ -1177,27 +1177,29 @@
 												<div class="dropdown-delivery__item__icon"><img class="dropdown-delivery__item__img" src="images/dropdown-delivery-free.svg"></div>
 												<div class="dropdown-delivery__item__text">Бесплатная доставка на следующий день</div>
 											</div>
-											<div class="express-block">
-												<div class="express__close"></div>
-												<div class="express__text">
-													<div class="express__title">Экспресс-доставка за 90 минут!</div>
-													<div class="express__subtitle">Введите адрес - мы покажем, что у нас есть для Вас</div>
+											<div class="express express-type">
+												<div class="express-block">
+													<div class="express__close"></div>
+													<div class="express__text">
+														<div class="express__title">Экспресс-доставка за 90 минут!</div>
+														<div class="express__subtitle">Введите адрес - мы покажем, что у нас есть для Вас</div>
+													</div>
+													<form class="form express__form">
+														<div class="form_row">
+															<div class="form_group">
+																<label class="form_label express__label">
+																	<input class="form_input express__inp" type="text" placeholder="Введите адрес">
+																	<input class="form_input button button__arrow inline express__btn" type="submit" value="">
+																</label>
+															</div>
+														</div>
+														<div class="form_row">
+															<div class="form_group">
+																<div class="link-icon"><a class="link-icon__text" href="">Определить адрес</a></div>
+															</div>
+														</div>
+													</form>
 												</div>
-												<form class="form express__form">
-													<div class="form_row">
-														<div class="form_group">
-															<label class="form_label express__label">
-																<input class="form_input express__inp" type="text" placeholder="Введите адрес">
-																<input class="form_input button button__arrow inline express__btn" type="submit" value="">
-															</label>
-														</div>
-													</div>
-													<div class="form_row">
-														<div class="form_group">
-															<div class="link-icon"><a class="link-icon__text" href="">Определить адрес</a></div>
-														</div>
-													</div>
-												</form>
 											</div>
 										</div>
 									</div>
@@ -1240,10 +1242,10 @@
 								<div class="cart-address__title">Укажите адрес, от этого будет зависеть стоимость и срок доставки</div>
 								<div class="cart-address__form form">
 									<div class="form_row">
-										<div class="form_group cart-field__city">
+										<div class="form_group cart-field__city dropdown">
 											<label class="form_label">
 												<input class="form_input" type="text" placeholder="Москва">
-												<div class="link-icon">
+												<div class="link-icon cart-field-city__change">
 													<div class="link-icon__icon">
 														<svg class="icon icon-pen ">
 															<use xlink:href="images/sprites.svg#pen"></use>
@@ -1251,6 +1253,32 @@
 													</div><a class="link-icon__text" href="#">Изменить город</a>
 												</div>
 											</label>
+											<div class="dropdown-block">
+												<div class="dropdown-block__inner">
+													<div class="dropdown-city">
+														<div class="dropdown__heading">Ваш город</div>
+														<form class="form-search dropdown-form">
+															<div class="form_row dropdown-form-result scroll">
+																<div class="dropdown-form-result__item"><a class="dropdown-form-result__item__link" href="#"> Москва и область</a></div>
+																<div class="dropdown-form-result__item">Курск</div>
+																<div class="dropdown-form-result__item">Санкт-Петербург и область</div>
+																<div class="dropdown-form-result__item">Липецк</div>
+																<div class="dropdown-form-result__item">Белгород</div>
+																<div class="dropdown-form-result__item">Нижний Новгород</div>
+																<div class="dropdown-form-result__item">Великий Новгород</div>
+																<div class="dropdown-form-result__item">Рязань</div>
+																<div class="dropdown-form-result__item">Владимир</div>
+																<div class="dropdown-form-result__item">Тверь</div>
+																<div class="dropdown-form-result__item">Воронеж</div>
+																<div class="dropdown-form-result__item">Тула</div>
+																<div class="dropdown-form-result__item">Иваново</div>
+																<div class="dropdown-form-result__item">Ярославль</div>
+																<div class="dropdown-form-result__item">Калуга</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
 										</div>
 										<div class="form_group cart-field__street">
 											<label class="form_label">
@@ -2135,7 +2163,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1600432667389"></script>
-		<script src="js/main.js?v=1600432667389"></script>
+		<script src="js/vendor.js?v=1600762022064"></script>
+		<script src="js/main.js?v=1600762022064"></script>
 	</body>
 </html>

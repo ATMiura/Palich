@@ -131,6 +131,9 @@
 		font-size: .875rem
 		line-height: 1.125rem
 		color: var(--white)
+		&:hover
+			color: var(--yellow)
+
 
 .footer-contact
 	display: flex
@@ -150,6 +153,12 @@
 			fill: var(--yellow)
 		&:not(:last-child)
 			margin-bottom: 20px
+		&:hover
+			.link-icon__text
+				color: var(--white)
+			svg
+				fill: var(--white)
+
 
 	@media #{$tablet}
 		.form-subscribe
@@ -192,6 +201,8 @@
 		font-size: .875rem
 		line-height: 1.313rem
 		color: var(--yellow)
+		&:hover
+			color: var(--white)
 
 	@media #{$tablet}
 		flex-direction: column
