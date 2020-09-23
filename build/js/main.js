@@ -887,8 +887,8 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
               form.parents('.' + formName).addClass('submited');
               form.parents('.' + formName).find('.express__title').remove();
               form.parents('.' + formName).find('.express__text').html(data.message);
-              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-              //console.log(formCurUrl);
+              form.removeClass('submitting');
+              form.find('.button').unwrap('.submitting__loader'); //console.log(formCurUrl);
 
               if (formCurUrl !== 'catalog') {
                 var baseUrl = window.location.origin;
@@ -899,14 +899,14 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 
             } else if (data.status == 1) {
               // Не можем доставить за 90 минут
-              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+              form.removeClass('submitting');
+              form.find('.button').unwrap('.submitting__loader');
               form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
               form.find('.form_error').text(data.message); //console.log("Когда не можем " + data.message);
             } else if (data.status == 2) {
               // Неверно заполнены данные
-              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+              form.removeClass('submitting');
+              form.find('.button').unwrap('.submitting__loader');
               form.find('.form_error').text(data.message); //console.log("Когда вы троите " + data.message);
             }
           } else if (formName == 'feedback' || formName == 'call') {
