@@ -107,8 +107,7 @@
 	@media #{$laptop-above}
 		&:not(.header-search):not(.header-bar__item):not(.cart-field__city):hover,
 		&.header-search.is-open,
-		&.header-bar__item.is-open,
-		&.cart-field__city.is-open
+		&.header-bar__item.is-open
 			.dropdown-block
 				opacity: 1
 				visibility: visible
@@ -123,6 +122,14 @@
 			&.header-search
 				.dropdown-block
 					transform: translateY(6px)
+
+	&.cart-field__city.is-open
+		.dropdown-block
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+			transition: visibility 0s ease, opacity .2s ease, transform .2s ease, width .2s ease
+			left: 10px
 
 	&-city
 		min-width: 390px
