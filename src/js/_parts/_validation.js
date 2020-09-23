@@ -155,7 +155,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 						}
 					} else if(formName == 'feedback' || formName == 'call') {
 						form.removeClass('submitting');
-						//form.find('.button').unwrap('<div class="submitting__loader"></div>');
+						form.find('.button').unwrap('.submitting__loader');
 
 						form.parents('.modal__inner').find('.modal__head').hide();
 						form.parent().html(data);
@@ -164,7 +164,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 						//console.log("Форма: " + formName);
 					} else if(formName == 'subscription') {
 						form.removeClass('submitting');
-						//form.find('.button').unwrap('<div class="submitting__loader"></div>');
+						form.find('.button').unwrap('.submitting__loader');
 
 						form.parent().append(data);
 

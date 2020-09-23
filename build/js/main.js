@@ -910,14 +910,14 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
               form.find('.form_error').text(data.message); //console.log("Когда вы троите " + data.message);
             }
           } else if (formName == 'feedback' || formName == 'call') {
-            form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+            form.removeClass('submitting');
+            form.find('.button').unwrap('.submitting__loader');
             form.parents('.modal__inner').find('.modal__head').hide();
             form.parent().html(data); //console.log(data);
             //console.log("Форма: " + formName);
           } else if (formName == 'subscription') {
-            form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+            form.removeClass('submitting');
+            form.find('.button').unwrap('.submitting__loader');
             form.parent().append(data);
           } else {
             console.log(data); //console.log("Форма: " + formName);
