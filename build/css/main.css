@@ -5498,7 +5498,8 @@ input::-ms-clear {
             justify-content: center;
     background-color: #fff;
     height: 100%;
-    position: relative; }
+    position: relative;
+    pointer-events: none; }
     .submitting__loader:after {
       content: "";
       display: inline-block;

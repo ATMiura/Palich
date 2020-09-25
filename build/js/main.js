@@ -455,37 +455,51 @@ $(document).on('click touch', '[data-modal-open]', function (event, element) {
     buttons: false
   });
 });
-$(document).on('ready', function () {
-  function thxCallback() {
-    $.fancybox.close();
-    $.fancybox.open({
-      //selector: element,
-      src: '#thx-callback',
-      type: 'inline',
-      touch: false,
-      autoFocus: false,
-      fullScreen: true,
-      baseClass: "modal__custom",
-      infobar: false,
-      buttons: false
-    });
-  }
 
-  function thxPalichEmail() {
-    $.fancybox.close();
-    $.fancybox.open({
-      //selector: element,
-      src: '#thx-palich-email',
-      type: 'inline',
-      touch: false,
-      autoFocus: false,
-      fullScreen: true,
-      baseClass: "modal__custom",
-      infobar: false,
-      buttons: false
-    });
-  }
-});
+function thxCallback() {
+  $.fancybox.close();
+  $.fancybox.open({
+    //selector: element,
+    src: '#thx-callback',
+    type: 'inline',
+    touch: false,
+    autoFocus: false,
+    fullScreen: true,
+    baseClass: "modal__custom",
+    infobar: false,
+    buttons: false
+  });
+}
+
+function thxPalichEmail() {
+  $.fancybox.close();
+  $.fancybox.open({
+    //selector: element,
+    src: '#thx-palich-email',
+    type: 'inline',
+    touch: false,
+    autoFocus: false,
+    fullScreen: true,
+    baseClass: "modal__custom",
+    infobar: false,
+    buttons: false
+  });
+}
+
+function thxOrder() {
+  $.fancybox.close();
+  $.fancybox.open({
+    //selector: element,
+    src: '#thx-order',
+    type: 'inline',
+    touch: false,
+    autoFocus: false,
+    fullScreen: true,
+    baseClass: "modal__custom",
+    infobar: false,
+    buttons: false
+  });
+}
 
 /***/ }),
 
@@ -854,11 +868,12 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
   var formName = form.data('form');
   var formCurUrl = form.data('url');
   var formRedirect = form.data('redirect');
-  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect);
+  var formAction = form.data('action');
+  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect, formAction);
   return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect) {
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction) {
   form.find('.form_error').remove();
   form.addClass('submitting');
   form.find('.button').wrap('<div class="submitting__loader"></div>');
@@ -873,27 +888,32 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
         type: "POST",
         data: formData,
         dataType: 'json',
-        url: form.attr('action'),
+        url: formAction,
         processData: false,
         contentType: false,
         beforeSend: function beforeSend() {// Удаляем блок с ошибками перед отправкой
           //form.find('.form-row--errors').remove();
         },
         success: function success(data) {
-          if (formName == 'express') {
+          if (formName == 'express' || formName == 'cart') {
             if (data.status == 0) {
               // Успешный успех
-              form.parents('.' + formName).attr('class');
-              form.parents('.' + formName).addClass('submited');
-              form.parents('.' + formName).find('.express__title').remove();
-              form.parents('.' + formName).find('.express__text').html(data.message);
               form.removeClass('submitting');
               form.find('.button').unwrap('.submitting__loader'); //console.log(formCurUrl);
 
-              if (formCurUrl !== 'catalog') {
-                var baseUrl = window.location.origin;
-                $(location).prop('href', formRedirect);
-              } else {
+              if (formName == 'express') {
+                form.parents('.' + formName).attr('class');
+                form.parents('.' + formName).addClass('submited');
+                form.parents('.' + formName).find('.express__title').remove();
+                form.parents('.' + formName).find('.express__text').html(data.message);
+
+                if (formCurUrl !== 'catalog') {
+                  var baseUrl = window.location.origin;
+                  $(location).prop('href', formRedirect);
+                } else {
+                  location.reload();
+                }
+              } else if (formName == 'cart') {
                 location.reload();
               } //console.log("Когда успех " + data.message);
 
@@ -901,13 +921,27 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
               // Не можем доставить за 90 минут
               form.removeClass('submitting');
               form.find('.button').unwrap('.submitting__loader');
-              form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
-              form.find('.form_error').text(data.message); //console.log("Когда не можем " + data.message);
+
+              if (formName == 'express') {
+                form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
+                form.find('.form_error').text(data.message);
+              } else if (formName == 'cart') {
+                form.append("<div class='form_group'><span class='form_error'></span></div>");
+                form.find('.form_error').text(data.message);
+              } //console.log("Когда не можем " + data.message);
+
             } else if (data.status == 2) {
               // Неверно заполнены данные
               form.removeClass('submitting');
               form.find('.button').unwrap('.submitting__loader');
-              form.find('.form_error').text(data.message); //console.log("Когда вы троите " + data.message);
+
+              if (formName == 'express') {
+                form.find('.form_error').text(data.message);
+              } else if (formName == 'cart') {
+                form.find('.form_row').append("<div class='form_group'><span class='form_error'></span></div>");
+                form.find('.form_error').text(data.message);
+              } //console.log("Когда вы троите " + data.message);
+
             }
           } else if (formName == 'feedback' || formName == 'call') {
             form.removeClass('submitting');
@@ -919,7 +953,31 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
             form.removeClass('submitting');
             form.find('.button').unwrap('.submitting__loader');
             form.parent().append(data);
+          } else if (formName == 'order') {
+            if (data.status == 0) {
+              //thxOrder();
+              form.removeClass('submitting');
+              form.find('.button').unwrap('.submitting__loader');
+              $.fancybox.close();
+              $.fancybox.open({
+                //selector: element,
+                src: '#thx-order',
+                type: 'inline',
+                touch: false,
+                autoFocus: false,
+                fullScreen: true,
+                baseClass: "modal__custom",
+                infobar: false,
+                buttons: false
+              });
+              $('#thx-order .modal__text').html(data.text);
+              $('.cart-ajax__order').html(data.message);
+            } else {
+              console.log("Чет не то, чинить нужно или нет");
+            }
           } else {
+            form.removeClass('submitting');
+            form.find('.button').unwrap('.submitting__loader');
             console.log(data); //console.log("Форма: " + formName);
           }
         }
@@ -930,18 +988,18 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
     console.log("Valid:" + valid);
 
     if (formName == 'express') {
-      $('[data-form="' + formName + '"] .input--required').each(function () {
+      $('[data-form="express"] .input--required').each(function () {
         var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
 
         if ($this.val() == "") {
-          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+          form.removeClass('submitting');
+          form.find('.button').unwrap('.submitting__loader');
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
           t = false;
         } else if ($.trim($(this).val()).indexOf(",") == -1) {
           //console.log('запятая');
-          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+          form.removeClass('submitting');
+          form.find('.button').unwrap('.submitting__loader');
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'></span>");
           t = false;
         } else {
@@ -953,9 +1011,15 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
         var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
 
         if ($this.val() == "") {
-          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+          form.removeClass('submitting');
+          form.find('.button').unwrap('.submitting__loader');
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
+
+          if ($this.parents('.dropdown-select')) {
+            $this.parents('.dropdown-select').find('.dropdown-select__value').removeClass('invalid');
+            $this.parents('.dropdown-select').find('.dropdown-select__label').addClass('invalid');
+          } else {}
+
           t = false;
         } else {
           $this.removeClass('invalid').siblings('.form_error').removeClass().addClass('form_success');
@@ -970,7 +1034,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
       return true;
     } else {
       $('html, body').animate({
-        scrollTop: $('form .invalid').offset().top - 100
+        scrollTop: $('[data-form="' + formName + '"] .invalid').offset().top - 100
       }, 500);
 
       if (formName == 'express') {
