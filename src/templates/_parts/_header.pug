@@ -232,22 +232,22 @@ header.header
 										.dropdown-delivery__item__icon
 											img(src="images/dropdown-delivery-free.svg").dropdown-delivery__item__img
 										.dropdown-delivery__item__text Бесплатная доставка на следующий день
-
-									.express-block
-										.express__close
-										.express__text
-											.express__title Экспресс-доставка за 90 минут!
-											.express__subtitle Введите адрес - мы покажем, что у нас есть для Вас
-										form.form.express__form
-											.form_row
-												.form_group
-													label.form_label.express__label
-														input.form_input.express__inp(type="text", placeholder="Введите адрес")
-														input.form_input.button.button__arrow.inline.express__btn(type="submit", value="")
-											.form_row
-												.form_group
-													.link-icon
-														a(href="").link-icon__text Определить адрес
+									.express.express-type
+										.express-block
+											.express__close
+											.express__text
+												.express__title Экспресс-доставка за 90 минут!
+												.express__subtitle Введите адрес - мы покажем, что у нас есть для Вас
+											form.form.express__form
+												.form_row
+													.form_group
+														label.form_label.express__label
+															input.form_input.express__inp(type="text", placeholder="Введите адрес")
+															input.form_input.button.button__arrow.inline.express__btn(type="submit", value="")
+												.form_row
+													.form_group
+														.link-icon
+															a(href="").link-icon__text Определить адрес
 
 			.header-cart(data-desktop="cart")
 				.header-cart__counter(data-move="cart")

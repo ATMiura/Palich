@@ -1,16 +1,17 @@
 mixin cart_product(img,title,excerpt,price_normal,price_sale)
-		.cart-product
-			.cart-product__picture
-				a.cart-product__picture--link(href="")
-					img(src="images/cart-product-img-" + img + ".jpg").cart-product__picture--img
-			.cart-product__info
-				.cart-product__sku
-					.cart-product__sku--text Артикул:
-					=" "
-					.cart-product__sku--value DFG154698
-				.cart-product__title=title
-				.cart-product__excerpt=excerpt
-				.cart-product__weight 600 г
+	.cart-product
+		.cart-product__picture
+			a.cart-product__picture--link(href="")
+				img(src="images/cart-product-img-" + img + ".jpg").cart-product__picture--img
+		.cart-product__info
+			.cart-product__sku
+				.cart-product__sku--text Артикул:
+				=" "
+				.cart-product__sku--value DFG154698
+			.cart-product__title=title
+			.cart-product__excerpt=excerpt
+			.cart-product__weight 600 г
+		.cart-product__actions
 			.cart-product__price
 				.cart-product__price--normal=price_normal
 				.cart-product__price--sale=price_sale

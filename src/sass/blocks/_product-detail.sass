@@ -273,31 +273,38 @@
 				display: flex
 				align-items: center
 				justify-content: center
+				.products__item__cart__link__text
+					display: inline-block !important
+				.product-buy-cart__link__text
+					margin-right: 3px
 				&:hover
 					background-color: var(--vinishkotyan)
 					width: auto
 					//transition: .5s
 					.products__item__cart__link__text
-						display: inline-block
 						color: var(--yellow)
 					.icon-product_add_to_cart
 						fill: var(--yellow)
-				.products__item__cart__link__text
+				//.products__item__cart__link__text
 					display: none
 					margin-right: 8px
 					font-size: 0.875rem
 					line-height: 1.125rem
-				.products__item__cart__link__icon
+				.product-buy-cart__link__icon
 					height: 18px
 					.icon-product_add_to_cart
 					.icon-product_in_cart
 						display: none
-			&.in-cart
-				.product-buy-cart__link__text
-					display: inline-block
-					color: var(--yellow)
-				.icon-product_add_to_cart
-					fill: var(--yellow)
+				//&.in-cart,
+				&.active
+					background-color: var(--light-pink)
+					.products__item__cart__link__text
+						display: inline-block
+						color: var(--vinishkotyan)
+					.icon-product_add_to_cart
+						display: none
+					.icon-product_in_cart
+						display: inline-block
 
 	&-share
 		&__icon

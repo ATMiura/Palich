@@ -70,11 +70,11 @@ block content
 								.form_group.cart-delivery__date
 									label.form_label
 										.form_label--text Дата
-										input.form_input(type="text", placeholder="__/__/____")
+										input.form_input(type="text", placeholder="__/__/____", data-inputmask="date", data-mindate="2020-10-29", data-maxdate="2020-11-07")
 								.form_group.cart-delivery__time
 									label.form_label
 										.form_label--text Время
-										input.form_input(type="text", placeholder="9:00 - 11:00")
+										input.form_input(type="text", placeholder="9:00 - 11:00", data-inputmask="time")
 
 					.cart-order
 						.cart-order-sum
@@ -97,7 +97,7 @@ block content
 											input.form_input(type="text", placeholder="E-mail")
 									.form_group
 										label.form_label
-											input.form_input(type="text", placeholder="+7 (xxx) xxx-xx-xx")
+											input.form_input(type="text", placeholder="+7 (xxx) xxx-xx-xx", data-inputmask="phone")
 							.form_col.cart-customer__comment
 								.form_col__inner
 									.form_title Комментарии к заказу

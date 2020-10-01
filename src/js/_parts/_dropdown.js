@@ -34,8 +34,10 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 
 }).on('click touch', '.dropdown-delivery__item.express', function () {
 	$(this).siblings('.express-type').addClass('active');
+	$('.dropdown-delivery__item').hide();
 }).on('click touch', '.express__close', function () {
 	$(this).parents('.express-type').removeClass('active');
+	$('.dropdown-delivery__item').removeAttr("style");
 });
 
 

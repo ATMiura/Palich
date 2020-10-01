@@ -99,44 +99,71 @@ block content
 						+icon('arrow-more')
 			.section-content
 				.products__list
-					.products__item.products__item__size__big
-						.products__item__slider.swiper
-							.swiper-container
-								.swiper-wrapper
-									.swiper-slide.products__item__slide
-										a(href="").products__item__slide__link
-											img(src="images/products__item__slide__img.jpg").products__item__slide__img
-									.swiper-slide.products__item__slide
-										a(href="").products__item__slide__link
-											img(src="images/products__item__slide__img.jpg").products__item__slide__img
-								.swiper-button__wrapper
-									.swiper-button-prev
-									.swiper-button-next
-						.products__item__label__wrap
-							.products__item__label.hit
-								+icon('star')
-								| Хит
-							.products__item__label.new Новинка
-							.products__item__label.vegan Vegan
-							.products__item__label.timer
-								+icon('timer')
-								| 90 минут
-							.products__item__label.no-gmo Без ГМО
-							.products__item__label.no-gluten Без глютена
-							.products__item__label.sale - 25%
-						.products__item__info
-							.products__item__name Торт Антреме Шоколадная симфония
-							.products__item__price__cart
-								.products__item__price
-									.products__item__price__normal 376 ₽
-									.products__item__price__sale 523 ₽
-								.products__item__cart
-									a(href="").products__item__cart__link.button.border_radius
-										.products__item__cart__link__text В корзину
-										.products__item__cart__link__icon
-											+icon('product_add_to_cart')
-											+icon('product_in_cart')
+					.products__item__size__big.swiper
+						.swiper-button__wrapper
+							.swiper-button-prev
+							.swiper-button-next
+						.swiper-container
+							.swiper-wrapper
+								.products__item.swiper-slide
+									.products__item__inner
+										.products__item__img
+											a(href="").products__item__slide__link
+												img(src="images/products__item__slide__img.jpg").products__item__slide__img
+										.products__item__label__wrap
+											.products__item__label.hit
+												+icon('star')
+												| Хит
+											.products__item__label.new Новинка
+											.products__item__label.vegan Vegan
+											.products__item__label.timer
+												+icon('timer')
+												| 90 минут
+											.products__item__label.no-gmo Без ГМО
+											.products__item__label.no-gluten Без глютена
+											.products__item__label.sale - 25%
+										.products__item__info
+											.products__item__name Торт Антреме Шоколадная симфония
+											.products__item__price__cart
+												.products__item__price
+													.products__item__price__normal 376 ₽
+													.products__item__price__sale 523 ₽
+												.products__item__cart
+													a(href="").products__item__cart__link.button.border_radius
+														.products__item__cart__link__text В корзину
+														.products__item__cart__link__icon
+															+icon('product_add_to_cart')
+															+icon('product_in_cart')
 
+								.products__item.swiper-slide
+									.products__item__inner
+										.products__item__img
+											a(href="").products__item__slide__link
+												img(src="images/products__item__slide__img.jpg").products__item__slide__img
+										.products__item__label__wrap
+											.products__item__label.hit
+												+icon('star')
+												| Хит
+											.products__item__label.new Новинка
+											.products__item__label.vegan Vegan
+											.products__item__label.timer
+												+icon('timer')
+												| 90 минут
+											.products__item__label.no-gmo Без ГМО
+											.products__item__label.no-gluten Без глютена
+											.products__item__label.sale - 25%
+										.products__item__info
+											.products__item__name Торт Антреме Шоколадная симфония
+											.products__item__price__cart
+												.products__item__price
+													.products__item__price__normal 376 ₽
+													.products__item__price__sale 523 ₽
+												.products__item__cart
+													a(href="").products__item__cart__link.button.border_radius
+														.products__item__cart__link__text В корзину
+														.products__item__cart__link__icon
+															+icon('product_add_to_cart')
+															+icon('product_in_cart')
 
 					+products__item('products__item__slide__img_1','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,false)
 					+products__item('products__item__slide__img_2','Торт Прага','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',false, false)

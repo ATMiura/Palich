@@ -46,6 +46,7 @@
 		&-modef
 	&-block
 		&__row
+			margin-bottom: 15px
 		&-toggle
 			margin-top: 16px
 			&__link
@@ -69,9 +70,11 @@
 				width: 16px
 				height: 16px
 				background-color: var(--light-pink)
-		&__text
+		&__text,
+		&__text span
 			font-size: 1rem
 			line-height: 1
+			display: inline-block
 
 		.checkbox__input:checked+.checkbox__emulator:before
 			background-color: var(--vinishkotyan)

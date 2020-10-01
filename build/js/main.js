@@ -154,6 +154,68 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/_parts/_calendar.js":
+/*!************************************!*\
+  !*** ./src/js/_parts/_calendar.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var js_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-datepicker */ "./node_modules/js-datepicker/dist/datepicker.min.js");
+/* harmony import */ var js_datepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_datepicker__WEBPACK_IMPORTED_MODULE_0__);
+
+
+window.pickerRemove = function () {
+  var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]');
+  picker.remove();
+};
+
+window.calendarMask = function () {
+  //pickerRemove();
+  var mindate = $('[data-inputmask="date"]').data('mindate');
+  var maxdate = $('[data-inputmask="date"]').data('maxdate');
+  var options = {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric'
+  };
+
+  function getDate(str) {
+    var date = new Date(str);
+    return date.toLocaleString('ru', options);
+  }
+
+  var mindateFormated = getDate(mindate);
+  var maxdateFormated = getDate(maxdate);
+  console.log(mindateFormated, maxdateFormated);
+  var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
+    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    overlayPlaceholder: "Год",
+    overlayButton: "Сохранить",
+    minDate: new Date(mindate),
+    maxDate: new Date(maxdate),
+    formatter: function formatter(input, date, instance) {
+      var value = date.toLocaleDateString();
+      input.value = value; // => '1/1/2099'
+    }
+  });
+  console.log("Calendar done");
+};
+
+$(document).ready(function () {
+  //console.log('ready');
+  calendarMask();
+});
+$(document).ajaxComplete(function () {
+  //console.log('ajaxComplete');
+  calendarMask();
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_catalog-list-mobile.js":
 /*!***********************************************!*\
   !*** ./src/js/_parts/_catalog-list-mobile.js ***!
@@ -165,6 +227,24 @@ $(window).on('load resize', function () {
   if ($(window).width < 768) {
     $();
   }
+});
+
+/***/ }),
+
+/***/ "./src/js/_parts/_cityInInpField.js":
+/*!******************************************!*\
+  !*** ./src/js/_parts/_cityInInpField.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function deliveryInInpField() {
+  var hc = $('.header-city .link-icon__text').text();
+  $('.express__inp').val(hc + ", ");
+}
+
+$(document).ready(function () {
+  deliveryInInpField();
 });
 
 /***/ }),
@@ -209,8 +289,10 @@ $(document).on('click touch', '.header-burger__link', function (event) {
   } else {}
 }).on('click touch', '.dropdown-delivery__item.express', function () {
   $(this).siblings('.express-type').addClass('active');
+  $('.dropdown-delivery__item').hide();
 }).on('click touch', '.express__close', function () {
   $(this).parents('.express-type').removeClass('active');
+  $('.dropdown-delivery__item').removeAttr("style");
 });
 /* выпадаюищй список в корзине */
 
@@ -232,6 +314,27 @@ $(document).on('keyup', '.header-search .form-search__input', function () {
 
 /***/ }),
 
+/***/ "./src/js/_parts/_equalHeight.js":
+/*!***************************************!*\
+  !*** ./src/js/_parts/_equalHeight.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$.fn.equalHeights = function () {
+  var max_height = 0;
+  $(this).each(function () {
+    max_height = Math.max($(this).height(), max_height);
+  });
+  $(this).each(function () {
+    $(this).height(max_height);
+  });
+};
+
+$('.products__item:not(.products__item__size__big).products__item__name').equalHeights();
+
+/***/ }),
+
 /***/ "./src/js/_parts/_express.js":
 /*!***********************************!*\
   !*** ./src/js/_parts/_express.js ***!
@@ -239,7 +342,7 @@ $(document).on('keyup', '.header-search .form-search__input', function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).ready(function () {
+function express__change() {
   $('.express__change').on('click touch', function (event) {
     event.preventDefault();
     var parentBlock = $(this).parents('.express');
@@ -247,7 +350,15 @@ $(document).ready(function () {
     parentBlock.removeClass('submited');
     parentBlock.find('.express__title').text('Экспресс доставка до 90 минут!');
     parentBlock.find('.express__address').text('').hide();
+    parentBlock.removeClass('error');
   });
+}
+
+$(document).ready(function () {
+  express__change();
+});
+$(document).ajaxComplete(function () {
+  express__change();
 });
 
 /***/ }),
@@ -260,10 +371,81 @@ $(document).ready(function () {
 /***/ (function(module, exports) {
 
 /* скрипты для шапки */
-
-/*$(document).on('mouseenter', '.nav-item__link', function () {
-	$(this).siblings('.nav-item__submenu').show();
+var timeout = 0;
+/*$('.nav-item.has-submenu').on({
+	mouseenter: function() {
+		timeout = setTimeout(function() {
+			$(this).addClass('active');
+		}.bind(this), 250);
+	},
+	mouseleave: function() {
+		clearTimeout(timeout);
+		setTimeout(function() {
+			$(this).removeClass('active');
+		}.bind(this), 750);
+	}
 });*/
+
+function subMenu() {
+  var timer,
+      pause = 400;
+  $(".nav-list").on("mouseenter mouseleave", ".nav-item.has-submenu", function (event) {
+    window.clearTimeout(timer);
+    var that = this;
+
+    if (event.type == "mouseenter") {
+      timer = window.setTimeout(function () {
+        that.classList.add("active");
+      }, pause);
+    } else this.classList.remove("active");
+  });
+}
+
+$(document).ready(function () {
+  subMenu();
+});
+$(document).ajaxComplete(function () {
+  subMenu();
+});
+
+/***/ }),
+
+/***/ "./src/js/_parts/_mask.js":
+/*!********************************!*\
+  !*** ./src/js/_parts/_mask.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.maskField = function () {
+  $('[data-inputmask]').each(function () {
+    var $this = $(this),
+        type = $this.attr('data-inputmask');
+
+    if ($this) {
+      switch (type) {
+        case 'phone':
+          $(this).mask("+7 (999) 999-9999");
+          break;
+
+        case 'time':
+          $(this).mask("99:99 - 99:99");
+          break;
+
+        case 'date':
+          //$(this).mask("99/99/9999");
+          break;
+      }
+    }
+  });
+};
+
+$(document).ready(function () {
+  maskField();
+});
+$(document).ajaxComplete(function () {
+  maskField();
+});
 
 /***/ }),
 
@@ -519,241 +701,245 @@ __webpack_require__.r(__webpack_exports__);
 
 /* слайдеры */
 
-$(document).ready(function () {
-  //if($('.js-productSlider .swiper-slide').length <= 1){
-  //	$('.js-productSlider .swiper-pagination').hide();
-  //	$('.js-productSlider .slider-button').hide();
-  //}
-  $('.section-slider').each(function () {
-    //var $hero = $(this),
-    var data_slider_name = $(this).find('.swiper-container').data('slider-name'); //console.log(data_slider_name);
-    //console.log(data_slider_name);
+(function ($) {
+  $(document).ready(function () {
+    //if($('.js-productSlider .swiper-slide').length <= 1){
+    //	$('.js-productSlider .swiper-pagination').hide();
+    //	$('.js-productSlider .slider-button').hide();
+    //}
+    $('.section-slider').each(function () {
+      //var $hero = $(this),
+      var data_slider_name = $(this).find('.swiper-container').data('slider-name'); //console.log(data_slider_name);
+      //console.log(data_slider_name);
 
-    var $slides = $(this).find('[data-slider-name="' + data_slider_name + '"] .swiper-slide');
-    var $slides_no_dublicate = $slides.not('.swiper-slide-duplicate').length; //console.log($slides_no_dublicate);
+      var $slides = $(this).find('[data-slider-name="' + data_slider_name + '"] .swiper-slide');
+      var $slides_no_dublicate = $slides.not('.swiper-slide-duplicate').length; //console.log($slides_no_dublicate);
 
-    var $loop;
-
-    if ($slides_no_dublicate > 1) {
-      $loop = true;
-    } else {
-      $loop = false;
-    }
-
-    if (data_slider_name == "slider-stock") {
-      var heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
-        effect: "slide",
-        speed: 250,
-        slidesPerView: 'auto',
-        spaceBetween: 70,
-        loop: $loop,
-        //loopedSlides: $slides_no_dublicate,
-        autoplay: {
-          delay: 5000
-        },
-        delay: 4000,
-        navigation: {
-          nextEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-next',
-          prevEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-prev'
-        },
-        breakpoints: {
-          992: {
-            spaceBetween: 15
-          }
-        },
-        on: {
-          init: function init() {
-            checkArrow();
-            sliderCheckBreakpoints();
-          },
-          resize: function resize() {
-            checkArrow();
-          }
-        }
-      });
-    } else {
-      var heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
-        effect: "slide",
-        speed: 250,
-        spaceBetween: 70,
-        loop: true,
-        //loopedSlides: $slides_no_dublicate,
-        autoplay: {
-          delay: 5000
-        },
-        delay: 4000,
-        navigation: {
-          nextEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-next',
-          prevEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-prev'
-        },
-        breakpoints: {
-          992: {
-            spaceBetween: 15
-          }
-        },
-        on: {
-          init: function init() {
-            sliderCheckBreakpoints();
-          },
-          resize: function resize() {}
-        }
-      });
-    }
-
-    var $progress = $('[data-slider-name="' + data_slider_name + '"]').parents('.slider').find('.options .progress'),
-        $progressIndex = $progress.find("span.index"),
-        $progressSlides = $progress.find("span.slides"),
-        $progressBar = $progress.find(".progress-bar .back");
-    var slides = $slides.length,
-        progressSlides = slides;
-
-    if (progressSlides < 10) {
-      progressSlides = "0" + progressSlides;
-    }
-
-    $progressSlides.text(progressSlides);
-    heroSwiper.on('slideChange', function () {
-      var progressIndex = heroSwiper.realIndex + 1,
-          progress = heroSwiper.realIndex / (slides - 1) * 100;
-
-      if (progressIndex < 10) {
-        progressIndex = "0" + progressIndex;
-      }
-
-      $progressIndex.text(progressIndex);
-      $progressBar.css("width", progress + "%");
-    });
-
-    function checkArrow() {
-      var swiperPrev = $('[data-slider-name="' + data_slider_name + '"] .swiper-button-prev');
-      var swiperNext = $('[data-slider-name="' + data_slider_name + '"] .swiper-button-next');
+      var $loop;
 
       if ($slides_no_dublicate > 1) {
-        swiperPrev.show();
-        swiperNext.show();
-        $('options').show();
+        $loop = true;
       } else {
-        swiperPrev.hide();
-        swiperNext.hide();
-        $('[data-slider-name="' + data_slider_name + '"] + .options').hide();
+        $loop = false;
       }
-    }
 
-    function sliderCheckBreakpoints() {
-      if ($(window).width() < 992) {
-        //console.log($('[data-slider-name="'+data_slider_name+'"]'));
-        $('[data-slider-name="' + data_slider_name + '"] + .options').appendTo($('[data-slider-name="' + data_slider_name + '"] .swiper-button__wrapper'));
-      } else {}
-    }
-  });
-  /* в списке товаров */
-
-  var products_list_big = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.products__item__slider .swiper-container', {
-    observer: true,
-    observeParents: true,
-    speed: 400,
-    //spaceBetween: 10,
-    loop: true,
-    navigation: {
-      nextEl: '.products__list .swiper-button-next',
-      prevEl: '.products__list .swiper-button-prev'
-    }
-  });
-  /* где еще купить продукци "У Палыча" */
-
-  var slider_web = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-web .swiper-container', {
-    effect: "slide",
-    observer: false,
-    observeParents: false,
-    speed: 400,
-    slidesPerView: 'auto',
-    loopedSlides: 5,
-    spaceBetween: 70,
-    loop: true,
-    navigation: {
-      nextEl: '.slider-web .swiper-button-next',
-      prevEl: '.slider-web .swiper-button-prev'
-    },
-    breakpoints: {
-      992: {
-        spaceBetween: 15
+      if (data_slider_name == "slider-stock") {
+        var heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+          effect: "slide",
+          speed: 250,
+          slidesPerView: 'auto',
+          spaceBetween: 70,
+          loop: $loop,
+          //loopedSlides: $slides_no_dublicate,
+          autoplay: {
+            delay: 5000
+          },
+          delay: 4000,
+          navigation: {
+            nextEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-next',
+            prevEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-prev'
+          },
+          breakpoints: {
+            992: {
+              spaceBetween: 15
+            }
+          },
+          on: {
+            init: function init() {
+              checkArrow();
+              sliderCheckBreakpoints();
+            },
+            resize: function resize() {
+              checkArrow();
+            }
+          }
+        });
+      } else {
+        var heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+          effect: "slide",
+          speed: 250,
+          spaceBetween: 70,
+          loop: true,
+          //loopedSlides: $slides_no_dublicate,
+          autoplay: {
+            delay: 5000
+          },
+          delay: 4000,
+          navigation: {
+            nextEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-next',
+            prevEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-prev'
+          },
+          breakpoints: {
+            992: {
+              spaceBetween: 15
+            }
+          },
+          on: {
+            init: function init() {
+              sliderCheckBreakpoints();
+            },
+            resize: function resize() {}
+          }
+        });
       }
-    },
-    on: {
-      init: function init() {
-        sliderWebArrowsReplace();
+
+      var $progress = $('[data-slider-name="' + data_slider_name + '"]').parents('.slider').find('.options .progress'),
+          $progressIndex = $progress.find("span.index"),
+          $progressSlides = $progress.find("span.slides"),
+          $progressBar = $progress.find(".progress-bar .back");
+      var slides = $slides.length,
+          progressSlides = slides;
+
+      if (progressSlides < 10) {
+        progressSlides = "0" + progressSlides;
       }
-    }
-  });
 
-  function sliderWebArrowsReplace() {
-    if ($(window).width() < 992) {
-      //console.log($('[data-slider-name="'+data_slider_name+'"]'));
-      $('.slider-web .swiper-button.inline').appendTo($('.slider-web .slider'));
-    } else {}
-  }
-  /* галерея в деталке */
+      $progressSlides.text(progressSlides);
+      heroSwiper.on('slideChange', function () {
+        var progressIndex = heroSwiper.realIndex + 1,
+            progress = heroSwiper.realIndex / (slides - 1) * 100;
 
+        if (progressIndex < 10) {
+          progressIndex = "0" + progressIndex;
+        }
 
-  var galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-thumbs', {
-    spaceBetween: 10,
-    slidesPerView: 5,
-    //loop: true,
-    //freeMode: true,
-    loopedSlides: 5 //looped slides should be the same
-    //watchSlidesVisibility: true,
-    //watchSlidesProgress: true,
+        $progressIndex.text(progressIndex);
+        $progressBar.css("width", progress + "%");
+      });
 
-  });
-  var galleryTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-top', {
-    slidesPerView: 1,
-    spaceBetween: 15,
-    loop: true,
-    loopedSlides: 1,
-    //looped slides should be the same
-    navigation: {
-      nextEl: '.product-gallery-top .swiper-button-next',
-      prevEl: '.product-gallery-top .swiper-button-prev'
-    },
-    thumbs: {
-      swiper: galleryThumbs
-    },
-    breakpoints: {
-      992: {//centeredSlides: true,
+      function checkArrow() {
+        var swiperPrev = $('[data-slider-name="' + data_slider_name + '"] .swiper-button-prev');
+        var swiperNext = $('[data-slider-name="' + data_slider_name + '"] .swiper-button-next');
+
+        if ($slides_no_dublicate > 1) {
+          swiperPrev.show();
+          swiperNext.show();
+          $('options').show();
+        } else {
+          swiperPrev.hide();
+          swiperNext.hide();
+          $('[data-slider-name="' + data_slider_name + '"] + .options').hide();
+        }
       }
-    }
-  });
-  /* слайдер товаров */
 
-  $('.section.products-slider').each(function (index, element) {
-    $(this).addClass('products-slider-' + index);
-    var data_slider_name = $(this).find('.swiper-container').data('slider-name');
-    var productsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
-      slidesPerView: 4,
-      spaceBetween: 0,
+      function sliderCheckBreakpoints() {
+        if ($(window).width() < 992) {
+          //console.log($('[data-slider-name="'+data_slider_name+'"]'));
+          $('[data-slider-name="' + data_slider_name + '"] + .options').appendTo($('[data-slider-name="' + data_slider_name + '"] .swiper-button__wrapper'));
+        } else {}
+      }
+    });
+    /* в списке товаров */
+
+    var products_list_big = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.products__item__size__big .swiper-container', {
+      observer: true,
+      observeParents: true,
+      speed: 400,
+      //spaceBetween: 10,
+      loop: true,
       navigation: {
-        nextEl: '.products-slider-' + index + ' .swiper-button-next',
-        prevEl: '.products-slider-' + index + ' .swiper-button-prev'
+        nextEl: '.products__item__size__big .swiper-button-next',
+        prevEl: '.products__item__size__big .swiper-button-prev'
+      }
+    });
+    /* где еще купить продукци "У Палыча" */
+
+    var slider_web = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-web .swiper-container', {
+      effect: "slide",
+      observer: false,
+      observeParents: false,
+      speed: 400,
+      slidesPerView: 'auto',
+      loopedSlides: 5,
+      spaceBetween: 70,
+      loop: true,
+      navigation: {
+        nextEl: '.slider-web .swiper-button-next',
+        prevEl: '.slider-web .swiper-button-prev'
       },
       breakpoints: {
         992: {
-          slidesPerView: 3
-        },
-        768: {
-          slidesPerView: 2
-        },
-        576: {
-          slidesPerView: 1,
-          scrollbar: {
-            el: '.swiper-scrollbar',
-            hide: false
-          },
-          freeMode: true
+          spaceBetween: 15
+        }
+      },
+      on: {
+        init: function init() {
+          sliderWebArrowsReplace();
         }
       }
     });
+
+    function sliderWebArrowsReplace() {
+      if ($(window).width() < 992) {
+        //console.log($('[data-slider-name="'+data_slider_name+'"]'));
+        $('.slider-web .swiper-button.inline').appendTo($('.slider-web .slider'));
+      } else {}
+    }
+    /* галерея в деталке */
+
+
+    var galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 5,
+      //loop: true,
+      //freeMode: true,
+      loopedSlides: 5 //looped slides should be the same
+      //watchSlidesVisibility: true,
+      //watchSlidesProgress: true,
+
+    });
+    var galleryTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-top', {
+      slidesPerView: 1,
+      spaceBetween: 15,
+      loop: true,
+      loopedSlides: 1,
+      //looped slides should be the same
+      navigation: {
+        nextEl: '.product-gallery-top .swiper-button-next',
+        prevEl: '.product-gallery-top .swiper-button-prev'
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      },
+      breakpoints: {
+        992: {//centeredSlides: true,
+        }
+      }
+    });
+    /* слайдер товаров */
+
+    setTimeout(function () {
+      $('.section.products-slider').each(function (index) {
+        $(this).addClass('products-slider-' + index);
+        var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+        var productsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+          slidesPerView: 4,
+          spaceBetween: 0,
+          navigation: {
+            nextEl: '.products-slider-' + index + ' .swiper-button-next',
+            prevEl: '.products-slider-' + index + ' .swiper-button-prev'
+          },
+          breakpoints: {
+            992: {
+              slidesPerView: 3
+            },
+            768: {
+              slidesPerView: 2
+            },
+            576: {
+              slidesPerView: 1,
+              scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: false
+              },
+              freeMode: true
+            }
+          }
+        });
+      });
+    }, 2000);
   });
-});
+})(jQuery);
 
 /***/ }),
 
@@ -798,11 +984,12 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
   var formName = form.data('form');
   var formCurUrl = form.data('url');
   var formRedirect = form.data('redirect');
-  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect);
+  var formAction = form.data('action');
+  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect, formAction);
   return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect) {
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction) {
   form.find('.form_error').remove();
   form.addClass('submitting');
   form.find('.button').wrap('<div class="submitting__loader"></div>');
@@ -817,55 +1004,112 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
         type: "POST",
         data: formData,
         dataType: 'json',
-        url: form.attr('action'),
+        url: formAction,
         processData: false,
         contentType: false,
         beforeSend: function beforeSend() {// Удаляем блок с ошибками перед отправкой
           //form.find('.form-row--errors').remove();
+          //console.log("э вацапе бро " + formName);
         },
         success: function success(data) {
-          if (formName == 'express') {
+          console.log("э вацапе бро " + formName + " status: " + data.status);
+
+          if (formName == 'express' || formName == 'cart') {
             if (data.status == 0) {
               // Успешный успех
-              form.parents('.' + formName).attr('class');
-              form.parents('.' + formName).addClass('submited');
-              form.parents('.' + formName).find('.express__title').remove();
-              form.parents('.' + formName).find('.express__text').html(data.message);
-              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-              //console.log(formCurUrl);
+              form.removeClass('submitting');
+              form.find('.button').unwrap('.submitting__loader'); //console.log(formCurUrl);
 
-              if (formCurUrl !== 'catalog') {
-                var baseUrl = window.location.origin;
-                $(location).prop('href', formRedirect);
-              } else {
+              if (formName == 'express') {
+                form.parents('.' + formName).attr('class');
+                form.parents('.' + formName).addClass('submited');
+                form.parents('.' + formName).find('.express__title').remove();
+                form.parents('.' + formName).find('.express__text').html(data.message);
+
+                if (formCurUrl !== 'catalog') {
+                  var baseUrl = window.location.origin;
+                  $(location).prop('href', formRedirect);
+                } else {
+                  location.reload();
+                }
+              } else if (formName == 'cart') {
                 location.reload();
               } //console.log("Когда успех " + data.message);
 
             } else if (data.status == 1) {
               // Не можем доставить за 90 минут
-              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+              form.removeClass('submitting');
+              form.find('.button').unwrap('.submitting__loader');
 
-              form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
-              form.find('.form_error').text(data.message); //console.log("Когда не можем " + data.message);
+              if (formName == 'express') {
+                form.parents('.' + formName).addClass('error error-time');
+                form.parents('.' + formName).attr('class');
+                form.parents('.' + formName).addClass('submited');
+                form.parents('.' + formName).find('.express__title').remove();
+                form.parents('.' + formName).find('.express__text').html(data.message); //form.find('.form_input').parents('.form_group').append("<span class='form_error'></span>");
+                //form.find('.form_error').text(data.message);
+              } else if (formName == 'cart') {
+                form.append("<div class='form_row'><div class='form_group'><span class='form_error form_message'></span></div></div>");
+                form.find('.form_message').text(data.message);
+              } //console.log("Когда не можем " + data.message);
+
             } else if (data.status == 2) {
               // Неверно заполнены данные
-              form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
+              form.removeClass('submitting');
+              form.find('.button').unwrap('.submitting__loader');
 
-              form.find('.form_error').text(data.message); //console.log("Когда вы троите " + data.message);
+              if (formName == 'express') {
+                form.find('.form_error').text(data.message);
+              } else if (formName == 'cart') {
+                form.find('.form_row').append("<div class='form_group'><span class='form_error'></span></div>");
+                form.find('.form_error').text(data.message);
+              } //console.log("Когда вы троите " + data.message);
+
             }
           } else if (formName == 'feedback' || formName == 'call') {
-            form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+            form.removeClass('submitting');
+            form.find('.button').unwrap('.submitting__loader');
             form.parents('.modal__inner').find('.modal__head').hide();
-            form.parent().html(data); //console.log(data);
+            form.parent().html(data.message); //console.log(data.message);
             //console.log("Форма: " + formName);
+          } else if (formName == 'contacts') {
+            form.removeClass('submitting');
+            form.find('.button').unwrap('.submitting__loader'); //form.parent().append(data);
           } else if (formName == 'subscription') {
-            form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+            form.removeClass('submitting');
+            form.find('.button').unwrap('.submitting__loader');
             form.parent().append(data);
+          } else if (formName == 'order') {
+            if (data.status == 0) {
+              //thxOrder();
+              form.removeClass('submitting');
+              form.find('.button').unwrap('.submitting__loader');
+              $.fancybox.close();
+              $.fancybox.open({
+                //selector: element,
+                src: '#thx-order',
+                type: 'inline',
+                touch: false,
+                autoFocus: false,
+                fullScreen: true,
+                baseClass: "modal__custom",
+                infobar: false,
+                buttons: false
+              });
+              $('#thx-order .modal__text').html(data.text);
+              $('.cart-ajax__order').html(data.message);
+            } else {
+              console.log("Чет не то, чинить нужно или нет");
+            }
           } else {
+            form.removeClass('submitting');
+            form.find('.button').unwrap('.submitting__loader');
             console.log(data); //console.log("Форма: " + formName);
           }
+        },
+        error: function error(data) {
+          console.log("э вацапе бро error " + formName);
+          console.log(data.status);
         }
       });
     };
@@ -874,18 +1118,18 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
     console.log("Valid:" + valid);
 
     if (formName == 'express') {
-      $('[data-form="' + formName + '"] .input--required').each(function () {
+      $('[data-form="express"] .input--required').each(function () {
         var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
 
         if ($this.val() == "") {
-          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+          form.removeClass('submitting');
+          form.find('.button').unwrap('.submitting__loader');
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
           t = false;
         } else if ($.trim($(this).val()).indexOf(",") == -1) {
           //console.log('запятая');
-          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+          form.removeClass('submitting');
+          form.find('.button').unwrap('.submitting__loader');
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'></span>");
           t = false;
         } else {
@@ -897,9 +1141,15 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
         var $this = $(this); //var type = $this.attr('data-input-required') || 'text';
 
         if ($this.val() == "") {
-          form.removeClass('submitting'); //form.find('.button').unwrap('<div class="submitting__loader"></div>');
-
+          form.removeClass('submitting');
+          form.find('.button').unwrap('.submitting__loader');
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'>Обязательное поле</span>");
+
+          if ($this.parents('.dropdown-select')) {
+            $this.parents('.dropdown-select').find('.dropdown-select__value').removeClass('invalid');
+            $this.parents('.dropdown-select').find('.dropdown-select__label').addClass('invalid');
+          } else {}
+
           t = false;
         } else {
           $this.removeClass('invalid').siblings('.form_error').removeClass().addClass('form_success');
@@ -910,16 +1160,19 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
     console.log("Обязательные поля:" + t);
 
     if (t) {
-      $.post("/local/inc/ajax/" + formName + ".php", $('[data-form="' + formName + '"]').serialize(), onAjaxSuccess());
+      $.post( //"/local/inc/ajax/"+formName+".php",
+      $('[data-form="' + formName + '"]').serialize(), onAjaxSuccess());
       return true;
     } else {
       $('html, body').animate({
-        scrollTop: $('form .invalid').offset().top - 100
+        scrollTop: $('[data-form="' + formName + '"] .invalid').offset().top - 100
       }, 500);
 
       if (formName == 'express') {
         onAjaxSuccess();
       }
+
+      console.log('12312');
     }
   } else {
     console.log('Идеальная форма');
@@ -6460,8 +6713,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
 /* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
+/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
+/* harmony import */ var _parts_cityInInpField__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_cityInInpField */ "./src/js/_parts/_cityInInpField.js");
+/* harmony import */ var _parts_cityInInpField__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_parts_cityInInpField__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _parts_equalHeight__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./_parts/_equalHeight */ "./src/js/_parts/_equalHeight.js");
+/* harmony import */ var _parts_equalHeight__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_parts_equalHeight__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_15__);
+
+
+
+
 
 
 

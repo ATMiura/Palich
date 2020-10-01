@@ -179,6 +179,7 @@
 
 	@media #{$tablet}
 		&__item
+			position: initial !important
 			&__link
 				font-size: .875rem
 			&__label
@@ -347,7 +348,7 @@
 			background-color: var(--light-pink)
 			//display: none
 			flex-direction: column
-			min-width: 310px
+			//min-width: 310px
 			position: absolute
 			top: 0
 			height: 100%
@@ -355,13 +356,16 @@
 			padding: 20px
 			opacity: 0
 			visibility: hidden
-			transition: visibility 0s ease .2s, opacity .2s ease, transform .2s ease, width .2s ease
-		&:hover
+			transition: visibility 0s ease .4s, opacity .4s ease, transform .4s ease, width .4s ease
+			width: 0
+		&.has-submenu.active
 			.nav-item__submenu
 				display: flex
 				visibility: visible
 				opacity: 1
-				transition: visibility 0s ease, opacity .2s ease, transform .2s ease, width .2s ease
+				width: 310px
+				transition-delay: 2s
+				transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease
 
 .header-mobile
 	display: flex
@@ -390,6 +394,8 @@
 		//.form-search
 			display: none
 	&__cart
+		.header-cart__price
+			display: none
 
 @media #{$tablet}
 	//.header
