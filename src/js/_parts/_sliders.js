@@ -26,6 +26,7 @@ import Swiper from 'swiper';
 				$loop = false;
 			}
 
+<<<<<<< HEAD
 			if (data_slider_name=="slider-stock"){
 				var heroSwiper = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
 					effect: "slide",
@@ -46,6 +47,33 @@ import Swiper from 'swiper';
 						992: {
 							spaceBetween: 15,
 						}
+=======
+		if (data_slider_name=="slider-stock"){
+			var heroSwiper = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
+				effect: "slide",
+				speed: 500,
+				slidesPerView: 'auto',
+				spaceBetween: 70,
+				loop: $loop,
+				//loopedSlides: $slides_no_dublicate,
+				autoplay: {
+					delay: 5000,
+				},
+				delay: 4000,
+				navigation: {
+					nextEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-next',
+					prevEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-prev'
+				},
+				breakpoints: {
+					992: {
+						spaceBetween: 15,
+					}
+				},
+				on: {
+					init: function() {
+						checkArrow();
+						sliderCheckBreakpoints();
+>>>>>>> 850ae737d02ab9f1726f2f38837613c8f4cc8e88
 					},
 					on: {
 						init: function() {
@@ -60,6 +88,7 @@ import Swiper from 'swiper';
 
 			} else {
 
+<<<<<<< HEAD
 				var heroSwiper = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
 					effect: "slide",
 					speed: 250,
@@ -73,6 +102,30 @@ import Swiper from 'swiper';
 					navigation: {
 						nextEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-next',
 						prevEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-prev'
+=======
+			var heroSwiper = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
+				effect: "slide",
+				speed: 500,
+				spaceBetween: 70,
+				loop: true,
+				//loopedSlides: $slides_no_dublicate,
+				autoplay: {
+					delay: 5000,
+				},
+				delay: 4000,
+				navigation: {
+					nextEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-next',
+					prevEl: '[data-slider-name="'+data_slider_name+'"] .swiper-button-prev'
+				},
+				breakpoints: {
+					992: {
+						spaceBetween: 15,
+					}
+				},
+				on: {
+					init: function() {
+						sliderCheckBreakpoints();
+>>>>>>> 850ae737d02ab9f1726f2f38837613c8f4cc8e88
 					},
 					breakpoints: {
 						992: {
@@ -141,6 +194,7 @@ import Swiper from 'swiper';
 			}
 		});
 
+<<<<<<< HEAD
 
 		/* в списке товаров */
 		var products_list_big = new Swiper('.products__item__size__big .swiper-container', {
@@ -152,6 +206,43 @@ import Swiper from 'swiper';
 			navigation: {
 				nextEl: '.products__item__size__big .swiper-button-next',
 				prevEl: '.products__item__size__big .swiper-button-prev',
+=======
+	/* в списке товаров */
+	var products_list_big = new Swiper('.products__item__slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		speed: 500,
+		//spaceBetween: 10,
+		loop: true,
+		navigation: {
+			nextEl: '.products__list .swiper-button-next',
+			prevEl: '.products__list .swiper-button-prev',
+		},
+	});
+
+	/* где еще купить продукци "У Палыча" */
+	var slider_web = new Swiper('.slider-web .swiper-container', {
+		effect: "slide",
+		observer: false,
+		observeParents: false,
+		speed: 500,
+		slidesPerView: 'auto',
+		loopedSlides: 5,
+		spaceBetween: 70,
+		loop: true,
+		navigation: {
+			nextEl: '.slider-web .swiper-button-next',
+			prevEl: '.slider-web .swiper-button-prev',
+		},
+		breakpoints: {
+			992: {
+				spaceBetween: 15,
+			}
+		},
+		on: {
+			init: function() {
+				sliderWebArrowsReplace();
+>>>>>>> 850ae737d02ab9f1726f2f38837613c8f4cc8e88
 			},
 		});
 

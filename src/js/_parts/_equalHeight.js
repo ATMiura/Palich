@@ -1,4 +1,3 @@
-
 $.fn.equalHeights = function(){
 	var max_height = 0;
 	$(this).each(function(){

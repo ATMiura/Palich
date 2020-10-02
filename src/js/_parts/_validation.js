@@ -131,7 +131,6 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 				},
 				success: function (data) {
 					console.log("э вацапе бро " + formName + " status: "+ data.status);
-
 					if(formName == 'express' || formName == 'cart') {
 						if (data.status == 0) {
 							// Успешный успех
@@ -165,7 +164,6 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 
 							if(formName == 'express'){
 								form.parents('.' + formName).addClass('error error-time');
-
 								form.parents('.' + formName).attr('class');
 								form.parents('.' + formName).addClass('submited');
 								form.parents('.' + formName).find('.express__title').remove();
