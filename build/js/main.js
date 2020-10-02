@@ -154,6 +154,68 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/_parts/_calendar.js":
+/*!************************************!*\
+  !*** ./src/js/_parts/_calendar.js ***!
+  \************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var js_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-datepicker */ "./node_modules/js-datepicker/dist/datepicker.min.js");
+/* harmony import */ var js_datepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_datepicker__WEBPACK_IMPORTED_MODULE_0__);
+
+
+window.pickerRemove = function () {
+  var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]');
+  picker.remove();
+};
+
+window.calendarMask = function () {
+  //pickerRemove();
+  var mindate = $('[data-inputmask="date"]').data('mindate');
+  var maxdate = $('[data-inputmask="date"]').data('maxdate');
+  var options = {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric'
+  };
+
+  function getDate(str) {
+    var date = new Date(str);
+    return date.toLocaleString('ru', options);
+  }
+
+  var mindateFormated = getDate(mindate);
+  var maxdateFormated = getDate(maxdate);
+  console.log(mindateFormated, maxdateFormated);
+  var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
+    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    overlayPlaceholder: "Год",
+    overlayButton: "Сохранить",
+    minDate: new Date(mindate),
+    maxDate: new Date(maxdate),
+    formatter: function formatter(input, date, instance) {
+      var value = date.toLocaleDateString();
+      input.value = value; // => '1/1/2099'
+    }
+  });
+  console.log("Calendar done");
+};
+
+$(document).ready(function () {
+  //console.log('ready');
+  calendarMask();
+});
+$(document).ajaxComplete(function () {
+  //console.log('ajaxComplete');
+  calendarMask();
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_catalog-list-mobile.js":
 /*!***********************************************!*\
   !*** ./src/js/_parts/_catalog-list-mobile.js ***!
@@ -821,9 +883,9 @@ __webpack_require__.r(__webpack_exports__);
     var galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-thumbs', {
       spaceBetween: 10,
       slidesPerView: 5,
-      //loop: true,
+      loop: true,
       //freeMode: true,
-      loopedSlides: 5 //looped slides should be the same
+      loopedSlides: 1 //looped slides should be the same
       //watchSlidesVisibility: true,
       //watchSlidesProgress: true,
 
@@ -839,7 +901,8 @@ __webpack_require__.r(__webpack_exports__);
         prevEl: '.product-gallery-top .swiper-button-prev'
       },
       thumbs: {
-        swiper: galleryThumbs
+        swiper: galleryThumbs,
+        slideThumbActiveClass: 'swiper-slide-thumb-active'
       },
       breakpoints: {
         992: {//centeredSlides: true,
@@ -848,36 +911,34 @@ __webpack_require__.r(__webpack_exports__);
     });
     /* слайдер товаров */
 
-    setTimeout(function () {
-      $('.section.products-slider').each(function (index) {
-        $(this).addClass('products-slider-' + index);
-        var data_slider_name = $(this).find('.swiper-container').data('slider-name');
-        var productsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
-          slidesPerView: 4,
-          spaceBetween: 0,
-          navigation: {
-            nextEl: '.products-slider-' + index + ' .swiper-button-next',
-            prevEl: '.products-slider-' + index + ' .swiper-button-prev'
+    $('.section.products-slider').each(function (index) {
+      $(this).addClass('products-slider-' + index);
+      var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+      var productsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 0,
+        navigation: {
+          nextEl: '.products-slider-' + index + ' .swiper-button-next',
+          prevEl: '.products-slider-' + index + ' .swiper-button-prev'
+        },
+        breakpoints: {
+          992: {
+            slidesPerView: 3
           },
-          breakpoints: {
-            992: {
-              slidesPerView: 3
+          768: {
+            slidesPerView: 2
+          },
+          576: {
+            slidesPerView: 1,
+            scrollbar: {
+              el: '.swiper-scrollbar',
+              hide: false
             },
-            768: {
-              slidesPerView: 2
-            },
-            576: {
-              slidesPerView: 1,
-              scrollbar: {
-                el: '.swiper-scrollbar',
-                hide: false
-              },
-              freeMode: true
-            }
+            freeMode: true
           }
-        });
+        }
       });
-    }, 2000);
+    });
   });
 })(jQuery);
 
@@ -890,34 +951,6 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// $(document).on('click', '.popup input[type="submit"]',function () {
-//     submitFormValidate('Y','true');
-//     form_class = $(this).parents('form').attr('class');
-//     return false;
-// });
-//обратная связь
-
-/*
-$(document).on('submit', ".js-request-call-callback", function () {
-	submitFormValidate('Y','true',"js-request-call-callback");
-	return false;
-});
-//заказать звонок
-$(document).on('submit', ".js-callback-form-call", function () {
-	submitFormValidate('Y','true',"js-callback-form-call");
-	return false;
-});
-//добавить адрес
-$(document).on('submit', ".js-callback-form-city", function () {
-	submitFormValidate('Y','true',"js-callback-form-city");
-	return false;
-});
-//авторизация
-$(document).on('submit', ".js-callback-form-auth", function () {
-	submitFormValidate('Y','true',"js-callback-form-auth");
-	return false;
-});
-*/
 $(document).on('submit', "[data-form-no-ajax]", function () {
   var form = $(this);
   var formData = new FormData(form[0]);
@@ -1018,7 +1051,8 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
           } else if (formName == 'subscription') {
             form.removeClass('submitting');
             form.find('.button').unwrap('.submitting__loader');
-            form.parent().append(data);
+            form.remove('.form_error');
+            form.append("<div class='form_row'><div class='form_group'><div class='form_error'>" + data + "</div></div></div>"); //form.find('.subscribe_inp').append(data);
           } else if (formName == 'order') {
             if (data.status == 0) {
               //thxOrder();
@@ -1088,7 +1122,22 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
           if ($this.parents('.dropdown-select')) {
             $this.parents('.dropdown-select').find('.dropdown-select__value').removeClass('invalid');
             $this.parents('.dropdown-select').find('.dropdown-select__label').addClass('invalid');
-          } else {}
+          } else {} //let email = $(this).val();
+          //if (email.length > 0 && (email.match(/.+?\@.+/g) || []).length !== 1) {
+          //	//console.log('email сука');
+          //	form.find('.form_error').text('email сука');
+          //	//$this.removeClass('invalid').siblings('.form_error').remove();
+          //} else {
+          //	form.find('.form_error').text('а ты хорош');
+          //}
+          //function validateEmail($this) {
+          //	var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+          //	return emailReg.test( $this );
+          //}
+          //if( !validateEmail($this)) {
+          //	form.find('.form_error').text('email сука');
+          //}
+
 
           t = false;
         } else {
@@ -6657,8 +6706,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
 /* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_14__);
 
 
 
@@ -6671,34 +6721,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- //import './_parts/_formSend';
 
- //import './_parts/_page';
-//import './_parts/_aside';
-//import './_parts/_menu';
-//import './_parts/_contact';
-//import './_parts/_contact-show-map';
-//import './_parts/_product';
-//import './_parts/_section';
-//import './_parts/_animate';
-//import './_parts/_modal';
-//import './_parts/_helpers';
-//import './_parts/_catalog';
-//import './_parts/_filter';
-//import './_parts/_2x';
-//import './_parts/_hero';
-//import './_parts/_countdown';
-//import './_parts/_alert';
-//import './_parts/_tab';
-//import './_parts/_mask';
-//import './_parts/_select';
-//import './_parts/_order';
-//import './_parts/_delivery';
-//import './_parts/_checkout';
-//import './_parts/_search';
-//import './_parts/_header-tooltip';
-//import './_parts/_product-day-slider';
-//import './_parts/_city-confirm';
+ //import './_parts/_cityInInpField';
+
+
 
 /***/ }),
 

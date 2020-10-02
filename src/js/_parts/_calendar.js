@@ -51,6 +51,3 @@ $(document).ajaxComplete(function () {
 	//console.log('ajaxComplete');
 	calendarMask();
 });
-
-
-

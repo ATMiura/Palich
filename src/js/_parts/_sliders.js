@@ -193,9 +193,9 @@ import Swiper from 'swiper';
 		var galleryThumbs = new Swiper('.product-gallery-thumbs', {
 			spaceBetween: 10,
 			slidesPerView: 5,
-			//loop: true,
+			loop: true,
 			//freeMode: true,
-			loopedSlides: 5, //looped slides should be the same
+			loopedSlides: 1, //looped slides should be the same
 			//watchSlidesVisibility: true,
 			//watchSlidesProgress: true,
 		});
@@ -211,6 +211,7 @@ import Swiper from 'swiper';
 			},
 			thumbs: {
 				swiper: galleryThumbs,
+				slideThumbActiveClass: 'swiper-slide-thumb-active'
 			},
 			breakpoints: {
 				992: {
@@ -220,38 +221,36 @@ import Swiper from 'swiper';
 		});
 
 		/* слайдер товаров */
-		setTimeout(function () {
-			$('.section.products-slider').each(function (index) {
+		$('.section.products-slider').each(function (index) {
 
-				$(this).addClass('products-slider-'+index);
+			$(this).addClass('products-slider-'+index);
 
-				var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+			var data_slider_name = $(this).find('.swiper-container').data('slider-name');
 
-				var productsSlider = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
-					slidesPerView: 4,
-					spaceBetween: 0,
-					navigation: {
-						nextEl: '.products-slider-'+index+' .swiper-button-next',
-						prevEl: '.products-slider-'+index+' .swiper-button-prev',
+			var productsSlider = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
+				slidesPerView: 4,
+				spaceBetween: 0,
+				navigation: {
+					nextEl: '.products-slider-'+index+' .swiper-button-next',
+					prevEl: '.products-slider-'+index+' .swiper-button-prev',
+				},
+				breakpoints: {
+					992: {
+						slidesPerView: 3,
 					},
-					breakpoints: {
-						992: {
-							slidesPerView: 3,
-						},
-						768: {
-							slidesPerView: 2,
-						},
-						576: {
-							slidesPerView: 1,
-							scrollbar: {
-								el: '.swiper-scrollbar',
-								hide: false,
-							},
-							freeMode: true,
-						}
+					768: {
+						slidesPerView: 2,
 					},
-				});
+					576: {
+						slidesPerView: 1,
+						scrollbar: {
+							el: '.swiper-scrollbar',
+							hide: false,
+						},
+						freeMode: true,
+					}
+				},
 			});
-		},2000)
+		});
 	});
 })(jQuery);

@@ -1,35 +1,3 @@
-// $(document).on('click', '.popup input[type="submit"]',function () {
-
-//     submitFormValidate('Y','true');
-
-//     form_class = $(this).parents('form').attr('class');
-
-//     return false;
-// });
-//обратная связь
-/*
-$(document).on('submit', ".js-request-call-callback", function () {
-	submitFormValidate('Y','true',"js-request-call-callback");
-	return false;
-});
-//заказать звонок
-$(document).on('submit', ".js-callback-form-call", function () {
-	submitFormValidate('Y','true',"js-callback-form-call");
-	return false;
-});
-//добавить адрес
-$(document).on('submit', ".js-callback-form-city", function () {
-	submitFormValidate('Y','true',"js-callback-form-city");
-	return false;
-});
-//авторизация
-$(document).on('submit', ".js-callback-form-auth", function () {
-	submitFormValidate('Y','true',"js-callback-form-auth");
-	return false;
-});
-*/
-
-
 $(document).on('submit', "[data-form-no-ajax]", function () {
 	let form = $(this);
 	let formData = new FormData(form[0]);
@@ -107,6 +75,24 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 							.find('.dropdown-select__label')
 							.addClass('invalid');
 					} else {}
+
+					//let email = $(this).val();
+					//if (email.length > 0 && (email.match(/.+?\@.+/g) || []).length !== 1) {
+					//	//console.log('email сука');
+					//	form.find('.form_error').text('email сука');
+					//	//$this.removeClass('invalid').siblings('.form_error').remove();
+					//} else {
+					//	form.find('.form_error').text('а ты хорош');
+					//}
+
+					//function validateEmail($this) {
+					//	var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+					//	return emailReg.test( $this );
+					//}
+					//if( !validateEmail($this)) {
+					//	form.find('.form_error').text('email сука');
+					//}
+
 					t = false;
 				} else {
 					$this.removeClass('invalid').siblings('.form_error').removeClass().addClass('form_success');
@@ -131,6 +117,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 				},
 				success: function (data) {
 					console.log("э вацапе бро " + formName + " status: "+ data.status);
+
 					if(formName == 'express' || formName == 'cart') {
 						if (data.status == 0) {
 							// Успешный успех
@@ -164,6 +151,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 
 							if(formName == 'express'){
 								form.parents('.' + formName).addClass('error error-time');
+
 								form.parents('.' + formName).attr('class');
 								form.parents('.' + formName).addClass('submited');
 								form.parents('.' + formName).find('.express__title').remove();
@@ -211,7 +199,11 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 						form.removeClass('submitting');
 						form.find('.button').unwrap('.submitting__loader');
 
-						form.parent().append(data);
+						form.remove('.form_error');
+
+						form.append("<div class='form_row'><div class='form_group'><div class='form_error'>"+ data +"</div></div></div>");
+
+						//form.find('.subscribe_inp').append(data);
 
 					} else if(formName == 'order'){
 

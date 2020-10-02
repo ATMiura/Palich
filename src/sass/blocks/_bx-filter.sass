@@ -3,8 +3,28 @@
 	&-section
 	&-parameters
 		&-box
-			margin-bottom: 40px
 			&-row
+				>
+					.bx-filter-parameters-box
+						display: flex
+						flex-wrap: wrap
+						align-items: baseline
+						cursor: pointer
+						&:before
+							content: ""
+							width: 8px
+							height: 5px
+							display: inline-block
+							margin-right: 15px
+							background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.36336 4.70711C7.97283 5.09763 7.33967 5.09763 6.94914 4.70711L4.65625 2.41421L2.36336 4.70711C1.97283 5.09763 1.33967 5.09763 0.949143 4.70711C0.558619 4.31658 0.558619 3.68342 0.949143 3.29289L3.94914 0.292893C4.33967 -0.0976315 4.97283 -0.0976315 5.36336 0.292893L8.36336 3.29289C8.75388 3.68342 8.75388 4.31658 8.36336 4.70711Z' fill='black'/%3E%3C/svg%3E%0A")
+						&.active
+							:before
+								background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.949143 0.292893C1.33967 -0.0976311 1.97283 -0.0976311 2.36336 0.292893L4.65625 2.58579L6.94914 0.292893C7.33967 -0.0976311 7.97283 -0.0976311 8.36336 0.292893C8.75388 0.683417 8.75388 1.31658 8.36336 1.70711L5.36336 4.70711C4.97283 5.09763 4.33967 5.09763 3.94914 4.70711L0.949143 1.70711C0.558619 1.31658 0.558619 0.683417 0.949143 0.292893Z' fill='black'/%3E%3C/svg%3E%0A")
+						.bx-filter-parameters-box
+							display: none
+							margin-bottom: 40px
+							flex-basis: 100%
+
 			&-title
 				font-weight: bold
 				font-size: 1rem
@@ -24,6 +44,9 @@
 					&.bx-left
 					&.bx-right
 						justify-content: flex-end
+	&-filter
+		&-block
+			flex-basis: 100%
 
 	&-input
 		&-container
@@ -46,7 +69,8 @@
 		&-modef
 	&-block
 		&__row
-			margin-bottom: 15px
+			&:not(:last-child)
+				margin-bottom: 15px
 		&-toggle
 			margin-top: 16px
 			&__link

@@ -25,29 +25,3 @@ mixin cart_product(img,title,excerpt,price_normal,price_sale)
 			.cart-product__summ 750 ₽
 			.cart-product__remove
 				+icon('trash')
-		.cart-product
-			.cart-product__picture
-				a.cart-product__picture--link(href="")
-					img(src="images/cart-product-img-" + img + ".jpg").cart-product__picture--img
-			.cart-product__info
-				.cart-product__sku
-					.cart-product__sku--text Артикул:
-					=" "
-					.cart-product__sku--value DFG154698
-				.cart-product__title=title
-				.cart-product__excerpt=excerpt
-				.cart-product__weight 600 г
-			.cart-product__actions
-				.cart-product__price
-					.cart-product__price--normal=price_normal
-					.cart-product__price--sale=price_sale
-				.cart-product__quantity
-					.basket-item-block-amount(data-entity='basket-item-quantity-block')
-						span.count_btn.basket-item-amount-btn-minus(data-entity='basket-item-quantity-minus')
-						.basket-item-amount-filed-block
-							input#basket-item-quantity.basket-item-amount-filed(type='text', value='1', data-value='1', data-entity='basket-item-quantity-field')
-							.basket-item-amount-field-description шт
-						span.count_btn.basket-item-amount-btn-plus(data-entity='basket-item-quantity-plus')
-				.cart-product__summ 750 ₽
-				.cart-product__remove
-					+icon('trash')

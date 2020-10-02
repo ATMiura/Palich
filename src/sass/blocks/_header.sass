@@ -16,6 +16,11 @@
 	@media #{$mobile-xs}
 		margin-bottom: 15px
 
+.header-city
+	.dropdown-block
+		&:after
+			left: 60px
+
 .header-nav
 	margin-right: 5.7%
 	margin-left: auto
@@ -31,6 +36,7 @@
 			font-size: .875rem
 			font-weight: bold
 			line-height: 1.063rem
+			display: inline-flex
 		.dropdown-menu
 			min-width: auto
 
@@ -100,8 +106,13 @@
 .header-burger
 	display: flex
 	align-items: center
-	padding-right: 20px
+	margin-left: -15px
+	margin-right: 10px
 	&__link
+		padding: 10px
+	.dropdown-block
+		&:after
+			left: 25px
 	@media #{$mobile}
 		display: none
 
@@ -126,6 +137,9 @@
 	width: 100%
 	//margin-right: 45px
 	margin-right: auto
+	.dropdown-block
+		&:after
+			left: 40%
 	@media #{$desktop}
 		margin-right: 25px
 		//min-width: 335px
@@ -162,6 +176,9 @@
 		display: flex
 		align-items: center
 		margin-right: 20px
+		.dropdown-block
+			&:after
+				left: 65px
 		&__icon
 			margin-right: 6px
 		&__link
@@ -377,6 +394,9 @@
 	&__block
 		display: flex
 		align-items: center
+		.dropdown-block
+			max-width: 100%
+			left: 0
 	&__burger
 		margin-right: 20px
 		.icon-menu

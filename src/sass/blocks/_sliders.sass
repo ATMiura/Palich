@@ -184,6 +184,8 @@
 			flex-wrap: wrap
 			justify-content: space-between
 			width: 86px
+		&-disabled
+			display: none
 		&-next,
 		&-prev
 			width: 47px
@@ -443,3 +445,9 @@
 				background-image: url("data:image/svg+xml,%3Csvg width='19' height='10' viewBox='0 0 19 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.2322 0.3019C12.6178 -0.0935356 13.2509 -0.10155 13.6463 0.284L17.7489 4.284C17.9419 4.47221 18.0508 4.7304 18.0508 5C18.0508 5.26961 17.9419 5.52779 17.7489 5.716L13.6463 9.716C13.2509 10.1016 12.6178 10.0935 12.2322 9.6981C11.8467 9.30267 11.8547 8.66955 12.2501 8.284L14.5927 6H1.05078C0.498496 6 0.0507812 5.55229 0.0507812 5C0.0507812 4.44772 0.498496 4 1.05078 4H14.5927L12.2501 1.716C11.8547 1.33045 11.8467 0.697336 12.2322 0.3019Z' fill='%23A70230' /%3E%3C/svg%3E%0A")
 				color: var(--vinishkotyan)
 				height: auto
+
+.product-gallery
+	&-top
+	&-thumbs
+		.swiper-slide-thumb-active
+			opacity: .5
