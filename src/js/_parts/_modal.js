@@ -33,34 +33,47 @@ $(document).on('click touch', '[data-modal-open]', function(event, element) {
 	});
 });
 
-$(document).on('ready', function () {
-	function thxCallback(){
-		$.fancybox.close();
-		$.fancybox.open( {
-			//selector: element,
-			src: '#thx-callback',
-			type : 'inline',
-			touch: false,
-			autoFocus: false,
-			fullScreen: true,
-			baseClass: "modal__custom",
-			infobar: false,
-			buttons: false,
-		});
-	}
+function thxCallback(){
+	$.fancybox.close();
+	$.fancybox.open( {
+		//selector: element,
+		src: '#thx-callback',
+		type : 'inline',
+		touch: false,
+		autoFocus: false,
+		fullScreen: true,
+		baseClass: "modal__custom",
+		infobar: false,
+		buttons: false,
+	});
+}
 
-	function thxPalichEmail(){
-		$.fancybox.close();
-		$.fancybox.open( {
-			//selector: element,
-			src: '#thx-palich-email',
-			type : 'inline',
-			touch: false,
-			autoFocus: false,
-			fullScreen: true,
-			baseClass: "modal__custom",
-			infobar: false,
-			buttons: false,
-		});
-	}
-});
+function thxPalichEmail(){
+	$.fancybox.close();
+	$.fancybox.open( {
+		//selector: element,
+		src: '#thx-palich-email',
+		type : 'inline',
+		touch: false,
+		autoFocus: false,
+		fullScreen: true,
+		baseClass: "modal__custom",
+		infobar: false,
+		buttons: false,
+	});
+}
+
+function thxOrder(){
+	$.fancybox.close();
+	$.fancybox.open( {
+		//selector: element,
+		src: '#thx-order',
+		type : 'inline',
+		touch: false,
+		autoFocus: false,
+		fullScreen: true,
+		baseClass: "modal__custom",
+		infobar: false,
+		buttons: false,
+	});
+}

@@ -24,13 +24,35 @@ block content
 						.cart-address__title Укажите адрес, от этого будет зависеть стоимость и срок доставки
 						.cart-address__form.form
 							.form_row
-								.form_group.cart-field__city
+								.form_group.cart-field__city.dropdown
 									label.form_label
 										input.form_input(type="text", placeholder="Москва")
-										.link-icon
+										.link-icon.cart-field-city__change
 											.link-icon__icon
 												+icon('pen')
 											a.link-icon__text(href="#") Изменить город
+									.dropdown-block
+										.dropdown-block__inner
+											.dropdown-city
+												.dropdown__heading Ваш город
+												form.form-search.dropdown-form
+													.form_row.dropdown-form-result.scroll
+														.dropdown-form-result__item
+															a(href="#").dropdown-form-result__item__link  Москва и область
+														.dropdown-form-result__item Курск
+														.dropdown-form-result__item Санкт-Петербург и область
+														.dropdown-form-result__item Липецк
+														.dropdown-form-result__item Белгород
+														.dropdown-form-result__item Нижний Новгород
+														.dropdown-form-result__item Великий Новгород
+														.dropdown-form-result__item Рязань
+														.dropdown-form-result__item Владимир
+														.dropdown-form-result__item Тверь
+														.dropdown-form-result__item Воронеж
+														.dropdown-form-result__item Тула
+														.dropdown-form-result__item Иваново
+														.dropdown-form-result__item Ярославль
+														.dropdown-form-result__item Калуга
 								.form_group.cart-field__street
 									label.form_label
 										input.form_input(type="text", placeholder="Улица, дом")
@@ -70,7 +92,11 @@ block content
 								.form_group.cart-delivery__date
 									label.form_label
 										.form_label--text Дата
+<<<<<<< HEAD
 										input.form_input(type="text", placeholder="__/__/____", data-inputmask="date", data-mindate="2020-10-29", data-maxdate="2020-11-07")
+=======
+										input.form_input(type="date", placeholder="__/__/____", data-inputmask="date")
+>>>>>>> 850ae737d02ab9f1726f2f38837613c8f4cc8e88
 								.form_group.cart-delivery__time
 									label.form_label
 										.form_label--text Время
