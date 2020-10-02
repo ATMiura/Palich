@@ -399,7 +399,8 @@ $(window).on('load resize', function () {
         $(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
         $(this).prependTo('[data-mobile-menu="' + dataMoveAttr + '"]');
       });
-    }, 100); //console.log('переставил на мобилку');
+    }, 100);
+    console.log('переставил на мобилку');
   } else if ($(window).width() > 767) {
     $('[data-move]').each(function (element) {
       var dataMoveAttr = $(this).data('move');
@@ -632,9 +633,253 @@ $(document).on('click touch', '[data-shops-nav]', function () {
   !*** ./src/js/_parts/_sliders.js ***!
   \***********************************/
 /*! no exports provided */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Projects\\Frontend\\Palich\\src\\js\\_parts\\_sliders.js: Unexpected token (29:0)\n\n\u001b[0m \u001b[90m 27 | \u001b[39m\t\t\t}\u001b[0m\n\u001b[0m \u001b[90m 28 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 30 | \u001b[39m\t\t\t\u001b[36mif\u001b[39m (data_slider_name\u001b[33m==\u001b[39m\u001b[32m\"slider-stock\"\u001b[39m){\u001b[0m\n\u001b[0m \u001b[90m 31 | \u001b[39m\t\t\t\t\u001b[36mvar\u001b[39m heroSwiper \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mSwiper\u001b[39m(\u001b[32m'[data-slider-name=\"'\u001b[39m\u001b[33m+\u001b[39mdata_slider_name\u001b[33m+\u001b[39m\u001b[32m'\"].swiper-container'\u001b[39m\u001b[33m,\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 32 | \u001b[39m\t\t\t\t\teffect\u001b[33m:\u001b[39m \u001b[32m\"slide\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n    at Parser._raise (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:746:17)\n    at Parser.raiseWithData (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:739:17)\n    at Parser.raise (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:733:17)\n    at Parser.unexpected (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:8807:16)\n    at Parser.parseExprAtom (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:10130:20)\n    at Parser.parseExprSubscripts (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:9656:23)\n    at Parser.parseMaybeUnary (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:9636:21)\n    at Parser.parseExprOps (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:9506:23)\n    at Parser.parseMaybeConditional (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:9479:23)\n    at Parser.parseMaybeAssign (D:\\Projects\\Frontend\\Palich\\node_modules\\@babel\\parser\\lib\\index.js:9434:21)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/dist/js/swiper.esm.bundle.js");
+
+/* слайдеры */
+
+(function ($) {
+  $(document).ready(function () {
+    //if($('.js-productSlider .swiper-slide').length <= 1){
+    //	$('.js-productSlider .swiper-pagination').hide();
+    //	$('.js-productSlider .slider-button').hide();
+    //}
+    $('.section-slider').each(function () {
+      //var $hero = $(this),
+      var data_slider_name = $(this).find('.swiper-container').data('slider-name'); //console.log(data_slider_name);
+      //console.log(data_slider_name);
+
+      var $slides = $(this).find('[data-slider-name="' + data_slider_name + '"] .swiper-slide');
+      var $slides_no_dublicate = $slides.not('.swiper-slide-duplicate').length; //console.log($slides_no_dublicate);
+
+      var $loop;
+
+      if ($slides_no_dublicate > 1) {
+        $loop = true;
+      } else {
+        $loop = false;
+      }
+
+      if (data_slider_name == "slider-stock") {
+        var heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+          effect: "slide",
+          speed: 250,
+          slidesPerView: 'auto',
+          spaceBetween: 70,
+          loop: $loop,
+          //loopedSlides: $slides_no_dublicate,
+          autoplay: {
+            delay: 5000
+          },
+          delay: 4000,
+          navigation: {
+            nextEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-next',
+            prevEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-prev'
+          },
+          breakpoints: {
+            992: {
+              spaceBetween: 15
+            }
+          },
+          on: {
+            init: function init() {
+              checkArrow();
+              sliderCheckBreakpoints();
+            },
+            resize: function resize() {
+              checkArrow();
+            }
+          }
+        });
+      } else {
+        var heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+          effect: "slide",
+          speed: 250,
+          spaceBetween: 70,
+          loop: true,
+          //loopedSlides: $slides_no_dublicate,
+          autoplay: {
+            delay: 5000
+          },
+          delay: 4000,
+          navigation: {
+            nextEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-next',
+            prevEl: '[data-slider-name="' + data_slider_name + '"] .swiper-button-prev'
+          },
+          breakpoints: {
+            992: {
+              spaceBetween: 15
+            }
+          },
+          on: {
+            init: function init() {
+              sliderCheckBreakpoints();
+            },
+            resize: function resize() {}
+          }
+        });
+      }
+
+      var $progress = $('[data-slider-name="' + data_slider_name + '"]').parents('.slider').find('.options .progress'),
+          $progressIndex = $progress.find("span.index"),
+          $progressSlides = $progress.find("span.slides"),
+          $progressBar = $progress.find(".progress-bar .back");
+      var slides = $slides.length,
+          progressSlides = slides;
+
+      if (progressSlides < 10) {
+        progressSlides = "0" + progressSlides;
+      }
+
+      $progressSlides.text(progressSlides);
+      heroSwiper.on('slideChange', function () {
+        var progressIndex = heroSwiper.realIndex + 1,
+            progress = heroSwiper.realIndex / (slides - 1) * 100;
+
+        if (progressIndex < 10) {
+          progressIndex = "0" + progressIndex;
+        }
+
+        $progressIndex.text(progressIndex);
+        $progressBar.css("width", progress + "%");
+      });
+
+      function checkArrow() {
+        var swiperPrev = $('[data-slider-name="' + data_slider_name + '"] .swiper-button-prev');
+        var swiperNext = $('[data-slider-name="' + data_slider_name + '"] .swiper-button-next');
+
+        if ($slides_no_dublicate > 1) {
+          swiperPrev.show();
+          swiperNext.show();
+          $('options').show();
+        } else {
+          swiperPrev.hide();
+          swiperNext.hide();
+          $('[data-slider-name="' + data_slider_name + '"] + .options').hide();
+        }
+      }
+
+      function sliderCheckBreakpoints() {
+        if ($(window).width() < 992) {
+          //console.log($('[data-slider-name="'+data_slider_name+'"]'));
+          $('[data-slider-name="' + data_slider_name + '"] + .options').appendTo($('[data-slider-name="' + data_slider_name + '"] .swiper-button__wrapper'));
+        } else {}
+      }
+    });
+    /* в списке товаров */
+
+    var products_list_big = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.products__item__size__big .swiper-container', {
+      observer: true,
+      observeParents: true,
+      speed: 400,
+      //spaceBetween: 10,
+      loop: true,
+      navigation: {
+        nextEl: '.products__item__size__big .swiper-button-next',
+        prevEl: '.products__item__size__big .swiper-button-prev'
+      }
+    });
+    /* где еще купить продукци "У Палыча" */
+
+    var slider_web = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-web .swiper-container', {
+      effect: "slide",
+      observer: false,
+      observeParents: false,
+      speed: 400,
+      slidesPerView: 'auto',
+      loopedSlides: 5,
+      spaceBetween: 70,
+      loop: true,
+      navigation: {
+        nextEl: '.slider-web .swiper-button-next',
+        prevEl: '.slider-web .swiper-button-prev'
+      },
+      breakpoints: {
+        992: {
+          spaceBetween: 15
+        }
+      },
+      on: {
+        init: function init() {
+          sliderWebArrowsReplace();
+        }
+      }
+    });
+
+    function sliderWebArrowsReplace() {
+      if ($(window).width() < 992) {
+        //console.log($('[data-slider-name="'+data_slider_name+'"]'));
+        $('.slider-web .swiper-button.inline').appendTo($('.slider-web .slider'));
+      } else {}
+    }
+    /* галерея в деталке */
+
+
+    var galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 5,
+      //loop: true,
+      //freeMode: true,
+      loopedSlides: 5 //looped slides should be the same
+      //watchSlidesVisibility: true,
+      //watchSlidesProgress: true,
+
+    });
+    var galleryTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-top', {
+      slidesPerView: 1,
+      spaceBetween: 15,
+      loop: true,
+      loopedSlides: 1,
+      //looped slides should be the same
+      navigation: {
+        nextEl: '.product-gallery-top .swiper-button-next',
+        prevEl: '.product-gallery-top .swiper-button-prev'
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      },
+      breakpoints: {
+        992: {//centeredSlides: true,
+        }
+      }
+    });
+    /* слайдер товаров */
+
+    setTimeout(function () {
+      $('.section.products-slider').each(function (index) {
+        $(this).addClass('products-slider-' + index);
+        var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+        var productsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+          slidesPerView: 4,
+          spaceBetween: 0,
+          navigation: {
+            nextEl: '.products-slider-' + index + ' .swiper-button-next',
+            prevEl: '.products-slider-' + index + ' .swiper-button-prev'
+          },
+          breakpoints: {
+            992: {
+              slidesPerView: 3
+            },
+            768: {
+              slidesPerView: 2
+            },
+            576: {
+              slidesPerView: 1,
+              scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: false
+              },
+              freeMode: true
+            }
+          }
+        });
+      });
+    }, 2000);
+  });
+})(jQuery);
 
 /***/ }),
 

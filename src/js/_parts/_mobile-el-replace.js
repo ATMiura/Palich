@@ -22,7 +22,7 @@ $(window).on('load resize', function () {
 			});
 		},100);
 
-		//console.log('переставил на мобилку');
+		console.log('переставил на мобилку');
 
 	} else if($(window).width() > 767){
 		$('[data-move]').each(function (element) {
