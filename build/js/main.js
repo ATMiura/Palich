@@ -154,6 +154,34 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/_parts/_bx-filter.js":
+/*!*************************************!*\
+  !*** ./src/js/_parts/_bx-filter.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function bxFilterOpen() {
+  $(document).on('click', '.bx-filter-parameters-box', function () {
+    $(this).toggleClass('active');
+    console.log('active');
+  });
+}
+
+$(document).ready(function () {
+  $('.bx-filter-parameters-box-row > .bx-filter-parameters-box').addClass(function (index) {
+    return index < 3 ? 'bx-active' : '';
+  });
+  $('.bx-filter-parameters-box-row > .bx-filter-parameters-box').each(function (index) {
+    if (index <= 3) {
+      $(this).find('[data-role="bx_filter_block"]').slideDown();
+    }
+  });
+}); //$(document).ready(bxFilterOpen());
+//$(document).ajaxComplete(bxFilterOpen());
+
+/***/ }),
+
 /***/ "./src/js/_parts/_calendar.js":
 /*!************************************!*\
   !*** ./src/js/_parts/_calendar.js ***!
@@ -212,6 +240,23 @@ $(document).ready(function () {
 $(document).ajaxComplete(function () {
   //console.log('ajaxComplete');
   calendarMask();
+});
+
+/***/ }),
+
+/***/ "./src/js/_parts/_cart.js":
+/*!********************************!*\
+  !*** ./src/js/_parts/_cart.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$('.dropdown-select__search').on('keyup', function () {
+  var valThis = $(this).val();
+  $(this).parents('.dropdown-select__list').find('li').each(function () {
+    var text = $(this).text();
+    text.toLowerCase().indexOf(valThis.toLowerCase()) > -1 ? $(this).show() : $(this).hide();
+  });
 });
 
 /***/ }),
@@ -318,7 +363,18 @@ $.fn.equalHeights = function () {
   });
 };
 
-$('.products__item:not(.products__item__size__big).products__item__name').equalHeights();
+$.fn.equalWidth = function () {
+  var max_width = 0;
+  $(this).each(function () {
+    max_width = Math.max($(this).width(), max_width);
+  });
+  $(this).each(function () {
+    $(this).width(max_width);
+  });
+};
+
+$('.products__item:not(.products__item__size__big).products__item__name').equalHeights(); //$('.nav-item__icon svg').equalWidth();
+//$('.nav-item__icon svg').equalHeights();
 
 /***/ }),
 
@@ -451,6 +507,8 @@ $(window).on('load resize', function () {
     } else {
       $('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
     }
+    /* блок каталога в мобилке */
+
 
     $('[data-mobile-menu="catalog-links"] .nav-list').removeAttr('data-move');
     $('[data-mobile-menu="catalog-links"] .nav-list .nav-item__submenu').remove();
@@ -461,13 +519,22 @@ $(window).on('load resize', function () {
         $(this).siblings('.dropdown-block').appendTo('[data-mobile-menu="' + dataMoveAttr + '"]');
         $(this).prependTo('[data-mobile-menu="' + dataMoveAttr + '"]');
       });
-    }, 100);
+    }, 100); //$('.nav-item__submenu').addClass('prevented');
+
+    $(document).on('click', '.nav-item__link', function (event) {
+      event.preventDefault();
+    });
     console.log('переставил на мобилку');
   } else if ($(window).width() > 767) {
     $('[data-move]').each(function (element) {
       var dataMoveAttr = $(this).data('move');
       $(this).siblings('.dropdown-block').appendTo('[data-desktop="' + dataMoveAttr + '"]');
       $(this).prependTo('[data-desktop="' + dataMoveAttr + '"]');
+    }); //$('.nav-item__submenu').removeClass('prevented');
+
+    $(document).on('click', '.prevented .nav-item__link', function (event) {
+      $(this).unbind('click');
+      return true;
     }); //console.log('переставил на пк');
   }
   /* перестановка блоков в деталке */
@@ -705,10 +772,39 @@ __webpack_require__.r(__webpack_exports__);
 
 (function ($) {
   $(document).ready(function () {
-    //if($('.js-productSlider .swiper-slide').length <= 1){
+    /* слайдер товаров */
+    $('.section.products-slider').each(function (index) {
+      $(this).addClass('products-slider-' + index);
+      var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+      var productsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 0,
+        navigation: {
+          nextEl: '.products-slider-' + index + ' .swiper-button-next',
+          prevEl: '.products-slider-' + index + ' .swiper-button-prev'
+        },
+        breakpoints: {
+          992: {
+            slidesPerView: 3
+          },
+          768: {
+            slidesPerView: 2
+          },
+          576: {
+            slidesPerView: 1,
+            scrollbar: {
+              el: '.swiper-scrollbar',
+              hide: false
+            },
+            freeMode: true
+          }
+        }
+      });
+    }); //if($('.js-productSlider .swiper-slide').length <= 1){
     //	$('.js-productSlider .swiper-pagination').hide();
     //	$('.js-productSlider .slider-button').hide();
     //}
+
     $('.section-slider').each(function () {
       //var $hero = $(this),
       var data_slider_name = $(this).find('.swiper-container').data('slider-name'); //console.log(data_slider_name);
@@ -908,36 +1004,6 @@ __webpack_require__.r(__webpack_exports__);
         992: {//centeredSlides: true,
         }
       }
-    });
-    /* слайдер товаров */
-
-    $('.section.products-slider').each(function (index) {
-      $(this).addClass('products-slider-' + index);
-      var data_slider_name = $(this).find('.swiper-container').data('slider-name');
-      var productsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('[data-slider-name="' + data_slider_name + '"].swiper-container', {
-        slidesPerView: 4,
-        spaceBetween: 0,
-        navigation: {
-          nextEl: '.products-slider-' + index + ' .swiper-button-next',
-          prevEl: '.products-slider-' + index + ' .swiper-button-prev'
-        },
-        breakpoints: {
-          992: {
-            slidesPerView: 3
-          },
-          768: {
-            slidesPerView: 2
-          },
-          576: {
-            slidesPerView: 1,
-            scrollbar: {
-              el: '.swiper-scrollbar',
-              hide: false
-            },
-            freeMode: true
-          }
-        }
-      });
     });
   });
 })(jQuery);
@@ -6707,8 +6773,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
 /* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./_parts/_bx-filter */ "./src/js/_parts/_bx-filter.js");
+/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_parts_bx_filter__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./_parts/_cart */ "./src/js/_parts/_cart.js");
+/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_parts_cart__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_16__);
+
+
 
 
 

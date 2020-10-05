@@ -98,7 +98,9 @@
 	display: flex
 	flex-direction: column
 	&:not(:last-child)
-		margin-right: 105px
+		//margin-right: 105px
+		margin-right: 55px
+		min-width: max-content
 		@media #{$laptop}
 			margin-right: 50px
 		@media #{$tablet}
@@ -107,14 +109,19 @@
 			margin-right: 0
 			margin-bottom: 30px
 
+	&:not(:first-child)
+		.footer-nav__list
+			column-count: 2
+
 	&__list
-		display: flex
-		flex-direction: column
-		flex-wrap: wrap
-		height: 320px
+		//display: flex
+		//flex-direction: column
+		//flex-wrap: wrap
+		//height: 320px
 		@media #{$tablet}
 			height: auto
 			flex-direction: row
+			column-count: initial
 	&__item
 		&:not(:last-child)
 			margin-bottom: 15px
@@ -125,6 +132,7 @@
 	&[data-footer-menu="catalog"]
 		.footer-nav__item
 			margin-right: 45px
+			width: 100%
 			@media #{$tablet}
 				margin-right: 15px
 	&__link

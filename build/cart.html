@@ -960,8 +960,8 @@
 																				</li>
 																				<li class="nav-item has-submenu"><a class="nav-item__link" href="#">
 																						<div class="nav-item__icon">
-																							<svg class="icon icon-submenu-icon-pizza ">
-																								<use xlink:href="images/sprites.svg#submenu-icon-pizza"></use>
+																							<svg class="icon icon-submenu-icon-coffee ">
+																								<use xlink:href="images/sprites.svg#submenu-icon-coffee"></use>
 																							</svg>
 																						</div>
 																						<div class="nav-item__label">Пицца</div></a>
@@ -1452,7 +1452,21 @@
 										<div class="form_group cart-delivery__shops">
 											<label class="form_label">
 												<div class="form_label--text">Магазины</div>
-												<input class="form_input" type="text" placeholder="Выбрать">
+												<div class="dropdown-select" data-dropdown="select">
+													<input class="dropdown-select__value" type="hidden" value="">
+													<div class="dropdown-select__label">
+														<div class="dropdown-select__label__text">Самовывоз</div>
+													</div>
+													<ul class="dropdown-select__list">
+														<div class="form_group">
+															<input class="form_input dropdown-select__search" id="dropdown_city_search" type="text" placeholder="Введите магазин">
+														</div>
+														<li class="dropdown-select__item active" data-value="Краснодар">Краснодар</li>
+														<li class="dropdown-select__item" data-value="Москва">Москва</li>
+														<li class="dropdown-select__item" data-value="Питер">Питер</li>
+														<li class="dropdown-select__item" data-value="Ростов">Ростов</li>
+													</ul>
+												</div>
 											</label>
 										</div>
 										<div class="form_group cart-delivery__date">
@@ -2171,7 +2185,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1601641359033"></script>
-		<script src="js/main.js?v=1601641359033"></script>
+		<script src="js/vendor.js?v=1601907437381"></script>
+		<script src="js/main.js?v=1601907437381"></script>
 	</body>
 </html>

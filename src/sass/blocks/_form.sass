@@ -82,6 +82,14 @@
 		a
 			color: var(--yellow)
 			text-decoration: underline
+	&__label.disabled
+		pointer-events: none
+		.checkbox__emulator
+			cursor: auto
+			&:before
+				background-color: #A6A6A6
+		.checkbox__text
+			color: #A6A6A6
 
 
 
