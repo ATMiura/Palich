@@ -25,9 +25,9 @@ $(window).on('load resize', function () {
 
 		//$('.nav-item__submenu').addClass('prevented');
 
-		$(document).on('click', '.nav-item__link', function (event) {
-			event.preventDefault();
-		});
+		//$(document).on('click', '.nav-item__link', function (event) {
+		//	event.preventDefault();
+		//});
 
 		console.log('переставил на мобилку');
 
@@ -39,10 +39,10 @@ $(window).on('load resize', function () {
 		});
 
 		//$('.nav-item__submenu').removeClass('prevented');
-		$(document).on('click', '.prevented .nav-item__link', function (event) {
-			$(this).unbind('click');
-			return true;
-		});
+		//$(document).on('click', '.prevented .nav-item__link', function (event) {
+		//	$(this).unbind('click');
+		//	return true;
+		//});
 
 		//console.log('переставил на пк');
 	}

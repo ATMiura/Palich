@@ -520,10 +520,10 @@ $(window).on('load resize', function () {
         $(this).prependTo('[data-mobile-menu="' + dataMoveAttr + '"]');
       });
     }, 100); //$('.nav-item__submenu').addClass('prevented');
+    //$(document).on('click', '.nav-item__link', function (event) {
+    //	event.preventDefault();
+    //});
 
-    $(document).on('click', '.nav-item__link', function (event) {
-      event.preventDefault();
-    });
     console.log('переставил на мобилку');
   } else if ($(window).width() > 767) {
     $('[data-move]').each(function (element) {
@@ -531,11 +531,11 @@ $(window).on('load resize', function () {
       $(this).siblings('.dropdown-block').appendTo('[data-desktop="' + dataMoveAttr + '"]');
       $(this).prependTo('[data-desktop="' + dataMoveAttr + '"]');
     }); //$('.nav-item__submenu').removeClass('prevented');
-
-    $(document).on('click', '.prevented .nav-item__link', function (event) {
-      $(this).unbind('click');
-      return true;
-    }); //console.log('переставил на пк');
+    //$(document).on('click', '.prevented .nav-item__link', function (event) {
+    //	$(this).unbind('click');
+    //	return true;
+    //});
+    //console.log('переставил на пк');
   }
   /* перестановка блоков в деталке */
 
