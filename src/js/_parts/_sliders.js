@@ -65,8 +65,9 @@ import Swiper from 'swiper';
 					speed: 250,
 					slidesPerView: 'auto',
 					spaceBetween: 70,
+					slidesPerColumn: 1,
 					loop: $loop,
-					//loopedSlides: $slides_no_dublicate,
+					loopedSlides: $slides_no_dublicate,
 					autoplay: {
 						delay: 5000,
 					},
@@ -78,6 +79,14 @@ import Swiper from 'swiper';
 					breakpoints: {
 						992: {
 							spaceBetween: 15,
+						},
+						768: {
+							slidesPerColumn: 2,
+							slidesPerGroup: 2,
+							loop: false,
+							//loopedSlides: 2,
+							spaceBetween: 20,
+							autoplay: false
 						}
 					},
 					on: {

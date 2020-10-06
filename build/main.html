@@ -1047,7 +1047,7 @@
 													<div class="nav-item__label">Торты слоенные</div></a></li>
 											<li class="nav-item"><a class="nav-item__link" href="#">
 													<div class="nav-item__label">Торты с орехами и сухофруктами</div></a></li>
-										</ul><a class="more-link" href="">Посмотреть все товары
+										</ul><a class="more-link" href="">Все результаты поиска
 											<svg class="icon icon-arrow-more ">
 												<use xlink:href="images/sprites.svg#arrow-more"></use>
 											</svg></a>
@@ -2187,7 +2187,7 @@
 								</div>
 							</h2>
 						</div>
-						<div class="section-more"><a class="more-link" href="">Посмотреть все товары
+						<div class="section-more"><a class="more-link" href="">Посмотреть все магазины
 								<svg class="icon icon-arrow-more ">
 									<use xlink:href="images/sprites.svg#arrow-more"></use>
 								</svg></a></div>
@@ -2199,7 +2199,22 @@
 									<form class="form shops-search__form" action="">
 										<div class="form_group">
 											<label class="form_label">
-												<input class="shops-search__input form_input" type="text" placeholder="Выберите станцию метро">
+												<div class="dropdown-select" data-dropdown="select">
+													<input class="dropdown-select__value" type="hidden" value="">
+													<div class="dropdown-select__label">
+														<div class="dropdown-select__label__text">Выберите станцию метро</div>
+													</div>
+													<ul class="dropdown-select__list">
+														<div class="form_group">
+															<input class="form_input dropdown-select__search" id="dropdown_city_search" type="text" placeholder="Введите магазин">
+														</div>
+														<li class="dropdown-select__item active" data-value="Краснодар">Краснодар</li>
+														<li class="dropdown-select__item" data-value="Москва">Москва</li>
+														<li class="dropdown-select__item" data-value="Питер">Питер</li>
+														<li class="dropdown-select__item" data-value="Ростов">Ростов</li>
+													</ul>
+												</div>
+												<!--input(type="text" placeholder="Выберите станцию метро").shops-search__input.form_input-->
 											</label>
 										</div>
 									</form>
@@ -2996,7 +3011,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1601907433470"></script>
-		<script src="js/main.js?v=1601907433470"></script>
+		<script src="js/vendor.js?v=1601986302130"></script>
+		<script src="js/main.js?v=1601986302130"></script>
 	</body>
 </html>

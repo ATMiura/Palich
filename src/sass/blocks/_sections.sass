@@ -53,10 +53,18 @@
 			margin-bottom: 15px !important
 		&-more
 			margin-left: 0
-			margin-top: 5px
+			//margin-top: 5px
 
 	&-content
 		width: 100%
+		&.scroll.scroll-x
+			@media #{$mobile}
+				.products__list
+					flex-wrap: nowrap
+				.products__item
+					min-width: 50%
+					max-width: 50%
+					margin-bottom: 0
 
 	&-slider
 
@@ -290,6 +298,26 @@
 				&__item
 					flex-basis: 33.3%
 					max-width: 33.3%
+
+			@media #{$mobile}
+				.search
+					&-result
+						&__list
+							order: 1
+							flex-basis: 100%
+							max-width: 100%
+					&-categories
+						order: 2
+						flex-basis: 100%
+						max-width: 100%
+				.products
+					&__list
+
+					&__item
+						min-width: 50%
+						flex-basis: 50%
+						max-width: 50%
+						margin-bottom: 20px !important
 	&-contacts
 
 	&-about

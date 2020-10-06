@@ -250,12 +250,19 @@
 			//@media #{$laptop-above}
 				margin-left: 18.445%
 				width: auto
+	.swiper
+		&-wrapper
+			@media #{$mobile}
+				max-width: 100%
 
 	.slider
 		margin-bottom: 0
 		&-wrapper
 			margin-left: 70px
 			overflow: visible
+			@media #{$tablet}
+				margin-left: 0
+				overflow: hidden
 
 		&-slide
 			max-width: 850px
@@ -275,6 +282,7 @@
 				font-size: 1.5rem
 				line-height: 1.813rem
 				font-weight: bold
+				display: inline-block
 			&__text
 				margin-bottom: 55px
 			&__price
@@ -313,9 +321,6 @@
 				padding-bottom: 35%
 
 		@media #{$tablet}
-			&-wrapper
-				margin-left: 0
-				overflow: hidden
 
 			&-slide
 				padding-bottom: 40%
@@ -339,19 +344,24 @@
 		@media #{$mobile-xs}
 			&-slide
 				padding-bottom: 0
-				height: fit-content
+				height: auto
 				&__content
 					padding: 25px 30px 30px
 					max-width: 100%
 					position: relative
 					top: 0
 					transform: none
+				&__date
+					font-size: .875rem
+					line-height: 1.125rem
+					margin-bottom: 15px
 				&__text,
 				&__img
 					display: none
 				&__title
 					font-size: 1.125rem
 					line-height: 1.375rem
+					margin-bottom: 15px
 
 	.swiper-button
 		&__wrapper
@@ -366,6 +376,7 @@
 		&-next,
 		&-prev
 			margin: 0
+			//display: block !important
 		&-prev
 			margin-right: 40px
 		@media #{$tablet}

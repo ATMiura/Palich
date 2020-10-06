@@ -1047,7 +1047,7 @@
 													<div class="nav-item__label">Торты слоенные</div></a></li>
 											<li class="nav-item"><a class="nav-item__link" href="#">
 													<div class="nav-item__label">Торты с орехами и сухофруктами</div></a></li>
-										</ul><a class="more-link" href="">Посмотреть все товары
+										</ul><a class="more-link" href="">Все результаты поиска
 											<svg class="icon icon-arrow-more ">
 												<use xlink:href="images/sprites.svg#arrow-more"></use>
 											</svg></a>
@@ -1298,36 +1298,6 @@
 												<form class="smartfilter" name="_form" action="" method="get">
 													<div class="bx-filter-parameters-box-row">
 														<div class="bx-filter-parameters-box" data-bx-filter-box=""><span class="bx-filter-container-modef"></span>
-															<div class="bx-filter-parameters-box-title"><span>Цена</span></div>
-															<div class="bx-filter-block" data-role="bx_filter_block">
-																<div class="bx-filter-parameters-box-container bx-filter-parameters-box-container--flex">
-																	<div class="bx-filter-parameters-box-container-block bx-left"><span>от</span>
-																		<div class="bx-filter-input-container">
-																			<input class="min-price input" id="arrFilter_P1_MIN" type="text" name="arrFilter_P1_MIN" value="" size="5" onkeyup="smartFilter.keyup(this)">
-																		</div>
-																	</div>
-																	<div class="bx-filter-parameters-box-container-block bx-right"><span>до</span>
-																		<div class="bx-filter-input-container">
-																			<input class="max-price input" id="arrFilter_P1_MAX" type="text" name="arrFilter_P1_MAX" value="" size="5" onkeyup="smartFilter.keyup(this)">
-																		</div>
-																	</div>
-																	<div class="bx-ui-slider-track-container">
-																		<div class="bx-ui-slider-track" id="drag_track_c4ca4238a0b923820dcc509a6f75849b">
-																			<div class="bx-ui-slider-part p1"><span>484</span></div>
-																			<div class="bx-ui-slider-part p2"><span>814</span></div>
-																			<div class="bx-ui-slider-part p3"><span>1 144</span></div>
-																			<div class="bx-ui-slider-part p4"><span>1 474</span></div>
-																			<div class="bx-ui-slider-part p5"><span>1 804</span></div>
-																			<div class="bx-ui-slider-pricebar-vd" id="colorUnavailableActive_c4ca4238a0b923820dcc509a6f75849b" style="left: 0%; right: 30.8057%;"></div>
-																			<div class="bx-ui-slider-pricebar-vn" id="colorAvailableInactive_c4ca4238a0b923820dcc509a6f75849b" style="left: 0%; right: 0%;"></div>
-																			<div class="bx-ui-slider-pricebar-v" id="colorAvailableActive_c4ca4238a0b923820dcc509a6f75849b" style="left: 0%; right: 30.8057%;"></div>
-																			<div class="bx-ui-slider-range" id="drag_tracker_c4ca4238a0b923820dcc509a6f75849b" style="left: 0%; right: 0%;"><a class="bx-ui-slider-handle left" id="left_slider_c4ca4238a0b923820dcc509a6f75849b" style="left:0;" href="javascript:void(0)"></a><a class="bx-ui-slider-handle right" id="right_slider_c4ca4238a0b923820dcc509a6f75849b" style="right: 30.8057%;" href="javascript:void(0)"></a></div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="bx-filter-parameters-box" data-bx-filter-box=""><span class="bx-filter-container-modef"></span>
 															<div class="bx-filter-parameters-box-title"><span>Цвет</span></div>
 															<div class="bx-filter-block" data-role="bx_filter_block">
 																<div class="bx-filter-block__row">
@@ -1460,7 +1430,8 @@
 																		</div>
 																	</div>
 																</div>
-																<div class="bx-filter-block-toggle"><a class="bx-filter-block-toggle__link" data-bx-filter-row-toggle="">Показать все</a></div>
+																<!--.bx-filter-block-togglea.bx-filter-block-toggle__link(data-bx-filter-row-toggle='') Показать все
+																-->
 															</div>
 														</div>
 														<div class="bx-filter-parameters-box" data-bx-filter-box=""><span class="bx-filter-container-modef"></span>
@@ -1537,15 +1508,12 @@
 															</div>
 														</div>
 													</div>
-													<div class="bx-filter-button-box">
+													<div class="bx-filter-button-box" style="margin-top: 10px">
 														<div class="bx-filter-block">
 															<div class="bx-filter-parameters-box-container">
-																<!--button#set_filter.btn.btn-themes(type='button', name='set_filter') Показать товары-->
+																<button class="btn btn-themes button" id="set_filter" type="button" name="set_filter" data-mobile-menu-close>Применить</button>
 																<!-- кнопка сброса либо так либо так, оба варианта стилизованны-->
-																<div class="bx-filter-reset">
-																	<input class="clear" id="del_filter" type="button" name="del_filter" value="Сбросить">
-																</div>
-																<button class="bx-filter-reset" id="del_filter" type="button" name="del_filter">Сбросить</button>
+																<!--button#del_filter.bx-filter-reset(type='button', name='del_filter') Сбросить-->
 															</div>
 														</div>
 													</div>
@@ -2175,7 +2143,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1601907431924"></script>
-		<script src="js/main.js?v=1601907431924"></script>
+		<script src="js/vendor.js?v=1601986301502"></script>
+		<script src="js/main.js?v=1601986301502"></script>
 	</body>
 </html>

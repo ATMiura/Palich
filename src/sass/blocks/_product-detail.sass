@@ -24,6 +24,7 @@
 		width: 100%
 		border-bottom: 1px solid #E6E9EF
 		margin-bottom: 20px
+
 		@media #{$tablet-above}
 			display: none
 		&__list
@@ -79,6 +80,7 @@
 			line-height: 0.875rem
 			font-weight: bold
 			display: inline-block
+			margin-bottom: 2px
 			svg
 				margin-right: 3px
 			&.hit
@@ -291,6 +293,8 @@
 					display: inline-block !important
 					font-size: inherit
 					line-height: inherit
+					@media #{$mobile}
+						display: none !important
 				.product-buy-cart__link__text
 					margin-right: 3px
 				//&:hover
@@ -385,6 +389,7 @@
 			margin-bottom: 20px
 		&-links
 			order: 3
+			display: none
 		&-slider
 			order: 4
 			margin-bottom: 20px

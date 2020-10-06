@@ -23,11 +23,11 @@ $(window).on('load resize', function () {
 			});
 		},100);
 
-		//$('.nav-item__submenu').addClass('prevented');
+		//$('[data-mobile-menu="catalog"] .nav-item__submenu').addClass('prevented');
 
-		//$(document).on('click', '.nav-item__link', function (event) {
-		//	event.preventDefault();
-		//});
+		/*$(document).on('click', '[data-mobile-menu="catalog"] .has-submenu .nav-item__link', function (event) {
+			event.preventDefault();
+		});*/
 
 		console.log('переставил на мобилку');
 
@@ -65,12 +65,15 @@ $(window).on('load resize', function () {
 $(document).ready(function () {
 
 	/* закрытие мобильного меню */
-	$('[data-mobile-menu-close]').on('click touch', function () {
+	window.mobilePanelClose = function(){
 		$('.mobile').removeClass('is-open');
 		$('body').removeClass('mobile-open');
 
 		$('[data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"])').hide();
 		$('[data-mobile-menu-type]').attr('data-mobile-menu-type','');
+	}
+	$('[data-mobile-menu-close]').on('click touch', function () {
+		mobilePanelClose();
 	});
 
 	/* открытие мобильного меню */

@@ -78,38 +78,6 @@ block content
 												.bx-filter-parameters-box(data-bx-filter-box='')
 													span.bx-filter-container-modef
 													.bx-filter-parameters-box-title
-														span Цена
-													.bx-filter-block(data-role='bx_filter_block')
-														.bx-filter-parameters-box-container.bx-filter-parameters-box-container--flex
-															.bx-filter-parameters-box-container-block.bx-left
-																span от
-																.bx-filter-input-container
-																	input#arrFilter_P1_MIN.min-price.input(type='text', name='arrFilter_P1_MIN', value='', size='5', onkeyup='smartFilter.keyup(this)')
-															.bx-filter-parameters-box-container-block.bx-right
-																span до
-																.bx-filter-input-container
-																	input#arrFilter_P1_MAX.max-price.input(type='text', name='arrFilter_P1_MAX', value='', size='5', onkeyup='smartFilter.keyup(this)')
-															.bx-ui-slider-track-container
-																#drag_track_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-track
-																	.bx-ui-slider-part.p1
-																		span 484
-																	.bx-ui-slider-part.p2
-																		span 814
-																	.bx-ui-slider-part.p3
-																		span 1 144
-																	.bx-ui-slider-part.p4
-																		span 1 474
-																	.bx-ui-slider-part.p5
-																		span 1 804
-																	#colorUnavailableActive_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-pricebar-vd(style='left: 0%; right: 30.8057%;')
-																	#colorAvailableInactive_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-pricebar-vn(style='left: 0%; right: 0%;')
-																	#colorAvailableActive_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-pricebar-v(style='left: 0%; right: 30.8057%;')
-																	#drag_tracker_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-range(style='left: 0%; right: 0%;')
-																		a#left_slider_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-handle.left(style='left:0;', href='javascript:void(0)')
-																		a#right_slider_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-handle.right(style='right: 30.8057%;', href='javascript:void(0)')
-												.bx-filter-parameters-box(data-bx-filter-box='')
-													span.bx-filter-container-modef
-													.bx-filter-parameters-box-title
 														span Цвет
 													.bx-filter-block(data-role='bx_filter_block')
 														.bx-filter-block__row
@@ -212,7 +180,7 @@ block content
 																		.checkbox__emulator
 																		.checkbox__text
 																			span Малиновый
-														.bx-filter-block-toggle
+														//.bx-filter-block-toggle
 															a.bx-filter-block-toggle__link(data-bx-filter-row-toggle='') Показать все
 												.bx-filter-parameters-box(data-bx-filter-box='')
 													span.bx-filter-container-modef
@@ -273,14 +241,12 @@ block content
 																	.checkbox__emulator
 																	.checkbox__text
 																		span 3
-											.bx-filter-button-box
+											.bx-filter-button-box(style="margin-top: 10px")
 												.bx-filter-block
 													.bx-filter-parameters-box-container
-														//button#set_filter.btn.btn-themes(type='button', name='set_filter') Показать товары
+														button#set_filter.btn.btn-themes.button(type='button', name='set_filter', data-mobile-menu-close) Применить
 														// кнопка сброса либо так либо так, оба варианта стилизованны
-														.bx-filter-reset
-															input#del_filter.clear(type='button', name='del_filter', value='Сбросить')
-														button#del_filter.bx-filter-reset(type='button', name='del_filter') Сбросить
+														//button#del_filter.bx-filter-reset(type='button', name='del_filter') Сбросить
 
 					.products-catalog
 						.express
