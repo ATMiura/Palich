@@ -5,12 +5,13 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
 	let formCurUrl = form.data('url');
 	let formRedirect = form.data('redirect');
 	let formAction = form.data('action');
+	let formPlace = form.data('place');
 
-	submitFormValidate('Y','true', form, formData, formName, formCurUrl, formRedirect, formAction);
+	submitFormValidate('Y','true', form, formData, formName, formCurUrl, formRedirect, formAction, formPlace);
 	return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction){
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction, formPlace){
 	form.find('.form_error').remove();
 
 	form.addClass('submitting');
@@ -255,7 +256,12 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 			);
 			return true;
 		} else {
-			$('html, body').animate({ scrollTop: $('[data-form="'+formName+'"] .invalid').offset().top-100 }, 500);
+			if(formPlace=='subscribe-footer'){
+				$('html, body').animate({ scrollTop: $('[data-form="'+formName+'"][data-place="'+formPlace+'"] .invalid').offset().top-100 }, 500);
+			} else {
+				$('html, body').animate({ scrollTop: $('[data-form="'+formName+'"] .invalid').offset().top-100 }, 500);
+			}
+
 			if(formName == 'express') {
 				onAjaxSuccess()
 			}

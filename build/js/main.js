@@ -958,11 +958,12 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
   var formCurUrl = form.data('url');
   var formRedirect = form.data('redirect');
   var formAction = form.data('action');
-  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect, formAction);
+  var formPlace = form.data('place');
+  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect, formAction, formPlace);
   return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction) {
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction, formPlace) {
   form.find('.form_error').remove();
   form.addClass('submitting');
   form.find('.button').wrap('<div class="submitting__loader"></div>');
@@ -1153,9 +1154,15 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
       $('[data-form="' + formName + '"]').serialize(), onAjaxSuccess());
       return true;
     } else {
-      $('html, body').animate({
-        scrollTop: $('[data-form="' + formName + '"] .invalid').offset().top - 100
-      }, 500);
+      if (formPlace == 'subscribe-footer') {
+        $('html, body').animate({
+          scrollTop: $('[data-form="' + formName + '"][data-place="' + formPlace + '"] .invalid').offset().top - 100
+        }, 500);
+      } else {
+        $('html, body').animate({
+          scrollTop: $('[data-form="' + formName + '"] .invalid').offset().top - 100
+        }, 500);
+      }
 
       if (formName == 'express') {
         onAjaxSuccess();

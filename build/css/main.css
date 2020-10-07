@@ -2640,6 +2640,18 @@ body.compensate-for-scrollbar {
   width: 19px;
   height: 18px; }
 
+.icon-submenu-icon-second {
+  width: 24px;
+  height: 24px; }
+
+.icon-submenu-icon-marmalade {
+  width: 21px;
+  height: 21px; }
+
+.icon-submenu-icon-sweet-gifts {
+  width: 21px;
+  height: 17px; }
+
 /* catalog mobile menu */
 .icon-catalog-filter {
   width: 17px;
@@ -3107,6 +3119,12 @@ input::-ms-clear {
 
 .header-city .dropdown-block:after {
   left: 60px; }
+
+@media screen and (max-width: 1199px) {
+  .header-city .link-icon__text {
+    max-width: 140px;
+    display: inline;
+    white-space: initial; } }
 
 .header-nav {
   margin-right: 5.7%;
@@ -3678,6 +3696,10 @@ input::-ms-clear {
           align-items: baseline;
   margin-bottom: 25px !important; }
 
+@media screen and (min-width: 576px) {
+  .section-title {
+    max-width: 80%; } }
+
 .section-title h1 {
   margin: 0; }
 
@@ -3702,6 +3724,10 @@ input::-ms-clear {
       -webkit-flex-basis: 100%;
           -ms-flex-preferred-size: 100%;
               flex-basis: 100%; } }
+
+@media screen and (max-width: 767px) {
+  .section.products .products__item {
+    margin-bottom: 0; } }
 
 .section-products-quantity {
   font-size: 1.125rem;
@@ -3869,7 +3895,8 @@ input::-ms-clear {
     font-size: inherit;
     line-height: inherit;
     color: var(--vinishkotyan);
-    border-bottom: 2px dotted; }
+    border-bottom: 2px dotted;
+    white-space: initial; }
   @media screen and (max-width: 991px) {
     .section-shops .dropdown {
       display: block; }
@@ -4941,7 +4968,7 @@ input::-ms-clear {
     transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease;
     transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease, -webkit-transform .4s ease, -moz-transform .4s ease, -o-transform .4s ease; }
   @media screen and (min-width: 992px) {
-    .dropdown:not(.header-search):not(.header-bar__item):not(.cart-field__city):hover .dropdown-block, .dropdown.header-search.is-open .dropdown-block, .dropdown.header-bar__item.is-open .dropdown-block {
+    .dropdown:not(.header-search):not(.header-bar__item):not(.cart-field__city):not(.link-icon):hover .dropdown-block, .dropdown.header-search.is-open .dropdown-block, .dropdown.header-bar__item.is-open .dropdown-block {
       opacity: 1;
       visibility: visible;
       -webkit-transform: translateY(0);
@@ -4955,8 +4982,8 @@ input::-ms-clear {
       -moz-transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease, -moz-transform .4s ease;
       transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease;
       transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease, -webkit-transform .4s ease, -moz-transform .4s ease, -o-transform .4s ease; }
-    .dropdown:not(.header-search):not(.header-bar__item):not(.cart-field__city):hover .link-icon__text:after,
-    .dropdown:not(.header-search):not(.header-bar__item):not(.cart-field__city):hover .header-burger__link:after, .dropdown.header-search.is-open .link-icon__text:after,
+    .dropdown:not(.header-search):not(.header-bar__item):not(.cart-field__city):not(.link-icon):hover .link-icon__text:after,
+    .dropdown:not(.header-search):not(.header-bar__item):not(.cart-field__city):not(.link-icon):hover .header-burger__link:after, .dropdown.header-search.is-open .link-icon__text:after,
     .dropdown.header-search.is-open .header-burger__link:after, .dropdown.header-bar__item.is-open .link-icon__text:after,
     .dropdown.header-bar__item.is-open .header-burger__link:after {
       opacity: 1;
@@ -4966,7 +4993,7 @@ input::-ms-clear {
           -ms-transform: translateY(0);
            -o-transform: translateY(0);
               transform: translateY(0); }
-    .dropdown:not(.header-search):not(.header-bar__item):not(.cart-field__city):hover.header-search .dropdown-block, .dropdown.header-search.is-open.header-search .dropdown-block, .dropdown.header-bar__item.is-open.header-search .dropdown-block {
+    .dropdown:not(.header-search):not(.header-bar__item):not(.cart-field__city):not(.link-icon):hover.header-search .dropdown-block, .dropdown.header-search.is-open.header-search .dropdown-block, .dropdown.header-bar__item.is-open.header-search .dropdown-block {
       -webkit-transform: translateY(6px);
          -moz-transform: translateY(6px);
           -ms-transform: translateY(6px);
