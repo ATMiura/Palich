@@ -3,6 +3,39 @@ import Swiper from 'swiper';
 /* слайдеры */
 (function($) {
 	$(document).ready(function () {
+		/* слайдер товаров */
+		$('.section.products-slider').each(function (index) {
+
+			$(this).addClass('products-slider-'+index);
+
+			var data_slider_name = $(this).find('.swiper-container').data('slider-name');
+
+			var productsSlider = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
+				slidesPerView: 4,
+				spaceBetween: 0,
+				navigation: {
+					nextEl: '.products-slider-'+index+' .swiper-button-next',
+					prevEl: '.products-slider-'+index+' .swiper-button-prev',
+				},
+				breakpoints: {
+					992: {
+						slidesPerView: 3,
+					},
+					768: {
+						slidesPerView: 2,
+					},
+					576: {
+						slidesPerView: 1,
+						scrollbar: {
+							el: '.swiper-scrollbar',
+							hide: false,
+						},
+						freeMode: true,
+					}
+				},
+			});
+		});
+
 		//if($('.js-productSlider .swiper-slide').length <= 1){
 		//	$('.js-productSlider .swiper-pagination').hide();
 		//	$('.js-productSlider .slider-button').hide();
@@ -32,8 +65,9 @@ import Swiper from 'swiper';
 					speed: 250,
 					slidesPerView: 'auto',
 					spaceBetween: 70,
+					slidesPerColumn: 1,
 					loop: $loop,
-					//loopedSlides: $slides_no_dublicate,
+					loopedSlides: $slides_no_dublicate,
 					autoplay: {
 						delay: 5000,
 					},
@@ -45,6 +79,14 @@ import Swiper from 'swiper';
 					breakpoints: {
 						992: {
 							spaceBetween: 15,
+						},
+						768: {
+							slidesPerColumn: 2,
+							slidesPerGroup: 2,
+							loop: false,
+							//loopedSlides: 2,
+							spaceBetween: 20,
+							autoplay: false
 						}
 					},
 					on: {
@@ -189,15 +231,24 @@ import Swiper from 'swiper';
 			}
 		}
 
+		function activeSlide() {
+			console.log($(this));
+		}
+
 		/* галерея в деталке */
 		var galleryThumbs = new Swiper('.product-gallery-thumbs', {
 			spaceBetween: 10,
 			slidesPerView: 5,
-			loop: true,
+			//loop: true,
 			//freeMode: true,
 			loopedSlides: 1, //looped slides should be the same
 			//watchSlidesVisibility: true,
 			//watchSlidesProgress: true,
+			on: {
+				init: {
+					slideChange: activeSlide
+				}
+			}
 		});
 
 		var galleryTop = new Swiper('.product-gallery-top', {
@@ -220,37 +271,6 @@ import Swiper from 'swiper';
 			},
 		});
 
-		/* слайдер товаров */
-		$('.section.products-slider').each(function (index) {
 
-			$(this).addClass('products-slider-'+index);
-
-			var data_slider_name = $(this).find('.swiper-container').data('slider-name');
-
-			var productsSlider = new Swiper('[data-slider-name="'+data_slider_name+'"].swiper-container', {
-				slidesPerView: 4,
-				spaceBetween: 0,
-				navigation: {
-					nextEl: '.products-slider-'+index+' .swiper-button-next',
-					prevEl: '.products-slider-'+index+' .swiper-button-prev',
-				},
-				breakpoints: {
-					992: {
-						slidesPerView: 3,
-					},
-					768: {
-						slidesPerView: 2,
-					},
-					576: {
-						slidesPerView: 1,
-						scrollbar: {
-							el: '.swiper-scrollbar',
-							hide: false,
-						},
-						freeMode: true,
-					}
-				},
-			});
-		});
 	});
 })(jQuery);

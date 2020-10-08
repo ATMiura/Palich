@@ -13,6 +13,8 @@ import './_parts/_mobile-el-replace';
 import './_parts/_catalog-list-mobile';
 import './_parts/_mask';
 import './_parts/_calendar';
+import './_parts/_bx-filter';
+import './_parts/_cart';
 //import './_parts/_cityInInpField';
 
 import './_parts/_validation';

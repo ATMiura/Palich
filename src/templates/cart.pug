@@ -88,7 +88,17 @@ block content
 								.form_group.cart-delivery__shops
 									label.form_label
 										.form_label--text Магазины
-										input.form_input(type="text", placeholder="Выбрать")
+										.dropdown-select(data-dropdown='select')
+											input.dropdown-select__value(type='hidden', value='')
+											.dropdown-select__label
+												.dropdown-select__label__text Самовывоз
+											ul.dropdown-select__list
+												.form_group
+													input#dropdown_city_search.form_input.dropdown-select__search(type="text", placeholder="Введите магазин")
+												li.dropdown-select__item.active(data-value='Краснодар') Краснодар
+												li.dropdown-select__item(data-value='Москва') Москва
+												li.dropdown-select__item(data-value='Питер') Питер
+												li.dropdown-select__item(data-value='Ростов') Ростов
 								.form_group.cart-delivery__date
 									label.form_label
 										.form_label--text Дата

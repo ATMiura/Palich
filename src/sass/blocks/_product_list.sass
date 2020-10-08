@@ -12,14 +12,21 @@
 			width: 100%
 			min-height: 305px
 			margin: 0 auto
-
 			position: absolute
 			top: 0
 			left: 0
 			right: 0
 			z-index: -1
-
 			background-color: var(--vinishkotyan)
+		@media #{$mobile}
+			.products__item
+				margin-bottom: 0
+				flex-basis: 50%
+				max-width: 50%
+				min-width: 50%
+				width: 100%
+			&:before
+				min-height: 190px
 	&-catalog
 		padding: 0 15px
 		&-by-time
@@ -27,6 +34,9 @@
 			flex-wrap: wrap
 			width: 100%
 			margin-bottom: 65px
+			.by-time-header
+				margin: 0 -15px
+				margin-bottom: 35px
 		&__list
 			display: flex
 			flex-wrap: wrap
@@ -252,6 +262,7 @@
 			left: 7px
 			z-index: 1
 			display: flex
+			flex-wrap: wrap
 		&__label
 			background: #fff
 			padding: 5px 8px
@@ -260,6 +271,7 @@
 			line-height: 0.875rem
 			font-weight: bold
 			display: inline-block
+			margin-bottom: 2px
 			svg
 				margin-right: 3px
 			&.hit
@@ -372,6 +384,8 @@
 					.products__item__cart__link__text
 						display: inline-block
 						color: var(--yellow)
+						@media #{$mobile}
+							display: none
 					.icon-product_add_to_cart
 						fill: var(--yellow)
 					.products-pickup
@@ -387,6 +401,9 @@
 						display: none
 					.icon-product_in_cart
 						display: inline-block
+					@media #{$mobile}
+						.products__item__cart__link__text
+							display: none !important
 
 
 	&-pickup
@@ -426,6 +443,14 @@
 			font-weight: normal
 			color: #1A1A1A
 
+		@media #{$mobile-xs}
+			min-width: 290px
+			max-width: 290px
 
 
+@media #{$mobile}
+	.products__item:nth-child(odd)
+		.products-pickup
+			right: initial
+			left: 0
 

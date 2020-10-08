@@ -330,7 +330,7 @@ block content
 												.dropdown-form-result__item Ярославль
 												.dropdown-form-result__item Калуга
 				.section-more
-					a(href="").more-link Посмотреть все товары
+					a(href="").more-link Посмотреть все магазины
 						+icon('arrow-more')
 
 			.section-content
@@ -340,7 +340,18 @@ block content
 							form(action="").form.shops-search__form
 								.form_group
 									label.form_label
-										input(type="text" placeholder="Выберите станцию метро").shops-search__input.form_input
+										.dropdown-select(data-dropdown='select')
+											input.dropdown-select__value(type='hidden', value='')
+											.dropdown-select__label
+												.dropdown-select__label__text Выберите станцию метро
+											ul.dropdown-select__list
+												.form_group
+													input#dropdown_city_search.form_input.dropdown-select__search(type="text", placeholder="Введите магазин")
+												li.dropdown-select__item.active(data-value='Краснодар') Краснодар
+												li.dropdown-select__item(data-value='Москва') Москва
+												li.dropdown-select__item(data-value='Питер') Питер
+												li.dropdown-select__item(data-value='Ростов') Ростов
+										//input(type="text" placeholder="Выберите станцию метро").shops-search__input.form_input
 						.shops-nav__list
 							.shops-nav__item(data-shops-nav="list")
 								.shops-nav__icon

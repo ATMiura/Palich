@@ -17,14 +17,15 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 		//$(".dropdown-block").slideUp("fast");
 		$('.dropdown').removeClass('is-open');
 	}
-}).on('click touch', '.mobile .nav-item__link', function () {
-	/*if($(this).parents('.nav-item').hasClass('has-submenu')){
-		//console.log('false');
-		//return false;
-	} else {
-		//console.log('true');
-		//return true;
-	}*/
+}).on('click touch', '.mobile .nav-item.has-submenu > .nav-item__link', function (event) {
+	event.preventDefault();
+	//if($(this).parents('.nav-item').hasClass('has-submenu')){
+	//	console.log('false');
+	//
+	//} else {
+	//	console.log('true');
+	//	return true;
+	//}
 	if($(this).parents('.nav-item').hasClass('has-submenu')){
 		$(this).parents('.nav-list').toggleClass('is-open');
 		$(this).parents('.nav-item').toggleClass('active');
@@ -42,15 +43,17 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 
 
 /* выпадаюищй список в корзине */
-$(document).on('click', '.dropdown-select__label', function () {
-	$(this).parents('.dropdown-select').toggleClass('is-open');
-}).on('click', '.dropdown-select__item', function () {
-	$(this).siblings().removeClass('active');
-	$(this).addClass('active');
-	$(this).parents('.dropdown-select').find('.dropdown-select__label__text').text($(this).text());
-	$(this).parents('.dropdown-select').toggleClass('is-open');
-	$(this).parents('.dropdown-select').find('.dropdown-select__value').val($(this).data('value'));
-	$(this).parents('.dropdown-select').addClass('is-valid');
+$(document).ready(function () {
+	$(document).on('click', '.dropdown-select__label', function () {
+		$(this).parents('.dropdown-select').toggleClass('is-open');
+	}).on('click', '.dropdown-select__item', function () {
+		$(this).siblings().removeClass('active');
+		$(this).addClass('active');
+		$(this).parents('.dropdown-select').find('.dropdown-select__label__text').text($(this).text());
+		$(this).parents('.dropdown-select').toggleClass('is-open');
+		$(this).parents('.dropdown-select').find('.dropdown-select__value').val($(this).data('value'));
+		$(this).parents('.dropdown-select').addClass('is-valid');
+	});
 });
 
 
