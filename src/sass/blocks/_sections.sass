@@ -15,6 +15,8 @@
 		//margin-bottom: 35px
 		margin-bottom: 25px !important
 	&-title
+		@media #{$mobile-above}
+			max-width: 80%
 		//width: 100%
 		h1
 			margin: 0
@@ -35,6 +37,10 @@
 			margin-top: 20px
 			flex-basis: 100%
 
+	&.products
+		@media #{$mobile}
+			.products__item
+				margin-bottom: 0
 
 	&-products-quantity
 		font-size: 1.125rem
@@ -90,6 +96,7 @@
 							min-width: 50%
 							max-width: 50%
 							margin-bottom: 0
+
 
 
 	&-subscribe
@@ -190,6 +197,7 @@
 				line-height: inherit
 				color: var(--vinishkotyan)
 				border-bottom: 2px dotted
+				white-space: initial
 		@media #{$tablet}
 			.dropdown
 				display: block

@@ -282,6 +282,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 			} else {
 				$('html, body').animate({ scrollTop: $('[data-form="'+formName+'"] .invalid').offset().top-100 }, 500);
 			}
+
 			if(formName == 'express') {
 				onAjaxSuccess()
 			}

@@ -1010,6 +1010,10 @@ __webpack_require__.r(__webpack_exports__);
         $('.slider-web .swiper-button.inline').appendTo($('.slider-web .slider'));
       } else {}
     }
+
+    function activeSlide() {
+      console.log($(this));
+    }
     /* галерея в деталке */
 
 
@@ -1018,10 +1022,15 @@ __webpack_require__.r(__webpack_exports__);
       slidesPerView: 5,
       //loop: true,
       //freeMode: true,
-      loopedSlides: 1 //looped slides should be the same
+      loopedSlides: 1,
+      //looped slides should be the same
       //watchSlidesVisibility: true,
       //watchSlidesProgress: true,
-
+      on: {
+        init: {
+          slideChange: activeSlide
+        }
+      }
     });
     var galleryTop = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-top', {
       slidesPerView: 1,

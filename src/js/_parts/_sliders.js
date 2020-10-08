@@ -231,6 +231,10 @@ import Swiper from 'swiper';
 			}
 		}
 
+		function activeSlide() {
+			console.log($(this));
+		}
+
 		/* галерея в деталке */
 		var galleryThumbs = new Swiper('.product-gallery-thumbs', {
 			spaceBetween: 10,
@@ -240,6 +244,11 @@ import Swiper from 'swiper';
 			loopedSlides: 1, //looped slides should be the same
 			//watchSlidesVisibility: true,
 			//watchSlidesProgress: true,
+			on: {
+				init: {
+					slideChange: activeSlide
+				}
+			}
 		});
 
 		var galleryTop = new Swiper('.product-gallery-top', {
