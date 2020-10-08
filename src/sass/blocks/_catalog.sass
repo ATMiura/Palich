@@ -76,6 +76,14 @@
 		&__item
 			display: flex
 			align-items: center
+			&:after
+				content: ""
+				width: 6px
+				height: 4px
+				display: inline-block
+				background-image: url("data:image/svg+xml,%3Csvg width='6' height='4' viewBox='0 0 6 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.715538 0.149865C0.910801 -0.0453975 1.22738 -0.0453975 1.42265 0.149865L3.06909 1.79631L4.71554 0.149865C4.9108 -0.0453975 5.22738 -0.0453975 5.42265 0.149865C5.61791 0.345127 5.61791 0.661709 5.42265 0.856972L3.42265 2.85697C3.22738 3.05223 2.9108 3.05223 2.71554 2.85697L0.715538 0.856972C0.520276 0.661709 0.520276 0.345127 0.715538 0.149865Z' fill='%23A70230'/%3E%3C/svg%3E%0A")
+				margin-left: 4px
+
 		&-item
 			&__icon
 				margin-right: 5px
@@ -84,7 +92,7 @@
 				line-height: 1.313rem
 				font-weight: bold
 				color: var(--vinishkotyan)
-		@media #{$tablet-above}
+			@media #{$tablet-above}
 			display: none
 
 	// теги

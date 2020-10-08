@@ -66,3 +66,14 @@ $(document).on('keyup', '.header-search .form-search__input', function () {
 $(document).on('click', '.cart-field-city__change', function () {
 	$(this).parents('.dropdown').toggleClass('is-open');
 });
+
+/* о компании в мобилке */
+$(window).on('load resize', function () {
+	$(document).on('click', '.header-nav__item.dropdown .header-nav__item__link', function (event) {
+		if($(window).width() < 768){
+			event.preventDefault();
+		} else {
+
+		}
+	});
+});

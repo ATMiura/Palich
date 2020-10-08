@@ -355,6 +355,15 @@ $(document).on('keyup', '.header-search .form-search__input', function () {
 $(document).on('click', '.cart-field-city__change', function () {
   $(this).parents('.dropdown').toggleClass('is-open');
 });
+/* о компании в мобилке */
+
+$(window).on('load resize', function () {
+  $(document).on('click', '.header-nav__item.dropdown .header-nav__item__link', function (event) {
+    if ($(window).width() < 768) {
+      event.preventDefault();
+    } else {}
+  });
+});
 
 /***/ }),
 
@@ -365,27 +374,29 @@ $(document).on('click', '.cart-field-city__change', function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$.fn.equalHeights = function () {
-  var max_height = 0;
-  $(this).each(function () {
-    max_height = Math.max($(this).height(), max_height);
-  });
-  $(this).each(function () {
-    $(this).height(max_height);
-  });
-};
+$(document).ready(function () {
+  $.fn.equalHeights = function () {
+    var max_height = 0;
+    $(this).each(function () {
+      max_height = Math.max($(this).height(), max_height);
+    });
+    $(this).each(function () {
+      $(this).height(max_height);
+    });
+  };
 
-$.fn.equalWidth = function () {
-  var max_width = 0;
-  $(this).each(function () {
-    max_width = Math.max($(this).width(), max_width);
-  });
-  $(this).each(function () {
-    $(this).width(max_width);
-  });
-};
+  $.fn.equalWidth = function () {
+    var max_width = 0;
+    $(this).each(function () {
+      max_width = Math.max($(this).width(), max_width);
+    });
+    $(this).each(function () {
+      $(this).width(max_width);
+    });
+  };
 
-$('.products__item:not(.products__item__size__big).products__item__name').equalHeights(); //$('.nav-item__icon svg').equalWidth();
+  $('.products__item:not(.products__item__size__big) .products__item__name').equalHeights();
+}); //$('.nav-item__icon svg').equalWidth();
 //$('.nav-item__icon svg').equalHeights();
 
 /***/ }),
@@ -1005,7 +1016,7 @@ __webpack_require__.r(__webpack_exports__);
     var galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.product-gallery-thumbs', {
       spaceBetween: 10,
       slidesPerView: 5,
-      loop: true,
+      //loop: true,
       //freeMode: true,
       loopedSlides: 1 //looped slides should be the same
       //watchSlidesVisibility: true,
@@ -1050,11 +1061,12 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
   var formCurUrl = form.data('url');
   var formRedirect = form.data('redirect');
   var formAction = form.data('action');
-  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect, formAction);
+  var formPlace = form.data('place');
+  submitFormValidate('Y', 'true', form, formData, formName, formCurUrl, formRedirect, formAction, formPlace);
   return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction) {
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction, formPlace) {
   form.find('.form_error').remove();
   form.addClass('submitting');
   form.find('.button').wrap('<div class="submitting__loader"></div>');
@@ -1198,9 +1210,30 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
           form.find('.button').unwrap('.submitting__loader');
           $this.addClass('invalid').parents('.form_group').append("<span class='form_error'></span>");
           t = false;
-        } else {
-          $this.removeClass('invalid').siblings('.form_error').remove();
         }
+        /*else if( $this.attr('type')=='email'){
+        	function ValidateEmail(inputText)
+        	{
+        		var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        		if(inputText.value.match(mailformat))
+        		{
+        			console.log("Valid email address!");
+        			//document.form1.text1.focus();
+        			return true;
+        		}
+        		else
+        		{
+        			console.log("You have entered an invalid email address!");
+        			//document.form1.text1.focus();
+        			return false;
+        		}
+        	}
+        	ValidateEmail($this);
+        		console.log("зашли сюда");
+        	}*/
+        else {
+            $this.removeClass('invalid').siblings('.form_error').remove();
+          }
       });
     } else {
       $('[data-form="' + formName + '"] .input--required').each(function () {
@@ -1245,9 +1278,15 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
       $('[data-form="' + formName + '"]').serialize(), onAjaxSuccess());
       return true;
     } else {
-      $('html, body').animate({
-        scrollTop: $('[data-form="' + formName + '"] .invalid').offset().top - 100
-      }, 500);
+      if (formPlace == 'subscribe-footer') {
+        $('html, body').animate({
+          scrollTop: $('[data-form="' + formName + '"][data-place="' + formPlace + '"] .invalid').offset().top - 100
+        }, 500);
+      } else {
+        $('html, body').animate({
+          scrollTop: $('[data-form="' + formName + '"] .invalid').offset().top - 100
+        }, 500);
+      }
 
       if (formName == 'express') {
         onAjaxSuccess();

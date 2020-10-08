@@ -37,10 +37,15 @@
 			height: auto
 	.button
 		margin-top: 40px
+		min-width: 220px
 	.form_submit
 		margin-top: 25px
 	&.fancybox-content
 		@media #{$mobile-above}
+			display: inline-flex !important
+			align-items: center
+			justify-content: center
+		&[id*="thx"]
 			display: inline-flex !important
 			align-items: center
 			justify-content: center

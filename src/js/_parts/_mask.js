@@ -21,7 +21,7 @@ window.maskField = function(){
 			}
 		}
 	});
-}
+};
 
 $(document).ready(function () {
 	maskField();

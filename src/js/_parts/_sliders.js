@@ -235,7 +235,7 @@ import Swiper from 'swiper';
 		var galleryThumbs = new Swiper('.product-gallery-thumbs', {
 			spaceBetween: 10,
 			slidesPerView: 5,
-			loop: true,
+			//loop: true,
 			//freeMode: true,
 			loopedSlides: 1, //looped slides should be the same
 			//watchSlidesVisibility: true,

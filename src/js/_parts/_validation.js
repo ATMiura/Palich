@@ -5,12 +5,13 @@ $(document).on('submit', "[data-form-no-ajax]", function () {
 	let formCurUrl = form.data('url');
 	let formRedirect = form.data('redirect');
 	let formAction = form.data('action');
+	let formPlace = form.data('place');
 
-	submitFormValidate('Y','true', form, formData, formName, formCurUrl, formRedirect, formAction);
+	submitFormValidate('Y','true', form, formData, formName, formCurUrl, formRedirect, formAction, formPlace);
 	return false;
 });
 
-function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction){
+function submitFormValidate(val, valid, form, formData, formName, formCurUrl, formRedirect, formAction, formPlace){
 	form.find('.form_error').remove();
 
 	form.addClass('submitting');
@@ -37,7 +38,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 						.parents('.form_group')
 						.append("<span class='form_error'>Обязательное поле</span>");
 					t = false;
-				} else if($.trim($(this).val()).indexOf(",") == -1){
+				} else if($.trim($(this).val()).indexOf(",") == -1) {
 					//console.log('запятая');
 					form.removeClass('submitting');
 					form.find('.button').unwrap('.submitting__loader');
@@ -47,7 +48,28 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 						.parents('.form_group')
 						.append("<span class='form_error'></span>");
 					t = false;
-				} else {
+				}/*else if( $this.attr('type')=='email'){
+						function ValidateEmail(inputText)
+						{
+							var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+							if(inputText.value.match(mailformat))
+							{
+								console.log("Valid email address!");
+								//document.form1.text1.focus();
+								return true;
+							}
+							else
+							{
+								console.log("You have entered an invalid email address!");
+								//document.form1.text1.focus();
+								return false;
+							}
+						}
+						ValidateEmail($this);
+
+						console.log("зашли сюда");
+
+					}*/ else {
 					$this.removeClass('invalid').siblings('.form_error').remove();
 				}
 			});
@@ -255,7 +277,11 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 			);
 			return true;
 		} else {
-			$('html, body').animate({ scrollTop: $('[data-form="'+formName+'"] .invalid').offset().top-100 }, 500);
+			if(formPlace=='subscribe-footer'){
+				$('html, body').animate({ scrollTop: $('[data-form="'+formName+'"][data-place="'+formPlace+'"] .invalid').offset().top-100 }, 500);
+			} else {
+				$('html, body').animate({ scrollTop: $('[data-form="'+formName+'"] .invalid').offset().top-100 }, 500);
+			}
 			if(formName == 'express') {
 				onAjaxSuccess()
 			}

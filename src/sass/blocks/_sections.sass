@@ -62,8 +62,8 @@
 				.products__list
 					flex-wrap: nowrap
 				.products__item
-					min-width: 50%
-					max-width: 50%
+					min-width: 80%
+					max-width: 80%
 					margin-bottom: 0
 
 	&-slider
@@ -79,6 +79,17 @@
 				color: var(--yellow)
 				& .icon-arrow-more
 					fill: var(--yellow)
+		.section
+			&-content
+				width: 100%
+				&.scroll.scroll-x
+					@media #{$mobile}
+						.products__list
+							flex-wrap: nowrap
+						.products__item
+							min-width: 50%
+							max-width: 50%
+							margin-bottom: 0
 
 
 	&-subscribe
