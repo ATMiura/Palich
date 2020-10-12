@@ -391,8 +391,9 @@
 							display: none
 					.icon-product_add_to_cart
 						fill: var(--yellow)
-					.products-pickup
-						display: flex
+					@media #{$mobile-above}
+						.products-pickup
+							display: flex
 				&.in-cart,
 				&.active
 					width: auto
@@ -404,14 +405,18 @@
 						display: none
 					.icon-product_in_cart
 						display: inline-block
+					.products-pickup
+						display: flex
 					@media #{$mobile}
 						.products__item__cart__link__text
 							display: none !important
 
 
+
 	&-pickup
 		padding: 40px 50px
 		min-width: 315px
+		max-width: 315px
 		display: none
 		flex-direction: column
 		align-items: center
@@ -433,6 +438,21 @@
 			height: 10px
 			filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.09))
 			position: absolute
+		&__close
+			position: absolute
+			top: 15px
+			right: 15px
+			width: 20px
+			height: 20px
+			padding: 5px
+			background-image: url("data:image/svg+xml,%3Csvg width='20' height='19' viewBox='0 0 20 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L9.75 8.33579L17.7929 0.292893C18.1834 -0.0976311 18.8166 -0.0976311 19.2071 0.292893C19.5976 0.683417 19.5976 1.31658 19.2071 1.70711L11.1642 9.75L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L9.75 11.1642L2.20711 18.7071C1.81658 19.0976 1.18342 19.0976 0.792893 18.7071C0.402369 18.3166 0.402369 17.6834 0.792893 17.2929L8.33579 9.75L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z' fill='black'/%3E%3C/svg%3E%0A")
+			//border: 1px solid #E6E9EF
+			border-radius: 100%
+			background-size: 10px
+			background-position: center
+			background-repeat: no-repeat
+			@media #{$mobile-above}
+				display: none
 		&__icon
 			margin-bottom: 20px
 		&__title

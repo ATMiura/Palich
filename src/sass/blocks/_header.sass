@@ -118,8 +118,34 @@
 	.dropdown-block
 		&:after
 			left: 25px
+		&__inner
+			&:before
+				content: ""
+				background-color: var(--light-pink)
+				display: none
+				flex-direction: column
+				//min-width: 310px
+				position: absolute
+				top: 0
+				height: 100%
+				margin-left: calc(100% - 41px)
+				padding: 20px
+				opacity: 0
+				visibility: hidden
+				transition: visibility 0s ease .4s, opacity .4s ease, transform .4s ease, width .4s ease
+				width: 0
+			&.active
+				&:before
+					display: flex
+					visibility: visible
+					opacity: 1
+					width: 100%
+					//width: 310px
+					transition-delay: 2s
+					transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease
 	@media #{$mobile}
 		display: none
+
 
 .header-logo
 	margin-right: 40px
@@ -368,8 +394,8 @@
 			&:hover
 				color: var(--vinishkotyan)
 		&__submenu
-			background-color: var(--light-pink)
-			//display: none
+			//background-color: var(--light-pink)
+			display: none
 			flex-direction: column
 			//min-width: 310px
 			position: absolute
@@ -377,19 +403,22 @@
 			height: 100%
 			margin-left: calc(100% - 41px)
 			padding: 20px
-			opacity: 0
-			visibility: hidden
+			//opacity: 0
+			//visibility: hidden
 			transition: visibility 0s ease .4s, opacity .4s ease, transform .4s ease, width .4s ease
 			width: 0
 		&.has-submenu.active
 			.nav-item__submenu
 				display: flex
-				visibility: visible
-				opacity: 1
+				//visibility: visible
+				//opacity: 1
 				width: 100%
 				//width: 310px
 				transition-delay: 2s
 				transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease
+			> .nav-item__link
+				.nav-item__label
+					color: var(--vinishkotyan)
 
 .header-mobile
 	display: flex
