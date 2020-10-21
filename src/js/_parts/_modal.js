@@ -17,7 +17,7 @@
 //	openModal($(this).attr('href'));
 //});
 
-$(document).on('click touch', '[data-modal-open]', function(event, element) {
+$(document).on('click touch', '[data-modal-open=""]', function(event, element) {
 	event.preventDefault();
 	$.fancybox.close();
 	$.fancybox.open( {
@@ -31,6 +31,48 @@ $(document).on('click touch', '[data-modal-open]', function(event, element) {
 		infobar: false,
 		buttons: false,
 	});
+});
+
+//$(document).on('click touch', '[data-modal-open="city"]', function(event, element) {
+//	event.preventDefault();
+//	$.fancybox.close();
+//	$.fancybox.open( {
+//		//selector: element,
+//		src: $(this).attr('href'),
+//		type : 'inline',
+//		touch: false,
+//		autoFocus: false,
+//		fullScreen: true,
+//		baseClass: "modal-city-choose",
+//		infobar: false,
+//		buttons: false,
+//	});
+//});
+
+function cityChoose() {
+	$.fancybox.close();
+	$.fancybox.open( {
+		//selector: element,
+		src: '#city-choose',
+		type : 'inline',
+		touch: false,
+		autoFocus: false,
+		fullScreen: true,
+		baseClass: "modal-city-choose",
+		infobar: false,
+		buttons: false,
+	});
+}
+
+$(document).ready(function () {
+	if($('#city-choose').length){
+		cityChoose();
+		console.log("всплывашка городов есть");
+	}
+	else {
+		console.log("всплывашки городов нет");
+	}
+
 });
 
 function thxCallback(){

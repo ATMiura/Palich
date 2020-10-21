@@ -15,7 +15,7 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 	var $trigger = $(".dropdown");
 	if($trigger !== event.target && !$trigger.has(event.target).length){
 		//$(".dropdown-block").slideUp("fast");
-		$('.dropdown').removeClass('is-open');
+		$trigger.removeClass('is-open');
 	}
 }).on('click touch', '.mobile .nav-item.has-submenu > .nav-item__link', function (event) {
 	event.preventDefault();
@@ -66,6 +66,12 @@ $(document).on('keyup', '.header-search .form-search__input', function () {
 $(document).on('click', '.cart-field-city__change', function () {
 	$(this).parents('.dropdown').toggleClass('is-open');
 });
+
+/* социальные сети на в деталке */
+//$(document).on('click', '[data-dropdown="share"]', function () {
+//	$(this).addClass('is-open');
+//});
+
 
 /* о компании в мобилке */
 $(window).on('load resize', function () {

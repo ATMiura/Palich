@@ -192,7 +192,10 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 							form.removeClass('submitting');
 							form.find('.button').unwrap('.submitting__loader');
 
+							console.log(data.message);
+
 							if(formName == 'express'){
+								form.find('.express__inp').parents('.form_group').append("<div class='form_group'><span class='form_error'></span></div>");
 								form.find('.form_error').text(data.message);
 							} else if(formName == 'cart'){
 								form.find('.form_row').append("<div class='form_group'><span class='form_error'></span></div>");

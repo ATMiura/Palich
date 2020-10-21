@@ -1,7 +1,7 @@
 $(window).on('load resize', function () {
 
 	/* проверяет все блоки с data-move и перемещает в блоки в мобилке/десктопе на основе их атрибутов */
-	if($(window).width() < 768){
+	if($(window).width() < 992){
 
 		if($('[data-mobile-menu="catalog-links"] > *').length > 1){
 			$('[data-mobile-menu="catalog-links"] .nav-list').remove();
@@ -31,7 +31,7 @@ $(window).on('load resize', function () {
 
 		console.log('переставил на мобилку');
 
-	} else if($(window).width() > 767){
+	} else if($(window).width() > 991){
 		$('[data-move]').each(function (element) {
 			let dataMoveAttr = $(this).data('move');
 			$(this).siblings('.dropdown-block').appendTo('[data-desktop="'+dataMoveAttr+'"]');

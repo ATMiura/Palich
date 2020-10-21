@@ -32,12 +32,12 @@ navItem.each(function(i,el){
 			clearTimeout(timer);
 		}
 	});
-	$('.nav-item__submenu').on({
-		mouseleave: function(){
-			$(el).removeClass('active');
-			clearTimeout(timer);
-		}
-	});
+	//$('.nav-item__submenu').on({
+	//	mouseleave: function(){
+	//		$(el).removeClass('active');
+	//		clearTimeout(timer);
+	//	}
+	//});
 });
 
 

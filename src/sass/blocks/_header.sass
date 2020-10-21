@@ -3,7 +3,17 @@
 	.container
 		padding: 0
 
-	@media #{$mobile}
+	@media #{$tablet-above}
+		.fixed
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 9
+			width: 100%
+			transition: .3s
+
+	@media #{$tablet}
 		[data-move]
 			display: none
 		&-mobile
@@ -160,7 +170,7 @@
 		.icon-logo-with-text
 			width: 190px
 			height: 35px
-	@media #{$mobile}
+	@media #{$tablet}
 		display: none
 
 .header-search
@@ -225,7 +235,7 @@
 		&__label
 			white-space: nowrap
 
-	@media #{$tablet}
+	@media #{$laptop}
 		&__item
 			position: initial !important
 			&__link
@@ -233,7 +243,7 @@
 			&__label
 				display: none
 
-	@media #{$mobile}
+	@media #{$tablet}
 		&__item
 			&__label
 				display: inline-block
@@ -314,6 +324,7 @@
 	max-width: 1230px
 	padding: 0 15px
 	margin: 0 auto
+	transition: .3s
 	@media #{$desktop}
 		max-width: 1170px
 	.grid-container
@@ -425,7 +436,7 @@
 	align-items: center
 	justify-content: space-between
 	width: 100%
-	@media #{$tablet-above}
+	@media #{$laptop-above}
 		display: none
 	&__block
 		display: flex

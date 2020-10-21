@@ -22,15 +22,15 @@ import Swiper from 'swiper';
 						slidesPerView: 3,
 					},
 					768: {
-						slidesPerView: 2,
-					},
-					576: {
-						slidesPerView: 1,
+						slidesPerView: 2.5,
 						scrollbar: {
 							el: '.swiper-scrollbar',
 							hide: false,
 						},
 						freeMode: true,
+					},
+					576: {
+						slidesPerView:  1.2,
 					}
 				},
 			});

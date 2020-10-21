@@ -32,10 +32,14 @@ mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', 
 								.products__item__cart__link__icon
 									+icon('product_add_to_cart')
 									+icon('product_in_cart')
-								.products-pickup
-									.products-pickup__close
-									.products-pickup__icon
-										+icon('products-pickup-icon')
-									.products-pickup__title Вы добавляете товар для самовывоза
-									.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+				if in_cart == true
+
+				else
+					.products-pickup
+						.products-pickup__close
+						.products-pickup__icon
+							+icon('products-pickup-icon')
+						.products-pickup__title Вы добавляете товар для самовывоза
+						.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+
 

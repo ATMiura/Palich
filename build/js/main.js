@@ -309,7 +309,7 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 
   if ($trigger !== event.target && !$trigger.has(event.target).length) {
     //$(".dropdown-block").slideUp("fast");
-    $('.dropdown').removeClass('is-open');
+    $trigger.removeClass('is-open');
   }
 }).on('click touch', '.mobile .nav-item.has-submenu > .nav-item__link', function (event) {
   event.preventDefault(); //if($(this).parents('.nav-item').hasClass('has-submenu')){
@@ -355,6 +355,11 @@ $(document).on('keyup', '.header-search .form-search__input', function () {
 $(document).on('click', '.cart-field-city__change', function () {
   $(this).parents('.dropdown').toggleClass('is-open');
 });
+/* социальные сети на в деталке */
+//$(document).on('click', '[data-dropdown="share"]', function () {
+//	$(this).addClass('is-open');
+//});
+
 /* о компании в мобилке */
 
 $(window).on('load resize', function () {
@@ -429,6 +434,26 @@ $(document).ajaxComplete(function () {
 
 /***/ }),
 
+/***/ "./src/js/_parts/_fixingHeader.js":
+/*!****************************************!*\
+  !*** ./src/js/_parts/_fixingHeader.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).scroll(function () {
+  var headerMain = $('.header-main'),
+      scroll = $(window).scrollTop(),
+      headerTop = $('.header-top'),
+      headerTopHeight = headerTop.height();
+
+  if ($(window).width() > 768) {
+    if (scroll >= headerTopHeight) headerMain.addClass('fixed');else headerMain.removeClass('fixed');
+  } else {}
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_header.js":
 /*!**********************************!*\
   !*** ./src/js/_parts/_header.js ***!
@@ -466,13 +491,12 @@ navItem.each(function (i, el) {
       //$(el).removeClass('active');
       clearTimeout(timer);
     }
-  });
-  $('.nav-item__submenu').on({
-    mouseleave: function mouseleave() {
-      $(el).removeClass('active');
-      clearTimeout(timer);
-    }
-  });
+  }); //$('.nav-item__submenu').on({
+  //	mouseleave: function(){
+  //		$(el).removeClass('active');
+  //		clearTimeout(timer);
+  //	}
+  //});
 });
 $(document).ready(function () {//var navItem = $('.nav-item.has-submenu'),
   //	timer;
@@ -575,7 +599,7 @@ $(document).ajaxComplete(function () {
 
 $(window).on('load resize', function () {
   /* проверяет все блоки с data-move и перемещает в блоки в мобилке/десктопе на основе их атрибутов */
-  if ($(window).width() < 768) {
+  if ($(window).width() < 992) {
     if ($('[data-mobile-menu="catalog-links"] > *').length > 1) {
       $('[data-mobile-menu="catalog-links"] .nav-list').remove();
     } else {
@@ -600,7 +624,7 @@ $(window).on('load resize', function () {
     });*/
 
     console.log('переставил на мобилку');
-  } else if ($(window).width() > 767) {
+  } else if ($(window).width() > 991) {
     $('[data-move]').each(function (element) {
       var dataMoveAttr = $(this).data('move');
       $(this).siblings('.dropdown-block').appendTo('[data-desktop="' + dataMoveAttr + '"]');
@@ -700,7 +724,7 @@ $(document).ready(function () {
 //	event.preventDefault();
 //	openModal($(this).attr('href'));
 //});
-$(document).on('click touch', '[data-modal-open]', function (event, element) {
+$(document).on('click touch', '[data-modal-open=""]', function (event, element) {
   event.preventDefault();
   $.fancybox.close();
   $.fancybox.open({
@@ -714,6 +738,44 @@ $(document).on('click touch', '[data-modal-open]', function (event, element) {
     infobar: false,
     buttons: false
   });
+}); //$(document).on('click touch', '[data-modal-open="city"]', function(event, element) {
+//	event.preventDefault();
+//	$.fancybox.close();
+//	$.fancybox.open( {
+//		//selector: element,
+//		src: $(this).attr('href'),
+//		type : 'inline',
+//		touch: false,
+//		autoFocus: false,
+//		fullScreen: true,
+//		baseClass: "modal-city-choose",
+//		infobar: false,
+//		buttons: false,
+//	});
+//});
+
+function cityChoose() {
+  $.fancybox.close();
+  $.fancybox.open({
+    //selector: element,
+    src: '#city-choose',
+    type: 'inline',
+    touch: false,
+    autoFocus: false,
+    fullScreen: true,
+    baseClass: "modal-city-choose",
+    infobar: false,
+    buttons: false
+  });
+}
+
+$(document).ready(function () {
+  if ($('#city-choose').length) {
+    cityChoose();
+    console.log("всплывашка городов есть");
+  } else {
+    console.log("всплывашки городов нет");
+  }
 });
 
 function thxCallback() {
@@ -777,6 +839,57 @@ __webpack_require__.r(__webpack_exports__);
 //var objectFitImages = require('object-fit-images');
 
 object_fit_images__WEBPACK_IMPORTED_MODULE_0___default()();
+
+/***/ }),
+
+/***/ "./src/js/_parts/_product-pickup.js":
+/*!******************************************!*\
+  !*** ./src/js/_parts/_product-pickup.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function productPickup() {
+  $(document).on('click', '.products-pickup__close', function (event) {
+    event.preventDefault();
+    $(this).parents('.products-pickup').hide();
+    $('body').removeClass('products-pickup-bg');
+  }); //$(document).on('click', '.products__item__cart', function (event) {
+  //	event.preventDefault();
+  //	$(this).parents('.products__item__inner').addClass('pickup-show');
+  //	setTimeout(function () {
+  //		$('.products__item__inner').removeClass('pickup-show');
+  //	},1000);
+  //});
+
+  if ($(window).width() < 768) {
+    $('.products__item__cart').on({
+      click: function click() {
+        $(this).parents('.products__item__inner').addClass('pickup-show'); //setTimeout(function () {
+        //	$('.products__item__inner').removeClass('pickup-show');
+        //},1000);
+      }
+    });
+  } else {
+    $('.products__item__cart').on({
+      mouseenter: function mouseenter() {
+        $(this).parents('.products__item__inner').addClass('on-hover');
+      },
+      mouseleave: function mouseleave() {
+        $(this).parents('.products__item__inner').removeClass('on-hover');
+      }
+    });
+  }
+}
+
+function pickupHide() {}
+
+$(document).ready(function () {
+  productPickup();
+});
+$(document).ajaxComplete(function () {
+  productPickup();
+});
 
 /***/ }),
 
@@ -867,15 +980,15 @@ __webpack_require__.r(__webpack_exports__);
             slidesPerView: 3
           },
           768: {
-            slidesPerView: 2
-          },
-          576: {
-            slidesPerView: 1,
+            slidesPerView: 2.5,
             scrollbar: {
               el: '.swiper-scrollbar',
               hide: false
             },
             freeMode: true
+          },
+          576: {
+            slidesPerView: 1.2
           }
         }
       });
@@ -1194,8 +1307,10 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
               // Неверно заполнены данные
               form.removeClass('submitting');
               form.find('.button').unwrap('.submitting__loader');
+              console.log(data.message);
 
               if (formName == 'express') {
+                form.find('.express__inp').parents('.form_group').append("<div class='form_group'><span class='form_error'></span></div>");
                 form.find('.form_error').text(data.message);
               } else if (formName == 'cart') {
                 form.find('.form_row').append("<div class='form_group'><span class='form_error'></span></div>");
@@ -6877,33 +6992,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor */ "./src/js/vendor.js");
 /* harmony import */ var _parts_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_parts/_header */ "./src/js/_parts/_header.js");
 /* harmony import */ var _parts_header__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_parts_header__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _parts_equalHeight__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_parts/_equalHeight */ "./src/js/_parts/_equalHeight.js");
-/* harmony import */ var _parts_equalHeight__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_parts_equalHeight__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _parts_sliders__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_parts/_sliders */ "./src/js/_parts/_sliders.js");
-/* harmony import */ var _parts_object_fit_images__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_parts/_object-fit-images */ "./src/js/_parts/_object-fit-images.js");
-/* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_parts/_dropdown */ "./src/js/_parts/_dropdown.js");
-/* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_parts_dropdown__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_parts/_modal */ "./src/js/_parts/_modal.js");
-/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_parts_modal__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_parts/_shops-tabs */ "./src/js/_parts/_shops-tabs.js");
-/* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_parts_shops_tabs__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./_parts/_products */ "./src/js/_parts/_products.js");
-/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_parts_products__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _parts_express__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./_parts/_express */ "./src/js/_parts/_express.js");
-/* harmony import */ var _parts_express__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_parts_express__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./_parts/_mobile-el-replace */ "./src/js/_parts/_mobile-el-replace.js");
-/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
-/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
-/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
-/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./_parts/_bx-filter */ "./src/js/_parts/_bx-filter.js");
-/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_parts_bx_filter__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./_parts/_cart */ "./src/js/_parts/_cart.js");
-/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_parts_cart__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _parts_fixingHeader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_parts/_fixingHeader */ "./src/js/_parts/_fixingHeader.js");
+/* harmony import */ var _parts_fixingHeader__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_parts_fixingHeader__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _parts_equalHeight__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_parts/_equalHeight */ "./src/js/_parts/_equalHeight.js");
+/* harmony import */ var _parts_equalHeight__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_parts_equalHeight__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _parts_sliders__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_parts/_sliders */ "./src/js/_parts/_sliders.js");
+/* harmony import */ var _parts_object_fit_images__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_parts/_object-fit-images */ "./src/js/_parts/_object-fit-images.js");
+/* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_parts/_dropdown */ "./src/js/_parts/_dropdown.js");
+/* harmony import */ var _parts_dropdown__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_parts_dropdown__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_parts/_modal */ "./src/js/_parts/_modal.js");
+/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_parts_modal__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./_parts/_shops-tabs */ "./src/js/_parts/_shops-tabs.js");
+/* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_parts_shops_tabs__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./_parts/_products */ "./src/js/_parts/_products.js");
+/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_parts_products__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _parts_product_pickup__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./_parts/_product-pickup */ "./src/js/_parts/_product-pickup.js");
+/* harmony import */ var _parts_product_pickup__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_parts_product_pickup__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _parts_express__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_parts/_express */ "./src/js/_parts/_express.js");
+/* harmony import */ var _parts_express__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_express__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_mobile-el-replace */ "./src/js/_parts/_mobile-el-replace.js");
+/* harmony import */ var _parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_parts_mobile_el_replace__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
+/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
+/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
+/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./_parts/_bx-filter */ "./src/js/_parts/_bx-filter.js");
+/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_parts_bx_filter__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./_parts/_cart */ "./src/js/_parts/_cart.js");
+/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_parts_cart__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_18__);
+
+
 
 
 
