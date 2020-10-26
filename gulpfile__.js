@@ -95,13 +95,13 @@ function svgoConfig(minify = argv.minifySvg) {
 
 gulp.task('copy', () => {
 	return gulp.src([
-		'src/resources/**/*.*',
-		'src/resources/**/.*',
-		'!src/resources/**/.keep',
-	], {
-		base: 'src/resources',
-		dot: true,
-	})
+			'src/resources/**/*.*',
+			'src/resources/**/.*',
+			'!src/resources/**/.keep',
+		], {
+			base: 'src/resources',
+			dot: true,
+		})
 		.pipe($.if(argv.cache, $.newer('build')))
 		.pipe($.if(argv.debug, $.debug()))
 		.pipe(gulp.dest('build'));
@@ -204,6 +204,40 @@ gulp.task('sass', () => {
 		.pipe(gulp.dest('build/css'));
 });
 
+gulp.task('grid', () => {
+	return gulp.src([
+		'src/grid/*.scss',
+		'!src/grid/_*.scss',
+	])
+		.pipe($.plumber({
+			errorHandler,
+		}))
+		.pipe($.if(argv.debug, $.debug()))
+		.pipe($.sourcemaps.init())
+		.pipe($.sass().on('error', $.sass.logError))
+		.pipe($.postcss([
+			argv.minifyCss ?
+				$.cssnano({
+					autoprefixer: {
+						add: true,
+						browsers: ['> 0%'],
+					},
+					calc: true,
+					discardComments: {
+						removeAll: true,
+					},
+					zindex: false,
+				})
+				:
+				$.autoprefixer({
+					add: true,
+					browsers: ['> 0%'],
+				}),
+		]))
+		.pipe($.sourcemaps.write('.'))
+		.pipe(gulp.dest('build/css'));
+});
+
 gulp.task('js', () => {
 	return gulp.src(webpackConfig.entry)
 		.pipe($.plumber({
@@ -223,20 +257,24 @@ gulp.task('watch', () => {
 
 	gulp.watch('src/svg/*.svg', gulp.series('sprites:svg'));
 
-	gulp.watch([
-		'src/templates/**/*.pug',
-	], {
-		delay: 0,
-	}, gulp.series('pug'))
-		.on('all', (event, file) => {
-			if (event === 'unlink') {
-				global.emittyPugChangedFile = undefined;
-			} else {
-				global.emittyPugChangedFile = file;
-			}
-		});
+	gulp.watch('src/templates/**/*.pug', gulp.series('pug'));
+
+	//gulp.watch([
+	//	'src/templates/**/*.pug',
+	//], {
+	//	delay: 0,
+	//}, gulp.series('pug'))
+	//	.on('all', (event, file) => {
+	//		if (event === 'unlink') {
+	//			global.emittyPugChangedFile = undefined;
+	//		} else {
+	//			global.emittyPugChangedFile = file;
+	//		}
+	//	});
 
 	gulp.watch('src/sass/**/*.s{a,c}ss', gulp.series('sass'));
+
+	gulp.watch('src/grid/**/*.s{a,c}ss', gulp.series('grid'));
 
 	gulp.watch('src/js/**/*.js', gulp.series('js'));
 });
@@ -263,6 +301,7 @@ gulp.task('build', gulp.parallel(
 	'sprites:svg',
 	'pug',
 	'sass',
+	'grid',
 	'js'
 ));
 

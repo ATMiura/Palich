@@ -20,3 +20,5 @@ import './_parts/_cart';
 //import './_parts/_cityInInpField';
 
 import './_parts/_validation';
+
+import './_parts/_cssVars';

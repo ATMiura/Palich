@@ -285,6 +285,22 @@ $(window).on('load resize', function () {
 
 /***/ }),
 
+/***/ "./src/js/_parts/_cssVars.js":
+/*!***********************************!*\
+  !*** ./src/js/_parts/_cssVars.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! css-vars-ponyfill */ "./node_modules/css-vars-ponyfill/dist/css-vars-ponyfill.esm.js");
+
+Object(css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_0__["default"])({// Options...
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_dropdown.js":
 /*!************************************!*\
   !*** ./src/js/_parts/_dropdown.js ***!
@@ -7023,6 +7039,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_parts_cart__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
 /* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _parts_cssVars__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./_parts/_cssVars */ "./src/js/_parts/_cssVars.js");
 
 
 
@@ -7041,6 +7058,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  //import './_parts/_cityInInpField';
+
 
 
 
