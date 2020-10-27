@@ -1,4 +1,4 @@
-import './vendor';
+//import './vendor';
 
 import './_parts/_header';
 import './_parts/_fixingHeader';

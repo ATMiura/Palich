@@ -1,4 +1,4 @@
-
+import '../_vendor/jquery.fancybox';
 
 //function openModal(element){
 //	$.fancybox.close();
