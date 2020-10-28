@@ -1,4 +1,4 @@
-import '../_vendor/masked-input';
+//import '../_vendor/masked-input';
 window.maskField = function(){
 	$('[data-inputmask]').each(function () {
 		var
