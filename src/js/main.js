@@ -14,6 +14,7 @@ import './_parts/_dropdown';
 import './_parts/_object-fit-images';
 
 import './_parts/_shops-tabs';
+import './_parts/_shopsMap';
 import './_parts/_products';
 import './_parts/_product-pickup';
 

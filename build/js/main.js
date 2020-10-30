@@ -810,7 +810,7 @@ function cityChoose() {
 
 $(document).ready(function () {
   if ($('#city-choose').length) {
-    cityChoose();
+    //cityChoose();
     console.log("всплывашка городов есть");
   } else {
     console.log("всплывашки городов нет");
@@ -986,6 +986,161 @@ $(document).on('click touch', '[data-shops-nav]', function () {
   $('.shops-content-tab').removeClass('active');
   $('[data-shops-content="' + shops_view_type + '"]').addClass('active');
   console.log(shops_view_type);
+});
+
+/***/ }),
+
+/***/ "./src/js/_parts/_shopsMap.js":
+/*!************************************!*\
+  !*** ./src/js/_parts/_shopsMap.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.allMarkers2 = {};
+/*var shops = [
+	{
+		id: 1,
+		cityId: 1,
+		city: 'Краснодар',
+		address: 'ул. Тургеневское шоссе, д. 27',
+		location: [55.8617, 38.1988]
+	},
+	{
+		id: 2,
+		cityId: 1,
+		city: 'Краснодар',
+		address: 'ул. Головатого, д. 313',
+		location: [55.8617, 37.7788]
+	},
+	{
+		id: 3,
+		cityId: 2,
+		city: 'Анапа',
+		address: 'ул. Крылатая, д. 2',
+		location: [55.8617, 37.1988]
+	},
+	{
+		id: 4,
+		cityId: 3,
+		city: 'Новороссийск',
+		address: 'ул. Уральская, д. 98',
+		location: [55.8617, 38.2988]
+	}
+];*/
+
+function mapInit() {
+  var mapContainer = $('.js-shop-map');
+  var mapMarkers = eval(mapContainer.data('map'));
+  var mapPinIcon = mapContainer.data('pin');
+  var offsetValue = 0;
+  var mapCenter = mapContainer.data('center').split(',');
+  mapCenter = [mapCenter[1], mapCenter[0]];
+  var allMarkers = []; //var allMarkers2 = {};
+
+  var baloonHTML = ""; // Создание экземпляра карты.
+
+  var myMap = new ymaps.Map('map', {
+    center: mapCenter,
+    zoom: 15,
+    controls: []
+  }, {
+    suppressMapOpenBlock: true
+  });
+
+  for (var i = 0, l = mapMarkers.length; i < l; i++) {
+    //createMenuGroup(mapMarkers[i]);
+    // Кастомный балун
+    var location = mapMarkers[i].location;
+    var id = mapMarkers[i].id;
+    var markerMetro = mapMarkers[i].metro;
+    var markerAddress = mapMarkers[i].address;
+    var markerClosest = mapMarkers[i].closest;
+    var markerTime = mapMarkers[i].time;
+    var markerTel = mapMarkers[i].tel;
+    MyBalloonLayout = ymaps.templateLayoutFactory.createClass('<div class="map-tooltip" data-tooltip-id="' + id + '">' + '<div class="map-tooltip__close js-mapTooltipClose"></div>' + '<div class="arrow"></div>' + '<div class="map-tooltip__desc">' + '$[[options.contentLayout observeSize]]' + '</div>' + '</div>', {
+      build: function build() {
+        this.constructor.superclass.build.call(this);
+        this._$element = $('.map-tooltip', this.getParentElement());
+        this.applyElementOffset();
+
+        this._$element.find('.js-mapTooltipClose').on('click', $.proxy(this.onCloseClick, this));
+      },
+      clear: function clear() {
+        this._$element.find('.js-mapTooltipClose').off('click');
+
+        this.constructor.superclass.clear.call(this);
+      },
+      onSublayoutSizeChange: function onSublayoutSizeChange() {
+        MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+        if (!this._isElement(this._$element)) {
+          return;
+        }
+
+        this.applyElementOffset();
+        this.events.fire('shapechange');
+      },
+      applyElementOffset: function applyElementOffset() {
+        this._$element.css({
+          left: -(this._$element[0].offsetWidth / 2),
+          top: -(this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight)
+        });
+      },
+      onCloseClick: function onCloseClick(e) {
+        e.preventDefault();
+        this.events.fire('userclose');
+      },
+      getShape: function getShape() {
+        if (!this._isElement(this._$element)) {
+          return MyBalloonLayout.superclass.getShape.call(this);
+        }
+
+        var position = this._$element.position();
+
+        return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([[position.left, position.top], [position.left + this._$element[0].offsetWidth, position.top + this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight]]));
+      },
+      _isElement: function _isElement(element) {
+        return element && element[0] && element.find('.arrow')[0];
+      }
+    });
+    MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass("<div class='map-tooltip__address'>" + "<span class='map-tooltip__metro'>" + markerMetro + "</span>, " + markerAddress + "<div class='map-tooltip__closest'>" + markerClosest + "</div>" + "</div>" + "<div class='map-tooltip__info'>" + "<div class='map-tooltip__time'>" + markerTime + "</div>" + "<div class='map-tooltip__tel'>" + markerTel + "</div>" + "</div>");
+    placemark = window.placemark = new ymaps.Placemark(location, {//balloonHeader: 'Заголовок балуна',
+      //balloonContent: 'Контент балуна'
+    }, {
+      balloonShadow: false,
+      balloonLayout: MyBalloonLayout,
+      balloonContentLayout: MyBalloonContentLayout,
+      balloonPanelMaxMapArea: 0,
+      // Не скрываем иконку при открытом балуне.
+      hideIconOnBalloonOpen: false,
+      iconLayout: 'default#image',
+      iconImageHref: mapPinIcon,
+      iconImageOffset: [-6, -40],
+      iconImageSize: [84, 84]
+    });
+    placemark.events.add('click', function (e) {
+      if (!myMap.balloon.isOpen()) {
+        e.get('target').options.set({
+          iconImageHref: 'images/map-pin-active.svg'
+        });
+      } else {
+        e.get('target').options.set({
+          iconImageHref: 'images/map-pin.svg'
+        });
+      }
+    });
+    allMarkers.push(placemark);
+    allMarkers2[id] = placemark; // allMarkers2[2].balloon.open(); - работает и allMarkers2.balloon.close(); - тоже
+    //placemark.balloon.open();
+
+    console.log(allMarkers2[id]);
+    myMap.setBounds(myMap.geoObjects.add(placemark).getBounds());
+  }
+}
+
+$(document).ready(function () {
+  typeof ymaps !== 'undefined' && $('.js-shop-map').length > 0 && ymaps.ready(mapInit);
 });
 
 /***/ }),
@@ -7193,23 +7348,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_object_fit_images__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./_parts/_object-fit-images */ "./src/js/_parts/_object-fit-images.js");
 /* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./_parts/_shops-tabs */ "./src/js/_parts/_shops-tabs.js");
 /* harmony import */ var _parts_shops_tabs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_parts_shops_tabs__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_parts/_products */ "./src/js/_parts/_products.js");
-/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_products__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _parts_product_pickup__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_product-pickup */ "./src/js/_parts/_product-pickup.js");
-/* harmony import */ var _parts_product_pickup__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_parts_product_pickup__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
-/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./_parts/_bx-filter */ "./src/js/_parts/_bx-filter.js");
-/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_parts_bx_filter__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./_parts/_cart */ "./src/js/_parts/_cart.js");
-/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_parts_cart__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./_parts/_modal */ "./src/js/_parts/_modal.js");
-/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_parts_modal__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
-/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
-/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _parts_shopsMap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_parts/_shopsMap */ "./src/js/_parts/_shopsMap.js");
+/* harmony import */ var _parts_shopsMap__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_parts_shopsMap__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_parts/_products */ "./src/js/_parts/_products.js");
+/* harmony import */ var _parts_products__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_parts_products__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _parts_product_pickup__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./_parts/_product-pickup */ "./src/js/_parts/_product-pickup.js");
+/* harmony import */ var _parts_product_pickup__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_parts_product_pickup__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./_parts/_catalog-list-mobile */ "./src/js/_parts/_catalog-list-mobile.js");
+/* harmony import */ var _parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_parts_catalog_list_mobile__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./_parts/_bx-filter */ "./src/js/_parts/_bx-filter.js");
+/* harmony import */ var _parts_bx_filter__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_parts_bx_filter__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./_parts/_cart */ "./src/js/_parts/_cart.js");
+/* harmony import */ var _parts_cart__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_parts_cart__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./_parts/_modal */ "./src/js/_parts/_modal.js");
+/* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_parts_modal__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
+/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
+/* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_20__);
+
 
 
 

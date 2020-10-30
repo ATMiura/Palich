@@ -66,7 +66,7 @@ function cityChoose() {
 
 $(document).ready(function () {
 	if($('#city-choose').length){
-		cityChoose();
+		//cityChoose();
 		console.log("всплывашка городов есть");
 	}
 	else {

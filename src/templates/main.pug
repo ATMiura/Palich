@@ -416,7 +416,51 @@ block content
 							+shops-list-item
 							+shops-list-item
 							+shops-list-item
-						.shops-content-tab.shops-map(data-shops-content="map") 2
+						.shops-content-tab.shops-map(data-shops-content="map")
+							#map.js-shop-map(data-map="shops" data-center="55.8617,38.1988" data-pin="images/map-pin.svg")
+							script.
+								var shops = [
+									{
+										id: 1,
+										cityId: 1,
+										metro: 'м.Автозаводская',
+										address: 'ул. Автозаводская, д. 27, пом. 5',
+										closest: 'Ближайший, Самообслуживание',
+										time: 'пн-вс 09:00 - 21:00',
+										tel: '+7(495)269-55-55',
+										location: [55.8617, 38.1988]
+									},
+									{
+										id: 2,
+										cityId: 1,
+										metro: 'Краснодар',
+										address: 'ул. Головатого, д. 313',
+										closest: 'Ближайший, Самообслуживание',
+										time: 'пн-вс 09:00 - 21:00',
+										tel: '+7(495)269-55-55',
+										location: [55.8617, 37.7788]
+									},
+									{
+										id: 3,
+										cityId: 2,
+										metro: 'Анапа',
+										address: 'ул. Крылатая, д. 2',
+										closest: 'Ближайший, Самообслуживание',
+										time: 'пн-вс 09:00 - 21:00',
+										tel: '+7(495)269-55-55',
+										location: [55.8617, 37.1988]
+									},
+									{
+										id: 4,
+										cityId: 3,
+										metro: 'Новороссийск',
+										address: 'ул. Уральская, д. 98',
+										closest: 'Ближайший, Самообслуживание',
+										time: 'пн-вс 09:00 - 21:00',
+										tel: '+7(495)269-55-55',
+										location: [55.8617, 38.2988]
+									}
+								];
 						.shops-content-tab.shops-metro(data-shops-content="metro") 3
 						.shops-content-tab.shops-beside(data-shops-content="beside") 4
 

@@ -51,17 +51,31 @@
 			&__item
 				white-space: nowrap
 
+	&-map
+		.js-shop-map
+			height: 665px
+			position: relative
+			width: 100%
+			background-color: #fff
+			-webkit-transition: 300ms ease-out
+			-o-transition: 300ms ease-out
+			-moz-transition: 300ms ease-out
+			transition: 300ms ease-out
+			//> ymaps
+				min-height: 665px
+				height: auto
+
 
 	&-content
 		&-tab
 			opacity: 0
-			visibility: hidden
+			//visibility: hidden
 			height: 0
 			//padding-top: 10px
 			margin-top: 20px
 			&.active
 				opacity: 1
-				visibility: visible
+				//visibility: visible
 				height: auto
 	&-list
 		max-height: 650px
@@ -133,4 +147,58 @@
 				&__time
 					margin-bottom: 15px
 
+
+.map-tooltip
+	font-family: 'PT Sans'
+	min-width: 430px
+	box-sizing: border-box
+	filter: drop-shadow(0 0 3px rgba(10,0,0,0.2))
+	&:before
+		content: ""
+		display: inline-block
+		border-left: 9px solid transparent
+		border-right: 9px solid transparent
+		border-bottom: 9px solid var(--white)
+		position: relative
+		bottom: -4px
+		left: 27px
+
+	.map-tooltip__close
+	.map-tooltip__desc
+		background: var(--white)
+		padding: 25px 10px 25px 20px
+		& > ymaps
+			width: 100% !important
+	.map-tooltip__address
+		font-size: 1.125rem
+		line-height: 1.5rem
+		letter-spacing: 0.01em
+		margin-bottom: 15px
+	.map-tooltip__metro
+		font-weight: bold
+	.map-tooltip__closest
+		color: var(--gryaz-grey)
+	.map-tooltip__info
+		display: flex
+		align-items: center
+		//justify-content: space-between
+		& > div:not(:first-child)
+			margin-left: 35px
+	.map-tooltip__time
+		color: var(--black)
+		&:before
+			content: ""
+			margin-right: 5px
+			display: inline-block
+			width: 16px
+			height: 16px
+			background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M8 16.428C12.4183 16.428 16 13.0569 16 8.89855C16 4.74017 12.4183 1.36914 8 1.36914C3.58172 1.36914 0 4.74017 0 8.89855C0 13.0569 3.58172 16.428 8 16.428Z' fill='%23A70230'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7 4.9491C7.55228 4.9491 8 5.39681 8 5.9491V9.23752L10.5234 10.2978C11.0325 10.5117 11.2719 11.0979 11.0579 11.607C10.844 12.1162 10.2578 12.3555 9.74863 12.1416L6.61264 10.824C6.24145 10.668 6 10.3047 6 9.90204V5.9491C6 5.39681 6.44772 4.9491 7 4.9491Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='16' height='16' fill='white' transform='translate(0 0.949097)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+	.map-tooltip__tel
+		&:before
+			content: ""
+			margin-right: 5px
+			display: inline-block
+			width: 13px
+			height: 17px
+			background-image: url("data:image/svg+xml,%3Csvg width='13' height='18' viewBox='0 0 13 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.6072 14.2629L11.9569 16.2677C11.8974 16.454 11.7959 16.6274 11.6592 16.7769C11.5224 16.9264 11.3533 17.0485 11.1626 17.1356C10.9719 17.2227 10.764 17.2727 10.552 17.2825C10.34 17.2923 10.1287 17.2617 9.93159 17.1926C7.75719 16.3881 5.82682 15.1273 4.2956 13.5116C2.86416 12.0294 1.81242 10.2737 1.21507 8.3692C0.546531 6.30679 0.422391 4.12337 0.852711 1.99585C0.894405 1.80634 0.978813 1.6263 1.10056 1.46719C1.22231 1.30809 1.37873 1.1734 1.55987 1.07171C1.741 0.970021 1.94289 0.903553 2.15266 0.876541C2.36243 0.849528 2.5755 0.862563 2.7783 0.914814L4.96883 1.48126C5.32423 1.5697 5.63051 1.77338 5.8306 2.05432C6.03069 2.33527 6.11093 2.67432 6.05637 3.00827C5.94072 3.67374 5.90786 4.34801 5.9584 5.01821C5.97906 5.2828 5.91601 5.54824 5.77671 5.78308C5.63742 6.01792 5.42772 6.21232 5.17246 6.34325L3.96986 6.95212C4.46664 8.8939 5.53091 10.6705 7.05038 12.0945L8.25299 11.4856C8.5098 11.3573 8.8006 11.2983 9.09095 11.3156C9.3813 11.3329 9.65902 11.4258 9.89121 11.5833C10.4803 11.9808 11.1177 12.3158 11.7913 12.5816C12.1311 12.7192 12.402 12.9664 12.5525 13.2764C12.7029 13.5864 12.7224 13.9375 12.6072 14.2629Z' fill='%23A70230'/%3E%3Cpath d='M12.6072 14.2629L11.9569 16.2677C11.8974 16.454 11.7959 16.6274 11.6592 16.7769C11.5224 16.9264 11.3533 17.0485 11.1626 17.1356C10.9719 17.2227 10.764 17.2727 10.552 17.2825C10.34 17.2923 10.1287 17.2617 9.93159 17.1926C7.75719 16.3881 5.82682 15.1273 4.2956 13.5116C2.86416 12.0294 1.81242 10.2737 1.21507 8.3692C0.546531 6.30679 0.422391 4.12337 0.852711 1.99585C0.894405 1.80634 0.978813 1.6263 1.10056 1.46719C1.22231 1.30809 1.37873 1.1734 1.55987 1.07171C1.741 0.970021 1.94289 0.903553 2.15266 0.876541C2.36243 0.849528 2.5755 0.862563 2.7783 0.914814L4.96883 1.48126C5.32423 1.5697 5.63051 1.77338 5.8306 2.05432C6.03069 2.33527 6.11093 2.67432 6.05637 3.00827C5.94072 3.67374 5.90786 4.34801 5.9584 5.01821C5.97906 5.2828 5.91601 5.54824 5.77671 5.78308C5.63742 6.01792 5.42772 6.21232 5.17246 6.34325L3.96986 6.95212C4.46664 8.8939 5.53091 10.6705 7.05038 12.0945L8.25299 11.4856C8.5098 11.3573 8.8006 11.2983 9.09095 11.3156C9.3813 11.3329 9.65902 11.4258 9.89121 11.5833C10.4803 11.9808 11.1177 12.3158 11.7913 12.5816C12.1311 12.7192 12.402 12.9664 12.5525 13.2764C12.7029 13.5864 12.7224 13.9375 12.6072 14.2629Z' fill='%23A70230'/%3E%3C/svg%3E%0A")
 
