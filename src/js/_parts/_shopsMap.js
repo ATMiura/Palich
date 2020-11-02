@@ -166,6 +166,53 @@ function mapInit(){
 		console.log(allMarkers2[id]);
 
 		myMap.setBounds(myMap.geoObjects.add(placemark).getBounds());
+
+		//myMap.events.add('boundschange', function(e){
+		//	if (e.get('newZoom') !== e.get('oldZoom')) {
+		//		console.log(e.get('zoom '));
+		//	}
+		//})
+
+		//var rectangle = new ymaps.Rectangle(myMap.getBounds(), {}, {
+		//	//cursor: "dragCursor",
+		//	draggable: false,
+		//	outline: false,
+		//	strokeOpacity: 0,
+		//	fillImageHref: 'images/map-metro-no-bg.svg',
+		//	fillMethod: 'stretch'
+		//});
+		//myMap.geoObjects.add(rectangle);
+//
+		var myCircle = new ymaps.Circle([
+			// Координаты центра круга.
+			[55.74954, 37.621587],
+			// Радиус круга в метрах.
+			10000
+		], {
+			// Описываем свойства круга.
+			// Содержимое балуна.
+			balloonContent: "Радиус круга - 10 км",
+			// Содержимое хинта.
+			hintContent: "Подвинь меня"
+		}, {
+			// Задаем опции круга.
+			// Включаем возможность перетаскивания круга.
+			draggable: false,
+			// Цвет заливки.
+			// Последний байт (77) определяет прозрачность.
+			// Прозрачность заливки также можно задать используя опцию "fillOpacity".
+			fillColor: false,
+			// Цвет обводки.
+			strokeColor: false,
+			// Прозрачность обводки.
+			strokeOpacity: 0,
+			// Ширина обводки в пикселях.
+			strokeWidth: 0,
+			fillImageHref: 'images/map-metro-no-bg.svg',
+			fillMethod: 'stretch'
+		});
+
+		myMap.geoObjects.add(myCircle);
 	}
 }
 

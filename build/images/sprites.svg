@@ -566,4 +566,1017 @@
 	<path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M54.313 30.241a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/>
 
 </symbol>
+<symbol id="map-metro">
+	<path fill="#fff" d="M0 0h1200v1150H0z"/>
+	<g fill="none" stroke-width="8">
+		<path stroke="#5BBEBB" d="M435 207l17-16h113l3-4"/>
+		<path stroke="#FFD803" d="M425 207l25-24h105l2 4M149 686v25M149 711v25M149 736v25M149 761v25M149 786v25M149 811v25M149 836v25"/>
+		<path stroke="#B1D332" d="M615 187v-24M615 163v-24M615 139v-12l-16-13M599 114h-15l-12-1-17-18V77M555 77V55M555 55V15"/>
+		<path stroke="#FFA8AF" d="M716 103a350 350 0 00-131.585-12.083M583 91a350 350 0 00-28.783 4.43M555 95a350 350 0 00-36.33 9.293M517 104a350 350 0 00-27.112 10.486M487 115a350 350 0 00-24.897 12.148M457 130a350 350 0 00-74.7 53.026M378 187a350 350 0 00-21.148 22.38M355 212a350 350 0 00-20.703 26.248M334 240a350 350 0 00-27.578 45.57M306 285a350 350 0 00-13.892 34.293M291 323a350 350 0 00-14.683 55.223M277 377a350 350 0 001.648 134.77M278 513a350 350 0 0087.026 164.7M368 680a350 350 0 00168.327 98.604M537 778a350 350 0 0084 11M618 789a350 350 0 0045.654-2.609M666 787a350 350 0 0086.112-23.486M753 763a350 350 0 0053.472-27.183M806 735a350 350 0 0035.262-23.999M843 711a350 350 0 0046.116-47.024M891 662a350 350 0 0054.514-91.888M945 572a350 350 0 0010.707-30.67M956 542a350 350 0 008.57-36.217M964 508a350 350 0 005.668-38.495M970 471a350 350 0 00-5.43-98.783M965 372a350 350 0 00-15.108-52.707M950 317a350 350 0 00-68.9-112.196M880 203a350 350 0 00-24.804-24.1M856 179a350 350 0 00-29.275-23.156M826 155a350 350 0 00-30-19.109M794 135a350 350 0 00-76.527-32.442"/>
+		<path stroke="#EF1E25" d="M872 179v14l-9 10M863 203l-24 21M839 224l-19 18M820 242l-22 21M798 263l-17 16M781 279l-40 40M741 319l-25 25M716 344l-63 63M653 407l-46 46M607 453l-91 91M516 544l-25 25M491 569l-29 29M462 598l-45 47M417 645l-49 50M368 695l-20 22M348 717l-22 23M326 740l-18 21M308 761v25M308 786v25M308 811v25M308 836v25M308 861v25M308 886l19 16M327 902l19 16M346 918l19 16"/>
+		<path stroke="#029A55" d="M457 55V35M457 35V15M457 55v20M457 75v40M457 115v39M457 154v21M457 175v32M457 207l59 59M516 266v86M516 352v25M516 377l91 91M679 540l79 79M758 619l48 48v53M806 720v71M806 791v17M806 808v19M806 827v60M806 887v20M806 907v20M806 927v20M806 947l20 14M826 961v20"/>
+		<path stroke="#0252A2" d="M962 251v20M962 271v20M962 291v30l-12 12M950 333l-20 20M930 353l-40 40M890 393l-25 25M865 418l-30 30M835 448l-35 35H607M186 549h-32l-30-29V406M124 406v-49M124 357v-20M124 337v-20M124 317v-20M124 297v-20"/>
+		<path stroke="#019EE0" d="M124 372l25 34M149 406v20M149 426v20M149 446v20M149 466v36l23 21h83l23-27M278 496l51-52M329 444l51-53h28M408 391l48 48M408 391l-28-31h-37M456 439l30 30M486 469l30 30M343 360h-66"/>
+		<path stroke="#745C2F" d="M462 583a215 215 0 0074.993 53.909M537 637a215 215 0 00132.364 11.49M666 649a215 215 0 0093.2-45.3M758 604a215 215 0 0045.33-51.067M801 555a215 215 0 0033.822-93.526M835 463a215 215 0 00-56.759-170.63M781 294a215 215 0 00-65.75-48.24M716 246a215 215 0 00-136.024-18.05M583 227a215 215 0 00-69.5 25.805M516 251a215 215 0 00-66.707 58.61M449 310a215 215 0 00-40.908 99.078M408 406a215 215 0 0055.759 179.63"/>
+		<path stroke="#FBAA33" d="M716 15v20M716 35v20M716 55v32M716 87v41M716 128v22M716 150v23M716 173v58M716 231v38M716 269v60M716 329v141M716 470v3l-37 37M679 510L537 652M537 652v57M537 709v86M537 795v22M537 817v25M537 842v25M537 867v25M537 892v25M537 917v25M537 942v25M537 967l19 16M556 983l21 17"/>
+		<path stroke="#B61D8E" d="M322 15v20M322 35v20M322 55v20M322 75v20M322 95v117M322 212v73M322 285h87M409 285l21 20M430 305l19 20M449 325l67 67M516 392h137M653 392l63 63M716 455l85 85M801 540l65 65M866 605l27 29M893 634l49 50M942 684l20 20M962 704l20 20M982 724v20M982 744v20"/>
+		<path stroke="#FFD803" d="M1011 416l-20 20M1031 396l-20 20M991 436l-21 21M970 457l-34 34M936 491l-34 34h-36M866 525h-65M801 525H679"/>
+		<path stroke="#ACADAF" d="M583 15v20M583 35v20M583 55v19M583 74v40M583 114v25M583 139v24M583 163v24M583 187v55M583 242l49 49M632 291L516 407M516 407v107M516 514l105 105M621 619l45 45M666 664v45M666 709v93M666 802v29M666 831v25M666 856v40M666 896v20M666 916v20M666 936v20M666 956v30M666 986l-1 29M665 1015l-43 30"/>
+		<path stroke="#B1D332" d="M648 291l68 68M615 212v47l33 32M716 359l119 119M835 478l31 32M866 510v79M866 589v56l-23 26v25M843 696v105M843 801v20M843 821v20M843 841v20M843 861v20M843 881v20M843 901v20"/>
+		<path stroke="#5BBEBB" d="M806 842l-80 23M726 865l-60 16"/>
+		<path stroke="#85D4F3" d="M622 1060v20M597 1035l25 25M622 1080v20M622 1100v20M622 1120v20"/>
+		<path stroke="#0252A2" d="M124 277v-20M124 257v-20M124 237v-20"/>
+		<path stroke="#B1D332" d="M615 187v25M843 921v20M843 941v20"/>
+		<path stroke="#B61D8E" d="M982 764v35M982 799v20"/>
+		<path stroke="#85D4F3" d="M577 1015l20 20"/>
+		<path stroke="#FFD803" d="M307 323v115L186 566M186 566l-37 37v33M149 636v25M149 661v25"/>
+		<path stroke="#5BBEBB" d="M343 349l-26-26M317 323l38-38M355 285l39-39M394 246l41-39"/>
+		<path stroke="#FFD803" d="M345 285l-38 38M345 285l39-39M384 246l41-39"/>
+		<path stroke="#DE64A1" d="M982 779h97l31 33v38M1110 850v20M1110 870v20"/>
+		<path stroke="#0252A2" d="M408 421h-27L258 549h-72M456 469l-48-48M516 529l-60-60M607 483h-15l-46 46h-30"/>
+		<path stroke="#029A55" d="M607 468l72 72"/>
+	</g>
+	<g fill="rgba(255,255,255,0.6)" stroke="#000" stroke-width="2">
+		<path d="M557 194h26a7 7 0 000-14h-26a7 7 0 000 14M583 121h16a7 7 0 000-14h-16a7 7 0 000 14M590 74v17a7 7 0 01-14 0V74a7 7 0 0114 0M723 87v16a7 7 0 01-14 0V87a7 7 0 0114 0M856 186h16a7 7 0 000-14h-16a7 7 0 000 14M863 210h17a7 7 0 000-14h-17a7 7 0 000 14M957 317v16a7 7 0 01-14 0v-16a7 7 0 0114 0M977 457v14a7 7 0 01-14 0v-14a7 7 0 0114 0M850 696v15a7 7 0 01-14 0v-15a7 7 0 0114 0M813 720v15a7 7 0 01-14 0v-15a7 7 0 0114 0M673 787v15a7 7 0 01-14 0v-15a7 7 0 0114 0M544 778v17a7 7 0 01-14 0v-17a7 7 0 0114 0M375 680v15a7 7 0 01-14 0v-15a7 7 0 0114 0M285 496v17a7 7 0 01-14 0v-17a7 7 0 0114 0M284 360v17a7 7 0 01-14 0v-17a7 7 0 0114 0M306 292h49a7 7 0 000-14h-49a7 7 0 000 14M322 219h33a7 7 0 000-14h-33a7 7 0 000 14M464 115v15a7 7 0 01-14 0v-15a7 7 0 0114 0M544 637v15a7 7 0 01-14 0v-15a7 7 0 0114 0M632 298h16a7 7 0 000-14h-16a7 7 0 000 14M590 227v15a7 7 0 01-14 0v-15a7 7 0 0114 0M723 329v30a7 7 0 01-14 0v-30a7 7 0 0114 0M808 525v30a7 7 0 01-14 0v-30a7 7 0 0114 0M686 510v30a7 7 0 01-14 0v-30a7 7 0 0114 0M415 391v30a7 7 0 01-14 0v-30a7 7 0 0114 0M723 231v15a7 7 0 01-14 0v-15a7 7 0 0114 0M456 310v15a7 7 0 01-14 0v-15a7 7 0 0114 0M469 583v15a7 7 0 01-14 0v-15a7 7 0 0114 0M660 392v15a7 7 0 01-14 0v-15a7 7 0 0114 0M673 881v15a7 7 0 01-14 0v-15a7 7 0 0114 0M629 1045v15a7 7 0 01-14 0v-15a7 7 0 0114 0M765 604v15a7 7 0 01-14 0v-15a7 7 0 0114 0M788 279v15a7 7 0 01-14 0v-15a7 7 0 0114 0M131 357v15a7 7 0 01-14 0v-15a7 7 0 0114 0M873 510v15a7 7 0 01-14 0v-15a7 7 0 0114 0M523 377v30a7 7 0 01-14 0v-30a7 7 0 0114 0M523 499v45a7 7 0 01-14 0v-45a7 7 0 0114 0M813 827v15a7 7 0 01-14 0v-15a7 7 0 0114 0M723 455v15a7 7 0 01-14 0v-15a7 7 0 0114 0M873 589v16a7 7 0 01-14 0v-16a7 7 0 0114 0M523 251v15a7 7 0 01-14 0v-15a7 7 0 0114 0M842 448v30a7 7 0 01-14 0v-30a7 7 0 0114 0M673 649v15a7 7 0 01-14 0v-15a7 7 0 0114 0M826 968h17a7 7 0 000-14h-17a7 7 0 000 14M584 1000v15a7 7 0 01-14 0v-15a7 7 0 0114 0M193 549v17a7 7 0 01-14 0v-17a7 7 0 0114 0M291 330h26a7 7 0 000-14h-26a7 7 0 000 14M350 349v11a7 7 0 01-14 0v-11a7 7 0 0114 0M425 214h32a7 7 0 000-14h-32a7 7 0 000 14M384 253h10a7 7 0 000-14h-10a7 7 0 000 14M562 77v18a7 7 0 01-14 0V77a7 7 0 0114 0M989 764v15a7 7 0 01-14 0v-15a7 7 0 0114 0M614 453v30a7 7 0 01-14 0v-30a7 7 0 0114 0"/>
+	</g>
+	<g stroke="#000" stroke-opacity=".5">
+		<circle cx="872" cy="179" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="863" cy="203" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="839" cy="224" r="5" fill="#EF1E25"/>
+		<circle cx="820" cy="242" r="5" fill="#EF1E25"/>
+		<circle cx="798" cy="263" r="5" fill="#EF1E25"/>
+		<circle cx="781" cy="279" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="741" cy="319" r="5" fill="#EF1E25"/>
+		<circle cx="716" cy="344" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="653" cy="407" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="607" cy="453" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="516" cy="544" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="491" cy="569" r="5" fill="#EF1E25"/>
+		<circle cx="462" cy="598" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="417" cy="645" r="5" fill="#EF1E25"/>
+		<circle cx="368" cy="695" r="5" fill="#EF1E25" stroke="#fff"/>
+		<circle cx="348" cy="717" r="5" fill="#EF1E25"/>
+		<circle cx="326" cy="740" r="5" fill="#EF1E25"/>
+		<circle cx="308" cy="761" r="5" fill="#EF1E25"/>
+		<circle cx="308" cy="786" r="5" fill="#EF1E25"/>
+		<circle cx="308" cy="811" r="5" fill="#EF1E25"/>
+		<circle cx="308" cy="836" r="5" fill="#EF1E25"/>
+		<circle cx="308" cy="861" r="5" fill="#EF1E25"/>
+		<circle cx="308" cy="886" r="5" fill="#EF1E25"/>
+		<circle cx="327" cy="902" r="5" fill="#EF1E25"/>
+		<circle cx="346" cy="918" r="5" fill="#EF1E25"/>
+		<circle cx="365" cy="934" r="5" fill="#EF1E25"/>
+		<circle cx="457" cy="15" r="5" fill="#029A55"/>
+		<circle cx="457" cy="35" r="5" fill="#029A55"/>
+		<circle cx="457" cy="55" r="5" fill="#029A55"/>
+		<circle cx="457" cy="75" r="5" fill="#029A55"/>
+		<circle cx="457" cy="115" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="457" cy="154" r="5" fill="#029A55"/>
+		<circle cx="457" cy="175" r="5" fill="#029A55"/>
+		<circle cx="457" cy="207" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="516" cy="266" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="516" cy="352" r="5" fill="#029A55"/>
+		<circle cx="516" cy="377" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="758" cy="619" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="806" cy="720" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="806" cy="791" r="5" fill="#029A55"/>
+		<circle cx="806" cy="808" r="5" fill="#029A55"/>
+		<circle cx="806" cy="827" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="806" cy="887" r="5" fill="#029A55"/>
+		<circle cx="806" cy="907" r="5" fill="#029A55"/>
+		<circle cx="806" cy="927" r="5" fill="#029A55"/>
+		<circle cx="806" cy="947" r="5" fill="#029A55"/>
+		<circle cx="826" cy="961" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="826" cy="981" r="5" fill="#029A55"/>
+		<circle cx="962" cy="251" r="5" fill="#0252A2"/>
+		<circle cx="962" cy="271" r="5" fill="#0252A2"/>
+		<circle cx="962" cy="291" r="5" fill="#0252A2"/>
+		<circle cx="950" cy="333" r="5" fill="#0252A2" stroke="#fff"/>
+		<circle cx="930" cy="353" r="5" fill="#0252A2"/>
+		<circle cx="890" cy="393" r="5" fill="#0252A2"/>
+		<circle cx="865" cy="418" r="5" fill="#0252A2"/>
+		<circle cx="835" cy="448" r="5" fill="#0252A2" stroke="#fff"/>
+		<circle cx="124" cy="406" r="5" fill="#0252A2"/>
+		<circle cx="124" cy="357" r="5" fill="#0252A2" stroke="#fff"/>
+		<circle cx="124" cy="337" r="5" fill="#0252A2"/>
+		<circle cx="124" cy="317" r="5" fill="#0252A2"/>
+		<circle cx="124" cy="297" r="5" fill="#0252A2"/>
+		<circle cx="124" cy="277" r="5" fill="#0252A2"/>
+		<circle cx="124" cy="257" r="5" fill="#0252A2"/>
+		<circle cx="124" cy="237" r="5" fill="#0252A2"/>
+		<circle cx="124" cy="217" r="5" fill="#0252A2"/>
+		<circle cx="124" cy="372" r="5" fill="#019EE0" stroke="#fff"/>
+		<circle cx="149" cy="406" r="5" fill="#019EE0"/>
+		<circle cx="149" cy="426" r="5" fill="#019EE0"/>
+		<circle cx="149" cy="446" r="5" fill="#019EE0"/>
+		<circle cx="149" cy="466" r="5" fill="#019EE0"/>
+		<circle cx="278" cy="496" r="5" fill="#019EE0" stroke="#fff"/>
+		<circle cx="329" cy="444" r="5" fill="#019EE0"/>
+		<circle cx="408" cy="391" r="5" fill="#019EE0" stroke="#fff"/>
+		<circle cx="456" cy="439" r="5" fill="#019EE0"/>
+		<circle cx="486" cy="469" r="5" fill="#019EE0"/>
+		<circle cx="516" cy="499" r="5" fill="#019EE0" stroke="#fff"/>
+		<circle cx="343" cy="360" r="5" fill="#019EE0" stroke="#fff"/>
+		<circle cx="277" cy="360" r="5" fill="#019EE0" stroke="#fff"/>
+		<circle cx="462" cy="583" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="537" cy="637" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="666" cy="649" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="758" cy="604" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="801" cy="555" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="835" cy="463" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="781" cy="294" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="716" cy="246" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="583" cy="227" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="516" cy="251" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="449" cy="310" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="408" cy="406" r="5" fill="#745C2F" stroke="#fff"/>
+		<circle cx="716" cy="15" r="5" fill="#FBAA33"/>
+		<circle cx="716" cy="35" r="5" fill="#FBAA33"/>
+		<circle cx="716" cy="55" r="5" fill="#FBAA33"/>
+		<circle cx="716" cy="87" r="5" fill="#FBAA33" stroke="#fff"/>
+		<circle cx="716" cy="128" r="5" fill="#FBAA33"/>
+		<circle cx="716" cy="150" r="5" fill="#FBAA33"/>
+		<circle cx="716" cy="173" r="5" fill="#FBAA33"/>
+		<circle cx="716" cy="231" r="5" fill="#FBAA33" stroke="#fff"/>
+		<circle cx="716" cy="269" r="5" fill="#FBAA33"/>
+		<circle cx="716" cy="329" r="5" fill="#FBAA33" stroke="#fff"/>
+		<circle cx="716" cy="470" r="5" fill="#FBAA33" stroke="#fff"/>
+		<circle cx="679" cy="510" r="5" fill="#FBAA33" stroke="#fff"/>
+		<circle cx="537" cy="652" r="5" fill="#FBAA33" stroke="#fff"/>
+		<circle cx="537" cy="709" r="5" fill="#FBAA33"/>
+		<circle cx="537" cy="795" r="5" fill="#FBAA33" stroke="#fff"/>
+		<circle cx="537" cy="817" r="5" fill="#FBAA33"/>
+		<circle cx="537" cy="842" r="5" fill="#FBAA33"/>
+		<circle cx="537" cy="867" r="5" fill="#FBAA33"/>
+		<circle cx="537" cy="892" r="5" fill="#FBAA33"/>
+		<circle cx="537" cy="917" r="5" fill="#FBAA33"/>
+		<circle cx="537" cy="942" r="5" fill="#FBAA33"/>
+		<circle cx="537" cy="967" r="5" fill="#FBAA33"/>
+		<circle cx="556" cy="983" r="5" fill="#FBAA33"/>
+		<circle cx="577" cy="1000" r="5" fill="#FBAA33" stroke="#fff"/>
+		<circle cx="322" cy="15" r="5" fill="#B61D8E"/>
+		<circle cx="322" cy="35" r="5" fill="#B61D8E"/>
+		<circle cx="322" cy="55" r="5" fill="#B61D8E"/>
+		<circle cx="322" cy="75" r="5" fill="#B61D8E"/>
+		<circle cx="322" cy="95" r="5" fill="#B61D8E"/>
+		<circle cx="322" cy="212" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="322" cy="285" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="409" cy="285" r="5" fill="#B61D8E"/>
+		<circle cx="430" cy="305" r="5" fill="#B61D8E"/>
+		<circle cx="449" cy="325" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="516" cy="392" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="653" cy="392" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="716" cy="455" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="801" cy="540" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="866" cy="605" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="893" cy="634" r="5" fill="#B61D8E"/>
+		<circle cx="942" cy="684" r="5" fill="#B61D8E"/>
+		<circle cx="962" cy="704" r="5" fill="#B61D8E"/>
+		<circle cx="982" cy="724" r="5" fill="#B61D8E"/>
+		<circle cx="982" cy="744" r="5" fill="#B61D8E"/>
+		<circle cx="982" cy="764" r="5" fill="#B61D8E" stroke="#fff"/>
+		<circle cx="982" cy="799" r="5" fill="#B61D8E"/>
+		<circle cx="982" cy="819" r="5" fill="#B61D8E"/>
+		<circle cx="1031" cy="396" r="5" fill="#FFD803"/>
+		<circle cx="1011" cy="416" r="5" fill="#FFD803"/>
+		<circle cx="991" cy="436" r="5" fill="#FFD803"/>
+		<circle cx="970" cy="457" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="936" cy="491" r="5" fill="#FFD803"/>
+		<circle cx="866" cy="525" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="801" cy="525" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="679" cy="525" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="307" cy="323" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="186" cy="566" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="149" cy="636" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="661" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="686" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="711" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="736" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="761" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="786" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="811" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="836" r="5" fill="#FFD803"/>
+		<circle cx="149" cy="861" r="5" fill="#FFD803"/>
+		<circle cx="345" cy="285" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="557" cy="187" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="384" cy="246" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="425" cy="207" r="5" fill="#FFD803" stroke="#fff"/>
+		<circle cx="583" cy="15" r="5" fill="#ACADAF"/>
+		<circle cx="583" cy="35" r="5" fill="#ACADAF"/>
+		<circle cx="583" cy="55" r="5" fill="#ACADAF"/>
+		<circle cx="583" cy="74" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="583" cy="114" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="583" cy="139" r="5" fill="#ACADAF"/>
+		<circle cx="583" cy="163" r="5" fill="#ACADAF"/>
+		<circle cx="583" cy="187" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="583" cy="242" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="632" cy="291" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="516" cy="407" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="516" cy="514" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="621" cy="619" r="5" fill="#ACADAF"/>
+		<circle cx="666" cy="664" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="666" cy="709" r="5" fill="#ACADAF"/>
+		<circle cx="666" cy="802" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="666" cy="831" r="5" fill="#ACADAF"/>
+		<circle cx="666" cy="856" r="5" fill="#ACADAF"/>
+		<circle cx="666" cy="896" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="666" cy="916" r="5" fill="#ACADAF"/>
+		<circle cx="666" cy="936" r="5" fill="#ACADAF"/>
+		<circle cx="666" cy="956" r="5" fill="#ACADAF"/>
+		<circle cx="666" cy="986" r="5" fill="#ACADAF"/>
+		<circle cx="665" cy="1015" r="5" fill="#ACADAF"/>
+		<circle cx="622" cy="1045" r="5" fill="#ACADAF" stroke="#fff"/>
+		<circle cx="555" cy="15" r="5" fill="#B1D332"/>
+		<circle cx="555" cy="55" r="5" fill="#B1D332"/>
+		<circle cx="555" cy="77" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="599" cy="114" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="615" cy="139" r="5" fill="#B1D332"/>
+		<circle cx="615" cy="163" r="5" fill="#B1D332"/>
+		<circle cx="615" cy="187" r="5" fill="#B1D332"/>
+		<circle cx="615" cy="212" r="5" fill="#B1D332"/>
+		<circle cx="648" cy="291" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="716" cy="359" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="835" cy="478" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="866" cy="510" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="866" cy="589" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="843" cy="696" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="843" cy="801" r="5" fill="#B1D332"/>
+		<circle cx="843" cy="821" r="5" fill="#B1D332"/>
+		<circle cx="843" cy="841" r="5" fill="#B1D332"/>
+		<circle cx="843" cy="861" r="5" fill="#B1D332"/>
+		<circle cx="843" cy="881" r="5" fill="#B1D332"/>
+		<circle cx="843" cy="901" r="5" fill="#B1D332"/>
+		<circle cx="843" cy="921" r="5" fill="#B1D332"/>
+		<circle cx="843" cy="941" r="5" fill="#B1D332"/>
+		<circle cx="843" cy="961" r="5" fill="#B1D332" stroke="#fff"/>
+		<circle cx="806" cy="842" r="5" fill="#5BBEBB" stroke="#fff"/>
+		<circle cx="726" cy="865" r="5" fill="#5BBEBB"/>
+		<circle cx="666" cy="881" r="5" fill="#5BBEBB" stroke="#fff"/>
+		<circle cx="343" cy="349" r="5" fill="#5BBEBB" stroke="#fff"/>
+		<circle cx="317" cy="323" r="5" fill="#5BBEBB" stroke="#fff"/>
+		<circle cx="355" cy="285" r="5" fill="#5BBEBB" stroke="#fff"/>
+		<circle cx="394" cy="246" r="5" fill="#5BBEBB" stroke="#fff"/>
+		<circle cx="435" cy="207" r="5" fill="#5BBEBB" stroke="#fff"/>
+		<circle cx="568" cy="187" r="5" fill="#5BBEBB" stroke="#fff"/>
+		<circle cx="577" cy="1015" r="5" fill="#85D4F3" stroke="#fff"/>
+		<circle cx="597" cy="1035" r="5" fill="#85D4F3"/>
+		<circle cx="622" cy="1060" r="5" fill="#85D4F3" stroke="#fff"/>
+		<circle cx="622" cy="1080" r="5" fill="#85D4F3"/>
+		<circle cx="622" cy="1100" r="5" fill="#85D4F3"/>
+		<circle cx="622" cy="1120" r="5" fill="#85D4F3"/>
+		<circle cx="622" cy="1140" r="5" fill="#85D4F3"/>
+		<circle cx="982" cy="779" r="5" fill="#DE64A1" stroke="#fff"/>
+		<circle cx="1110" cy="850" r="5" fill="#DE64A1"/>
+		<circle cx="1110" cy="870" r="5" fill="#DE64A1"/>
+		<circle cx="1110" cy="890" r="5" fill="#DE64A1"/>
+		<circle cx="716" cy="103" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="583" cy="91" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="555" cy="95" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="517" cy="104" r="5" fill="#FFA8AF"/>
+		<circle cx="487" cy="115" r="5" fill="#FFA8AF"/>
+		<circle cx="457" cy="130" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="378" cy="187" r="5" fill="#FFA8AF"/>
+		<circle cx="355" cy="212" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="334" cy="240" r="5" fill="#FFA8AF"/>
+		<circle cx="306" cy="285" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="291" cy="323" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="277" cy="377" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="278" cy="513" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="368" cy="680" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="537" cy="778" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="618" cy="789" r="5" fill="#FFA8AF"/>
+		<circle cx="666" cy="787" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="753" cy="763" r="5" fill="#FFA8AF"/>
+		<circle cx="806" cy="735" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="843" cy="711" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="891" cy="662" r="5" fill="#FFA8AF"/>
+		<circle cx="945" cy="572" r="5" fill="#FFA8AF"/>
+		<circle cx="956" cy="542" r="5" fill="#FFA8AF"/>
+		<circle cx="964" cy="508" r="5" fill="#FFA8AF"/>
+		<circle cx="970" cy="471" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="965" cy="372" r="5" fill="#FFA8AF"/>
+		<circle cx="950" cy="317" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="880" cy="203" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="856" cy="179" r="5" fill="#FFA8AF" stroke="#fff"/>
+		<circle cx="826" cy="155" r="5" fill="#FFA8AF"/>
+		<circle cx="794" cy="135" r="5" fill="#FFA8AF"/>
+		<circle cx="186" cy="549" r="5" fill="#0252A2" stroke="#fff"/>
+		<circle cx="408" cy="421" r="5" fill="#0252A2" stroke="#fff"/>
+		<circle cx="456" cy="469" r="5" fill="#0252A2"/>
+		<circle cx="516" cy="529" r="5" fill="#0252A2" stroke="#fff"/>
+		<circle cx="607" cy="483" r="5" fill="#0252A2" stroke="#fff"/>
+		<circle cx="607" cy="468" r="5" fill="#029A55" stroke="#fff"/>
+		<circle cx="679" cy="540" r="5" fill="#029A55" stroke="#fff"/>
+	</g>
+	<g font-family="arial,sans-serif" font-size="11">
+		<text x="881" y="183">
+			&#x411;&#x443;&#x43B;&#x44C;&#x432;&#x430;&#x440; &#x420;&#x43E;&#x43A;&#x43E;&#x441;&#x441;&#x43E;&#x432;&#x441;&#x43A;&#x43E;&#x433;&#x43E;
+		</text>
+		<text x="854" y="207" text-anchor="end">
+			&#x427;&#x435;&#x440;&#x43A;&#x438;&#x437;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="848" y="228">
+			&#x41F;&#x440;&#x435;&#x43E;&#x431;&#x440;&#x430;&#x436;&#x435;&#x43D;&#x441;&#x43A;&#x430;&#x44F; &#x43F;&#x43B;&#x43E;&#x449;&#x430;&#x434;&#x44C;
+		</text>
+		<text x="829" y="246">
+			&#x421;&#x43E;&#x43A;&#x43E;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x438;
+		</text>
+		<text x="807" y="267">
+			&#x41A;&#x440;&#x430;&#x441;&#x43D;&#x43E;&#x441;&#x435;&#x43B;&#x44C;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="791" y="290">
+			&#x41A;&#x43E;&#x43C;&#x441;&#x43E;&#x43C;&#x43E;&#x43B;&#x44C;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="750" y="323">
+			&#x41A;&#x440;&#x430;&#x441;&#x43D;&#x44B;&#x435; &#x412;&#x43E;&#x440;&#x43E;&#x442;&#x430;
+		</text>
+		<text x="707" y="348" text-anchor="end">
+			&#x427;&#x438;&#x441;&#x442;&#x44B;&#x435; &#x43F;&#x440;&#x443;&#x434;&#x44B;
+		</text>
+		<text x="644" y="411" text-anchor="end">
+			&#x41B;&#x443;&#x431;&#x44F;&#x43D;&#x43A;&#x430;
+		</text>
+		<text x="616" y="457">
+			&#x41E;&#x445;&#x43E;&#x442;&#x43D;&#x44B;&#x439; &#x420;&#x44F;&#x434;
+		</text>
+		<text x="507" y="548" text-anchor="end">
+			&#x411;&#x438;&#x431;&#x43B;&#x438;&#x43E;&#x442;&#x435;&#x43A;&#x430; &#x438;&#x43C;&#x435;&#x43D;&#x438; &#x41B;&#x435;&#x43D;&#x438;&#x43D;&#x430;
+		</text>
+		<text x="500" y="573">
+			&#x41A;&#x440;&#x43E;&#x43F;&#x43E;&#x442;&#x43A;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="452" y="594" text-anchor="end">
+			&#x41F;&#x430;&#x440;&#x43A; &#x43A;&#x443;&#x43B;&#x44C;&#x442;&#x443;&#x440;&#x44B;
+		</text>
+		<text x="408" y="649" text-anchor="end">
+			&#x424;&#x440;&#x443;&#x43D;&#x437;&#x435;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="359" y="699" text-anchor="end">
+			&#x421;&#x43F;&#x43E;&#x440;&#x442;&#x438;&#x432;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="339" y="721" text-anchor="end">
+			&#x412;&#x43E;&#x440;&#x43E;&#x431;&#x44C;&#x451;&#x432;&#x44B; &#x433;&#x43E;&#x440;&#x44B;
+		</text>
+		<text x="317" y="744" text-anchor="end">
+			&#x423;&#x43D;&#x438;&#x432;&#x435;&#x440;&#x441;&#x438;&#x442;&#x435;&#x442;
+		</text>
+		<text x="299" y="765" text-anchor="end">
+			&#x41F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442; &#x412;&#x435;&#x440;&#x43D;&#x430;&#x434;&#x441;&#x43A;&#x43E;&#x433;&#x43E;
+		</text>
+		<text x="299" y="790" text-anchor="end">
+			&#x42E;&#x433;&#x43E;-&#x417;&#x430;&#x43F;&#x430;&#x434;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="299" y="815" text-anchor="end">
+			&#x422;&#x440;&#x43E;&#x43F;&#x430;&#x440;&#x451;&#x432;&#x43E;
+		</text>
+		<text x="299" y="840" text-anchor="end">
+			&#x420;&#x443;&#x43C;&#x44F;&#x43D;&#x446;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="299" y="865" text-anchor="end">
+			&#x421;&#x430;&#x43B;&#x430;&#x440;&#x44C;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="299" y="890" text-anchor="end">
+			&#x424;&#x438;&#x43B;&#x430;&#x442;&#x43E;&#x432; &#x41B;&#x443;&#x433;
+		</text>
+		<text x="318" y="906" text-anchor="end">
+			&#x41F;&#x440;&#x43E;&#x43A;&#x448;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="337" y="922" text-anchor="end">
+			&#x41E;&#x43B;&#x44C;&#x445;&#x43E;&#x432;&#x430;&#x44F;
+		</text>
+		<text x="356" y="938" text-anchor="end">
+			&#x41A;&#x43E;&#x43C;&#x43C;&#x443;&#x43D;&#x430;&#x440;&#x43A;&#x430;
+		</text>
+		<text x="448" y="19" text-anchor="end">
+			&#x425;&#x43E;&#x432;&#x440;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="448" y="39" text-anchor="end">
+			&#x411;&#x435;&#x43B;&#x43E;&#x43C;&#x43E;&#x440;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="448" y="59" text-anchor="end">
+			&#x420;&#x435;&#x447;&#x43D;&#x43E;&#x439; &#x432;&#x43E;&#x43A;&#x437;&#x430;&#x43B;
+		</text>
+		<text x="448" y="79" text-anchor="end">
+			&#x412;&#x43E;&#x434;&#x43D;&#x44B;&#x439; &#x441;&#x442;&#x430;&#x434;&#x438;&#x43E;&#x43D;
+		</text>
+		<text x="448" y="119" text-anchor="end">
+			&#x412;&#x43E;&#x439;&#x43A;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="448" y="158" text-anchor="end">
+			&#x421;&#x43E;&#x43A;&#x43E;&#x43B;
+		</text>
+		<text x="452" y="180" text-anchor="end">
+			&#x410;&#x44D;&#x440;&#x43E;&#x43F;&#x43E;&#x440;&#x442;
+		</text>
+		<text x="512" y="209" text-anchor="end">
+			&#x414;&#x438;&#x43D;&#x430;&#x43C;&#x43E;
+		</text>
+		<text x="523" y="267">
+			&#x411;&#x435;&#x43B;&#x43E;&#x440;&#x443;&#x441;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="525" y="356">
+			&#x41C;&#x430;&#x44F;&#x43A;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="507" y="381" text-anchor="end">
+			&#x422;&#x432;&#x435;&#x440;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="768" y="615">
+			&#x41F;&#x430;&#x432;&#x435;&#x43B;&#x435;&#x446;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="796" y="731" text-anchor="end">
+			&#x410;&#x432;&#x442;&#x43E;&#x437;&#x430;&#x432;&#x43E;&#x434;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="797" y="795" text-anchor="end">
+			&#x422;&#x435;&#x445;&#x43D;&#x43E;&#x43F;&#x430;&#x440;&#x43A;
+		</text>
+		<text x="797" y="812" text-anchor="end">
+			&#x41A;&#x43E;&#x43B;&#x43E;&#x43C;&#x435;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="796" y="838" text-anchor="end">
+			&#x41A;&#x430;&#x448;&#x438;&#x440;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="797" y="891" text-anchor="end">
+			&#x41A;&#x430;&#x43D;&#x442;&#x435;&#x43C;&#x438;&#x440;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="797" y="911" text-anchor="end">
+			&#x426;&#x430;&#x440;&#x438;&#x446;&#x44B;&#x43D;&#x43E;
+		</text>
+		<text x="797" y="931" text-anchor="end">
+			&#x41E;&#x440;&#x435;&#x445;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="797" y="951" text-anchor="end">
+			&#x414;&#x43E;&#x43C;&#x43E;&#x434;&#x435;&#x434;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="817" y="965" text-anchor="end">
+			&#x41A;&#x440;&#x430;&#x441;&#x43D;&#x43E;&#x433;&#x432;&#x430;&#x440;&#x434;&#x435;&#x439;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="817" y="985" text-anchor="end">
+			&#x410;&#x43B;&#x43C;&#x430;-&#x410;&#x442;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="971" y="255">
+			&#x429;&#x451;&#x43B;&#x43A;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="971" y="275">
+			&#x41F;&#x435;&#x440;&#x432;&#x43E;&#x43C;&#x430;&#x439;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="971" y="295">
+			&#x418;&#x437;&#x43C;&#x430;&#x439;&#x43B;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="959" y="337">
+			&#x41F;&#x430;&#x440;&#x442;&#x438;&#x437;&#x430;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="939" y="357">
+			&#x421;&#x435;&#x43C;&#x451;&#x43D;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="899" y="397">
+			&#x42D;&#x43B;&#x435;&#x43A;&#x442;&#x440;&#x43E;&#x437;&#x430;&#x432;&#x43E;&#x434;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="874" y="422">
+			&#x411;&#x430;&#x443;&#x43C;&#x430;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="845" y="459">
+			&#x41A;&#x443;&#x440;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="115" y="410" text-anchor="end">
+			<tspan x="115" dy="0">&#x421;&#x43B;&#x430;&#x432;&#x44F;&#x43D;&#x441;&#x43A;&#x438;&#x439;</tspan><tspan x="115" dy="13">&#x431;&#x443;&#x43B;&#x44C;&#x432;&#x430;&#x440;</tspan>
+		</text>
+		<text x="112" y="368" text-anchor="end">
+			&#x41A;&#x443;&#x43D;&#x446;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="115" y="341" text-anchor="end">
+			&#x41C;&#x43E;&#x43B;&#x43E;&#x434;&#x451;&#x436;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="115" y="321" text-anchor="end">
+			&#x41A;&#x440;&#x44B;&#x43B;&#x430;&#x442;&#x441;&#x43A;&#x43E;&#x435;
+		</text>
+		<text x="115" y="301" text-anchor="end">
+			&#x421;&#x442;&#x440;&#x43E;&#x433;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="115" y="281" text-anchor="end">
+			&#x41C;&#x44F;&#x43A;&#x438;&#x43D;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="115" y="261" text-anchor="end">
+			&#x412;&#x43E;&#x43B;&#x43E;&#x43A;&#x43E;&#x43B;&#x430;&#x43C;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="115" y="241" text-anchor="end">
+			&#x41C;&#x438;&#x442;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="114" y="214" text-anchor="end">
+			<tspan x="114" dy="0">&#x41F;&#x44F;&#x442;&#x43D;&#x438;&#x446;&#x43A;&#x43E;&#x435;</tspan><tspan x="114" dy="13">&#x448;&#x43E;&#x441;&#x441;&#x435;</tspan>
+		</text>
+		<text x="158" y="410">
+			&#x41F;&#x438;&#x43E;&#x43D;&#x435;&#x440;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="158" y="430">
+			&#x424;&#x438;&#x43B;&#x451;&#x432;&#x441;&#x43A;&#x438;&#x439; &#x43F;&#x430;&#x440;&#x43A;
+		</text>
+		<text x="158" y="450">
+			&#x411;&#x430;&#x433;&#x440;&#x430;&#x442;&#x438;&#x43E;&#x43D;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="158" y="470">
+			&#x424;&#x438;&#x43B;&#x438;
+		</text>
+		<text x="288" y="508">
+			&#x41A;&#x443;&#x442;&#x443;&#x437;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="338" y="448">
+			&#x421;&#x442;&#x443;&#x434;&#x435;&#x43D;&#x447;&#x435;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="465" y="443">
+			&#x421;&#x43C;&#x43E;&#x43B;&#x435;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="495" y="473">
+			&#x410;&#x440;&#x431;&#x430;&#x442;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="507" y="503" text-anchor="end">
+			&#x410;&#x43B;&#x435;&#x43A;&#x441;&#x430;&#x43D;&#x434;&#x440;&#x43E;&#x432;&#x441;&#x43A;&#x438;&#x439; &#x441;&#x430;&#x434;
+		</text>
+		<text x="323" y="379">
+			&#x412;&#x44B;&#x441;&#x442;&#x430;&#x432;&#x43E;&#x447;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="268" y="364" text-anchor="end">
+			&#x41C;&#x435;&#x436;&#x434;&#x443;&#x43D;&#x430;&#x440;&#x43E;&#x434;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="527" y="648" text-anchor="end">
+			&#x41E;&#x43A;&#x442;&#x44F;&#x431;&#x440;&#x44C;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="675" y="653">
+			&#x414;&#x43E;&#x431;&#x440;&#x44B;&#x43D;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="791" y="551" text-anchor="end">
+			&#x422;&#x430;&#x433;&#x430;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="728" y="236">
+			<tspan x="728" dy="0">&#x41F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;</tspan><tspan x="728" dy="13">&#x41C;&#x438;&#x440;&#x430;</tspan>
+		</text>
+		<text x="575" y="229" text-anchor="end">
+			&#x41D;&#x43E;&#x432;&#x43E;&#x441;&#x43B;&#x43E;&#x431;&#x43E;&#x434;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="458" y="314">
+			&#x41A;&#x440;&#x430;&#x441;&#x43D;&#x43E;&#x43F;&#x440;&#x435;&#x441;&#x43D;&#x435;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="725" y="19">
+			&#x41C;&#x435;&#x434;&#x432;&#x435;&#x434;&#x43A;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="725" y="39">
+			&#x411;&#x430;&#x431;&#x443;&#x448;&#x43A;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="725" y="59">
+			&#x421;&#x432;&#x438;&#x431;&#x43B;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="727" y="99">
+			&#x411;&#x43E;&#x442;&#x430;&#x43D;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x439; &#x441;&#x430;&#x434;
+		</text>
+		<text x="725" y="132">
+			&#x412;&#x414;&#x41D;&#x425;
+		</text>
+		<text x="725" y="154">
+			&#x410;&#x43B;&#x435;&#x43A;&#x441;&#x435;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="725" y="177">
+			&#x420;&#x438;&#x436;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="707" y="273" text-anchor="end">
+			&#x421;&#x443;&#x445;&#x430;&#x440;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="707" y="333" text-anchor="end">
+			&#x422;&#x443;&#x440;&#x433;&#x435;&#x43D;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="726" y="466">
+			&#x41A;&#x438;&#x442;&#x430;&#x439;-&#x433;&#x43E;&#x440;&#x43E;&#x434;
+		</text>
+		<text x="669" y="521" text-anchor="end">
+			&#x422;&#x440;&#x435;&#x442;&#x44C;&#x44F;&#x43A;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="528" y="713" text-anchor="end">
+			&#x428;&#x430;&#x431;&#x43E;&#x43B;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="528" y="799" text-anchor="end">
+			&#x41B;&#x435;&#x43D;&#x438;&#x43D;&#x441;&#x43A;&#x438;&#x439; &#x43F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;
+		</text>
+		<text x="528" y="821" text-anchor="end">
+			&#x410;&#x43A;&#x430;&#x434;&#x435;&#x43C;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="528" y="846" text-anchor="end">
+			&#x41F;&#x440;&#x43E;&#x444;&#x441;&#x43E;&#x44E;&#x437;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="528" y="871" text-anchor="end">
+			&#x41D;&#x43E;&#x432;&#x44B;&#x435; &#x427;&#x435;&#x440;&#x451;&#x43C;&#x443;&#x448;&#x43A;&#x438;
+		</text>
+		<text x="528" y="896" text-anchor="end">
+			&#x41A;&#x430;&#x43B;&#x443;&#x436;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="528" y="921" text-anchor="end">
+			&#x411;&#x435;&#x43B;&#x44F;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="528" y="946" text-anchor="end">
+			&#x41A;&#x43E;&#x43D;&#x44C;&#x43A;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="528" y="971" text-anchor="end">
+			&#x422;&#x451;&#x43F;&#x43B;&#x44B;&#x439; &#x421;&#x442;&#x430;&#x43D;
+		</text>
+		<text x="547" y="987" text-anchor="end">
+			&#x42F;&#x441;&#x435;&#x43D;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="568" y="1004" text-anchor="end">
+			&#x41D;&#x43E;&#x432;&#x43E;&#x44F;&#x441;&#x435;&#x43D;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="313" y="19" text-anchor="end">
+			&#x41F;&#x43B;&#x430;&#x43D;&#x435;&#x440;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="313" y="39" text-anchor="end">
+			&#x421;&#x445;&#x43E;&#x434;&#x43D;&#x435;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="313" y="59" text-anchor="end">
+			&#x422;&#x443;&#x448;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="313" y="79" text-anchor="end">
+			&#x421;&#x43F;&#x430;&#x440;&#x442;&#x430;&#x43A;
+		</text>
+		<text x="313" y="99" text-anchor="end">
+			&#x429;&#x443;&#x43A;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="310" y="216" text-anchor="end">
+			&#x41E;&#x43A;&#x442;&#x44F;&#x431;&#x440;&#x44C;&#x441;&#x43A;&#x43E;&#x435; &#x41F;&#x43E;&#x43B;&#x435;
+		</text>
+		<text x="334" y="270" text-anchor="end">
+			&#x41F;&#x43E;&#x43B;&#x435;&#x436;&#x430;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="417" y="303" text-anchor="end">
+			&#x411;&#x435;&#x433;&#x43E;&#x432;&#x430;&#x44F;
+		</text>
+		<text x="430" y="323" text-anchor="end">
+			<tspan x="430" dy="0">&#x423;&#x43B;&#x438;&#x446;&#x430;</tspan><tspan x="430" dy="13">1905 &#x433;&#x43E;&#x434;&#x430;</tspan>
+		</text>
+		<text x="458" y="329">
+			&#x411;&#x430;&#x440;&#x440;&#x438;&#x43A;&#x430;&#x434;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="507" y="396" text-anchor="end">
+			&#x41F;&#x443;&#x448;&#x43A;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="662" y="396">
+			&#x41A;&#x443;&#x437;&#x43D;&#x435;&#x446;&#x43A;&#x438;&#x439; &#x41C;&#x43E;&#x441;&#x442;
+		</text>
+		<text x="875" y="609">
+			&#x41F;&#x440;&#x43E;&#x43B;&#x435;&#x442;&#x430;&#x440;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="902" y="638">
+			&#x412;&#x43E;&#x43B;&#x433;&#x43E;&#x433;&#x440;&#x430;&#x434;&#x441;&#x43A;&#x438;&#x439; &#x43F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;
+		</text>
+		<text x="951" y="688">
+			&#x422;&#x435;&#x43A;&#x441;&#x442;&#x438;&#x43B;&#x44C;&#x449;&#x438;&#x43A;&#x438;
+		</text>
+		<text x="971" y="708">
+			&#x41A;&#x443;&#x437;&#x44C;&#x43C;&#x438;&#x43D;&#x43A;&#x438;
+		</text>
+		<text x="991" y="728">
+			&#x420;&#x44F;&#x437;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x439; &#x43F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;
+		</text>
+		<text x="991" y="748">
+			&#x412;&#x44B;&#x445;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="991" y="768">
+			&#x41B;&#x435;&#x440;&#x43C;&#x43E;&#x43D;&#x442;&#x43E;&#x432;&#x441;&#x43A;&#x438;&#x439; &#x43F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;
+		</text>
+		<text x="991" y="803">
+			&#x416;&#x443;&#x43B;&#x435;&#x431;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="991" y="823">
+			&#x41A;&#x43E;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x438;&#x43A;&#x438;
+		</text>
+		<text x="1040" y="400">
+			&#x41D;&#x43E;&#x432;&#x43E;&#x43A;&#x43E;&#x441;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="1020" y="420">
+			&#x41D;&#x43E;&#x432;&#x43E;&#x433;&#x438;&#x440;&#x435;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="1000" y="440">
+			&#x41F;&#x435;&#x440;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="980" y="466">
+			&#x428;&#x43E;&#x441;&#x441;&#x435; &#x42D;&#x43D;&#x442;&#x443;&#x437;&#x438;&#x430;&#x441;&#x442;&#x43E;&#x432;
+		</text>
+		<text x="945" y="495">
+			&#x410;&#x432;&#x438;&#x430;&#x43C;&#x43E;&#x442;&#x43E;&#x440;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="876" y="530">
+			<tspan x="876" dy="0">&#x41F;&#x43B;&#x43E;&#x449;&#x430;&#x434;&#x44C;</tspan><tspan x="876" dy="13">&#x418;&#x43B;&#x44C;&#x438;&#x447;&#x430;</tspan>
+		</text>
+		<text x="792" y="529" text-anchor="end">
+			&#x41C;&#x430;&#x440;&#x43A;&#x441;&#x438;&#x441;&#x442;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="140" y="640" text-anchor="end">
+			&#x41C;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="139" y="658" text-anchor="end">
+			<tspan x="139" dy="0">&#x41B;&#x43E;&#x43C;&#x43E;&#x43D;&#x43E;&#x441;&#x43E;&#x432;&#x441;&#x43A;&#x438;&#x439;</tspan><tspan x="139" dy="13">&#x43F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;</tspan>
+		</text>
+		<text x="140" y="690" text-anchor="end">
+			&#x420;&#x430;&#x43C;&#x435;&#x43D;&#x43A;&#x438;
+		</text>
+		<text x="139" y="708" text-anchor="end">
+			<tspan x="139" dy="0">&#x41C;&#x438;&#x447;&#x443;&#x440;&#x438;&#x43D;&#x441;&#x43A;&#x438;&#x439;</tspan><tspan x="139" dy="13">&#x43F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;</tspan>
+		</text>
+		<text x="140" y="740" text-anchor="end">
+			&#x41E;&#x437;&#x451;&#x440;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="140" y="765" text-anchor="end">
+			&#x413;&#x43E;&#x432;&#x43E;&#x440;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="140" y="790" text-anchor="end">
+			&#x421;&#x43E;&#x43B;&#x43D;&#x446;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="140" y="815" text-anchor="end">
+			&#x411;&#x43E;&#x440;&#x43E;&#x432;&#x441;&#x43A;&#x43E;&#x435; &#x448;&#x43E;&#x441;&#x441;&#x435;
+		</text>
+		<text x="140" y="840" text-anchor="end">
+			&#x41D;&#x43E;&#x432;&#x43E;&#x43F;&#x435;&#x440;&#x435;&#x434;&#x435;&#x43B;&#x43A;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="140" y="865" text-anchor="end">
+			&#x420;&#x430;&#x441;&#x441;&#x43A;&#x430;&#x437;&#x43E;&#x432;&#x43A;&#x430;
+		</text>
+		<text x="592" y="19">
+			&#x410;&#x43B;&#x442;&#x443;&#x444;&#x44C;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="592" y="39">
+			&#x411;&#x438;&#x431;&#x438;&#x440;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="592" y="59">
+			&#x41E;&#x442;&#x440;&#x430;&#x434;&#x43D;&#x43E;&#x435;
+		</text>
+		<text x="594" y="86">
+			&#x412;&#x43B;&#x430;&#x434;&#x44B;&#x43A;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="574" y="143" text-anchor="end">
+			&#x422;&#x438;&#x43C;&#x438;&#x440;&#x44F;&#x437;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="574" y="167" text-anchor="end">
+			&#x414;&#x43C;&#x438;&#x442;&#x440;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="600" y="209" text-anchor="end">
+			&#x421;&#x430;&#x432;&#x451;&#x43B;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="592" y="246">
+			&#x41C;&#x435;&#x43D;&#x434;&#x435;&#x43B;&#x435;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="623" y="295" text-anchor="end">
+			&#x426;&#x432;&#x435;&#x442;&#x43D;&#x43E;&#x439; &#x431;&#x443;&#x43B;&#x44C;&#x432;&#x430;&#x440;
+		</text>
+		<text x="507" y="411" text-anchor="end">
+			&#x427;&#x435;&#x445;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="507" y="518" text-anchor="end">
+			&#x411;&#x43E;&#x440;&#x43E;&#x432;&#x438;&#x446;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="630" y="623">
+			&#x41F;&#x43E;&#x43B;&#x44F;&#x43D;&#x43A;&#x430;
+		</text>
+		<text x="657" y="668" text-anchor="end">
+			&#x421;&#x435;&#x440;&#x43F;&#x443;&#x445;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="657" y="713" text-anchor="end">
+			&#x422;&#x443;&#x43B;&#x44C;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="657" y="814" text-anchor="end">
+			&#x41D;&#x430;&#x433;&#x430;&#x442;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="657" y="835" text-anchor="end">
+			&#x41D;&#x430;&#x433;&#x43E;&#x440;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="656" y="854" text-anchor="end">
+			<tspan x="656" dy="0">&#x41D;&#x430;&#x445;&#x438;&#x43C;&#x43E;&#x432;&#x441;&#x43A;&#x438;&#x439;</tspan><tspan x="656" dy="13">&#x43F;&#x440;&#x43E;&#x441;&#x43F;&#x435;&#x43A;&#x442;</tspan>
+		</text>
+		<text x="657" y="900" text-anchor="end">
+			&#x421;&#x435;&#x432;&#x430;&#x441;&#x442;&#x43E;&#x43F;&#x43E;&#x43B;&#x44C;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="657" y="920" text-anchor="end">
+			&#x427;&#x435;&#x440;&#x442;&#x430;&#x43D;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="657" y="940" text-anchor="end">
+			&#x42E;&#x436;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="657" y="960" text-anchor="end">
+			&#x41F;&#x440;&#x430;&#x436;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="656" y="977" text-anchor="end">
+			<tspan x="656" dy="0">&#x423;&#x43B;&#x438;&#x446;&#x430;</tspan><tspan x="656" dy="13">&#x410;&#x43A;&#x430;&#x434;&#x435;&#x43C;&#x438;&#x43A;&#x430;</tspan><tspan x="656" dy="13">&#x42F;&#x43D;&#x433;&#x435;&#x43B;&#x44F;</tspan>
+		</text>
+		<text x="656" y="1019" text-anchor="end">
+			&#x410;&#x43D;&#x43D;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="631" y="1049">
+			<tspan x="631" dy="0">&#x411;&#x443;&#x43B;&#x44C;&#x432;&#x430;&#x440;</tspan><tspan x="631" dy="13">&#x414;&#x43C;&#x438;&#x442;&#x440;&#x438;&#x44F; &#x414;&#x43E;&#x43D;&#x441;&#x43A;&#x43E;&#x433;&#x43E;</tspan>
+		</text>
+		<text x="547" y="18" text-anchor="end">
+			&#x421;&#x435;&#x43B;&#x438;&#x433;&#x435;&#x440;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="545" y="47" text-anchor="end">
+			<tspan x="545" dy="0">&#x412;&#x435;&#x440;&#x445;&#x43D;&#x438;&#x435;</tspan><tspan x="545" dy="13">&#x41B;&#x438;&#x445;&#x43E;&#x431;&#x43E;&#x440;&#x44B;</tspan>
+		</text>
+		<text x="546" y="81" text-anchor="end">
+			&#x41E;&#x43A;&#x440;&#x443;&#x436;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="611" y="110">
+			<tspan x="611" dy="0">&#x41F;&#x435;&#x442;&#x440;&#x43E;&#x432;&#x441;&#x43A;&#x43E;-</tspan><tspan x="611" dy="13">&#x420;&#x430;&#x437;&#x443;&#x43C;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;</tspan>
+		</text>
+		<text x="624" y="143">
+			&#x424;&#x43E;&#x43D;&#x432;&#x438;&#x437;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="624" y="167">
+			&#x411;&#x443;&#x442;&#x44B;&#x440;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="624" y="191">
+			&#x41C;&#x430;&#x440;&#x44C;&#x438;&#x43D;&#x430; &#x420;&#x43E;&#x449;&#x430;
+		</text>
+		<text x="624" y="216">
+			&#x414;&#x43E;&#x441;&#x442;&#x43E;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="657" y="295">
+			&#x422;&#x440;&#x443;&#x431;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="725" y="363">
+			&#x421;&#x440;&#x435;&#x442;&#x435;&#x43D;&#x441;&#x43A;&#x438;&#x439; &#x431;&#x443;&#x43B;&#x44C;&#x432;&#x430;&#x440;
+		</text>
+		<text x="844" y="482">
+			&#x427;&#x43A;&#x430;&#x43B;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="876" y="513">
+			&#x420;&#x438;&#x43C;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="875" y="593">
+			&#x41A;&#x440;&#x435;&#x441;&#x442;&#x44C;&#x44F;&#x43D;&#x441;&#x43A;&#x430;&#x44F; &#x417;&#x430;&#x441;&#x442;&#x430;&#x432;&#x430;
+		</text>
+		<text x="853" y="706">
+			&#x414;&#x443;&#x431;&#x440;&#x43E;&#x432;&#x43A;&#x430;
+		</text>
+		<text x="852" y="805">
+			&#x41A;&#x43E;&#x436;&#x443;&#x445;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="852" y="825">
+			&#x41F;&#x435;&#x447;&#x430;&#x442;&#x43D;&#x438;&#x43A;&#x438;
+		</text>
+		<text x="852" y="845">
+			&#x412;&#x43E;&#x43B;&#x436;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="852" y="865">
+			&#x41B;&#x44E;&#x431;&#x43B;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="852" y="885">
+			&#x411;&#x440;&#x430;&#x442;&#x438;&#x441;&#x43B;&#x430;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="852" y="905">
+			&#x41C;&#x430;&#x440;&#x44C;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="852" y="925">
+			&#x411;&#x43E;&#x440;&#x438;&#x441;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="852" y="945">
+			&#x428;&#x438;&#x43F;&#x438;&#x43B;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="852" y="965">
+			&#x417;&#x44F;&#x431;&#x43B;&#x438;&#x43A;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="735" y="869">
+			&#x412;&#x430;&#x440;&#x448;&#x430;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="657" y="885" fill="#999" text-anchor="end">
+			&#x41A;&#x430;&#x445;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="354" y="359">
+			&#x414;&#x435;&#x43B;&#x43E;&#x432;&#x43E;&#x439; &#x446;&#x435;&#x43D;&#x442;&#x440;
+		</text>
+		<text x="354" y="270">
+			&#x425;&#x43E;&#x440;&#x43E;&#x448;&#x451;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="389" y="235" text-anchor="end">
+			&#x426;&#x421;&#x41A;&#x410;
+		</text>
+		<text x="407" y="228">
+			<tspan x="407" dy="0">&#x41F;&#x435;&#x442;&#x440;&#x43E;&#x432;&#x441;&#x43A;&#x438;&#x439;</tspan><tspan x="407" dy="13">&#x43F;&#x430;&#x440;&#x43A;</tspan>
+		</text>
+		<text x="568" y="1019" text-anchor="end">
+			&#x411;&#x438;&#x442;&#x446;&#x435;&#x432;&#x441;&#x43A;&#x438;&#x439; &#x43F;&#x430;&#x440;&#x43A;
+		</text>
+		<text x="588" y="1039" text-anchor="end">
+			&#x41B;&#x435;&#x441;&#x43E;&#x43F;&#x430;&#x440;&#x43A;&#x43E;&#x432;&#x430;&#x44F;
+		</text>
+		<text x="613" y="1064" text-anchor="end">
+			&#x423;&#x43B;&#x438;&#x446;&#x430; &#x421;&#x442;&#x430;&#x440;&#x43E;&#x43A;&#x430;&#x447;&#x430;&#x43B;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="613" y="1084" text-anchor="end">
+			&#x423;&#x43B;&#x438;&#x446;&#x430; &#x421;&#x43A;&#x43E;&#x431;&#x435;&#x43B;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="613" y="1104" text-anchor="end">
+			&#x411;&#x443;&#x43B;&#x44C;&#x432;&#x430;&#x440; &#x410;&#x434;&#x43C;&#x438;&#x440;&#x430;&#x43B;&#x430; &#x423;&#x448;&#x430;&#x43A;&#x43E;&#x432;&#x430;
+		</text>
+		<text x="613" y="1124" text-anchor="end">
+			&#x423;&#x43B;&#x438;&#x446;&#x430; &#x413;&#x43E;&#x440;&#x447;&#x430;&#x43A;&#x43E;&#x432;&#x430;
+		</text>
+		<text x="613" y="1144" text-anchor="end">
+			&#x411;&#x443;&#x43D;&#x438;&#x43D;&#x441;&#x43A;&#x430;&#x44F; &#x430;&#x43B;&#x43B;&#x435;&#x44F;
+		</text>
+		<text x="973" y="783" text-anchor="end">
+			&#x41A;&#x43E;&#x441;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="1101" y="854" text-anchor="end">
+			&#x423;&#x43B;&#x438;&#x446;&#x430; &#x414;&#x43C;&#x438;&#x442;&#x440;&#x438;&#x435;&#x432;&#x441;&#x43A;&#x43E;&#x433;&#x43E;
+		</text>
+		<text x="1101" y="874" text-anchor="end">
+			&#x41B;&#x443;&#x445;&#x43C;&#x430;&#x43D;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="1101" y="894" text-anchor="end">
+			&#x41D;&#x435;&#x43A;&#x440;&#x430;&#x441;&#x43E;&#x432;&#x43A;&#x430;
+		</text>
+		<text x="525" y="94" text-anchor="end">
+			&#x41B;&#x438;&#x445;&#x43E;&#x431;&#x43E;&#x440;&#x44B;
+		</text>
+		<text x="476" y="127">
+			&#x41A;&#x43E;&#x43F;&#x442;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="448" y="134" text-anchor="end">
+			&#x411;&#x430;&#x43B;&#x442;&#x438;&#x439;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="383" y="172" text-anchor="end">
+			&#x421;&#x442;&#x440;&#x435;&#x448;&#x43D;&#x435;&#x432;&#x43E;
+		</text>
+		<text x="360" y="194" text-anchor="end">
+			&#x41F;&#x430;&#x43D;&#x444;&#x438;&#x43B;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="291" y="244">
+			&#x417;&#x43E;&#x440;&#x433;&#x435;
+		</text>
+		<text x="309" y="300" text-anchor="end">
+			&#x425;&#x43E;&#x440;&#x43E;&#x448;&#x451;&#x432;&#x43E;
+		</text>
+		<text x="282" y="327" text-anchor="end">
+			&#x428;&#x435;&#x43B;&#x435;&#x43F;&#x438;&#x445;&#x430;
+		</text>
+		<text x="268" y="381" text-anchor="end">
+			&#x414;&#x435;&#x43B;&#x43E;&#x432;&#x43E;&#x439; &#x446;&#x435;&#x43D;&#x442;&#x440;
+		</text>
+		<text x="359" y="684" text-anchor="end">
+			&#x41B;&#x443;&#x436;&#x43D;&#x438;&#x43A;&#x438;
+		</text>
+		<text x="528" y="782" text-anchor="end">
+			&#x41F;&#x43B;&#x43E;&#x449;&#x430;&#x434;&#x44C; &#x413;&#x430;&#x433;&#x430;&#x440;&#x438;&#x43D;&#x430;
+		</text>
+		<text x="647" y="777" text-anchor="end">
+			&#x41A;&#x440;&#x44B;&#x43C;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="672" y="764">
+			<tspan x="672" dy="0">&#x412;&#x435;&#x440;&#x445;&#x43D;&#x438;&#x435;</tspan><tspan x="672" dy="13">&#x41A;&#x43E;&#x442;&#x43B;&#x44B;</tspan>
+		</text>
+		<text x="756" y="754" text-anchor="end">
+			&#x417;&#x418;&#x41B;
+		</text>
+		<text x="900" y="666">
+			&#x423;&#x433;&#x440;&#x435;&#x448;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="954" y="576">
+			&#x41D;&#x43E;&#x432;&#x43E;&#x445;&#x43E;&#x445;&#x43B;&#x43E;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="965" y="546">
+			&#x41D;&#x438;&#x436;&#x435;&#x433;&#x43E;&#x440;&#x43E;&#x434;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="973" y="512">
+			&#x410;&#x43D;&#x434;&#x440;&#x43E;&#x43D;&#x43E;&#x432;&#x43A;&#x430;
+		</text>
+		<text x="974" y="376">
+			&#x421;&#x43E;&#x43A;&#x43E;&#x43B;&#x438;&#x43D;&#x430;&#x44F; &#x433;&#x43E;&#x440;&#x430;
+		</text>
+		<text x="959" y="321">
+			&#x418;&#x437;&#x43C;&#x430;&#x439;&#x43B;&#x43E;&#x432;&#x43E;
+		</text>
+		<text x="889" y="207">
+			&#x41B;&#x43E;&#x43A;&#x43E;&#x43C;&#x43E;&#x442;&#x438;&#x432;
+		</text>
+		<text x="835" y="159">
+			&#x411;&#x435;&#x43B;&#x43E;&#x43A;&#x430;&#x43C;&#x435;&#x43D;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="803" y="139">
+			&#x420;&#x43E;&#x441;&#x442;&#x43E;&#x43A;&#x438;&#x43D;&#x43E;
+		</text>
+		<text x="178" y="563" text-anchor="end">
+			&#x41F;&#x430;&#x440;&#x43A; &#x41F;&#x43E;&#x431;&#x435;&#x434;&#x44B;
+		</text>
+		<text x="398" y="410" text-anchor="end">
+			&#x41A;&#x438;&#x435;&#x432;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="447" y="473" text-anchor="end">
+			&#x421;&#x43C;&#x43E;&#x43B;&#x435;&#x43D;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="507" y="533" text-anchor="end">
+			&#x410;&#x440;&#x431;&#x430;&#x442;&#x441;&#x43A;&#x430;&#x44F;
+		</text>
+		<text x="618" y="485">
+			<tspan x="618" dy="0">&#x41F;&#x43B;&#x43E;&#x449;&#x430;&#x434;&#x44C;</tspan><tspan x="618" dy="13">&#x420;&#x435;&#x432;&#x43E;&#x43B;&#x44E;&#x446;&#x438;&#x438;</tspan>
+		</text>
+		<text x="616" y="472">
+			&#x422;&#x435;&#x430;&#x442;&#x440;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F;
+		</text>
+		<text x="670" y="544" text-anchor="end">
+			&#x41D;&#x43E;&#x432;&#x43E;&#x43A;&#x443;&#x437;&#x43D;&#x435;&#x446;&#x43A;&#x430;&#x44F;
+		</text>
+	</g>
+</symbol>
 </svg>
