@@ -1046,14 +1046,15 @@ function mapInit() {
     controls: []
   }, {
     suppressMapOpenBlock: true
-  });
+  }),
+      clusterer = new ymaps.Clusterer();
 
   for (var i = 0, l = mapMarkers.length; i < l; i++) {
     //createMenuGroup(mapMarkers[i]);
     // Кастомный балун
     var location = mapMarkers[i].location;
     var id = mapMarkers[i].id;
-    var markerMetro = mapMarkers[i].metro;
+    var markerMetro = mapMarkers[i].metro.length == 0 ? '<span class=\'map-tooltip__metro\'>' + mapMarkers[i].metro + '</span>' : '<span class=\'map-tooltip__metro\'>' + mapMarkers[i].metro + ', </span>';
     var markerAddress = mapMarkers[i].address;
     var markerClosest = mapMarkers[i].closest;
     var markerTime = mapMarkers[i].time;
@@ -1104,7 +1105,7 @@ function mapInit() {
         return element && element[0] && element.find('.arrow')[0];
       }
     });
-    MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass("<div class='map-tooltip__address'>" + "<span class='map-tooltip__metro'>" + markerMetro + "</span>, " + markerAddress + "<div class='map-tooltip__closest'>" + markerClosest + "</div>" + "</div>" + "<div class='map-tooltip__info'>" + "<div class='map-tooltip__time'>" + markerTime + "</div>" + "<div class='map-tooltip__tel'>" + markerTel + "</div>" + "</div>");
+    MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass("<div class='map-tooltip__address'>" + markerMetro + markerAddress + "<div class='map-tooltip__closest'>" + markerClosest + "</div>" + "</div>" + "<div class='map-tooltip__info'>" + "<div class='map-tooltip__time'>" + markerTime + "</div>" + "<div class='map-tooltip__tel'>" + markerTel + "</div>" + "</div>");
     placemark = window.placemark = new ymaps.Placemark(location, {//balloonHeader: 'Заголовок балуна',
       //balloonContent: 'Контент балуна'
     }, {
@@ -1119,22 +1120,27 @@ function mapInit() {
       iconImageOffset: [-6, -40],
       iconImageSize: [84, 84]
     });
-    placemark.events.add('click', function (e) {
-      if (!myMap.balloon.isOpen()) {
-        e.get('target').options.set({
-          iconImageHref: 'images/map-pin-active.svg'
-        });
-      } else {
-        e.get('target').options.set({
-          iconImageHref: 'images/map-pin.svg'
-        });
-      }
+    placemark.events //.add('click', function (e) {
+    //	if (!myMap.balloon.isOpen()) {
+    //		e.get('target').options.set({iconImageHref: 'images/map-pin-active.svg'});
+    //	} else {
+    //		e.get('target').options.set({iconImageHref: 'images/map-pin.svg'});
+    //	}
+    //})
+    .add('balloonclose', function (e) {
+      e.get('target').options.set({
+        iconImageHref: '/local/templates/main/frontend/images/map-pin.svg'
+      });
+    }).add('balloonopen', function (e) {
+      e.get('target').options.set({
+        iconImageHref: '/local/templates/main/frontend/images/map-pin-active.svg'
+      });
     });
     allMarkers.push(placemark);
     allMarkers2[id] = placemark; // allMarkers2[2].balloon.open(); - работает и allMarkers2.balloon.close(); - тоже
     //placemark.balloon.open();
+    //console.log(allMarkers2[id]);
 
-    console.log(allMarkers2[id]);
     myMap.setBounds(myMap.geoObjects.add(placemark).getBounds()); //myMap.events.add('boundschange', function(e){
     //	if (e.get('newZoom') !== e.get('oldZoom')) {
     //		console.log(e.get('zoom '));
@@ -1151,32 +1157,35 @@ function mapInit() {
     //myMap.geoObjects.add(rectangle);
     //
 
-    var myCircle = new ymaps.Circle([// Координаты центра круга.
-    [55.74954, 37.621587], // Радиус круга в метрах.
-    10000], {
-      // Описываем свойства круга.
-      // Содержимое балуна.
-      balloonContent: "Радиус круга - 10 км",
-      // Содержимое хинта.
-      hintContent: "Подвинь меня"
+    /*var myCircle = new ymaps.Circle([
+    	// Координаты центра круга.
+    	[55.74954, 37.621587],
+    	// Радиус круга в метрах.
+    	10000
+    ], {
+    	// Описываем свойства круга.
+    	// Содержимое балуна.
+    	balloonContent: "Радиус круга - 10 км",
+    	// Содержимое хинта.
+    	hintContent: "Подвинь меня"
     }, {
-      // Задаем опции круга.
-      // Включаем возможность перетаскивания круга.
-      draggable: false,
-      // Цвет заливки.
-      // Последний байт (77) определяет прозрачность.
-      // Прозрачность заливки также можно задать используя опцию "fillOpacity".
-      fillColor: false,
-      // Цвет обводки.
-      strokeColor: false,
-      // Прозрачность обводки.
-      strokeOpacity: 0,
-      // Ширина обводки в пикселях.
-      strokeWidth: 0,
-      fillImageHref: 'images/map-metro-no-bg.svg',
-      fillMethod: 'stretch'
+    	// Задаем опции круга.
+    	// Включаем возможность перетаскивания круга.
+    	draggable: false,
+    	// Цвет заливки.
+    	// Последний байт (77) определяет прозрачность.
+    	// Прозрачность заливки также можно задать используя опцию "fillOpacity".
+    	fillColor: false,
+    	// Цвет обводки.
+    	strokeColor: false,
+    	// Прозрачность обводки.
+    	strokeOpacity: 0,
+    	// Ширина обводки в пикселях.
+    	strokeWidth: 0,
+    	fillImageHref: 'images/map-metro-no-bg.svg',
+    	fillMethod: 'stretch'
     });
-    myMap.geoObjects.add(myCircle);
+    	myMap.geoObjects.add(myCircle);*/
   }
 }
 

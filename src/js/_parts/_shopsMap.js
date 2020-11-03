@@ -50,7 +50,8 @@ function mapInit(){
 		controls: []
 	}, {
 		suppressMapOpenBlock: true
-	});
+	}),
+		clusterer = new ymaps.Clusterer();
 
 	for (var i = 0, l = mapMarkers.length; i < l; i++) {
 		//createMenuGroup(mapMarkers[i]);
@@ -58,11 +59,13 @@ function mapInit(){
 		let location = mapMarkers[i].location;
 		let id = mapMarkers[i].id;
 
-		const markerMetro = mapMarkers[i].metro;
-		const markerAddress = mapMarkers[i].address;
-		const markerClosest = mapMarkers[i].closest;
-		const markerTime = mapMarkers[i].time;
-		const markerTel = mapMarkers[i].tel;
+		let markerMetro = mapMarkers[i].metro.length == 0
+			? '<span class=\'map-tooltip__metro\'>' + mapMarkers[i].metro + '</span>'
+			: '<span class=\'map-tooltip__metro\'>' + mapMarkers[i].metro + ', </span>';
+		let markerAddress = mapMarkers[i].address;
+		let markerClosest = mapMarkers[i].closest;
+		let markerTime = mapMarkers[i].time;
+		let markerTel = mapMarkers[i].tel;
 
 		MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
 			'<div class="map-tooltip" data-tooltip-id="'+id+'">' +
@@ -122,7 +125,7 @@ function mapInit(){
 
 		MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
 			"<div class='map-tooltip__address'>" +
-				"<span class='map-tooltip__metro'>" + markerMetro + "</span>, "+markerAddress+
+					markerMetro+markerAddress+
 				"<div class='map-tooltip__closest'>" + markerClosest + "</div>" +
 			"</div>" +
 
@@ -148,12 +151,18 @@ function mapInit(){
 			iconImageSize: [84, 84],
 		});
 		placemark.events
-			.add('click', function (e) {
-				if (!myMap.balloon.isOpen()) {
-					e.get('target').options.set({iconImageHref: 'images/map-pin-active.svg'});
-				} else {
-					e.get('target').options.set({iconImageHref: 'images/map-pin.svg'});
-				}
+			//.add('click', function (e) {
+			//	if (!myMap.balloon.isOpen()) {
+			//		e.get('target').options.set({iconImageHref: 'images/map-pin-active.svg'});
+			//	} else {
+			//		e.get('target').options.set({iconImageHref: 'images/map-pin.svg'});
+			//	}
+			//})
+			.add('balloonclose', function (e) {
+				e.get('target').options.set({iconImageHref: '/local/templates/main/frontend/images/map-pin.svg'});
+			})
+			.add('balloonopen', function (e) {
+				e.get('target').options.set({iconImageHref: '/local/templates/main/frontend/images/map-pin-active.svg'});
 			});
 
 
@@ -163,7 +172,7 @@ function mapInit(){
 		// allMarkers2[2].balloon.open(); - работает и allMarkers2.balloon.close(); - тоже
 
 		//placemark.balloon.open();
-		console.log(allMarkers2[id]);
+		//console.log(allMarkers2[id]);
 
 		myMap.setBounds(myMap.geoObjects.add(placemark).getBounds());
 
@@ -183,7 +192,7 @@ function mapInit(){
 		//});
 		//myMap.geoObjects.add(rectangle);
 //
-		var myCircle = new ymaps.Circle([
+		/*var myCircle = new ymaps.Circle([
 			// Координаты центра круга.
 			[55.74954, 37.621587],
 			// Радиус круга в метрах.
@@ -212,7 +221,7 @@ function mapInit(){
 			fillMethod: 'stretch'
 		});
 
-		myMap.geoObjects.add(myCircle);
+		myMap.geoObjects.add(myCircle);*/
 	}
 }
 

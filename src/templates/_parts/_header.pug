@@ -100,7 +100,7 @@ header.header
 				.dropdown-block
 					.dropdown-block__inner
 						.dropdown-menu(data-desktop="catalog")
-							ul.nav-list(data-move="catalog")
+							ul.nav-list(data-move="catalog").scroll
 								- var submenuList = ['Бисквитные','Блинные','Бисквитные','Блинные','Муссовые','Песочные','Слоеные','Безе','С орехами и сухофруктами','С ягодами и фруктами','Шоколадные','Наборы','Детские','Особая серия,Постные / Веганские','Птичье молоко','Сметанные и творожные','Торт-рулет']
 								mixin nav-item(icon,label)
 									li.nav-item.has-submenu
@@ -126,6 +126,14 @@ header.header
 								+nav-item('submenu-icon-freeze'            ,'Замороженные полуфабрикаты')
 								+nav-item('submenu-icon-chocolat'        ,'Шоколадные изделия')
 								+nav-item('submenu-icon-salad'            ,'Салаты и заливные')
+								+nav-item('submenu-icon-meat'            ,'Мясная гастрономия')
+								+nav-item('submenu-icon-icecream'        ,'Мороженое')
+								+nav-item('submenu-icon-jp'                ,'Японская кухня')
+								+nav-item('submenu-icon-burito'            ,'Буритто')
+								+nav-item('submenu-icon-musli'            ,'Каши и мюсли')
+								+nav-item('submenu-icon-coffee'            ,'Кофе')
+								+nav-item('submenu-icon-butter'            ,'Масло сливочное')
+								+nav-item('submenu-icon-coffee'            ,'Пицца')
 								+nav-item('submenu-icon-meat'            ,'Мясная гастрономия')
 								+nav-item('submenu-icon-icecream'        ,'Мороженое')
 								+nav-item('submenu-icon-jp'                ,'Японская кухня')
