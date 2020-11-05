@@ -90,17 +90,20 @@
 	line-height: 2rem
 	font-weight: bold
 	color: var(--white)
+	white-space: nowrap
 	margin-bottom: 12px
 
 .footer-nav
 	font-size: 16px
 	color: var(--white)
 	display: flex
-	flex-direction: column
+	flex-wrap: wrap
+	//flex-direction: column
 	&:not(:last-child)
 		//margin-right: 105px
 		margin-right: 55px
-		min-width: max-content
+		flex-direction: column
+		//min-width: max-content
 		@media #{$laptop}
 			margin-right: 50px
 		@media #{$tablet}
