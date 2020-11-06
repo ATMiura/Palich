@@ -2891,27 +2891,34 @@ li {
     .more-link:hover svg {
       fill: var(--yellow); }
 
-.scroll {
+.scroll,
+.suggestBox {
   overflow-y: auto; }
-  .scroll::-webkit-scrollbar {
+  .scroll::-webkit-scrollbar,
+  .suggestBox::-webkit-scrollbar {
     width: 4px;
     height: 4px; }
-  .scroll::-webkit-scrollbar-button {
+  .scroll::-webkit-scrollbar-button,
+  .suggestBox::-webkit-scrollbar-button {
     width: 0;
     height: 0; }
-  .scroll::-webkit-scrollbar-thumb {
+  .scroll::-webkit-scrollbar-thumb,
+  .suggestBox::-webkit-scrollbar-thumb {
     background: #000000;
     border: 0px none #000000;
     -webkit-border-radius: 2px;
             border-radius: 2px; }
-  .scroll::-webkit-scrollbar-track {
+  .scroll::-webkit-scrollbar-track,
+  .suggestBox::-webkit-scrollbar-track {
     background: var(--light-grey);
     border: 0px none #000000;
     -webkit-border-radius: 0px;
             border-radius: 0px; }
-  .scroll::-webkit-scrollbar-corner {
+  .scroll::-webkit-scrollbar-corner,
+  .suggestBox::-webkit-scrollbar-corner {
     background: transparent; }
-  .scroll-x {
+  .scroll-x,
+  .suggestBox-x {
     overflow-y: hidden;
     overflow-x: visible; }
 
