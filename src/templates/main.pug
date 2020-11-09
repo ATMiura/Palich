@@ -122,18 +122,25 @@ block content
 											.products__item__label.no-gmo Без ГМО
 											.products__item__label.no-gluten Без глютена
 											.products__item__label.sale - 25%
-										.products__item__info
-											.products__item__name Торт Антреме Шоколадная симфония
-											.products__item__price__cart
-												.products__item__price
-													.products__item__price__normal 376 ₽
-													.products__item__price__sale 523 ₽
-												.products__item__cart
-													a(href="").products__item__cart__link.button.border_radius
-														.products__item__cart__link__text В корзину
-														.products__item__cart__link__icon
-															+icon('product_add_to_cart')
-															+icon('product_in_cart')
+										+productNotification()
+										//.product-notification
+											.product-notification__label Период продаж праздничной коллекции —
+											=" "
+											.product-notification__date с 28 октября по 30 ноября
+										.products__item__info.with-timer
+											.products__item__info__wrap
+												.products__item__name Торт Антреме Шоколадная симфония
+												.products__item__price__cart
+													.products__item__price
+														.products__item__price__normal 376 ₽
+														.products__item__price__sale 523 ₽
+													//.products__item__cart
+														a(href="").products__item__cart__link.button.border_radius
+															.products__item__cart__link__text В корзину
+															.products__item__cart__link__icon
+																+icon('product_add_to_cart')
+																+icon('product_in_cart')
+											+productTimer('12')
 										.products-pickup
 											.products-pickup__close
 											.products-pickup__icon
@@ -159,17 +166,18 @@ block content
 											.products__item__label.no-gluten Без глютена
 											.products__item__label.sale - 25%
 										.products__item__info
-											.products__item__name Торт Антреме Шоколадная симфония
-											.products__item__price__cart
-												.products__item__price
-													.products__item__price__normal 376 ₽
-													.products__item__price__sale 523 ₽
-												.products__item__cart
-													a(href="").products__item__cart__link.button.border_radius
-														.products__item__cart__link__text В корзину
-														.products__item__cart__link__icon
-															+icon('product_add_to_cart')
-															+icon('product_in_cart')
+											.products__item__info__wrap
+												.products__item__name Торт Антреме Шоколадная симфония
+												.products__item__price__cart
+													.products__item__price
+														.products__item__price__normal 376 ₽
+														.products__item__price__sale 523 ₽
+													.products__item__cart
+														a(href="").products__item__cart__link.button.border_radius
+															.products__item__cart__link__text В корзину
+															.products__item__cart__link__icon
+																+icon('product_add_to_cart')
+																+icon('product_in_cart')
 										.products-pickup
 											.products-pickup__close
 											.products-pickup__icon

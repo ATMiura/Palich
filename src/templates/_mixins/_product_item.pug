@@ -32,6 +32,9 @@ mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', 
 								.products__item__cart__link__icon
 									+icon('product_add_to_cart')
 									+icon('product_in_cart')
+				+productNotification
+				+productTimer
+
 				if in_cart == true
 
 				else

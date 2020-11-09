@@ -1,0 +1,9 @@
+mixin productNotification(text,date)
+	.product-notification
+		span.product-notification__label Период продаж праздничной коллекции —
+		=" "
+		span.product-notification__date
+			if(date)
+				date
+			else
+				| с 28 октября по 30 ноября

@@ -191,8 +191,6 @@
 				.products__item__info
 					background-color: var(--beige)
 					padding: 12px 45px 15px 45px
-					flex-direction: row
-					align-items: center
 					@media #{$laptop}
 						padding: 12px 10px 15px 10px
 					.products__item__name
@@ -212,6 +210,11 @@
 						color: var(--yellow)
 					.icon-product_add_to_cart
 						fill: var(--yellow)
+
+					.products__item__info__wrap
+						display: flex
+						flex-direction: row
+						align-items: center
 
 			@media #{$tablet}
 				&__big
@@ -495,6 +498,7 @@
 			.products-pickup
 				bottom: 90px
 				right: 15px
+
 
 
 @media #{$mobile}

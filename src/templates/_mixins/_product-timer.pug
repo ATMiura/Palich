@@ -1,0 +1,32 @@
+mixin productTimer(day,hour,min,sec)
+	.product-timer
+		.product-timer__text До начала продаж осталось
+		.product-timer__list
+			.product-timer__item
+				.product-timer__value
+					if (day)
+						=day
+					else
+						| 06
+				.product-timer__time дней
+			.product-timer__item
+				.product-timer__value
+					if (hour)
+						=hour
+					else
+						| 23
+				.product-timer__time час.
+			.product-timer__item
+				.product-timer__value
+					if (min)
+						=min
+					else
+						| 45
+				.product-timer__time мин.
+			.product-timer__item
+				.product-timer__value
+					if (sec)
+						=sec
+					else
+						| 13
+				.product-timer__time сек.
