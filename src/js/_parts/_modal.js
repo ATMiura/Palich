@@ -119,3 +119,22 @@ function thxOrder(){
 		buttons: false,
 	});
 }
+
+function welcome(){
+	$.fancybox.close();
+	$.fancybox.open( {
+		//selector: element,
+		src: '#welcome',
+		type : 'inline',
+		touch: false,
+		autoFocus: false,
+		fullScreen: true,
+		baseClass: "modal__custom",
+		infobar: false,
+		buttons: false,
+	});
+	$('.welcome .delivery-item__text').equalHeights();
+}
+$(document).ready(function () {
+	welcome();
+});

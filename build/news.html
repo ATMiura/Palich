@@ -1798,6 +1798,142 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal welcome" id="welcome">
+			<div class="modal__inner">
+				<div class="modal__head">
+					<div class="modal__title">Добро пожаловать на сайт “У Палыча”</div>
+					<div class="modal__text">У нас есть много разных вкусностей для вас.<br> Выберите город, способ доставки и адрес, чтобы мы показали Вашу персонализированную цену
+					</div>
+				</div>
+				<div class="modal__body">
+					<form class="form">
+						<div class="step">
+							<div class="step-list">
+								<div class="step-item complete">
+									<div class="step-item__number">01</div>
+									<div class="step-item__name">Город/область</div>
+								</div>
+								<div class="step-item complete">
+									<div class="step-item__number">02</div>
+									<div class="step-item__name">Способ доставки</div>
+								</div>
+								<div class="step-item complete active current">
+									<div class="step-item__number">03</div>
+									<div class="step-item__name">Адрес</div>
+								</div>
+							</div>
+						</div>
+						<!--.city-choose
+						.city-choose__title Выберите город
+						ul.city-list.scroll
+							li.city-item
+								a(href="").city-link Москва и область
+							li.city-item
+								a(href="").city-link Санкт-Петербург и область
+							li.city-item
+								a(href="").city-link Белгород
+							li.city-item
+								a(href="").city-link Великий Новгород
+							li.city-item
+								a(href="").city-link Владимир
+							li.city-item
+								a(href="").city-link Воронеж
+							li.city-item
+								a(href="").city-link Иваново
+							li.city-item
+								a(href="").city-link Калуга
+							li.city-item
+								a(href="").city-link Курск
+							li.city-item
+								a(href="").city-link Липецк
+							li.city-item
+								a(href="").city-link Нижний Новгород
+							li.city-item
+								a(href="").city-link Рязань
+							li.city-item
+								a(href="").city-link Тверь
+							li.city-item
+								a(href="").city-link Тула
+							li.city-item
+								a(href="").city-link Ярославль
+						-->
+						<!--.delivery
+						.delivery-list
+							.delivery-item
+								.deliver-item__picture
+									img(src="images/delivery-img-1.svg").delivery-item__img
+								.delivery-item__text Доставка курьером до 90 минут
+								.delivery-item__advant Быстро
+								.delivery-item__url
+									a.delivery-item__link(href="#") Указать адрес доставки
+							.delivery-item
+								.deliver-item__picture
+									img(src="images/delivery-img-2.svg").delivery-item__img
+								.delivery-item__text Самовывоз из магазина на следущий день. Скидка до 20% на все товары
+								.delivery-item__advant Быстро
+								.delivery-item__url
+									a.delivery-item__link(href="#") Выбрать магазин
+							.delivery-item
+								.deliver-item__picture
+									img(src="images/delivery-img-3.svg").delivery-item__img
+								.delivery-item__text Доставка курьером на следующий день
+						-->
+						<div class="modal__form">
+							<div class="form_row">
+								<div class="form_group">
+									<label class="form_label"><span class="field-label">Введите улицу или станцию метро, чтобы найти ближайший пункт</span>
+										<div class="dropdown-select" data-dropdown="select">
+											<input class="dropdown-select__value" type="hidden" value="">
+											<div class="dropdown-select__label">
+												<div class="dropdown-select__label__text">Самовывоз</div>
+											</div>
+											<ul class="dropdown-select__list">
+												<div class="form_group">
+													<input class="form_input dropdown-select__search" id="dropdown_city_search" type="text" placeholder="Введите магазин">
+												</div>
+												<li class="dropdown-select__item active" data-value="Краснодар">Краснодар</li>
+												<li class="dropdown-select__item" data-value="Москва">Москва</li>
+												<li class="dropdown-select__item" data-value="Питер">Питер</li>
+												<li class="dropdown-select__item" data-value="Ростов">Ростов</li>
+											</ul>
+										</div>
+									</label>
+								</div>
+							</div>
+							<div class="form_row">
+								<div class="form_group">
+									<label class="form_label"><span class="field-label">Дата доставки</span>
+										<div class="dropdown-select" data-dropdown="select">
+											<input class="dropdown-select__value" type="hidden" value="">
+											<div class="dropdown-select__label">
+												<div class="dropdown-select__label__text">Самовывоз</div>
+											</div>
+											<ul class="dropdown-select__list">
+												<li class="dropdown-select__item active" data-value="Самовывоз">03/11/2020</li>
+												<li class="dropdown-select__item" data-value="Доставка">04/11/2020</li>
+											</ul>
+										</div>
+									</label>
+								</div>
+							</div>
+							<div class="form_row">
+								<div class="form_group">
+									<label class="form_label"><span class="field-label">Улица, дом, корпус, строение</span>
+										<input class="form_input" type="text" name="" placeholder="" value="Москва,">
+									</label>
+								</div>
+							</div>
+							<div class="form_row form_submit">
+								<div class="form_group">
+									<input class="button button__arrow disabled" type="submit" value="К покупкам" disabled>
+								</div>
+							</div>
+						</div>
+						<div class="step-back"><a class="step-back__link" href="#">Назад</a></div>
+					</form>
+				</div>
+			</div>
+		</div>
 		<div class="modal city-choose" id="city-choose">
 			<div class="modal__inner">
 				<div class="modal__head">
@@ -1956,7 +2092,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1604932284891"></script>
-		<script src="js/main.js?v=1604932284891"></script>
+		<script src="js/vendor.js?v=1605017272447"></script>
+		<script src="js/main.js?v=1605017272447"></script>
 	</body>
 </html>

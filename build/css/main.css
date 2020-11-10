@@ -3114,6 +3114,15 @@ li {
     -webkit-border-radius: 25px;
        -moz-border-radius: 25px;
             border-radius: 25px; }
+  .button:disabled, .button.disabled {
+    background-color: var(--gryaz-grey);
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none; }
+    .button:disabled:hover, .button.disabled:hover {
+      background-color: var(--gryaz-grey);
+      color: rgba(255, 255, 255, 0.5); }
+    .button:disabled.button__arrow, .button.disabled.button__arrow {
+      background-image: url("data:image/svg+xml,%3Csvg width='19' height='10' viewBox='0 0 19 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' fill-rule='evenodd' clip-rule='evenodd' d='M12.4705 0.3019C12.856 -0.0935356 13.4892 -0.10155 13.8846 0.284L17.9872 4.284C18.1802 4.47221 18.2891 4.7304 18.2891 5C18.2891 5.26961 18.1802 5.52779 17.9872 5.716L13.8846 9.716C13.4892 10.1016 12.856 10.0935 12.4705 9.6981C12.0849 9.30267 12.093 8.66955 12.4884 8.284L14.831 6H1.28906C0.736778 6 0.289062 5.55229 0.289062 5C0.289062 4.44772 0.736778 4 1.28906 4H14.831L12.4884 1.716C12.093 1.33045 12.0849 0.697336 12.4705 0.3019Z' fill='white'/%3E%3C/svg%3E%0A"); }
 
 input::-webkit-contacts-auto-fill-button {
   visibility: hidden;
@@ -4905,6 +4914,151 @@ input::-ms-clear {
       padding: 10px; }
     .modal__custom .fancybox-content {
       padding: 15px; } }
+  .modal.welcome .modal__inner {
+    max-width: 800px; }
+  .modal.welcome .city-choose {
+    background-color: var(--white);
+    padding: 40px 80px; }
+    .modal.welcome .city-choose .city-choose__title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px; }
+    .modal.welcome .city-choose .city-link:hover {
+      font-weight: bold;
+      color: var(--vinishkotyan); }
+  .modal.welcome .modal__form {
+    max-width: 460px; }
+  .modal.welcome .button {
+    margin-top: 0;
+    min-width: auto; }
+
+.step {
+  margin-bottom: 40px; }
+  .step .step-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .step .step-item {
+    min-width: 120px;
+    text-align: center; }
+    .step .step-item:not(:last-child) {
+      margin-right: 50px; }
+      .step .step-item:not(:last-child) .step-item__number:after {
+        content: "";
+        display: block;
+        min-width: 90px;
+        width: 90px;
+        height: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg width='89' height='17' viewBox='0 0 89 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.972639 9.02103C0.972639 8.46875 1.36904 8.02103 1.85803 8.02103L88.0873 7.46874C88.5762 7.46874 88.9727 7.91646 88.9727 8.46874C88.9727 9.02103 88.5762 9.46874 88.0873 9.46874L1.85803 10.021C1.36904 10.021 0.972639 9.57332 0.972639 9.02103Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M81.2632 0.792893C81.609 0.402369 82.1696 0.402369 82.5154 0.792893L88.7131 7.79289C89.0589 8.18342 89.0589 8.81658 88.7131 9.20711L82.5154 16.2071C82.1696 16.5976 81.609 16.5976 81.2632 16.2071C80.9175 15.8166 80.9175 15.1834 81.2632 14.7929L86.8349 8.5L81.2632 2.20711C80.9175 1.81658 80.9175 1.18342 81.2632 0.792893Z' fill='black'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        left: -webkit-calc(100% + 10px);
+        left: -moz-calc(100% + 10px);
+        left: calc(100% + 10px); }
+    .step .step-item .step-item__number {
+      min-width: 62px;
+      width: 62px;
+      height: 62px;
+      -webkit-border-radius: 100%;
+         -moz-border-radius: 100%;
+              border-radius: 100%;
+      background-color: var(--white);
+      margin: 0 auto 15px;
+      font-size: 1rem;
+      color: var(--vinishkotyan);
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+         -moz-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+         -moz-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .step .step-item.active .step-item__number, .step .step-item.complete .step-item__number {
+      background-color: var(--vinishkotyan);
+      color: var(--white); }
+    .step .step-item .current .step-item__name {
+      font-weight: bold; }
+
+.step-back {
+  margin-top: 50px; }
+  .step-back .step-back__link {
+    font-size: .75rem;
+    line-height: .875rem;
+    color: var(--black);
+    display: inline-block;
+    text-align: right;
+    max-width: 65px; }
+    .step-back .step-back__link:before {
+      content: "";
+      min-width: 65px;
+      width: 65px;
+      height: 16px;
+      display: inline-block;
+      background-image: url("data:image/svg+xml,%3Csvg width='66' height='16' viewBox='0 0 66 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.21086 15.7071C8.60139 16.0976 9.23455 16.0976 9.62508 15.7071C10.0156 15.3166 10.0156 14.6834 9.62508 14.2929L4.36343 9.03124L64.918 9.03124C65.4703 9.03124 65.918 8.58352 65.918 8.03124C65.918 7.47895 65.4703 7.03124 64.918 7.03124L4.30094 7.03124L9.62508 1.7071C10.0156 1.31658 10.0156 0.683412 9.62508 0.292888C9.23455 -0.0976364 8.60139 -0.0976365 8.21086 0.292888L1.21086 7.29289C1.01163 7.49212 0.914033 7.75452 0.918092 8.01562C0.918015 8.02082 0.917969 8.02602 0.917969 8.03124C0.917969 8.38322 1.09982 8.69273 1.3747 8.87094L8.21086 15.7071Z' fill='black'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center; }
+
+.delivery .delivery-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.delivery .delivery-item {
+  max-width: 320px;
+  width: 100%;
+  padding: 45px;
+  background-color: var(--white); }
+  .delivery .delivery-item:not(:last-child) {
+    margin-right: 20px; }
+  .delivery .delivery-item .deliver-item__picture {
+    margin-bottom: 20px; }
+  .delivery .delivery-item .delivery-item__text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 10px; }
+  .delivery .delivery-item .delivery-item__advant {
+    background-color: #FFB800;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-size: .75rem;
+    line-height: .875rem;
+    font-weight: bold;
+    color: var(--white); }
+  .delivery .delivery-item .delivery-item__link {
+    font-size: .875rem;
+    line-height: 1rem;
+    font-weight: bold;
+    color: var(--vinishkotyan); }
+    .delivery .delivery-item .delivery-item__link:after {
+      content: "";
+      display: inline-block;
+      margin-left: 10px;
+      width: 20px;
+      height: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg width='21' height='11' viewBox='0 0 21 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.1088 0.773869C15.796 0.480976 15.2889 0.480976 14.9762 0.773869C14.6634 1.06676 14.6634 1.54164 14.9762 1.83453L17.8613 4.53638L1.66026 4.53638C1.21794 4.53638 0.859375 4.87217 0.859375 5.28638C0.859375 5.70059 1.21794 6.03638 1.66026 6.03638L17.8994 6.03638L14.9762 8.77387C14.6634 9.06676 14.6634 9.54164 14.9762 9.83453C15.2889 10.1274 15.796 10.1274 16.1088 9.83453L20.3802 5.83453C20.5416 5.68336 20.6197 5.48372 20.6145 5.28564C20.6142 5.02953 20.4769 4.80348 20.2675 4.66835L16.1088 0.773869Z' fill='%23A70230'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center; }
 
 .modal-city-choose .fancybox-bg {
   background: rgba(0, 0, 0, 0.44) !important; }
@@ -5021,8 +5175,17 @@ input::-ms-clear {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   position: relative;
   width: 100%; }
+  .form_label .field-label {
+    font-size: 1.25rem;
+    line-height: 1.375rem;
+    color: var(--black);
+    font-weight: bold;
+    margin-bottom: 10px; }
 
 .form_input {
   background-color: var(--white);
@@ -5071,6 +5234,12 @@ input::-ms-clear {
 
 .invalid {
   border-bottom: 1px solid var(--vinishkotyan); }
+
+.promocode .form_label,
+.subscribe_label {
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap; }
 
 .checkbox__input,
 .radio__input {
@@ -7681,6 +7850,10 @@ input::-ms-clear {
     padding-right: 15px; }
   .cart-field__city .cart-field-city__change {
     min-width: 120px; }
+  .cart-field__city .form_label {
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap; }
 
 .cart-field__street {
   max-width: 24.337%;
@@ -8534,16 +8707,16 @@ input::-ms-clear {
       display: -moz-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-         -moz-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
+      -webkit-box-align: end;
+      -webkit-align-items: flex-end;
+         -moz-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
       margin-right: 40px; }
       .product-buy-price__normal {
         font-weight: bold;
-        font-size: 1.25rem;
-        line-height: 1.5rem;
+        font-size: 1.875rem;
+        line-height: 2rem;
         color: var(--vinishkotyan); }
         .product-buy-price__normal:last-child {
           color: var(--black); }
@@ -9945,43 +10118,11 @@ input::-ms-clear {
   font-size: .875rem;
   line-height: 1.125rem;
   color: var(--black);
-  opacity: 0.8;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  display: inline-block; }
+  .product-notification > {
+    opacity: 0.8; }
   .product-notification .product-notification__date {
     color: var(--vinishkotyan); }
-
-.with-timer {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-     -moz-box-orient: horizontal;
-     -moz-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
-  .with-timer .products__item__info__wrap {
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-    -webkit-flex-direction: column !important;
-       -moz-box-orient: vertical !important;
-       -moz-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important; }
-  .with-timer .products__item__price__cart {
-    margin-top: 10px;
-    -webkit-box-pack: start !important;
-    -webkit-justify-content: flex-start !important;
-       -moz-box-pack: start !important;
-        -ms-flex-pack: start !important;
-            justify-content: flex-start !important; }
 
 .product-timer {
   margin-left: auto; }
@@ -10020,6 +10161,30 @@ input::-ms-clear {
       line-height: .875rem;
       color: #657082; }
 
+.with-timer {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  .with-timer .products__item__info__wrap {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    -webkit-flex-direction: column !important;
+       -moz-box-orient: vertical !important;
+       -moz-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important; }
+  .with-timer .products__item__price__cart {
+    margin-top: 10px;
+    -webkit-box-pack: start !important;
+    -webkit-justify-content: flex-start !important;
+       -moz-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important; }
+
 .products__item:not(.swiper-slide) .product-notification {
   margin-top: 12px;
   display: block;
@@ -10028,5 +10193,15 @@ input::-ms-clear {
 .products__item:not(.swiper-slide) .product-timer {
   margin-top: 18px;
   margin-left: 0; }
+
+.products__item__size__big .product-notification {
+  width: 100%; }
+
+.section-product-detail .product-notification {
+  margin-top: 20px;
+  padding: 15px 20px; }
+
+.section-product-detail .product-timer {
+  margin-top: 15px; }
 
 /*# sourceMappingURL=main.css.map */

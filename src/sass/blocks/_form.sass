@@ -8,9 +8,16 @@
 	&_label
 		display: inline-flex
 		align-items: center
+		flex-wrap: wrap
 		position: relative
 		width: 100%
 		&--text
+		.field-label
+			font-size: 1.25rem
+			line-height: 1.375rem
+			color: var(--black)
+			font-weight: bold
+			margin-bottom: 10px
 
 	&_input
 		background-color: var(--white)
@@ -56,6 +63,10 @@
 
 .invalid
 	border-bottom: 1px solid var(--vinishkotyan)
+
+.promocode .form_label,
+.subscribe_label
+	flex-wrap: nowrap
 
 .checkbox,
 .radio

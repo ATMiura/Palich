@@ -4,22 +4,16 @@
 	font-size: .875rem
 	line-height: 1.125rem
 	color: var(--black)
-	opacity: 0.8
 
-	display: flex
-	align-items: center
-
+	display: inline-block
+	//display: flex
+	//align-items: center
+	& >
+		opacity: 0.8
 	.product-notification__label
 	.product-notification__date
 		color: var(--vinishkotyan)
 
-.with-timer
-	flex-direction: row
-	.products__item__info__wrap
-		flex-direction: column !important
-	.products__item__price__cart
-		margin-top: 10px
-		justify-content: flex-start !important
 .product-timer
 	//display: flex
 	//flex-wrap: wrap
@@ -49,6 +43,14 @@
 			line-height: .875rem
 			color: #657082
 
+.with-timer
+	flex-direction: row
+	.products__item__info__wrap
+		flex-direction: column !important
+	.products__item__price__cart
+		margin-top: 10px
+		justify-content: flex-start !important
+
 
 .products__item:not(.swiper-slide)
 	.product-notification
@@ -58,3 +60,14 @@
 	.product-timer
 		margin-top: 18px
 		margin-left: 0
+
+.products__item__size__big
+	.product-notification
+		width: 100%
+
+.section-product-detail
+	.product-notification
+		margin-top: 20px
+		padding: 15px 20px
+	.product-timer
+		margin-top: 15px

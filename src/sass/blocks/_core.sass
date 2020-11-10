@@ -103,7 +103,16 @@
 	//&.size_small
 		height: 40px
 
-	&:disabled
+	&:disabled,
+	&.disabled
+		background-color: var(--gryaz-grey)
+		color: rgba(255, 255, 255, 0.5)
+		pointer-events: none
+		&:hover
+			background-color: var(--gryaz-grey)
+			color: rgba(255, 255, 255, 0.5)
+		&.button__arrow
+			background-image: url("data:image/svg+xml,%3Csvg width='19' height='10' viewBox='0 0 19 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' fill-rule='evenodd' clip-rule='evenodd' d='M12.4705 0.3019C12.856 -0.0935356 13.4892 -0.10155 13.8846 0.284L17.9872 4.284C18.1802 4.47221 18.2891 4.7304 18.2891 5C18.2891 5.26961 18.1802 5.52779 17.9872 5.716L13.8846 9.716C13.4892 10.1016 12.856 10.0935 12.4705 9.6981C12.0849 9.30267 12.093 8.66955 12.4884 8.284L14.831 6H1.28906C0.736778 6 0.289062 5.55229 0.289062 5C0.289062 4.44772 0.736778 4 1.28906 4H14.831L12.4884 1.716C12.093 1.33045 12.0849 0.697336 12.4705 0.3019Z' fill='white'/%3E%3C/svg%3E%0A")
 
 
 //a.button

@@ -130,7 +130,6 @@ block content
 												input#basket-item-quantity.basket-item-amount-filed(type='text', value='1', data-value='1', data-entity='basket-item-quantity-field')
 												.basket-item-amount-field-description шт
 											span.count_btn.basket-item-amount-btn-plus(data-entity='basket-item-quantity-plus')
-
 								.product-buy
 									.product-buy-price
 										.product-buy-price__normal 376 ₽
@@ -164,6 +163,8 @@ block content
 															li.product-share-item
 																a.product-share-item__link(href="#")
 																	+icon('prodcuct-share-ok')
+								+productNotification
+								+productTimer
 							.product-descr#product-descr(data-move-left-right)
 								.product-descr__title
 									h2 Описание товара
