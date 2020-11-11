@@ -45,6 +45,7 @@ $(document).on('click touch', '.header-burger__link', function (event) {
 /* выпадаюищй список в корзине */
 $(document).ready(function () {
 	$(document).on('click', '.dropdown-select__label', function () {
+		$('.dropdown-select').removeClass('is-open');
 		$(this).parents('.dropdown-select').toggleClass('is-open');
 	}).on('click', '.dropdown-select__item', function () {
 		$(this).siblings().removeClass('active');
@@ -53,6 +54,12 @@ $(document).ready(function () {
 		$(this).parents('.dropdown-select').toggleClass('is-open');
 		$(this).parents('.dropdown-select').find('.dropdown-select__value').val($(this).data('value'));
 		$(this).parents('.dropdown-select').addClass('is-valid');
+	}).on('click touch',function (event) {
+		var $trigger = $(".dropdown-select");
+		if($trigger !== event.target && !$trigger.has(event.target).length){
+			//$(".dropdown-block").slideUp("fast");
+			$trigger.removeClass('is-open');
+		}
 	});
 });
 

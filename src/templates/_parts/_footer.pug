@@ -103,7 +103,7 @@ footer.footer
 			.mobile-menu-section(data-mobile-menu="catalog-sort")
 
 
-.modal#welcome.welcome
+.modal#welcome.welcome.scroll
 	.modal__inner
 		.modal__head
 			.modal__title
@@ -126,98 +126,104 @@ footer.footer
 						.step-item.complete.active.current
 							.step-item__number 03
 							.step-item__name Адрес
-				//.city-choose
-					.city-choose__title Выберите город
-					ul.city-list.scroll
-						li.city-item
-							a(href="").city-link Москва и область
-						li.city-item
-							a(href="").city-link Санкт-Петербург и область
-						li.city-item
-							a(href="").city-link Белгород
-						li.city-item
-							a(href="").city-link Великий Новгород
-						li.city-item
-							a(href="").city-link Владимир
-						li.city-item
-							a(href="").city-link Воронеж
-						li.city-item
-							a(href="").city-link Иваново
-						li.city-item
-							a(href="").city-link Калуга
-						li.city-item
-							a(href="").city-link Курск
-						li.city-item
-							a(href="").city-link Липецк
-						li.city-item
-							a(href="").city-link Нижний Новгород
-						li.city-item
-							a(href="").city-link Рязань
-						li.city-item
-							a(href="").city-link Тверь
-						li.city-item
-							a(href="").city-link Тула
-						li.city-item
-							a(href="").city-link Ярославль
-				//.delivery
-					.delivery-list
-						.delivery-item
-							.deliver-item__picture
-								img(src="images/delivery-img-1.svg").delivery-item__img
-							.delivery-item__text Доставка курьером до 90 минут
-							.delivery-item__advant Быстро
-							.delivery-item__url
-								a.delivery-item__link(href="#") Указать адрес доставки
-						.delivery-item
-							.deliver-item__picture
-								img(src="images/delivery-img-2.svg").delivery-item__img
-							.delivery-item__text Самовывоз из магазина на следущий день. Скидка до 20% на все товары
-							.delivery-item__advant Быстро
-							.delivery-item__url
-								a.delivery-item__link(href="#") Выбрать магазин
-						.delivery-item
-							.deliver-item__picture
-								img(src="images/delivery-img-3.svg").delivery-item__img
-							.delivery-item__text Доставка курьером на следующий день
-				.modal__form
-					.form_row
-						.form_group
-							label.form_label
-								span.field-label Введите улицу или станцию метро, чтобы найти ближайший пункт
-								.dropdown-select(data-dropdown='select')
-									input.dropdown-select__value(type='hidden', value='')
-									.dropdown-select__label
-										.dropdown-select__label__text Самовывоз
-									ul.dropdown-select__list
-										.form_group
-											input#dropdown_city_search.form_input.dropdown-select__search(type="text", placeholder="Введите магазин")
-										li.dropdown-select__item.active(data-value='Краснодар') Краснодар
-										li.dropdown-select__item(data-value='Москва') Москва
-										li.dropdown-select__item(data-value='Питер') Питер
-										li.dropdown-select__item(data-value='Ростов') Ростов
-					.form_row
-						.form_group
-							label.form_label
-								span.field-label Дата доставки
-								.dropdown-select(data-dropdown='select')
-									input.dropdown-select__value(type='hidden', value='')
-									.dropdown-select__label
-										.dropdown-select__label__text Самовывоз
-									ul.dropdown-select__list
-										li.dropdown-select__item.active(data-value='Самовывоз') 03/11/2020
-										li.dropdown-select__item(data-value='Доставка') 04/11/2020
-					.form_row
-						.form_group
-							label.form_label
-								span.field-label Улица, дом, корпус, строение
-								input.form_input(type="text", name="", placeholder="", value="Москва,")
-					.form_row.form_submit
-						.form_group
-							input.button.button__arrow.disabled(type="submit", value="К покупкам", disabled)
+				.modal-step-block
+					.modal-step(data-step="1")
+						.city-choose
+							.city-choose__title Выберите город
+							ul.city-list.scroll
+								li.city-item
+									a(href="").city-link Москва и область
+								li.city-item
+									a(href="").city-link Санкт-Петербург и область
+								li.city-item
+									a(href="").city-link Белгород
+								li.city-item
+									a(href="").city-link Великий Новгород
+								li.city-item
+									a(href="").city-link Владимир
+								li.city-item
+									a(href="").city-link Воронеж
+								li.city-item
+									a(href="").city-link Иваново
+								li.city-item
+									a(href="").city-link Калуга
+								li.city-item
+									a(href="").city-link Курск
+								li.city-item
+									a(href="").city-link Липецк
+								li.city-item
+									a(href="").city-link Нижний Новгород
+								li.city-item
+									a(href="").city-link Рязань
+								li.city-item
+									a(href="").city-link Тверь
+								li.city-item
+									a(href="").city-link Тула
+								li.city-item
+									a(href="").city-link Ярославль
+
+					.modal-step(data-step="2")
+						.delivery
+							.delivery-list
+								.delivery-item
+									.deliver-item__picture
+										img(src="images/delivery-img-1.svg").delivery-item__img
+									.delivery-item__text Доставка курьером до 90 минут
+									.delivery-item__advant Быстро
+									.delivery-item__url
+										a.delivery-item__link(href="#") Указать адрес доставки
+								.delivery-item
+									.deliver-item__picture
+										img(src="images/delivery-img-2.svg").delivery-item__img
+									.delivery-item__text Самовывоз из магазина на следущий день. Скидка до 20% на все товары
+									.delivery-item__advant Быстро
+									.delivery-item__url
+										a.delivery-item__link(href="#") Выбрать магазин
+								.delivery-item
+									.deliver-item__picture
+										img(src="images/delivery-img-3.svg").delivery-item__img
+									.delivery-item__text Доставка курьером на следующий день
+
+					.modal-step(data-step="3")
+						.modal__form
+							.form_row
+								.form_group
+									label.form_label
+										span.field-label Введите улицу или станцию метро, чтобы найти ближайший пункт
+										.dropdown-select(data-dropdown='select')
+											input.dropdown-select__value(type='hidden', value='')
+											.dropdown-select__label
+												.dropdown-select__label__text Самовывоз
+											ul.dropdown-select__list
+												.form_group
+													input#dropdown_city_search.form_input.dropdown-select__search(type="text", placeholder="Введите магазин")
+												li.dropdown-select__item.active(data-value='Краснодар') Краснодар
+												li.dropdown-select__item(data-value='Москва') Москва
+												li.dropdown-select__item(data-value='Питер') Питер
+												li.dropdown-select__item(data-value='Ростов') Ростов
+							.form_row
+								.form_group
+									label.form_label
+										span.field-label Дата доставки
+										.dropdown-select(data-dropdown='select')
+											input.dropdown-select__value(type='hidden', value='')
+											.dropdown-select__label
+												.dropdown-select__label__text 03/11/2020
+											ul.dropdown-select__list
+												li.dropdown-select__item.active(data-value='Самовывоз') 03/11/2020
+												li.dropdown-select__item(data-value='Доставка') 04/11/2020
+							.form_row
+								.form_group
+									label.form_label
+										span.field-label Улица, дом, корпус, строение
+										input.form_input(type="text", name="", placeholder="", value="Москва,")
+							.form_row.form_submit
+								.form_group
+									input.button.button__arrow.disabled(type="submit", value="К покупкам", disabled)
 
 
-				.step-back
-					a(href="#").step-back__link Назад
+					.step-back
+						a(href="#").step-back__link Назад
 
 
 

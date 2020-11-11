@@ -1,7 +1,7 @@
 mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', price_sale='523 ₽')
 	//- var label = ['hit','novetly','vegan','timer','no_gmo','no_glutten','sale']
 	.products__item
-		.products__item__inner
+		.products__item__inner.express-only
 			.products__item__img
 				a(href="").products__item__slide__link
 					img(src="images/" + img + ".jpg").products__item__slide__img
@@ -39,6 +39,12 @@ mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', 
 
 				else
 					.products-pickup
+						.products-pickup__close
+						.products-pickup__icon
+							+icon('products-pickup-icon-2')
+						.products-pickup__title Товар недоступен для самовывоза
+						.products-pickup__text К сожалению, этот товар недоступен для самовывоза, но вы можете заказать экспресс-доставку
+					//.products-pickup
 						.products-pickup__close
 						.products-pickup__icon
 							+icon('products-pickup-icon')

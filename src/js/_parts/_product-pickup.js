@@ -26,6 +26,8 @@ function productPickup(){
 		$('.products__item__cart').on({
 			mouseenter: function() {
 				$(this).parents('.products__item__inner').addClass('on-hover');
+				let positionTop = $(this).position().top;
+				$(this).parents('.products__item__inner').find('.products-pickup').css({ 'bottom': 'calc(107% - ' + positionTop+ 'px)' })
 			},
 			mouseleave: function() {
 				$(this).parents('.products__item__inner').removeClass('on-hover');
