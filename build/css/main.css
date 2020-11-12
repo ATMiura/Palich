@@ -6481,7 +6481,8 @@ input::-ms-clear {
     display: flex; }
   .products__item__size__big .products-pickup {
     bottom: 90px;
-    right: 15px; }
+    right: 15px;
+    left: initial; }
 
 @media screen and (max-width: 767px) {
   .products__item:nth-child(odd) .products-pickup {

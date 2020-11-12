@@ -886,8 +886,7 @@ function welcome() {
   $('.welcome .delivery-item__text').equalHeights();
 }
 
-$(document).ready(function () {
-  welcome();
+$(document).ready(function () {//welcome();
 });
 
 /***/ }),
@@ -7582,7 +7581,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ //import './_parts/_timer';
 
 /***/ }),
 

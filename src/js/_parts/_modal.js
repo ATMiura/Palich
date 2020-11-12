@@ -136,5 +136,5 @@ function welcome(){
 	$('.welcome .delivery-item__text').equalHeights();
 }
 $(document).ready(function () {
-	welcome();
+	//welcome();
 });
