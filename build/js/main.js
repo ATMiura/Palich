@@ -1610,6 +1610,126 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/_parts/_step-modal.js":
+/*!**************************************!*\
+  !*** ./src/js/_parts/_step-modal.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//$(document).on('click touch','.modal.welcome .city-link', function () {
+//	$(".modal-steps").load("/local/inc/ajax/step-modal.php",{
+//		"step":$(this).parents('.modal-step').data('step'),
+//		"city":$(this).text()
+//	});
+//});
+$(document).on('click touch', '.modal.welcome .city-link, .modal.welcome .delivery-item__link', function () {
+  $.post("/local/inc/ajax/step-modal.php", {
+    'modal-step': $(this).parents('.modal-step').data('step') + 1,
+    'modal-city': $(this).text()
+  }, function (data) {
+    var data = JSON.parse(data);
+    console.log(data); //console.log(data.step);
+    //console.log(data.city);
+
+    $('.modal-step-block').html(data.layout);
+  });
+}).on('click touch', '.step-back__link', function () {
+  var stepBack = $(this).parents('.modal-step-block').find('.modal-step').data('step') - 1;
+  console.log(stepBack);
+  $.post("/local/inc/ajax/step-modal.php", {
+    'modal-step': stepBack
+  }, function (data) {
+    var data = JSON.parse(data);
+    console.log(data);
+    console.log('Шаг ' + data.step); //console.log(data.city);
+
+    $('.modal-step-block').html(data.layout);
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/_parts/_timer.js":
+/*!*********************************!*\
+  !*** ./src/js/_parts/_timer.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  /*	function makeTimer() {
+  
+  		$('.product-timer').each(function () {
+  			var dateEnd = $(this).data('timer-time-end');
+  
+  			var endTime = new Date(dateEnd);
+  			endTime = Number((Date.parse(endTime) / 1000));
+  
+  			var now = new Date();
+  			now = Number((Date.parse(now) / 1000));
+  
+  			var timeLeft = Number(endTime - now);
+  
+  			var days = Math.floor(timeLeft / 86400);
+  			var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+  			var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+  			var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+  
+  			if (hours < "10") { hours = "0" + hours; }
+  			if (minutes < "10") { minutes = "0" + minutes; }
+  			if (seconds < "10") { seconds = "0" + seconds; }
+  
+  			$('[data-timer-type="day"]').html(days);
+  			$('[data-timer-type="hours"]').html(hours);
+  			$('[data-timer-type="minutes"]').html(minutes);
+  			$('[data-timer-type="seconds"]').html(seconds);
+  		});
+  	}
+  	setInterval(function() { makeTimer(); }, 1000);*/
+  document.addEventListener('readystatechange', function (event) {
+    if (event.target.readyState === "complete") {
+      var clockdiv = document.getElementsByClassName("product-timer");
+      var countDownDate = new Array();
+
+      for (var i = 0; i < clockdiv.length; i++) {
+        countDownDate[i] = new Array();
+        countDownDate[i]['el'] = clockdiv[i];
+        countDownDate[i]['time'] = new Date(clockdiv[i].getAttribute('data-timer-time-end')).getTime();
+        countDownDate[i]['days'] = 0;
+        countDownDate[i]['hours'] = 0;
+        countDownDate[i]['seconds'] = 0;
+        countDownDate[i]['minutes'] = 0;
+      }
+
+      var countdownfunction = setInterval(function () {
+        for (var i = 0; i < countDownDate.length; i++) {
+          var now = new Date().getTime();
+          var distance = countDownDate[i]['time'] - now;
+          countDownDate[i]['days'] = Math.floor(distance / (1000 * 60 * 60 * 24));
+          countDownDate[i]['hours'] = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+          countDownDate[i]['minutes'] = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+          countDownDate[i]['seconds'] = Math.floor(distance % (1000 * 60) / 1000);
+
+          if (distance < 0) {
+            countDownDate[i]['el'].querySelector('[data-timer-type="day"]').innerHTML = 0;
+            countDownDate[i]['el'].querySelector('[data-timer-type="hours"]').innerHTML = 0;
+            countDownDate[i]['el'].querySelector('[data-timer-type="minutes"]').innerHTML = 0;
+            countDownDate[i]['el'].querySelector('[data-timer-type="seconds"]').innerHTML = 0;
+          } else {
+            countDownDate[i]['el'].querySelector('[data-timer-type="day"]').innerHTML = countDownDate[i]['days'];
+            countDownDate[i]['el'].querySelector('[data-timer-type="hours"]').innerHTML = countDownDate[i]['hours'];
+            countDownDate[i]['el'].querySelector('[data-timer-type="minutes"]').innerHTML = countDownDate[i]['minutes'];
+            countDownDate[i]['el'].querySelector('[data-timer-type="seconds"]').innerHTML = countDownDate[i]['seconds'];
+          }
+        }
+      }, 1000);
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./src/js/_parts/_validation.js":
 /*!**************************************!*\
   !*** ./src/js/_parts/_validation.js ***!
@@ -7560,6 +7680,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
 /* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
 /* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _parts_timer__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./_parts/_timer */ "./src/js/_parts/_timer.js");
+/* harmony import */ var _parts_timer__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_parts_timer__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _parts_step_modal__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./_parts/_step-modal */ "./src/js/_parts/_step-modal.js");
+/* harmony import */ var _parts_step_modal__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_parts_step_modal__WEBPACK_IMPORTED_MODULE_22__);
 
 
 
@@ -7581,7 +7705,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- //import './_parts/_timer';
+
+
+
 
 /***/ }),
 
