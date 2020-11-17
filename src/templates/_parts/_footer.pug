@@ -117,13 +117,13 @@ footer.footer
 			form.form(method="post")
 				.step
 					.step-list
-						.step-item.complete
+						.step-item(data-step-number="1").active
 							.step-item__number 01
 							.step-item__name Город/область
-						.step-item.complete
+						.step-item(data-step-number="2")
 							.step-item__number 02
 							.step-item__name Способ доставки
-						.step-item.complete.active.current
+						.step-item(data-step-number="3").active.current
 							.step-item__number 03
 							.step-item__name Адрес
 				.modal-step-block

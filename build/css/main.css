@@ -5015,7 +5015,8 @@ input::-ms-clear {
     color: var(--black);
     display: inline-block;
     text-align: right;
-    max-width: 65px; }
+    max-width: 65px;
+    cursor: pointer; }
     .step-back .step-back__link:before {
       content: "";
       min-width: 65px;

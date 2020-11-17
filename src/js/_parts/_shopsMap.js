@@ -30,7 +30,7 @@ window.allMarkers2 = {};
 		location: [55.8617, 38.2988]
 	}
 ];*/
-/*function mapInit(){
+function mapInit(){
 	let mapContainer = $('.js-shop-map');
 	let mapMarkers = eval(mapContainer.data('map'));
 	let mapPinIcon = mapContainer.data('pin');
@@ -50,8 +50,15 @@ window.allMarkers2 = {};
 		controls: []
 	}, {
 		suppressMapOpenBlock: true
-	}),
-		clusterer = new ymaps.Clusterer();
+	});
+
+	var clusterer = new ymaps.Clusterer({
+		//preset: mapPinIcon,
+		groupByCoordinates: false,
+		clusterDisableClickZoom: false,
+		clusterHideIconOnBalloonOpen: true,
+		geoObjectHideIconOnBalloonOpen: true
+	});
 
 	for (var i = 0, l = mapMarkers.length; i < l; i++) {
 		//createMenuGroup(mapMarkers[i]);
@@ -165,16 +172,31 @@ window.allMarkers2 = {};
 				e.get('target').options.set({iconImageHref: '/local/templates/main/frontend/images/map-pin-active.svg'});
 			});
 
+		clusterer.options.set({
+			gridSize: 50,
+			clusterDisableClickZoom: false,
+			preset: 'islands#redClusterIcons'
+		});
 
-		allMarkers.push(placemark);
-		allMarkers2[id] = placemark;
+		clusterer.add(placemark);
+		myMap.geoObjects.add(clusterer);
 
-		// allMarkers2[2].balloon.open(); - работает и allMarkers2.balloon.close(); - тоже
+		myMap.setBounds(clusterer.getBounds(), {
+			checkZoomRange: true
+		});
 
-		//placemark.balloon.open();
-		//console.log(allMarkers2[id]);
 
-		myMap.setBounds(myMap.geoObjects.add(placemark).getBounds());
+		//allMarkers.push(placemark);
+		//allMarkers2[id] = placemark;
+//
+		//// allMarkers2[2].balloon.open(); - работает и allMarkers2.balloon.close(); - тоже
+//
+		////placemark.balloon.open();
+		////console.log(allMarkers2[id]);
+//
+		//myMap.setBounds(myMap.geoObjects.add(placemark).getBounds(),clusterer.getBounds(),{
+		//	checkZoomRange: true
+		//});
 
 		//myMap.events.add('boundschange', function(e){
 		//	if (e.get('newZoom') !== e.get('oldZoom')) {
@@ -192,7 +214,7 @@ window.allMarkers2 = {};
 		//});
 		//myMap.geoObjects.add(rectangle);
 //
-		/!*var myCircle = new ymaps.Circle([
+		/*var myCircle = new ymaps.Circle([
 			// Координаты центра круга.
 			[55.74954, 37.621587],
 			// Радиус круга в метрах.
@@ -221,7 +243,7 @@ window.allMarkers2 = {};
 			fillMethod: 'stretch'
 		});
 
-		myMap.geoObjects.add(myCircle);*!/
+		myMap.geoObjects.add(myCircle);*/
 	}
 }
 
@@ -229,24 +251,24 @@ window.allMarkers2 = {};
 
 $(document).ready(function () {
 	(typeof ymaps !== 'undefined' && $('.js-shop-map').length > 0) && ymaps.ready(mapInit);
-});*/
+});
 
-ymaps.ready(function () {
+/*ymaps.ready(function () {
 
 	var LAYER_NAME = 'user#layer',
 		MAP_TYPE_NAME = 'user#customMap',
 		// Директория с тайлами.
 		TILES_PATH = 'images/tiles',
-		/* Для того чтобы вычислить координаты левого нижнего и правого верхнего углов прямоугольной координатной
+		/!* Для того чтобы вычислить координаты левого нижнего и правого верхнего углов прямоугольной координатной
 		 * области, нам необходимо знать максимальный зум, ширину и высоту изображения в пикселях на максимальном зуме.
-		 */
+		 *!/
 		MAX_ZOOM = 4,
 		PIC_WIDTH = 2526,
 		PIC_HEIGHT = 3085;
 
-	/**
+	/!**
 	 * Конструктор, создающий собственный слой.
-	 */
+	 *!/
 	var Layer = function () {
 		var layer = new ymaps.Layer(TILES_PATH + '/%z/tile-%x-%y.jpg', {
 			// Если есть необходимость показать собственное изображение в местах неподгрузившихся тайлов,
@@ -266,20 +288,20 @@ ymaps.ready(function () {
 	// Добавляем в хранилище слоев свой конструктор.
 	ymaps.layer.storage.add(LAYER_NAME, Layer);
 
-	/**
+	/!**
 	 * Создадим новый тип карты.
 	 * MAP_TYPE_NAME - имя нового типа.
 	 * LAYER_NAME - ключ в хранилище слоев или функция конструктор.
-	 */
+	 *!/
 	var mapType = new ymaps.MapType(MAP_TYPE_NAME, [LAYER_NAME]);
 	// Сохраняем тип в хранилище типов.
 	ymaps.mapType.storage.add(MAP_TYPE_NAME, mapType);
 
 	// Вычисляем размер всех тайлов на максимальном зуме.
 	var worldSize = Math.pow(2, MAX_ZOOM) * 256,
-		/**
+		/!**
 		 * Создаем карту, указав свой новый тип карты.
-		 */
+		 *!/
 		map = new ymaps.Map('map', {
 			center: [0, 0],
 			zoom: 2,
@@ -306,5 +328,5 @@ ymaps.ready(function () {
 	});
 
 	map.geoObjects.add(point);
-});
+});*/
 
