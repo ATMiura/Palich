@@ -193,52 +193,49 @@ $(document).ready(function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var js_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-datepicker */ "./node_modules/js-datepicker/dist/datepicker.min.js");
 /* harmony import */ var js_datepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_datepicker__WEBPACK_IMPORTED_MODULE_0__);
-
-
-window.pickerRemove = function () {
-  var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]');
-  picker.remove();
-};
+ //window.pickerRemove = function() {
+//	const picker = datepicker('[data-inputmask="date"]');
+//	picker.remove()
+//}
 
 window.calendarMask = function () {
   //pickerRemove();
   var mindate = $('[data-inputmask="date"]').data('mindate');
   var maxdate = $('[data-inputmask="date"]').data('maxdate');
-  var options = {
-    day: 'numeric',
-    month: 'numeric',
-    year: 'numeric'
-  };
-
-  function getDate(str) {
-    var date = new Date(str);
-    return date.toLocaleString('ru', options);
+  /*var options = {
+  	day: 'numeric',
+  	month: 'numeric',
+  	year: 'numeric'
   }
-
-  var mindateFormated = getDate(mindate);
+  	function getDate(str) {
+  	var date = new Date(str);
+  	return date.toLocaleString('ru', options)
+  }
+  	var mindateFormated = getDate(mindate);
   var maxdateFormated = getDate(maxdate);
-  console.log(mindateFormated, maxdateFormated);
-  var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    overlayPlaceholder: "Год",
-    overlayButton: "Сохранить",
-    minDate: new Date(mindate),
-    maxDate: new Date(maxdate),
-    formatter: function formatter(input, date, instance) {
-      var value = date.toLocaleDateString();
-      input.value = value; // => '1/1/2099'
-    }
-  });
-  console.log("Calendar done");
+  	console.log(mindateFormated, maxdateFormated);*/
+
+  if ($('input').data('inputmask') == 'date') {
+    var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
+      customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+      customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      overlayPlaceholder: "Год",
+      overlayButton: "Сохранить",
+      minDate: new Date(mindate),
+      maxDate: new Date(maxdate),
+      formatter: function formatter(input, date, instance) {
+        var value = date.toLocaleDateString();
+        input.value = value; // => '1/1/2099'
+      }
+    });
+  } else {//console.log('nope 1');
+  }
 };
 
 $(document).ready(function () {
-  //console.log('ready');
   calendarMask();
 });
 $(document).ajaxComplete(function () {
-  //console.log('ajaxComplete');
   calendarMask();
 });
 
@@ -296,29 +293,38 @@ $(window).on('load resize', function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! css-vars-ponyfill */ "./node_modules/css-vars-ponyfill/dist/css-vars-ponyfill.esm.js");
 
-Object(css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_0__["default"])({
-  // Only styles from CodePen's CSS panel
-  //include: 'style:not([data-ignore])',
-  // Treat all browsers as legacy
-  onlyLegacy: false // DEMO: Toggles to see results
-  // ----------------------------
-  // preserveStatic: false,
-  // preserveVars: true,
-  // updateURLs: false,
-  // variables: { '--color': 'purple' },
-  // ----------------------------
-  // Display transformed CSS
-  //	onComplete: function(cssText, styleNodes, cssVariables, benchmark) {
-  //		var codeElm = document.querySelector('code');
-  //
-  //		// Format CSS (external library)
-  //		cssText = css_beautify(cssText);
-  //
-  //		// Update <code> tag with CSS result
-  //		codeElm.textContent = cssText;
-  //	}
+var userAgent = navigator.userAgent.toLowerCase();
+var InternetExplorer = false;
+if (/mozilla/.test(userAgent) && !/firefox/.test(userAgent) && !/chrome/.test(userAgent) && !/safari/.test(userAgent) && !/opera/.test(userAgent) || /msie/.test(userAgent)) InternetExplorer = true;
 
-});
+if (InternetExplorer) {
+  Object(css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    // Only styles from CodePen's CSS panel
+    //include: 'style:not([data-ignore])',
+    // Treat all browsers as legacy
+    onlyLegacy: false,
+    preserveStatic: false,
+    preserveVars: true,
+    updateURLs: false // DEMO: Toggles to see results
+    // ----------------------------
+    // preserveStatic: false,
+    // preserveVars: true,
+    // updateURLs: false,
+    // variables: { '--color': 'purple' },
+    // ----------------------------
+    // Display transformed CSS
+    //	onComplete: function(cssText, styleNodes, cssVariables, benchmark) {
+    //		var codeElm = document.querySelector('code');
+    //
+    //		// Format CSS (external library)
+    //		cssText = css_beautify(cssText);
+    //
+    //		// Update <code> tag with CSS result
+    //		codeElm.textContent = cssText;
+    //	}
+
+  });
+}
 
 /***/ }),
 
@@ -600,10 +606,14 @@ $(document).ajaxComplete(function () {//subMenu();
 /*!********************************!*\
   !*** ./src/js/_parts/_mask.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-//import '../_vendor/masked-input';
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vendor_masked_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vendor/masked-input */ "./src/js/_vendor/masked-input.js");
+
+
 window.maskField = function () {
   $('[data-inputmask]').each(function () {
     var $this = $(this),
@@ -1661,36 +1671,7 @@ $(document).on('click touch', '.modal.welcome .city-link, .modal.welcome .delive
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).ready(function () {
-  /*	function makeTimer() {
-  
-  		$('.product-timer').each(function () {
-  			var dateEnd = $(this).data('timer-time-end');
-  
-  			var endTime = new Date(dateEnd);
-  			endTime = Number((Date.parse(endTime) / 1000));
-  
-  			var now = new Date();
-  			now = Number((Date.parse(now) / 1000));
-  
-  			var timeLeft = Number(endTime - now);
-  
-  			var days = Math.floor(timeLeft / 86400);
-  			var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-  			var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
-  			var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
-  
-  			if (hours < "10") { hours = "0" + hours; }
-  			if (minutes < "10") { minutes = "0" + minutes; }
-  			if (seconds < "10") { seconds = "0" + seconds; }
-  
-  			$('[data-timer-type="day"]').html(days);
-  			$('[data-timer-type="hours"]').html(hours);
-  			$('[data-timer-type="minutes"]').html(minutes);
-  			$('[data-timer-type="seconds"]').html(seconds);
-  		});
-  	}
-  	setInterval(function() { makeTimer(); }, 1000);*/
+window.makeTimer = function () {
   document.addEventListener('readystatechange', function (event) {
     if (event.target.readyState === "complete") {
       var clockdiv = document.getElementsByClassName("product-timer");
@@ -1706,6 +1687,7 @@ $(document).ready(function () {
         countDownDate[i]['minutes'] = 0;
       }
 
+      console.log("После подсчета даты");
       var countdownfunction = setInterval(function () {
         for (var i = 0; i < countDownDate.length; i++) {
           var now = new Date().getTime();
@@ -1728,8 +1710,18 @@ $(document).ready(function () {
           }
         }
       }, 1000);
+      console.log("После выставления нормальных чисел");
     }
   });
+};
+
+$(document).ready(function () {
+  console.log('Timer - ready');
+  makeTimer();
+});
+$(document).ajaxComplete(function () {
+  console.log('Timer - ajaxComplete');
+  makeTimer();
 });
 
 /***/ }),
@@ -7680,7 +7672,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./_parts/_modal */ "./src/js/_parts/_modal.js");
 /* harmony import */ var _parts_modal__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_parts_modal__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./_parts/_mask */ "./src/js/_parts/_mask.js");
-/* harmony import */ var _parts_mask__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_parts_mask__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _parts_calendar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./_parts/_calendar */ "./src/js/_parts/_calendar.js");
 /* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./_parts/_validation */ "./src/js/_parts/_validation.js");
 /* harmony import */ var _parts_validation__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_parts_validation__WEBPACK_IMPORTED_MODULE_20__);

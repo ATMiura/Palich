@@ -10238,6 +10238,9 @@ input::-ms-clear {
 
 .product-timer {
   margin-left: auto; }
+  @media screen and (max-width: 575px) {
+    .product-timer {
+      display: none; } }
   .product-timer .product-timer__text {
     font-size: .875rem;
     line-height: 1.125rem;
