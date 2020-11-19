@@ -5338,14 +5338,18 @@ input::-ms-clear {
     color: var(--yellow);
     text-decoration: underline; }
 
-.checkbox__label.disabled {
-  pointer-events: none; }
-  .checkbox__label.disabled .checkbox__emulator {
-    cursor: auto; }
-    .checkbox__label.disabled .checkbox__emulator:before {
-      background-color: #A6A6A6; }
-  .checkbox__label.disabled .checkbox__text {
-    color: #A6A6A6; }
+.checkbox__label {
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap; }
+  .checkbox__label.disabled {
+    pointer-events: none; }
+    .checkbox__label.disabled .checkbox__emulator {
+      cursor: auto; }
+      .checkbox__label.disabled .checkbox__emulator:before {
+        background-color: #A6A6A6; }
+    .checkbox__label.disabled .checkbox__text {
+      color: #A6A6A6; }
 
 .checkbox__input:checked + .checkbox__emulator:before {
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.349609 3.75325L1.75103 2.32635L3.95941 4.4953L8.34961 0.183492L9.75103 1.61039L3.95941 7.29858L0.349609 3.75325Z' fill='black'/%3E%3C/svg%3E%0A"); }
@@ -6514,7 +6518,7 @@ input::-ms-clear {
               background-size: contain;
       background-position: center;
       background-repeat: no-repeat; }
-      @media screen and (min-width: 576px) {
+      @media screen and (min-width: 768px) {
         .products-pickup__close {
           display: none; } }
     .products-pickup__icon {
@@ -6548,8 +6552,15 @@ input::-ms-clear {
 
 @media screen and (max-width: 767px) {
   .products__item:nth-child(odd) .products-pickup {
-    right: initial;
-    left: 0; } }
+    right: 0;
+    left: initial; }
+    .products__item:nth-child(odd) .products-pickup:after {
+      right: 10px; } }
+
+@media screen and (max-width: 575px) {
+  .products-pickup {
+    min-width: 230px;
+    padding: 20px; } }
 
 @media screen and (max-width: 767px) {
   .section.products .section-content.scroll-x {
@@ -10238,9 +10249,6 @@ input::-ms-clear {
 
 .product-timer {
   margin-left: auto; }
-  @media screen and (max-width: 575px) {
-    .product-timer {
-      display: none; } }
   .product-timer .product-timer__text {
     font-size: .875rem;
     line-height: 1.125rem;
@@ -10275,6 +10283,10 @@ input::-ms-clear {
       font-size: .75rem;
       line-height: .875rem;
       color: #657082; }
+
+@media screen and (max-width: 575px) {
+  .products__item .product-timer {
+    display: none; } }
 
 .with-timer {
   -webkit-box-orient: horizontal;
@@ -10311,6 +10323,9 @@ input::-ms-clear {
 
 .products__item__size__big .product-notification {
   width: 100%; }
+
+.products__item__size__big .products__item__price__car {
+  padding-left: 10px; }
 
 .section-product-detail .product-notification {
   margin-top: 20px;

@@ -1,7 +1,8 @@
 function productPickup(){
 	$(document).on('click', '.products-pickup__close', function (event) {
 		event.preventDefault();
-		$(this).parents('.products-pickup').hide();
+		$(this).parents('.products__item__inner').removeClass('pickup-show');
+		//$(this).parents('.products-pickup').hide();
 		$('body').removeClass('products-pickup-bg');
 	});
 

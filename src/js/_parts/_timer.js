@@ -1,3 +1,36 @@
+/*function makeTimer2() {
+
+	$('.product-timer').each(function () {
+		var dateEnd = $(this).data('timer-time-end');
+
+		var endTime = new Date(dateEnd);
+		endTime = Number((Date.parse(endTime) / 1000));
+
+		var now = new Date();
+		now = Number((Date.parse(now) / 1000));
+
+		var timeLeft = Number(endTime - now);
+
+		var days = Math.floor(timeLeft / 86400);
+		var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+		var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+		var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+		if (hours < "10") { hours = "0" + hours; }
+		if (minutes < "10") { minutes = "0" + minutes; }
+		if (seconds < "10") { seconds = "0" + seconds; }
+
+		$('[data-timer-type="day"]').html(days);
+		$('[data-timer-type="hours"]').html(hours);
+		$('[data-timer-type="minutes"]').html(minutes);
+		$('[data-timer-type="seconds"]').html(seconds);
+	});
+
+	console.log(makeTimer2());
+}
+setInterval(function() { makeTimer2(); }, 1000);*/
+
+
 window.makeTimer = function(){
 	document.addEventListener('readystatechange', event => {
 		if (event.target.readyState === "complete") {
@@ -5,12 +38,16 @@ window.makeTimer = function(){
 			var countDownDate = new Array();
 			for (var i = 0; i < clockdiv.length; i++) {
 				countDownDate[i] = new Array();
+				let endDateMatch=clockdiv[i].getAttribute('data-timer-time-end').match(/(\d+)-(\d+)-(\d+)/);
+				let endDate=endDateMatch[3]+'-'+endDateMatch[1]+'-'+endDateMatch[2];
 				countDownDate[i]['el'] = clockdiv[i];
-				countDownDate[i]['time'] = new Date(clockdiv[i].getAttribute('data-timer-time-end')).getTime();
+				countDownDate[i]['time'] = new Date(endDate).getTime();
 				countDownDate[i]['days'] = 0;
 				countDownDate[i]['hours'] = 0;
 				countDownDate[i]['seconds'] = 0;
 				countDownDate[i]['minutes'] = 0;
+
+				console.log(endDate);
 			}
 
 			console.log("После подсчета даты");
@@ -45,9 +82,9 @@ window.makeTimer = function(){
 
 $(document).ready(function () {
 	console.log('Timer - ready');
-	makeTimer();
+	window.makeTimer();
 });
-$(document).ajaxComplete(function () {
+$(document).on('ajaxComplete', function () {
 	console.log('Timer - ajaxComplete');
-	makeTimer();
+	window.makeTimer();
 });

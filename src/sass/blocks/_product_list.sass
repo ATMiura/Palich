@@ -473,7 +473,7 @@
 			background-size: contain
 			background-position: center
 			background-repeat: no-repeat
-			@media #{$mobile-above}
+			@media #{$tablet-above}
 				display: none
 		&__icon
 			margin-bottom: 20px
@@ -509,8 +509,19 @@
 @media #{$mobile}
 	.products__item:nth-child(odd)
 		.products-pickup
-			right: initial
-			left: 0
+			right: 0
+			left: initial
+			&:after
+				right: 10px
+
+@media #{$mobile-xs}
+	.products-pickup
+		min-width: 230px
+		//max-width: 230px
+		padding: 20px
+
+
+
 @media #{$mobile}
 	.section.products
 		.section-content.scroll-x
