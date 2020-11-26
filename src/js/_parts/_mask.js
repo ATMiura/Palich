@@ -17,7 +17,7 @@ window.maskField = function(){
 
 					break;
 				case 'date':
-					//$(this).mask("99/99/9999");
+					$(this).mask("99/99/9999");
 
 					break;
 			}

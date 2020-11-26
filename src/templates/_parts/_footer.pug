@@ -109,80 +109,81 @@ footer.footer
 			.modal__title
 				| Добро пожаловать на сайт “У Палыча”
 			.modal__text
-				| У нас есть много разных вкусностей для вас.
+				| Чтобы увидеть каталог любимых вкусняшек —
 				br
 				=" "
-				| Выберите город, способ доставки и адрес, чтобы мы показали Вашу персонализированную цену
+				| Выберите Ваш город, способ доставки и адрес
 		.modal__body
 			form.form(method="post")
 				.step
 					.step-list
-						.step-item(data-step-number="1").active
+						a(data-step-number="1").step-item.complete
 							.step-item__number 01
 							.step-item__name Город/область
-						.step-item(data-step-number="2")
+						a(data-step-number="2").step-item.complete
 							.step-item__number 02
-							.step-item__name Способ доставки
-						.step-item(data-step-number="3")
+							.step-item-delivery__picture
+								img(src="images/delivery-img-1-2.svg").step-item-delivery__img
+						a(data-step-number="3").step-item.complete.active
 							.step-item__number 03
-							.step-item__name Адрес
+							.step-item__name Мой адрес
 				.modal-step-block
 					.modal-step(data-step="1")
 						.city-choose
-							.city-choose__title Выберите город
+							.city-choose__title Мой город
+							.form_row
+								.form_group
+									label.form_label
+										input(type="text", placeholder="Введите название товара").form_input.form-search__input
+										.form-search__icon
+											button(type="submit").form-search__button
+												+icon('search-new')
 							ul.city-list.scroll
-								li.city-item
-									a.city-link Москва и область
-								li.city-item
-									a.city-link Санкт-Петербург и область
-								li.city-item
-									a.city-link Белгород
-								li.city-item
-									a.city-link Великий Новгород
-								li.city-item
-									a.city-link Владимир
-								li.city-item
-									a.city-link Воронеж
-								li.city-item
-									a.city-link Иваново
-								li.city-item
-									a.city-link Калуга
-								li.city-item
-									a.city-link Курск
-								li.city-item
-									a.city-link Липецк
-								li.city-item
-									a.city-link Нижний Новгород
-								li.city-item
-									a.city-link Рязань
-								li.city-item
-									a.city-link Тверь
-								li.city-item
-									a.city-link Тула
-								li.city-item
-									a.city-link Ярославль
+								mixin city_item(cityName)
+									li.city-item
+										a.city-link=cityName
+								+city_item('Москва и Московская область')
+								+city_item('Самара и Самарская область')
+								+city_item('Санкт-Петербург и Ленинградская область')
+								+city_item('Екатеринбург и Свердловская область')
+								+city_item('Великий Новгород и Новгородская область')
+								+city_item('Воронеж и Воронежская область')
+								+city_item('Владимир и Владимирская область')
+								+city_item('Калуга и Калужская область ')
+								+city_item('Липецк и Липецская область')
+								+city_item('Нижний Новгород и Нижегородская область')
+								+city_item('Орел и Орловская область')
+								+city_item('Рязань и Рязанская область')
+								+city_item('Тула и Тульская область')
+								+city_item('Ярославль и Ярославская область')
 
 					.modal-step(data-step="2")
 						.delivery
 							.delivery-list
 								.delivery-item
-									.deliver-item__picture
-										img(src="images/delivery-img-1.svg").delivery-item__img
-									.delivery-item__text Доставка курьером до 90 минут
-									.delivery-item__advant Быстро
-									.delivery-item__url
-										a.delivery-item__link(href="#") Указать адрес доставки
+									.delivery-item__inner
+										.delivery-item__picture
+											img(src="images/delivery-img-1-1.svg").delivery-item__img
+										.delivery-item__text Хочу вкусняшки на моем столе через 2 часа!
+										.delivery-item__subtext Быстро доставим курьером из фирменного магазина. Заказ от 1₽
+										.delivery-item__url
+											a.button(href="#") Мой адрес
 								.delivery-item
-									.deliver-item__picture
-										img(src="images/delivery-img-2.svg").delivery-item__img
-									.delivery-item__text Самовывоз из магазина на следущий день. Скидка до 20% на все товары
-									.delivery-item__advant Быстро
-									.delivery-item__url
-										a.delivery-item__link(href="#") Выбрать магазин
+									.delivery-item__inner
+										.delivery-item__picture
+											img(src="images/delivery-img-2-1.svg").delivery-item__img
+										.delivery-item__text Хочу вкусняшки со скидкой за самовывоз из удобного магазина!
+										.delivery-item__subtext Быстро доставим курьером из фирменного магазина. Заказ от 1₽
+										.delivery-item__url
+											a.button(href="#") Мой магазин
 								.delivery-item
-									.deliver-item__picture
-										img(src="images/delivery-img-3.svg").delivery-item__img
-									.delivery-item__text Доставка курьером на следующий день
+									.delivery-item__inner
+										.delivery-item__picture
+											img(src="images/delivery-img-3-1.svg").delivery-item__img
+										.delivery-item__text Хочу вкусняшки со скидкой за самовывоз из удобного магазина!
+										.delivery-item__subtext Бесплатно доставим завтра с проиизводства. Широчайший ассортимент. Свежее не бывает! Заказ от 2500₽
+										.delivery-item__status.soon Скоро будет доступен
+
 
 					.modal-step(data-step="3")
 						.modal__form
@@ -219,7 +220,7 @@ footer.footer
 										input.form_input(type="text", name="", placeholder="", value="Москва,")
 							.form_row.form_submit
 								.form_group
-									input.button.button__arrow.disabled(type="submit", value="К покупкам", disabled)
+									input.button.button__arrow(type="submit", value="Посмотреть витрину")
 
 
 					.step-back

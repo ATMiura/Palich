@@ -59,10 +59,13 @@
 	&.welcome
 		align-items: flex-start
 		.modal__inner
-			max-width: 800px
+			max-width: 1000px
 		.city-choose
 			background-color: var(--white)
-			padding: 40px 80px
+			padding: 45px 65px
+			max-width: 685px
+			.city-list
+				column-gap: 20px
 			.city-choose__title
 				font-size: 1.5rem
 				line-height: 2rem
@@ -72,6 +75,26 @@
 				&:hover
 					font-weight: bold
 					color: var(--vinishkotyan)
+			.form_row
+				&:not(:last-child)
+					margin-bottom: 20px
+			.form-search
+				&__input
+					border: 1px solid var(--light-grey)
+					font-size: 0.875rem
+					line-height: 1.375rem
+					border-radius: 0
+				&__icon
+					margin-left: -33px
+					.icon-search-new
+						width: 16px
+						height: 16px
+						stroke: var(--vinishkotyan)
+						line-height: 1
+				&__button
+					background-color: transparent
+					cursor: pointer
+					line-height: 1
 		.modal__form
 			max-width: 460px
 		.button
@@ -85,7 +108,7 @@
 				padding: 30px 20px
 		@media #{$mobile}
 			.modal__inner
-				max-width: 400px
+				max-width: 500px
 			.modal__title
 				font-size: 1.875rem
 			.modal__text
@@ -97,10 +120,11 @@
 		display: flex
 		align-items: center
 	.step-item
-		min-width: 120px
+		min-width: 130px
 		text-align: center
 		&:not(:last-child)
-			margin-right: 50px
+			//margin-right: 50px
+			margin-right: 20px
 			.step-item__number
 				&:after
 					content: ""
@@ -113,41 +137,82 @@
 					background-position: center
 					position: absolute
 					left: calc(100% + 10px)
+	.step-item__number
+		min-width: 62px
+		width: 62px
+		height: 62px
+		border-radius: 100%
+		background-color: var(--white)
+		margin: 0 auto 20px
+		font-size: 1rem
+		color: var(--vinishkotyan)
+
+		position: relative
+
+		display: flex
+		align-items: center
+		justify-content: center
+	.step-item__name
+
+	.step-item-delivery__picture
+	.step-item-delivery__img
+
+	&[data-step-number="2"]
+		.step-item-delivery__picture
+			margin-top: -10px
+
+
+	.step-item.active,
+	.step-item.complete
 		.step-item__number
-			min-width: 62px
-			width: 62px
-			height: 62px
-			border-radius: 100%
-			background-color: var(--white)
-			margin: 0 auto 15px
-			font-size: 1rem
-			color: var(--vinishkotyan)
-
-			position: relative
-
-			display: flex
-			align-items: center
-			justify-content: center
+			background-color: var(--vinishkotyan)
+			color: var(--white)
+	.step-item.active
+		.step-item__number
+			min-width: 75px
+			width: 75px
+			height: 75px
+			margin-bottom: 7px
 		.step-item__name
-
-		&.active,
-		&.complete
-			.step-item__number
-				background-color: var(--vinishkotyan)
-				color: var(--white)
-		.current
-			.step-item__name
-				font-weight: bold
+			font-weight: bold
+	.current
+		.step-item__name
+			font-weight: bold
 
 	@media #{$mobile}
 		.step-item
-			min-width: 80px
+			//min-width: 80px
 			&:not(:last-child)
 				.step-item__number
 					&:after
 						min-width: 60px
 						width: 60px
 						background-position: center right
+
+	@media #{$mobile-xs}
+		.step-item
+			min-width: 90px
+			&:not(:last-child)
+				margin-right: 10px
+				.step-item__number
+					&:after
+						min-width: 30px
+						width: 30px
+			&.active
+				.step-item__number
+					min-width: 54px
+					width: 54px
+					height: 54px
+		.step-item__number
+			min-width: 44px
+			width: 44px
+			height: 44px
+
+		.step-item-delivery__img
+			max-width: 120px
+		.step-item__name
+			font-size: .875rem
+			line-height: 1.125rem
 
 .step-back
 	margin-top: 50px
@@ -169,53 +234,101 @@
 			background-repeat: no-repeat
 			background-position: center
 
+	@media #{$mobile-xs}
+		margin-top: 0
+		margin-bottom: 10px
+
+
 .delivery
 	.delivery-list
 		display: flex
 	.delivery-item
 		max-width: 320px
+		min-height: 375px
 		width: 100%
-		padding: 45px
+		padding: 40px
 		background-color: var(--white)
 		&:not(:last-child)
 			margin-right: 20px
-		.deliver-item__picture
-			margin-bottom: 20px
-		.delivery-item__img
-			max-width: 100%
-			height: auto
-		.delivery-item__text
-			font-size: 1rem
-			line-height: 1.5rem
-			margin-bottom: 10px
-		.delivery-item__advant
-			background-color: #FFB800
-			display: inline-block
-			margin-bottom: 10px
-			padding: 5px 10px
-			font-size: .75rem
-			line-height: .875rem
+	.delivery-item__inner
+		position: relative
+		height: 100%
+	.delivery-item__picture
+		margin-bottom: 20px
+	.delivery-item__img
+		max-width: 100%
+		height: auto
+	.delivery-item__text
+		font-size: 1rem
+		line-height: 1.5rem
+		margin-bottom: 28px
+	.delivery-item__subtext
+		font-size: .875rem
+		line-height: 1.063rem
+		margin-bottom: 10px
+	.delivery-item__advant
+		background-color: #FFB800
+		display: inline-block
+		margin-bottom: 10px
+		padding: 5px 10px
+		font-size: .75rem
+		line-height: .875rem
+		font-weight: bold
+		color: var(--white)
+	.delivery-item__url
+		width: 100%
+		.button
+			width: 100%
+			height: 40px
+			padding: 10px
+			display: flex
+			align-items: center
+			justify-content: center
+	.delivery-item__status
+		min-height: 40px
+		display: flex
+		align-items: center
+		justify-content: center
+		&.soon
 			font-weight: bold
-			color: var(--white)
-		.delivery-item__url
-		.delivery-item__link
-			font-size: .875rem
-			line-height: 1rem
-			font-weight: bold
-			color: var(--vinishkotyan)
-			&:after
+			font-size: 1.125rem
+			line-height: 23px
+			color: #A70230
+			opacity: 0.8
+			&:before
 				content: ""
 				display: inline-block
-				margin-left: 10px
-				width: 20px
-				height: 10px
-				background-image: url("data:image/svg+xml,%3Csvg width='21' height='11' viewBox='0 0 21 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.1088 0.773869C15.796 0.480976 15.2889 0.480976 14.9762 0.773869C14.6634 1.06676 14.6634 1.54164 14.9762 1.83453L17.8613 4.53638L1.66026 4.53638C1.21794 4.53638 0.859375 4.87217 0.859375 5.28638C0.859375 5.70059 1.21794 6.03638 1.66026 6.03638L17.8994 6.03638L14.9762 8.77387C14.6634 9.06676 14.6634 9.54164 14.9762 9.83453C15.2889 10.1274 15.796 10.1274 16.1088 9.83453L20.3802 5.83453C20.5416 5.68336 20.6197 5.48372 20.6145 5.28564C20.6142 5.02953 20.4769 4.80348 20.2675 4.66835L16.1088 0.773869Z' fill='%23A70230'/%3E%3C/svg%3E%0A")
+				background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7' cy='7' r='6' stroke='%23A70230' stroke-width='2'/%3E%3Cpath d='M6.53369 4.66663V7.46663H8.40036' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
 				background-repeat: no-repeat
 				background-position: center
+				height: 14px
+				width: 14px
+				min-width: 14px
+				margin-right: 5px
+	.delivery-item__url,
+	.delivery-item__status
+		position: absolute
+		bottom: 0
+		left: 0
+	.delivery-item__link
+		font-size: .875rem
+		line-height: 1rem
+		font-weight: bold
+		color: var(--vinishkotyan)
+		&:after
+			content: ""
+			display: inline-block
+			margin-left: 10px
+			width: 20px
+			height: 10px
+			background-image: url("data:image/svg+xml,%3Csvg width='21' height='11' viewBox='0 0 21 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.1088 0.773869C15.796 0.480976 15.2889 0.480976 14.9762 0.773869C14.6634 1.06676 14.6634 1.54164 14.9762 1.83453L17.8613 4.53638L1.66026 4.53638C1.21794 4.53638 0.859375 4.87217 0.859375 5.28638C0.859375 5.70059 1.21794 6.03638 1.66026 6.03638L17.8994 6.03638L14.9762 8.77387C14.6634 9.06676 14.6634 9.54164 14.9762 9.83453C15.2889 10.1274 15.796 10.1274 16.1088 9.83453L20.3802 5.83453C20.5416 5.68336 20.6197 5.48372 20.6145 5.28564C20.6142 5.02953 20.4769 4.80348 20.2675 4.66835L16.1088 0.773869Z' fill='%23A70230'/%3E%3C/svg%3E%0A")
+			background-repeat: no-repeat
+			background-position: center
 	@media #{$laptop}
 		.delivery-item
 			max-width: 33%
 			padding: 25px
+			min-height: 270px
 	@media #{$tablet}
 		.delivery-list
 			flex-wrap: wrap
@@ -224,9 +337,21 @@
 			max-width: calc(50% - 20px)
 			padding: 15px
 			margin: 0 10px !important
+			text-align: center
 			&:not(:last-child)
 				margin-right: 0
 				margin-bottom: 20px !important
+		.delivery-item__picture
+			margin-bottom: 3px
+		.delivery-item__text
+			display: none
+		.delivery-item__url,
+		.delivery-item__status
+			position: relative
+		.delivery-item__url
+			.button
+				max-width: 150px
+				margin: 0 auto
 	@media #{$mobile}
 		.delivery-list
 			margin: 0
@@ -236,6 +361,7 @@
 			max-width: 100%
 			margin: 0 !important
 			padding: 0
+			min-height: auto
 			&:not(:last-child)
 				border-bottom: 1px solid #E6E9EF
 				margin-bottom: 13px !important

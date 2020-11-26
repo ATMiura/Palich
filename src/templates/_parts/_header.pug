@@ -1,7 +1,7 @@
 header.header
 	.header-top
 		.grid-container
-			.header-city(data-desktop="city")
+			//.header-city(data-desktop="city")
 				.link-icon.dropdown(data-move="city")
 					.link-icon__icon
 						+icon('geotag')
@@ -210,7 +210,7 @@ header.header
 										+dropdown-search-product-item('3','Торт наполеон, 400 г','259 ₽','')
 										+dropdown-search-product-item('4','Торт Антреме Шоколадная симфония, 480 г','573 ₽','649 ₽')
 										+dropdown-search-product-item('5','Торт Сказка от Палыча, 1000 г','678 ₽','')
-			.header-bar
+			//.header-bar
 				.header-bar__item
 					a.header-bar__item__link(href="")
 						.header-bar__item__icon
@@ -263,6 +263,21 @@ header.header
 						+icon('cart')
 					.header-cart__number 10
 				.header-cart__price 12 450 ₽
+	.header-delivery
+		.header-delivery-picture
+			img.header-delivery__icon(src="images/header-delivery-img-1.svg")
+		.header-delivery-info
+			.header-delivery__type Мой способ доставки: ПАЛЫЧ-ЭКСПРЕСС.
+			.header-delivery__message Доставим курьером из фирменного магазина за 2 часа. Заказ от 1₽.
+			.header-delivery-address
+				.header-delivery-address__label Мой адрес:
+				.header-delivery-address__icon
+					+icon('delivery-address-point')
+				.header-delivery-address__city Москва,
+				.header-delivery-address__street Щелковское шоссе, д. 26
+		.header-delivery-actions
+			a.button Хочу изменить способ доставки
+			a.button Хочу изменить адрес
 
 
 

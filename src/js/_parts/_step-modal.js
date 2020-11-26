@@ -5,7 +5,22 @@
 //	});
 //});
 
-$(document).on('click touch','.modal.welcome .city-link, .modal.welcome .delivery-item__link', function () {
+$(document).ready(function () {
+	let stepFirst = 1;
+	$.post("/local/inc/ajax/step-modal.php",
+	{
+		'modal-step': stepFirst
+	}, function(data) {
+		var data = JSON.parse(data);
+		$('.modal-step-block').html(data.layout);
+	});
+
+	if($(window).width() < 576){
+		$('.modal.welcome .modal__inner').prepend($('.step-back'));
+	}
+});
+
+$(document).on('click touch','.modal.welcome .city-link, .modal.welcome .delivery-item__url .button', function () {
 	let	stepCurrent = $(this).parents('.modal-step').data('step'),
 		stepPrev = stepCurrent-1,
 		stepNext = stepCurrent+1;
