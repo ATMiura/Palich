@@ -3814,6 +3814,8 @@ input::-ms-clear {
             -ms-flex-direction: row;
                 flex-direction: row;
         max-width: initial; }
+        .header-delivery .header-delivery-actions .button:not(:last-child) {
+          margin-right: 20px; }
       .header-delivery .header-delivery-info {
         -webkit-box-ordinal-group: 4;
         -webkit-order: 3;
