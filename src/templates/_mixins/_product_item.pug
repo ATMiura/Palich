@@ -9,6 +9,8 @@ mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', 
 				.products__item__label.hit
 					+icon('star')
 					| Хит
+				.products__item__label.delivery-label Экспресс
+				.products__item__label.delivery-label Маг
 			.products__item__info
 				.products__item__name=name
 				.products__item__excerpt=excerpt
@@ -41,9 +43,9 @@ mixin products__item(img, name, excerpt, sale, in_cart, price_normal='376 ₽', 
 					.products-pickup
 						.products-pickup__close
 						.products-pickup__icon
-							+icon('products-pickup-icon-2')
-						.products-pickup__title Товар недоступен для самовывоза
-						.products-pickup__text К сожалению, этот товар недоступен для самовывоза, но вы можете заказать экспресс-доставку
+							+icon('products-pickup-icon-3')
+						.products-pickup__title Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС
+						.products-pickup__text Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"
 					//.products-pickup
 						.products-pickup__close
 						.products-pickup__icon

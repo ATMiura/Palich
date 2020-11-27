@@ -48,7 +48,7 @@ window.makeTimer = function(){
 		console.log(endDate);
 	}
 
-	console.log("После подсчета даты");
+	//console.log("После подсчета даты");
 
 	var countdownfunction = setInterval(function() {
 		for (var i = 0; i < countDownDate.length; i++) {
@@ -73,14 +73,14 @@ window.makeTimer = function(){
 
 		}
 	}, 1000);
-	console.log("После выставления нормальных чисел");
+	//console.log("После выставления нормальных чисел");
 }
 
 $(document).ready(function () {
-	console.log('Timer - ready');
+	//console.log('Timer - ready');
 	window.makeTimer();
 });
 $(document).on('ajaxComplete', function () {
-	console.log('Timer - ajaxComplete');
+	//console.log('Timer - ajaxComplete');
 	window.makeTimer();
 });

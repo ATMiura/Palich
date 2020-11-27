@@ -67,12 +67,11 @@ function cityChoose() {
 $(document).ready(function () {
 	if($('#city-choose').length){
 		//cityChoose();
-		console.log("всплывашка городов есть");
+		//console.log("всплывашка городов есть");
 	}
 	else {
-		console.log("всплывашки городов нет");
+		//console.log("всплывашки городов нет");
 	}
-
 });
 
 function thxCallback(){

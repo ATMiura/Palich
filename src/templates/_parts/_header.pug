@@ -266,6 +266,7 @@ header.header
 	.header-delivery
 		.header-delivery-picture
 			img.header-delivery__icon(src="images/header-delivery-img-1.svg")
+			+icon('delivery-arrow')
 		.header-delivery-info
 			.header-delivery__type Мой способ доставки: ПАЛЫЧ-ЭКСПРЕСС.
 			.header-delivery__message Доставим курьером из фирменного магазина за 2 часа. Заказ от 1₽.
@@ -276,8 +277,8 @@ header.header
 				.header-delivery-address__city Москва,
 				.header-delivery-address__street Щелковское шоссе, д. 26
 		.header-delivery-actions
-			a.button Хочу изменить способ доставки
-			a.button Хочу изменить адрес
+			a.button(data-change-delivery-type) Хочу изменить способ доставки
+			a.button(data-change-delivery-address) Хочу изменить адрес
 
 
 

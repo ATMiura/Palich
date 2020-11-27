@@ -35,6 +35,7 @@ import './_parts/_validation';
 
 import './_parts/_timer';
 import './_parts/_step-modal';
+import './_parts/_delivery-special';
 
 
 
