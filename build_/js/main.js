@@ -218,7 +218,7 @@ window.calendarMask = function () {
   
   console.log(mindateFormated, maxdateFormated);*/
 
-  if ($('input').data('inputmask') == 'date') {
+  if (typeof $('input').data('inputmask') !== 'undefined') {
     var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
       customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
       customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
@@ -231,7 +231,8 @@ window.calendarMask = function () {
         input.value = value; // => '1/1/2099'
       }
     });
-  } else {//console.log('nope 1');
+  } else {
+    console.log('nope 1');
   }
 };
 
@@ -633,7 +634,7 @@ window.maskField = function () {
           break;
 
         case 'date':
-          //$(this).mask("99/99/9999");
+          $(this).mask("99/99/9999");
           break;
       }
     }
@@ -1622,7 +1623,20 @@ __webpack_require__.r(__webpack_exports__);
 //		"city":$(this).text()
 //	});
 //});
-$(document).on('click touch', '.modal.welcome .city-link, .modal.welcome .delivery-item__link', function () {
+$(document).ready(function () {
+  var stepFirst = 1;
+  $.post("/local/inc/ajax/step-modal.php", {
+    'modal-step': stepFirst
+  }, function (data) {
+    var data = JSON.parse(data);
+    $('.modal-step-block').html(data.layout);
+  });
+
+  if ($(window).width() < 576) {
+    $('.modal.welcome .modal__inner').prepend($('.step-back'));
+  }
+});
+$(document).on('click touch', '.modal.welcome .city-link, .modal.welcome .delivery-item__url .button', function () {
   var stepCurrent = $(this).parents('.modal-step').data('step'),
       stepPrev = stepCurrent - 1,
       stepNext = stepCurrent + 1;

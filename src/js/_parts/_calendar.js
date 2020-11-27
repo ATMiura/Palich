@@ -27,7 +27,7 @@ window.calendarMask = function() {
 
 	console.log(mindateFormated, maxdateFormated);*/
 
-	if($('input').data('inputmask') == 'date'){
+	if(typeof $('input').data('inputmask') !== 'undefined'){
 		const picker = datepicker('[data-inputmask="date"]', {
 			customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
 			customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
@@ -41,10 +41,8 @@ window.calendarMask = function() {
 			}
 		});
 	} else {
-		//console.log('nope 1');
+		console.log('nope 1');
 	}
-
-
 };
 
 $(document).ready(function () {
