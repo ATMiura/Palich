@@ -7502,12 +7502,6 @@ input::-ms-clear {
     max-width: 75%; }
     @media screen and (max-width: 991px) {
       .catalog .products-catalog {
-        -webkit-flex-basis: 66.6%;
-            -ms-flex-preferred-size: 66.6%;
-                flex-basis: 66.6%;
-        max-width: 66.6%; } }
-    @media screen and (max-width: 767px) {
-      .catalog .products-catalog {
         -webkit-flex-basis: 100%;
             -ms-flex-preferred-size: 100%;
                 flex-basis: 100%;
@@ -7517,7 +7511,7 @@ input::-ms-clear {
           -ms-flex-preferred-size: 33.3%;
               flex-basis: 33.3%;
       max-width: 33.3%; }
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: 767px) {
       .catalog .products-catalog .products__item {
         -webkit-flex-basis: 50%;
             -ms-flex-preferred-size: 50%;

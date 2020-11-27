@@ -14,7 +14,7 @@ function productPickup(){
 	//	},1000);
 	//});
 
-	if($(window).width() < 768){
+	if($(window).width() < 992){
 		$('.products__item__cart').on({
 			click: function() {
 				$(this).parents('.products__item__inner').addClass('pickup-show');

@@ -207,13 +207,16 @@ window.calendarMask = function () {
   	month: 'numeric',
   	year: 'numeric'
   }
-  	function getDate(str) {
+  
+  function getDate(str) {
   	var date = new Date(str);
   	return date.toLocaleString('ru', options)
   }
-  	var mindateFormated = getDate(mindate);
+  
+  var mindateFormated = getDate(mindate);
   var maxdateFormated = getDate(maxdate);
-  	console.log(mindateFormated, maxdateFormated);*/
+  
+  console.log(mindateFormated, maxdateFormated);*/
 
   if ($('input').data('inputmask') == 'date') {
     var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
@@ -941,7 +944,7 @@ function productPickup() {
   //	},1000);
   //});
 
-  if ($(window).width() < 768) {
+  if ($(window).width() < 992) {
     $('.products__item__cart').on({
       click: function click() {
         $(this).parents('.products__item__inner').addClass('pickup-show'); //setTimeout(function () {
@@ -1248,7 +1251,7 @@ function mapInit() {
     	fillImageHref: 'images/map-metro-no-bg.svg',
     	fillMethod: 'stretch'
     });
-    	myMap.geoObjects.add(myCircle);*/
+    		myMap.geoObjects.add(myCircle);*/
   }
 }
 
@@ -1704,50 +1707,46 @@ $(document).on('click touch', '.modal.welcome .city-link, .modal.welcome .delive
 }
 setInterval(function() { makeTimer2(); }, 1000);*/
 window.makeTimer = function () {
-  document.addEventListener('readystatechange', function (event) {
-    if (event.target.readyState === "complete") {
-      var clockdiv = document.getElementsByClassName("product-timer");
-      var countDownDate = new Array();
+  var clockdiv = document.getElementsByClassName("product-timer");
+  var countDownDate = new Array();
 
-      for (var i = 0; i < clockdiv.length; i++) {
-        countDownDate[i] = new Array();
-        var endDateMatch = clockdiv[i].getAttribute('data-timer-time-end').match(/(\d+)-(\d+)-(\d+)/);
-        var endDate = endDateMatch[3] + '-' + endDateMatch[1] + '-' + endDateMatch[2];
-        countDownDate[i]['el'] = clockdiv[i];
-        countDownDate[i]['time'] = new Date(endDate).getTime();
-        countDownDate[i]['days'] = 0;
-        countDownDate[i]['hours'] = 0;
-        countDownDate[i]['seconds'] = 0;
-        countDownDate[i]['minutes'] = 0;
-        console.log(endDate);
+  for (var i = 0; i < clockdiv.length; i++) {
+    countDownDate[i] = new Array();
+    var endDateMatch = clockdiv[i].getAttribute('data-timer-time-end').match(/(\d+)-(\d+)-(\d+)/);
+    var endDate = endDateMatch[3] + '-' + endDateMatch[1] + '-' + endDateMatch[2];
+    countDownDate[i]['el'] = clockdiv[i];
+    countDownDate[i]['time'] = new Date(endDate).getTime();
+    countDownDate[i]['days'] = 0;
+    countDownDate[i]['hours'] = 0;
+    countDownDate[i]['seconds'] = 0;
+    countDownDate[i]['minutes'] = 0;
+    console.log(endDate);
+  }
+
+  console.log("После подсчета даты");
+  var countdownfunction = setInterval(function () {
+    for (var i = 0; i < countDownDate.length; i++) {
+      var now = new Date().getTime();
+      var distance = countDownDate[i]['time'] - now;
+      countDownDate[i]['days'] = Math.floor(distance / (1000 * 60 * 60 * 24));
+      countDownDate[i]['hours'] = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+      countDownDate[i]['minutes'] = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+      countDownDate[i]['seconds'] = Math.floor(distance % (1000 * 60) / 1000);
+
+      if (distance < 0) {
+        countDownDate[i]['el'].querySelector('[data-timer-type="day"]').innerHTML = 0;
+        countDownDate[i]['el'].querySelector('[data-timer-type="hours"]').innerHTML = 0;
+        countDownDate[i]['el'].querySelector('[data-timer-type="minutes"]').innerHTML = 0;
+        countDownDate[i]['el'].querySelector('[data-timer-type="seconds"]').innerHTML = 0;
+      } else {
+        countDownDate[i]['el'].querySelector('[data-timer-type="day"]').innerHTML = countDownDate[i]['days'];
+        countDownDate[i]['el'].querySelector('[data-timer-type="hours"]').innerHTML = countDownDate[i]['hours'];
+        countDownDate[i]['el'].querySelector('[data-timer-type="minutes"]').innerHTML = countDownDate[i]['minutes'];
+        countDownDate[i]['el'].querySelector('[data-timer-type="seconds"]').innerHTML = countDownDate[i]['seconds'];
       }
-
-      console.log("После подсчета даты");
-      var countdownfunction = setInterval(function () {
-        for (var i = 0; i < countDownDate.length; i++) {
-          var now = new Date().getTime();
-          var distance = countDownDate[i]['time'] - now;
-          countDownDate[i]['days'] = Math.floor(distance / (1000 * 60 * 60 * 24));
-          countDownDate[i]['hours'] = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-          countDownDate[i]['minutes'] = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
-          countDownDate[i]['seconds'] = Math.floor(distance % (1000 * 60) / 1000);
-
-          if (distance < 0) {
-            countDownDate[i]['el'].querySelector('[data-timer-type="day"]').innerHTML = 0;
-            countDownDate[i]['el'].querySelector('[data-timer-type="hours"]').innerHTML = 0;
-            countDownDate[i]['el'].querySelector('[data-timer-type="minutes"]').innerHTML = 0;
-            countDownDate[i]['el'].querySelector('[data-timer-type="seconds"]').innerHTML = 0;
-          } else {
-            countDownDate[i]['el'].querySelector('[data-timer-type="day"]').innerHTML = countDownDate[i]['days'];
-            countDownDate[i]['el'].querySelector('[data-timer-type="hours"]').innerHTML = countDownDate[i]['hours'];
-            countDownDate[i]['el'].querySelector('[data-timer-type="minutes"]').innerHTML = countDownDate[i]['minutes'];
-            countDownDate[i]['el'].querySelector('[data-timer-type="seconds"]').innerHTML = countDownDate[i]['seconds'];
-          }
-        }
-      }, 1000);
-      console.log("После выставления нормальных чисел");
     }
-  });
+  }, 1000);
+  console.log("После выставления нормальных чисел");
 };
 
 $(document).ready(function () {
@@ -1945,8 +1944,8 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
         		}
         	}
         	ValidateEmail($this);
-        		console.log("зашли сюда");
-        	}*/
+        			console.log("зашли сюда");
+        		}*/
         else {
             $this.removeClass('invalid').siblings('.form_error').remove();
           }

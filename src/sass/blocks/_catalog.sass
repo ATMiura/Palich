@@ -186,10 +186,10 @@
 		padding: 0 15px
 		flex-basis: 75%
 		max-width: 75%
+		//@media #{$tablet}
+		//	flex-basis: 66.6%
+		//	max-width: 66.6%
 		@media #{$tablet}
-			flex-basis: 66.6%
-			max-width: 66.6%
-		@media #{$mobile}
 			flex-basis: 100%
 			max-width: 100%
 		&__list
@@ -197,7 +197,7 @@
 			&__item
 				flex-basis: 33.3%
 				max-width: 33.3%
-			@media #{$tablet}
+			@media #{$mobile}
 				&__item
 					flex-basis: 50%
 					max-width: 50%
