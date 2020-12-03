@@ -8,7 +8,7 @@
 			background-color: #fff
 			opacity: 1
 		.fancybox-slide
-			padding: 50px
+			padding: 40px 50px
 	&__inner
 		max-width: 400px
 		//margin: 0 auto
@@ -23,7 +23,9 @@
 		line-height: 1.688rem
 		letter-spacing: 0.01em
 	&__title + &__text
+		max-width: 400px
 		margin-top: 10px
+		margin-top: 25px
 	&__body
 	&__form
 		.checkbox__text a
@@ -57,7 +59,17 @@
 				padding: 15px
 
 	&.welcome
+		padding-top: 165px
+		padding-bottom: 76px
 		align-items: flex-start
+		@media #{$tablet}
+			padding-top: 50px
+			padding-bottom: 50px
+		.fancybox-button
+			right: 15px
+			top: 25px
+			width: 60px
+			height: 65px
 		.modal__inner
 			max-width: 1000px
 		.city-choose
@@ -66,15 +78,25 @@
 			max-width: 685px
 			.city-list
 				column-gap: 20px
+				&::-webkit-scrollbar
+					width: 0
 			.city-choose__title
 				font-size: 1.5rem
 				line-height: 2rem
 				font-weight: bold
 				margin-bottom: 20px
+			.city-item
+				&.is-active
+					.city-link
+						font-weight: bold
+						color: var(--vinishkotyan)
+						border-color: var(--vinishkotyan)
 			.city-link
+				display: inline
+				border-bottom: 1px solid transparent
+				transition: .2s
 				&:hover
-					font-weight: bold
-					color: var(--vinishkotyan)
+					border-bottom-color: var(--black)
 			.form_row
 				&:not(:last-child)
 					margin-bottom: 20px
@@ -82,7 +104,9 @@
 				&__input
 					border: 1px solid var(--light-grey)
 					font-size: 0.875rem
-					line-height: 1.375rem
+					height: 50px!important
+					line-height: 50px
+					padding: 0 28px
 					border-radius: 0
 				&__icon
 					margin-left: -33px
@@ -91,6 +115,7 @@
 						height: 16px
 						stroke: var(--vinishkotyan)
 						line-height: 1
+						stroke-width: 1.5;
 				&__button
 					background-color: transparent
 					cursor: pointer
@@ -111,6 +136,7 @@
 				max-width: 500px
 			.modal__title
 				font-size: 1.875rem
+				font-size: 23px
 			.modal__text
 				font-size: .875rem
 				line-height: 1.375rem
@@ -120,7 +146,7 @@
 		display: flex
 		align-items: center
 	.step-item
-		min-width: 130px
+		min-width: 150px
 		text-align: center
 		&:not(:last-child)
 			//margin-right: 50px
@@ -128,22 +154,25 @@
 			.step-item__number
 				&:after
 					content: ""
+					top: 50%
+					transform: translateY(-70%)
 					display: block
-					min-width: 90px
-					width: 90px
+					min-width: 75px
+					width: 75px
 					height: 16px
 					background-image: url("data:image/svg+xml,%3Csvg width='89' height='17' viewBox='0 0 89 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.972639 9.02103C0.972639 8.46875 1.36904 8.02103 1.85803 8.02103L88.0873 7.46874C88.5762 7.46874 88.9727 7.91646 88.9727 8.46874C88.9727 9.02103 88.5762 9.46874 88.0873 9.46874L1.85803 10.021C1.36904 10.021 0.972639 9.57332 0.972639 9.02103Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M81.2632 0.792893C81.609 0.402369 82.1696 0.402369 82.5154 0.792893L88.7131 7.79289C89.0589 8.18342 89.0589 8.81658 88.7131 9.20711L82.5154 16.2071C82.1696 16.5976 81.609 16.5976 81.2632 16.2071C80.9175 15.8166 80.9175 15.1834 81.2632 14.7929L86.8349 8.5L81.2632 2.20711C80.9175 1.81658 80.9175 1.18342 81.2632 0.792893Z' fill='black'/%3E%3C/svg%3E%0A")
 					background-repeat: no-repeat
 					background-position: center
+					background-size: contain
 					position: absolute
-					left: calc(100% + 10px)
+					left: calc(100% + 18px)
 	.step-item__number
 		min-width: 62px
 		width: 62px
 		height: 62px
 		border-radius: 100%
 		background-color: var(--white)
-		margin: 0 auto 20px
+		margin: 0 auto 14px
 		font-size: 1rem
 		color: var(--vinishkotyan)
 
@@ -164,17 +193,20 @@
 
 	.step-item.active,
 	.step-item.complete
+		margin-right: 16px
 		.step-item__number
 			background-color: var(--vinishkotyan)
 			color: var(--white)
+			&:after
+				left: calc(100% + 12px)
 	.step-item.active
 		.step-item__number
 			min-width: 75px
 			width: 75px
 			height: 75px
-			margin-bottom: 7px
 		.step-item__name
 			font-weight: bold
+			transform: translateY(-6px)
 	.current
 		.step-item__name
 			font-weight: bold
@@ -258,6 +290,8 @@
 	.delivery-item__img
 		max-width: 100%
 		height: auto
+		&--mobile
+			display: none
 	.delivery-item__text
 		font-size: 1rem
 		line-height: 1.5rem
@@ -310,6 +344,7 @@
 		position: absolute
 		bottom: 0
 		left: 0
+		right: 0
 	.delivery-item__link
 		font-size: .875rem
 		line-height: 1rem
@@ -366,5 +401,9 @@
 				border-bottom: 1px solid #E6E9EF
 				margin-bottom: 13px !important
 				padding-bottom: 13px
+		.delivery-item__img
+			display: none
+			&--mobile
+				display: inline-block
 		.delivery-item__text
 			height: auto !important

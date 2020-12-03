@@ -17,6 +17,28 @@ block content
 				.section-title
 					h1 Торты
 				.section-products-quantity 84 товара
+				.catalog-tags(data-desktop="catalog-tags")
+					ul.catalog-tags__list(data-move='catalog-tags')
+						li.catalog-tags__item
+							a(href="#").catalog-tags__link Ограниченная коллекция
+						li.catalog-tags__item
+							a(href="#").catalog-tags__link Хит
+						li.catalog-tags__item
+							a(href="#").catalog-tags__link Новинка
+						li.catalog-tags__item
+							a(href="#").catalog-tags__link.active День рождения
+						li.catalog-tags__item
+							a(href="#").catalog-tags__link.active Свадьба
+						li.catalog-tags__item
+							a(href="#").catalog-tags__link Вечеринка
+						li.catalog-tags__item
+							a(href="#").catalog-tags__link Семейный ужин
+						//li.catalog-tags__item
+						//	a(href="#").catalog-tags__link Пикник
+						//li.catalog-tags__item
+						//	a(href="#").catalog-tags__link В офис
+						//li.catalog-tags__item
+						//	a(href="#").catalog-tags__link Без глютена
 			.section-content
 				.catalog
 					.catalog-mobile-menu
@@ -34,39 +56,16 @@ block content
 									+icon('catalog-sort')
 								.catalog-mobile-menu-item__text Сортировка
 
-					.catalog-tags(data-desktop="catalog-tags")
-						ul.catalog-tags__list(data-move='catalog-tags')
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link Ограниченная коллекция
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link Хит
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link Новинка
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link.active День рождения
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link.active Свадьба
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link Вечеринка
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link Семейный ужин
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link Пикник
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link В офис
-							li.catalog-tags__item
-								a(href="#").catalog-tags__link Без глютена
-
-					.catalog-sort(data-desktop="catalog-sort")
-						.catalog-sort-inner(data-move='catalog-sort')
-							.catalog-sort__label Сортировать по:
-							ul.catalog-sort__list
-								li.catalog-sort__item
-									a(href="#").catalog-sort__link.active популярности
-								li.catalog-sort__item
-									a(href="#").catalog-sort__link возрастанию цены
-								li.catalog-sort__item
-									a(href="#").catalog-sort__link убыванию цены
+					//.catalog-sort(data-desktop="catalog-sort")
+					//	.catalog-sort-inner(data-move='catalog-sort')
+					//		.catalog-sort__label Сортировать по:
+					//		ul.catalog-sort__list
+					//			li.catalog-sort__item
+					//				a(href="#").catalog-sort__link.active популярности
+					//			li.catalog-sort__item
+					//				a(href="#").catalog-sort__link возрастанию цены
+					//			li.catalog-sort__item
+					//				a(href="#").catalog-sort__link убыванию цены
 
 					.catalog-filter(data-desktop="catalog-filter")
 						.bx-filter(data-move="catalog-filter")

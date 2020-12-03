@@ -207,16 +207,20 @@ window.calendarMask = function () {
   	month: 'numeric',
   	year: 'numeric'
   }
-  	function getDate(str) {
+  
+  function getDate(str) {
   	var date = new Date(str);
   	return date.toLocaleString('ru', options)
   }
-  	var mindateFormated = getDate(mindate);
+  
+  var mindateFormated = getDate(mindate);
   var maxdateFormated = getDate(maxdate);
-  	console.log(mindateFormated, maxdateFormated);*/
+  
+  console.log(mindateFormated, maxdateFormated);*/
 
   /*if(typeof $('input').data('inputmask') !== 'undefined'){
-  	} else {
+  
+  } else {
   	console.log('nope 1');
   }*/
 
@@ -338,9 +342,22 @@ if (InternetExplorer) {
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  var deliveryColor = $('body').data('color');
+  var deliveryColor = $('body').data('color'),
+      priceSale = $('.products__item__price__sale');
   $('.icon-delivery-arrow, .icon-delivery-address-point').css('fill', deliveryColor);
   $('.header-delivery .button, .delivery-label').css('background-color', deliveryColor);
+  $('.delivery-special .button').css({
+    'background-color': deliveryColor,
+    'color': 'white'
+  });
+  $('.header-cart__number').css({
+    'color': deliveryColor
+  });
+  priceSale.each(function () {
+    $(this).siblings('.products__item__price__normal').css({
+      'color': deliveryColor
+    });
+  });
 
   if ($(window).width() < 768) {
     $('.header-cart__icon .icon-cart').css('fill', deliveryColor);
@@ -516,13 +533,24 @@ $(document).ajaxComplete(function () {
 
 $(window).scroll(function () {
   var headerMain = $('.header-main'),
+      headerDelivery = $('.header-delivery'),
       scroll = $(window).scrollTop(),
       headerTop = $('.header-top'),
-      headerTopHeight = headerTop.height();
+      headerTopHeight = headerTop.height(),
+      headerMainHeight = headerMain.height();
 
   if ($(window).width() > 768) {
-    if (scroll >= headerTopHeight) headerMain.addClass('fixed');else headerMain.removeClass('fixed');
-  } else {}
+    if (scroll >= headerTopHeight) {
+      headerMain.addClass('fixed');
+      headerDelivery.addClass('fixed').css({
+        'top': headerMainHeight,
+        'transition': 'none'
+      });
+    } else {
+      headerMain.removeClass('fixed');
+      headerDelivery.removeClass('fixed').css('top', '0');
+    }
+  }
 });
 
 /***/ }),
@@ -1592,6 +1620,8 @@ $(document).ready(function () {
   if ($(window).width() < 576) {
     $('.modal.welcome .modal__inner').prepend($('.step-back'));
   }
+
+  $('.fancybox-close-small').css('display', 'none');
 });
 
 window.step = function (step, city, type) {
@@ -1607,29 +1637,34 @@ window.step = function (step, city, type) {
     infobar: false,
     buttons: false
   });
+  $('.fancybox-close-small').removeAttr("data-fancybox-close");
   $('.welcome .delivery-item__text').equalHeights();
   var stepCurrent = step,
       stepPrev = stepCurrent - 1,
-      stepNext = stepCurrent + 1;
+      stepNext = +stepCurrent + +1;
   $.post("/local/inc/ajax/step-modal.php", {
     'modal-step': stepNext,
     'modal-city': city,
     'modal-delivery-type': type
   }, function (data) {
-    var data = JSON.parse(data);
-    console.log("Шаг тек " + stepCurrent);
-    console.log("Шаг прев " + stepPrev);
-    console.log("Шаг некст " + stepNext);
-    console.log("Город " + city);
-    console.log("Тип доставки " + type);
+    var data = JSON.parse(data); // console.log("Шаг тек " + stepCurrent);
+    // console.log("Шаг прев " + stepPrev);
+    // console.log("Шаг некст " + stepNext);
+    // console.log("Город " + city);
+    // console.log("Тип доставки " + type);
+
     $('.modal.welcome .modal__title').text(data.title);
     $('.modal.welcome .modal__text').text(data.text);
+
+    if (stepNext == 1) {
+      $('.fancybox-container').addClass('fancybox-container--step-1');
+    }
 
     if (stepNext == 2) {
       $('[data-step-number="1"] .step-item__name').text(data.city);
     }
 
-    if (stepNext == 3) {
+    if (data.logo) {
       $('[data-step-number="2"]').children().last().remove();
       $('[data-step-number="2"]').append(data.logo);
     }
@@ -1648,8 +1683,7 @@ $(document).on('click touch', '[data-step-next]', function () {
   window.step(stepCurrent, city, deliveryType);
 }).on('click touch', '.step-back__link', function () {
   var stepCurrent = $(this).parents('.modal-step-block').find('.modal-step').data('step'),
-      stepBack = stepCurrent - 1;
-  console.log(stepBack);
+      stepBack = stepCurrent - $(this).attr('rel');
   $.post("/local/inc/ajax/step-modal.php", {
     'modal-step': stepBack
   }, function (data) {
@@ -1657,6 +1691,10 @@ $(document).on('click touch', '[data-step-next]', function () {
     $('[data-step-number="' + stepCurrent + '"]').removeClass('current active complete');
     $('[data-step-number="' + stepBack + '"]').addClass('current active').removeClass('complete');
     $('.modal-step-block').html(data.layout);
+
+    if (stepCurrent === 2) {
+      $('.fancybox-close-small').css('display', 'none');
+    }
   });
 });
 $(document).on('click touch', '[data-change-delivery-type]', function () {
@@ -1664,6 +1702,10 @@ $(document).on('click touch', '[data-change-delivery-type]', function () {
 });
 $(document).on('click touch', '[data-change-delivery-address]', function () {
   window.step(3);
+});
+$(document).on('click', '.fancybox-close-small', function (e) {
+  e.preventDefault();
+  location.reload();
 });
 
 /***/ }),

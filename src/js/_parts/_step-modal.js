@@ -18,6 +18,8 @@ $(document).ready(function () {
 	if($(window).width() < 576){
 		$('.modal.welcome .modal__inner').prepend($('.step-back'));
 	}
+
+	$('.fancybox-close-small').css('display', 'none');
 });
 
 window.step = function(step,city,type) {
@@ -34,11 +36,14 @@ window.step = function(step,city,type) {
 		infobar: false,
 		buttons: false,
 	});
+
+	$('.fancybox-close-small').removeAttr("data-fancybox-close");
+
 	$('.welcome .delivery-item__text').equalHeights();
 
 	let	stepCurrent = step,
-		stepPrev = stepCurrent-1,
-		stepNext = stepCurrent+1;
+		stepPrev = stepCurrent - 1,
+		stepNext = +stepCurrent+ +1;
 
 	$.post("/local/inc/ajax/step-modal.php",
 		{
@@ -48,21 +53,22 @@ window.step = function(step,city,type) {
 		}, function(data) {
 			var data = JSON.parse(data);
 
-			console.log("Шаг тек " + stepCurrent);
-			console.log("Шаг прев " + stepPrev);
-			console.log("Шаг некст " + stepNext);
-			console.log("Город " + city);
-			console.log("Тип доставки " + type);
-
+			// console.log("Шаг тек " + stepCurrent);
+			// console.log("Шаг прев " + stepPrev);
+			// console.log("Шаг некст " + stepNext);
+			// console.log("Город " + city);
+			// console.log("Тип доставки " + type);
 
 			$('.modal.welcome .modal__title').text(data.title);
 			$('.modal.welcome .modal__text').text(data.text);
 
-
+			if(stepNext==1){
+				$('.fancybox-container').addClass('fancybox-container--step-1');
+			}
 			if(stepNext==2){
 				$('[data-step-number="1"] .step-item__name').text(data.city);
 			}
-			if(stepNext==3){
+			if(data.logo){
 				$('[data-step-number="2"]').children().last().remove();
 				$('[data-step-number="2"]').append(data.logo);
 			}
@@ -84,8 +90,8 @@ $(document).on('click touch','[data-step-next]', function () {
 
 }).on('click touch', '.step-back__link', function () {
 	let stepCurrent = $(this).parents('.modal-step-block').find('.modal-step').data('step'),
-		stepBack = stepCurrent-1;
-	console.log(stepBack);
+		stepBack = stepCurrent - $(this).attr('rel');
+
 	$.post("/local/inc/ajax/step-modal.php",
 		{
 			'modal-step': stepBack
@@ -94,6 +100,10 @@ $(document).on('click touch','[data-step-next]', function () {
 			$('[data-step-number="'+stepCurrent+'"]').removeClass('current active complete');
 			$('[data-step-number="'+stepBack+'"]').addClass('current active').removeClass('complete');
 			$('.modal-step-block').html(data.layout);
+
+			if (stepCurrent === 2) {
+				$('.fancybox-close-small').css('display', 'none');
+			}
 		});
 });
 
@@ -102,4 +112,8 @@ $(document).on('click touch','[data-change-delivery-type]', function () {
 });
 $(document).on('click touch','[data-change-delivery-address]', function () {
 	window.step(3);
+});
+$(document).on('click','.fancybox-close-small', function (e) {
+	e.preventDefault();
+	location.reload();
 });
