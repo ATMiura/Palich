@@ -27,24 +27,24 @@ window.calendarMask = function() {
 
 	console.log(mindateFormated, maxdateFormated);*/
 
-	/*if(typeof $('input').data('inputmask') !== 'undefined'){
-
+	if($('[data-inputmask="date"]').length){
+		const picker = datepicker('[data-inputmask="date"]', {
+			customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+			customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+			overlayPlaceholder: "Год",
+			overlayButton: "Сохранить",
+			minDate: new Date(mindate),
+			maxDate: new Date(maxdate),
+			formatter: (input, date, instance) => {
+				const value = date.toLocaleDateString()
+				input.value = value // => '1/1/2099'
+			}
+		});
 	} else {
-		console.log('nope 1');
-	}*/
+		//console.log('nope 1');
+	}
 
-	const picker = datepicker('[data-inputmask="date"]', {
-		customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-		customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-		overlayPlaceholder: "Год",
-		overlayButton: "Сохранить",
-		minDate: new Date(mindate),
-		maxDate: new Date(maxdate),
-		formatter: (input, date, instance) => {
-			const value = date.toLocaleDateString()
-			input.value = value // => '1/1/2099'
-		}
-	});
+
 };
 
 $(document).ready(function () {

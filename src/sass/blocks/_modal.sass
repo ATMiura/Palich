@@ -9,6 +9,8 @@
 			opacity: 1
 		.fancybox-slide
 			padding: 40px 50px
+		.fancybox-button svg path
+			fill: #000000
 	&__inner
 		max-width: 400px
 		//margin: 0 auto
@@ -65,38 +67,21 @@
 		@media #{$tablet}
 			padding-top: 50px
 			padding-bottom: 50px
+		@media #{$mobile-xs}
+			padding-top: 25px
 		.fancybox-button
 			right: 15px
 			top: 25px
 			width: 60px
 			height: 65px
+			@media #{$mobile-xs}
+				top: 9px
 		.modal__inner
 			max-width: 1000px
 		.city-choose
 			background-color: var(--white)
 			padding: 45px 65px
 			max-width: 685px
-			.city-list
-				column-gap: 20px
-				&::-webkit-scrollbar
-					width: 0
-			.city-choose__title
-				font-size: 1.5rem
-				line-height: 2rem
-				font-weight: bold
-				margin-bottom: 20px
-			.city-item
-				&.is-active
-					.city-link
-						font-weight: bold
-						color: var(--vinishkotyan)
-						border-color: var(--vinishkotyan)
-			.city-link
-				display: inline
-				border-bottom: 1px solid transparent
-				transition: .2s
-				&:hover
-					border-bottom-color: var(--black)
 			.form_row
 				&:not(:last-child)
 					margin-bottom: 20px
@@ -115,16 +100,41 @@
 						height: 16px
 						stroke: var(--vinishkotyan)
 						line-height: 1
-						stroke-width: 1.5;
+						stroke-width: 1.5
 				&__button
 					background-color: transparent
 					cursor: pointer
 					line-height: 1
+		.city-list
+			column-gap: 20px
+			&::-webkit-scrollbar
+				width: 0
+		.city-choose__title
+			font-size: 1.5rem
+			line-height: 2rem
+			font-weight: bold
+			margin-bottom: 20px
+		.city-item
+			&.is-active
+				.city-link
+					font-weight: bold
+					color: var(--vinishkotyan)
+					border-color: var(--vinishkotyan)
+		.city-link
+			display: inline
+			border-bottom: 1px solid transparent
+			transition: .2s
+			&:hover
+				border-bottom-color: var(--black)
+
 		.modal__form
 			max-width: 460px
 		.button
 			margin-top: 0
 			min-width: auto
+		.modal__text
+			&:empty
+				margin-bottom: 0
 		@media #{$laptop}
 			.modal__inner
 				max-width: 100%
@@ -135,17 +145,23 @@
 			.modal__inner
 				max-width: 500px
 			.modal__title
-				font-size: 1.875rem
-				font-size: 23px
+				font-size: 1.25rem
+				line-height: 2.125rem
 			.modal__text
 				font-size: .875rem
 				line-height: 1.375rem
+			.city-choose
+				padding-top: 15px
+			.city-choose__title
+				font-size: 1.25rem
+				line-height: 2.125rem
+				margin-bottom: 13px
 .step
 	margin-bottom: 46px
 	.step-list
 		display: flex
 		align-items: center
-		padding-bottom: 15px
+		//padding-bottom: 15px
 	.step-item
 		position: relative
 		min-width: 150px
@@ -184,11 +200,11 @@
 		align-items: center
 		justify-content: center
 	.step-item__name
-		position: absolute
-		bottom: -18px
-		left: 0
-		right: 0
-		margin: auto
+		//position: absolute
+		//bottom: -18px
+		//left: 0
+		//right: 0
+		//margin: auto
 	.step-item-delivery__picture
 	.step-item-delivery__img
 
@@ -199,7 +215,8 @@
 
 	.step-item.active,
 	.step-item.complete
-		margin-right: 16px
+		&:not(:last-child)
+			//margin-right: 16px
 		.step-item__number
 			background-color: var(--vinishkotyan)
 			color: var(--white)
@@ -212,35 +229,54 @@
 			height: 75px
 		.step-item__name
 			font-weight: bold
-			transform: translateY(-6px)
+			//transform: translateY(-6px)
 	.current
 		.step-item__name
 			font-weight: bold
 
 	@media #{$mobile}
+		margin-bottom: 15px
 		.step-item
 			//min-width: 80px
+			display: flex
+			flex-direction: column
+			align-items: center
+			justify-content: space-between
+			height: 100%
 			&:not(:last-child)
 				.step-item__number
 					&:after
 						min-width: 60px
 						width: 60px
 						background-position: center right
+			&:not(:nth-child(2))
+				min-width: calc((100% - 140px)/2)
+			&:not(.active)
+				.step-item__name
+					position: relative
+					bottom: -5px
 
 	@media #{$mobile-xs}
 		.step-item
-			min-width: 90px
+			min-width: initial
+			//max-width: 33.3%
+			//flex-basis: 33.3%
+			//width: 100%
 			&:not(:last-child)
 				margin-right: 10px
 				.step-item__number
 					&:after
-						min-width: 30px
-						width: 30px
+						min-width: 35px
+						width: 35px
+						background-size: auto
 			&.active
 				.step-item__number
 					min-width: 54px
 					width: 54px
 					height: 54px
+			//&.complete[data-step-number="2"]
+			//	max-width: 120px
+			//	flex-basis: 120px
 		.step-item__number
 			min-width: 44px
 			width: 44px
@@ -249,7 +285,7 @@
 		.step-item-delivery__img
 			max-width: 120px
 		.step-item__name
-			font-size: .875rem
+			font-size: .75rem
 			line-height: 1.125rem
 
 .step-back
@@ -306,6 +342,12 @@
 		font-size: .875rem
 		line-height: 1.063rem
 		margin-bottom: 10px
+		&--mobile
+			font-size: 13px
+			line-height: 1rem
+			color: #000
+			margin-bottom: 10px
+			display: none
 	.delivery-item__advant
 		background-color: #FFB800
 		display: inline-block
@@ -408,6 +450,10 @@
 				margin-bottom: 13px !important
 				padding-bottom: 13px
 		.delivery-item__img
+			display: none
+			&--mobile
+				display: inline-block
+		.delivery-item__subtext
 			display: none
 			&--mobile
 				display: inline-block

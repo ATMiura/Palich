@@ -315,13 +315,13 @@
 	margin: 0 auto
 	@media #{$desktop}
 		max-width: 1170px
+	@media #{$mobile}
+		background-color: #FAFBFD
 	.grid-container
 		display: flex
 		align-items: flex-end
 		padding-top: 15px
 		padding-bottom: 12px
-
-
 	.header-nav
 		&__item
 			color: var(--black)
@@ -334,6 +334,8 @@
 	transition: .3s
 	@media #{$desktop}
 		max-width: 1170px
+	@media #{$mobile}
+		display: none
 	.grid-container
 		display: flex
 		align-items: center
@@ -354,6 +356,7 @@
 			line-height: 120%
 			color: var(--white)
 
+
 	//:after
 		content: ""
 		display: block
@@ -368,6 +371,7 @@
 		background: var(--vinishkotyan)
 		z-index: -1
 
+
 .header-delivery
 	position: relative
 	max-width: 1200px
@@ -380,6 +384,8 @@
 	display: flex
 	@media #{$desktop}
 		max-width: 1140px
+	@media #{$mobile}
+		justify-content: space-between
 	.header-delivery-picture
 		flex-basis: 285px
 		margin-right: 5.556%

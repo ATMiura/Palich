@@ -207,35 +207,29 @@ window.calendarMask = function () {
   	month: 'numeric',
   	year: 'numeric'
   }
-  
-  function getDate(str) {
+  	function getDate(str) {
   	var date = new Date(str);
   	return date.toLocaleString('ru', options)
   }
-  
-  var mindateFormated = getDate(mindate);
+  	var mindateFormated = getDate(mindate);
   var maxdateFormated = getDate(maxdate);
-  
-  console.log(mindateFormated, maxdateFormated);*/
+  	console.log(mindateFormated, maxdateFormated);*/
 
-  /*if(typeof $('input').data('inputmask') !== 'undefined'){
-  
-  } else {
-  	console.log('nope 1');
-  }*/
-
-  var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    overlayPlaceholder: "Год",
-    overlayButton: "Сохранить",
-    minDate: new Date(mindate),
-    maxDate: new Date(maxdate),
-    formatter: function formatter(input, date, instance) {
-      var value = date.toLocaleDateString();
-      input.value = value; // => '1/1/2099'
-    }
-  });
+  if ($('[data-inputmask="date"]').length) {
+    var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
+      customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+      customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      overlayPlaceholder: "Год",
+      overlayButton: "Сохранить",
+      minDate: new Date(mindate),
+      maxDate: new Date(maxdate),
+      formatter: function formatter(input, date, instance) {
+        var value = date.toLocaleDateString();
+        input.value = value; // => '1/1/2099'
+      }
+    });
+  } else {//console.log('nope 1');
+  }
 };
 
 $(document).ready(function () {
@@ -351,10 +345,8 @@ $(document).ready(function () {
     $('.delivery-special .button').css({
       'background-color': deliveryColor,
       'color': 'white'
-    });
-    $('.header-cart__number').css({
-      'color': deliveryColor
-    });
+    }); //$('.header-cart__number').css({'color': deliveryColor});
+
     priceSale.each(function () {
       $(this).siblings('.products__item__price__normal').css({
         'color': deliveryColor
@@ -1242,7 +1234,7 @@ function mapInit() {
     	fillImageHref: 'images/map-metro-no-bg.svg',
     	fillMethod: 'stretch'
     });
-    		myMap.geoObjects.add(myCircle);*/
+    	myMap.geoObjects.add(myCircle);*/
   }
 }
 
@@ -1621,11 +1613,6 @@ $(document).ready(function () {
     var data = JSON.parse(data);
     $('.modal-step-block').html(data.layout);
   });
-
-  if ($(window).width() < 576) {
-    $('.modal.welcome .modal__inner').prepend($('.step-back'));
-  }
-
   $('.fancybox-close-small').css('display', 'none');
 });
 
@@ -1642,8 +1629,8 @@ window.step = function (step, city, type) {
     infobar: false,
     buttons: false
   });
-  $('.fancybox-close-small').removeAttr("data-fancybox-close");
-  $('.welcome .delivery-item__text').equalHeights();
+  $('.fancybox-close-small').removeAttr("data-fancybox-close"); //$('.welcome .delivery-item__text').equalHeights();
+
   var stepCurrent = step,
       stepPrev = stepCurrent - 1,
       stepNext = +stepCurrent + +1;
@@ -1658,8 +1645,7 @@ window.step = function (step, city, type) {
     // console.log("Город " + city);
     // console.log("Тип доставки " + type);
 
-    $('.modal.welcome .modal__title').text(data.title);
-    $('.modal.welcome .modal__text').text(data.text);
+    console.log("Статус " + data.status);
 
     if (stepNext == 1) {
       $('.fancybox-container').addClass('fancybox-container--step-1');
@@ -1674,10 +1660,35 @@ window.step = function (step, city, type) {
       $('[data-step-number="2"]').append(data.logo);
     }
 
+    if (data.status === 'no-delivery') {
+      $('.step').hide();
+      $('.modal-step').append('<div class="modal__form"><div class="form_row form_submit"><div class="form_group"><a class="button button__arrow shoplist_add" rel="' + city + ', ">Посмотреть витрину</a></div></div></div>');
+    } else {
+      $('.step').show();
+    }
+
     $('[data-step-number="' + stepCurrent + '"]').addClass('complete').removeClass('current active');
     $('[data-step-number="' + stepNext + '"]').addClass('current active'); //$('[data-step-number="'+stepNext+'"]').addClass('current active');
 
     $('.modal-step-block').html(data.layout);
+    $('.modal.welcome .modal__head').html(data.heading);
+
+    if (stepCurrent === 1) {
+      $('.modal.welcome').removeClass('not-first');
+    } else {
+      $('.modal.welcome').addClass('not-first');
+    }
+
+    setTimeout(function () {
+      if ($(window).width() < 576) {
+        $('.modal.welcome .modal__inner > .step-back').remove();
+      }
+    }, 10);
+    setTimeout(function () {
+      if ($(window).width() < 576) {
+        $('.modal.welcome .modal__inner').prepend($('.step-back'));
+      }
+    }, 100);
   });
 };
 
@@ -1687,7 +1698,7 @@ $(document).on('click touch', '[data-step-next]', function () {
       deliveryType = $(this).parents('.delivery-item').data('delivery-type');
   window.step(stepCurrent, city, deliveryType);
 }).on('click touch', '.step-back__link', function () {
-  var stepCurrent = $(this).parents('.modal-step-block').find('.modal-step').data('step'),
+  var stepCurrent = $(this).parents('.modal__inner').find('.modal-step').data('step'),
       stepBack = stepCurrent - $(this).attr('rel');
   $.post("/local/inc/ajax/step-modal.php", {
     'modal-step': stepBack
@@ -1696,6 +1707,22 @@ $(document).on('click touch', '[data-step-next]', function () {
     $('[data-step-number="' + stepCurrent + '"]').removeClass('current active complete');
     $('[data-step-number="' + stepBack + '"]').addClass('current active').removeClass('complete');
     $('.modal-step-block').html(data.layout);
+    setTimeout(function () {
+      if ($(window).width() < 576) {
+        $('.modal.welcome .modal__inner > .step-back').remove();
+      }
+    }, 10);
+    setTimeout(function () {
+      if ($(window).width() < 576) {
+        $('.modal.welcome .modal__inner').prepend($('.step-back'));
+      }
+    }, 100);
+
+    if (stepCurrent === 1) {
+      $('.modal.welcome').removeClass('not-first');
+    } else {
+      $('.modal.welcome').addClass('not-first');
+    }
 
     if (stepCurrent === 2) {
       $('.fancybox-close-small').css('display', 'none');
@@ -1848,7 +1875,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
           //console.log("э вацапе бро " + formName);
         },
         success: function success(data) {
-          console.log("э вацапе бро " + formName + " status: " + data.status);
+          console.log("1 э вацапе бро " + formName + " status: " + data.status);
 
           if (formName == 'express' || formName == 'cart') {
             if (data.status == 0) {
@@ -1947,8 +1974,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
           }
         },
         error: function error(data) {
-          console.log("э вацапе бро error " + formName);
-          console.log(data.status);
+          console.log("2 э вацапе бро error " + formName + " Статус - " + data.status); //console.log(data.status);
         }
       });
     };
@@ -1990,8 +2016,8 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
         		}
         	}
         	ValidateEmail($this);
-        			console.log("зашли сюда");
-        		}*/
+        		console.log("зашли сюда");
+        	}*/
         else {
             $this.removeClass('invalid').siblings('.form_error').remove();
           }
