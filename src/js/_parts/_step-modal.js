@@ -6,16 +6,7 @@
 //});
 
 $(document).ready(function () {
-	let stepFirst = 1;
-	$.post("/local/inc/ajax/step-modal.php",
-	{
-		'modal-step': stepFirst
-	}, function(data) {
-		var data = JSON.parse(data);
-		$('.modal-step-block').html(data.layout);
-	});
 
-	$('.fancybox-close-small').css('display', 'none');
 });
 
 window.step = function(step,city,type) {
@@ -49,18 +40,19 @@ window.step = function(step,city,type) {
 		}, function(data) {
 			var data = JSON.parse(data);
 
-			// console.log("Шаг тек " + stepCurrent);
-			// console.log("Шаг прев " + stepPrev);
-			// console.log("Шаг некст " + stepNext);
-			// console.log("Город " + city);
-			// console.log("Тип доставки " + type);
+			console.log("Шаг тек " + stepCurrent);
+			console.log("Шаг прев " + stepPrev);
+			console.log("Шаг некст " + stepNext);
+			console.log("Город " + city);
+			console.log("Тип доставки " + type);
 			console.log("Статус " + data.status);
 
 			if(stepNext==1){
 				$('.fancybox-container').addClass('fancybox-container--step-1');
 			}
-			if(stepNext==2){
+			if(stepCurrent!==0 || stepCurrent!==1){
 				$('[data-step-number="1"] .step-item__name').text(data.city);
+				$('[data-step-number="1"]').addClass('complete');
 			}
 
 			if(data.logo){
@@ -79,10 +71,10 @@ window.step = function(step,city,type) {
 
 			$('[data-step-number="'+stepCurrent+'"]').addClass('complete').removeClass('current active');
 			$('[data-step-number="'+stepNext+'"]').addClass('current active');
-			//$('[data-step-number="'+stepNext+'"]').addClass('current active');
-			$('.modal-step-block').html(data.layout);
 
 			$('.modal.welcome .modal__head').html(data.heading);
+
+			$('.modal-step-block').html(data.layout);
 
 			if (stepCurrent === 1) {
 				$('.modal.welcome').removeClass('not-first');
@@ -120,10 +112,13 @@ $(document).on('click touch','[data-step-next]', function () {
 			'modal-step': stepBack
 		}, function(data) {
 			var data = JSON.parse(data);
+
 			$('[data-step-number="'+stepCurrent+'"]').removeClass('current active complete');
 			$('[data-step-number="'+stepBack+'"]').addClass('current active').removeClass('complete');
-			$('.modal-step-block').html(data.layout);
 
+			$('.modal.welcome .modal__head').html(data.heading);
+
+			$('.modal-step-block').html(data.layout);
 
 			setTimeout(function () {
 				if($(window).width() < 576){
@@ -149,12 +144,36 @@ $(document).on('click touch','[data-step-next]', function () {
 		});
 });
 
-$(document).on('click touch','[data-change-delivery-type]', function () {
-	window.step(2);
+$(document).on("click", ".on_popup", function(){
+	var step = $(this).attr('step');
+	city =  $(this).attr('city');
+	delivery = $(this).attr('delivery');
+	ajax = $(this).attr('ajax');
+	window.step(step,city,delivery);
+
+	if(step==3){
+		$(document).ajaxComplete(function () {
+			$('[data-step-number="2"]').addClass('current active');
+		});
+	}
 });
-$(document).on('click touch','[data-change-delivery-address]', function () {
-	window.step(3);
-});
+
+//$(document).on('click touch','[data-change-delivery-type]', function () {
+//	let step = $(this).data('step'),
+//		city = $(this).data('city'),
+//		deliveryType = $(this).data('delivery');
+//	window.step(step, city, deliveryType);
+//
+//	$(document).ajaxComplete(function () {
+//		$('[data-step-number="3"]').removeClass('current active');
+//	});
+//});
+//$(document).on('click touch','[data-change-delivery-address]', function () {
+//	let step = $(this).data('step'),
+//		city = $(this).data('city'),
+//		deliveryType = $(this).data('delivery');
+//	window.step(step, city, deliveryType);
+//});
 $(document).on('click','.fancybox-close-small', function (e) {
 	e.preventDefault();
 	location.reload();

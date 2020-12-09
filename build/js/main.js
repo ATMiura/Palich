@@ -345,8 +345,10 @@ $(document).ready(function () {
     $('.delivery-special .button').css({
       'background-color': deliveryColor,
       'color': 'white'
-    }); //$('.header-cart__number').css({'color': deliveryColor});
-
+    });
+    $('.header-cart__number').css({
+      'color': deliveryColor
+    });
     priceSale.each(function () {
       $(this).siblings('.products__item__price__normal').css({
         'color': deliveryColor
@@ -1605,16 +1607,7 @@ __webpack_require__.r(__webpack_exports__);
 //		"city":$(this).text()
 //	});
 //});
-$(document).ready(function () {
-  var stepFirst = 1;
-  $.post("/local/inc/ajax/step-modal.php", {
-    'modal-step': stepFirst
-  }, function (data) {
-    var data = JSON.parse(data);
-    $('.modal-step-block').html(data.layout);
-  });
-  $('.fancybox-close-small').css('display', 'none');
-});
+$(document).ready(function () {});
 
 window.step = function (step, city, type) {
   $.fancybox.close();
@@ -1639,20 +1632,21 @@ window.step = function (step, city, type) {
     'modal-city': city,
     'modal-delivery-type': type
   }, function (data) {
-    var data = JSON.parse(data); // console.log("Шаг тек " + stepCurrent);
-    // console.log("Шаг прев " + stepPrev);
-    // console.log("Шаг некст " + stepNext);
-    // console.log("Город " + city);
-    // console.log("Тип доставки " + type);
-
+    var data = JSON.parse(data);
+    console.log("Шаг тек " + stepCurrent);
+    console.log("Шаг прев " + stepPrev);
+    console.log("Шаг некст " + stepNext);
+    console.log("Город " + city);
+    console.log("Тип доставки " + type);
     console.log("Статус " + data.status);
 
     if (stepNext == 1) {
       $('.fancybox-container').addClass('fancybox-container--step-1');
     }
 
-    if (stepNext == 2) {
+    if (stepCurrent !== 0 || stepCurrent !== 1) {
       $('[data-step-number="1"] .step-item__name').text(data.city);
+      $('[data-step-number="1"]').addClass('complete');
     }
 
     if (data.logo) {
@@ -1668,10 +1662,9 @@ window.step = function (step, city, type) {
     }
 
     $('[data-step-number="' + stepCurrent + '"]').addClass('complete').removeClass('current active');
-    $('[data-step-number="' + stepNext + '"]').addClass('current active'); //$('[data-step-number="'+stepNext+'"]').addClass('current active');
-
-    $('.modal-step-block').html(data.layout);
+    $('[data-step-number="' + stepNext + '"]').addClass('current active');
     $('.modal.welcome .modal__head').html(data.heading);
+    $('.modal-step-block').html(data.layout);
 
     if (stepCurrent === 1) {
       $('.modal.welcome').removeClass('not-first');
@@ -1706,6 +1699,7 @@ $(document).on('click touch', '[data-step-next]', function () {
     var data = JSON.parse(data);
     $('[data-step-number="' + stepCurrent + '"]').removeClass('current active complete');
     $('[data-step-number="' + stepBack + '"]').addClass('current active').removeClass('complete');
+    $('.modal.welcome .modal__head').html(data.heading);
     $('.modal-step-block').html(data.layout);
     setTimeout(function () {
       if ($(window).width() < 576) {
@@ -1729,12 +1723,35 @@ $(document).on('click touch', '[data-step-next]', function () {
     }
   });
 });
-$(document).on('click touch', '[data-change-delivery-type]', function () {
-  window.step(2);
-});
-$(document).on('click touch', '[data-change-delivery-address]', function () {
-  window.step(3);
-});
+$(document).on("click", ".on_popup", function () {
+  var step = $(this).attr('step');
+  city = $(this).attr('city');
+  delivery = $(this).attr('delivery');
+  ajax = $(this).attr('ajax');
+  window.step(step, city, delivery);
+
+  if (step == 3) {
+    $(document).ajaxComplete(function () {
+      $('[data-step-number="2"]').addClass('current active');
+    });
+  }
+}); //$(document).on('click touch','[data-change-delivery-type]', function () {
+//	let step = $(this).data('step'),
+//		city = $(this).data('city'),
+//		deliveryType = $(this).data('delivery');
+//	window.step(step, city, deliveryType);
+//
+//	$(document).ajaxComplete(function () {
+//		$('[data-step-number="3"]').removeClass('current active');
+//	});
+//});
+//$(document).on('click touch','[data-change-delivery-address]', function () {
+//	let step = $(this).data('step'),
+//		city = $(this).data('city'),
+//		deliveryType = $(this).data('delivery');
+//	window.step(step, city, deliveryType);
+//});
+
 $(document).on('click', '.fancybox-close-small', function (e) {
   e.preventDefault();
   location.reload();

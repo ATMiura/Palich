@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 		$('.header-delivery .button, .delivery-label').css('background-color',deliveryColor);
 		$('.delivery-special .button').css({'background-color':deliveryColor, 'color': 'white'});
-		//$('.header-cart__number').css({'color': deliveryColor});
+		$('.header-cart__number').css({'color': deliveryColor});
 
 		priceSale.each(function () {
 			$(this)
