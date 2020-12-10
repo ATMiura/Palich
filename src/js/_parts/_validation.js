@@ -138,7 +138,7 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 					//console.log("э вацапе бро " + formName);
 				},
 				success: function (data) {
-					console.log("э вацапе бро " + formName + " status: "+ data.status);
+					console.log("1 э вацапе бро " + formName + " status: "+ data.status);
 
 					if(formName == 'express' || formName == 'cart') {
 						if (data.status == 0) {
@@ -266,8 +266,8 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 					}
 				},
 				error: function (data) {
-					console.log("э вацапе бро error " + formName);
-					console.log(data.status);
+					console.log("2 э вацапе бро error " + formName + " Статус - " + data.status);
+					//console.log(data.status);
 				}
 			});
 		}

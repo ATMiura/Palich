@@ -202,14 +202,17 @@
 						justify-content: flex-end
 						max-width: 280px
 						width: 100%
+					.products__item__price__normal
+						margin-left: 5px
 					.products__item__cart__link
 						width: auto
 						padding: 0 13px 2px 13px
+						//background-color: var(--vinishkotyan) !important
 					.products__item__cart__link__text
 						display: inline-block
-						color: var(--yellow)
+						color: var(--white)
 					.icon-product_add_to_cart
-						fill: var(--yellow)
+						fill: var(--white)
 
 					.products__item__info__wrap
 						display: flex
@@ -299,6 +302,8 @@
 			&.delivery-label
 				color: #fff
 				text-transform: uppercase
+				font-family: 'PT Sans'
+				font-weight: 400
 		&__img
 			margin-bottom: 15px
 			@media #{$tablet}
@@ -394,11 +399,8 @@
 				&:hover
 					.products__item__cart__link__text
 						display: inline-block
-						color: var(--yellow)
 						@media #{$mobile}
 							display: none
-					.icon-product_add_to_cart
-						fill: var(--yellow)
 					//@media #{$mobile-above}
 						.products-pickup
 							display: flex
@@ -408,11 +410,11 @@
 					background-color: var(--light-pink)
 					.products__item__cart__link__text
 						display: inline-block
-						color: var(--vinishkotyan)
 					.icon-product_add_to_cart
 						display: none
 					.icon-product_in_cart
 						display: inline-block
+						fill: white
 					//.products-pickup
 						display: flex
 					@media #{$mobile}
@@ -422,9 +424,10 @@
 
 
 	&-pickup
-		padding: 40px 50px
-		min-width: 315px
-		max-width: 315px
+		padding: 40px 15px
+		//min-width: 315px
+		//max-width: 315px
+		width: 100%
 		display: none
 		flex-direction: column
 		align-items: center
@@ -448,7 +451,7 @@
 			//filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.09))
 			position: absolute
 			bottom: -10px
-			right: 57px
+			right: 17px
 			transform: rotate(180deg)
 		&-bg
 			overflow: hidden
@@ -494,8 +497,8 @@
 			width: 100%
 
 		@media #{$mobile-xs}
-			min-width: 290px
-			max-width: 290px
+			//min-width: 290px
+			//max-width: 290px
 	&__item
 		&__inner.pickup-show,
 		&__inner.on-hover
@@ -512,8 +515,8 @@
 @media #{$mobile}
 	.products__item:nth-child(odd)
 		.products-pickup
-			right: 0
-			left: initial
+			//right: 0
+			//left: initial
 			&:after
 				right: 10px
 
@@ -548,4 +551,16 @@
 			z-index: 9999
 			transition: 1s
 
+.product-express
+	padding: 2px 0 14px
+	font-weight: bold
+	font-size: 20px
+	color: #8E96A3
 
+.product-property
+	margin-top: 30px
+	font-size: 15px
+	color: #484848
+.product-property__key
+	margin-right: 4px
+	font-weight: bold

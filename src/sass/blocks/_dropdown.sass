@@ -88,6 +88,7 @@
 
 		transform: translateY(20px)
 		transition: visibility 0s ease .4s, opacity .4s ease, transform .4s ease, width .4s ease
+		pointer-events: none
 
 		@media #{$laptop-above}
 			&:before
@@ -139,6 +140,7 @@
 				visibility: visible
 				transform: translateY(0)
 				transition: visibility 0s ease, opacity .4s ease, transform .4s ease, width .4s ease
+				pointer-events: initial
 			.link-icon__text,
 			.header-burger__link
 				&:after

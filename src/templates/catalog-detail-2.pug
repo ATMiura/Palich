@@ -121,54 +121,7 @@ block content
 									li.product-advant__item Сочная вишня на коньяке
 									li.product-advant__item Густой шоколадно-сливочный аромат
 							.product-form(data-move-left-right)
-								.product-quantity
-									.product-quantity__text Количество
-									.product-quantity__input
-										.basket-item-block-amount(data-entity='basket-item-quantity-block')
-											span.count_btn.basket-item-amount-btn-minus(data-entity='basket-item-quantity-minus')
-											.basket-item-amount-filed-block
-												input#basket-item-quantity.basket-item-amount-filed(type='text', value='1', data-value='1', data-entity='basket-item-quantity-field')
-												.basket-item-amount-field-description шт
-											span.count_btn.basket-item-amount-btn-plus(data-entity='basket-item-quantity-plus')
-								.product-buy
-									.product-buy-price
-										.product-buy-price__normal 376 ₽
-										.product-buy-price__sale 523 ₽
-									.product-buy-status Недоступен для самовывоза
-									//.product-buy-cart
-										a(href="").product-buy-cart__link.button.border_radius.in-cart
-											.product-buy-cart__link__text В корзину
-											.product-buy-cart__link__icon
-												+icon('product_add_to_cart')
-												+icon('product_in_cart')
-									//.product-share(data-share-desktop)
-										.product-share__dropdown.dropdown(data-dropdown="share", data-share-move)
-											.product-share__icon
-												+icon('share')
-											.dropdown-block
-												.dropdown-block__inner
-													.dropdown-share
-														ul.product-share__list
-															li.product-share-item
-																a.product-share-item__link(href="#")
-																	+icon('prodcuct-share-fb')
-															li.product-share-item
-																a.product-share-item__link(href="#")
-																	+icon('prodcuct-share-vk')
-															li.product-share-item
-																a.product-share-item__link(href="#")
-																	+icon('prodcuct-share-tg')
-															li.product-share-item
-																a.product-share-item__link(href="#")
-																	+icon('prodcuct-share-wa')
-															li.product-share-item
-																a.product-share-item__link(href="#")
-																	+icon('prodcuct-share-ok')
-								+productNotification
-								+productTimer
-								.product-property
-									span.product-property__key Условия доставки:
-									span.product-property__val Доставим по Москве за 2 часа, в другие города - сегодня, не позднее 23:00
+								.product-express Продукт доступен в ПАЛЫЧ-ЭКСПРЕСС
 							.product-descr#product-descr(data-move-left-right)
 								.product-descr__title
 									h2 Описание товара
