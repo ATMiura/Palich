@@ -20,7 +20,7 @@ navItem.each(function(i,el){
 
 $(document).ready(function () {
 	if($(window).width() < 768){
-		$('.header-delivery-info').hide();
+		//$('.header-delivery-info').hide();
 		$('.header-delivery-info').append($('[data-change-delivery-address]'));
 
 		$(document).on('click touch', '.header-delivery-picture', function () {

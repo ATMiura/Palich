@@ -202,14 +202,17 @@
 						justify-content: flex-end
 						max-width: 280px
 						width: 100%
+					.products__item__price__normal
+						margin-left: 5px
 					.products__item__cart__link
 						width: auto
 						padding: 0 13px 2px 13px
+						//background-color: var(--vinishkotyan) !important
 					.products__item__cart__link__text
 						display: inline-block
-						color: var(--yellow)
+						color: var(--white)
 					.icon-product_add_to_cart
-						fill: var(--yellow)
+						fill: var(--white)
 
 					.products__item__info__wrap
 						display: flex
@@ -421,9 +424,10 @@
 
 
 	&-pickup
-		padding: 40px 50px
-		min-width: 315px
-		max-width: 315px
+		padding: 40px 15px
+		//min-width: 315px
+		//max-width: 315px
+		width: 100%
 		display: none
 		flex-direction: column
 		align-items: center
@@ -447,7 +451,7 @@
 			//filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.09))
 			position: absolute
 			bottom: -10px
-			right: 57px
+			right: 17px
 			transform: rotate(180deg)
 		&-bg
 			overflow: hidden
@@ -493,8 +497,8 @@
 			width: 100%
 
 		@media #{$mobile-xs}
-			min-width: 290px
-			max-width: 290px
+			//min-width: 290px
+			//max-width: 290px
 	&__item
 		&__inner.pickup-show,
 		&__inner.on-hover
@@ -511,8 +515,8 @@
 @media #{$mobile}
 	.products__item:nth-child(odd)
 		.products-pickup
-			right: 0
-			left: initial
+			//right: 0
+			//left: initial
 			&:after
 				right: 10px
 

@@ -78,6 +78,10 @@
 				top: 9px
 		.modal__inner
 			max-width: 1000px
+			width: 100%
+		.dropdown-select__label,
+		.dropdown-select__list
+			max-width: 600px
 		.city-choose
 			background-color: var(--white)
 			padding: 45px 65px
@@ -132,6 +136,12 @@
 		.button
 			margin-top: 0
 			min-width: auto
+		.modal__title
+			max-width: 650px
+		&.not-first
+			.modal__title
+				font-size: 1.875rem
+				line-height: 2.25rem
 		.modal__text
 			&:empty
 				margin-bottom: 0
@@ -145,8 +155,12 @@
 			.modal__inner
 				max-width: 500px
 			.modal__title
-				font-size: 1.25rem
+				font-size: 1.5rem
 				line-height: 2.125rem
+			&.not-first
+				.modal__title
+					font-size: 1.25rem
+					line-height: 2.125rem
 			.modal__text
 				font-size: .875rem
 				line-height: 1.375rem
@@ -162,10 +176,13 @@
 		display: flex
 		align-items: center
 		//padding-bottom: 15px
+		@media #{$mobile-xs}
+			width: 100%
 	.step-item
 		position: relative
 		min-width: 150px
 		text-align: center
+		pointer-events: none
 		&:not(:last-child)
 			//margin-right: 50px
 			margin-right: 20px
@@ -225,6 +242,8 @@
 
 	.step-item.active,
 	.step-item.complete
+		cursor: pointer
+		pointer-events: initial
 		&:not(:last-child)
 			//margin-right: 16px
 		.step-item__number
@@ -256,6 +275,7 @@
 			height: 100%
 			&:not(:last-child)
 				.step-item__number
+					&:before,
 					&:after
 						min-width: 60px
 						width: 60px
@@ -276,10 +296,15 @@
 			&:not(:last-child)
 				margin-right: 10px
 				.step-item__number
+					&:before,
 					&:after
 						min-width: 35px
 						width: 35px
 						background-size: auto
+					&:before
+						right: calc(100% + 10px)
+					&:after
+						left: calc(100% + 10px)
 			&.active
 				.step-item__number
 					min-width: 54px
