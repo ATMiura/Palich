@@ -57,9 +57,9 @@ window.step = function(step,city,type) {
 				$('[data-step-number="1"]').addClass('complete');
 			}
 
-			if(stepCurrent==1 || stepCurrent==3){
-				$('[data-step-number="3"]').removeClass('current active');
-			}
+			//if(stepCurrent==1 || stepCurrent==3){
+			//	$('[data-step-number="3"]').removeClass('current active');
+			//}
 
 			// загружаем лого
 			if(stepCurrent==2 || stepCurrent==3){
@@ -71,6 +71,11 @@ window.step = function(step,city,type) {
 
 			$('[data-step-number="'+stepCurrent+'"]').addClass('complete').removeClass('current active');
 			$('[data-step-number="'+stepNext+'"]').addClass('current active');
+
+			if(stepCurrent==3){
+				$('[data-step-number="2"]').removeClass('current active');
+				$('[data-step-number="3"]').removeClass('complete').addClass('current active');
+			}
 
 			// загружаемый контент
 			$('.modal.welcome .modal__head').html(data.heading);
@@ -105,6 +110,8 @@ window.step = function(step,city,type) {
 				}
 			},100);
 		});
+
+	//$('.step-item').equalHeights();
 }
 
 $(document).on('click touch','[data-step-next]', function () {
@@ -184,7 +191,8 @@ $(document).on('click touch','[data-step-next]', function () {
 });
 
 $(document).on("click", ".on_popup", function(){
-	// При клике на кнопку в шапке
+
+	// При клике на кнопку в шапке и кнопку на выборе доставки
 
 	var step = $(this).attr('step');
 	city =  $(this).attr('city');
@@ -192,12 +200,7 @@ $(document).on("click", ".on_popup", function(){
 	ajax = $(this).attr('ajax');
 	window.step(step,city,delivery);
 
-//	if(step==3 || step==4){
-//		$(document).ajaxComplete(function () {
-//			$('[data-step-number="2"]').addClass('complete');
-//			$('[data-step-number="3"]').addClass('current active');
-//		});
-//	}
+
 });
 
 $(document).on('click touch', '[data-step-number]', function () {
@@ -219,6 +222,8 @@ $(document).on('click touch', '[data-step-number]', function () {
 		}
 
 		$('[data-step-number="3"] .step-item__name').text('Мой адрес');
+
+		$('.fancybox-close-small').css('display', 'none');
 	}
 	if(step==1){
 		// выбор доставки

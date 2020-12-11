@@ -174,7 +174,7 @@
 	margin-bottom: 46px
 	.step-list
 		display: flex
-		align-items: center
+		align-items: stretch
 		//padding-bottom: 15px
 		@media #{$mobile-xs}
 			width: 100%
@@ -183,6 +183,11 @@
 		min-width: 150px
 		text-align: center
 		pointer-events: none
+
+		display: flex
+		align-content: center
+		flex-direction: column
+		justify-content: space-between
 		&:not(:last-child)
 			//margin-right: 50px
 			margin-right: 20px
@@ -225,7 +230,7 @@
 				left: initial
 				right: calc(100% + 18px)
 		&.active
-			padding-top: 13px
+			//padding-top: 13px
 
 	.step-item__name
 		//position: absolute
@@ -268,11 +273,11 @@
 		margin-bottom: 15px
 		.step-item
 			//min-width: 80px
-			display: flex
-			flex-direction: column
-			align-items: center
-			justify-content: space-between
-			height: 100%
+			//display: flex
+			//flex-direction: column
+			//align-items: center
+			//justify-content: space-between
+			//height: 100%
 			&:not(:last-child)
 				.step-item__number
 					&:before,
@@ -283,9 +288,9 @@
 			&:not(:nth-child(2))
 				min-width: calc((100% - 140px)/2)
 			&:not(.active)
-				.step-item__name
-					position: relative
-					bottom: -5px
+				//.step-item__name
+				//	position: relative
+				//	bottom: -5px
 
 	@media #{$mobile-xs}
 		.step-item

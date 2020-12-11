@@ -3,15 +3,14 @@
 	.container
 		padding: 0
 
-	@media #{$tablet-above}
-		.fixed
-			position: fixed
-			top: 0
-			left: 0
-			right: 0
-			z-index: 9
-			width: 100%
-			transition: .3s
+	.fixed
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		z-index: 9
+		width: 100%
+		transition: .3s
 
 	@media #{$tablet}
 		[data-move]
@@ -313,6 +312,7 @@
 	max-width: 1230px
 	padding: 0 15px
 	margin: 0 auto
+	background-color: #fff
 	@media #{$desktop}
 		max-width: 1170px
 	@media #{$mobile}
@@ -416,6 +416,9 @@
 		font-size: .875rem
 		line-height: 1.125rem
 		color: #333333
+	@media #{$tablet-above}
+		.header-delivery-info
+			display: block !important
 	.header-delivery__message
 		margin-bottom: 15px
 	.header-delivery-address
