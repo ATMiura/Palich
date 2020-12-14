@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>О компании</title>
+		<title>Корзина</title>
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
@@ -1569,103 +1569,339 @@
 			</div>
 		</header>
 		<main class="main">
-			<section class="section">
+			<section class="section section-catalog">
 				<div class="section-container">
 					<div class="breadcrumbs">
 						<ul class="breadcrumbs__list">
 							<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
-							<li class="breadcrumbs__item"><span>О компании</span></li>
+							<li class="breadcrumbs__item"><span>Корзина</span></li>
 						</ul>
 					</div>
 					<div class="section-header">
 						<div class="section-title">
-							<h1>О компании</h1>
+							<h1>Корзина</h1>
 						</div>
+						<div class="section-products-quantity">4 товара</div>
 					</div>
-				</div>
-			</section>
-			<section class="about">
-				<div class="section-container">
 					<div class="section-content">
-						<div class="about-header">
-							<div class="about__text">Наше видение торговой марки заключается  в завоевании лидерской позиции в производстве высококачественных продуктов питания</div>
-							<div class="about__img"><img src="images/about-header.jpg"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="section section-advant">
-				<div class="section-container">
-					<div class="section-content">
-						<div class="advant-list">
-							<div class="advant-item">
-								<div class="advant-item__icon">
-									<svg class="icon icon-advant-icon-1 ">
-										<use xlink:href="images/sprites.svg#advant-icon-1"></use>
-									</svg>
-								</div>
-								<div class="advant-item__content">
-									<div class="advant-item__name h3">Свежесть</div>
-									<div class="advant-item__text">Средний срок готовой продукции 72 часа</div>
-								</div>
-							</div>
-							<div class="advant-item">
-								<div class="advant-item__icon">
-									<svg class="icon icon-advant-icon-2 ">
-										<use xlink:href="images/sprites.svg#advant-icon-2"></use>
-									</svg>
-								</div>
-								<div class="advant-item__content">
-									<div class="advant-item__name h3">Натуральность</div>
-									<div class="advant-item__text">Не используем ГМО, добавляем только натуральные консерванты</div>
-								</div>
-							</div>
-							<div class="advant-item">
-								<div class="advant-item__icon">
-									<svg class="icon icon-advant-icon-3 ">
-										<use xlink:href="images/sprites.svg#advant-icon-3"></use>
-									</svg>
-								</div>
-								<div class="advant-item__content">
-									<div class="advant-item__name h3">Вкус</div>
-									<div class="advant-item__text">Наша продукция - частый победитель слепых конкурсов</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="about">
-				<div class="section-container">
-					<div class="section-content">
-						<div class="about-main">
-							<div class="about-main__img"><img src="images/about-advant-img.jpg"></div>
-							<div class="about-main-info">
-								<div class="about-main-info__col">
-									<div class="about-main-number__list">
-										<div class="about-main-number__item">
-											<div class="about-main-number__value">380</div>
-											<div class="about-main-number__text">магазинов</div>
+						<div class="cart">
+							<div class="cart-address">
+								<div class="cart-address__title">Укажите адрес, от этого будет зависеть стоимость и срок доставки</div>
+								<div class="cart-address__form form">
+									<div class="form_row">
+										<div class="form_group cart-field__city dropdown">
+											<label class="form_label">
+												<input class="form_input" type="text" placeholder="Москва">
+												<div class="link-icon cart-field-city__change">
+													<div class="link-icon__icon">
+														<svg class="icon icon-pen ">
+															<use xlink:href="images/sprites.svg#pen"></use>
+														</svg>
+													</div><a class="link-icon__text" href="#">Изменить город</a>
+												</div>
+											</label>
+											<div class="dropdown-block">
+												<div class="dropdown-block__inner">
+													<div class="dropdown-city">
+														<div class="dropdown__heading">Ваш город</div>
+														<form class="form-search dropdown-form">
+															<div class="form_row dropdown-form-result scroll">
+																<div class="dropdown-form-result__item"><a class="dropdown-form-result__item__link" href="#"> Москва и область</a></div>
+																<div class="dropdown-form-result__item">Курск</div>
+																<div class="dropdown-form-result__item">Санкт-Петербург и область</div>
+																<div class="dropdown-form-result__item">Липецк</div>
+																<div class="dropdown-form-result__item">Белгород</div>
+																<div class="dropdown-form-result__item">Нижний Новгород</div>
+																<div class="dropdown-form-result__item">Великий Новгород</div>
+																<div class="dropdown-form-result__item">Рязань</div>
+																<div class="dropdown-form-result__item">Владимир</div>
+																<div class="dropdown-form-result__item">Тверь</div>
+																<div class="dropdown-form-result__item">Воронеж</div>
+																<div class="dropdown-form-result__item">Тула</div>
+																<div class="dropdown-form-result__item">Иваново</div>
+																<div class="dropdown-form-result__item">Ярославль</div>
+																<div class="dropdown-form-result__item">Калуга</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
 										</div>
-										<div class="about-main-number__item">
-											<div class="about-main-number__value">1300</div>
-											<div class="about-main-number__text">видов продукции</div>
+										<div class="form_group cart-field__street">
+											<label class="form_label">
+												<input class="form_input" type="text" placeholder="Улица, дом">
+											</label>
 										</div>
-										<div class="about-main-number__item">
-											<div class="about-main-number__value">27</div>
-											<div class="about-main-number__text">областей и республик</div>
+										<div class="form_group cart-field__appartaments">
+											<label class="form_label">
+												<input class="form_input" type="text" placeholder="Квартира">
+											</label>
 										</div>
-										<div class="about-main-number__item">
-											<div class="about-main-number__value">4</div>
-											<div class="about-main-number__text">ресторана и кафе</div>
+										<div class="form_group cart-field__floor">
+											<label class="form_label">
+												<input class="form_input" type="text" placeholder="Этаж">
+											</label>
+										</div>
+										<div class="form_group cart-field__submit">
+											<input class="form_input button button__color__red button__arrow inline" type="submit" value="">
 										</div>
 									</div>
 								</div>
-								<div class="about-main-info__col">
-									<div class="about-main-info__text">
-										<p>Наше видение торговой марки заключается в завоевании лидерской позиции в производстве высоко-качественных продуктов питания, поддержании имиджа надежной, честной компании, которая во главу всех своих приоритетов ставит удовлетворение потребностей покупателя во вкусной и здоровой пище и дает гарантию качества на каждое изделие под ТМ «У Палыча».</p>
-										<p>&nbsp;</p>
-										<p><b>Мы будем прикладывать к этому все силы и ресурсы!</b></p>
+							</div>
+							<div class="cart-product-list">
+								<div class="cart-product">
+									<div class="cart-product__picture"><a class="cart-product__picture--link" href=""><img class="cart-product__picture--img" src="images/cart-product-img-1.jpg"/></a></div>
+									<div class="cart-product__info">
+										<div class="cart-product__sku">
+											<div class="cart-product__sku--text">Артикул:</div> 
+											<div class="cart-product__sku--value">DFG154698</div>
+										</div>
+										<div class="cart-product__title">Торт Блинный со сгущенным молоком </div>
+										<div class="cart-product__excerpt">Кофе «Арабика», вареная сгущенка и вкуснейшие домашние блины </div>
+										<div class="cart-product__weight">600 г</div>
+										<div class="cart-product__status">Доступен только для экспресс-доставки</div>
+									</div>
+									<div class="cart-product__actions">
+										<div class="cart-product__price">
+											<div class="cart-product__price--normal">750 ₽</div>
+											<div class="cart-product__price--sale">1000 ₽</div>
+										</div>
+										<div class="cart-product__quantity">
+											<div class="basket-item-block-amount" data-entity="basket-item-quantity-block"><span class="count_btn basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+												<div class="basket-item-amount-filed-block">
+													<input class="basket-item-amount-filed" id="basket-item-quantity" type="text" value="1" data-value="1" data-entity="basket-item-quantity-field"/>
+													<div class="basket-item-amount-field-description">шт</div>
+												</div><span class="count_btn basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+											</div>
+										</div>
+										<div class="cart-product__summ">750 ₽</div>
+										<div class="cart-product__remove">
+											<svg class="icon icon-trash ">
+												<use xlink:href="images/sprites.svg#trash"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="cart-product">
+									<div class="cart-product__picture"><a class="cart-product__picture--link" href=""><img class="cart-product__picture--img" src="images/cart-product-img-2.jpg"/></a></div>
+									<div class="cart-product__info">
+										<div class="cart-product__sku">
+											<div class="cart-product__sku--text">Артикул:</div> 
+											<div class="cart-product__sku--value">DFG154698</div>
+										</div>
+										<div class="cart-product__title">Сардельки из индейки</div>
+										<div class="cart-product__excerpt">Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика</div>
+										<div class="cart-product__weight">600 г</div>
+										<div class="cart-product__status">Доступен только для экспресс-доставки</div>
+									</div>
+									<div class="cart-product__actions">
+										<div class="cart-product__price">
+											<div class="cart-product__price--normal">350 ₽</div>
+											<div class="cart-product__price--sale">1000 ₽</div>
+										</div>
+										<div class="cart-product__quantity">
+											<div class="basket-item-block-amount" data-entity="basket-item-quantity-block"><span class="count_btn basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+												<div class="basket-item-amount-filed-block">
+													<input class="basket-item-amount-filed" id="basket-item-quantity" type="text" value="1" data-value="1" data-entity="basket-item-quantity-field"/>
+													<div class="basket-item-amount-field-description">шт</div>
+												</div><span class="count_btn basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+											</div>
+										</div>
+										<div class="cart-product__summ">750 ₽</div>
+										<div class="cart-product__remove">
+											<svg class="icon icon-trash ">
+												<use xlink:href="images/sprites.svg#trash"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="cart-product">
+									<div class="cart-product__picture"><a class="cart-product__picture--link" href=""><img class="cart-product__picture--img" src="images/cart-product-img-3.jpg"/></a></div>
+									<div class="cart-product__info">
+										<div class="cart-product__sku">
+											<div class="cart-product__sku--text">Артикул:</div> 
+											<div class="cart-product__sku--value">DFG154698</div>
+										</div>
+										<div class="cart-product__title">Торот облепиха</div>
+										<div class="cart-product__excerpt">С приятным солодовым ароматом, с  семенами подсолнечника и льна</div>
+										<div class="cart-product__weight">600 г</div>
+										<div class="cart-product__status">Доступен только для экспресс-доставки</div>
+									</div>
+									<div class="cart-product__actions">
+										<div class="cart-product__price">
+											<div class="cart-product__price--normal">750 ₽</div>
+											<div class="cart-product__price--sale">1000 ₽</div>
+										</div>
+										<div class="cart-product__quantity">
+											<div class="basket-item-block-amount" data-entity="basket-item-quantity-block"><span class="count_btn basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+												<div class="basket-item-amount-filed-block">
+													<input class="basket-item-amount-filed" id="basket-item-quantity" type="text" value="1" data-value="1" data-entity="basket-item-quantity-field"/>
+													<div class="basket-item-amount-field-description">шт</div>
+												</div><span class="count_btn basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+											</div>
+										</div>
+										<div class="cart-product__summ">750 ₽</div>
+										<div class="cart-product__remove">
+											<svg class="icon icon-trash ">
+												<use xlink:href="images/sprites.svg#trash"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="cart-product">
+									<div class="cart-product__picture"><a class="cart-product__picture--link" href=""><img class="cart-product__picture--img" src="images/cart-product-img-4.jpg"/></a></div>
+									<div class="cart-product__info">
+										<div class="cart-product__sku">
+											<div class="cart-product__sku--text">Артикул:</div> 
+											<div class="cart-product__sku--value">DFG154698</div>
+										</div>
+										<div class="cart-product__title">Торт прага</div>
+										<div class="cart-product__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины </div>
+										<div class="cart-product__weight">600 г</div>
+										<div class="cart-product__status">Доступен только для экспресс-доставки</div>
+									</div>
+									<div class="cart-product__actions">
+										<div class="cart-product__price">
+											<div class="cart-product__price--normal">350 ₽</div>
+											<div class="cart-product__price--sale">1000 ₽</div>
+										</div>
+										<div class="cart-product__quantity">
+											<div class="basket-item-block-amount" data-entity="basket-item-quantity-block"><span class="count_btn basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+												<div class="basket-item-amount-filed-block">
+													<input class="basket-item-amount-filed" id="basket-item-quantity" type="text" value="1" data-value="1" data-entity="basket-item-quantity-field"/>
+													<div class="basket-item-amount-field-description">шт</div>
+												</div><span class="count_btn basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+											</div>
+										</div>
+										<div class="cart-product__summ">750 ₽</div>
+										<div class="cart-product__remove">
+											<svg class="icon icon-trash ">
+												<use xlink:href="images/sprites.svg#trash"></use>
+											</svg>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cart-delivery">
+								<div class="cart-delivery__form form">
+									<div class="form_row">
+										<div class="form_group cart-delivery__type">
+											<label class="form_label">
+												<div class="form_label--text">Способ доставки</div>
+												<div class="dropdown-select" data-dropdown="select">
+													<input class="dropdown-select__value" type="hidden" value="">
+													<div class="dropdown-select__label">
+														<div class="dropdown-select__label__text">Самовывоз</div>
+													</div>
+													<ul class="dropdown-select__list">
+														<li class="dropdown-select__item active" data-value="Самовывоз">Самовывоз</li>
+														<li class="dropdown-select__item" data-value="Доставка">Доставка</li>
+													</ul>
+												</div>
+											</label>
+										</div>
+										<div class="form_group cart-delivery__shops">
+											<label class="form_label">
+												<div class="form_label--text">Магазины</div>
+												<div class="dropdown-select" data-dropdown="select">
+													<input class="dropdown-select__value" type="hidden" value="">
+													<div class="dropdown-select__label">
+														<div class="dropdown-select__label__text">Самовывоз</div>
+													</div>
+													<ul class="dropdown-select__list">
+														<div class="form_group">
+															<input class="form_input dropdown-select__search" id="dropdown_city_search" type="text" placeholder="Введите магазин">
+														</div>
+														<li class="dropdown-select__item active" data-value="Краснодар">Краснодар</li>
+														<li class="dropdown-select__item" data-value="Москва">Москва</li>
+														<li class="dropdown-select__item" data-value="Питер">Питер</li>
+														<li class="dropdown-select__item" data-value="Ростов">Ростов</li>
+													</ul>
+												</div>
+											</label>
+										</div>
+										<div class="form_group cart-delivery__date">
+											<label class="form_label">
+												<div class="form_label--text">Дата</div>
+												<input class="form_input" type="text" placeholder="__/__/____" data-inputmask="date" data-mindate="2020-10-29" data-maxdate="2020-11-07">
+											</label>
+										</div>
+										<div class="form_group cart-delivery__time">
+											<label class="form_label">
+												<div class="form_label--text">Время</div>
+												<input class="form_input" type="text" placeholder="9:00 - 11:00" data-inputmask="time">
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cart-order">
+								<div class="cart-order-sum">
+									<div class="cart-order-sum__text">Сумма заказа:</div>
+									<div class="cart-order-sum__value-normal">1850 ₽</div>
+								</div>
+							</div>
+							<div class="cart-customer-form">
+								<div class="form_row">
+									<div class="form_col cart-customer__info">
+										<div class="form_col__inner">
+											<div class="form_title">Данные покупателя</div>
+											<div class="form_group">
+												<label class="form_label">
+													<input class="form_input" type="text" placeholder="Имя">
+												</label>
+											</div>
+											<div class="form_group">
+												<label class="form_label">
+													<input class="form_input" type="text" placeholder="Фамилия">
+												</label>
+											</div>
+											<div class="form_group">
+												<label class="form_label">
+													<input class="form_input" type="text" placeholder="E-mail">
+												</label>
+											</div>
+											<div class="form_group">
+												<label class="form_label">
+													<input class="form_input" type="text" placeholder="+7 (xxx) xxx-xx-xx" data-inputmask="phone">
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="form_col cart-customer__comment">
+										<div class="form_col__inner">
+											<div class="form_title">Комментарии к заказу</div>
+											<div class="form_group">
+												<label class="form_label">
+													<textarea class="form_textarea" placeholder="Ваш комментарий"></textarea>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form_row">
+									<div class="form_col">
+										<div class="form_col__inner">
+											<div class="form_group">
+												<label class="form_label checkbox__label">
+													<input class="checkbox__input" type="checkbox" checked="checked">
+													<div class="checkbox__emulator"></div>
+													<div class="checkbox__text"><span>Даю согласие на обработку</span> <a href="" target="_blank">персональных данных</a>
+													</div>
+												</label>
+											</div>
+											<div class="form_group form_submit">
+												<div class="form_group">
+													<input class="button button__arrow" type="submit" value="Оформить заказ">
+												</div>
+											</div>
+											<div class="form_group promocode">
+												<label class="form_label">
+													<input class="form_input" type="email" placeholder="У вас есть промокод?">
+													<input class="form_input button button__arrow button__arrow__red inline" type="submit" value="">
+												</label>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1673,20 +1909,634 @@
 					</div>
 				</div>
 			</section>
-			<section class="about">
+			<section class="section products-slider">
 				<div class="section-container">
+					<div class="section-header">
+						<div class="section-title">
+							<h2 class="h1">Не забудьте купить</h2>
+						</div>
+						<div class="swiper-button inline">
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-button-next"></div>
+						</div>
+					</div>
 					<div class="section-content">
-						<div class="about-footer">
-							<div class="about__img"><img src="images/about-footer.jpg"></div>
-							<div class="about__text">
-								<div class="about__text--title">
-									<h3>История успеха</h3>
+						<div class="products__list swiper-container" data-slider-name="slider-buy-it">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner express-only">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="products__item__label delivery-label">Экспресс</div>
+												<div class="products__item__label delivery-label">Маг</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Пельмени с индейкой</div>
+												<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div></a>
+													</div>
+												</div>
+												<div class="product-notification"><span class="product-notification__label">Период продаж праздничной коллекции —</span> <span class="product-notification__date">с 28 октября по 30 ноября</span>
+												</div>
+												<div class="product-timer" data-timer-time-end="12-29-2020">
+													<div class="product-timer__text">До начала продаж осталось</div>
+													<div class="product-timer__list">
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="day"></div>
+															<div class="product-timer__time">дней</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="hours"></div>
+															<div class="product-timer__time">час.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="minutes"></div>
+															<div class="product-timer__time">мин.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="seconds"></div>
+															<div class="product-timer__time">сек.</div>
+														</div>
+													</div>
+												</div>
+												<div class="products-pickup">
+													<div class="products-pickup__close"></div>
+													<div class="products-pickup__icon">
+														<svg class="icon icon-products-pickup-icon-3 ">
+															<use xlink:href="images/sprites.svg#products-pickup-icon-3"></use>
+														</svg>
+													</div>
+													<div class="products-pickup__title">Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС</div>
+													<div class="products-pickup__text">Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"</div>
+												</div>
+												<!--.products-pickup
+												.products-pickup__close
+												.products-pickup__icon
+													+icon('products-pickup-icon')
+												.products-pickup__title Вы добавляете товар для самовывоза
+												.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+												-->
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="about__text--excerpt">
-									<p>Поэтому мы стремимся делиться нашими знаниями и опытом, применять наилучшие практики и стремиться соответствовать высоким требованиям. Ниже мы предоставляем информацию о недавно завершенных проектах. Для получения дополнительной информации, пожалуйста, свяжитесь с нами.</p>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner express-only">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="products__item__label delivery-label">Экспресс</div>
+												<div class="products__item__label delivery-label">Маг</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Прага</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div></a>
+													</div>
+												</div>
+												<div class="product-notification"><span class="product-notification__label">Период продаж праздничной коллекции —</span> <span class="product-notification__date">с 28 октября по 30 ноября</span>
+												</div>
+												<div class="product-timer" data-timer-time-end="12-29-2020">
+													<div class="product-timer__text">До начала продаж осталось</div>
+													<div class="product-timer__list">
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="day"></div>
+															<div class="product-timer__time">дней</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="hours"></div>
+															<div class="product-timer__time">час.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="minutes"></div>
+															<div class="product-timer__time">мин.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="seconds"></div>
+															<div class="product-timer__time">сек.</div>
+														</div>
+													</div>
+												</div>
+												<div class="products-pickup">
+													<div class="products-pickup__close"></div>
+													<div class="products-pickup__icon">
+														<svg class="icon icon-products-pickup-icon-3 ">
+															<use xlink:href="images/sprites.svg#products-pickup-icon-3"></use>
+														</svg>
+													</div>
+													<div class="products-pickup__title">Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС</div>
+													<div class="products-pickup__text">Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"</div>
+												</div>
+												<!--.products-pickup
+												.products-pickup__close
+												.products-pickup__icon
+													+icon('products-pickup-icon')
+												.products-pickup__title Вы добавляете товар для самовывоза
+												.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+												-->
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="about__text--btn"><a class="button button__arrow" href="#">Подробнее</a></div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner express-only">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_3.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="products__item__label delivery-label">Экспресс</div>
+												<div class="products__item__label delivery-label">Маг</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Ореховый по-королевски</div>
+												<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div></a>
+													</div>
+												</div>
+												<div class="product-notification"><span class="product-notification__label">Период продаж праздничной коллекции —</span> <span class="product-notification__date">с 28 октября по 30 ноября</span>
+												</div>
+												<div class="product-timer" data-timer-time-end="12-29-2020">
+													<div class="product-timer__text">До начала продаж осталось</div>
+													<div class="product-timer__list">
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="day"></div>
+															<div class="product-timer__time">дней</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="hours"></div>
+															<div class="product-timer__time">час.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="minutes"></div>
+															<div class="product-timer__time">мин.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="seconds"></div>
+															<div class="product-timer__time">сек.</div>
+														</div>
+													</div>
+												</div>
+												<div class="products-pickup">
+													<div class="products-pickup__close"></div>
+													<div class="products-pickup__icon">
+														<svg class="icon icon-products-pickup-icon-3 ">
+															<use xlink:href="images/sprites.svg#products-pickup-icon-3"></use>
+														</svg>
+													</div>
+													<div class="products-pickup__title">Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС</div>
+													<div class="products-pickup__text">Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"</div>
+												</div>
+												<!--.products-pickup
+												.products-pickup__close
+												.products-pickup__icon
+													+icon('products-pickup-icon')
+												.products-pickup__title Вы добавляете товар для самовывоза
+												.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+												-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner express-only">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_4.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="products__item__label delivery-label">Экспресс</div>
+												<div class="products__item__label delivery-label">Маг</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт малиновый</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div></a>
+													</div>
+												</div>
+												<div class="product-notification"><span class="product-notification__label">Период продаж праздничной коллекции —</span> <span class="product-notification__date">с 28 октября по 30 ноября</span>
+												</div>
+												<div class="product-timer" data-timer-time-end="12-29-2020">
+													<div class="product-timer__text">До начала продаж осталось</div>
+													<div class="product-timer__list">
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="day"></div>
+															<div class="product-timer__time">дней</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="hours"></div>
+															<div class="product-timer__time">час.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="minutes"></div>
+															<div class="product-timer__time">мин.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="seconds"></div>
+															<div class="product-timer__time">сек.</div>
+														</div>
+													</div>
+												</div>
+												<div class="products-pickup">
+													<div class="products-pickup__close"></div>
+													<div class="products-pickup__icon">
+														<svg class="icon icon-products-pickup-icon-3 ">
+															<use xlink:href="images/sprites.svg#products-pickup-icon-3"></use>
+														</svg>
+													</div>
+													<div class="products-pickup__title">Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС</div>
+													<div class="products-pickup__text">Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"</div>
+												</div>
+												<!--.products-pickup
+												.products-pickup__close
+												.products-pickup__icon
+													+icon('products-pickup-icon')
+												.products-pickup__title Вы добавляете товар для самовывоза
+												.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+												-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner express-only">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_1.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="products__item__label delivery-label">Экспресс</div>
+												<div class="products__item__label delivery-label">Маг</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Пельмени с индейкой</div>
+												<div class="products__item__excerpt">Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div></a>
+													</div>
+												</div>
+												<div class="product-notification"><span class="product-notification__label">Период продаж праздничной коллекции —</span> <span class="product-notification__date">с 28 октября по 30 ноября</span>
+												</div>
+												<div class="product-timer" data-timer-time-end="12-29-2020">
+													<div class="product-timer__text">До начала продаж осталось</div>
+													<div class="product-timer__list">
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="day"></div>
+															<div class="product-timer__time">дней</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="hours"></div>
+															<div class="product-timer__time">час.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="minutes"></div>
+															<div class="product-timer__time">мин.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="seconds"></div>
+															<div class="product-timer__time">сек.</div>
+														</div>
+													</div>
+												</div>
+												<div class="products-pickup">
+													<div class="products-pickup__close"></div>
+													<div class="products-pickup__icon">
+														<svg class="icon icon-products-pickup-icon-3 ">
+															<use xlink:href="images/sprites.svg#products-pickup-icon-3"></use>
+														</svg>
+													</div>
+													<div class="products-pickup__title">Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС</div>
+													<div class="products-pickup__text">Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"</div>
+												</div>
+												<!--.products-pickup
+												.products-pickup__close
+												.products-pickup__icon
+													+icon('products-pickup-icon')
+												.products-pickup__title Вы добавляете товар для самовывоза
+												.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+												-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner express-only">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_2.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="products__item__label delivery-label">Экспресс</div>
+												<div class="products__item__label delivery-label">Маг</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Прага</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div></a>
+													</div>
+												</div>
+												<div class="product-notification"><span class="product-notification__label">Период продаж праздничной коллекции —</span> <span class="product-notification__date">с 28 октября по 30 ноября</span>
+												</div>
+												<div class="product-timer" data-timer-time-end="12-29-2020">
+													<div class="product-timer__text">До начала продаж осталось</div>
+													<div class="product-timer__list">
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="day"></div>
+															<div class="product-timer__time">дней</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="hours"></div>
+															<div class="product-timer__time">час.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="minutes"></div>
+															<div class="product-timer__time">мин.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="seconds"></div>
+															<div class="product-timer__time">сек.</div>
+														</div>
+													</div>
+												</div>
+												<div class="products-pickup">
+													<div class="products-pickup__close"></div>
+													<div class="products-pickup__icon">
+														<svg class="icon icon-products-pickup-icon-3 ">
+															<use xlink:href="images/sprites.svg#products-pickup-icon-3"></use>
+														</svg>
+													</div>
+													<div class="products-pickup__title">Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС</div>
+													<div class="products-pickup__text">Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"</div>
+												</div>
+												<!--.products-pickup
+												.products-pickup__close
+												.products-pickup__icon
+													+icon('products-pickup-icon')
+												.products-pickup__title Вы добавляете товар для самовывоза
+												.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+												-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner express-only">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_3.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="products__item__label delivery-label">Экспресс</div>
+												<div class="products__item__label delivery-label">Маг</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт Ореховый по-королевски</div>
+												<div class="products__item__excerpt">Бисквитные коржи с творожным муссом. Свежий лайм и апельсин</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div></a>
+													</div>
+												</div>
+												<div class="product-notification"><span class="product-notification__label">Период продаж праздничной коллекции —</span> <span class="product-notification__date">с 28 октября по 30 ноября</span>
+												</div>
+												<div class="product-timer" data-timer-time-end="12-29-2020">
+													<div class="product-timer__text">До начала продаж осталось</div>
+													<div class="product-timer__list">
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="day"></div>
+															<div class="product-timer__time">дней</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="hours"></div>
+															<div class="product-timer__time">час.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="minutes"></div>
+															<div class="product-timer__time">мин.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="seconds"></div>
+															<div class="product-timer__time">сек.</div>
+														</div>
+													</div>
+												</div>
+												<div class="products-pickup">
+													<div class="products-pickup__close"></div>
+													<div class="products-pickup__icon">
+														<svg class="icon icon-products-pickup-icon-3 ">
+															<use xlink:href="images/sprites.svg#products-pickup-icon-3"></use>
+														</svg>
+													</div>
+													<div class="products-pickup__title">Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС</div>
+													<div class="products-pickup__text">Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"</div>
+												</div>
+												<!--.products-pickup
+												.products-pickup__close
+												.products-pickup__icon
+													+icon('products-pickup-icon')
+												.products-pickup__title Вы добавляете товар для самовывоза
+												.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+												-->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="products__item">
+										<div class="products__item__inner express-only">
+											<div class="products__item__img"><a class="products__item__slide__link" href=""><img class="products__item__slide__img" src="images/products__item__slide__img_4.jpg"/></a></div>
+											<div class="products__item__label__wrap">
+												<div class="products__item__label hit">
+													<svg class="icon icon-star ">
+														<use xlink:href="images/sprites.svg#star"></use>
+													</svg>Хит
+												</div>
+												<div class="products__item__label delivery-label">Экспресс</div>
+												<div class="products__item__label delivery-label">Маг</div>
+											</div>
+											<div class="products__item__info">
+												<div class="products__item__name">Торт малиновый</div>
+												<div class="products__item__excerpt">Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины</div>
+												<div class="products__item__price__cart">
+													<div class="products__item__price">
+														<div class="products__item__price__normal">376 ₽</div>
+														<div class="products__item__price__sale">523 ₽</div>
+													</div>
+													<div class="products__item__cart"><a class="products__item__cart__link button border_radius" href="">
+															<div class="products__item__cart__link__text">В корзину</div>
+															<div class="products__item__cart__link__icon">
+																<svg class="icon icon-product_add_to_cart ">
+																	<use xlink:href="images/sprites.svg#product_add_to_cart"></use>
+																</svg>
+																<svg class="icon icon-product_in_cart ">
+																	<use xlink:href="images/sprites.svg#product_in_cart"></use>
+																</svg>
+															</div></a>
+													</div>
+												</div>
+												<div class="product-notification"><span class="product-notification__label">Период продаж праздничной коллекции —</span> <span class="product-notification__date">с 28 октября по 30 ноября</span>
+												</div>
+												<div class="product-timer" data-timer-time-end="12-29-2020">
+													<div class="product-timer__text">До начала продаж осталось</div>
+													<div class="product-timer__list">
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="day"></div>
+															<div class="product-timer__time">дней</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="hours"></div>
+															<div class="product-timer__time">час.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="minutes"></div>
+															<div class="product-timer__time">мин.</div>
+														</div>
+														<div class="product-timer__item">
+															<div class="product-timer__value" data-timer-type="seconds"></div>
+															<div class="product-timer__time">сек.</div>
+														</div>
+													</div>
+												</div>
+												<div class="products-pickup">
+													<div class="products-pickup__close"></div>
+													<div class="products-pickup__icon">
+														<svg class="icon icon-products-pickup-icon-3 ">
+															<use xlink:href="images/sprites.svg#products-pickup-icon-3"></use>
+														</svg>
+													</div>
+													<div class="products-pickup__title">Этот вкусный продукт доступен в ПАЛЫЧ-МАГ и ПАЛЫЧ-ЭКСПРЕСС</div>
+													<div class="products-pickup__text">Закажите прямо сейчас, нажав кнопку "хочу изменить способ доставки"</div>
+												</div>
+												<!--.products-pickup
+												.products-pickup__close
+												.products-pickup__icon
+													+icon('products-pickup-icon')
+												.products-pickup__title Вы добавляете товар для самовывоза
+												.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+												-->
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
+							<div class="swiper-scrollbar"></div>
 						</div>
 					</div>
 				</div>
@@ -2122,7 +2972,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-		<script src="js/vendor.js?v=1607579341064"></script>
-		<script src="js/main.js?v=1607579341064"></script>
+		<script src="js/vendor.js?v=1607948377789"></script>
+		<script src="js/main.js?v=1607948377789"></script>
 	</body>
 </html>

@@ -350,7 +350,7 @@ $(document).ready(function () {
       'color': deliveryColor
     });
     priceSale.each(function () {
-      $(this).siblings('.products__item__price__normal').css({
+      $(this).siblings('.products__item__price__sale').css({
         'color': deliveryColor
       });
     });
