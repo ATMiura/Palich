@@ -1,0 +1,267 @@
+.footer
+	position: relative
+	padding-top: 75px
+	padding-bottom: 40px
+	color: var(--white)
+	&:before
+		content: ""
+		display: block
+		max-width: 1830px
+		width: 100%
+		height: 100%
+		margin: 0 auto
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		z-index: -1
+		background-color: var(--vinishkotyan)
+	@media #{$mobile}
+		padding: 50px 0
+
+.footer-top
+	max-width: 1230px
+	margin: 0 auto
+	padding: 0 15px
+	padding-bottom: 75px
+	margin-bottom: 45px
+	border-bottom: 1px solid var(--light-grey)
+
+	display: flex
+	flex-wrap: wrap
+
+	@media #{$desktop}
+		max-width: 1170px
+
+	@media #{$laptop}
+		padding-bottom: 30px
+
+
+.footer-left,
+.footer-right
+	display: flex
+	max-width: 50%
+	width: 100%
+
+.footer-right
+	justify-content: flex-end
+	padding-right: 50px
+	//.subscribe_btn
+		width: 60px
+		padding: 0
+
+	//.button__arrow
+		background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.67097 1.10588C9.28045 0.715357 8.64728 0.715357 8.25676 1.10588C7.86624 1.49641 7.86624 2.12957 8.25676 2.5201L13.5497 7.81299H1.96387C1.41158 7.81299 0.963867 8.2607 0.963867 8.81299C0.963867 9.36527 1.41158 9.81299 1.96387 9.81299H13.5497L8.25676 15.1059C7.86624 15.4964 7.86624 16.1296 8.25676 16.5201C8.64728 16.9106 9.28045 16.9106 9.67097 16.5201L16.6703 9.52081C16.6727 9.5184 16.6751 9.51597 16.6775 9.51354C16.854 9.33378 16.9631 9.08762 16.9639 8.81599C16.9639 8.81499 16.9639 8.81399 16.9639 8.81299C16.9639 8.81199 16.9639 8.81099 16.9639 8.80999C16.9635 8.67549 16.9365 8.54724 16.888 8.4302C16.8403 8.31494 16.7701 8.20678 16.6775 8.11244C16.6751 8.11004 16.6727 8.10765 16.6704 8.10527M9.67097 1.10588L16.6704 8.10527Z' fill='%23A70230'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='17' height='17' fill='white' transform='translate(0.959961 0.396973)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+		background-position: center center
+
+	.footer-heading
+		margin-bottom: 23px
+
+@media #{$laptop}
+	.footer-left
+		max-width: 60%
+	.footer-right
+		max-width: 40%
+		padding-right: 0
+
+@media #{$tablet}
+	.footer-left,
+	.footer-right
+		max-width: 50%
+	.footer-left
+		flex-wrap: wrap
+
+@media #{$mobile}
+	.footer-left,
+	.footer-right
+		max-width: 100%
+	.footer-right
+		justify-content: flex-start
+		margin-top: 30px
+
+@media #{$mobile-xs}
+	.footer-left
+		display: none
+	.footer-right
+		margin-top: 0
+
+.footer-heading
+	font-size: 1.5rem
+	line-height: 2rem
+	font-weight: bold
+	color: var(--white)
+	white-space: nowrap
+	margin-bottom: 12px
+
+.footer-nav
+	font-size: 16px
+	color: var(--white)
+	display: flex
+	flex-wrap: wrap
+	//flex-direction: column
+	&:not(:last-child)
+		//margin-right: 105px
+		margin-right: 55px
+		flex-direction: column
+		//min-width: max-content
+		@media #{$laptop}
+			margin-right: 50px
+		@media #{$tablet}
+			margin-right: 20px
+		@media #{$mobile}
+			margin-right: 0
+			margin-bottom: 30px
+
+	&:not(:first-child)
+		.footer-nav__list
+			column-count: 2
+
+	&__list
+		//display: flex
+		//flex-direction: column
+		//flex-wrap: wrap
+		//height: 320px
+		@media #{$tablet}
+			height: auto
+			flex-direction: row
+			column-count: initial
+	&__item
+		&:not(:last-child)
+			margin-bottom: 15px
+			@media #{$tablet}
+				margin-bottom: 10px
+				margin-right: 15px
+
+	&[data-footer-menu="catalog"]
+		.footer-nav__item
+			margin-right: 45px
+			width: 100%
+			@media #{$tablet}
+				margin-right: 15px
+	&__link
+		font-size: .875rem
+		line-height: 1.125rem
+		color: var(--white)
+		&:hover
+			color: var(--yellow)
+
+
+.footer-contact
+	display: flex
+	flex-direction: column
+	.form-subscribe
+		margin-bottom: 85px
+		.form_error
+			color: var(--white)
+	&__tel
+		font-size: 1.5rem
+		line-height: 2rem
+		font-weight: bold
+		color: var(--white)
+		margin-bottom: 15px
+	&__link
+		.link-icon__text
+			color: var(--yellow)
+		svg
+			fill: var(--yellow)
+		&:not(:last-child)
+			margin-bottom: 20px
+		&:hover
+			.link-icon__text
+				color: var(--white)
+			svg
+				fill: var(--white)
+
+
+	@media #{$tablet}
+		.form-subscribe
+			margin-bottom: 30px
+
+	@media #{$mobile-xs}
+		.checkbox__label
+			align-items: flex-start
+		.checkbox__emulator
+			//padding-top: 5px
+		.checkbox__text
+			line-height: 1rem
+			a
+				display: inline-block
+
+
+.footer-bottom
+	max-width: 1200px
+	margin: 0 auto
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: 0 15px
+
+	@media #{$desktop}
+		max-width: 1170px
+
+	@media #{$mobile}
+		flex-direction: column
+		align-items: flex-start
+
+.footer-policy
+	max-width: 470px
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: 0 15px
+	&__link
+		font-size: .875rem
+		line-height: 1.313rem
+		color: var(--yellow)
+		&:hover
+			color: var(--white)
+
+	@media #{$tablet}
+		flex-direction: column
+		max-width: 230px
+
+	@media #{$mobile}
+		order: 2
+		padding: 0
+		align-items: flex-start
+		margin-bottom: 30px
+
+.footer-social
+	display: flex
+	align-items: center
+
+	&__text
+		font-size: .875rem
+		line-height: 1.313rem
+		margin-right: 25px
+
+	&__link
+		display: inline-block
+
+	&__links
+		display: flex
+
+	&__elem
+		&:not(:last-child)
+			margin-right: 10px
+
+	@media #{$mobile}
+		order: 1
+		margin-bottom: 20px
+		&__text
+			margin-right: 30px
+			white-space: nowrap
+		&__elem
+		&:not(:last-child)
+			margin-bottom: 15px
+
+.footer-copy
+	font-size: .875rem
+	line-height: 1.313rem
+	color: rgba(255,255,255,.5)
+
+	@media #{$mobile}
+		order: 3
+
+

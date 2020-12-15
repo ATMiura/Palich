@@ -1,0 +1,359 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Каталог товаров. Торты. После того как заполнили адрес'
+
+block content
+	section.section.section-catalog
+		.section-container
+			.breadcrumbs
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Главная
+					li.breadcrumbs__item
+						span Каталог
+			.section-header
+				.section-title
+					h1 Торты
+				.section-products-quantity 84 товара
+			.section-content
+				.catalog
+					.catalog-mobile-menu
+						.catalog-mobile-menu__list
+							.catalog-mobile-menu__item(data-mobile-menu-title="Фильтры", data-catalog-type="filter", data-catalog-mobile-menu)
+								.catalog-mobile-menu-item__icon
+									+icon('catalog-filter')
+								.catalog-mobile-menu-item__text Фильтры
+							.catalog-mobile-menu__item(data-mobile-menu-title="Теги", data-catalog-type="tags", data-catalog-mobile-menu)
+								.catalog-mobile-menu-item__icon
+									+icon('catalog-tags')
+								.catalog-mobile-menu-item__text Теги
+							.catalog-mobile-menu__item(data-mobile-menu-title="Сортировка", data-catalog-type="sort", data-catalog-mobile-menu)
+								.catalog-mobile-menu-item__icon
+									+icon('catalog-sort')
+								.catalog-mobile-menu-item__text Сортировка
+
+					.catalog-tags(data-desktop="catalog-tags")
+						ul.catalog-tags__list(data-move='catalog-tags')
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link Ограниченная коллекция
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link Хит
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link Новинка
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link.active День рождения
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link.active Свадьба
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link Вечеринка
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link Семейный ужин
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link Пикник
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link В офис
+							li.catalog-tags__item
+								a(href="#").catalog-tags__link Без глютена
+
+					.catalog-sort(data-desktop="catalog-sort")
+						.catalog-sort-inner(data-move='catalog-sort')
+							.catalog-sort__label Сортировать по:
+							ul.catalog-sort__list
+								li.catalog-sort__item
+									a(href="#").catalog-sort__link.active популярности
+								li.catalog-sort__item
+									a(href="#").catalog-sort__link возрастанию цены
+								li.catalog-sort__item
+									a(href="#").catalog-sort__link убыванию цены
+
+					.catalog-filter(data-desktop="catalog-filter")
+						.bx-filter(data-move="catalog-filter")
+							.bx-filter-wrapper
+								.bx-filter(data-bx-filter='')
+									.bx-filter-section.container-fluid
+										form.smartfilter(name='_form', action='', method='get')
+											.bx-filter-parameters-box-row
+												.bx-filter-parameters-box(data-bx-filter-box='')
+													span.bx-filter-container-modef
+													.bx-filter-parameters-box-title
+														span Цена
+													.bx-filter-block(data-role='bx_filter_block')
+														.bx-filter-parameters-box-container.bx-filter-parameters-box-container--flex
+															.bx-filter-parameters-box-container-block.bx-left
+																span от
+																.bx-filter-input-container
+																	input#arrFilter_P1_MIN.min-price.input(type='text', name='arrFilter_P1_MIN', value='', size='5', onkeyup='smartFilter.keyup(this)')
+															.bx-filter-parameters-box-container-block.bx-right
+																span до
+																.bx-filter-input-container
+																	input#arrFilter_P1_MAX.max-price.input(type='text', name='arrFilter_P1_MAX', value='', size='5', onkeyup='smartFilter.keyup(this)')
+															.bx-ui-slider-track-container
+																#drag_track_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-track
+																	.bx-ui-slider-part.p1
+																		span 484
+																	.bx-ui-slider-part.p2
+																		span 814
+																	.bx-ui-slider-part.p3
+																		span 1 144
+																	.bx-ui-slider-part.p4
+																		span 1 474
+																	.bx-ui-slider-part.p5
+																		span 1 804
+																	#colorUnavailableActive_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-pricebar-vd(style='left: 0%; right: 30.8057%;')
+																	#colorAvailableInactive_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-pricebar-vn(style='left: 0%; right: 0%;')
+																	#colorAvailableActive_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-pricebar-v(style='left: 0%; right: 30.8057%;')
+																	#drag_tracker_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-range(style='left: 0%; right: 0%;')
+																		a#left_slider_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-handle.left(style='left:0;', href='javascript:void(0)')
+																		a#right_slider_c4ca4238a0b923820dcc509a6f75849b.bx-ui-slider-handle.right(style='right: 30.8057%;', href='javascript:void(0)')
+												.bx-filter-parameters-box(data-bx-filter-box='')
+													span.bx-filter-container-modef
+													.bx-filter-parameters-box-title
+														span Цвет
+													.bx-filter-block(data-role='bx_filter_block')
+														.bx-filter-block__row
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_1997922972', for='arrFilter_145_1997922972')
+																		input#arrFilter_145_1997922972.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_1997922972', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Разноцветный
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_3916527423', for='arrFilter_145_3916527423')
+																		input#arrFilter_145_3916527423.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_3916527423', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Голубой
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_2658551721', for='arrFilter_145_2658551721')
+																		input#arrFilter_145_2658551721.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_2658551721', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Белый
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_1886922373', for='arrFilter_145_1886922373')
+																		input#arrFilter_145_1886922373.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_1886922373', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Серебряный
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_2545945474', for='arrFilter_145_2545945474')
+																		input#arrFilter_145_2545945474.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_2545945474', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Черный
+														.bx-filter-block__row(data-bx-filter-row='', style="display: none;")
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_4144464487', for='arrFilter_145_4144464487')
+																		input#arrFilter_145_4144464487.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_4144464487', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Коричневый
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_2147529457', for='arrFilter_145_2147529457')
+																		input#arrFilter_145_2147529457.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_2147529457', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Розовый
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_420078411', for='arrFilter_145_420078411')
+																		input#arrFilter_145_420078411.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_420078411', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Красный
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_1846465501', for='arrFilter_145_1846465501')
+																		input#arrFilter_145_1846465501.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_1846465501', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Сиреневый
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_4033496702', for='arrFilter_145_4033496702')
+																		input#arrFilter_145_4033496702.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_4033496702', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Желтый
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_2272098024', for='arrFilter_145_2272098024')
+																		input#arrFilter_145_2272098024.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_2272098024', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Серый
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_4158667338', for='arrFilter_145_4158667338')
+																		input#arrFilter_145_4158667338.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_4158667338', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Бежевый
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_1734289371', for='arrFilter_145_1734289371')
+																		input#arrFilter_145_1734289371.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_1734289371', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Бордовый
+															.bx-filter-parameters-box-container
+																.checkbox
+																	label.checkbox__label(data-role='label_arrFilter_145_274208589', for='arrFilter_145_274208589')
+																		input#arrFilter_145_274208589.checkbox__input(type='checkbox', value='Y', name='arrFilter_145_274208589', onclick='smartFilter.click(this)')
+																		.checkbox__emulator
+																		.checkbox__text
+																			span Малиновый
+														.bx-filter-block-toggle
+															a.bx-filter-block-toggle__link(data-bx-filter-row-toggle='') Показать все
+												.bx-filter-parameters-box(data-bx-filter-box='')
+													span.bx-filter-container-modef
+													.bx-filter-parameters-box-title
+														span Для кого
+													.bx-filter-block(data-role='bx_filter_block')
+														.bx-filter-parameters-box-container
+															.checkbox
+																label.checkbox__label(data-role='label_arrFilter_146_4191947349', for='arrFilter_146_4191947349')
+																	input#arrFilter_146_4191947349.checkbox__input(type='checkbox', value='Y', name='arrFilter_146_4191947349', onclick='smartFilter.click(this)')
+																	.checkbox__emulator
+																	.checkbox__text
+																		span для девочек
+														.bx-filter-parameters-box-container
+															.checkbox
+																label.checkbox__label(data-role='label_arrFilter_146_127446590', for='arrFilter_146_127446590')
+																	input#arrFilter_146_127446590.checkbox__input(type='checkbox', value='Y', name='arrFilter_146_127446590', onclick='smartFilter.click(this)')
+																	.checkbox__emulator
+																	.checkbox__text
+																		span для всех
+												.bx-filter-parameters-box(data-bx-filter-box='')
+													span.bx-filter-container-modef
+													.bx-filter-parameters-box-title
+														span Размер для одежды
+													.bx-filter-block(data-role='bx_filter_block')
+														.bx-filter-parameters-box-container
+															.checkbox
+																label.checkbox__label(data-role='label_arrFilter_148_3030946575', for='arrFilter_148_3030946575')
+																	input#arrFilter_148_3030946575.checkbox__input(type='checkbox', value='Y', name='arrFilter_148_3030946575', onclick='smartFilter.click(this)')
+																	.checkbox__emulator
+																	.checkbox__text
+																		span 0,5
+														.bx-filter-parameters-box-container
+															.checkbox
+																label.checkbox__label(data-role='label_arrFilter_148_2212294583', for='arrFilter_148_2212294583')
+																	input#arrFilter_148_2212294583.checkbox__input(type='checkbox', value='Y', name='arrFilter_148_2212294583', onclick='smartFilter.click(this)')
+																	.checkbox__emulator
+																	.checkbox__text
+																		span 1
+														.bx-filter-parameters-box-container
+															.checkbox
+																label.checkbox__label(data-role='label_arrFilter_148_450215437', for='arrFilter_148_450215437')
+																	input#arrFilter_148_450215437.checkbox__input(type='checkbox', value='Y', name='arrFilter_148_450215437', onclick='smartFilter.click(this)')
+																	.checkbox__emulator
+																	.checkbox__text
+																		span 2
+														.bx-filter-parameters-box-container
+															.checkbox
+																label.checkbox__label(data-role='label_arrFilter_148_3073132385', for='arrFilter_148_3073132385')
+																	input#arrFilter_148_3073132385.checkbox__input(type='checkbox', value='Y', name='arrFilter_148_3073132385', onclick='smartFilter.click(this)')
+																	.checkbox__emulator
+																	.checkbox__text
+																		span 2,5
+														.bx-filter-parameters-box-container
+															.checkbox
+																label.checkbox__label(data-role='label_arrFilter_148_1842515611', for='arrFilter_148_1842515611')
+																	input#arrFilter_148_1842515611.checkbox__input(type='checkbox', value='Y', name='arrFilter_148_1842515611', onclick='smartFilter.click(this)')
+																	.checkbox__emulator
+																	.checkbox__text
+																		span 3
+											.bx-filter-button-box
+												.bx-filter-block
+													.bx-filter-parameters-box-container
+														//button#set_filter.btn.btn-themes(type='button', name='set_filter') Показать товары
+														// кнопка сброса либо так либо так, оба варианта стилизованны
+														.bx-filter-reset
+															input#del_filter.clear(type='button', name='del_filter', value='Сбросить')
+														button#del_filter.bx-filter-reset(type='button', name='del_filter') Сбросить
+
+					.products-catalog
+						.express.submited
+							.express-block
+								.express__icon
+									+icon('express-deliveryman')
+								.express__text
+									.express__title Заказ будет доставлен по адресу:
+									.express__subtitle Введите адрес - мы покажем, что у нас есть для Вас
+									.express__address ул. Хорошёвского Серебряного Бора 2-я линия, 51 ст1
+									.express__change
+										.link-icon
+											a(href="").link-icon__text Изменить адрес
+								.form.express__form
+									.form_row
+										.form_group
+											label.form_label.express__label
+												input.form_input.express__inp(type="text", placeholder="Введите адрес")
+												input.form_input.button.button__arrow.inline.express__btn(type="submit", value="")
+									.form_row
+										.form_group
+											.link-icon
+												a(href="").link-icon__text Определить адрес
+
+						.products-catalog__list
+							.products-catalog-by-time(data-product-time)
+								.by-time-header
+									.by-time-header-title
+										.by-time-header-title__icon
+											+icon('clock-empty')
+										.by-time-header-title__text Доставка до 90 минут из ближайшего фирменного магазина
+								.products__item
+									.products__item__inner
+										.products__item__img
+											a(href="").products__item__slide__link
+												img(src="images/products__item__slide__img_7.jpg").products__item__slide__img
+										.products__item__label__wrap
+											.products__item__label.timer
+												+icon('timer')
+												| 90 минут
+											.products__item__label.hit
+												+icon('star')
+												| Хит
+										.products__item__info
+											.products__item__name Сардельки из индейки
+											.products__item__excerpt Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика
+											.products__item__price__cart
+												.products__item__price
+														.products__item__price__normal 376 ₽
+														.products__item__price__sale 376 ₽
+												.products__item__cart
+													a(href="").products__item__cart__link.button.border_radius.in-cart
+														.products__item__cart__link__text В корзину
+														.products__item__cart__link__icon
+															+icon('product_add_to_cart')
+															+icon('product_in_cart')
+
+							.products-catalog-by-time(data-product-time)
+								.by-time-header
+									.by-time-header-title
+										.by-time-header-title__icon
+											+icon('clock-empty')
+										.by-time-header-title__text Доставка с 10 мая
+
+								+products__item('products__item__slide__img_7','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',false,false)
+								+products__item('products__item__slide__img_8','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',true,false)
+								+products__item('products__item__slide__img_9','Манты с бараниной','В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку', true, false)
+								+products__item('products__item__slide__img_10','Торт облепиха','С приятным солодовым ароматом, с  семенами подсолнечника и льна',false,false)
+								+products__item('products__item__slide__img_11','Торт Молочная девочка','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+								+products__item('products__item__slide__img_12','Чизкейк с вишней','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+								+products__item('products__item__slide__img_13','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,true)
+								+products__item('products__item__slide__img_14','Пирог с вишней','Пирог из песочного теста, начинка из свежей вишни',false,false)
+
+
+							.products__more
+								a.button.button__plus Показать больше

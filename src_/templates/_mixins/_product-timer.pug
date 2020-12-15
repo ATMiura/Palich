@@ -1,0 +1,16 @@
+mixin productTimer(date,day,hours,minutes,seconds)
+	.product-timer(data-timer-time-end=""+date+"")
+		.product-timer__text До начала продаж осталось
+		.product-timer__list
+			.product-timer__item
+				.product-timer__value(data-timer-type="day")
+				.product-timer__time дней
+			.product-timer__item
+				.product-timer__value(data-timer-type="hours")
+				.product-timer__time час.
+			.product-timer__item
+				.product-timer__value(data-timer-type="minutes")
+				.product-timer__time мин.
+			.product-timer__item
+				.product-timer__value(data-timer-type="seconds")
+				.product-timer__time сек.

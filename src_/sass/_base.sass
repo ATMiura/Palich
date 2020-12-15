@@ -1,0 +1,210 @@
+html,
+body
+    height: 100%
+
+body
+    position: relative
+    font-size: 1rem
+    font-family: "PT Sans", sans-serif
+    -webkit-font-smoothing: antialiased
+
+
+*, :before, :after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+svg
+    pointer-events: none
+
+input,
+textarea,
+button
+    font-family: "PT Sans", sans-serif
+    border: none
+    outline: none
+    border-radius: 0
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+textarea,
+button
+    -webkit-appearance: none
+
+fieldset
+    border: none
+
+h1, h2, h3, h4, h5, h6
+    font-family: inherit
+    font-weight: bold
+    color: inherit
+
+h1,.h1
+	font-size: 2.25rem
+	line-height: 3.125rem
+h2,.h2
+	font-size: 1.875rem
+	line-height: 2.125rem
+	color: #1A1A1A
+	margin-bottom: 35px
+
+h3,.h3
+	font-size: 1.5rem
+	line-height: 2rem
+	color: #1A1A1A
+
+h4,.h4
+	font-size: 1.125rem
+	line-height: 1.688rem
+	color: #1A1A1A
+
+h5,.h5
+
+h6,.h6
+
+a
+    color: inherit
+    text-decoration: none
+
+    &:hover,
+    &:active,
+    &:focus
+        text-decoration: none
+
+li
+    list-style: none
+
+.more-link
+	font-weight: bold
+	font-size: .875rem
+	line-height: 1.063rem
+	color: var(--vinishkotyan)
+	white-space: nowrap
+	svg
+		margin-left: 8px
+	&:hover
+		color: var(--yellow)
+		svg
+			fill: var(--yellow)
+
+.scroll,
+.suggestBox
+	overflow-y: auto
+	&::-webkit-scrollbar
+		width: 4px
+		height: 4px
+	&::-webkit-scrollbar-button
+		width: 0
+		height: 0
+	&::-webkit-scrollbar-thumb
+		background: #000000
+		border: 0px none #000000
+		border-radius: 2px
+	&::-webkit-scrollbar-track
+		background: var(--light-grey)
+		border: 0px none #000000
+		border-radius: 0px
+	&::-webkit-scrollbar-corner
+		background: transparent
+	&::-webkit-scrollbar-track-piece
+	&::-webkit-resizer
+	&-x
+		overflow-y: hidden
+		overflow-x: visible
+
+.grid-container
+	//max-width: 1200px
+	//width: 100%
+	//margin: 0 auto
+//@media (min-width: 1280px)
+	.container, .container-sm, .container-md, .container-lg, .container-xl
+		max-width: 1200px
+
+// по времени
+.by-time
+	&-header
+		display: flex
+		flex-wrap: wrap
+		width: 100%
+		margin-bottom: 35px
+		&-title
+			display: flex
+			align-items: baseline
+			flex-basis: 100%
+			padding: 0 15px
+			&__icon
+				margin-right: 7px
+				max-height: 18px
+				position: relative
+				top: 3px
+				display: none
+			&__text
+				font-weight: bold
+				font-size: 1.125rem
+				line-height: 1.438rem
+				//padding-left: 18px
+				&:before
+					content: ""
+					min-width: 18px
+					max-width: 18px
+					height: 19px
+					background-image: url("data:image/svg+xml,%3Csvg width='18' height='19' viewBox='0 0 18 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9.5' r='8' stroke='%23A70230' stroke-width='2'/%3E%3Cpath d='M8.40015 6.5V10.1H10.8001' stroke='%23A70230' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+					display: inline-block
+					margin-right: 7px
+		.link-icon
+			cursor: pointer
+		.link-icon__text
+			color: var(--vinishkotyan)
+	&-remove-order
+		margin-left: 20px
+		.icon-trash
+			fill: var(--vinishkotyan)
+	&-btn
+		@media #{$mobile-above}
+			margin-left: 20px
+		@media #{$mobile}
+			margin-top: 10px
+		.button
+			height: 36px
+			padding: 8px 15px
+	@media #{$mobile}
+		&-header
+			&-title
+				flex-direction: column
+				//padding: 0
+				&__text
+					font-size: 1rem
+					line-height: 1.5rem
+					display: flex
+					align-items: center
+		&-remove-order
+			margin-left: 0
+			margin-top: 10px
+
+
+
+.catalog-filter + script + [id*='bx_incl_area_']
+	flex-basis: 75%
+	max-width: 75%
+
+	.products-catalog
+		flex-basis: 100%
+		max-width: 100%
+
+
+.myTile
+	position: absolute
+	width: 256px
+	height: 256px
+	border: 1px dashed gray
+	border-collapse: collapse
+
+
+.myTileSuccess
+	background: #FFF
+
+
+.myTileFail
+	background: antiquewhite

@@ -1,0 +1,381 @@
+/* секции */
+.section
+
+	&-container
+		max-width: 1230px
+		margin: 0 auto
+		padding: 0 15px
+		width: 100%
+		@media #{$desktop}
+			max-width: 1170px
+	&-header
+		display: flex
+		flex-wrap: wrap
+		align-items: baseline
+		//justify-content: space-between
+		//margin-bottom: 35px
+		margin-bottom: 25px !important
+	&-title
+		@media #{$mobile-above}
+			max-width: 80%
+		//width: 100%
+		h1
+			margin: 0
+		h2
+			margin-bottom: 0 !important
+		@media #{$mobile}
+			h2
+				font-size: 1.875rem
+		@media #{$mobile-xs}
+			h2
+				font-size: 1.625rem
+				line-height: 2.25rem
+
+	&-more
+		margin-left: auto
+		@media #{$tablet}
+			margin-left: initial
+			margin-top: 20px
+			flex-basis: 100%
+
+	&.products
+		@media #{$mobile}
+			.products__item
+				margin-bottom: 0
+
+	&-products-quantity
+		font-size: 1.125rem
+		line-height: 1.563rem
+		color: var(--gryaz-grey)
+
+	&-title + &-products-quantity
+		margin-left: 20px
+		@media #{$mobile}
+			display: none
+
+	@media #{$mobile}
+		&-header
+			flex-direction: column
+			align-items: flex-start
+			margin-bottom: 15px !important
+		&-more
+			margin-left: 0
+			//margin-top: 5px
+
+	&-content
+		width: 100%
+		&.scroll.scroll-x
+			@media #{$mobile}
+				.products__list
+					flex-wrap: nowrap
+				.products__item
+					min-width: 50%
+					max-width: 50%
+					margin-bottom: 0
+			@media #{$mobile-xs}
+				.products__list
+					flex-wrap: nowrap
+				.products__item
+					min-width: 80%
+					max-width: 80%
+					margin-bottom: 0
+
+	&-slider
+
+	&.best-price
+		.section-title h2
+			color: var(--white)
+		.more-link
+			color: var(--white)
+			& .icon-arrow-more
+				fill: var(--white)
+			&:hover
+				color: var(--yellow)
+				& .icon-arrow-more
+					fill: var(--yellow)
+		.section
+			&-content
+				width: 100%
+				&.scroll.scroll-x
+					@media #{$mobile}
+						.products__list
+							flex-wrap: nowrap
+						.products__item
+							min-width: 50%
+							max-width: 50%
+							margin-bottom: 0
+
+
+
+	&-subscribe
+		margin-bottom: 110px
+		.section-content
+			background-color: var(--vinishkotyan)
+			padding: 50px 90px 50px 100px
+			color: var(--white)
+
+			display: flex
+			justify-content: space-between
+		.section-title
+			max-width: 100%
+
+		.form_error
+			color: var(--white)
+			h4
+				color: var(--white)
+
+		@media #{$laptop}
+			.section-content
+				padding: 50px
+		@media #{$tablet}
+			.section-content
+				padding: 30px
+		@media #{$mobile-xs}
+			.section-content
+				flex-direction: column
+				padding: 30px 25px
+
+		.section__col
+			max-width: 400px
+			width: 100%
+			@media #{$mobile-above}
+				padding-right: 15px
+			.h1
+				color: var(--white)
+				line-height: 1
+				margin-bottom: 18px !important
+
+			@media #{$tablet}
+				max-width: 320px
+				.h1
+					font-size: 2rem
+
+			@media #{$mobile-xs}
+				margin-bottom: 40px
+				.h1
+					margin-bottom: 15px
+
+		.section__form
+			max-width: 550px
+			width: 100%
+			margin-top: 10px
+			.subscribe_label
+				display: flex
+			.subscribe_inp
+				@media #{$laptop-above}
+					margin-right: 20px
+
+			.subscribe_btn
+				max-width: 185px
+				min-width: 175px
+
+		@media #{$tablet}
+			.section__form
+				margin-top: 0
+			.subscribe_label
+				flex-direction: column
+				align-items: flex-start
+			.subscribe_inp
+				margin-bottom: 10px
+			.checkbox__text
+				line-height: 1rem
+
+		@media #{$mobile-xs}
+			margin-bottom: 65px !important
+			.section__form
+				.subscribe_btn
+					max-width: 100%
+					padding-right: 15px !important
+					background-position: center right 55px
+				.checkbox__label
+					align-items: flex-start
+				.checkbox__emulator
+					padding-top: 5px
+				.checkbox__text
+					line-height: 1rem
+					a
+						display: inline-block
+
+	&-advant
+		margin-bottom: 120px
+
+	&-shops
+		margin-bottom: 95px
+		.section-title
+			.link-icon__text
+				font-size: inherit
+				line-height: inherit
+				color: var(--vinishkotyan)
+				border-bottom: 2px dotted
+				white-space: initial
+		@media #{$tablet}
+			.dropdown
+				display: block
+				&-block
+					left: 0
+					top: 100%
+				&:after
+					display: none
+
+	&-news
+		margin-bottom: 60px
+		@media #{$mobile-xs}
+			margin-bottom: 75px !important
+	&-descr
+		margin-bottom: 110px
+
+	&-product-detail
+		margin-bottom: 70px
+
+	&-catalog
+		margin-bottom: 80px
+		.section-title
+			width: auto
+
+	&-404
+		text-align: center
+		margin-top: 65px
+		margin-bottom: 110px
+		.section-icon
+			margin-bottom: 60px
+		.section-text
+			font-size: 1.875rem
+			line-height: 2.813rem
+			color: var(--black)
+			a
+				font-weight: bold
+				color: var(--vinishkotyan)
+
+	&-search
+		//margin-bottom: 110px
+		margin-bottom: 40px
+		.form-search
+			flex-basis: 100%
+			max-width: 995px
+			margin-bottom: 40px
+			padding: 0 15px
+			margin: 0 -15px
+			&__input
+				border: 1px solid var(--light-grey)
+				font-size: 0.875rem
+				line-height: 1.375rem
+				border-radius: 0
+			&__icon
+				margin-left: -33px
+				.icon-search-new
+					width: 18px
+					height: 18px
+			&__button
+				background-color: transparent
+				cursor: pointer
+		&-result
+			display: flex
+			flex-wrap: wrap
+			margin-bottom: 110px
+			//margin: 0 -15px
+			.section-icon
+				text-align: center
+				flex-basis: 100%
+				margin-top: 60px
+				margin-bottom: 30px
+			.section-text
+				text-align: center
+				flex-basis: 100%
+				font-size: 1rem
+				line-height: 1.688rem
+				.button
+					margin-top: 15px
+
+			.section-container
+				display: flex
+				flex-wrap: wrap
+				padding: 0
+
+			.search
+				&-result
+
+					&__list
+						padding: 0 15px
+						flex-basis: 75%
+						max-width: 75%
+					&__item
+				&-categories
+					margin-top: 60px
+					padding: 0 15px
+					flex-basis: 25%
+					max-width: 25%
+					&__inner
+						background-color: var(--light-pink)
+						padding: 28px 36px
+						font-weight: bold
+					&__title
+						font-size: 1.5rem
+						line-height: 2.125rem
+						color: var(--black)
+						margin-bottom: 15px
+					&__list
+					&__item
+						&:not(:last-child)
+							margin-bottom: 15px
+					&__link
+						font-size: 1rem
+						line-height: 1.313rem
+						color: var(--vinishkotyan)
+			.products
+				&__list
+
+				&__item
+					flex-basis: 33.3%
+					max-width: 33.3%
+
+			@media #{$mobile}
+				.search
+					&-result
+						&__list
+							order: 1
+							flex-basis: 100%
+							max-width: 100%
+					&-categories
+						order: 2
+						flex-basis: 100%
+						max-width: 100%
+				.products
+					&__list
+
+					&__item
+						min-width: 50%
+						flex-basis: 50%
+						max-width: 50%
+						margin-bottom: 20px !important
+	&-contacts
+
+	&-about
+
+	&-sale
+		position: relative
+		padding-top: 40px
+		margin-bottom: 110px
+		&:after
+			content: ""
+			background-color: var(--light-pink)
+			display: block
+			max-width: 1830px
+			max-height: 330px
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			margin: 0 auto
+			z-index: -1
+
+
+
+
+	@media #{$laptop}
+		margin-bottom: 50px
+		margin-top: 0 !important
+	@media #{$mobile-xs}
+		margin-bottom: 20px
+

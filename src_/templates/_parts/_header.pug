@@ -1,0 +1,284 @@
+header.header
+	.header-top
+		.grid-container
+			//.header-city(data-desktop="city")
+				.link-icon.dropdown(data-move="city")
+					.link-icon__icon
+						+icon('geotag')
+					a(href="").link-icon__text Москва и МО
+					.dropdown-block
+						.dropdown-block__inner
+							.dropdown-city
+								.dropdown__heading Ваш город
+								form.form-search.dropdown-form
+									.form_row
+										.form_group
+											label.form_label
+												input(type="text", placeholder='Начните писать город').form_input.form-search__input
+												.form-search__icon
+													button(type="submit").form-search__button
+														+icon('search-new')
+									.form_row.dropdown-form-result.scroll
+										.dropdown-form-result__item
+											a(href="#").dropdown-form-result__item__link  Москва и область
+										.dropdown-form-result__item Курск
+										.dropdown-form-result__item Санкт-Петербург и область
+										.dropdown-form-result__item Липецк
+										.dropdown-form-result__item Белгород
+										.dropdown-form-result__item Нижний Новгород
+										.dropdown-form-result__item Великий Новгород
+										.dropdown-form-result__item Рязань
+										.dropdown-form-result__item Владимир
+										.dropdown-form-result__item Тверь
+										.dropdown-form-result__item Воронеж
+										.dropdown-form-result__item Тула
+										.dropdown-form-result__item Иваново
+										.dropdown-form-result__item Ярославль
+										.dropdown-form-result__item Калуга
+			.header-nav(data-desktop="top-nav")
+				ul.header-nav__list(data-move="top-nav")
+					li.header-nav__item.dropdown
+						a(href="#").header-nav__item__link О компании
+						.dropdown-block
+							.dropdown-block__inner
+								.dropdown-menu
+									ul.nav-list
+										li.nav-item
+											a(href="#").nav-item__link
+												.nav-item__label Новости
+										li.nav-item
+											a(href="#").nav-item__link
+												.nav-item__label Обучение
+										li.nav-item
+											a(href="#").nav-item__link
+												.nav-item__label История успеха
+
+					li.header-nav__item
+						a(href="#").header-nav__item__link Магазины
+					li.header-nav__item
+						a(href="#").header-nav__item__link Контакты
+
+			.header-call(data-desktop="call")
+				.header-call__inner(data-desktop="call-links")
+					.header-link__list(data-move="call-links")
+						.header-link__item
+							.link-icon
+								.link-icon__icon
+									+icon('mail')
+								a(href="#palich-email", data-modal-open).link-icon__text Письмо Палычу
+						.header-link__item
+							.js-popup(data-popup-id="callback").link-icon
+								.link-icon__icon
+									+icon('phone')
+								a(href="#callback", data-modal-open).link-icon__text Обратный звонок
+
+				.header-call__inner(data-desktop="call-tels")
+					.header-phone__list(data-move="call-tels")
+						.header-phone__item
+							.header-phone__item__label Горячая линия
+							a(href="tel:8 (800) 555-81-63").header-phone__item__link 8 (800) 555-81-63
+						.header-phone__item
+							.header-phone__item__label Интернет-магазин
+							a(href="tel:+7 999 999-99-99").header-phone__item__link +7 999 999-99-99
+
+			.header-mobile
+				.header-mobile__block
+					.header-mobile__burger(data-mobile-menu="burger")
+					.header-mobile__logo
+						+icon('logo-mobile')
+				.header-mobile__block
+					.header-mobile__search(data-mobile-menu-title="Найти")
+						+icon('search-new')
+					.header-mobile__cart(data-mobile-menu="cart")
+
+
+	.header-main
+		.grid-container
+			.header-burger.dropdown(data-desktop="burger")
+				a.header-burger__link(href="",data-move="burger")
+					+icon('menu')
+				.dropdown-block
+					.dropdown-block__inner
+						.dropdown-menu(data-desktop="catalog")
+							ul.nav-list(data-move="catalog").scroll
+								- var submenuList = ['Бисквитные','Блинные','Бисквитные','Блинные','Муссовые','Песочные','Слоеные','Безе','С орехами и сухофруктами','С ягодами и фруктами','Шоколадные','Наборы','Детские','Особая серия,Постные / Веганские','Птичье молоко','Сметанные и творожные','Торт-рулет']
+								mixin nav-item(icon,label)
+									li.nav-item.has-submenu
+										a(href="#").nav-item__link
+											.nav-item__icon
+												+icon(icon)
+											.nav-item__label=label
+
+										ul.nav-item__submenu
+
+											each submenuItem in submenuList
+												li.nav-item
+													a(href="#").nav-item__link
+														.nav-item__label=  submenuItem
+								+nav-item('submenu-icon-stock'            ,'Акции')
+								+nav-item('submenu-icon-cakes'            ,'Торты')
+								+nav-item('submenu-icon-cakes-on-order'    ,'Торты на заказ')
+								+nav-item('submenu-icon-confectionary'    ,'Кондитерские изделия')
+								+nav-item('submenu-icon-pies'            ,'Пироги и выпечка')
+								+nav-item('submenu-icon-cooked-foods'    ,'Готовые блюда')
+								+nav-item('submenu-icon-pancakes'        ,'Блинчики')
+								+nav-item('submenu-icon-cheese'            ,'Сыры')
+								+nav-item('submenu-icon-freeze'            ,'Замороженные полуфабрикаты')
+								+nav-item('submenu-icon-chocolat'        ,'Шоколадные изделия')
+								+nav-item('submenu-icon-salad'            ,'Салаты и заливные')
+								+nav-item('submenu-icon-meat'            ,'Мясная гастрономия')
+								+nav-item('submenu-icon-icecream'        ,'Мороженое')
+								+nav-item('submenu-icon-jp'                ,'Японская кухня')
+								+nav-item('submenu-icon-burito'            ,'Буритто')
+								+nav-item('submenu-icon-musli'            ,'Каши и мюсли')
+								+nav-item('submenu-icon-coffee'            ,'Кофе')
+								+nav-item('submenu-icon-butter'            ,'Масло сливочное')
+								+nav-item('submenu-icon-coffee'            ,'Пицца')
+								+nav-item('submenu-icon-meat'            ,'Мясная гастрономия')
+								+nav-item('submenu-icon-icecream'        ,'Мороженое')
+								+nav-item('submenu-icon-jp'                ,'Японская кухня')
+								+nav-item('submenu-icon-burito'            ,'Буритто')
+								+nav-item('submenu-icon-musli'            ,'Каши и мюсли')
+								+nav-item('submenu-icon-coffee'            ,'Кофе')
+								+nav-item('submenu-icon-butter'            ,'Масло сливочное')
+								+nav-item('submenu-icon-coffee'            ,'Пицца')
+
+
+			.header-logo
+				.header-logo__img
+					a.header-logo__link(href="#")
+						+icon('logo-with-text')
+
+			.header-search.dropdown(data-dropdown="search", data-desktop="search")
+				form.form.form-search(data-move="search")
+					.form_row
+						.form_group
+							label.form_label
+								input(type="text", placeholder="Введите название товара").form_input.form-search__input
+								.form-search__icon
+									button(type="submit").form-search__button
+										+icon('search-new')
+				.dropdown-block
+					.dropdown-block__inner
+						.dropdown-search
+							.dropdown-search__col.dropdown-search__col__left
+								ul.nav-list
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торт
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты бисквитные
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты муссовые
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты песочные
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты слоенные
+									li.nav-item
+										a(href="#").nav-item__link
+											.nav-item__label Торты с орехами и сухофруктами
+								a(href="").more-link Все результаты поиска
+									+icon('arrow-more')
+
+							.dropdown-search__col.dropdown-search__col__right
+								.dropdown-search-product
+									.dropdown-search-product__list.scroll
+										mixin dropdown-search-product-item(img, name, price_normal, price_sale)
+											.dropdown-search-product-item
+												a(href="#").dropdown-search-product-item__link
+													.dropdown-search-product-item__img
+														img(src="images/dropdown-search-product-item__img-" + img + ".jpg")
+													.dropdown-search-product-item__info
+														.dropdown-search-product-item__name=name
+														.dropdown-search-product-item__price
+															.dropdown-search-product-item__price__normal=price_normal
+															if price_sale
+																.dropdown-search-product-item__price__sale=price_sale
+															else
+										+dropdown-search-product-item('1','Торт ягодное наслаждение, 850 г','376 ₽','523 ₽')
+										+dropdown-search-product-item('2','Торт фисташковый с клубникой, 600 г','645 ₽','')
+										+dropdown-search-product-item('3','Торт наполеон, 400 г','259 ₽','')
+										+dropdown-search-product-item('4','Торт Антреме Шоколадная симфония, 480 г','573 ₽','649 ₽')
+										+dropdown-search-product-item('5','Торт Сказка от Палыча, 1000 г','678 ₽','')
+
+										+dropdown-search-product-item('1','Торт ягодное наслаждение, 850 г','376 ₽','523 ₽')
+										+dropdown-search-product-item('2','Торт фисташковый с клубникой, 600 г','645 ₽','')
+										+dropdown-search-product-item('3','Торт наполеон, 400 г','259 ₽','')
+										+dropdown-search-product-item('4','Торт Антреме Шоколадная симфония, 480 г','573 ₽','649 ₽')
+										+dropdown-search-product-item('5','Торт Сказка от Палыча, 1000 г','678 ₽','')
+			//.header-bar
+				.header-bar__item
+					a.header-bar__item__link(href="")
+						.header-bar__item__icon
+							+icon('percentage')
+						span.header-bar__item__label Акции
+
+				.header-bar__item.dropdown(data-dropdown="delivery")
+					.header-bar__item__link
+						.header-bar__item__icon
+							+icon('delivery-company')
+						span.header-bar__item__label Выберите доставку
+					.dropdown-block
+						.dropdown-block__inner
+							.dropdown-delivery
+								.dropdown-delivery__list
+									.dropdown-delivery__item.express
+										.dropdown-delivery__item__icon
+											img(src="images/dropdown-delivery-express.svg").dropdown-delivery__item__img
+										.dropdown-delivery__item__text Доставка за 90 минут
+
+									.dropdown-delivery__item.mag
+										.dropdown-delivery__item__icon
+											img(src="images/dropdown-delivery-mag.svg").dropdown-delivery__item__img
+										.dropdown-delivery__item__text Самовывоз со скидкой
+
+									.dropdown-delivery__item.free
+										.dropdown-delivery__item__icon
+											img(src="images/dropdown-delivery-free.svg").dropdown-delivery__item__img
+										.dropdown-delivery__item__text Бесплатная доставка на следующий день
+									.express.express-type
+										.express-block
+											.express__close
+											.express__text
+												.express__title Экспресс-доставка за 90 минут!
+												.express__subtitle Введите адрес - мы покажем, что у нас есть для Вас
+											form.form.express__form
+												.form_row
+													.form_group
+														label.form_label.express__label
+															input.form_input.express__inp(type="text", placeholder="Введите адрес")
+															input.form_input.button.button__arrow.inline.express__btn(type="submit", value="")
+												.form_row
+													.form_group
+														.link-icon
+															a(href="").link-icon__text Определить адрес
+
+			.header-cart(data-desktop="cart")
+				.header-cart__counter(data-move="cart")
+					.header-cart__icon
+						+icon('cart')
+					.header-cart__number 10
+				.header-cart__price 12 450 ₽
+	.header-delivery
+		.header-delivery-picture
+			img.header-delivery__icon(src="images/header-delivery-img-1.svg")
+			+icon('delivery-arrow')
+		.header-delivery-info
+			.header-delivery__type Мой способ доставки: ПАЛЫЧ-ЭКСПРЕСС.
+			.header-delivery__message Доставим курьером из фирменного магазина за 2 часа. Заказ от 1₽.
+			.header-delivery-address
+				.header-delivery-address__label Мой адрес:
+				.header-delivery-address__icon
+					+icon('delivery-address-point')
+				.header-delivery-address__city Москва,
+				.header-delivery-address__street Щелковское шоссе, д. 26
+		.header-delivery-actions
+			a.button(data-change-delivery-type) Хочу изменить способ доставки
+			a.button(data-change-delivery-address) Хочу изменить адрес
+
+
+

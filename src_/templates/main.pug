@@ -1,0 +1,563 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Главная'
+
+block content
+
+	section.section.section-slider.slider-main
+		.section-container
+			.section-content
+				.slider
+					.slider-container
+						.slider-wrapper.swiper-container(data-slider-name="slider-main")
+							.swiper-wrapper
+								.swiper-slide.slider-slide
+									.slider-slide__content
+										.slider-slide__title Пирог Осетинский с курицей и грибами
+										.slider-slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+										.slider-slide__btn
+											a.button.button__arrow(href="") Подробнее
+
+
+									.slider-slide__img
+										img(src="images/main-slider-img.png").slider-slide__img__elem
+									.slider-slide__bg(style="background-color: #FDF0E2;")
+
+								.swiper-slide.slider-slide
+									.slider-slide__content
+										.slider-slide__title Пирог Осетинский с курицей и грибами
+										.slider-slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+										.slider-slide__btn
+											a.button.button__arrow(href="") Подробнее
+
+									.slider-slide__img
+										img(src="images/main-slider-img.png").slider-slide__img__elem
+									.slider-slide__bg(style="background-color: #FDF0E2;")
+
+								.swiper-slide.slider-slide
+									.slider-slide__content
+										.slider-slide__title Пирог Осетинский с курицей и грибами
+										.slider-slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+										.slider-slide__btn
+											a.button.button__arrow(href="") Подробнее
+
+									.slider-slide__img
+										img(src="images/main-slider-img.png").slider-slide__img__elem
+									.slider-slide__bg(style="background-color: #FDF0E2;")
+								.swiper-slide.slider-slide
+									.slider-slide__content
+										.slider-slide__title Пирог Осетинский с курицей и грибами
+										.slider-slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+										.slider-slide__btn
+											a.button.button__arrow(href="") Подробнее
+
+									.slider-slide__img
+										img(src="images/main-slider-img.png").slider-slide__img__elem
+									.slider-slide__bg(style="background-color: #FDF0E2;")
+								.swiper-slide.slider-slide
+									.slider-slide__content
+										.slider-slide__title Пирог Осетинский с курицей и грибами
+										.slider-slide__text Тонкое, нежное дрожжевое тесто. В начинке - диетическое куриное филе, масляные шампиньоны, нежный сыр и ароматная зелень.
+										.slider-slide__btn
+											a.button.button__arrow(href="") Подробнее
+
+									.slider-slide__img
+										img(src="images/main-slider-img.png").slider-slide__img__elem
+									.slider-slide__bg(style="background-color: #FDF0E2;")
+
+							.swiper-button__wrapper
+								.swiper-button-prev
+								.swiper-button-next
+
+						.options
+							.progress-paging
+								.progress
+									span.index 01
+									.progress-bar
+										.back
+									span.slides
+
+	section.section.catalog-links
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Каталог
+			.section-content
+				.catalog-links__list.scroll.scroll-x(data-mobile-menu="catalog-links")
+
+
+
+	section.section.products
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Хиты продаж
+				.section-more
+					a(href="").more-link Посмотреть все товары
+						+icon('arrow-more')
+			.section-content
+				.products__list
+					.products__item__size__big.swiper
+						.swiper-button__wrapper
+							.swiper-button-prev
+							.swiper-button-next
+						.swiper-container
+							.swiper-wrapper
+								.products__item.swiper-slide
+									.products__item__inner
+										.products__item__img
+											a(href="").products__item__slide__link
+												img(src="images/products__item__slide__img.jpg").products__item__slide__img
+										.products__item__label__wrap
+											.products__item__label.hit
+												+icon('star')
+												| Хит
+											.products__item__label.new Новинка
+											.products__item__label.vegan Vegan
+											.products__item__label.timer
+												+icon('timer')
+												| 90 минут
+											.products__item__label.no-gmo Без ГМО
+											.products__item__label.no-gluten Без глютена
+											.products__item__label.sale - 25%
+										+productNotification()
+										//.product-notification
+											.product-notification__label Период продаж праздничной коллекции —
+											=" "
+											.product-notification__date с 28 октября по 30 ноября
+										.products__item__info.with-timer
+											.products__item__info__wrap
+												.products__item__name Торт Антреме Шоколадная симфония
+												.products__item__price__cart
+													.products__item__price
+														.products__item__price__normal 376 ₽
+														.products__item__price__sale 523 ₽
+													//.products__item__cart
+														a(href="").products__item__cart__link.button.border_radius
+															.products__item__cart__link__text В корзину
+															.products__item__cart__link__icon
+																+icon('product_add_to_cart')
+																+icon('product_in_cart')
+											+productTimer('01-15-2021')
+										.products-pickup
+											.products-pickup__close
+											.products-pickup__icon
+												+icon('products-pickup-icon')
+											.products-pickup__title Вы добавляете товар для самовывоза
+											.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+
+								.products__item.swiper-slide
+									.products__item__inner
+										.products__item__img
+											a(href="").products__item__slide__link
+												img(src="images/products__item__slide__img.jpg").products__item__slide__img
+										.products__item__label__wrap
+											.products__item__label.hit
+												+icon('star')
+												| Хит
+											.products__item__label.new Новинка
+											.products__item__label.vegan Vegan
+											.products__item__label.timer
+												+icon('timer')
+												| 90 минут
+											.products__item__label.no-gmo Без ГМО
+											.products__item__label.no-gluten Без глютена
+											.products__item__label.sale - 25%
+										.products__item__info
+											.products__item__info__wrap
+												.products__item__name Торт Антреме Шоколадная симфония
+												.products__item__price__cart
+													.products__item__price
+														.products__item__price__normal 376 ₽
+														.products__item__price__sale 523 ₽
+													.products__item__cart
+														a(href="").products__item__cart__link.button.border_radius
+															.products__item__cart__link__text В корзину
+															.products__item__cart__link__icon
+																+icon('product_add_to_cart')
+																+icon('product_in_cart')
+										.products-pickup
+											.products-pickup__close
+											.products-pickup__icon
+												+icon('products-pickup-icon')
+											.products-pickup__title Вы добавляете товар для самовывоза
+											.products-pickup__text Чтобы заказать экспресс-доставку до 90 минут, введите свой адрес
+
+					+products__item('products__item__slide__img_1','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,false)
+					+products__item('products__item__slide__img_2','Торт Прага','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',false, false)
+					+products__item('products__item__slide__img_3','Торт Ореховый по-королевски','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+					+products__item('products__item__slide__img_4','Торт малиновый','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+					+products__item('products__item__slide__img_5','Фрикадельки','Нежирная свинина, говядина и куриное филе с добавлением лука, зелени и специй. Вкусно и сытно',true,false)
+					+products__item('products__item__slide__img_6','Торт киевский','С приятным солодовым ароматом, с  семенами подсолнечника и льна',true, false)
+
+
+	section.section.products.best-price
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Лучшие цены
+				.section-more
+					a(href="").more-link Посмотреть все товары
+						+icon('arrow-more')
+			.section-content
+				.products__list
+					+products__item('products__item__slide__img_7','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',false,false)
+					+products__item('products__item__slide__img_8','Сардельки из индейки','Сардельки в натуральной оболочке из диетического мяса птицы, филе индейки и шпика',true,false)
+					+products__item('products__item__slide__img_9','Манты с бараниной','В мягкое тонкое тесто из пшеничной муки мы заворачиваем сытную начинку', true, false)
+					+products__item('products__item__slide__img_10','Торт облепиха','С приятным солодовым ароматом, с  семенами подсолнечника и льна',false,false)
+					+products__item('products__item__slide__img_11','Торт Молочная девочка','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+					+products__item('products__item__slide__img_12','Чизкейк с вишней','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+					+products__item('products__item__slide__img_13','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,true)
+					+products__item('products__item__slide__img_14','Пирог с вишней','Пирог из песочного теста, начинка из свежей вишни',false,false)
+
+
+	section.section.section-slider.slider-stock
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Акции
+				.section-more
+					a(href="").more-link Посмотреть все акции
+						+icon('arrow-more')
+			.section-content
+				.slider
+					.slider-container
+						.slider-wrapper.swiper-container(data-slider-name="slider-stock")
+							.swiper-wrapper
+								.swiper-slide.slider-slide
+									.slider-slide__content
+										.slider-slide__date 5-12 марта
+										.slider-slide__title Только в марте пирожное Малина и Базилик по суперцене!
+										.slider-slide__text Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили новую акцию
+										.slider-slide__price
+											.slider-slide__price__normal 376 ₽
+											.slider-slide__price__sale 523 ₽
+									.slider-slide__img
+										img(src="images/stock-slider-img__1.png").slider-slide__img__elem
+									.slider-slide__bg(style="background-color: #FFD0BE;")
+
+								.swiper-slide.slider-slide
+									.slider-slide__content
+										.slider-slide__date 13-27 марта
+										.slider-slide__title Розыгрыш сертификатов на сумму 2 000 любые покупки
+										.slider-slide__text Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили новую акцию
+									.slider-slide__img
+										img(src="images/stock-slider-img__2.png").slider-slide__img__elem
+									.slider-slide__bg(style="background-color: #FFF2C9;")
+							.swiper-button__wrapper
+								.swiper-button-prev
+								.swiper-button-next
+
+						.options
+							.progress-paging
+								.progress
+									span.index 01
+									.progress-bar
+										.back
+									span.slides
+
+
+	section.section.section-subscribe
+		.section-container
+			.section-content
+				.section__col
+					.section-title
+						h2.h1 Как узнавать о новых акциях первым?
+						p Подпишитесь на уведомления о новинках и скидках!
+
+				.section__form
+					form.form
+						.form_row
+							.form_group
+								label.form_label.subscribe_label
+									input.form_input.subscribe_inp(type="email", name="subscribe_input_email", id="subscribe_input_email", placeholder="E-mail")
+									input.form_input.button.button__arrow.button__color__yellow.subscribe_btn(type="submit", value="Подписаться")
+
+						.form_row
+							.form_group
+								label.form_label.checkbox__label
+									input.checkbox__input(type="checkbox", name="subscribe_checkbox", id="subscribe_checkbox", checked="checked")
+									.checkbox__emulator
+									.checkbox__text
+										span Даю согласие на обработку
+										=" "
+										a(href="", target="_blank") персональных данных
+
+
+	section.section.section-advant
+		.section-container
+			.section-content
+				.advant-list
+					.advant-item
+						.advant-item__icon
+							+icon('advant-icon-1')
+						.advant-item__content
+							.advant-item__name.h3 Свежесть
+							.advant-item__text Средний срок готовой продукции 72 часа
+
+					.advant-item
+						.advant-item__icon
+							+icon('advant-icon-2')
+						.advant-item__content
+							.advant-item__name.h3 Натуральность
+							.advant-item__text Не используем ГМО, добавляем только натуральные консерванты
+
+					.advant-item
+						.advant-item__icon
+							+icon('advant-icon-3')
+						.advant-item__content
+							.advant-item__name.h3 Вкус
+							.advant-item__text Наша продукция - частый победитель слепых конкурсов
+
+	section.section.section-shops
+		.section-container
+			.section-header
+				.section-title
+					h2.h1
+						| Фирменные магазины в
+						=" "
+						.link-icon.dropdown
+							a(href="").link-icon__text Москва и МО
+							.dropdown-block
+								.dropdown-block__inner
+									.dropdown-city
+										.dropdown__heading Ваш город
+										form.form-search.dropdown-form
+											.form_row
+												.form_group
+													label.form_label
+														input(type="text", placeholder='Начните писать город').form_input.form-search__input
+														.form-search__icon
+															button(type="submit").form-search__button
+																+icon('search-new')
+											.form_row.dropdown-form-result.scroll
+												.dropdown-form-result__item
+													a(href="#").dropdown-form-result__item  Москва и область
+												.dropdown-form-result__item Курск
+												.dropdown-form-result__item Санкт-Петербург и область
+												.dropdown-form-result__item Липецк
+												.dropdown-form-result__item Белгород
+												.dropdown-form-result__item Нижний Новгород
+												.dropdown-form-result__item Великий Новгород
+												.dropdown-form-result__item Рязань
+												.dropdown-form-result__item Владимир
+												.dropdown-form-result__item Тверь
+												.dropdown-form-result__item Воронеж
+												.dropdown-form-result__item Тула
+												.dropdown-form-result__item Иваново
+												.dropdown-form-result__item Ярославль
+												.dropdown-form-result__item Калуга
+				.section-more
+					a(href="").more-link Посмотреть все магазины
+						+icon('arrow-more')
+
+			.section-content
+				.shops
+					.shops-nav
+						.shops-search
+							form(action="").form.shops-search__form
+								.form_group
+									label.form_label
+										.dropdown-select(data-dropdown='select')
+											input.dropdown-select__value(type='hidden', value='')
+											.dropdown-select__label
+												.dropdown-select__label__text Выберите станцию метро
+											ul.dropdown-select__list
+												.form_group
+													input#dropdown_city_search.form_input.dropdown-select__search(type="text", placeholder="Введите магазин")
+												li.dropdown-select__item.active(data-value='Краснодар') Краснодар
+												li.dropdown-select__item(data-value='Москва') Москва
+												li.dropdown-select__item(data-value='Питер') Питер
+												li.dropdown-select__item(data-value='Ростов') Ростов
+										//input(type="text" placeholder="Выберите станцию метро").shops-search__input.form_input
+						.shops-nav__list
+							.shops-nav__item(data-shops-nav="list")
+								.shops-nav__icon
+									+icon('menu')
+								.shops-nav__text Список
+							.shops-nav__item(data-shops-nav="map")
+								.shops-nav__icon
+									+icon('geotag')
+								.shops-nav__text Карта
+							.shops-nav__item(data-shops-nav="metro")
+								.shops-nav__icon
+									+icon('metro')
+								.shops-nav__text Метро
+							.shops-nav__item(data-shops-nav="beside")
+								.shops-nav__icon
+									+icon('map')
+								.shops-nav__text Магазины рядом
+
+					.shops-content
+						.shops-content-tab.shops-list.scroll(data-shops-content="list")
+							mixin shops-list-item
+								.shops-list-item
+									.shops-list-item__el.shops-list-item__address
+										.shops-list-item__address__text м. Автозаводская, ул. Автозаводская, д. 8, пом. 5
+										.shops-list-item__address__type Ближайший. Самообслуживание
+									.shops-list-item__el.shops-list-item__time
+										.shops-list-item__time__icon
+											+icon('clock')
+										.shops-list-item__time__text пн-вс 09:00 - 21:00
+									.shops-list-item__el.shops-list-item__tel
+										.shops-list-item__tel__icon
+											+icon('tel')
+										.shops-list-item__tel__text
+											a(href="tel:+7 (495) 269-55-55") +7 (495) 269-55-55 (доб. 0724)
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+							+shops-list-item
+						.shops-content-tab.shops-map(data-shops-content="map")
+							#map.js-shop-map(data-map="shops" data-center="55.8617,38.1988" data-pin="images/map-pin.svg")
+							script.
+								var shops = [
+									{
+										id: 1,
+										cityId: 1,
+										metro: 'м.Автозаводская',
+										address: 'ул. Автозаводская, д. 27, пом. 5',
+										closest: 'Ближайший, Самообслуживание',
+										time: 'пн-вс 09:00 - 21:00',
+										tel: '+7(495)269-55-55',
+										location: [55.8617, 38.1988]
+									},
+									{
+										id: 2,
+										cityId: 1,
+										metro: 'Краснодар',
+										address: 'ул. Головатого, д. 313',
+										closest: 'Ближайший, Самообслуживание',
+										time: 'пн-вс 09:00 - 21:00',
+										tel: '+7(495)269-55-55',
+										location: [55.8617, 37.7788]
+									},
+									{
+										id: 3,
+										cityId: 2,
+										metro: '',
+										address: 'ул. Крылатая, д. 2',
+										closest: 'Ближайший, Самообслуживание',
+										time: 'пн-вс 09:00 - 21:00',
+										tel: '+7(495)269-55-55',
+										location: [55.8617, 37.1988]
+									},
+									{
+										id: 4,
+										cityId: 3,
+										metro: 'Новороссийск',
+										address: 'ул. Уральская, д. 98',
+										closest: 'Ближайший, Самообслуживание',
+										time: 'пн-вс 09:00 - 21:00',
+										tel: '+7(495)269-55-55',
+										location: [55.8617, 38.2988]
+									}
+								];
+						.shops-content-tab.shops-metro(data-shops-content="metro") 3
+						.shops-content-tab.shops-beside(data-shops-content="beside") 4
+
+	section.section.section-slider.slider-web
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Где еще купить продукцию «У Палыча»
+				.swiper-button.inline
+					.swiper-button-prev
+					.swiper-button-next
+			.section-content
+				.slider
+					.swiper-container
+						.swiper-wrapper
+							.swiper-slide
+								img(src="images/image25.png")
+							.swiper-slide
+								img(src="images/image28.png")
+							.swiper-slide
+								img(src="images/image27.png")
+							.swiper-slide
+								img(src="images/image39.png")
+							.swiper-slide
+								img(src="images/image40.png")
+
+
+	section.section.section-news
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Новости
+				.section-more
+					a(href="").more-link Посмотреть все новости
+						+icon('arrow-more')
+			.section-content
+				.news
+					.news-list.scroll.scroll-x
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_1.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name В ассортименте нашей торговой сети появились новые блюда
+								.news-item__excerpt У нас хорошие новости для любителей позднего завтрака!
+							.news-item__footer
+								.news-item__date 5 мая
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_2.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name В день рождения нашей сети мы проводим специальную акцию
+								.news-item__excerpt Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили акцию «Игристые среды»
+							.news-item__footer
+								.news-item__date 27 апреля
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_3.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name Праздник светлой пасхи
+								.news-item__excerpt Великий пост подходит к концу, и близится светлый праздник Пасхи! Наша компания «У Пылача» предлагает вниманию...
+							.news-item__footer
+								.news-item__date 14 апреля
+
+	section.section.section-descr
+		.section-container
+			.section-content
+				.descr
+					.descr__img
+						img(src="images/descr-img-main.jpg")
+					.descr__text
+						h2 Торговая марка «У Палыча»
+						p Наше видение торговой марки заключается в завоевании лидерской позиции в производстве высоко- качественных продуктов питания, поддержании имиджа надежной, честной компании, которая во главу всех своих приоритетов ставит удовлетворение потребностей покупателя во вкусной и здоровой пище и дает гарантию качества на каждое изделие под ТМ «У Палыча».
+
+						P &nbsp;
+						p
+							b Мы будем прикладывать к этому все силы и ресурсы!
+					.descr__bg
+					.descr__height
+
+
+
+
+
+
+
+
+
+
+

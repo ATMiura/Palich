@@ -1,0 +1,72 @@
+/* описание */
+.descr
+	display: flex
+	align-items: center
+	position: relative
+	&__img
+		margin-right: 100px
+		position: relative
+		z-index: 2
+		img
+			font-size: 0
+			line-height: 0
+			display: block
+			max-width: 100%
+			height: auto
+		@media #{$laptop}
+			margin-right: 50px
+	&__text
+		position: relative
+		padding: 15px 0
+		max-width: 570px
+		z-index: 2
+		font-size: 1rem
+		line-height: 1.688rem
+		padding-right: 20px
+
+		//&:after
+			content: ""
+			position: absolute
+			max-height: 458px
+			height: 100%
+			right: 0
+			top: 50%
+			transform: translate(50%,50%)
+		h1
+			font-size: 2.25rem
+			line-height: 3.125rem
+			margin-bottom: 20px
+	&__bg
+		position: absolute
+		height: 100%
+		max-width: 893px
+		width: 100%
+		right: 0
+		top: 0
+		background-color: var(--light-pink)
+		z-index: -1
+	&__height
+		height: 458px
+
+	@media #{$tablet}
+		flex-direction: column-reverse
+		padding-top: 40px
+		&__img
+			margin-right: 0
+		&__text
+			margin-bottom: 40px
+		&__bg
+			top: 0
+			height: 80%
+
+	@media #{$mobile}
+		padding: 35px 25px
+
+	@media #{$mobile-xs}
+		&__text
+			h2
+				font-size: 1.875rem
+				line-height: 2.25rem
+			p
+				font-size: 0.875rem
+				line-height: 1.313rem

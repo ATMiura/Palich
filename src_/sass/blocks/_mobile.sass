@@ -1,0 +1,234 @@
+.mobile
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 999
+	background: #FFFFFF
+	box-shadow: 0px -151px 256px rgba(0, 0, 0, 0.06), 0px -63.0842px 106.951px rgba(0, 0, 0, 0.0431313), 0px -33.7278px 57.181px rgba(0, 0, 0, 0.0357664), 0px -18.9075px 32.0552px rgba(0, 0, 0, 0.03), 0px -10.0417px 17.0243px rgba(0, 0, 0, 0.0242336), 0px -4.17856px 7.08418px rgba(0, 0, 0, 0.0168687)
+	height: 100%
+	padding: 25px 20px 35px
+	max-width: 90%
+	width: 100%
+
+	&-open
+		overflow: hidden
+
+	&.is-open
+		display: block
+
+	.dropdown
+		&-block
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+			position: relative
+			top: 0
+			left: 0
+			box-shadow: none
+			display: none
+			&:before
+				display: none
+			&__inner
+				padding: 0
+				margin-top: 10px
+		&.link-icon
+			flex-wrap: wrap
+		&-city
+			min-width: auto
+		&-search
+			padding: 0
+			min-width: auto
+			flex-direction: column
+			&__col
+				flex-basis: 100%
+				&__left
+					padding: 0
+					padding-bottom: 30px
+					margin-bottom: 20px
+					border-bottom: 1px solid #E6E9EF
+			&-product
+				&__list
+					max-height: initial
+
+			.more-link
+				margin-top: 20px
+		//&:hover
+			.dropdown-block
+				display: block
+
+	&-menu
+		&-head
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding-bottom: 15px
+			margin-bottom: 12px
+			border-bottom: 1px solid #E6E9EF
+		&__logo
+			svg
+				width: 150px
+				height: 27px
+		&__title
+			font-size: 1.25rem
+			line-height: 1
+			font-weight: bold
+		&__close
+
+		//&-cart
+			&__counter
+			&__icon
+			&__number
+			&__close
+		&-body
+		&-section
+			&-city
+				margin-bottom: 15px
+				.link-icon__text
+					color: var(--vinishkotyan)
+			&-search
+				margin-bottom: 20px
+				.form-search
+					&__input
+						border: 1px solid var(--light-grey)
+						border-radius: 0
+			&-catalog
+				padding-bottom: 20px
+				margin-bottom: 25px
+				border-bottom: 1px solid #E6E9EF
+			&-top-nav
+				padding-bottom: 30px
+				margin-bottom: 25px
+				border-bottom: 1px solid #E6E9EF
+				.header-nav
+					&__list
+						flex-direction: column
+						align-items: flex-start
+					&__item
+						&:not(:last-child)
+							margin-bottom: 10px
+						&__link
+							font-size: 1rem
+							line-height: 1.375rem
+							font-weight: normal
+
+			&-call
+				display: flex
+				flex-direction: column-reverse
+				.header-link
+					&__lsit
+					&__item
+						.link-icon
+							&__icon
+								display: inline-block
+							&__text
+								font-size: .875rem
+				.header-phone
+					&__list
+						flex-direction: column
+						align-items: flex-start
+					&__item
+						&:not(:last-child)
+							margin-bottom: 5px
+						&__link
+							font-size: 1rem
+			&__inner
+				&:not(:first-child)
+					margin-bottom: 15px
+
+	.catalog
+		&-tags
+			&__list
+				flex-direction: column
+				justify-content: flex-start
+				align-items: flex-start
+		&-sort
+			&__label
+				display: none
+			&__list
+				flex-direction: column
+				align-items: flex-start
+				justify-content: flex-start
+				width: 100%
+			&__item
+				width: 100%
+				margin-right: 0
+				&:not(:last-child)
+					margin-bottom: 10px
+			&__link
+				text-decoration: none
+				border-bottom: 0
+				font-size: .875rem
+				line-height: 1.5rem
+				display: inline-block
+				width: 100%
+				&:before
+					content: "По "
+					display: inline-block
+					margin-right: 3px
+				&:after
+					content: ""
+					display: inline-block
+					width: 16px
+					height: 16px
+					background-color: var(--light-pink)
+					border: 5px solid var(--light-pink)
+					border-radius: 100%
+					float: right
+					margin-top: 4px
+				&.active
+					&:after
+						background: var(--vinishkotyan)
+						border: 5px solid var(--light-pink)
+
+	.nav
+		&-list
+			&.is-open >
+				.nav-item:not(.active)
+					display: none
+		&-item
+			flex-direction: column
+			&__submenu
+				opacity: 1
+				padding: 0
+				display: none
+				margin-left: 0
+				min-width: auto
+				margin-top: 20px
+				position: relative
+				visibility: visible
+				background-color: var(--white)
+			&.active >
+				.nav-item__link
+					font-weight: bold
+					color: var(--vinishkotyan)
+					justify-content: flex-end
+					flex-direction: row-reverse
+					&:after
+						margin-right: 4px
+						background-image: url("data:image/svg+xml,%3Csvg width='4' height='6' viewBox='0 0 4 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.197228 5.48148C0.00196579 5.28622 0.00196582 4.96964 0.197228 4.77438L1.84367 3.12793L0.197228 1.48148C0.00196614 1.28622 0.00196617 0.969638 0.197228 0.774376C0.392491 0.579114 0.709073 0.579114 0.904335 0.774376L2.90433 2.77438C3.0996 2.96964 3.0996 3.28622 2.90433 3.48148L0.904335 5.48148C0.709073 5.67675 0.39249 5.67674 0.197228 5.48148Z' fill='%23A70230'/%3E%3C/svg%3E%0A")
+						transform: rotate(180deg)
+					.nav-item__icon
+						display: none
+				.nav-item__submenu
+					display: flex !important
+
+			&:hover
+				.nav-item__submenu
+					display: none
+			&__link
+				max-width: 76vw
+			&__icon
+				min-width: 32px
+
+
+
+[data-mobile-menu*="catalog-"]:not([data-mobile-menu="catalog-list"]),
+[data-mobile-menu-type="main-mobile"] .mobile-menu__title,
+[data-mobile-menu-type="main-mobile"] .mobile-menu-section-search,
+[data-mobile-menu-type="catalog-list"] .mobile-menu__logo
+	display: none
+
+@media #{$tablet}
+	[data-desktop]
+		display: none

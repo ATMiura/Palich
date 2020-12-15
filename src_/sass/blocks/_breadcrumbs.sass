@@ -1,0 +1,19 @@
+.breadcrumbs
+	margin-bottom: 15px
+	&__list
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+	&__item
+		font-size: 0.75rem
+		line-height: 1.063rem
+		color: var(--gryaz-grey)
+	&__link
+		color: var(--grey-text)
+		&:after
+			content: ">"
+			display: inline-block
+			margin: 0 5px
+
+	@media #{$mobile}
+		margin-bottom: 15px

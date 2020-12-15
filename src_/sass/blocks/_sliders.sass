@@ -1,0 +1,466 @@
+.slider
+	//max-width: 1200px
+	//margin: 0 auto
+	position: relative
+	margin-bottom: 70px
+	@media #{$laptop}
+		margin-bottom: 0
+	&-wrapper
+		margin-left: 130px
+		@media #{$desktop}
+			margin-left: 70px
+		@media #{$tablet}
+			margin-left: 0
+
+	&-container
+	&-slide
+		position: relative
+		height: 0
+		//padding-left: 100px
+		//padding-bottom: 43.761%
+		padding-bottom: 46.561%
+		&__bg
+			position: absolute
+			top: 0
+			right: 0
+			background-color:
+			max-width: 855px
+			width: 100%
+			height: 100%
+			z-index: -1
+		&__content
+			max-width: 410px
+			position: absolute
+			top: 50%
+			transform: translate(0, -50%)
+			z-index: 1
+		&__title
+			font-size: 45px
+			line-height: 1
+			color: var(--black)
+			margin-bottom: 1.063rem
+		&__text
+			line-height: 1.5rem
+			color: var(--black)
+			margin-bottom: 40px
+			max-width: 400px
+		&__btn
+		&__img
+			&__elem
+				position: absolute
+				top: 0
+				right: 0
+				display: block
+				max-width: 700px
+				width: 100%
+				height: 100%
+				-o-object-fit: contain
+				object-fit: contain
+				font-family: contain,"object-fit: contain;"
+	@media #{$desktop}
+		&-slide
+			&__content
+				max-width: 350px
+			&__img
+				&__elem
+					//max-width: 450px
+					max-width: 60%
+			&__bg
+				max-width: 655px
+			&__title
+				font-size: 2.25rem
+	@media #{$tablet}
+		&-slide
+			&__content
+				max-width: 310px
+				padding-left: 20px
+			&__title
+				font-size: 2rem
+			&__img
+				&__elem
+					max-width: 55%
+			&__text
+				margin-bottom: 20px
+			&__bg
+				max-width: 100%
+
+	@media #{$mobile-xs}
+		&-slide
+			padding-bottom: 60%
+
+
+	.swiper
+		&-button
+			&__wrapper
+				position: absolute
+				top: 45px
+				right: 50px
+				display: flex
+				align-items: center
+				flex-wrap: wrap
+				justify-content: space-between
+				width: 86px
+		@media #{$tablet}
+			&-button
+				&__wrapper
+					position: relative
+					top: 0
+					right: 0
+					width: 100%
+					margin-top: 15px
+					.options
+						order: 2
+				&-prev,
+				&-next
+					margin: 0 !important
+				&-prev
+					order: 1
+				&-next
+					order: 3
+
+
+.progress-paging
+	.progress
+		display: flex
+		align-items: center
+		.index,
+		.slides
+			font-size: 1rem
+			line-height: 1.688rem
+			color: var(--black)
+		.progress-bar
+			height: 2px
+			border-radius: 2px
+			background-color: var(--light-grey)
+			min-width: 121px
+			margin: 0 15px
+			.back
+				display: block
+				width: 0
+				height: 2px
+				background-color: var(--black)
+				transition: width 250ms ease 0s
+				border-radius: 2px
+			@media #{$mobile-xs}
+				min-width: 100px
+
+
+.swiper
+	&-container
+		+ .options
+			display: inline-block
+			width: auto
+			transform: rotate(-90deg) translate(-52%, 0%)
+			transform-origin: 0 0
+			top: 50%
+			position: absolute
+			z-index: 2
+
+			.paging
+		@media #{$tablet}
+			+ .options
+				transform: rotate(0) translate(0,0)
+				position: relative
+				top: 0
+				margin: 0 auto
+				display: flex
+				justify-content: center
+
+	&-wrapper
+		position: relative
+	&-pagination
+		&-progressbar
+			width: 100%
+			height: 2px
+			background-color: var(--light-grey)
+			border-radius: 2px
+	&-button
+		//&__wrapper
+			position: absolute
+			top: 45px
+			right: 50px
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+			justify-content: space-between
+			width: 86px
+		&-disabled
+			display: none
+		&-next,
+		&-prev
+			width: 47px
+			height: 16px
+			margin-bottom: 0
+			margin-top: 0
+			position: relative
+			top: 0
+			left: 0
+			right: 0
+			background-size: contain
+			background-repeat: no-repeat
+			outline: none
+		&-next
+			background-image: url("data:image/svg+xml,%3Csvg width='48' height='16' viewBox='0 0 48 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.0507813 7.96875C0.0507813 7.41647 0.498496 6.96875 1.05078 6.96875L46.0508 6.96875C46.6031 6.96875 47.0508 7.41646 47.0508 7.96875C47.0508 8.52103 46.6031 8.96875 46.0508 8.96875L1.05078 8.96875C0.498497 8.96875 0.0507814 8.52103 0.0507813 7.96875Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M38.3437 0.292893C38.7342 -0.0976311 39.3674 -0.0976311 39.7579 0.292893L46.7579 7.29289C47.1484 7.68342 47.1484 8.31658 46.7579 8.70711L39.7579 15.7071C39.3674 16.0976 38.7342 16.0976 38.3437 15.7071C37.9532 15.3166 37.9532 14.6834 38.3437 14.2929L44.6366 8L38.3437 1.70711C37.9532 1.31658 37.9532 0.683417 38.3437 0.292893Z' fill='black'/%3E%3C/svg%3E%0A") !important
+			margin-left: auto
+		&-prev
+			background-image: url("data:image/svg+xml,%3Csvg width='48' height='16' viewBox='0 0 48 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M47.0508 8.03125C47.0508 8.58353 46.6031 9.03125 46.0508 9.03125H1.05078C0.498497 9.03125 0.0507812 8.58353 0.0507812 8.03125C0.0507812 7.47897 0.498497 7.03125 1.05078 7.03125H46.0508C46.6031 7.03125 47.0508 7.47897 47.0508 8.03125Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.75789 15.7071C8.36736 16.0976 7.7342 16.0976 7.34367 15.7071L0.343675 8.70711C-0.0468486 8.31658 -0.0468485 7.68342 0.343675 7.29289L7.34368 0.292893C7.7342 -0.0976297 8.36737 -0.0976296 8.75789 0.292893C9.14841 0.683417 9.14841 1.31658 8.75789 1.70711L2.465 8L8.75789 14.2929C9.14841 14.6834 9.14841 15.3166 8.75789 15.7071Z' fill='black'/%3E%3C/svg%3E%0A") !important
+			margin-right: auto
+			margin-bottom: 15px !important
+		&.inline
+			display: flex
+			align-items: center
+			justify-content: center
+			margin-left: auto
+			.swiper-button-prev
+				margin-right: 40px
+				margin-bottom: 0 !important
+
+	&-slide
+		//width: auto !important
+
+//[data-slider-name="slider-stock"]
+.slider-stock
+	margin-top: -45px
+	margin-bottom: 125px
+	position: relative
+	overflow: hidden
+	&:before
+		content: ""
+		display: block
+		height: 100%
+		//width: calc((100% - 1200px)/2 + 15px)
+		width: calc((100% - 1200px)/2)
+		position: absolute
+		top: 0
+		left: 0
+		background: #fff
+		z-index: 2
+
+	@media #{$mobile}
+		margin-bottom: 50px
+
+	.section
+		//&-container
+			@media #{$laptop-above}
+				max-width: 100%
+		&-header
+			max-width: 1200px
+			margin: 0 auto
+		&-content
+			//@media #{$laptop-above}
+				margin-left: 18.445%
+				width: auto
+	.swiper
+		&-wrapper
+			@media #{$mobile}
+				max-width: 100%
+
+	.slider
+		margin-bottom: 0
+		&-wrapper
+			margin-left: 70px
+			overflow: visible
+			@media #{$tablet}
+				margin-left: 0
+				overflow: hidden
+
+		&-slide
+			max-width: 850px
+			width: 100%
+			padding-bottom: 25.381%
+				//padding-bottom: 48.762%
+			//@media #{$laptop}
+				padding-bottom: 35%
+			&__content
+				max-width: 360px
+			&__date
+				font-weight: bold
+				font-size: 1.125rem
+				line-height: 1.5rem
+				margin-bottom: 25px
+			&__title
+				font-size: 1.5rem
+				line-height: 1.813rem
+				font-weight: bold
+				display: inline-block
+			&__text
+				margin-bottom: 55px
+			&__price
+
+				display: flex
+				align-items: baseline
+				&__normal
+					font-weight: bold
+					font-size: 1.25rem
+					line-height: 1.5rem
+					color: var(--vinishkotyan)
+					&:last-child
+						color: var(--black)
+				&__sale
+					font-size: 0.875rem
+					line-height: 1.063rem
+					color: var(--black)
+					margin-left: 10px
+					text-decoration: line-through
+					&:first-child
+						margin-left: 0
+			&__img
+				&__elem
+					top: auto
+					bottom: 0
+					right: 0
+					width: auto
+					max-height: 300px
+		&-slide__bg
+			max-width: 545px
+			top: -10px
+			right: 10px
+
+		@media #{$laptop}
+			&-slide
+				padding-bottom: 35%
+
+		@media #{$tablet}
+
+			&-slide
+				padding-bottom: 40%
+				max-width: 100%
+				&__content
+					max-width: 310px
+				&__text
+					margin-bottom: 20px
+
+		@media #{$mobile}
+			&-slide
+				padding-bottom: 60%
+				&__bg
+					max-width: 100%
+					top: 0
+					right: 0
+				&__img
+					&__elem
+						max-width: 45%
+
+		@media #{$mobile-xs}
+			&-slide
+				padding-bottom: 0
+				height: auto
+				&__content
+					padding: 25px 30px 30px
+					max-width: 100%
+					position: relative
+					top: 0
+					transform: none
+				&__date
+					font-size: .875rem
+					line-height: 1.125rem
+					margin-bottom: 15px
+				&__text,
+				&__img
+					display: none
+				&__title
+					font-size: 1.125rem
+					line-height: 1.375rem
+					margin-bottom: 15px
+
+	.swiper-button
+		&__wrapper
+			width: 100%
+			max-width: 850px
+			flex-direction: column
+			justify-content: flex-end
+			align-items: flex-end
+			right: auto
+			left: -40px
+			top: 25px
+		&-next,
+		&-prev
+			margin: 0
+			//display: block !important
+		&-prev
+			margin-right: 40px
+		@media #{$tablet}
+			&__wrapper
+				flex-direction: row
+				align-items: center
+				justify-content: space-between
+				max-width: 100%
+				top: 0
+				right: 0
+				left: 0
+
+.slider-web
+	margin-bottom: 105px
+	.swiper
+		&-slide
+			width: auto
+
+	@media #{$tablet}
+		.slider
+			.swiper-button.inline
+				margin-top: 40px
+				justify-content: space-between
+	@media #{$mobile-xs}
+		margin-bottom: 50px
+		.slider
+			.swiper-button.inline
+				margin-top: 20px
+
+.products
+	&-slider
+		margin-bottom: 100px
+		.products__item
+			flex-basis: 100%
+			max-width: 100%
+			margin-bottom: 0
+			min-width: auto
+		.swiper-scrollbar
+			position: relative
+			left: 0
+			bottom: 0
+			z-index: 50
+			height: 2px
+			border-radius: 2px
+			width: 100%
+			margin: 0 15px
+			margin-top: 30px
+			background-color: #E6E9EF
+			&-drag
+				background: var(--black)
+			@media #{$tablet-above}
+				display: none
+		@media #{$mobile-xs}
+			margin-bottom: 70px
+			.swiper-button.inline
+				display: none
+			.swiper-slide
+				max-width: 280px
+
+[data-slider-name="slider-main"]
+	@media #{$mobile}
+		.slider-slide__content
+			max-width: 250px
+		.slider-slide__title
+			font-size: 1.25rem
+			line-height: 1.375rem
+		.slider-slide__text
+			display: none
+	@media #{$mobile-xs}
+		.slider-slide__content
+			padding-left: 10px
+			max-width: 130px
+		.slider-slide__title
+			font-size: 1.125rem
+		.slider-slide__btn
+			.button
+				padding: 0
+				background-color: transparent
+				background-image: url("data:image/svg+xml,%3Csvg width='19' height='10' viewBox='0 0 19 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.2322 0.3019C12.6178 -0.0935356 13.2509 -0.10155 13.6463 0.284L17.7489 4.284C17.9419 4.47221 18.0508 4.7304 18.0508 5C18.0508 5.26961 17.9419 5.52779 17.7489 5.716L13.6463 9.716C13.2509 10.1016 12.6178 10.0935 12.2322 9.6981C11.8467 9.30267 11.8547 8.66955 12.2501 8.284L14.5927 6H1.05078C0.498496 6 0.0507812 5.55229 0.0507812 5C0.0507812 4.44772 0.498496 4 1.05078 4H14.5927L12.2501 1.716C11.8547 1.33045 11.8467 0.697336 12.2322 0.3019Z' fill='%23A70230' /%3E%3C/svg%3E%0A")
+				color: var(--vinishkotyan)
+				height: auto
+
+.product-gallery
+	&-top
+	&-thumbs
+		.swiper-slide-thumb-active
+			opacity: .5

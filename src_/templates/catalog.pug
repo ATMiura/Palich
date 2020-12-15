@@ -1,0 +1,47 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Каталог товаров'
+
+block content
+	section.section.section-catalog
+		.section-container
+			.breadcrumbs
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Главная
+					li.breadcrumbs__item
+						span Каталог
+			.section-header
+				.section-title
+					h1 Продукция ТМ Палыч
+
+			.section-content
+				.catalog
+					.catalog__list
+						mixin catalog__item(size,name,img)
+							div(class='catalog__item catalog__item__size-'+ size)
+								a(class='catalog__item__inner', href="#")
+									.catalog__item__name=name
+									.catalog__item__img
+										img(src="images/catalog-img-" + img + ".png")
+						+catalog__item(2,'Торты',1)
+						+catalog__item(1,'Пироги и выпечка',2)
+						+catalog__item(1,'Кондитерские изделия',3)
+						+catalog__item(1,'Блинчики',4)
+						+catalog__item(2,'Замороженные полуфабрикаты',5)
+
+						+catalog__item(1,'Салаты и заливные',6)
+						+catalog__item(1,'Мороженное',7)
+						+catalog__item(1,'Сыры',8)
+						+catalog__item(2,'Мясная гастрономия',9)
+						+catalog__item(1,'Буррито',10)
+
+						+catalog__item(2,'Пицца',11)
+						+catalog__item(1,'Япоснкая кухня',12)
+						+catalog__item(1,'Каши и мюсли',13)
+						+catalog__item(1,'Масло сливочное',14)
+						+catalog__item(1,'Кофе',15)
+						+catalog__item(1,'Напитки',16)
+

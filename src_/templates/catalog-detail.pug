@@ -1,0 +1,250 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Торт «Вишнёвый» со сливочным кремом'
+
+block content
+	section.section.section-product-detail
+		.section-container
+			.breadcrumbs
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Главная
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Каталог
+					li.breadcrumbs__item
+						span Торты
+			.section-content
+				.product
+					.product-container
+						.product-col.product-col__left
+							.product-links
+								ul.product-links__list
+									li.product-links__item
+										a.product-links-item__link.active(href="#product-descr") Описание
+									li.product-links__item
+										a.product-links-item__link(href="#product-bzu") Пищевая ценность
+									li.product-links__item
+										a.product-links-item__link(href="#product-store") Условия хранения
+									li.product-links__item
+										a.product-links-item__link(href="#product-standarts") Стандарты
+							.product-slider.swiper
+								.product-labels
+									.product-labels__list
+										.product-labels__item.hit
+											+icon('star')
+											| Хит
+										.product-labels__item.new Новинка
+										.product-labels__item.vegan Vegan
+										.product-labels__item.timer
+											+icon('timer')
+											| 90 минут
+										.product-labels__item.no-gmo Без ГМО
+										.product-labels__item.no-gluten Без глютена
+										.product-labels__item.sale - 25%
+								.swiper-container.product-gallery-top
+									.swiper-wrapper
+										.swiper-slide
+											img.swiper-slide__img(src="images/product-gallery-top-img.jpg")
+										.swiper-slide
+											img.swiper-slide__img(src="images/product-gallery-top-img-2.jpg")
+										.swiper-slide
+											img.swiper-slide__img(src="images/product-gallery-top-img-3.jpg")
+									// Add Arrows
+									.swiper-button-box
+										.swiper-button-prev
+										.swiper-button-next
+								.swiper-container.product-gallery-thumbs
+									.swiper-wrapper
+										.swiper-slide
+											img.swiper-slide__img(src="images/product-gallery-top-img.jpg")
+										.swiper-slide
+											img.swiper-slide__img(src="images/product-gallery-top-img-2.jpg")
+										.swiper-slide
+											img.swiper-slide__img(src="images/product-gallery-top-img-3.jpg")
+
+							.product-descr-second
+								p Считается, что торт из блинов — это русский десерт, но никто точно не знает, как и когда появился рецепт. Нет универсальных правил, которые указывают, как готовить торт: для тортов от Палыча мы выпекаем пышные воздушные блины из муки высшего сорта по традиционной рецептуре, добавляем сметанную начинку и сворачиваем в красивый узелок. Торт "Блинный" с летней ягодой - это торт из блинов, выпеченных вручную, с нежным муссом из сметаны и взбитых сливок с ягодной начинкой из малины и красной и черной смородины
+							.product-shops
+								.product-shops-head
+									.product-shops-head__title В наличии в 25 магазинах
+									.product-shops-beside
+										.product-shops-beside__icon
+											+icon('map')
+										.product-shops-beside__text Магазины рядом
+								.product-shops-body
+									ul.product-shops-list.scroll
+										li.product-shops-item
+											.product-shops-item__text м. Автозаводская,  ул Автозаводская , д. 8, пом. 5
+											.product-shops-item__type Ближайший, доставка из магазина до 90 минут
+										li.product-shops-item
+											.product-shops-item__text м. Алексеевская, проспект Мира, д.99
+											.product-shops-item__type Ближайший, доставка из магазина до 90 минут
+										li.product-shops-item
+											.product-shops-item__text м. Анино, Булатниковский проезд, д. 14 Ж
+											.product-shops-item__type Закрыт
+										li.product-shops-item
+											.product-shops-item__text м. Алексеевская, проспект Мира, д.99
+											.product-shops-item__type Ближайший, доставка из магазина до 90 минут
+										li.product-shops-item
+											.product-shops-item__text м. Анино, Булатниковский проезд, д. 14 Ж
+											.product-shops-item__type Закрыт
+										li.product-shops-item
+											.product-shops-item__text м. Автозаводская,  ул Автозаводская , д. 8, пом. 5
+											.product-shops-item__type Ближайший, доставка из магазина до 90 минут
+										li.product-shops-item
+											.product-shops-item__text м. Алексеевская, проспект Мира, д.99
+											.product-shops-item__type Ближайший, доставка из магазина до 90 минут
+										li.product-shops-item
+											.product-shops-item__text м. Анино, Булатниковский проезд, д. 14 Ж
+											.product-shops-item__type Закрыт
+										li.product-shops-item
+											.product-shops-item__text м. Алексеевская, проспект Мира, д.99
+											.product-shops-item__type Ближайший, доставка из магазина до 90 минут
+										li.product-shops-item
+											.product-shops-item__text м. Анино, Булатниковский проезд, д. 14 Ж
+											.product-shops-item__type Закрыт
+
+						.product-col.product-col__right
+							.product-title(data-move-left-right)
+								h1 Торт «Вишнёвый» со сливочным кремом
+							.product-sku(data-move-left-right)
+								.product-sku__inner
+									.product-sku__text Артикул:
+									.product-sku__value DFG154698
+								.product-share(data-share-mobile)
+							.product-advant(data-move-left-right)
+								ul.product-advant__list
+									li.product-advant__item Пышные шоколадные коржи
+									li.product-advant__item Нежный крем на основе натурального сливочного масла
+									li.product-advant__item Сочная вишня на коньяке
+									li.product-advant__item Густой шоколадно-сливочный аромат
+							.product-form(data-move-left-right)
+								.product-quantity
+									.product-quantity__text Количество
+									.product-quantity__input
+										.basket-item-block-amount(data-entity='basket-item-quantity-block')
+											span.count_btn.basket-item-amount-btn-minus(data-entity='basket-item-quantity-minus')
+											.basket-item-amount-filed-block
+												input#basket-item-quantity.basket-item-amount-filed(type='text', value='1', data-value='1', data-entity='basket-item-quantity-field')
+												.basket-item-amount-field-description шт
+											span.count_btn.basket-item-amount-btn-plus(data-entity='basket-item-quantity-plus')
+								.product-buy
+									.product-buy-price
+										.product-buy-price__normal 376 ₽
+										.product-buy-price__sale 523 ₽
+									.product-buy-status Недоступен для самовывоза
+									//.product-buy-cart
+										a(href="").product-buy-cart__link.button.border_radius.in-cart
+											.product-buy-cart__link__text В корзину
+											.product-buy-cart__link__icon
+												+icon('product_add_to_cart')
+												+icon('product_in_cart')
+									//.product-share(data-share-desktop)
+										.product-share__dropdown.dropdown(data-dropdown="share", data-share-move)
+											.product-share__icon
+												+icon('share')
+											.dropdown-block
+												.dropdown-block__inner
+													.dropdown-share
+														ul.product-share__list
+															li.product-share-item
+																a.product-share-item__link(href="#")
+																	+icon('prodcuct-share-fb')
+															li.product-share-item
+																a.product-share-item__link(href="#")
+																	+icon('prodcuct-share-vk')
+															li.product-share-item
+																a.product-share-item__link(href="#")
+																	+icon('prodcuct-share-tg')
+															li.product-share-item
+																a.product-share-item__link(href="#")
+																	+icon('prodcuct-share-wa')
+															li.product-share-item
+																a.product-share-item__link(href="#")
+																	+icon('prodcuct-share-ok')
+								+productNotification
+								+productTimer
+								.product-property
+									span.product-property__key Условия доставки:
+									span.product-property__val Доставим по Москве за 2 часа, в другие города - сегодня, не позднее 23:00
+							.product-descr#product-descr(data-move-left-right)
+								.product-descr__title
+									h2 Описание товара
+								.product-descr__list
+									.product-descr__item
+										h3 Состав
+										p Молоко питьевое пастеризованное, смесь сухая для кексов (мука пшеничная, сахар, сыворотка сухая молочная, разрыхлитель гидрокарбонат натрия, масло растительное, соль, загуститель гуаровая камедь, ферменты), сметана (сливки нормализованные, закваска), яйцо куриное пищевое, крем на растительных маслах (вода, жир растительный, сахар, белок молочный, эмульгаторы (сорбитовый сироп, лецитин)
+									.product-descr__item#product-bzu
+										h3 Пищевая ценность
+										p В 100 г продукта: белки — 5.3 г.; жиры — 19.2 г.; углеводы — 41.2 г
+									.product-descr__item#product-store
+										h3 Условия хранения
+										p 120 часов при температуре от +2°C до +6°C.
+									.product-descr__item#product-standarts
+										h3 Стандарты
+										p ТУ10.72.12-003-21262497-2017
+									.product-descr__item
+										h3 Дополнительные характеристики
+										.product-characters
+											ul.product-characters__list
+												li.product-characters__item
+													.product-characters__type Вид
+													.product-characters__value Бисквитный
+												li.product-characters__item
+													.product-characters__type Начинка
+													.product-characters__value Крем , Шоколад
+												li.product-characters__item
+													.product-characters__type Тип упаковки
+													.product-characters__value Пластиковая коробка
+
+	section.section.products-slider
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 С этим товаром покупают
+				.swiper-button.inline
+					.swiper-button-prev
+					.swiper-button-next
+			.section-content
+				.products__list.swiper-container(data-slider-name="slider-recommended")
+					.swiper-wrapper
+						.swiper-slide
+							+products__item('products__item__slide__img_1','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,false)
+						.swiper-slide
+							+products__item('products__item__slide__img_4','Торт малиновый','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+					.swiper-scrollbar
+
+	section.section.products-slider
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Вам понравится
+				.swiper-button.inline
+					.swiper-button-prev
+					.swiper-button-next
+			.section-content
+				.products__list.swiper-container(data-slider-name="slider-like")
+					.swiper-wrapper
+						.swiper-slide
+							+products__item('products__item__slide__img_1','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,false)
+						.swiper-slide
+							+products__item('products__item__slide__img_2','Торт Прага','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',false, false)
+						.swiper-slide
+							+products__item('products__item__slide__img_3','Торт Ореховый по-королевски','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+						.swiper-slide
+							+products__item('products__item__slide__img_4','Торт малиновый','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+						.swiper-slide
+							+products__item('products__item__slide__img_1','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,false)
+						.swiper-slide
+							+products__item('products__item__slide__img_2','Торт Прага','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',false, false)
+						.swiper-slide
+							+products__item('products__item__slide__img_3','Торт Ореховый по-королевски','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+						.swiper-slide
+							+products__item('products__item__slide__img_4','Торт малиновый','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+					.swiper-scrollbar
+
+
+
+

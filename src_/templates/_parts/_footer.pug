@@ -1,0 +1,409 @@
+footer.footer
+	.footer-top
+		.footer-left
+			.footer-nav(data-footer-menu="main")
+				.footer-heading У Палыча
+				.footer-nav__list
+					mixin footer-nav__item(item_text)
+						.footer-nav__item
+							a.footer-nav__link(href="")=item_text
+					+footer-nav__item('О компании')
+					+footer-nav__item('История успеха')
+					+footer-nav__item('Обучение')
+					+footer-nav__item('Наши магазины')
+					+footer-nav__item('Акции')
+					+footer-nav__item('Новости')
+					+footer-nav__item('Статьи')
+					+footer-nav__item('Контакты')
+			.footer-nav(data-footer-menu="catalog")
+				.footer-heading Каталог
+				.footer-nav__list
+					+footer-nav__item('Торты')
+					+footer-nav__item('Кондитерские изделия')
+					+footer-nav__item('Пироги и выпечка')
+					+footer-nav__item('Готовые блюда')
+					+footer-nav__item('Блинчики')
+					+footer-nav__item('Сыры')
+					+footer-nav__item('Замороженные полуфабрикаты')
+					+footer-nav__item('Шоколадные изделия')
+					+footer-nav__item('Салаты. Заливные')
+					+footer-nav__item('Мясная гастрономия')
+					+footer-nav__item('Мороженое')
+					+footer-nav__item('Напитки')
+					+footer-nav__item('Японская кухня')
+					+footer-nav__item('Буррито')
+					+footer-nav__item('Каши и мюсли')
+					+footer-nav__item('Кофе')
+					+footer-nav__item('Масло сливочное')
+					+footer-nav__item('Пицца')
+		.footer-right
+			.footer-contact
+				form.form.form-subscribe
+					.footer-heading Подписаться на рассылку
+					.form_row
+						.form_group
+							label.form_label.subscribe_label
+								input.form_input.subscribe_inp(type="email", name="subscribe_input_email", id="subscribe_input_email", placeholder="E-mail")
+								input.form_input.button.button__arrow.button__arrow__red.inline.subscribe_btn(type="submit", value="")
+
+					.form_row
+						.form_group
+							label.form_label.checkbox__label
+								input.checkbox__input(type="checkbox", name="subscribe_checkbox", id="subscribe_checkbox", checked="checked")
+								.checkbox__emulator
+								.checkbox__text
+									span Даю согласие на обработку
+									=" "
+									a(href="", target="_blank") персональных данных
+
+				a.footer-contact__tel(href="tel:+7 999 999 99 99 ") +7 999 999 99 99
+				a(href="").link-icon.footer-contact__link
+					.link-icon__icon
+						+icon('phone')
+					.link-icon__text Позвоните нам
+				a(href="").link-icon.footer-contact__link
+					.link-icon__icon
+						+icon('mail')
+					.link-icon__text Письмо Палычу
+
+
+	.footer-bottom
+		.footer-copy © У Палыча, 2020 год, все права защищены
+		.footer-policy
+			a.footer-policy__link(href="") Политика конфиденциальности
+			a.footer-policy__link(href="") Пользовательское соглашение
+		.footer-social
+			.footer-social__text Социальные сети
+			.footer-social__links
+				.footer-social__elem
+					a(href="").footer-social__link
+						+icon('social-inst')
+				.footer-social__elem
+					a(href="").footer-social__link
+						+icon('social-vk')
+
+.mobile.scroll
+	.mobile-menu(data-mobile-menu-type)
+		.mobile-menu-head
+			.mobile-menu__logo(data-mobile-menu-logo="logo")
+				+icon('logo')
+			.mobile-menu__title(data-mobile-catalog-title)
+			.mobile-menu__close(data-mobile-menu-close)
+				+icon('close')
+		.mobile-menu-body
+			.mobile-menu-section.mobile-menu-section-city(data-mobile-menu="city")
+			.mobile-menu-section.mobile-menu-section-search.dropdown(data-mobile-menu="search")
+			.mobile-menu-section.mobile-menu-section-catalog(data-mobile-menu="catalog")
+			.mobile-menu-section.mobile-menu-section-top-nav(data-mobile-menu="top-nav")
+			.mobile-menu-section.mobile-menu-section-call(data-mobile-menu="call")
+				.mobile-menu-section__inner(data-mobile-menu="call-links")
+				.mobile-menu-section__inner(data-mobile-menu="call-tels")
+			.mobile-menu-section(data-mobile-menu="catalog-filter")
+			.mobile-menu-section(data-mobile-menu="catalog-tags")
+			.mobile-menu-section(data-mobile-menu="catalog-sort")
+
+
+.modal#welcome.welcome.scroll
+	.modal__inner
+		.modal__head
+			.modal__title
+				| Добро пожаловать на сайт “У Палыча”
+			.modal__text
+				| Чтобы увидеть каталог любимых вкусняшек —
+				br
+				=" "
+				| Выберите Ваш город, способ доставки и адрес
+		.modal__body
+			form.form(method="post")
+				.step
+					.step-list
+						a(data-step-number="1").step-item.complete
+							.step-item__number 01
+							.step-item__name Город/область
+						a(data-step-number="2").step-item.complete
+							.step-item__number 02
+							.step-item-delivery__picture
+								img(src="images/delivery-img-1-2.svg").step-item-delivery__img
+						a(data-step-number="3").step-item.complete.active
+							.step-item__number 03
+							.step-item__name Мой адрес
+				.modal-step-block
+					.modal-step(data-step="1")
+						.city-choose
+							.city-choose__title Мой город
+							.form_row
+								.form_group
+									label.form_label
+										input(type="text", placeholder="Введите название товара").form_input.form-search__input
+										.form-search__icon
+											button(type="submit").form-search__button
+												+icon('search-new')
+							ul.city-list.scroll
+								mixin city_item(cityName)
+									li.city-item
+										a.city-link=cityName
+								+city_item('Москва и Московская область')
+								+city_item('Самара и Самарская область')
+								+city_item('Санкт-Петербург и Ленинградская область')
+								+city_item('Екатеринбург и Свердловская область')
+								+city_item('Великий Новгород и Новгородская область')
+								+city_item('Воронеж и Воронежская область')
+								+city_item('Владимир и Владимирская область')
+								+city_item('Калуга и Калужская область ')
+								+city_item('Липецк и Липецская область')
+								+city_item('Нижний Новгород и Нижегородская область')
+								+city_item('Орел и Орловская область')
+								+city_item('Рязань и Рязанская область')
+								+city_item('Тула и Тульская область')
+								+city_item('Ярославль и Ярославская область')
+
+					.modal-step(data-step="2")
+						.delivery
+							.delivery-list
+								.delivery-item
+									.delivery-item__inner
+										.delivery-item__picture
+											img(src="images/delivery-img-1-1.svg").delivery-item__img
+											img(src="images/delivery-img-1-mobile.svg").delivery-item__img.delivery-item__img--mobile
+										.delivery-item__text Хочу вкусняшки на моем столе через 2 часа!
+										.delivery-item__subtext Быстро доставим курьером из фирменного магазина. Заказ от 1₽
+										.delivery-item__subtext--mobile Курьером из фирменного магазина. Заказ от 1 р.
+										.delivery-item__url
+											a.button(href="#") Мой адрес
+								.delivery-item
+									.delivery-item__inner
+										.delivery-item__picture
+											img(src="images/delivery-img-2-1.svg").delivery-item__img
+											img(src="images/delivery-img-2-mobile.svg").delivery-item__img.delivery-item__img--mobile
+										.delivery-item__text Хочу вкусняшки со скидкой за самовывоз из удобного магазина!
+										.delivery-item__subtext Быстро доставим курьером из фирменного магазина. Заказ от 1₽
+										.delivery-item__subtext--mobile Бесплатно. Завтра с производства. Заказ от 1 р.
+										.delivery-item__url
+											a.button(href="#") Мой магазин
+								.delivery-item
+									.delivery-item__inner
+										.delivery-item__picture
+											img(src="images/delivery-img-3-1.svg").delivery-item__img
+											img(src="images/delivery-img-3-mobile.svg").delivery-item__img.delivery-item__img--mobile
+										.delivery-item__text Хочу вкусняшки со скидкой за самовывоз из удобного магазина!
+										.delivery-item__subtext Бесплатно доставим завтра с проиизводства. Широчайший ассортимент. Свежее не бывает! Заказ от 2500₽
+										.delivery-item__subtext--mobile Завтра с производства. Заказ от 1 р.
+										.delivery-item__status.soon Скоро будет доступен
+
+
+					.modal-step(data-step="3")
+						.modal__form
+							.form_row
+								.form_group
+									label.form_label
+										span.field-label Введите улицу или станцию метро, чтобы найти ближайший пункт
+										.dropdown-select(data-dropdown='select')
+											input.dropdown-select__value(type='hidden', value='')
+											.dropdown-select__label
+												.dropdown-select__label__text Самовывоз
+											ul.dropdown-select__list
+												.form_group
+													input#dropdown_city_search.form_input.dropdown-select__search(type="text", placeholder="Введите магазин")
+												li.dropdown-select__item.active(data-value='Краснодар') Краснодар
+												li.dropdown-select__item(data-value='Москва') Москва
+												li.dropdown-select__item(data-value='Питер') Питер
+												li.dropdown-select__item(data-value='Ростов') Ростов
+							.form_row
+								.form_group
+									label.form_label
+										span.field-label Дата доставки
+										.dropdown-select(data-dropdown='select')
+											input.dropdown-select__value(type='hidden', value='')
+											.dropdown-select__label
+												.dropdown-select__label__text 03/11/2020
+											ul.dropdown-select__list
+												li.dropdown-select__item.active(data-value='Самовывоз') 03/11/2020
+												li.dropdown-select__item(data-value='Доставка') 04/11/2020
+							.form_row
+								.form_group
+									label.form_label
+										span.field-label Улица, дом, корпус, строение
+										input.form_input(type="text", name="", placeholder="", value="Москва,")
+							.form_row.form_submit
+								.form_group
+									input.button.button__arrow(type="submit", value="Посмотреть витрину")
+
+
+					.step-back
+						a.step-back__link Назад
+
+
+
+
+.modal#city-choose.city-choose
+	.modal__inner
+		.modal__head
+			.modal__title
+				| Выберите город
+		.modal__body
+			ul.city-list.scroll
+				li.city-item
+					a(href="").city-link Москва и область
+				li.city-item
+					a(href="").city-link Санкт-Петербург и область
+				li.city-item
+					a(href="").city-link Белгород
+				li.city-item
+					a(href="").city-link Великий Новгород
+				li.city-item
+					a(href="").city-link Владимир
+				li.city-item
+					a(href="").city-link Воронеж
+				li.city-item
+					a(href="").city-link Иваново
+				li.city-item
+					a(href="").city-link Калуга
+				li.city-item
+					a(href="").city-link Курск
+				li.city-item
+					a(href="").city-link Липецк
+				li.city-item
+					a(href="").city-link Нижний Новгород
+				li.city-item
+					a(href="").city-link Рязань
+				li.city-item
+					a(href="").city-link Тверь
+				li.city-item
+					a(href="").city-link Тула
+				li.city-item
+					a(href="").city-link Ярославль
+
+
+.modal#callback.scroll
+	.modal__inner
+		.modal__head
+			.modal__title
+				| Закажите
+				br
+				=" "
+				| обратный звонок
+		.modal__body
+			form.form.modal__form
+				input(type="hidden", value="Закажите обратный звонок")
+				.form_row
+					.form_group
+						label.form_label
+							input.form_input(type="tel", name="modal-callback-tel", placeholder="+7 (ххх) ххх - хххх ", data-inputmask="phone")
+
+				.form_row
+					.form_group
+						label.form_label.checkbox__label
+							input.checkbox__input(type="checkbox", name="modal-callback-personal", id="modal-callback-personal", checked="checked")
+							.checkbox__emulator
+							.checkbox__text
+								span Даю согласие на обработку
+								=" "
+								a(href="", target="_blank") персональных данных
+
+				.form_row.form_submit
+					.form_group
+						input.button.button__arrow(type="submit", value="Перезвоните мне")
+
+.modal#palich-email.scroll
+	.modal__inner
+		.modal__head
+			.modal__title
+				| Напишите
+				br
+				=" "
+				| письмо Палычу
+			.modal__text Есть вопрос или предложение? Напишите нам, мы обязательно ответим
+		.modal__body
+			form.form.modal__form
+				input(type="hidden", value="Закажите обратный звонок")
+				.form_row
+					.form_group
+						label.form_label
+							input.form_input(type="text", name="modal-palich-email-name", placeholder="Ваше имя")
+				.form_row
+					.form_group
+						label.form_label
+							input.form_input(type="tel", name="modal-palich-email-tel", placeholder="+7 (ххх) ххх - хххх", data-inputmask="phone")
+
+				.form_row
+					.form_group
+						label.form_label
+							input.form_input(type="text", name="modal-palich-email-email", placeholder="Email")
+
+				.form_row
+					.form_group
+						label.form_label
+							textarea.form_input.form_textarea(name="modal-palich-email-comment", placeholder="Комментарий")
+
+				.form_row
+					.form_group
+						label.form_label.checkbox__label
+							input.checkbox__input(type="checkbox", name="modal-palich-email-personal", id="modal-palich-email-personal", checked="checked")
+							.checkbox__emulator
+							.checkbox__text
+								span Даю согласие на обработку
+								=" "
+								a(href="", target="_blank") персональных данных
+
+				.form_row.form_submit
+					.form_group
+						input.button.button__arrow(type="submit", value="Отправить")
+
+.modal#thx-callback.scroll
+	.modal__inner
+		.modal__body
+			.modal__thx
+				.modal__thx__icon
+					img(src="images/thx-callback.svg").modal__thx__img
+				.modal__title
+					| Спасибо
+					br
+					=" "
+					| за обращение!
+
+				.modal__text
+					| Менеджер свяжется с вами
+					br
+					=" "
+					| в ближайшее время
+
+.modal#thx-palich-email.scroll
+	.modal__inner
+		.modal__body
+			.modal__thx
+				.modal__thx__icon
+					img(src="images/thx-palich-email.svg")
+				.modal__title
+					| Спасибо
+					br
+					=" "
+					| за обращение!
+
+				.modal__text
+					| Сообщение успешно
+					br
+					=" "
+					| отправлено
+
+.modal#thx-order.scroll
+	.modal__inner
+		.modal__body
+			.modal__thx
+				.modal__thx__icon
+					img(src="images/thx-order.svg")
+				.modal__title
+					| Спасибо за заказ!
+
+				.modal__text
+					| Вы оформили заказ
+					=" "
+					span(data-order-id, data-order-id-by-time) 01255
+					=" "
+					| и
+					=" "
+					span(data-order-id, data-order-id-by-time) 01253
+					|.
+					br
+					=" "
+					| Следите за исполнением заказа на почте
+					a(href="#").button.button__arrow Перейти в каталог

@@ -1,0 +1,61 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Результаты поиска. Ничего не найдено'
+
+block content
+	section.section.section-search
+		.section-container
+			.breadcrumbs
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Главная
+					li.breadcrumbs__item
+						span Результаты поиска
+			.section-header
+				.section-title
+					h1 Результаты поиска
+			.section-content
+				.section-search-result
+					form.form-search
+						.form_row
+							.form_group
+								label.form_label
+									input(type="text", placeholder='Введите название товара, например, "торт"').form_input.form-search__input
+									.form-search__icon
+										button(type="submit").form-search__button
+											+icon('search-new')
+					.section-icon
+						+icon('search-result')
+
+					.section-text
+						h2.h1 Извините, по вашему запросу «Гренки»
+							br
+							=" "
+							| ничего не найдено
+						p
+							| Проверьте правописание в поисковом запросе.
+							br
+							| Попробуйте использовать менее специфичные слова.
+							br
+							| Воспользуйтесь навигационным меню в нашем каталоге.
+							br
+						a(href="").button.button__arrow Перейти в каталог
+
+
+
+	section.section.products
+		.section-container
+			.section-header
+				.section-title
+					h2.h1 Популярные товары
+			.section-content
+				.products__list
+					+products__item('products__item__slide__img_1','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,false)
+					+products__item('products__item__slide__img_2','Торт Прага','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',false, false)
+					+products__item('products__item__slide__img_3','Торт Ореховый по-королевски','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+					+products__item('products__item__slide__img_4','Торт малиновый','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+
+
+

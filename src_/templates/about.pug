@@ -1,0 +1,93 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'О компании'
+
+block content
+	section.section
+		.section-container
+			.breadcrumbs
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Главная
+					li.breadcrumbs__item
+						span О компании
+			.section-header
+				.section-title
+					h1 О компании
+
+	section.about
+		.section-container
+			.section-content
+				.about-header
+					.about__text Наше видение торговой марки заключается  в завоевании лидерской позиции в производстве высококачественных продуктов питания
+					.about__img
+						img(src="images/about-header.jpg")
+
+	section.section.section-advant
+		.section-container
+			.section-content
+				.advant-list
+					.advant-item
+						.advant-item__icon
+							+icon('advant-icon-1')
+						.advant-item__content
+							.advant-item__name.h3 Свежесть
+							.advant-item__text Средний срок готовой продукции 72 часа
+
+					.advant-item
+						.advant-item__icon
+							+icon('advant-icon-2')
+						.advant-item__content
+							.advant-item__name.h3 Натуральность
+							.advant-item__text Не используем ГМО, добавляем только натуральные консерванты
+
+					.advant-item
+						.advant-item__icon
+							+icon('advant-icon-3')
+						.advant-item__content
+							.advant-item__name.h3 Вкус
+							.advant-item__text Наша продукция - частый победитель слепых конкурсов
+
+	section.about
+		.section-container
+			.section-content
+				.about-main
+					.about-main__img
+						img(src="images/about-advant-img.jpg")
+					.about-main-info
+						.about-main-info__col
+							.about-main-number__list
+								.about-main-number__item
+									.about-main-number__value 380
+									.about-main-number__text магазинов
+								.about-main-number__item
+									.about-main-number__value 1300
+									.about-main-number__text видов продукции
+								.about-main-number__item
+									.about-main-number__value 27
+									.about-main-number__text областей и республик
+								.about-main-number__item
+									.about-main-number__value 4
+									.about-main-number__text ресторана и кафе
+						.about-main-info__col
+							.about-main-info__text
+								p Наше видение торговой марки заключается в завоевании лидерской позиции в производстве высоко-качественных продуктов питания, поддержании имиджа надежной, честной компании, которая во главу всех своих приоритетов ставит удовлетворение потребностей покупателя во вкусной и здоровой пище и дает гарантию качества на каждое изделие под ТМ «У Палыча».
+								p &nbsp;
+								p
+									b Мы будем прикладывать к этому все силы и ресурсы!
+
+	section.about
+		.section-container
+			.section-content
+				.about-footer
+					.about__img
+						img(src="images/about-footer.jpg")
+					.about__text
+						.about__text--title
+							h3 История успеха
+						.about__text--excerpt
+							p Поэтому мы стремимся делиться нашими знаниями и опытом, применять наилучшие практики и стремиться соответствовать высоким требованиям. Ниже мы предоставляем информацию о недавно завершенных проектах. Для получения дополнительной информации, пожалуйста, свяжитесь с нами.
+						.about__text--btn
+							a(href="#").button.button__arrow Подробнее

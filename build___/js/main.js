@@ -207,13 +207,16 @@ window.calendarMask = function () {
   	month: 'numeric',
   	year: 'numeric'
   }
-  	function getDate(str) {
+  
+  function getDate(str) {
   	var date = new Date(str);
   	return date.toLocaleString('ru', options)
   }
-  	var mindateFormated = getDate(mindate);
+  
+  var mindateFormated = getDate(mindate);
   var maxdateFormated = getDate(maxdate);
-  	console.log(mindateFormated, maxdateFormated);*/
+  
+  console.log(mindateFormated, maxdateFormated);*/
 
   if ($('[data-inputmask="date"]').length) {
     var picker = js_datepicker__WEBPACK_IMPORTED_MODULE_0___default()('[data-inputmask="date"]', {
@@ -346,14 +349,24 @@ $(document).ready(function () {
       'background-color': deliveryColor,
       'color': 'white'
     });
-    $('.header-cart__number').css({
+    $('.delivery-special .products__item__price__normal').css({
       'color': deliveryColor
     });
+<<<<<<< HEAD:build___/js/main.js
     priceSale.each(function () {
       $(this).siblings('.products__item__price__sale').css({
         'color': deliveryColor
       });
     });
+=======
+    $('.header-cart__number').css({
+      'color': deliveryColor
+    }); //priceSale.each(function () {
+    //	$(this)
+    //		.siblings('.products__item__price__normal')
+    //		.css({'color': deliveryColor});
+    //});
+>>>>>>> 13a542b7239fb9957f61f0004f32c58351b60c64:build/js/main.js
 
     if ($(window).width() < 768) {
       $('.header-cart__icon .icon-cart').css('fill', deliveryColor);
@@ -361,6 +374,9 @@ $(document).ready(function () {
     }
   };
 
+  window.customColor();
+});
+$(document).ajaxComplete(function () {
   window.customColor();
 });
 
@@ -537,18 +553,37 @@ $(window).scroll(function () {
       headerTop = $('.header-top'),
       headerTopHeight = headerTop.height(),
       headerMainHeight = headerMain.height();
+  headerDeliveryHeight = headerDelivery.height();
+  mainWrap = $('.main');
 
-  if ($(window).width() > 768) {
+  if (scroll >= headerTopHeight) {
+    headerMain.addClass('fixed');
+    headerDelivery.addClass('fixed').css({
+      'top': headerMainHeight,
+      'transition': 'none'
+    });
+    mainWrap.css('padding-top', headerTopHeight + headerDeliveryHeight + 60 + 'px');
+  } else {
+    headerMain.removeClass('fixed');
+    headerDelivery.removeClass('fixed').css('top', '0');
+    mainWrap.css('padding-top', '0');
+  }
+
+  if ($(window).width() < 992) {
     if (scroll >= headerTopHeight) {
-      headerMain.addClass('fixed');
+      headerTop.addClass('fixed').css('top', '0');
       headerDelivery.addClass('fixed').css({
-        'top': headerMainHeight,
+        'top': headerTopHeight,
         'transition': 'none'
       });
+      mainWrap.css('padding-top', headerTopHeight + headerDeliveryHeight + 80 + 'px');
     } else {
-      headerMain.removeClass('fixed');
+      headerTop.removeClass('fixed').css('top', '0');
       headerDelivery.removeClass('fixed').css('top', '0');
+      mainWrap.css('padding-top', '0');
     }
+  } else {
+    headerTop.removeClass('fixed');
   }
 });
 
@@ -1236,7 +1271,7 @@ function mapInit() {
     	fillImageHref: 'images/map-metro-no-bg.svg',
     	fillMethod: 'stretch'
     });
-    	myMap.geoObjects.add(myCircle);*/
+    		myMap.geoObjects.add(myCircle);*/
   }
 }
 
@@ -1648,11 +1683,10 @@ window.step = function (step, city, type) {
     if (stepCurrent !== 0 || stepCurrent !== 1) {
       $('[data-step-number="1"] .step-item__name').text(data.city);
       $('[data-step-number="1"]').addClass('complete');
-    }
-
-    if (stepCurrent == 1 || stepCurrent == 3) {
-      $('[data-step-number="3"]').removeClass('current active');
-    } // загружаем лого
+    } //if(stepCurrent==1 || stepCurrent==3){
+    //	$('[data-step-number="3"]').removeClass('current active');
+    //}
+    // загружаем лого
 
 
     if (stepCurrent == 2 || stepCurrent == 3) {
@@ -1662,7 +1696,13 @@ window.step = function (step, city, type) {
     }
 
     $('[data-step-number="' + stepCurrent + '"]').addClass('complete').removeClass('current active');
-    $('[data-step-number="' + stepNext + '"]').addClass('current active'); // загружаемый контент
+    $('[data-step-number="' + stepNext + '"]').addClass('current active');
+
+    if (stepCurrent == 3) {
+      $('[data-step-number="2"]').removeClass('current active');
+      $('[data-step-number="3"]').removeClass('complete').addClass('current active');
+    } // загружаемый контент
+
 
     $('.modal.welcome .modal__head').html(data.heading);
     $('.modal-step-block').html(data.layout);
@@ -1692,7 +1732,7 @@ window.step = function (step, city, type) {
         $('.modal.welcome .modal__inner').prepend($('.step-back'));
       }
     }, 100);
-  });
+  }); //$('.step-item').equalHeights();
 };
 
 $(document).on('click touch', '[data-step-next]', function () {
@@ -1756,17 +1796,12 @@ $(document).on('click touch', '[data-step-next]', function () {
   });
 });
 $(document).on("click", ".on_popup", function () {
-  // При клике на кнопку в шапке
+  // При клике на кнопку в шапке и кнопку на выборе доставки
   var step = $(this).attr('step');
   city = $(this).attr('city');
   delivery = $(this).attr('delivery');
   ajax = $(this).attr('ajax');
-  window.step(step, city, delivery); //	if(step==3 || step==4){
-  //		$(document).ajaxComplete(function () {
-  //			$('[data-step-number="2"]').addClass('complete');
-  //			$('[data-step-number="3"]').addClass('current active');
-  //		});
-  //	}
+  window.step(step, city, delivery);
 });
 $(document).on('click touch', '[data-step-number]', function () {
   // При клике на круги
@@ -1783,6 +1818,7 @@ $(document).on('click touch', '[data-step-number]', function () {
     }
 
     $('[data-step-number="3"] .step-item__name').text('Мой адрес');
+    $('.fancybox-close-small').css('display', 'none');
   }
 
   if (step == 1) {

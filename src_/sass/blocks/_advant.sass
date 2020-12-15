@@ -1,0 +1,43 @@
+.advant
+	&-list
+		display: flex
+		justify-content: space-around
+	&-item
+		display: flex
+		align-items: flex-start
+		padding: 0 15px
+		max-width: 350px
+		&__icon
+			margin-right: 25px
+		&__content
+		&__name
+			font-weight: bold
+			margin-bottom: 5px
+		&__text
+			font-size: 1rem
+			line-height: 1.5rem
+			color: var(--black)
+			opacity: 0.8
+	&-about
+		&__img
+			margin-bottom: 100px
+			img
+				display: block
+				font-size: 0
+
+
+
+	@media #{$tablet}
+		&-list
+			flex-wrap: wrap
+		&-item
+			flex-basis: 50%
+			&:not(:last-child)
+				margin-bottom: 30px
+
+	@media #{$mobile}
+		&-list
+			flex-wrap: wrap
+			justify-content: flex-start
+		&-item
+			flex-basis: 100%

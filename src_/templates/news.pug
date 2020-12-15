@@ -1,0 +1,90 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = 'Новости'
+
+block content
+	section.section
+		.section-container
+			.breadcrumbs
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a.breadcrumbs__link(href="#") Главная
+					li.breadcrumbs__item
+						span Новости
+			.section-header
+				.section-title
+					h1 Новости
+
+	section.section.section-news
+		.section-container
+			.section-content
+				.descr
+					.descr__img
+						img(src="images/news-img.jpg")
+					.descr__text
+						h2 Праздничное оформление!
+						p Мы считаем, что праздник — это не всегда действие. Праздник — это состояние души. Это яркие эмоции и настроение, это то, что заставляет сердце ликовать.⠀
+						P &nbsp;
+						p Совсем скоро мир будет отмечать День Победы: мы подготовились к этому великому дню и хотим подарить вам праздничное настроение. В наших магазинах вас ждут троты в праздничном оформлении — "Медовый", "Прага", "Ореховый" и "С Черносливом"
+						P &nbsp;
+						p
+							b 30 апреля
+					.descr__bg
+				.news
+					.news-list.scroll.scroll-x
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_1.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name В ассортименте нашей торговой сети появились новые блюда
+								.news-item__excerpt У нас хорошие новости для любителей позднего завтрака!
+							.news-item__footer
+								.news-item__date 5 мая
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_2.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name В день рождения нашей сети мы проводим специальную акцию
+								.news-item__excerpt Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили акцию «Игристые среды»
+							.news-item__footer
+								.news-item__date 27 апреля
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_3.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name Праздник светлой пасхи
+								.news-item__excerpt Великий пост подходит к концу, и близится светлый праздник Пасхи! Наша компания «У Пылача» предлагает вниманию...
+							.news-item__footer
+								.news-item__date 14 апреля
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_1.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name В ассортименте нашей торговой сети появились новые блюда
+								.news-item__excerpt У нас хорошие новости для любителей позднего завтрака!
+							.news-item__footer
+								.news-item__date 5 мая
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_2.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name В день рождения нашей сети мы проводим специальную акцию
+								.news-item__excerpt Мы решили порадовать своих любимых покупателей в честь дня рождения нашей сети и запустили акцию «Игристые среды»
+							.news-item__footer
+								.news-item__date 27 апреля
+						.news-item
+							.news-item__header
+								a(href="#").news-item__link
+									img(src="images/news-item__img_3.jpg").news-item__img
+							.news-item__body
+								h3.news-item__name Праздник светлой пасхи
+								.news-item__excerpt Великий пост подходит к концу, и близится светлый праздник Пасхи! Наша компания «У Пылача» предлагает вниманию...
+							.news-item__footer
+								.news-item__date 14 апреля

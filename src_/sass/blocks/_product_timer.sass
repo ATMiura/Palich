@@ -1,0 +1,81 @@
+.product-notification
+	background-color: var(--sochperc)
+	padding: 5px 45px
+	font-size: .875rem
+	line-height: 1.125rem
+	color: var(--black)
+
+	display: inline-block
+	//display: flex
+	//align-items: center
+	& >
+		opacity: 0.8
+	.product-notification__label
+	.product-notification__date
+		color: var(--vinishkotyan)
+
+.product-timer
+	//display: flex
+	//flex-wrap: wrap
+	margin-left: auto
+	.product-timer__text
+		font-size: .875rem
+		line-height: 1.125rem
+		color: #657082
+		opacity: 0.8
+		margin-bottom: 5px
+		flex-basis: 100%
+	.product-timer__list
+		display: flex
+		align-items: center
+	.product-timer__item
+		background-color: var(--light-grey)
+		padding: 10px
+		&:not(:last-child)
+			margin-right: 7px
+		.product-timer__value
+			font-size: 1.25rem
+			font-weight: bold
+			text-transform: uppercase
+			color: var(--black)
+		.product-timer__time
+			font-size: .75rem
+			line-height: .875rem
+			color: #657082
+
+.products__item
+	@media #{$mobile-xs}
+		.product-timer
+			display: none
+
+
+.with-timer
+	flex-direction: row
+	.products__item__info__wrap
+		flex-direction: column !important
+	.products__item__price__cart
+		margin-top: 10px
+		justify-content: flex-start !important
+
+
+.products__item:not(.swiper-slide)
+	.product-notification
+		margin-top: 12px
+		display: block
+		padding: 15px
+	.product-timer
+		margin-top: 18px
+		margin-left: 0
+
+.products__item__size__big
+	.product-notification
+		width: 100%
+	.products__item__price__car
+		padding-left: 10px
+
+.section-product-detail
+	.product-notification
+		margin-top: 20px
+		padding: 15px 20px
+	.product-timer
+		margin-top: 15px

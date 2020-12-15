@@ -1,0 +1,37 @@
+extends _layouts/_base
+
+append vars
+	-
+		var title = '404'
+
+block content
+	section.section.section-404
+		.section-container
+			.section-content
+				.section-icon
+					+icon('404')
+				.section-text
+					| Страница потерялась,
+					br
+					=" "
+					| но вы всегда сможете найти
+					br
+					=" "
+					| что-нибудь вкусненькое
+					=" "
+					a(href="/catalog.html") в каталоге
+
+	section.section.products
+		.section-container
+			.section-header
+				.section-title
+					h1 Популярные товары
+			.section-content
+				.products__list
+					+products__item('products__item__slide__img_1','Пельмени с индейкой','Классические пельмени, которые мы готовим уже более 25 лет. Тонкое тесто и сытное мясо',true,false)
+					+products__item('products__item__slide__img_2','Торт Прага','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',false, false)
+					+products__item('products__item__slide__img_3','Торт Ореховый по-королевски','Бисквитные коржи с творожным муссом. Свежий лайм и апельсин',false,false)
+					+products__item('products__item__slide__img_4','Торт малиновый','Кофе «Арабика», вареная сгущенка   и вкуснейшие домашние блины',true,false)
+
+
+
