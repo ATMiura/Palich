@@ -102,16 +102,16 @@ gulp.task('copy', () => {
 		base: 'src/resources',
 		dot: true,
 	})
-		.pipe($.if(argv.cache, $.newer('build')))
+		.pipe($.if(argv.cache, $.newer('../')))
 		.pipe($.if(argv.debug, $.debug()))
-		.pipe(gulp.dest('build'));
+		.pipe(gulp.dest('..'));
 });
 
 gulp.task('images', () => {
 	return gulp.src('src/images/**/*.*')
-		.pipe($.if(argv.cache, $.newer('build/images')))
+		.pipe($.if(argv.cache, $.newer('../images')))
 		.pipe($.if(argv.debug, $.debug()))
-		.pipe(gulp.dest('build/images'));
+		.pipe(gulp.dest('../images'));
 });
 
 gulp.task('sprites:svg', () => {
@@ -130,7 +130,7 @@ gulp.task('sprites:svg', () => {
 		.pipe($.if(!argv.minifySvg, $.replace('><symbol', '>\n<symbol')))
 		.pipe($.if(!argv.minifySvg, $.replace('></svg', '>\n</svg')))
 		.pipe($.rename('sprites.svg'))
-		.pipe(gulp.dest('build/images'));
+		.pipe(gulp.dest('../images'));
 });
 
 gulp.task('pug', () => {
@@ -149,7 +149,7 @@ gulp.task('pug', () => {
 			.pipe($.pug({
 				pretty: argv.minifyHtml ? false : '\t',
 			}))
-			.pipe(gulp.dest('build'));
+			.pipe(gulp.dest('..'));
 	}
 
 	return new Promise((resolve, reject) => {
@@ -163,7 +163,7 @@ gulp.task('pug', () => {
 				.pipe($.pug({
 					pretty: argv.minifyHtml ? false : '\t',
 				}))
-				.pipe(gulp.dest('build'))
+				.pipe(gulp.dest('..'))
 				.on('end', resolve)
 				.on('error', reject);
 		});
@@ -201,7 +201,7 @@ gulp.task('sass', () => {
 				}),
 		]))
 		.pipe($.sourcemaps.write('.'))
-		.pipe(gulp.dest('build/css'));
+		.pipe(gulp.dest('../css'));
 });
 
 gulp.task('grid', () => {
@@ -235,7 +235,7 @@ gulp.task('grid', () => {
 				}),
 		]))
 		.pipe($.sourcemaps.write('.'))
-		.pipe(gulp.dest('build/css'));
+		.pipe(gulp.dest('../css'));
 });
 
 gulp.task('js', () => {
@@ -244,7 +244,7 @@ gulp.task('js', () => {
 			errorHandler,
 		}))
 		.pipe($.webpackStream(webpackConfig))
-		.pipe(gulp.dest(webpackConfig.output.path));
+		.pipe(gulp.dest('../js'));
 });
 
 gulp.task('watch', () => {
@@ -287,10 +287,10 @@ gulp.task('serve', () => {
 			open: argv.open,
 			port: argv.port,
 			files: [
-				'./build/**/*',
+				'../**/*',
 			],
 			server: {
-				baseDir: './build'
+				baseDir: '../'
 			},
 		});
 });

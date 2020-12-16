@@ -5,23 +5,58 @@ $(window).scroll(function(){
 		headerTop = $('.header-top'),
 		headerTopHeight = headerTop.height(),
 		headerMainHeight = headerMain.height();
+	headerDeliveryHeight = headerDelivery.height();
 
-	if($(window).width() > 768 ){
+	mainWrap = $('.main');
+
+	if (scroll >= headerTopHeight) {
+		headerMain.addClass('fixed');
+		headerDelivery
+			.addClass('fixed')
+			.css(
+				{
+					'top': headerMainHeight,
+					'transition': 'none'
+				}
+			);
+		mainWrap
+			.css('padding-top', headerTopHeight + headerDeliveryHeight + 60 + 'px');
+	} else {
+		headerMain.removeClass('fixed');
+		headerDelivery
+			.removeClass('fixed')
+			.css('top', '0');
+		mainWrap
+			.css('padding-top', '0');
+	}
+
+	if($(window).width() < 992 ){
 		if (scroll >= headerTopHeight) {
-			headerMain.addClass('fixed');
+			headerTop
+				.addClass('fixed')
+				.css('top', '0');
 			headerDelivery
 				.addClass('fixed')
 				.css(
 					{
-						'top': headerMainHeight,
+						'top': headerTopHeight,
 						'transition': 'none'
 					}
 				);
+			mainWrap
+				.css('padding-top', headerTopHeight + headerDeliveryHeight + 80 + 'px');
 		} else {
-			headerMain.removeClass('fixed');
+			headerTop
+				.removeClass('fixed')
+				.css('top', '0');
 			headerDelivery
 				.removeClass('fixed')
 				.css('top', '0');
+			mainWrap
+				.css('padding-top', '0');
 		}
+
+	} else {
+		headerTop.removeClass('fixed');
 	}
 });

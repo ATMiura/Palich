@@ -17,7 +17,7 @@
 			display: none
 		&-mobile
 			[data-move]
-			display: flex
+				display: flex
 
 	@media #{$laptop}
 		margin-bottom: 30px
@@ -124,6 +124,8 @@
 	margin-right: 10px
 	&__link
 		padding: 10px
+		@media #{$mobile-xs}
+			padding: 5px
 	.dropdown-block
 		&:after
 			left: 25px
@@ -287,9 +289,10 @@
 			margin-right: 10px
 		&__price
 			font-size: 14px
+			color: var(--vinishkotyan)
 		&__icon
 			.icon-cart
-			fill: var(--vinishkotyan)
+				fill: var(--vinishkotyan)
 		&__number
 			background-color: var(--vinishkotyan)
 			color: var(--white) !important
@@ -321,7 +324,7 @@
 		.header-mobile__burger
 			margin-right: 10px
 		.header-mobile__search
-			margin-right: 5px
+			margin-right: 10px
 		.header-mobile__logo
 			padding-right: 5px
 	.grid-container
@@ -600,7 +603,7 @@
 		display: none
 	&__cart
 		.header-cart__price
-		display: none
+			display: none
 
 @media #{$tablet}
 //.header

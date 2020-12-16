@@ -3,11 +3,12 @@ $(window).on('load resize', function () {
 	/* проверяет все блоки с data-move и перемещает в блоки в мобилке/десктопе на основе их атрибутов */
 	if($(window).width() < 992){
 
-		if($('[data-mobile-menu="catalog-links"] > *').length > 1){
-			$('[data-mobile-menu="catalog-links"] .nav-list').remove();
-		}
-		else {
-			$('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
+		$('[data-desktop="catalog"] [data-move="catalog"]').clone().appendTo('[data-mobile-menu="catalog-links"]');
+
+		if ($('[data-mobile-menu="catalog-links"] > *').length > 1) {
+			$('[data-mobile-menu="catalog-links"] .nav-list:last-child').remove();
+		} else {
+
 		}
 
 		/* блок каталога в мобилке */

@@ -27,7 +27,9 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 
 		if(formName == 'express') {
 			$('[data-form="express"] .input--required').each(function () {
-				var $this = $(this);
+				var $this = $(this),
+					pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
+
 				//var type = $this.attr('data-input-required') || 'text';
 				if ($this.val() == "") {
 					form.removeClass('submitting');
@@ -48,7 +50,8 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 						.parents('.form_group')
 						.append("<span class='form_error'></span>");
 					t = false;
-				}/*else if( $this.attr('type')=='email'){
+				}
+				/*else if( $this.attr('type')=='email'){
 						function ValidateEmail(inputText)
 						{
 							var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -75,10 +78,31 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 			});
 		} else {
 			$('[data-form="'+formName+'"] .input--required').each(function () {
-				var $this = $(this);
+				var $this = $(this),
+					pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 				//var type = $this.attr('data-input-required') || 'text';
 
-				if($this.val() == ""){
+				if($this.val() != "" && $this.attr('name')==='email' && !pattern.test($this.val())) {
+					form.removeClass('submitting');
+					form.find('.button').unwrap('.submitting__loader');
+
+					//$this
+					//	.addClass('invalid')
+					//	.parents('.form_group')
+					//	.append("<span class='form_error'></span>");
+
+					$this
+						.addClass('invalid')
+						.parents('.form_group')
+						.find('.form_error')
+						.text('Неверный формат email');
+
+					//t = false;
+				}
+
+				if($this.val() == "") {
+
 					form.removeClass('submitting');
 					form.find('.button').unwrap('.submitting__loader');
 
@@ -96,29 +120,26 @@ function submitFormValidate(val, valid, form, formData, formName, formCurUrl, fo
 							.parents('.dropdown-select')
 							.find('.dropdown-select__label')
 							.addClass('invalid');
-					} else {}
-
-					//let email = $(this).val();
-					//if (email.length > 0 && (email.match(/.+?\@.+/g) || []).length !== 1) {
-					//	//console.log('email сука');
-					//	form.find('.form_error').text('email сука');
-					//	//$this.removeClass('invalid').siblings('.form_error').remove();
-					//} else {
-					//	form.find('.form_error').text('а ты хорош');
-					//}
-
-					//function validateEmail($this) {
-					//	var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-					//	return emailReg.test( $this );
-					//}
-					//if( !validateEmail($this)) {
-					//	form.find('.form_error').text('email сука');
-					//}
+					}
 
 					t = false;
+
 				} else {
 					$this.removeClass('invalid').siblings('.form_error').removeClass().addClass('form_success');
 				}
+
+				//if($this.attr('name')=='email' && $this.length > 0 && ($this.match(/.+?\@.+/g) || []).length !== 1) {
+				//	form.removeClass('submitting');
+				//	form.find('.button').unwrap('.submitting__loader')
+//
+				//	$this
+				//		.addClass('invalid')
+				//		.parents('.form_group')
+				//		.find('.form_error').text('Неверный формат email');
+				//	t = false;
+				//} else {
+				//	$this.removeClass('invalid').siblings('.form_error').removeClass().addClass('form_success');
+				//}
 			});
 		}
 
